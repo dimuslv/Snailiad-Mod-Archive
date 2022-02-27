@@ -308,29 +308,6 @@ package
          equals
          ofs6:
          iffalse ofs7
-         getlex QName(PackageNamespace("org.flixel"),"FlxG")
-         getproperty QName(PackageNamespace(""),"mouse")
-         callproperty QName(PackageNamespace(""),"justPressed"), 0
-         convert_b
-         dup
-         iffalse ofs8
-         pop
-         getlex QName(PackageNamespace("org.flixel"),"FlxG")
-         getproperty QName(PackageNamespace(""),"mouse")
-         getproperty QName(PackageNamespace(""),"screenX")
-         getlex QName(PackageNamespace(""),"width")
-         lessthan
-         ofs8:
-         dup
-         iffalse ofs9
-         pop
-         getlex QName(PackageNamespace("org.flixel"),"FlxG")
-         getproperty QName(PackageNamespace(""),"mouse")
-         getproperty QName(PackageNamespace(""),"screenY")
-         getlex QName(PackageNamespace(""),"y")
-         greaterequals
-         ofs9:
-         iffalse ofs7
          findpropstrict QName(PackageNamespace("flash.net"),"navigateToURL")
          findpropstrict QName(PackageNamespace("flash.net"),"URLRequest")
          getlex QName(PrivateNamespace(null,"#JayIsGames"),"_jigUrl")

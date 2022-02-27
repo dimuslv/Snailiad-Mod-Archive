@@ -27,16 +27,16 @@ Class IDs:
 25: IVisualElement -
 26: IInvalidating -
 27: ILayoutManagerClient -
-28: ISimpleStyleClient -
-29: IStyleClient -
-30: IAdvancedStyleClient -
-31: FlexSprite -
+28: FlexSprite -
+29: ISimpleStyleClient -
+30: IStyleClient -
+31: IAdvancedStyleClient -
 32: IFlexModule -
-33: IToolTipManagerClient -
-34: IConstraintClient -
+33: IConstraintClient -
+34: IToolTipManagerClient -
 35: IChildList -
-36: IStateClient -
-37: IAutomationObject -
+36: IAutomationObject -
+37: IStateClient -
 38: MethodQueueElement 
 39: UIComponent -
 40: HighlightBitmapCaptureSkin -
@@ -94,9 +94,9 @@ Class IDs:
 92: PlayerBulletGroups -
 93: MainMenu -
 94: Player -
-95: SnowLayer -
-96: ItemRateHud -
-97: AiTriggerPool -
+95: AiTriggerPool -
+96: SnowLayer -
+97: ItemRateHud -
 98: UniqueBlocks -
 99: SaveData -
 100: Configurable -
@@ -174,12 +174,12 @@ Class IDs:
 172: FlexMouseEvent -
 173: HueShader -
 174: IFocusManagerComponent -
-175: LayoutElementUIComponentUtils -
-176: IEmbeddedFontRegistry -
+175: IEmbeddedFontRegistry -
+176: LayoutElementUIComponentUtils -
 177: State -
 178: ChildExistenceChangedEvent -
-179: ColorBurnShader -
-180: UIComponentGlobals -
+179: UIComponentGlobals -
+180: ColorBurnShader -
 181: ValidationResult -
 182: UIComponentCachePolicy -
 183: MatrixUtil -
@@ -194,8 +194,8 @@ Class IDs:
 192: StringUtil -
 193: IResourceManager -
 194: ResizeEvent -
-195: SaturationShader -
-196: SoftLightShader -
+195: SoftLightShader -
+196: SaturationShader -
 197: en_US$skins_properties 0
 198: LayoutDirection -
 199: IFontContextComponent -
@@ -203,8 +203,8 @@ Class IDs:
 201: EventPriority -
 202: EffectEvent -
 203: AdvancedLayoutFeatures -
-204: Transition -
-205: SystemManager -
+204: SystemManager -
+205: Transition -
 206: CursorManager -
 207: SkinnableComponent -
 208: DisplayLayer -
@@ -263,8 +263,8 @@ Class IDs:
 261: EndingGroup -
 262: SponsorMoreGames -
 263: Sfx -
-264: ShadowNumber 0
-265: CipherInt 0
+264: CipherInt 0
+265: ShadowNumber 0
 266: CheckBool 0
 267: Art -
 268: Snow -
@@ -290,9 +290,9 @@ Class IDs:
 288: DamageNumber -
 289: Star -
 290: WorldMap_WorldMapSkyTxt 0
-291: EnemyKurage 0
-292: SuperUniqueItem -
-293: GravJump 0
+291: SuperUniqueItem -
+292: GravJump 0
+293: EnemyKurage 0
 294: EnemyBat 0
 295: WorldMap_WorldMapFgTxt 0
 296: Boss3 0
@@ -315,8 +315,8 @@ Class IDs:
 313: EnemyDandelionGenerator 0
 314: UniqueItem -
 315: HelixFragment 0
-316: EnemyDrone 0
-317: EnemyCannonBottom2 -
+316: EnemyCannonBottom2 -
+317: EnemyDrone 0
 318: FlxTilemap -
 319: EnemyBabyfish -
 320: EnemyKitty 0
@@ -325,25 +325,25 @@ Class IDs:
 323: Platform5 0
 324: Platform4 0
 325: ShellShield 0
-326: EnemyBird -
-327: EnemySpikey 0
-328: Boss4Rush -
+326: EnemyBird 0
+327: Boss4Rush -
+328: EnemySpikey 0
 329: SavePoint 0
 330: Boss2Rush -
 331: GiantBlock1 0
-332: IceSpikeTop -
-333: Devastator -
-334: EnemyFireball2 -
+332: IceSpikeTop 0
+333: Devastator 0
+334: EnemyFireball2 0
 335: EnemyBird2Generator -
-336: EnemyMoth -
-337: EnemyFloatSpike2 -
-338: EnemyTallfish2 -
-339: Boss3Rush -
+336: EnemyMoth 0
+337: EnemyFloatSpike2 0
+338: Boss3Rush -
+339: EnemyTallfish2 0
 340: EnemyCannonLeft -
 341: Muck -
 342: WorldMap_WorldMapBgTxt 0
-343: EnemyPincer2 -
-344: IceSpike -
+343: EnemyPincer2 0
+344: IceSpike 0
 345: IceSpikeLeft 0
 346: GravityShock 0
 347: EnemyGravTurtle 0
@@ -353,14 +353,14 @@ Class IDs:
 351: Gun3 0
 352: Gun2 0
 353: Door 0
-354: HeartContainer 0
-355: Gun1 0
-356: EnemyGear -
-357: Breakable -
+354: Gun1 0
+355: HeartContainer 0
+356: EnemyGear 0
+357: Breakable 0
 358: EnemySnake3 -
 359: EnemyCannonBottom -
-360: EnemySnake2 -
-361: Platform4b -
+360: Platform4b -
+361: EnemySnake2 -
 362: EnemyTallfish -
 363: EnemyCannonTop -
 364: EnemyCannonTop2 -
@@ -368,8 +368,8 @@ Class IDs:
 366: TurtleNpc -
 367: PowerGrass -
 368: Platform5b -
-369: Step -
-370: WorldMap_WorldMapSpTxt 0
+369: WorldMap_WorldMapSpTxt 0
+370: Step -
 371: EnemyCannonLeft2 -
 372: EnemySnelk -
 373: EnemySnake -
@@ -413,8 +413,8 @@ Class IDs:
 411: EnemyBulletLaser -
 412: EnemyBulletFire -
 413: EnemyBulletRotaryPea -
-414: EnemyBulletSpikeBall2 -
-415: Boss1Boomerang -
+414: Boss1Boomerang -
+415: EnemyBulletSpikeBall2 -
 416: EnemyBulletPea -
 417: Fonts_normalFont -
 418: PropertyChangeEventKind -
@@ -445,8 +445,8 @@ Class IDs:
 443: HueShader_ShaderClass -
 444: EmbeddedFont -
 445: IOverride -
-446: ColorBurnShader_ShaderClass -
-447: ILayoutManager -
+446: ILayoutManager -
+447: ColorBurnShader_ShaderClass -
 448: IModuleInfo -
 449: ModuleManager -
 450: ModuleManagerImpl 
@@ -458,8 +458,8 @@ Class IDs:
 456: StyleProxy -
 457: EffectTargetFilter -
 458: ExclusionShader_ShaderClass -
-459: SaturationShader_ShaderClass -
-460: SoftLightShader_ShaderClass -
+459: SoftLightShader_ShaderClass -
+460: SaturationShader_ShaderClass -
 461: CompoundTransform -
 462: SandboxMouseEvent -
 463: RSLItem -
@@ -505,8 +505,8 @@ Class IDs:
 503: Sfx_PongBounce -
 504: Sfx_Laser1 -
 505: Sfx_Cannon2 -
-506: Sfx_Cannon1 -
-507: Sfx_CloseDoor -
+506: Sfx_CloseDoor -
+507: Sfx_Cannon1 -
 508: Sfx_Jingle3 -
 509: Sfx_Shot3b -
 510: Sfx_Jingle4 -
@@ -575,23 +575,23 @@ Class IDs:
 573: Art_EnemyBulletLaser -
 574: Art_EnemyDrone -
 575: Art_EnemyCannonLeft -
-576: Art_Boss2RushFoot -
-577: Art_Platform5b -
+576: Art_Platform5b -
+577: Art_Boss2RushFoot -
 578: Art_EnemyCannonBottom2 -
-579: Art_SavePoint -
-580: Art_DoorHoriz -
+579: Art_DoorHoriz -
+580: Art_SavePoint -
 581: Art_IceSpikeTop -
 582: Art_EnemyCannon2 -
 583: Art_MiniMapSheet -
 584: Art_EnemySnake3 -
 585: Art_EnemySnake2 -
-586: Art_Boss2Eye -
-587: Art_Boss3Spawn -
+586: Art_Boss3Spawn -
+587: Art_Boss2Eye -
 588: Art_Grass -
 589: Art_EnemyFireball -
 590: Art_PixelPeople -
-591: Art_EnemyTallfish -
-592: Art_SponsorSplash -
+591: Art_SponsorSplash -
+592: Art_EnemyTallfish -
 593: Art_EnemySpider -
 594: Art_SponsorMoreGames -
 595: Art_IntroPicture5Slug -
@@ -605,8 +605,8 @@ Class IDs:
 603: Art_EnemyKitty2 -
 604: Art_EnemySpikey -
 605: Art_Boss4SecondForm -
-606: Art_GiantBlock1 -
-607: Art_EnemyBlob -
+606: Art_EnemyBlob -
+607: Art_GiantBlock1 -
 608: Art_Subscreen -
 609: Art_EnemySpider2 -
 610: Art_ItemHeartContainer -
@@ -693,8 +693,8 @@ Class IDs:
 691: Base64Decoder -
 692: Base64Encoder -
 693: DustRing -
-694: Boss3Spawn -
-695: Boss3Shield -
+694: Boss3Shield -
+695: Boss3Spawn -
 696: QueuedExplosion -
 697: Boss4RingCenter -
 698: Boss4SecondForm -
@@ -726,8 +726,8 @@ Class IDs:
 724: CSSMergedStyleDeclaration -
 725: IStyleModule -
 726: en_US$styles_properties 0
-727: FlexChangeEvent -
-728: ModuleEvent -
+727: ModuleEvent -
+728: FlexChangeEvent -
 729: StyleEvent -
 730: ItemPendingError -
 731: IResponder -
@@ -798,8 +798,8 @@ PrivateNamespace IDs:
 25: PlayerBulletGroups
 26: MainMenu
 27: Player
-28: SnowLayer
-29: AiTriggerPool
+28: AiTriggerPool
+29: SnowLayer
 30: Configurable
 31: SplashLayer
 32: Enemy
@@ -846,15 +846,15 @@ PrivateNamespace IDs:
 73: TitleText
 74: MainMenuCursor
 75: SponsorMoreGames
-76: ShadowNumber
-77: CipherInt
+76: CipherInt
+77: ShadowNumber
 78: CheckBool
 79: Snow
 80: Boss4Bullet4
 81: DamageNumber
-82: EnemyKurage
-83: SuperUniqueItem
-84: GravJump
+82: SuperUniqueItem
+83: GravJump
+84: EnemyKurage
 85: EnemyBat
 86: Boss3
 87: Boss4
@@ -873,8 +873,8 @@ PrivateNamespace IDs:
 100: EnemySeahorse
 101: EnemyDandelionGenerator
 102: UniqueItem
-103: EnemyDrone
-104: EnemyCannonBottom2
+103: EnemyCannonBottom2
+104: EnemyDrone
 105: FlxTilemap
 106: EnemyBabyfish
 107: EnemyKitty
@@ -883,8 +883,8 @@ PrivateNamespace IDs:
 110: Platform5
 111: Platform4
 112: EnemyBird
-113: EnemySpikey
-114: Boss4Rush
+113: Boss4Rush
+114: EnemySpikey
 115: SavePoint
 116: Boss2Rush
 117: GiantBlock1
@@ -892,8 +892,8 @@ PrivateNamespace IDs:
 119: EnemyFireball2
 120: EnemyBird2Generator
 121: EnemyFloatSpike2
-122: EnemyTallfish2
-123: Boss3Rush
+122: Boss3Rush
+123: EnemyTallfish2
 124: EnemyCannonLeft
 125: Muck
 126: EnemyPincer2
@@ -907,8 +907,8 @@ PrivateNamespace IDs:
 134: Breakable
 135: EnemySnake3
 136: EnemyCannonBottom
-137: EnemySnake2
-138: Platform4b
+137: Platform4b
+138: EnemySnake2
 139: EnemyTallfish
 140: EnemyCannonTop
 141: EnemyCannonTop2
@@ -1029,14 +1029,14 @@ PrivateNamespace IDs:
 256: FlexVersion
 257: HueShader
 258: LayoutElementUIComponentUtils
-259: ColorBurnShader
-260: UIComponentGlobals
+259: UIComponentGlobals
+260: ColorBurnShader
 261: MatrixUtil
 262: StyleProtoChain
 263: ExclusionShader
 264: StringUtil
-265: SaturationShader
-266: SoftLightShader
+265: SoftLightShader
+266: SaturationShader
 267: CursorManager
 268: FTETextUtil
 269: MaskUtil
@@ -1064,8 +1064,8 @@ PrivateNamespace IDs:
 291: HiJump
 292: Gun3
 293: Gun2
-294: HeartContainer
-295: Gun1
+294: Gun1
+295: HeartContainer
 296: EnemySpike
 297: Armor
 298: TurboFire
@@ -1083,8 +1083,8 @@ PrivateNamespace IDs:
 310: EnemyBulletDonut
 311: EnemyBulletLaser
 312: EnemyBulletFire
-313: EnemyBulletSpikeBall2
-314: Boss1Boomerang
+313: Boss1Boomerang
+314: EnemyBulletSpikeBall2
 315: EnemyBulletPea
 316: Zoom
 317: ModuleManager
@@ -1157,8 +1157,8 @@ PrivateNamespace IDs:
 384: PlayerBulletGroups/1
 385: MainMenu/1
 386: Player/1
-387: SnowLayer/1
-388: AiTriggerPool/1
+387: AiTriggerPool/1
+388: SnowLayer/1
 389: UniqueBlocks/1
 390: UniqueBlocks/2
 391: SaveData/1
@@ -1206,8 +1206,8 @@ PrivateNamespace IDs:
 433: PlayerBullet3/1
 434: PlayerBullet6/1
 435: TitleText/1
-436: ShadowNumber/1
-437: CipherInt/1
+436: CipherInt/1
+437: ShadowNumber/1
 438: CheckBool/1
 439: Cipher/1
 440: Boss4Bullet6/1

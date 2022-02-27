@@ -64,10 +64,7 @@ package
          }
          if(!dead && alpha == 1)
          {
-            if(FlxG.mouse.justPressed() && FlxG.mouse.screenX < width && FlxG.mouse.screenY >= y)
-            {
-               navigateToURL(new URLRequest(_jigUrl),"_blank");
-            }
+            navigateToURL(new URLRequest(_jigUrl),"_blank");
          }
       }
       
