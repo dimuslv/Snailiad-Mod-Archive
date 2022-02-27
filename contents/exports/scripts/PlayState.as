@@ -572,7 +572,7 @@ package
             return;
          }
          area = param1;
-         var _loc2_:Array = ["SNAIL TOWN","MARE CARELIA","SPIRALIS SILERE","AMASTRIDA ABYSSUS","LUX LIRATA","???","SHRINE OF ISIS","BOSS RUSH"];
+         var _loc2_:Array = ["SNAIL TOWN","MARE CARELIA","SPIRALIS SILERE","AMASTRIDA ABYSSUS","LUX LIRATA","???","SHRINE OF IRIS","BOSS RUSH"];
          hud.areaName.setArea(_loc2_[area]);
          hud.radar.setNumber();
       }

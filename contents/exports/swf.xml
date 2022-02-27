@@ -6,13 +6,13 @@
   <tags>
     <item actionScript3="true" hasMetadata="true" noCrossDomainCache="false" reserved1="false" reserved2="false" reserved3="0" type="FileAttributesTag" useDirectBlit="false" useGPU="false" useNetwork="true" />
     <item type="MetadataTag">
-      <xmlMetadata type="String"><![CDATA[<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:Description rdf:about='' xmlns:dc='http://purl.org/dc/elements/1.1'><dc:format>application/x-shockwave-flash</dc:format><dc:title>Adobe Flex 4 Application</dc:title><dc:description>http://www.adobe.com/products/flex</dc:description><dc:publisher>unknown</dc:publisher><dc:creator>unknown</dc:creator><dc:language>EN</dc:language><dc:date>Aug 6, 2011</dc:date></rdf:Description></rdf:RDF>]]></xmlMetadata>
+      <xmlMetadata type="String"><![CDATA[<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:Description rdf:about='' xmlns:dc='http://purl.org/dc/elements/1.1'><dc:format>application/x-shockwave-flash</dc:format><dc:title>Adobe Flex 4 Application</dc:title><dc:description>http://www.adobe.com/products/flex</dc:description><dc:publisher>unknown</dc:publisher><dc:creator>unknown</dc:creator><dc:language>EN</dc:language><dc:date>Aug 9, 2015</dc:date></rdf:Description></rdf:RDF>]]></xmlMetadata>
     </item>
     <item maxRecursionDepth="1000" scriptTimeoutSeconds="60" type="ScriptLimitsTag" />
     <item type="SetBackgroundColorTag">
       <backgroundColor blue="0" green="0" red="0" type="RGB" />
     </item>
-    <item buildHigh="0" buildLow="16076" compilationDateHigh="305" compilationDateLow="-1619383861" edition="6" majorVersion="4" minorVersion="1" productID="3" type="ProductInfoTag" />
+    <item buildHigh="0" buildLow="16076" compilationDateHigh="335" compilationDateLow="345153527" edition="6" majorVersion="4" minorVersion="1" productID="3" type="ProductInfoTag" />
     <item name="Preloader" namedAnchor="false" type="FrameLabelTag" />
     <item shapeId="1" type="DefineShapeTag">
       <shapeBounds Xmax="4000" Xmin="0" Ymax="1280" Ymin="0" nbits="13" type="RECT" />
@@ -13155,8 +13155,8 @@
     <item soundData="" soundFormat="2" soundId="71" soundRate="3" soundSampleCount="4608" soundSize="true" soundType="false" type="DefineSoundTag" />
     <item soundData="" soundFormat="2" soundId="72" soundRate="3" soundSampleCount="4043" soundSize="true" soundType="false" type="DefineSoundTag" />
     <item soundData="" soundFormat="2" soundId="73" soundRate="3" soundSampleCount="8643" soundSize="true" soundType="false" type="DefineSoundTag" />
-    <item soundData="" soundFormat="2" soundId="74" soundRate="3" soundSampleCount="14237" soundSize="true" soundType="false" type="DefineSoundTag" />
-    <item soundData="" soundFormat="2" soundId="75" soundRate="3" soundSampleCount="18609" soundSize="true" soundType="false" type="DefineSoundTag" />
+    <item soundData="" soundFormat="2" soundId="74" soundRate="3" soundSampleCount="18609" soundSize="true" soundType="false" type="DefineSoundTag" />
+    <item soundData="" soundFormat="2" soundId="75" soundRate="3" soundSampleCount="14237" soundSize="true" soundType="false" type="DefineSoundTag" />
     <item soundData="" soundFormat="2" soundId="76" soundRate="3" soundSampleCount="53538" soundSize="true" soundType="false" type="DefineSoundTag" />
     <item soundData="" soundFormat="2" soundId="77" soundRate="3" soundSampleCount="5148" soundSize="true" soundType="false" type="DefineSoundTag" />
     <item soundData="" soundFormat="2" soundId="78" soundRate="3" soundSampleCount="132480" soundSize="true" soundType="false" type="DefineSoundTag" />
@@ -13202,8 +13202,8 @@
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="288" bitmapWidth="160" characterID="118" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="20" bitmapWidth="100" characterID="119" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="64" bitmapWidth="128" characterID="120" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="24" bitmapWidth="192" characterID="121" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="96" characterID="122" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="96" characterID="121" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="24" bitmapWidth="192" characterID="122" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="384" bitmapWidth="288" characterID="123" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="256" bitmapWidth="192" characterID="124" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="24" bitmapWidth="144" characterID="125" type="DefineBitsLossless2Tag" zlibBitmapData="" />
@@ -15692,23 +15692,23 @@
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="16" characterID="136" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="64" characterID="137" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="32" bitmapWidth="72" characterID="138" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="48" bitmapWidth="128" characterID="139" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="200" bitmapWidth="200" characterID="140" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="200" bitmapWidth="200" characterID="139" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="48" bitmapWidth="128" characterID="140" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="32" characterID="141" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="104" bitmapWidth="80" characterID="142" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="138" bitmapWidth="400" characterID="143" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="4" bitmapWidth="60" characterID="144" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="96" bitmapWidth="128" characterID="145" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="156" bitmapWidth="380" characterID="146" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="24" bitmapWidth="96" characterID="147" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="32" bitmapWidth="64" characterID="148" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="32" bitmapWidth="64" characterID="147" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="24" bitmapWidth="96" characterID="148" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="64" bitmapWidth="64" characterID="149" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="64" bitmapWidth="64" characterID="150" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="64" bitmapWidth="64" characterID="151" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="250" bitmapWidth="400" characterID="152" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="48" bitmapWidth="192" characterID="153" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="28" bitmapWidth="27" characterID="154" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="24" bitmapWidth="96" characterID="155" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="24" bitmapWidth="96" characterID="154" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="28" bitmapWidth="27" characterID="155" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="10" bitmapWidth="52" characterID="156" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="52" bitmapWidth="100" characterID="157" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="48" characterID="158" type="DefineBitsLossless2Tag" zlibBitmapData="" />
@@ -15725,8 +15725,8 @@
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="8" bitmapWidth="128" characterID="169" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="32" bitmapWidth="256" characterID="170" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="32" characterID="171" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="32" bitmapWidth="256" characterID="172" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="64" bitmapWidth="336" characterID="173" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="64" bitmapWidth="336" characterID="172" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="32" bitmapWidth="256" characterID="173" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="32" bitmapWidth="64" characterID="174" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="128" bitmapWidth="640" characterID="175" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="16" characterID="176" type="DefineBitsLossless2Tag" zlibBitmapData="" />
@@ -15741,18 +15741,18 @@
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="64" bitmapWidth="96" characterID="185" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="13" bitmapWidth="51" characterID="186" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="13" bitmapWidth="13" characterID="187" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="32" characterID="188" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="96" bitmapWidth="96" characterID="189" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="96" bitmapWidth="96" characterID="188" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="32" characterID="189" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="240" bitmapWidth="400" characterID="190" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="32" bitmapWidth="16" characterID="191" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="240" bitmapWidth="400" characterID="192" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="240" bitmapWidth="400" characterID="191" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="32" bitmapWidth="16" characterID="192" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="64" characterID="193" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="48" bitmapWidth="32" characterID="194" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="64" bitmapWidth="64" characterID="195" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="240" bitmapWidth="400" characterID="196" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="240" bitmapWidth="400" characterID="197" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="64" bitmapWidth="64" characterID="198" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="240" bitmapWidth="400" characterID="199" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="240" bitmapWidth="400" characterID="198" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="64" bitmapWidth="64" characterID="199" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="32" characterID="200" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="16" characterID="201" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="176" bitmapWidth="160" characterID="202" type="DefineBitsLossless2Tag" zlibBitmapData="" />
@@ -15770,18 +15770,18 @@
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="6" bitmapWidth="96" characterID="214" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="29" bitmapWidth="48" characterID="215" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="16" characterID="216" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="48" characterID="217" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="156" bitmapWidth="380" characterID="218" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="48" bitmapWidth="256" characterID="219" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="160" bitmapWidth="288" characterID="220" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="156" bitmapWidth="380" characterID="217" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="48" characterID="218" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="160" bitmapWidth="288" characterID="219" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="48" bitmapWidth="256" characterID="220" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="16" characterID="221" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="48" bitmapWidth="384" characterID="222" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="320" bitmapWidth="48" characterID="223" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="50" characterID="224" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="50" characterID="223" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="320" bitmapWidth="48" characterID="224" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="13" bitmapWidth="13" characterID="225" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="32" characterID="226" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="52" bitmapWidth="100" characterID="227" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="128" bitmapWidth="256" characterID="228" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="128" bitmapWidth="256" characterID="227" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="52" bitmapWidth="100" characterID="228" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="64" bitmapWidth="320" characterID="229" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="8" bitmapWidth="40" characterID="230" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="64" bitmapWidth="64" characterID="231" type="DefineBitsLossless2Tag" zlibBitmapData="" />
@@ -15804,8 +15804,8 @@
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="48" bitmapWidth="384" characterID="248" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="144" bitmapWidth="96" characterID="249" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="128" bitmapWidth="640" characterID="250" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="64" bitmapWidth="32" characterID="251" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="256" bitmapWidth="640" characterID="252" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="256" bitmapWidth="640" characterID="251" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="64" bitmapWidth="32" characterID="252" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="250" bitmapWidth="400" characterID="253" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="16" characterID="254" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="512" bitmapWidth="368" characterID="255" type="DefineBitsLossless2Tag" zlibBitmapData="" />
@@ -18974,8 +18974,8 @@
         <item>mx.graphics.shaderClasses.HueShader_ShaderClass</item>
         <item>mx.graphics.shaderClasses.ColorBurnShader_ShaderClass</item>
         <item>mx.graphics.shaderClasses.ExclusionShader_ShaderClass</item>
-        <item>mx.graphics.shaderClasses.SoftLightShader_ShaderClass</item>
         <item>mx.graphics.shaderClasses.SaturationShader_ShaderClass</item>
+        <item>mx.graphics.shaderClasses.SoftLightShader_ShaderClass</item>
         <item>mx.graphics.shaderClasses.LuminosityMaskShader_ShaderClass</item>
         <item>Sfx_Ending1Song</item>
         <item>pickup4</item>
@@ -18993,8 +18993,8 @@
         <item>Sfx_PongBounce</item>
         <item>laser</item>
         <item>cannon2</item>
-        <item>closedoor</item>
         <item>cannon1</item>
+        <item>closedoor</item>
         <item>jingle3</item>
         <item>shot3b</item>
         <item>Sfx_Jingle4</item>
@@ -19065,8 +19065,8 @@
         <item>133</item>
         <item>89</item>
         <item>92</item>
-        <item>134</item>
         <item>94</item>
+        <item>134</item>
         <item>135</item>
         <item>39</item>
         <item>136</item>
@@ -19079,6 +19079,7 @@
         <item>142</item>
         <item>143</item>
         <item>144</item>
+        <item>38</item>
         <item>43</item>
         <item>145</item>
         <item>98</item>
@@ -19090,7 +19091,6 @@
         <item>147</item>
         <item>102</item>
         <item>149</item>
-        <item>38</item>
         <item>151</item>
         <item>150</item>
         <item>152</item>
@@ -19102,7 +19102,7 @@
         <item>156</item>
         <item>157</item>
         <item>158</item>
-        <item>55</item>
+        <item>56</item>
         <item>159</item>
         <item>161</item>
         <item>160</item>
@@ -19117,8 +19117,8 @@
         <item>167</item>
         <item>168</item>
         <item>169</item>
-        <item>122</item>
         <item>170</item>
+        <item>121</item>
         <item>171</item>
         <item>173</item>
         <item>172</item>
@@ -19173,7 +19173,7 @@
         <item>212</item>
         <item>213</item>
         <item>214</item>
-        <item>56</item>
+        <item>55</item>
         <item>215</item>
         <item>216</item>
         <item>86</item>
@@ -19222,8 +19222,8 @@
         <item>68</item>
         <item>44</item>
         <item>70</item>
-        <item>71</item>
         <item>242</item>
+        <item>71</item>
         <item>243</item>
         <item>73</item>
         <item>244</item>
@@ -19292,8 +19292,8 @@
         <item>Art_DoorVert</item>
         <item>Art_Boss1Shield</item>
         <item>Art_ItemDevastator</item>
-        <item>Art_Boss3Shield</item>
         <item>Art_PlayerBullet5</item>
+        <item>Art_Boss3Shield</item>
         <item>Art_PlayerBullet6</item>
         <item>Music_TitleSong</item>
         <item>Art_PlayerBullet3</item>
@@ -19309,20 +19309,21 @@
         <item>Art_EnemyCannonBottom2</item>
         <item>Sfx_PongHit</item>
         <item>Sfx_Grow</item>
-        <item>Fonts_normalFont</item>
         <item>Sfx_Death</item>
+        <item>Fonts_normalFont</item>
         <item>org.flixel.data.FlxPause_ImgKeyP</item>
         <item>Music_Area4Song</item>
         <item>Art_Grass</item>
         <item>Art_EnemyFireball</item>
         <item>Art_PixelPeople</item>
-        <item>Art_SponsorSplash</item>
         <item>Art_EnemyTallfish</item>
+        <item>Art_SponsorSplash</item>
         <item>Art_EnemySpider</item>
         <item>Sfx_Jump1</item>
         <item>Art_SponsorMoreGames</item>
         <item>Art_IntroPicture5Slug</item>
         <item>Art_PowerNom</item>
+        <item>_main_Styles__embed_css_Assets_swf_mx_skins_cursor_BusyCursor_2069730596</item>
         <item>Music_Boss1Song</item>
         <item>Art_ItemRapidFire</item>
         <item>Sfx_DialogueLetter1</item>
@@ -19330,18 +19331,17 @@
         <item>Sfx_DialogueLetter3</item>
         <item>Sfx_DialogueLetter2</item>
         <item>Art_Boss2Foot</item>
-        <item>Art_EnemyKitty2</item>
         <item>Art_EnemyBulletDonut</item>
+        <item>Art_EnemyKitty2</item>
         <item>Sfx_Splash1</item>
         <item>Art_EnemySpikey</item>
-        <item>_main_Styles__embed_css_Assets_swf_mx_skins_cursor_BusyCursor_1985550340</item>
-        <item>Art_GiantBlock1</item>
         <item>Art_EnemyBlob</item>
+        <item>Art_GiantBlock1</item>
         <item>Art_Subscreen</item>
         <item>Art_IntroSpiral</item>
         <item>Sfx_OpenDoor</item>
-        <item>Art_Boss4ShadowBall</item>
         <item>Art_EnemyBulletSpikeBall</item>
+        <item>Art_Boss4ShadowBall</item>
         <item>Sfx_EnemyPingOffArmor</item>
         <item>Art_EnemyBabyfish</item>
         <item>Art_Boss2Pupil</item>
@@ -19361,11 +19361,11 @@
         <item>Art_ItemGun2</item>
         <item>Art_EnemyTallfish2</item>
         <item>org.flixel.FlxTilemap_ImgAutoAlt</item>
-        <item>Art_Boss3RushShield</item>
         <item>Art_Star</item>
+        <item>Art_Boss3RushShield</item>
         <item>Art_Bubble</item>
-        <item>Art_ControlHelpBg</item>
         <item>Art_ItemIceSnail</item>
+        <item>Art_ControlHelpBg</item>
         <item>Music_TownSong</item>
         <item>Art_Boss4Rush</item>
         <item>Art_EnemyKitty</item>
@@ -19384,20 +19384,20 @@
         <item>Art_ItemShellShield</item>
         <item>org.flixel.data.FlxPanel_ImgDonate</item>
         <item>org.flixel.data.FlxPanel_ImgTwitter</item>
-        <item>Art_Boss1RushHand</item>
         <item>Art_EnemyBird</item>
+        <item>Art_Boss1RushHand</item>
         <item>Sfx_EnemyKilled3</item>
         <item>Art_EndingPicture2</item>
-        <item>Art_EndingPicture1</item>
         <item>Art_EnemySeahorse</item>
+        <item>Art_EndingPicture1</item>
         <item>Art_EnemyKurage</item>
         <item>Art_EnemyBat</item>
         <item>Art_EnemySpikey2</item>
         <item>Art_EndingPicture4</item>
         <item>Sfx_EnemyKilled2</item>
         <item>Art_EndingPicture3</item>
-        <item>Art_EndingPicture5</item>
         <item>Art_EnemyGravTurtle</item>
+        <item>Art_EndingPicture5</item>
         <item>Art_Zzz</item>
         <item>Art_EnemyDandelion</item>
         <item>Music_IsisSong</item>
@@ -19421,22 +19421,22 @@
         <item>Art_EnemyDrone</item>
         <item>Art_EnemyCannonLeft</item>
         <item>Sfx_MenuBeep2</item>
-        <item>Art_Boss2RushFoot</item>
         <item>Art_Platform5b</item>
+        <item>Art_Boss2RushFoot</item>
         <item>Sfx_MenuBeep1</item>
-        <item>Art_DoorHoriz</item>
         <item>Art_SavePoint</item>
+        <item>Art_DoorHoriz</item>
         <item>Art_IceSpikeTop</item>
         <item>Sfx_Hurt</item>
         <item>Art_EnemyCannon2</item>
-        <item>Art_EnemySnake3</item>
         <item>Art_MiniMapSheet</item>
+        <item>Art_EnemySnake3</item>
         <item>Sfx_Shot2b</item>
         <item>Art_EnemySnake2</item>
         <item>org.flixel.data.FlxPanel_ImgClose</item>
         <item>Sfx_GigaWave</item>
-        <item>Art_Boss3Spawn</item>
         <item>Art_Boss2Eye</item>
+        <item>Art_Boss3Spawn</item>
         <item>mx.graphics.shaderClasses.LuminosityShader_ShaderClass</item>
         <item>Art_ExplosionHuge</item>
         <item>Sfx_Shot1b</item>
@@ -19466,13 +19466,13 @@
         <item>Sfx_SlugMode</item>
         <item>Music_Ending2Song</item>
         <item>Sfx_PongMiss</item>
-        <item>Sfx_PongBounce</item>
         <item>org.flixel.data.FlxPanel_ImgDelicious</item>
+        <item>Sfx_PongBounce</item>
         <item>Art_Platform4</item>
         <item>Sfx_Cannon2</item>
         <item>Art_Platform5</item>
-        <item>Sfx_CloseDoor</item>
         <item>Sfx_Cannon1</item>
+        <item>Sfx_CloseDoor</item>
         <item>Art_Boss4Bullet6</item>
         <item>Art_Boss4Bullet5</item>
         <item>Sfx_Jingle3</item>
@@ -19482,8 +19482,8 @@
         <item>Art_Boss1</item>
         <item>Art_Boss4</item>
         <item>Sfx_Explode1</item>
-        <item>Art_Boss3</item>
         <item>Art_TurtleNpc</item>
+        <item>Art_Boss3</item>
         <item>Sfx_Explode2</item>
         <item>Sfx_Explode3</item>
         <item>Sfx_Explode4</item>

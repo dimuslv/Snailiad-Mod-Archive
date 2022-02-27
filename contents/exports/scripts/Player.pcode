@@ -7101,8 +7101,6 @@ package
          code
          getlocal0
          pushscope
-         pushbyte 0
-         setlocal3
          getlocal2
          convert_i
          setlocal3
@@ -9895,8 +9893,6 @@ package
          code
          getlocal0
          pushscope
-         pushbyte 0
-         setlocal 5
          getlex QName(PackageNamespace(""),"offset")
          getproperty QName(PackageNamespace(""),"x")
          convert_i

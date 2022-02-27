@@ -489,9 +489,6 @@ package
          ifne ofs0
          returnvoid
          ofs0:
-         findproperty QName(PrivateNamespace(null,"#Music"),"prevSong")
-         getlex QName(PrivateNamespace(null,"#Music"),"lastSong")
-         setproperty QName(PrivateNamespace(null,"#Music"),"prevSong")
          findproperty QName(PrivateNamespace(null,"#Music"),"lastSong")
          getlocal1
          setproperty QName(PrivateNamespace(null,"#Music"),"lastSong")

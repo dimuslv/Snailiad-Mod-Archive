@@ -1865,8 +1865,7 @@ package
       
       public function moveSnailCheckFullBounds(param1:int, param2:int) : void
       {
-         var _loc3_:int = 0;
-         _loc3_ = param2;
+         var _loc3_:int = param2;
          if(param2 < 0)
          {
             param2 = PlayState.worldMap.findFirstFullNotSolidTop(x,y,width,height,param2);
@@ -2440,10 +2439,9 @@ package
       
       public function setFaceDirNotHiding(param1:int, param2:Boolean = false) : void
       {
-         var _loc5_:int = 0;
          var _loc3_:int = offset.x;
          var _loc4_:int = offset.y;
-         _loc5_ = width;
+         var _loc5_:int = width;
          var _loc6_:int = height;
          switch(this._faceDir)
          {

@@ -324,7 +324,7 @@ package
                   }
                   else if(_loc7_ < 30 || !PlayState.player.hasSeenIsis)
                   {
-                     _loc9_ = "They say that the Shrine of\n" + "Isis is not located on any map!\n";
+                     _loc9_ = "They say that the Shrine of\n" + "Iris is not located on any map!\n";
                   }
                   else
                   {
@@ -457,11 +457,11 @@ package
                case 24:
                   if(PlayState.worldMap.spmap.getTile(291,220))
                   {
-                     _loc9_ = "Take this Helix Fragment!\n" + "Legend says it is but one\n" + "piece of Isis, the Godsnail!\n";
+                     _loc9_ = "Take this Helix Fragment!\n" + "Legend says it is but one\n" + "piece of Iris, the Godsnail!\n";
                   }
                   else
                   {
-                     _loc9_ = "" + _loc3_ + ", legend says the\n" + "Shrine of Isis is somewhere\n" + "very close to Snail Town!!\n";
+                     _loc9_ = "" + _loc3_ + ", legend says the\n" + "Shrine of Iris is somewhere\n" + "very close to Snail Town!!\n";
                   }
                   break;
                case 25:
@@ -527,7 +527,7 @@ package
                   }
                   else if(_loc7_ < 30 || !PlayState.player.hasSeenIsis)
                   {
-                     _loc9_ = "" + _loc3_ + ", search for the helix\n" + "fragments!  Maybe Isis can\n" + "still restore Moon Snail!!\n";
+                     _loc9_ = "" + _loc3_ + ", search for the helix\n" + "fragments!  Maybe Iris can\n" + "still restore Moon Snail!!\n";
                   }
                   else
                   {
@@ -542,7 +542,7 @@ package
                   }
                   else if(_loc7_ < 30 && PlayState.isBossDead(4) || !PlayState.player.hasSeenIsis)
                   {
-                     _loc9_ = "I\'ve heard that the Shrine of\n" + "Isis is not marked on any map!\n" + "Have you found it yet?\n";
+                     _loc9_ = "I\'ve heard that the Shrine of\n" + "Iris is not marked on any map!\n" + "Have you found it yet?\n";
                   }
                   else
                   {
@@ -557,11 +557,11 @@ package
                   }
                   else if(_loc7_ < 30 && !PlayState.isBossDead(4))
                   {
-                     _loc9_ = "If only you had the power of\n" + "Isis!  She could restore his\n" + "light once he\'s defeated!!\n";
+                     _loc9_ = "If only you had the power of\n" + "Iris!  She could restore his\n" + "light once he\'s defeated!!\n";
                   }
                   else if(_loc7_ == 30 && !PlayState.isBossDead(4))
                   {
-                     _loc9_ = "Use the power of Isis, " + _loc3_ + "!\n" + "Defeat Moon Snail, and restore\n" + "him to his former light!\n";
+                     _loc9_ = "Use the power of Iris, " + _loc3_ + "!\n" + "Defeat Moon Snail, and restore\n" + "him to his former light!\n";
                   }
                   else if(_loc7_ < 30 || !PlayState.player.hasSeenIsis)
                   {
@@ -591,11 +591,11 @@ package
                case 34:
                   if(_loc7_ < 30 || !PlayState.player.hasSeenIsis)
                   {
-                     _loc9_ = "" + _loc3_ + ", search for the Helix\n" + "Fragments!  Once you have them\n" + "all, find the Shrine of Isis!\n";
+                     _loc9_ = "" + _loc3_ + ", search for the Helix\n" + "Fragments!  Once you have them\n" + "all, find the Shrine of Iris!\n";
                   }
                   else
                   {
-                     _loc9_ = "Amazing work, " + _loc3_ + "!!  You\'ve\n" + "saved Sun Snail using the power\n" + "of Isis!!\n";
+                     _loc9_ = "Amazing work, " + _loc3_ + "!!  You\'ve\n" + "saved Sun Snail using the power\n" + "of Iris!!\n";
                   }
                   _loc8_ = true;
                   break;
@@ -620,11 +620,11 @@ package
                   {
                      if(_loc7_ == 0)
                      {
-                        _loc9_ = "Hello, " + _loc3_ + "!  I am Isis, the\n" + "Godsnail.  But without the Helix\n" + "Fragments, I am powerless...\n";
+                        _loc9_ = "Hello, " + _loc3_ + "!  I am Iris, the\n" + "Godsnail.  But without the Helix\n" + "Fragments, I am powerless...\n";
                      }
                      else if(_loc7_ < 25)
                      {
-                        _loc9_ = "Hello, " + _loc3_ + "! I am Isis, the\n" + "Godsnail. But with only " + _loc7_.toString() + " Helix\n" + "Fragment" + (_loc7_ == 1 ? "" : "s") + ", I am powerless...\n";
+                        _loc9_ = "Hello, " + _loc3_ + "! I am Iris, the\n" + "Godsnail. But with only " + _loc7_.toString() + " Helix\n" + "Fragment" + (_loc7_ == 1 ? "" : "s") + ", I am powerless...\n";
                      }
                      else if(_loc7_ < 29)
                      {

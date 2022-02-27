@@ -55,7 +55,7 @@ package
          if(param1 == 100)
          {
             NgMedal.unlockTreasureHunter();
-            text += "\nFIND THE SHRINE OF ISIS!";
+            text += "\nFIND THE SHRINE OF IRIS!";
             _fadeOutStart += 6;
             _fadeOutEnd += 6;
             size = 20;

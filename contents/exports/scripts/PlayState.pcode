@@ -2146,7 +2146,7 @@ package
          pushstring "AMASTRIDA ABYSSUS"
          pushstring "LUX LIRATA"
          pushstring "???"
-         pushstring "SHRINE OF ISIS"
+         pushstring "SHRINE OF IRIS"
          pushstring "BOSS RUSH"
          newarray 8
          coerce QName(PackageNamespace(""),"Array")

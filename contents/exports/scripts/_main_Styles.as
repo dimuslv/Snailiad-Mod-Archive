@@ -19,7 +19,7 @@ package
    public class _main_Styles
    {
       
-      private static var _embed_css_Assets_swf_mx_skins_cursor_BusyCursor_1985550340:Class = _main_Styles__embed_css_Assets_swf_mx_skins_cursor_BusyCursor_1985550340;
+      private static var _embed_css_Assets_swf_mx_skins_cursor_BusyCursor_2069730596:Class = _main_Styles__embed_css_Assets_swf_mx_skins_cursor_BusyCursor_2069730596;
        
       
       public function _main_Styles()
@@ -154,8 +154,8 @@ package
                this.fontSharpness = 0;
                this.modalTransparencyDuration = 100;
                this.justificationStyle = "auto";
-               this.borderStyle = "inset";
                this.contentBackgroundAlpha = 1;
+               this.borderStyle = "inset";
                this.textRotation = "auto";
                this.fontAntiAliasType = "advanced";
                this.errorColor = 16646144;
@@ -380,7 +380,7 @@ package
             style.defaultFactory = function():void
             {
                this.busyCursor = BusyCursor;
-               this.busyCursorBackground = _embed_css_Assets_swf_mx_skins_cursor_BusyCursor_1985550340;
+               this.busyCursorBackground = _embed_css_Assets_swf_mx_skins_cursor_BusyCursor_2069730596;
             };
          }
          if(mergedStyle != null && (mergedStyle.defaultFactory == null || ObjectUtil.compare(new style.defaultFactory(),new mergedStyle.defaultFactory())))

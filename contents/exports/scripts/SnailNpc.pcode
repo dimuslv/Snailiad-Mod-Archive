@@ -1117,7 +1117,7 @@ package
          ofs73:
          iffalse ofs74
          pushstring "They say that the Shrine of\n"
-         pushstring "Isis is not located on any map!\n"
+         pushstring "Iris is not located on any map!\n"
          add
          setlocal 9
          jump ofs72
@@ -1505,7 +1505,7 @@ package
          pushstring "Take this Helix Fragment!\n"
          pushstring "Legend says it is but one\n"
          add
-         pushstring "piece of Isis, the Godsnail!\n"
+         pushstring "piece of Iris, the Godsnail!\n"
          add
          setlocal 9
          jump ofs116
@@ -1515,7 +1515,7 @@ package
          add
          pushstring ", legend says the\n"
          add
-         pushstring "Shrine of Isis is somewhere\n"
+         pushstring "Shrine of Iris is somewhere\n"
          add
          pushstring "very close to Snail Town!!\n"
          add
@@ -1776,7 +1776,7 @@ package
          add
          pushstring ", search for the helix\n"
          add
-         pushstring "fragments!  Maybe Isis can\n"
+         pushstring "fragments!  Maybe Iris can\n"
          add
          pushstring "still restore Moon Snail!!\n"
          add
@@ -1832,7 +1832,7 @@ package
          ofs145:
          iffalse ofs146
          pushstring "I\'ve heard that the Shrine of\n"
-         pushstring "Isis is not marked on any map!\n"
+         pushstring "Iris is not marked on any map!\n"
          add
          pushstring "Have you found it yet?\n"
          add
@@ -1889,7 +1889,7 @@ package
          ofs151:
          iffalse ofs152
          pushstring "If only you had the power of\n"
-         pushstring "Isis!  She could restore his\n"
+         pushstring "Iris!  She could restore his\n"
          add
          pushstring "light once he\'s defeated!!\n"
          add
@@ -1908,7 +1908,7 @@ package
          not
          ofs153:
          iffalse ofs154
-         pushstring "Use the power of Isis, "
+         pushstring "Use the power of Iris, "
          getlocal3
          add
          pushstring "!\n"
@@ -2034,7 +2034,7 @@ package
          add
          pushstring "Fragments!  Once you have them\n"
          add
-         pushstring "all, find the Shrine of Isis!\n"
+         pushstring "all, find the Shrine of Iris!\n"
          add
          setlocal 9
          jump ofs164
@@ -2046,7 +2046,7 @@ package
          add
          pushstring "saved Sun Snail using the power\n"
          add
-         pushstring "of Isis!!\n"
+         pushstring "of Iris!!\n"
          add
          setlocal 9
          ofs164:
@@ -2121,7 +2121,7 @@ package
          pushstring "Hello, "
          getlocal3
          add
-         pushstring "!  I am Isis, the\n"
+         pushstring "!  I am Iris, the\n"
          add
          pushstring "Godsnail.  But without the Helix\n"
          add
@@ -2136,7 +2136,7 @@ package
          pushstring "Hello, "
          getlocal3
          add
-         pushstring "! I am Isis, the\n"
+         pushstring "! I am Iris, the\n"
          add
          pushstring "Godsnail. But with only "
          add
