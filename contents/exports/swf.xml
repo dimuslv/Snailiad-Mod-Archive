@@ -6,13 +6,13 @@
   <tags>
     <item actionScript3="true" hasMetadata="true" noCrossDomainCache="false" reserved1="false" reserved2="false" reserved3="0" type="FileAttributesTag" useDirectBlit="false" useGPU="false" useNetwork="true" />
     <item type="MetadataTag">
-      <xmlMetadata type="String"><![CDATA[<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:Description rdf:about='' xmlns:dc='http://purl.org/dc/elements/1.1'><dc:format>application/x-shockwave-flash</dc:format><dc:title>Adobe Flex 4 Application</dc:title><dc:description>http://www.adobe.com/products/flex</dc:description><dc:publisher>unknown</dc:publisher><dc:creator>unknown</dc:creator><dc:language>EN</dc:language><dc:date>Feb 13, 2021</dc:date></rdf:Description></rdf:RDF>]]></xmlMetadata>
+      <xmlMetadata type="String"><![CDATA[<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:Description rdf:about='' xmlns:dc='http://purl.org/dc/elements/1.1'><dc:format>application/x-shockwave-flash</dc:format><dc:title>Adobe Flex 4 Application</dc:title><dc:description>http://www.adobe.com/products/flex</dc:description><dc:publisher>unknown</dc:publisher><dc:creator>unknown</dc:creator><dc:language>EN</dc:language><dc:date>Mar 2, 2021</dc:date></rdf:Description></rdf:RDF>]]></xmlMetadata>
     </item>
     <item maxRecursionDepth="1000" scriptTimeoutSeconds="60" type="ScriptLimitsTag" />
     <item type="SetBackgroundColorTag">
       <backgroundColor blue="0" green="0" red="0" type="RGB" />
     </item>
-    <item buildHigh="0" buildLow="16076" compilationDateHigh="375" compilationDateLow="-1694950890" edition="6" majorVersion="4" minorVersion="1" productID="3" type="ProductInfoTag" />
+    <item buildHigh="0" buildLow="16076" compilationDateHigh="375" compilationDateLow="-201410688" edition="6" majorVersion="4" minorVersion="1" productID="3" type="ProductInfoTag" />
     <item name="Preloader" namedAnchor="false" type="FrameLabelTag" />
     <item fontAscent="12288" fontDescent="6144" fontFlagsANSI="false" fontFlagsBold="false" fontFlagsHasLayout="true" fontFlagsItalic="false" fontFlagsShiftJIS="false" fontFlagsSmallText="false" fontFlagsWideCodes="true" fontFlagsWideOffsets="false" fontID="1" fontLeading="0" fontName="system" type="DefineFont3Tag">
       <languageCode languageCode="0" type="LANGCODE" />
@@ -3256,8 +3256,8 @@
     <item soundData="" soundFormat="2" soundId="24" soundRate="3" soundSampleCount="1814896" soundSize="true" soundType="false" type="DefineSoundTag" />
     <item soundData="" soundFormat="2" soundId="25" soundRate="3" soundSampleCount="1058511" soundSize="true" soundType="false" type="DefineSoundTag" />
     <item soundData="" soundFormat="2" soundId="26" soundRate="3" soundSampleCount="2557995" soundSize="true" soundType="false" type="DefineSoundTag" />
-    <item soundData="" soundFormat="2" soundId="27" soundRate="3" soundSampleCount="2322670" soundSize="true" soundType="false" type="DefineSoundTag" />
-    <item soundData="" soundFormat="2" soundId="28" soundRate="3" soundSampleCount="3726105" soundSize="true" soundType="false" type="DefineSoundTag" />
+    <item soundData="" soundFormat="2" soundId="27" soundRate="3" soundSampleCount="3726105" soundSize="true" soundType="false" type="DefineSoundTag" />
+    <item soundData="" soundFormat="2" soundId="28" soundRate="3" soundSampleCount="2322670" soundSize="true" soundType="false" type="DefineSoundTag" />
     <item binaryData="" reserved="0" tag="29" type="DefineBinaryDataTag" />
     <item binaryData="" reserved="0" tag="30" type="DefineBinaryDataTag" />
     <item binaryData="" reserved="0" tag="31" type="DefineBinaryDataTag" />
@@ -8611,8 +8611,8 @@
         <item>carelia1loop2</item>
         <item>boss1loop</item>
         <item>lirata2loop</item>
-        <item>amastrida1loop</item>
         <item>moonsnail1loop</item>
+        <item>amastrida1loop</item>
         <item>mx.graphics.shaderClasses.LuminosityShader_ShaderClass</item>
         <item>mx.graphics.shaderClasses.SaturationShader_ShaderClass</item>
         <item>mx.graphics.shaderClasses.SoftLightShader_ShaderClass</item>
@@ -8811,7 +8811,7 @@
         <item>194</item>
         <item>23</item>
         <item>195</item>
-        <item>27</item>
+        <item>28</item>
         <item>47</item>
         <item>53</item>
         <item>196</item>
@@ -8895,7 +8895,7 @@
         <item>248</item>
         <item>249</item>
         <item>250</item>
-        <item>28</item>
+        <item>27</item>
         <item>251</item>
         <item>252</item>
         <item>253</item>

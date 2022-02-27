@@ -815,7 +815,7 @@ package com.newgrounds.components
          callproperty QName(PackageNamespace(""),"Object"), 1
          getproperty Multiname("uncaughtErrorEvents",[PrivateNamespace(null,"#FlashAd"),PackageNamespace(""),PrivateNamespace(null,"#FlashAd/1"),PackageNamespace("com.newgrounds.components"),PackageInternalNs("com.newgrounds.components"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("com.newgrounds.components:FlashAd"),StaticProtectedNs("com.newgrounds.components:FlashAd"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
          pushstring "uncaughtError"
-         newfunction 6917
+         newfunction 6919
          callpropvoid Multiname("addEventListener",[PrivateNamespace(null,"#FlashAd"),PackageNamespace(""),PrivateNamespace(null,"#FlashAd/1"),PackageNamespace("com.newgrounds.components"),PackageInternalNs("com.newgrounds.components"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("com.newgrounds.components:FlashAd"),StaticProtectedNs("com.newgrounds.components:FlashAd"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")]), 2
          ofs2:
          jump ofs3

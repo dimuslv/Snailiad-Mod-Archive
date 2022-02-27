@@ -12090,13 +12090,13 @@ package
          getproperty QName(PackageNamespace(""),"subscreen")
          getproperty QName(PackageNamespace(""),"helixSprite")
          pushfalse
-         setproperty Multiname("visible",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty QName(PackageNamespace(""),"visible")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"miniMap")
          getproperty QName(PackageNamespace(""),"subscreen")
          getproperty QName(PackageNamespace(""),"helixText")
          pushfalse
-         setproperty Multiname("visible",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty QName(PackageNamespace(""),"visible")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"miniMap")
          getproperty QName(PackageNamespace(""),"subscreen")
@@ -12106,7 +12106,7 @@ package
          getproperty QName(PrivateNamespace(null,"#Player"),"_helixFragments")
          callproperty QName(Namespace("http://adobe.com/AS3/2006/builtin"),"toString"), 0
          add
-         setproperty Multiname("text",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty QName(PackageNamespace(""),"text")
          jump ofs1
          ofs2:
          getlex QName(PackageNamespace(""),"PlayState")
@@ -12114,13 +12114,13 @@ package
          getproperty QName(PackageNamespace(""),"subscreen")
          getproperty QName(PackageNamespace(""),"helixSprite")
          pushtrue
-         setproperty Multiname("visible",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty QName(PackageNamespace(""),"visible")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"miniMap")
          getproperty QName(PackageNamespace(""),"subscreen")
          getproperty QName(PackageNamespace(""),"helixText")
          pushtrue
-         setproperty Multiname("visible",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty QName(PackageNamespace(""),"visible")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"miniMap")
          getproperty QName(PackageNamespace(""),"subscreen")
@@ -12130,7 +12130,7 @@ package
          getproperty QName(PrivateNamespace(null,"#Player"),"_helixFragments")
          callproperty QName(Namespace("http://adobe.com/AS3/2006/builtin"),"toString"), 0
          add
-         setproperty Multiname("text",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty QName(PackageNamespace(""),"text")
          ofs1:
          returnvoid
          end ; code

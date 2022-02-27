@@ -199,7 +199,7 @@ exports\shapes\97.svg -> 8.svg
 exports\shapes\99.svg -> 9.svg
 exports\shapes\100.svg -> 10.svg
 exports\shapes\101.svg -> 11.svg
-exports\sounds\27_amastrida1loop_Music_Area3Song.mp3 -> amastrida1loop_Music_Area3Song.mp3
+exports\sounds\28_amastrida1loop_Music_Area3Song.mp3 -> amastrida1loop_Music_Area3Song.mp3
 exports\sounds\44_bigboom1_Sfx_EnemyKilled.mp3 -> bigboom1_Sfx_EnemyKilled.mp3
 exports\sounds\51_bigboom2_Sfx_EnemyKilled2.mp3 -> bigboom2_Sfx_EnemyKilled2.mp3
 exports\sounds\56_bigboom3_Sfx_EnemyKilled3.mp3 -> bigboom3_Sfx_EnemyKilled3.mp3
@@ -231,7 +231,7 @@ exports\sounds\72_laser_Sfx_Laser1.mp3 -> laser_Sfx_Laser1.mp3
 exports\sounds\26_lirata2loop_Music_Area4Song.mp3 -> lirata2loop_Music_Area4Song.mp3
 exports\sounds\49_menubeep2_Sfx_MenuBeep2.mp3 -> menubeep2_Sfx_MenuBeep2.mp3
 exports\sounds\50_menubeep1_Sfx_MenuBeep1.mp3 -> menubeep1_Sfx_MenuBeep1.mp3
-exports\sounds\28_moonsnail1loop_Music_Boss2Song.mp3 -> moonsnail1loop_Music_Boss2Song.mp3
+exports\sounds\27_moonsnail1loop_Music_Boss2Song.mp3 -> moonsnail1loop_Music_Boss2Song.mp3
 exports\sounds\46_opendoor_Sfx_OpenDoor.mp3 -> opendoor_Sfx_OpenDoor.mp3
 exports\sounds\82_pickup3_Sfx_Pickup3.mp3 -> pickup3_Sfx_Pickup3.mp3
 exports\sounds\83_pickup2_Sfx_Pickup2.mp3 -> pickup2_Sfx_Pickup2.mp3

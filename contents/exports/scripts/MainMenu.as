@@ -1,6 +1,9 @@
  
 package
 {
+   import flash.events.Event;
+   import flash.net.URLLoader;
+   import flash.net.URLRequest;
    import flash.utils.clearInterval;
    import flash.utils.setInterval;
    import org.flixel.FlxG;
@@ -78,6 +81,8 @@ package
       public var sponsorMoreGames:SponsorMoreGames;
       
       public var jayIsGames:JayIsGames;
+      
+      public var xmlLoader:URLLoader;
       
       public var miniGame_right:Boolean = true;
       
@@ -236,6 +241,17 @@ package
          this.escToOptions = false;
          this.escToMain = false;
          this.makeEnterKeyGraphic();
+      }
+      
+      public function loadXML() : void
+      {
+         this.xmlLoader = new URLLoader();
+         this.xmlLoader.load(new URLRequest("test.xml"));
+         this.xmlLoader.addEventListener(Event.COMPLETE,this.handleMyData);
+      }
+      
+      public function handleMyData(param1:Event) : void
+      {
       }
       
       override public function destroy() : void

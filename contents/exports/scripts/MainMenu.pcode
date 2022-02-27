@@ -40,6 +40,9 @@
 
 package
 {
+   import flash.events.Event;
+   import flash.net.URLLoader;
+   import flash.net.URLRequest;
    import flash.utils.clearInterval;
    import flash.utils.setInterval;
    import org.flixel.FlxG;
@@ -214,6 +217,8 @@ package
       public var sponsorMoreGames:SponsorMoreGames;
       
       public var jayIsGames:JayIsGames;
+      
+      public var xmlLoader:URLLoader;
       
       public var miniGame_right:Boolean = true;
       
@@ -441,6 +446,70 @@ package
          initproperty QName(PackageNamespace(""),"escToMain")
          getlocal0
          callpropvoid QName(PackageNamespace(""),"makeEnterKeyGraphic"), 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function loadXML() : void
+      {
+         trait method QName(PackageNamespace(""),"loadXML")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 1
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         findpropstrict QName(PackageNamespace("flash.net"),"URLLoader")
+         constructprop QName(PackageNamespace("flash.net"),"URLLoader"), 0
+         setproperty QName(PackageNamespace(""),"xmlLoader")
+         getlocal0
+         getproperty QName(PackageNamespace(""),"xmlLoader")
+         findpropstrict QName(PackageNamespace("flash.net"),"URLRequest")
+         pushstring "test.xml"
+         constructprop QName(PackageNamespace("flash.net"),"URLRequest"), 1
+         callpropvoid QName(PackageNamespace(""),"load"), 1
+         getlocal0
+         getproperty QName(PackageNamespace(""),"xmlLoader")
+         getlex QName(PackageNamespace("flash.events"),"Event")
+         getproperty QName(PackageNamespace(""),"COMPLETE")
+         getlocal0
+         getproperty QName(PackageNamespace(""),"handleMyData")
+         callpropvoid QName(PackageNamespace(""),"addEventListener"), 2
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function handleMyData(param1:Event) : void
+      {
+         trait method QName(PackageNamespace(""),"handleMyData")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace("flash.events"),"Event")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 1
+         localcount 2
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal0
+         pushscope
          returnvoid
          end ; code
          end ; body
