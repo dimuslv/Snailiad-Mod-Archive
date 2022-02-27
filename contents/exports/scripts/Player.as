@@ -1392,8 +1392,7 @@ package
                      this.setGravityDir(GRAV_RIGHT);
                      this.setFaceDir(FACE_RWALL_UP,true);
                      y -= 11;
-                     x += 11;
-                     this.moveSnailCheckFullBounds(0,11);
+                     this.moveSnailCheckFullBounds(11,11);
                   }
             }
          }
