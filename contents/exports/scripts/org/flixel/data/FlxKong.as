@@ -22,7 +22,7 @@ package org.flixel.data
       public function init() : void
       {
          var _loc1_:Object = LoaderInfo(root.loaderInfo).parameters;
-         var _loc2_:String = _loc1_.api_path || "http://www.kongregate.com/flash/API_AS3_Local.swf";
+         var _loc2_:String = _loc1_.api_path || "https://www.kongregate.com/flash/API_AS3_Local.swf";
          var _loc3_:URLRequest = new URLRequest(_loc2_);
          var _loc4_:Loader;
          (_loc4_ = new Loader()).contentLoaderInfo.addEventListener(Event.COMPLETE,this.APILoaded);

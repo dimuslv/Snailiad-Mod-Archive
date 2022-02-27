@@ -2870,7 +2870,7 @@ package
          dup
          iftrue ofs0
          pop
-         pushstring "http://www.kongregate.com/flash/API_AS3_Local.swf"
+         pushstring "https://www.kongregate.com/flash/API_AS3_Local.swf"
          ofs0:
          coerce_s
          setlocal2

@@ -89,7 +89,7 @@ package com.newgrounds.components
          getlocal0
          pushscope
          findproperty QName(PrivateNamespace(null,"#FlashAd"),"DEBUG_AD_URL")
-         pushstring "http://www.ngads.com/adtest.php"
+         pushstring "https://www.ngads.com/adtest.php"
          initproperty QName(PrivateNamespace(null,"#FlashAd"),"DEBUG_AD_URL")
          findproperty QName(PrivateNamespace(null,"#FlashAd"),"_adResetTime")
          pushbyte 0
@@ -152,7 +152,7 @@ package com.newgrounds.components
          returnvoid
          ofs1:
          getlex QName(PackageNamespace("flash.system"),"Security")
-         pushstring "server.cpmstar.com"
+         pushstring ""
          callpropvoid QName(PackageNamespace(""),"allowDomain"), 1
          getlocal0
          findpropstrict QName(PackageNamespace("flash.display"),"Sprite")

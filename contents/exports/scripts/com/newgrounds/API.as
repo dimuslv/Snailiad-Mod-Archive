@@ -27,7 +27,7 @@ package com.newgrounds
       
       private static var do_echo:Boolean = false;
       
-      private static const GATEWAY_URL:String = "http://www.ngads.com/gateway_v2.php";
+      private static const GATEWAY_URL:String = "https://www.ngads.com/gateway_v2.php";
       
       private static const AD_TERMS_URL:String = "http://www.newgrounds.com/wiki/flashads/terms/";
       

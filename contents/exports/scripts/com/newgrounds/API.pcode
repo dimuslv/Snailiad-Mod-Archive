@@ -165,7 +165,7 @@ package com.newgrounds
          pushfalse
          setproperty QName(PrivateNamespace(null,"#API"),"do_echo")
          findproperty QName(PrivateNamespace(null,"#API"),"GATEWAY_URL")
-         pushstring "http://www.ngads.com/gateway_v2.php"
+         pushstring "https://www.ngads.com/gateway_v2.php"
          initproperty QName(PrivateNamespace(null,"#API"),"GATEWAY_URL")
          findproperty QName(PrivateNamespace(null,"#API"),"AD_TERMS_URL")
          pushstring "http://www.newgrounds.com/wiki/flashads/terms/"

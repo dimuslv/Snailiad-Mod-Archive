@@ -24,7 +24,7 @@ package com.newgrounds.components
    public class FlashAd extends Sprite
    {
       
-      private static const DEBUG_AD_URL:String = "http://www.ngads.com/adtest.php";
+      private static const DEBUG_AD_URL:String = "https://www.ngads.com/adtest.php";
       
       private static var _adResetTime:uint = 0;
       
@@ -52,7 +52,7 @@ package com.newgrounds.components
          {
             return;
          }
-         Security.allowDomain("server.cpmstar.com");
+         Security.allowDomain("");
          this._adRect = new Sprite();
          this._adRect.graphics.beginFill(0);
          this._adRect.graphics.moveTo(0,0);

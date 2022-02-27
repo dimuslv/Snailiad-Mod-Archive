@@ -740,7 +740,7 @@ package
       public function loadKongApi() : void
       {
          var _loc1_:Object = LoaderInfo(root.loaderInfo).parameters;
-         var _loc2_:String = _loc1_.kongregate_api_path || "http://www.kongregate.com/flash/API_AS3_Local.swf";
+         var _loc2_:String = _loc1_.kongregate_api_path || "https://www.kongregate.com/flash/API_AS3_Local.swf";
          Security.allowDomain(_loc2_);
          var _loc3_:URLRequest = new URLRequest(_loc2_);
          var _loc4_:Loader;
