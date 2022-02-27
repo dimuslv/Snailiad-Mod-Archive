@@ -1460,6 +1460,124 @@ package
          pushstring "bossesKilledFour"
          callproperty QName(PackageNamespace(""),"isVarTrue"), 1
          setproperty MultinameL([PrivateNamespace(null,"#Player"),PackageNamespace(""),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlocal0
+         getproperty QName(PackageNamespace(""),"bestMainTime")
+         getproperty QName(PackageNamespace(""),"value")
+         pushbyte 0
+         greaterthan
+         dup
+         iftrue ofs45
+         pop
+         getlocal0
+         getproperty QName(PackageNamespace(""),"bestHardTime")
+         getproperty QName(PackageNamespace(""),"value")
+         pushbyte 0
+         greaterthan
+         ofs45:
+         iffalse ofs46
+         getlex QName(PackageNamespace(""),"NgMedal")
+         callpropvoid QName(PackageNamespace(""),"unlockFirstOfFour"), 0
+         getlex QName(PackageNamespace(""),"NgMedal")
+         callpropvoid QName(PackageNamespace(""),"unlockStinkyToe"), 0
+         getlex QName(PackageNamespace(""),"NgMedal")
+         callpropvoid QName(PackageNamespace(""),"unlockGravityBattle"), 0
+         getlex QName(PackageNamespace(""),"NgMedal")
+         callpropvoid QName(PackageNamespace(""),"unlockVictory"), 0
+         ofs46:
+         getlocal0
+         getproperty QName(PackageNamespace(""),"bestHardTime")
+         getproperty QName(PackageNamespace(""),"value")
+         pushbyte 0
+         ifngt ofs47
+         getlex QName(PackageNamespace(""),"NgMedal")
+         callpropvoid QName(PackageNamespace(""),"unlockHomeless"), 0
+         ofs47:
+         getlocal0
+         getproperty QName(PackageNamespace(""),"bestInsaneTime")
+         getproperty QName(PackageNamespace(""),"value")
+         pushbyte 0
+         ifngt ofs48
+         getlex QName(PackageNamespace(""),"NgMedal")
+         callpropvoid QName(PackageNamespace(""),"unlockHappyEnding"), 0
+         ofs48:
+         getlocal0
+         getproperty QName(PackageNamespace(""),"bestBossRushTime")
+         getproperty QName(PackageNamespace(""),"value")
+         pushbyte 0
+         ifngt ofs49
+         getlex QName(PackageNamespace(""),"NgMedal")
+         callpropvoid QName(PackageNamespace(""),"unlockTheGauntlet"), 0
+         ofs49:
+         getlocal0
+         getproperty QName(PackageNamespace(""),"hasSeenIsis")
+         iffalse ofs50
+         getlex QName(PackageNamespace(""),"NgMedal")
+         callpropvoid QName(PackageNamespace(""),"unlockPilgrim"), 0
+         ofs50:
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"bossesKilled")
+         pushbyte 1
+         getproperty MultinameL([PrivateNamespace(null,"#Player"),PackageNamespace(""),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         convert_b
+         dup
+         iffalse ofs51
+         pop
+         getlocal0
+         getproperty QName(PackageNamespace(""),"_easyMode")
+         not
+         ofs51:
+         iffalse ofs52
+         getlex QName(PackageNamespace(""),"NgMedal")
+         callpropvoid QName(PackageNamespace(""),"unlockFirstOfFour"), 0
+         ofs52:
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"bossesKilled")
+         pushbyte 2
+         getproperty MultinameL([PrivateNamespace(null,"#Player"),PackageNamespace(""),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         convert_b
+         dup
+         iffalse ofs53
+         pop
+         getlocal0
+         getproperty QName(PackageNamespace(""),"_easyMode")
+         not
+         ofs53:
+         iffalse ofs54
+         getlex QName(PackageNamespace(""),"NgMedal")
+         callpropvoid QName(PackageNamespace(""),"unlockStinkyToe"), 0
+         ofs54:
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"bossesKilled")
+         pushbyte 3
+         getproperty MultinameL([PrivateNamespace(null,"#Player"),PackageNamespace(""),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         convert_b
+         dup
+         iffalse ofs55
+         pop
+         getlocal0
+         getproperty QName(PackageNamespace(""),"_easyMode")
+         not
+         ofs55:
+         iffalse ofs56
+         getlex QName(PackageNamespace(""),"NgMedal")
+         callpropvoid QName(PackageNamespace(""),"unlockGravityBattle"), 0
+         ofs56:
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"bossesKilled")
+         pushbyte 4
+         getproperty MultinameL([PrivateNamespace(null,"#Player"),PackageNamespace(""),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         convert_b
+         dup
+         iffalse ofs57
+         pop
+         getlocal0
+         getproperty QName(PackageNamespace(""),"_easyMode")
+         not
+         ofs57:
+         iffalse ofs58
+         getlex QName(PackageNamespace(""),"NgMedal")
+         callpropvoid QName(PackageNamespace(""),"unlockVictory"), 0
+         ofs58:
          findproperty QName(PackageNamespace(""),"MAP_KEY")
          getlocal3
          getproperty Multiname("mapKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
@@ -1550,7 +1668,7 @@ package
          initproperty QName(PackageNamespace(""),"y")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"startFromTown")
-         iffalse ofs45
+         iffalse ofs59
          findproperty QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"config")
@@ -1565,7 +1683,7 @@ package
          pushbyte 16
          multiply
          initproperty QName(PackageNamespace(""),"y")
-         ofs45:
+         ofs59:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"startFromTown")
          iftrue ofs1
@@ -1590,8 +1708,8 @@ package
          callpropvoid QName(PackageNamespace(""),"loadGraphic"), 5
          pushbyte 0
          setlocal 4
-         jump ofs46
-         ofs47:
+         jump ofs60
+         ofs61:
          label
          getlocal 4
          pushbyte 20
@@ -1600,7 +1718,7 @@ package
          setlocal 5
          getlocal0
          getproperty QName(PackageNamespace(""),"_slugMode")
-         iffalse ofs48
+         iffalse ofs62
          getlocal 5
          pushbyte 4
          pushbyte 20
@@ -1608,7 +1726,7 @@ package
          add
          convert_i
          setlocal 5
-         ofs48:
+         ofs62:
          findpropstrict QName(PackageNamespace(""),"addAnimation")
          pushstring "snail"
          getlocal 4
@@ -1775,10 +1893,10 @@ package
          pushtrue
          callpropvoid QName(PackageNamespace(""),"addAnimation"), 4
          inclocal_i 4
-         ofs46:
+         ofs60:
          getlocal 4
          pushbyte 4
-         iflt ofs47
+         iflt ofs61
          getlocal0
          getlex QName(PackageNamespace(""),"FACE_FLOOR_RIGHT")
          pushtrue

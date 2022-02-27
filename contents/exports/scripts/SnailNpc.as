@@ -751,7 +751,7 @@ package
                   _loc9_ = "zzzzz...  4,978,213...  zzzzz...\n" + "7,723,297...  zzzzz...  6,017,093...\n" + "zzzzz...  2,425,991...  zzzzz...\n";
                   break;
                case 50:
-                  _loc9_ = "If you\'re having trouble clinging\n" + "to walls, don\'t forget: you have\n" + "to press diagonally to cling on!\n";
+                  _loc9_ = "Have you tried hitting the\n" + Player.STRAFE_KEY + " key yet?  It lets you\n" + "shoot while holding still!\n";
             }
             PlayState.dialogue.start(_loc9_,_loc2_,_loc8_,this._speed,this._snailNum);
          }

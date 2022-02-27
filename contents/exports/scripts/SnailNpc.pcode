@@ -2538,10 +2538,13 @@ package
          jump ofs12
          ofs211:
          label
-         pushstring "If you\'re having trouble clinging\n"
-         pushstring "to walls, don\'t forget: you have\n"
+         pushstring "Have you tried hitting the\n"
+         getlex QName(PackageNamespace(""),"Player")
+         getproperty QName(PackageNamespace(""),"STRAFE_KEY")
          add
-         pushstring "to press diagonally to cling on!\n"
+         pushstring " key yet?  It lets you\n"
+         add
+         pushstring "shoot while holding still!\n"
          add
          setlocal 9
          jump ofs12

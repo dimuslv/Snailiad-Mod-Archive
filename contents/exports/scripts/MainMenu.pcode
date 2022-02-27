@@ -709,7 +709,7 @@ package
          setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs14:
          getlocal0
-         pushdouble 4.284481584E9
+         pushdouble 4.281335856E9
          initproperty QName(PackageNamespace(""),"bgColor")
          ofs13:
          getlocal1

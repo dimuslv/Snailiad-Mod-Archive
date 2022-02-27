@@ -34,8 +34,8 @@ Class IDs:
 32: NameUtil -
 33: IAssetLayoutFeatures -
 34: SaveKey -
-35: ScoreBoardPeriod -
-36: Score -
+35: Score -
+36: ScoreBoardPeriod -
 37: JSONEncoder -
 38: JSONDecoder -
 39: IntUtil -

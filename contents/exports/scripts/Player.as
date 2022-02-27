@@ -586,6 +586,45 @@ package
             PlayState.bossesKilled[2] = _loc2_.isVarTrue("bossesKilledTwo");
             PlayState.bossesKilled[3] = _loc2_.isVarTrue("bossesKilledThree");
             PlayState.bossesKilled[4] = _loc2_.isVarTrue("bossesKilledFour");
+            if(this.bestMainTime.value > 0 || this.bestHardTime.value > 0)
+            {
+               NgMedal.unlockFirstOfFour();
+               NgMedal.unlockStinkyToe();
+               NgMedal.unlockGravityBattle();
+               NgMedal.unlockVictory();
+            }
+            if(this.bestHardTime.value > 0)
+            {
+               NgMedal.unlockHomeless();
+            }
+            if(this.bestInsaneTime.value > 0)
+            {
+               NgMedal.unlockHappyEnding();
+            }
+            if(this.bestBossRushTime.value > 0)
+            {
+               NgMedal.unlockTheGauntlet();
+            }
+            if(this.hasSeenIsis)
+            {
+               NgMedal.unlockPilgrim();
+            }
+            if(PlayState.bossesKilled[1] && !this._easyMode)
+            {
+               NgMedal.unlockFirstOfFour();
+            }
+            if(PlayState.bossesKilled[2] && !this._easyMode)
+            {
+               NgMedal.unlockStinkyToe();
+            }
+            if(PlayState.bossesKilled[3] && !this._easyMode)
+            {
+               NgMedal.unlockGravityBattle();
+            }
+            if(PlayState.bossesKilled[4] && !this._easyMode)
+            {
+               NgMedal.unlockVictory();
+            }
             MAP_KEY = _loc3_.mapKey;
             JUMP_KEY = _loc3_.jumpKey;
             SHOOT_KEY = _loc3_.shootKey;

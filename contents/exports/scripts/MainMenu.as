@@ -298,7 +298,7 @@ package
             {
                this.hasEnding[1] = true;
             }
-            this.bgColor = 4284481584;
+            this.bgColor = 4281335856;
          }
          if(_loc1_.xml.vars && _loc1_.isVarTrue("hasWonHardMode"))
          {

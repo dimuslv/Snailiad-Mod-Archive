@@ -94,9 +94,9 @@ Class IDs:
 92: PlayerBulletGroups -
 93: MainMenu -
 94: Player -
-95: AiTriggerPool -
-96: SnowLayer -
-97: ItemRateHud -
+95: SnowLayer -
+96: ItemRateHud -
+97: AiTriggerPool -
 98: UniqueBlocks -
 99: SaveData -
 100: Configurable -
@@ -109,8 +109,8 @@ Class IDs:
 107: Boss4BulletGroups -
 108: NgMedal 0
 109: Music -
-110: Npc -
-111: EnemyBullet -
+110: EnemyBullet -
+111: Npc -
 112: DamageNumberPool -
 113: Dialogue -
 114: StarLayer -
@@ -263,8 +263,8 @@ Class IDs:
 261: EndingGroup -
 262: SponsorMoreGames -
 263: Sfx -
-264: CipherInt 0
-265: ShadowNumber 0
+264: ShadowNumber 0
+265: CipherInt 0
 266: CheckBool 0
 267: Art -
 268: Snow -
@@ -290,14 +290,14 @@ Class IDs:
 288: DamageNumber -
 289: Star -
 290: WorldMap_WorldMapSkyTxt 0
-291: SuperUniqueItem -
-292: GravJump 0
-293: EnemyKurage 0
+291: EnemyKurage 0
+292: SuperUniqueItem -
+293: GravJump -
 294: EnemyBat 0
 295: WorldMap_WorldMapFgTxt 0
 296: Boss3 0
 297: Boss4 -
-298: Boss1 0
+298: Boss1 -
 299: Boss2 -
 300: Fire 0
 301: EnemySpikey2 0
@@ -305,7 +305,7 @@ Class IDs:
 303: SnailNpc 0
 304: EnemyDandelion -
 305: Grass 0
-306: IceSnail 0
+306: IceSnail -
 307: EnemyFireball 0
 308: Smoke 0
 309: EnemyBalloonGenerator 0
@@ -314,7 +314,7 @@ Class IDs:
 312: EnemySeahorse 0
 313: EnemyDandelionGenerator 0
 314: UniqueItem -
-315: HelixFragment 0
+315: HelixFragment -
 316: EnemyCannonBottom2 -
 317: EnemyDrone 0
 318: FlxTilemap -
@@ -324,50 +324,50 @@ Class IDs:
 322: Boss1Rush -
 323: Platform5 0
 324: Platform4 0
-325: ShellShield 0
+325: ShellShield -
 326: EnemyBird 0
 327: Boss4Rush -
 328: EnemySpikey 0
 329: SavePoint 0
 330: Boss2Rush -
 331: GiantBlock1 0
-332: IceSpikeTop 0
-333: Devastator 0
-334: EnemyFireball2 0
+332: IceSpikeTop -
+333: Devastator -
+334: EnemyFireball2 -
 335: EnemyBird2Generator -
-336: EnemyMoth 0
-337: EnemyFloatSpike2 0
-338: Boss3Rush -
-339: EnemyTallfish2 0
+336: EnemyMoth -
+337: EnemyFloatSpike2 -
+338: EnemyTallfish2 -
+339: Boss3Rush -
 340: EnemyCannonLeft -
 341: Muck -
 342: WorldMap_WorldMapBgTxt 0
-343: EnemyPincer2 0
-344: IceSpike 0
-345: IceSpikeLeft 0
-346: GravityShock 0
-347: EnemyGravTurtle 0
-348: EnemyBlob 0
-349: HiJump 0
-350: EnemyBirdGenerator 0
-351: Gun3 0
-352: Gun2 0
-353: Door 0
-354: Gun1 0
-355: HeartContainer 0
-356: EnemyGear 0
-357: Breakable 0
+343: EnemyPincer2 -
+344: IceSpike -
+345: IceSpikeLeft -
+346: GravityShock -
+347: EnemyGravTurtle -
+348: EnemyBlob -
+349: HiJump -
+350: EnemyBirdGenerator -
+351: Gun3 -
+352: Gun2 -
+353: Door -
+354: HeartContainer -
+355: Gun1 -
+356: EnemyGear -
+357: Breakable -
 358: EnemySnake3 -
-359: EnemyCannonBottom -
-360: Platform4b -
-361: EnemySnake2 -
+359: EnemySnake2 -
+360: EnemyCannonBottom -
+361: Platform4b -
 362: EnemyTallfish -
 363: EnemyCannonTop -
 364: EnemyCannonTop2 -
 365: EnemyGravTurtle2 -
 366: TurtleNpc -
-367: PowerGrass -
-368: Platform5b -
+367: Platform5b -
+368: PowerGrass -
 369: WorldMap_WorldMapSpTxt 0
 370: Step -
 371: EnemyCannonLeft2 -
@@ -413,8 +413,8 @@ Class IDs:
 411: EnemyBulletLaser -
 412: EnemyBulletFire -
 413: EnemyBulletRotaryPea -
-414: Boss1Boomerang -
-415: EnemyBulletSpikeBall2 -
+414: EnemyBulletSpikeBall2 -
+415: Boss1Boomerang -
 416: EnemyBulletPea -
 417: Fonts_normalFont -
 418: PropertyChangeEventKind -
@@ -505,8 +505,8 @@ Class IDs:
 503: Sfx_PongBounce -
 504: Sfx_Laser1 -
 505: Sfx_Cannon2 -
-506: Sfx_CloseDoor -
-507: Sfx_Cannon1 -
+506: Sfx_Cannon1 -
+507: Sfx_CloseDoor -
 508: Sfx_Jingle3 -
 509: Sfx_Shot3b -
 510: Sfx_Jingle4 -
@@ -575,11 +575,11 @@ Class IDs:
 573: Art_EnemyBulletLaser -
 574: Art_EnemyDrone -
 575: Art_EnemyCannonLeft -
-576: Art_Platform5b -
-577: Art_Boss2RushFoot -
+576: Art_Boss2RushFoot -
+577: Art_Platform5b -
 578: Art_EnemyCannonBottom2 -
-579: Art_DoorHoriz -
-580: Art_SavePoint -
+579: Art_SavePoint -
+580: Art_DoorHoriz -
 581: Art_IceSpikeTop -
 582: Art_EnemyCannon2 -
 583: Art_MiniMapSheet -
@@ -601,12 +601,12 @@ Class IDs:
 599: Art_ItemRapidFire -
 600: Art_Boss2Foot -
 601: Art_ItemGravityShock -
-602: Art_EnemyBulletDonut -
-603: Art_EnemyKitty2 -
+602: Art_EnemyKitty2 -
+603: Art_EnemyBulletDonut -
 604: Art_EnemySpikey -
 605: Art_Boss4SecondForm -
-606: Art_EnemyBlob -
-607: Art_GiantBlock1 -
+606: Art_GiantBlock1 -
+607: Art_EnemyBlob -
 608: Art_Subscreen -
 609: Art_EnemySpider2 -
 610: Art_ItemHeartContainer -
@@ -678,8 +678,8 @@ Class IDs:
 676: Art_EnemyBird -
 677: Art_Nom -
 678: Art_EndingPicture2 -
-679: Art_EnemySeahorse -
-680: Art_EndingPicture1 -
+679: Art_EndingPicture1 -
+680: Art_EnemySeahorse -
 681: Art_EnemyKurage -
 682: Art_IceSpike -
 683: Art_EnemyBat -
@@ -688,8 +688,8 @@ Class IDs:
 686: Art_EndingPicture4 -
 687: Art_EndingPicture3 -
 688: Art_IceSpikeLeft -
-689: Art_EnemyGravTurtle -
-690: Art_EndingPicture5 -
+689: Art_EndingPicture5 -
+690: Art_EnemyGravTurtle -
 691: Base64Decoder -
 692: Base64Encoder -
 693: DustRing -
@@ -702,7 +702,7 @@ Class IDs:
 700: Boss1Eyes -
 701: Boss1Hand -
 702: Boss2Eye -
-703: Boss2Foot 0
+703: Boss2Foot -
 704: Nom -
 705: EnemyBalloon -
 706: EnemyCannon2 -
@@ -714,8 +714,8 @@ Class IDs:
 712: Boss2RushFoot -
 713: Boss2RushEye -
 714: EnemyBird2 -
-715: Boss3RushShield -
-716: Boss3RushSpawn -
+715: Boss3RushSpawn -
+716: Boss3RushShield -
 717: EnemyCannon -
 718: PowerNom -
 719: HelixHud -
@@ -798,8 +798,8 @@ PrivateNamespace IDs:
 25: PlayerBulletGroups
 26: MainMenu
 27: Player
-28: AiTriggerPool
-29: SnowLayer
+28: SnowLayer
+29: AiTriggerPool
 30: Configurable
 31: SplashLayer
 32: Enemy
@@ -846,15 +846,15 @@ PrivateNamespace IDs:
 73: TitleText
 74: MainMenuCursor
 75: SponsorMoreGames
-76: CipherInt
-77: ShadowNumber
+76: ShadowNumber
+77: CipherInt
 78: CheckBool
 79: Snow
 80: Boss4Bullet4
 81: DamageNumber
-82: SuperUniqueItem
-83: GravJump
-84: EnemyKurage
+82: EnemyKurage
+83: SuperUniqueItem
+84: GravJump
 85: EnemyBat
 86: Boss3
 87: Boss4
@@ -892,8 +892,8 @@ PrivateNamespace IDs:
 119: EnemyFireball2
 120: EnemyBird2Generator
 121: EnemyFloatSpike2
-122: Boss3Rush
-123: EnemyTallfish2
+122: EnemyTallfish2
+123: Boss3Rush
 124: EnemyCannonLeft
 125: Muck
 126: EnemyPincer2
@@ -906,16 +906,16 @@ PrivateNamespace IDs:
 133: EnemyGear
 134: Breakable
 135: EnemySnake3
-136: EnemyCannonBottom
-137: Platform4b
-138: EnemySnake2
+136: EnemySnake2
+137: EnemyCannonBottom
+138: Platform4b
 139: EnemyTallfish
 140: EnemyCannonTop
 141: EnemyCannonTop2
 142: EnemyGravTurtle2
 143: TurtleNpc
-144: PowerGrass
-145: Platform5b
+144: Platform5b
+145: PowerGrass
 146: Step
 147: EnemyCannonLeft2
 148: EnemySnelk
@@ -1064,8 +1064,8 @@ PrivateNamespace IDs:
 291: HiJump
 292: Gun3
 293: Gun2
-294: Gun1
-295: HeartContainer
+294: HeartContainer
+295: Gun1
 296: EnemySpike
 297: Armor
 298: TurboFire
@@ -1083,8 +1083,8 @@ PrivateNamespace IDs:
 310: EnemyBulletDonut
 311: EnemyBulletLaser
 312: EnemyBulletFire
-313: Boss1Boomerang
-314: EnemyBulletSpikeBall2
+313: EnemyBulletSpikeBall2
+314: Boss1Boomerang
 315: EnemyBulletPea
 316: Zoom
 317: ModuleManager
@@ -1157,8 +1157,8 @@ PrivateNamespace IDs:
 384: PlayerBulletGroups/1
 385: MainMenu/1
 386: Player/1
-387: AiTriggerPool/1
-388: SnowLayer/1
+387: SnowLayer/1
+388: AiTriggerPool/1
 389: UniqueBlocks/1
 390: UniqueBlocks/2
 391: SaveData/1
@@ -1206,8 +1206,8 @@ PrivateNamespace IDs:
 433: PlayerBullet3/1
 434: PlayerBullet6/1
 435: TitleText/1
-436: CipherInt/1
-437: ShadowNumber/1
+436: ShadowNumber/1
+437: CipherInt/1
 438: CheckBool/1
 439: Cipher/1
 440: Boss4Bullet6/1
