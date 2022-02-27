@@ -354,7 +354,10 @@ package
       
       override public function update() : void
       {
-         this.updateTimer();
+         if(PlayState.showTimer)
+         {
+            this.updateTimer();
+         }
          if(PlayState.realState != PlayState.STATE_SUBSCREEN)
          {
             this.hide();

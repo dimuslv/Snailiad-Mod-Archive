@@ -280,19 +280,30 @@ package
          ofs1:
          findproperty QName(PackageNamespace(""),"text")
          getlex QName(PackageNamespace(""),"text")
-         pushstring "  GAME SAVED."
+         pushstring "  "
+         add
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"showSplash")
+         iftrue ofs4
+         pushstring "GAME SAVED."
+         jump ofs5
+         ofs4:
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"player")
+         callproperty QName(PackageNamespace(""),"getGameTimeExact"), 0
+         ofs5:
          add
          initproperty QName(PackageNamespace(""),"text")
          pushbyte 0
          convert_b
          dup
-         iffalse ofs4
+         iffalse ofs6
          pop
          getlex QName(PackageNamespace(""),"PlayState")
          pushbyte 4
          callproperty QName(PackageNamespace(""),"isBossDead"), 1
          convert_b
-         ofs4:
+         ofs6:
          iffalse ofs3
          findproperty QName(PackageNamespace(""),"text")
          getlex QName(PackageNamespace(""),"text")

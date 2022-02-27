@@ -1038,181 +1038,197 @@ package
          setproperty Multiname("hideTab",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs20:
          getlocal2
-         pushstring "hideMiniMap"
+         pushstring "showTimer"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs21
          getlocal3
          pushfalse
-         setproperty Multiname("hideMiniMap",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty Multiname("showTimer",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs21:
          getlocal2
-         pushstring "hasGoodEnding"
+         pushstring "showSplash"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs22
          getlocal3
          pushfalse
-         setproperty Multiname("hasGoodEnding",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty Multiname("showSplash",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs22:
          getlocal2
-         pushstring "mapKey"
+         pushstring "hideMiniMap"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs23
          getlocal3
-         getlex QName(PackageNamespace(""),"DEFAULT_MAP_KEY")
-         setproperty Multiname("mapKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         pushfalse
+         setproperty Multiname("hideMiniMap",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs23:
          getlocal2
-         pushstring "jumpKey"
+         pushstring "hasGoodEnding"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs24
          getlocal3
-         getlex QName(PackageNamespace(""),"DEFAULT_JUMP_KEY")
-         setproperty Multiname("jumpKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         pushfalse
+         setproperty Multiname("hasGoodEnding",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs24:
          getlocal2
-         pushstring "shootKey"
+         pushstring "mapKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs25
          getlocal3
-         getlex QName(PackageNamespace(""),"DEFAULT_SHOOT_KEY")
-         setproperty Multiname("shootKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"DEFAULT_MAP_KEY")
+         setproperty Multiname("mapKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs25:
          getlocal2
-         pushstring "strafeKey"
+         pushstring "jumpKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs26
          getlocal3
-         getlex QName(PackageNamespace(""),"DEFAULT_STRAFE_KEY")
-         setproperty Multiname("strafeKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"DEFAULT_JUMP_KEY")
+         setproperty Multiname("jumpKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs26:
          getlocal2
-         pushstring "upKey"
+         pushstring "shootKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs27
          getlocal3
-         getlex QName(PackageNamespace(""),"DEFAULT_UP_KEY")
-         setproperty Multiname("upKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"DEFAULT_SHOOT_KEY")
+         setproperty Multiname("shootKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs27:
          getlocal2
-         pushstring "leftKey"
+         pushstring "strafeKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs28
          getlocal3
-         getlex QName(PackageNamespace(""),"DEFAULT_LEFT_KEY")
-         setproperty Multiname("leftKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"DEFAULT_STRAFE_KEY")
+         setproperty Multiname("strafeKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs28:
          getlocal2
-         pushstring "downKey"
+         pushstring "upKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs29
          getlocal3
-         getlex QName(PackageNamespace(""),"DEFAULT_DOWN_KEY")
-         setproperty Multiname("downKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"DEFAULT_UP_KEY")
+         setproperty Multiname("upKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs29:
          getlocal2
-         pushstring "rightKey"
+         pushstring "leftKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs30
          getlocal3
-         getlex QName(PackageNamespace(""),"DEFAULT_RIGHT_KEY")
-         setproperty Multiname("rightKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"DEFAULT_LEFT_KEY")
+         setproperty Multiname("leftKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs30:
          getlocal2
-         pushstring "jumpAltKey"
+         pushstring "downKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs31
          getlocal3
-         getlex QName(PackageNamespace(""),"DEFAULT_ALT_JUMP_KEY")
-         setproperty Multiname("jumpAltKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"DEFAULT_DOWN_KEY")
+         setproperty Multiname("downKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs31:
          getlocal2
-         pushstring "shootAltKey"
+         pushstring "rightKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs32
          getlocal3
-         getlex QName(PackageNamespace(""),"DEFAULT_ALT_SHOOT_KEY")
-         setproperty Multiname("shootAltKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"DEFAULT_RIGHT_KEY")
+         setproperty Multiname("rightKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs32:
          getlocal2
-         pushstring "strafeAltKey"
+         pushstring "jumpAltKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs33
          getlocal3
-         getlex QName(PackageNamespace(""),"DEFAULT_ALT_STRAFE_KEY")
-         setproperty Multiname("strafeAltKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"DEFAULT_ALT_JUMP_KEY")
+         setproperty Multiname("jumpAltKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs33:
          getlocal2
-         pushstring "upAltKey"
+         pushstring "shootAltKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs34
          getlocal3
-         getlex QName(PackageNamespace(""),"DEFAULT_ALT_UP_KEY")
-         setproperty Multiname("upAltKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"DEFAULT_ALT_SHOOT_KEY")
+         setproperty Multiname("shootAltKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs34:
          getlocal2
-         pushstring "leftAltKey"
+         pushstring "strafeAltKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs35
          getlocal3
-         getlex QName(PackageNamespace(""),"DEFAULT_ALT_LEFT_KEY")
-         setproperty Multiname("leftAltKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"DEFAULT_ALT_STRAFE_KEY")
+         setproperty Multiname("strafeAltKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs35:
          getlocal2
-         pushstring "downAltKey"
+         pushstring "upAltKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs36
          getlocal3
-         getlex QName(PackageNamespace(""),"DEFAULT_ALT_DOWN_KEY")
-         setproperty Multiname("downAltKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"DEFAULT_ALT_UP_KEY")
+         setproperty Multiname("upAltKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs36:
          getlocal2
-         pushstring "rightAltKey"
+         pushstring "leftAltKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs37
          getlocal3
-         getlex QName(PackageNamespace(""),"DEFAULT_ALT_RIGHT_KEY")
-         setproperty Multiname("rightAltKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"DEFAULT_ALT_LEFT_KEY")
+         setproperty Multiname("leftAltKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs37:
          getlocal2
-         pushstring "weap1Key"
+         pushstring "downAltKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs38
          getlocal3
-         getlex QName(PackageNamespace(""),"DEFAULT_WEAPON_1_KEY")
-         setproperty Multiname("weap1Key",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"DEFAULT_ALT_DOWN_KEY")
+         setproperty Multiname("downAltKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs38:
          getlocal2
-         pushstring "weap2Key"
+         pushstring "rightAltKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs39
          getlocal3
-         getlex QName(PackageNamespace(""),"DEFAULT_WEAPON_2_KEY")
-         setproperty Multiname("weap2Key",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"DEFAULT_ALT_RIGHT_KEY")
+         setproperty Multiname("rightAltKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs39:
          getlocal2
-         pushstring "weap3Key"
+         pushstring "weap1Key"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs40
          getlocal3
-         getlex QName(PackageNamespace(""),"DEFAULT_WEAPON_3_KEY")
-         setproperty Multiname("weap3Key",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"DEFAULT_WEAPON_1_KEY")
+         setproperty Multiname("weap1Key",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs40:
          getlocal2
-         pushstring "weapNextKey"
+         pushstring "weap2Key"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs41
          getlocal3
-         getlex QName(PackageNamespace(""),"DEFAULT_WEAPON_NEXT_KEY")
-         setproperty Multiname("weapNextKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"DEFAULT_WEAPON_2_KEY")
+         setproperty Multiname("weap2Key",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs41:
          getlocal2
-         pushstring "weapPrevKey"
+         pushstring "weap3Key"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iftrue ofs42
          getlocal3
+         getlex QName(PackageNamespace(""),"DEFAULT_WEAPON_3_KEY")
+         setproperty Multiname("weap3Key",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         ofs42:
+         getlocal2
+         pushstring "weapNextKey"
+         callproperty QName(PackageNamespace(""),"isVarSet"), 1
+         iftrue ofs43
+         getlocal3
+         getlex QName(PackageNamespace(""),"DEFAULT_WEAPON_NEXT_KEY")
+         setproperty Multiname("weapNextKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         ofs43:
+         getlocal2
+         pushstring "weapPrevKey"
+         callproperty QName(PackageNamespace(""),"isVarSet"), 1
+         iftrue ofs44
+         getlocal3
          getlex QName(PackageNamespace(""),"DEFAULT_WEAPON_PREV_KEY")
          setproperty Multiname("weapPrevKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         ofs42:
+         ofs44:
          getlocal0
          getlocal2
          pushstring "hasWonGame"
@@ -1245,6 +1261,16 @@ package
          setproperty QName(PackageNamespace(""),"hideTab")
          getlex QName(PackageNamespace(""),"PlayState")
          getlocal2
+         pushstring "showTimer"
+         callproperty QName(PackageNamespace(""),"isVarTrue"), 1
+         setproperty QName(PackageNamespace(""),"showTimer")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getlocal2
+         pushstring "showSplash"
+         callproperty QName(PackageNamespace(""),"isVarTrue"), 1
+         setproperty QName(PackageNamespace(""),"showSplash")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getlocal2
          pushstring "hideMiniMap"
          callproperty QName(PackageNamespace(""),"isVarTrue"), 1
          setproperty QName(PackageNamespace(""),"hideMiniMap")
@@ -1273,16 +1299,16 @@ package
          getproperty QName(PackageNamespace(""),"_hardMode")
          convert_b
          dup
-         iffalse ofs43
+         iffalse ofs45
          pop
          getlocal0
          getproperty QName(PackageNamespace(""),"_insaneMode")
          not
-         ofs43:
+         ofs45:
          initproperty QName(PackageNamespace(""),"_slugMode")
          getlocal0
          getproperty QName(PackageNamespace(""),"_slugMode")
-         iffalse ofs44
+         iffalse ofs46
          getlocal0
          getproperty QName(PrivateNamespace(null,"#Player"),"WEAPON_TIMEOUTS")
          pushbyte 0
@@ -1298,18 +1324,18 @@ package
          pushbyte 2
          pushdouble 0.13
          setproperty MultinameL([PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         ofs44:
+         ofs46:
          getlocal2
          pushstring "maxHp"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
-         iftrue ofs45
+         iftrue ofs47
          getlocal3
          getlex QName(PackageNamespace(""),"STARTING_MAX_HEARTS")
          getlocal0
          callproperty QName(PackageNamespace(""),"hpPerHeart"), 0
          multiply
          setproperty Multiname("maxHp",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         ofs45:
+         ofs47:
          getlocal0
          getlocal3
          getproperty Multiname("maxHp",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
@@ -1363,16 +1389,16 @@ package
          getlocal2
          pushstring "toggleFire"
          callproperty QName(PackageNamespace(""),"isVarTrue"), 1
-         iffalse ofs46
+         iffalse ofs48
          findproperty QName(PackageNamespace(""),"firingMode")
          getlex QName(PackageNamespace(""),"FIRING_MODE_TOGGLE")
          setproperty QName(PackageNamespace(""),"firingMode")
-         jump ofs47
-         ofs46:
+         jump ofs49
+         ofs48:
          findproperty QName(PackageNamespace(""),"firingMode")
          getlex QName(PackageNamespace(""),"FIRING_MODE_NORMAL")
          setproperty QName(PackageNamespace(""),"firingMode")
-         ofs47:
+         ofs49:
          getlocal0
          getlocal2
          pushstring "hasHighJump"
@@ -1448,14 +1474,14 @@ package
          pushbyte 0
          greaterthan
          dup
-         iftrue ofs48
+         iftrue ofs50
          pop
          getlocal0
          getproperty QName(PackageNamespace(""),"bestHardTime")
          pushbyte 0
          greaterthan
-         ofs48:
-         iffalse ofs49
+         ofs50:
+         iffalse ofs51
          getlex QName(PackageNamespace(""),"NgMedal")
          callpropvoid QName(PackageNamespace(""),"unlockFirstOfFour"), 0
          getlex QName(PackageNamespace(""),"NgMedal")
@@ -1464,53 +1490,37 @@ package
          callpropvoid QName(PackageNamespace(""),"unlockGravityBattle"), 0
          getlex QName(PackageNamespace(""),"NgMedal")
          callpropvoid QName(PackageNamespace(""),"unlockVictory"), 0
-         ofs49:
+         ofs51:
          getlocal0
          getproperty QName(PackageNamespace(""),"bestHardTime")
          pushbyte 0
-         ifngt ofs50
+         ifngt ofs52
          getlex QName(PackageNamespace(""),"NgMedal")
          callpropvoid QName(PackageNamespace(""),"unlockHomeless"), 0
-         ofs50:
+         ofs52:
          getlocal0
          getproperty QName(PackageNamespace(""),"bestInsaneTime")
          pushbyte 0
-         ifngt ofs51
+         ifngt ofs53
          getlex QName(PackageNamespace(""),"NgMedal")
          callpropvoid QName(PackageNamespace(""),"unlockHappyEnding"), 0
-         ofs51:
+         ofs53:
          getlocal0
          getproperty QName(PackageNamespace(""),"bestBossRushTime")
          pushbyte 0
-         ifngt ofs52
+         ifngt ofs54
          getlex QName(PackageNamespace(""),"NgMedal")
          callpropvoid QName(PackageNamespace(""),"unlockTheGauntlet"), 0
-         ofs52:
+         ofs54:
          getlocal0
          getproperty QName(PackageNamespace(""),"hasSeenIsis")
-         iffalse ofs53
-         getlex QName(PackageNamespace(""),"NgMedal")
-         callpropvoid QName(PackageNamespace(""),"unlockPilgrim"), 0
-         ofs53:
-         getlex QName(PackageNamespace(""),"PlayState")
-         getproperty QName(PackageNamespace(""),"bossesKilled")
-         pushbyte 1
-         getproperty MultinameL([PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         convert_b
-         dup
-         iffalse ofs54
-         pop
-         getlocal0
-         getproperty QName(PackageNamespace(""),"_easyMode")
-         not
-         ofs54:
          iffalse ofs55
          getlex QName(PackageNamespace(""),"NgMedal")
-         callpropvoid QName(PackageNamespace(""),"unlockFirstOfFour"), 0
+         callpropvoid QName(PackageNamespace(""),"unlockPilgrim"), 0
          ofs55:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"bossesKilled")
-         pushbyte 2
+         pushbyte 1
          getproperty MultinameL([PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          dup
@@ -1522,11 +1532,11 @@ package
          ofs56:
          iffalse ofs57
          getlex QName(PackageNamespace(""),"NgMedal")
-         callpropvoid QName(PackageNamespace(""),"unlockStinkyToe"), 0
+         callpropvoid QName(PackageNamespace(""),"unlockFirstOfFour"), 0
          ofs57:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"bossesKilled")
-         pushbyte 3
+         pushbyte 2
          getproperty MultinameL([PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          dup
@@ -1538,11 +1548,11 @@ package
          ofs58:
          iffalse ofs59
          getlex QName(PackageNamespace(""),"NgMedal")
-         callpropvoid QName(PackageNamespace(""),"unlockGravityBattle"), 0
+         callpropvoid QName(PackageNamespace(""),"unlockStinkyToe"), 0
          ofs59:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"bossesKilled")
-         pushbyte 4
+         pushbyte 3
          getproperty MultinameL([PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          dup
@@ -1554,8 +1564,24 @@ package
          ofs60:
          iffalse ofs61
          getlex QName(PackageNamespace(""),"NgMedal")
-         callpropvoid QName(PackageNamespace(""),"unlockVictory"), 0
+         callpropvoid QName(PackageNamespace(""),"unlockGravityBattle"), 0
          ofs61:
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"bossesKilled")
+         pushbyte 4
+         getproperty MultinameL([PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         convert_b
+         dup
+         iffalse ofs62
+         pop
+         getlocal0
+         getproperty QName(PackageNamespace(""),"_easyMode")
+         not
+         ofs62:
+         iffalse ofs63
+         getlex QName(PackageNamespace(""),"NgMedal")
+         callpropvoid QName(PackageNamespace(""),"unlockVictory"), 0
+         ofs63:
          findproperty QName(PackageNamespace(""),"MAP_KEY")
          getlocal3
          getproperty Multiname("mapKey",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
@@ -1646,7 +1672,7 @@ package
          initproperty QName(PackageNamespace(""),"y")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"startFromTown")
-         iffalse ofs62
+         iffalse ofs64
          findproperty QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"config")
@@ -1661,7 +1687,7 @@ package
          pushbyte 16
          multiply
          initproperty QName(PackageNamespace(""),"y")
-         ofs62:
+         ofs64:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"startFromTown")
          iftrue ofs1
@@ -1686,8 +1712,8 @@ package
          callpropvoid QName(PackageNamespace(""),"loadGraphic"), 5
          pushbyte 0
          setlocal 4
-         jump ofs63
-         ofs64:
+         jump ofs65
+         ofs66:
          label
          getlocal 4
          pushbyte 20
@@ -1696,7 +1722,7 @@ package
          setlocal 5
          getlocal0
          getproperty QName(PackageNamespace(""),"_slugMode")
-         iffalse ofs65
+         iffalse ofs67
          getlocal 5
          pushbyte 4
          pushbyte 20
@@ -1704,7 +1730,7 @@ package
          add
          convert_i
          setlocal 5
-         ofs65:
+         ofs67:
          findpropstrict QName(PackageNamespace(""),"addAnimation")
          pushstring "snail"
          getlocal 4
@@ -1871,10 +1897,10 @@ package
          pushtrue
          callpropvoid QName(PackageNamespace(""),"addAnimation"), 4
          inclocal_i 4
-         ofs63:
+         ofs65:
          getlocal 4
          pushbyte 4
-         iflt ofs64
+         iflt ofs66
          getlocal0
          getlex QName(PackageNamespace(""),"FACE_FLOOR_RIGHT")
          pushtrue
@@ -11174,6 +11200,24 @@ package
          construct 1
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
          ofs11:
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"showTimer")
+         iffalse ofs12
+         getlocal 4
+         getlex QName(PackageNamespace(""),"XML")
+         pushstring "<showTimer>true</showTimer>"
+         construct 1
+         callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
+         ofs12:
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"showSplash")
+         iffalse ofs13
+         getlocal 4
+         getlex QName(PackageNamespace(""),"XML")
+         pushstring "<showSplash>true</showSplash>"
+         construct 1
+         callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
+         ofs13:
          getlocal 4
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<snailType>"
@@ -11200,106 +11244,106 @@ package
          getproperty QName(PackageNamespace(""),"bossesKilled")
          pushbyte 1
          getproperty MultinameL([PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         iffalse ofs12
+         iffalse ofs14
          getlocal 4
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<bossesKilledOne>true</bossesKilledOne>"
          construct 1
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
-         ofs12:
+         ofs14:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"bossesKilled")
          pushbyte 2
          getproperty MultinameL([PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         iffalse ofs13
+         iffalse ofs15
          getlocal 4
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<bossesKilledTwo>true</bossesKilledTwo>"
          construct 1
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
-         ofs13:
+         ofs15:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"bossesKilled")
          pushbyte 3
          getproperty MultinameL([PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         iffalse ofs14
+         iffalse ofs16
          getlocal 4
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<bossesKilledThree>true</bossesKilledThree>"
          construct 1
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
-         ofs14:
+         ofs16:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"bossesKilled")
          pushbyte 4
          getproperty MultinameL([PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         iffalse ofs15
+         iffalse ofs17
          getlocal 4
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<bossesKilledFour>true</bossesKilledFour>"
          construct 1
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
-         ofs15:
+         ofs17:
          getlocal0
          getproperty QName(PackageNamespace(""),"_easyMode")
-         iffalse ofs16
+         iffalse ofs18
          getlocal 4
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<easyMode>true</easyMode>"
          construct 1
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
-         ofs16:
+         ofs18:
          getlocal0
          getproperty QName(PackageNamespace(""),"_hardMode")
-         iffalse ofs17
+         iffalse ofs19
          getlocal 4
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<hardMode>true</hardMode>"
          construct 1
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
-         ofs17:
+         ofs19:
          getlocal0
          getproperty QName(PackageNamespace(""),"_insaneMode")
-         iffalse ofs18
+         iffalse ofs20
          getlocal 4
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<insaneMode>true</insaneMode>"
          construct 1
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
-         ofs18:
+         ofs20:
          getlocal0
          getproperty QName(PrivateNamespace(null,"#Player"),"_hasWeapon")
          pushbyte 0
          getproperty MultinameL([PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         iffalse ofs19
+         iffalse ofs21
          getlocal 4
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<hasWeaponZero>true</hasWeaponZero>"
          construct 1
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
-         ofs19:
+         ofs21:
          getlocal0
          getproperty QName(PrivateNamespace(null,"#Player"),"_hasWeapon")
          pushbyte 1
          getproperty MultinameL([PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         iffalse ofs20
+         iffalse ofs22
          getlocal 4
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<hasWeaponOne>true</hasWeaponOne>"
          construct 1
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
-         ofs20:
+         ofs22:
          getlocal0
          getproperty QName(PrivateNamespace(null,"#Player"),"_hasWeapon")
          pushbyte 2
          getproperty MultinameL([PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         iffalse ofs21
+         iffalse ofs23
          getlocal 4
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<hasWeaponTwo>true</hasWeaponTwo>"
          construct 1
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
-         ofs21:
+         ofs23:
          getlocal 4
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<gameTime>"
@@ -11324,7 +11368,7 @@ package
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
          getlocal0
          getproperty QName(PackageNamespace(""),"hasSeenIsis")
-         iffalse ofs22
+         iffalse ofs24
          getlocal 4
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<hasSeenIsis>"
@@ -11336,10 +11380,10 @@ package
          add
          construct 1
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
-         ofs22:
+         ofs24:
          getlocal0
          getproperty QName(PackageNamespace(""),"hasSeenHelp")
-         iffalse ofs23
+         iffalse ofs25
          getlocal 4
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<hasSeenHelp>"
@@ -11351,7 +11395,7 @@ package
          add
          construct 1
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#Player"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Player/1"),PackageInternalNs(""),PackageNamespace("org.flixel"),ProtectedNamespace("Player"),StaticProtectedNs("Player"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
-         ofs23:
+         ofs25:
          getlocal 4
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<hasWonGame>"
@@ -11671,11 +11715,11 @@ package
          getproperty QName(PackageNamespace(""),"saveData")
          callpropvoid QName(PackageNamespace(""),"saveAll"), 0
          getlocal3
-         iftrue ofs24
+         iftrue ofs26
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"savingText")
          callpropvoid QName(PackageNamespace(""),"setSaved"), 0
-         ofs24:
+         ofs26:
          returnvoid
          end ; code
          end ; body
@@ -12687,7 +12731,7 @@ package
          returns QName(PackageNamespace(""),"String")
          
          body
-         maxstack 5
+         maxstack 2
          localcount 1
          initscopedepth 8
          maxscopedepth 9
@@ -12695,37 +12739,10 @@ package
          code
          getlocal0
          pushscope
-         findpropstrict QName(PackageNamespace(""),"int")
+         getlex QName(PackageNamespace(""),"GameTimeDisplay")
          getlocal0
          getproperty QName(PackageNamespace(""),"gameTime")
-         pushbyte 60
-         divide
-         callproperty QName(PackageNamespace(""),"int"), 1
-         callproperty QName(Namespace("http://adobe.com/AS3/2006/builtin"),"toString"), 0
-         pushstring ":"
-         add
-         findpropstrict QName(PackageNamespace(""),"padZero")
-         findpropstrict QName(PackageNamespace(""),"int")
-         getlocal0
-         getproperty QName(PackageNamespace(""),"gameTime")
-         pushbyte 60
-         modulo
-         callproperty QName(PackageNamespace(""),"int"), 1
-         callproperty QName(PackageNamespace(""),"padZero"), 1
-         add
-         pushstring "."
-         add
-         findpropstrict QName(PackageNamespace(""),"padZero")
-         findpropstrict QName(PackageNamespace(""),"int")
-         getlocal0
-         getproperty QName(PackageNamespace(""),"gameTime")
-         pushbyte 100
-         multiply
-         pushbyte 100
-         modulo
-         callproperty QName(PackageNamespace(""),"int"), 1
-         callproperty QName(PackageNamespace(""),"padZero"), 1
-         add
+         callproperty QName(PackageNamespace(""),"formatExact"), 1
          returnvalue
          end ; code
          end ; body

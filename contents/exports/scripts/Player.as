@@ -464,6 +464,14 @@ package
             {
                _loc3_.hideTab = false;
             }
+            if(!_loc2_.isVarSet("showTimer"))
+            {
+               _loc3_.showTimer = false;
+            }
+            if(!_loc2_.isVarSet("showSplash"))
+            {
+               _loc3_.showSplash = false;
+            }
             if(!_loc2_.isVarSet("hideMiniMap"))
             {
                _loc3_.hideMiniMap = false;
@@ -558,6 +566,8 @@ package
             this.hasFullClear = _loc2_.isVarTrue("hasFullClear");
             this.hasWonBossRush = _loc2_.isVarTrue("hasWonBossRush");
             PlayState.hideTab = _loc2_.isVarTrue("hideTab");
+            PlayState.showTimer = _loc2_.isVarTrue("showTimer");
+            PlayState.showSplash = _loc2_.isVarTrue("showSplash");
             PlayState.hideMiniMap = _loc2_.isVarTrue("hideMiniMap");
             PlayState.hasGoodEnding = _loc2_.isVarTrue("hasGoodEnding");
             this.setEasyMode(_loc2_.isVarTrue("easyMode"));
@@ -2740,6 +2750,14 @@ package
          {
             _loc4_.appendChild(<hideTab>true</hideTab>);
          }
+         if(PlayState.showTimer)
+         {
+            _loc4_.appendChild(<showTimer>true</showTimer>);
+         }
+         if(PlayState.showSplash)
+         {
+            _loc4_.appendChild(<showSplash>true</showSplash>);
+         }
          _loc4_.appendChild(<snailType>{this._snailType}</snailType>);
          _loc4_.appendChild(<maxHp>{this._maxHp}</maxHp>);
          if(PlayState.bossesKilled[1])
@@ -3016,7 +3034,7 @@ package
       
       public function getGameTimeExact() : String
       {
-         return int(this.gameTime / 60).toString() + ":" + padZero(int(this.gameTime % 60)) + "." + padZero(int(this.gameTime * 100 % 100));
+         return GameTimeDisplay.formatExact(this.gameTime);
       }
    }
 }

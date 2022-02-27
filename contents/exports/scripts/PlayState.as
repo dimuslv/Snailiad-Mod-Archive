@@ -150,6 +150,10 @@ package
       public static var boss2rush:Boss;
       
       public static var This:PlayState;
+      
+      public static var showTimer:Boolean;
+      
+      public static var showSplash:Boolean;
        
       
       public function PlayState()

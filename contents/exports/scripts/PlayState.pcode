@@ -196,6 +196,10 @@ package
       
       public static var This:PlayState;
       
+      public static var showTimer:Boolean;
+      
+      public static var showSplash:Boolean;
+      
       {
          method
          name null

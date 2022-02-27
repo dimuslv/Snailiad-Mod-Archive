@@ -193,7 +193,16 @@ package
          getlocal0
          pushscope
          findproperty QName(PackageNamespace(""),"text")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"showSplash")
+         iftrue ofs0
          pushstring "GAME SAVED."
+         jump ofs1
+         ofs0:
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"player")
+         callproperty QName(PackageNamespace(""),"getGameTimeExact"), 0
+         ofs1:
          initproperty QName(PackageNamespace(""),"text")
          findproperty QName(PackageNamespace(""),"active")
          pushtrue

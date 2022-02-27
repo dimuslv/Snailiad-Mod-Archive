@@ -72,7 +72,7 @@ package
          }
          else
          {
-            text += "  GAME SAVED.";
+            text = text + "  " + (!PlayState.showSplash ? "GAME SAVED." : PlayState.player.getGameTimeExact());
             if(0 && PlayState.isBossDead(4))
             {
                text += "\n(ITEMS FOUND IN CURRENT AREA: " + PlayState.gottenItemsInArea() + "/" + PlayState.totalItemsInArea().toString() + ")";
