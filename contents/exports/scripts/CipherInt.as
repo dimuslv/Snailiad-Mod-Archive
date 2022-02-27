@@ -58,8 +58,7 @@ package
       {
          if((this._value ^ NOISE[this._localHashIndex]) != this._hash)
          {
-            FlxG.log("value was " + this.value + ", hashed value was " + (this._hash ^ NOISE[this._localHashIndex]));
-            FlxG.cheated = true;
+            FlxG.equal = true;
             if(dieOnCheating)
             {
                return 0;

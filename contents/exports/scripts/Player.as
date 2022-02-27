@@ -315,7 +315,8 @@ package
       
       public function Player(param1:PlayerBulletGroups)
       {
-         var _loc5_:int = 0;
+         var _loc5_:String = null;
+         var _loc6_:int = 0;
          this.WEAPON_TIMEOUTS = [0.085,0.3,0.17];
          this.WEAPON_SPEED = [370,330,60];
          this._hasWeapon = [false,false,false];
@@ -558,6 +559,9 @@ package
                this.WEAPON_TIMEOUTS[1] = 0.23;
                this.WEAPON_TIMEOUTS[2] = 0.13;
             }
+            if(!this.hasWonGame)
+            {
+            }
             if(!_loc2_.isVarSet("maxHp"))
             {
                _loc3_.maxHp = STARTING_MAX_HEARTS * this.hpPerHeart();
@@ -586,6 +590,53 @@ package
             PlayState.bossesKilled[2] = _loc2_.isVarTrue("bossesKilledTwo");
             PlayState.bossesKilled[3] = _loc2_.isVarTrue("bossesKilledThree");
             PlayState.bossesKilled[4] = _loc2_.isVarTrue("bossesKilledFour");
+            _loc5_ = "Normal";
+            if(this._hardMode)
+            {
+               _loc5_ = "Hard";
+            }
+            else if(this._easyMode)
+            {
+               _loc5_ = "Easy";
+            }
+            if(PlayState.bossesKilled[1])
+            {
+               Kong.defeatBoss(1,_loc5_);
+            }
+            if(PlayState.bossesKilled[2])
+            {
+               Kong.defeatBoss(2,_loc5_);
+            }
+            if(PlayState.bossesKilled[3])
+            {
+               Kong.defeatBoss(3,_loc5_);
+            }
+            if(PlayState.bossesKilled[4])
+            {
+               Kong.defeatBoss(4,_loc5_);
+            }
+            if(this.bestMainTime.value > 0)
+            {
+               Kong.defeatBoss(1,"Easy");
+               Kong.defeatBoss(2,"Easy");
+               Kong.defeatBoss(3,"Easy");
+               Kong.defeatBoss(4,"Easy");
+               Kong.defeatBoss(1,"Normal");
+               Kong.defeatBoss(2,"Normal");
+               Kong.defeatBoss(3,"Normal");
+               Kong.defeatBoss(4,"Normal");
+            }
+            Kong.reportNormalTime(this.bestMainTime.value);
+            Kong.reportHardTime(this.bestHardTime.value);
+            Kong.reportBossRushTime(this.bestBossRushTime.value);
+            Kong.reportHundredPercentTime(this.bestInsaneTime.value);
+            if(this.bestHardTime.value > 0)
+            {
+               Kong.defeatBoss(1,"Hard");
+               Kong.defeatBoss(2,"Hard");
+               Kong.defeatBoss(3,"Hard");
+               Kong.defeatBoss(4,"Hard");
+            }
             MAP_KEY = _loc3_.mapKey;
             JUMP_KEY = _loc3_.jumpKey;
             SHOOT_KEY = _loc3_.shootKey;
@@ -608,6 +659,7 @@ package
             WEAPON_PREV_KEY = _loc3_.weapPrevKey;
             x = _loc3_.savex;
             y = _loc3_.savey;
+            Kong.reportItems(this.getPercentComplete());
             if(PlayState.startFromTown)
             {
                x = PlayState.config.getPlayerStartX() * 16;
@@ -624,20 +676,20 @@ package
          var _loc4_:int = 0;
          while(_loc4_ < 4)
          {
-            _loc5_ = _loc4_ * 20;
+            _loc6_ = _loc4_ * 20;
             if(this._slugMode)
             {
-               _loc5_ += 4 * 20;
+               _loc6_ += 4 * 20;
             }
-            addAnimation("snail" + (_loc4_ + 1).toString() + "_floor_right_move",[0 + _loc5_,1 + _loc5_],3,true);
-            addAnimation("snail" + (_loc4_ + 1).toString() + "_floor_right_hide",[3 + _loc5_],9,false);
-            addAnimation("snail" + (_loc4_ + 1).toString() + "_rwall_up_move",[4 + _loc5_,5 + _loc5_],3,true);
-            addAnimation("snail" + (_loc4_ + 1).toString() + "_rwall_up_hide",[7 + _loc5_],9,false);
-            addAnimation("snail" + (_loc4_ + 1).toString() + "_rwall_down_move",[8 + _loc5_,9 + _loc5_],3,true);
-            addAnimation("snail" + (_loc4_ + 1).toString() + "_rwall_down_hide",[11 + _loc5_],9,false);
-            addAnimation("snail" + (_loc4_ + 1).toString() + "_ceil_right_move",[12 + _loc5_,13 + _loc5_],3,true);
-            addAnimation("snail" + (_loc4_ + 1).toString() + "_ceil_right_hide",[15 + _loc5_],9,false);
-            addAnimation("snail" + (_loc4_ + 1).toString() + "_death",[16 + _loc5_,17 + _loc5_,18 + _loc5_,19 + _loc5_],30,true);
+            addAnimation("snail" + (_loc4_ + 1).toString() + "_floor_right_move",[0 + _loc6_,1 + _loc6_],3,true);
+            addAnimation("snail" + (_loc4_ + 1).toString() + "_floor_right_hide",[3 + _loc6_],9,false);
+            addAnimation("snail" + (_loc4_ + 1).toString() + "_rwall_up_move",[4 + _loc6_,5 + _loc6_],3,true);
+            addAnimation("snail" + (_loc4_ + 1).toString() + "_rwall_up_hide",[7 + _loc6_],9,false);
+            addAnimation("snail" + (_loc4_ + 1).toString() + "_rwall_down_move",[8 + _loc6_,9 + _loc6_],3,true);
+            addAnimation("snail" + (_loc4_ + 1).toString() + "_rwall_down_hide",[11 + _loc6_],9,false);
+            addAnimation("snail" + (_loc4_ + 1).toString() + "_ceil_right_move",[12 + _loc6_,13 + _loc6_],3,true);
+            addAnimation("snail" + (_loc4_ + 1).toString() + "_ceil_right_hide",[15 + _loc6_],9,false);
+            addAnimation("snail" + (_loc4_ + 1).toString() + "_death",[16 + _loc6_,17 + _loc6_,18 + _loc6_,19 + _loc6_],30,true);
             _loc4_++;
          }
          this.setFaceDir(FACE_FLOOR_RIGHT,true);
@@ -1686,8 +1738,10 @@ package
       
       public function changeSnailSizeCheckBounds(param1:int, param2:int, param3:int, param4:int) : void
       {
-         var _loc5_:int = param1 - param3;
-         var _loc6_:int = param2 - param4;
+         var _loc5_:int = 0;
+         var _loc6_:int = 0;
+         _loc5_ = param1 - param3;
+         _loc6_ = param2 - param4;
          x = int(x);
          y = int(y);
          if(_loc5_ > 0 && _loc6_ > 0)
@@ -1724,7 +1778,8 @@ package
       
       public function moveSnailCheckFullBounds(param1:int, param2:int) : void
       {
-         var _loc3_:int = param2;
+         var _loc3_:int = 0;
+         _loc3_ = param2;
          if(param2 < 0)
          {
             param2 = PlayState.worldMap.findFirstFullNotSolidTop(x,y,width,height,param2);
@@ -1757,7 +1812,8 @@ package
       
       public function moveSnailCheckBounds(param1:int, param2:int) : void
       {
-         var _loc3_:int = param2;
+         var _loc3_:int = 0;
+         _loc3_ = param2;
          if(param2 < 0)
          {
             param2 = PlayState.worldMap.findFirstNotSolidTop(x,y,width,height,param2);
@@ -2298,9 +2354,10 @@ package
       
       public function setFaceDirNotHiding(param1:int, param2:Boolean = false) : void
       {
+         var _loc5_:int = 0;
          var _loc3_:int = offset.x;
          var _loc4_:int = offset.y;
-         var _loc5_:int = width;
+         _loc5_ = width;
          var _loc6_:int = height;
          switch(this._faceDir)
          {

@@ -1,0 +1,551 @@
+
+{
+   method
+   name null
+   returns null
+   
+   body
+   maxstack 2
+   localcount 1
+   initscopedepth 1
+   maxscopedepth 3
+   
+   code
+   getlocal0
+   pushscope
+   findpropstrict Multiname("Kong",[PackageNamespace("")])
+   getlex QName(PackageNamespace(""),"Object")
+   pushscope
+   getlex QName(PackageNamespace(""),"Object")
+   newclass #Kong
+   popscope
+   initproperty QName(PackageNamespace(""),"Kong")
+   returnvoid
+   end ; code
+   end ; body
+   end ; method
+}
+
+package
+{
+   import org.flixel.FlxG;
+   
+   public class Kong
+   {
+      
+      {
+         method
+         name null
+         returns null
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 3
+         maxscopedepth 4
+         
+         code
+         getlocal0
+         pushscope
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function Kong()
+      {
+         method
+         name null
+         returns null
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 4
+         maxscopedepth 5
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         constructsuper 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public static function skillName() : String
+      {
+         trait method QName(PackageNamespace(""),"skillName")
+         flag FINAL
+         dispid 3
+         method
+         name null
+         returns QName(PackageNamespace(""),"String")
+         
+         body
+         maxstack 1
+         localcount 2
+         initscopedepth 3
+         maxscopedepth 4
+         
+         code
+         getlocal0
+         pushscope
+         pushstring "Normal"
+         setlocal1
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"player")
+         getproperty QName(PackageNamespace(""),"_hardMode")
+         iffalse ofs0
+         pushstring "Hard"
+         setlocal1
+         ofs0:
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"player")
+         getproperty QName(PackageNamespace(""),"_easyMode")
+         iffalse ofs1
+         pushstring "Easy"
+         setlocal1
+         ofs1:
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"bossRush")
+         iffalse ofs2
+         pushstring "BossRush"
+         setlocal1
+         ofs2:
+         getlocal1
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public static function defeatBoss(param1:int, param2:String = "") : void
+      {
+         trait method QName(PackageNamespace(""),"defeatBoss")
+         flag FINAL
+         dispid 4
+         method
+         name null
+         flag HAS_OPTIONAL
+         param QName(PackageNamespace(""),"int")
+         param QName(PackageNamespace(""),"String")
+         optional Utf8("")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 4
+         initscopedepth 3
+         maxscopedepth 4
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"kongregate")
+         pushnull
+         ifne ofs0
+         returnvoid
+         ofs0:
+         getlocal2
+         pushstring ""
+         ifne ofs1
+         getlex QName(PackageNamespace(""),"Kong")
+         callproperty QName(PackageNamespace(""),"skillName"), 0
+         coerce_s
+         setlocal2
+         ofs1:
+         pushstring "Boss"
+         getlocal1
+         callproperty QName(Namespace("http://adobe.com/AS3/2006/builtin"),"toString"), 0
+         add
+         pushstring "Defeated"
+         add
+         getlocal2
+         add
+         coerce_s
+         setlocal3
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"kongregate")
+         getproperty Multiname("stats",[PrivateNamespace(null,"#Kong/1"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Kong/2"),PackageInternalNs(""),ProtectedNamespace("Kong"),StaticProtectedNs("Kong"),StaticProtectedNs("Object"),PackageNamespace("org.flixel")])
+         getlocal3
+         pushbyte 1
+         callpropvoid Multiname("submit",[PrivateNamespace(null,"#Kong/1"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Kong/2"),PackageInternalNs(""),ProtectedNamespace("Kong"),StaticProtectedNs("Kong"),StaticProtectedNs("Object"),PackageNamespace("org.flixel")]), 2
+         getlocal1
+         pushbyte 4
+         ifne ofs2
+         getlex QName(PackageNamespace(""),"Kong")
+         getlocal2
+         callpropvoid QName(PackageNamespace(""),"winGame"), 1
+         getlocal2
+         pushstring "Normal"
+         ifne ofs2
+         getlex QName(PackageNamespace(""),"Kong")
+         pushstring "Easy"
+         callpropvoid QName(PackageNamespace(""),"winGame"), 1
+         ofs2:
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public static function winGame(param1:String = "") : void
+      {
+         trait method QName(PackageNamespace(""),"winGame")
+         flag FINAL
+         dispid 5
+         method
+         name null
+         flag HAS_OPTIONAL
+         param QName(PackageNamespace(""),"String")
+         optional Utf8("")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 3
+         initscopedepth 3
+         maxscopedepth 4
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"kongregate")
+         pushnull
+         ifne ofs0
+         returnvoid
+         ofs0:
+         getlocal1
+         pushstring ""
+         ifne ofs1
+         getlex QName(PackageNamespace(""),"Kong")
+         callproperty QName(PackageNamespace(""),"skillName"), 0
+         coerce_s
+         setlocal1
+         ofs1:
+         pushstring "GameCompleted"
+         getlocal1
+         add
+         coerce_s
+         setlocal2
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"kongregate")
+         getproperty Multiname("stats",[PrivateNamespace(null,"#Kong/1"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Kong/2"),PackageInternalNs(""),ProtectedNamespace("Kong"),StaticProtectedNs("Kong"),StaticProtectedNs("Object"),PackageNamespace("org.flixel")])
+         getlocal2
+         pushbyte 1
+         callpropvoid Multiname("submit",[PrivateNamespace(null,"#Kong/1"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Kong/2"),PackageInternalNs(""),ProtectedNamespace("Kong"),StaticProtectedNs("Kong"),StaticProtectedNs("Object"),PackageNamespace("org.flixel")]), 2
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public static function reportMap(param1:int) : void
+      {
+         trait method QName(PackageNamespace(""),"reportMap")
+         flag FINAL
+         dispid 6
+         method
+         name null
+         param QName(PackageNamespace(""),"int")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 3
+         initscopedepth 3
+         maxscopedepth 4
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"kongregate")
+         pushnull
+         ifne ofs0
+         returnvoid
+         ofs0:
+         pushstring "MapPercent"
+         setlocal2
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"kongregate")
+         getproperty Multiname("stats",[PrivateNamespace(null,"#Kong/1"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Kong/2"),PackageInternalNs(""),ProtectedNamespace("Kong"),StaticProtectedNs("Kong"),StaticProtectedNs("Object"),PackageNamespace("org.flixel")])
+         getlocal2
+         getlocal1
+         callpropvoid Multiname("submit",[PrivateNamespace(null,"#Kong/1"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Kong/2"),PackageInternalNs(""),ProtectedNamespace("Kong"),StaticProtectedNs("Kong"),StaticProtectedNs("Object"),PackageNamespace("org.flixel")]), 2
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public static function reportItems(param1:int) : void
+      {
+         trait method QName(PackageNamespace(""),"reportItems")
+         flag FINAL
+         dispid 7
+         method
+         name null
+         param QName(PackageNamespace(""),"int")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 3
+         initscopedepth 3
+         maxscopedepth 4
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"kongregate")
+         pushnull
+         ifne ofs0
+         returnvoid
+         ofs0:
+         pushstring "ItemPercent"
+         setlocal2
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"kongregate")
+         getproperty Multiname("stats",[PrivateNamespace(null,"#Kong/1"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Kong/2"),PackageInternalNs(""),ProtectedNamespace("Kong"),StaticProtectedNs("Kong"),StaticProtectedNs("Object"),PackageNamespace("org.flixel")])
+         getlocal2
+         getlocal1
+         callpropvoid Multiname("submit",[PrivateNamespace(null,"#Kong/1"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Kong/2"),PackageInternalNs(""),ProtectedNamespace("Kong"),StaticProtectedNs("Kong"),StaticProtectedNs("Object"),PackageNamespace("org.flixel")]), 2
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public static function reportNormalTime(param1:Number) : void
+      {
+         trait method QName(PackageNamespace(""),"reportNormalTime")
+         flag FINAL
+         dispid 8
+         method
+         name null
+         param QName(PackageNamespace(""),"Number")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 5
+         localcount 3
+         initscopedepth 3
+         maxscopedepth 4
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"kongregate")
+         pushnull
+         equals
+         dup
+         iftrue ofs0
+         pop
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"equal")
+         convert_b
+         ofs0:
+         iffalse ofs1
+         returnvoid
+         ofs1:
+         getlocal1
+         pushbyte 0
+         ifne ofs2
+         returnvoid
+         ofs2:
+         pushstring "BestNormalTime"
+         setlocal2
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"kongregate")
+         getproperty Multiname("stats",[PrivateNamespace(null,"#Kong/1"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Kong/2"),PackageInternalNs(""),ProtectedNamespace("Kong"),StaticProtectedNs("Kong"),StaticProtectedNs("Object"),PackageNamespace("org.flixel")])
+         getlocal2
+         findpropstrict QName(PackageNamespace(""),"int")
+         getlocal1
+         pushshort 1000
+         multiply
+         callproperty QName(PackageNamespace(""),"int"), 1
+         callpropvoid Multiname("submit",[PrivateNamespace(null,"#Kong/1"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Kong/2"),PackageInternalNs(""),ProtectedNamespace("Kong"),StaticProtectedNs("Kong"),StaticProtectedNs("Object"),PackageNamespace("org.flixel")]), 2
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public static function reportHardTime(param1:Number) : void
+      {
+         trait method QName(PackageNamespace(""),"reportHardTime")
+         flag FINAL
+         dispid 9
+         method
+         name null
+         param QName(PackageNamespace(""),"Number")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 5
+         localcount 3
+         initscopedepth 3
+         maxscopedepth 4
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"kongregate")
+         pushnull
+         equals
+         dup
+         iftrue ofs0
+         pop
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"equal")
+         convert_b
+         ofs0:
+         iffalse ofs1
+         returnvoid
+         ofs1:
+         getlocal1
+         pushbyte 0
+         ifne ofs2
+         returnvoid
+         ofs2:
+         pushstring "BestHardTime"
+         setlocal2
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"kongregate")
+         getproperty Multiname("stats",[PrivateNamespace(null,"#Kong/1"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Kong/2"),PackageInternalNs(""),ProtectedNamespace("Kong"),StaticProtectedNs("Kong"),StaticProtectedNs("Object"),PackageNamespace("org.flixel")])
+         getlocal2
+         findpropstrict QName(PackageNamespace(""),"int")
+         getlocal1
+         pushshort 1000
+         multiply
+         callproperty QName(PackageNamespace(""),"int"), 1
+         callpropvoid Multiname("submit",[PrivateNamespace(null,"#Kong/1"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Kong/2"),PackageInternalNs(""),ProtectedNamespace("Kong"),StaticProtectedNs("Kong"),StaticProtectedNs("Object"),PackageNamespace("org.flixel")]), 2
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public static function reportBossRushTime(param1:Number) : void
+      {
+         trait method QName(PackageNamespace(""),"reportBossRushTime")
+         flag FINAL
+         dispid 10
+         method
+         name null
+         param QName(PackageNamespace(""),"Number")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 5
+         localcount 3
+         initscopedepth 3
+         maxscopedepth 4
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"kongregate")
+         pushnull
+         equals
+         dup
+         iftrue ofs0
+         pop
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"equal")
+         convert_b
+         ofs0:
+         iffalse ofs1
+         returnvoid
+         ofs1:
+         getlocal1
+         pushbyte 0
+         ifne ofs2
+         returnvoid
+         ofs2:
+         pushstring "BestBossRushTime"
+         setlocal2
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"kongregate")
+         getproperty Multiname("stats",[PrivateNamespace(null,"#Kong/1"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Kong/2"),PackageInternalNs(""),ProtectedNamespace("Kong"),StaticProtectedNs("Kong"),StaticProtectedNs("Object"),PackageNamespace("org.flixel")])
+         getlocal2
+         findpropstrict QName(PackageNamespace(""),"int")
+         getlocal1
+         pushshort 1000
+         multiply
+         callproperty QName(PackageNamespace(""),"int"), 1
+         callpropvoid Multiname("submit",[PrivateNamespace(null,"#Kong/1"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Kong/2"),PackageInternalNs(""),ProtectedNamespace("Kong"),StaticProtectedNs("Kong"),StaticProtectedNs("Object"),PackageNamespace("org.flixel")]), 2
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public static function reportHundredPercentTime(param1:Number) : void
+      {
+         trait method QName(PackageNamespace(""),"reportHundredPercentTime")
+         flag FINAL
+         dispid 11
+         method
+         name null
+         param QName(PackageNamespace(""),"Number")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 5
+         localcount 3
+         initscopedepth 3
+         maxscopedepth 4
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"kongregate")
+         pushnull
+         equals
+         dup
+         iftrue ofs0
+         pop
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"equal")
+         convert_b
+         ofs0:
+         iffalse ofs1
+         returnvoid
+         ofs1:
+         getlocal1
+         pushbyte 0
+         ifne ofs2
+         returnvoid
+         ofs2:
+         pushstring "BestHundredPercentTime"
+         setlocal2
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"kongregate")
+         getproperty Multiname("stats",[PrivateNamespace(null,"#Kong/1"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Kong/2"),PackageInternalNs(""),ProtectedNamespace("Kong"),StaticProtectedNs("Kong"),StaticProtectedNs("Object"),PackageNamespace("org.flixel")])
+         getlocal2
+         findpropstrict QName(PackageNamespace(""),"int")
+         getlocal1
+         pushshort 1000
+         multiply
+         callproperty QName(PackageNamespace(""),"int"), 1
+         callpropvoid Multiname("submit",[PrivateNamespace(null,"#Kong/1"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#Kong/2"),PackageInternalNs(""),ProtectedNamespace("Kong"),StaticProtectedNs("Kong"),StaticProtectedNs("Object"),PackageNamespace("org.flixel")]), 2
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+   }
+}

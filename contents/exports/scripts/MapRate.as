@@ -34,6 +34,7 @@ package
             NgMedal.unlockExplorer();
          }
          text = "MAP\n" + int(param1 * 100).toString() + "%";
+         Kong.reportMap(int(param1 * 100));
          alpha = 1;
          active = true;
       }

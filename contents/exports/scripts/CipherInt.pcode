@@ -7236,7 +7236,7 @@ package
          returns QName(PackageNamespace(""),"int")
          
          body
-         maxstack 5
+         maxstack 3
          localcount 1
          initscopedepth 4
          maxscopedepth 5
@@ -7255,24 +7255,8 @@ package
          getproperty QName(PrivateNamespace(null,"#CipherInt"),"_hash")
          ifeq ofs0
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
-         pushstring "value was "
-         getlocal0
-         getproperty QName(PackageNamespace(""),"value")
-         add
-         pushstring ", hashed value was "
-         add
-         getlocal0
-         getproperty QName(PrivateNamespace(null,"#CipherInt"),"_hash")
-         getlex QName(PrivateNamespace(null,"#CipherInt"),"NOISE")
-         getlocal0
-         getproperty QName(PrivateNamespace(null,"#CipherInt"),"_localHashIndex")
-         getproperty MultinameL([PrivateNamespace(null,"#CipherInt"),PackageNamespace(""),PrivateNamespace(null,"#CipherInt/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("CipherInt"),StaticProtectedNs("CipherInt"),StaticProtectedNs("Object")])
-         bitxor
-         add
-         callpropvoid QName(PackageNamespace(""),"log"), 1
-         getlex QName(PackageNamespace("org.flixel"),"FlxG")
          pushtrue
-         setproperty QName(PackageNamespace(""),"cheated")
+         setproperty QName(PackageNamespace(""),"equal")
          getlex QName(PrivateNamespace(null,"#CipherInt"),"dieOnCheating")
          iffalse ofs0
          pushbyte 0

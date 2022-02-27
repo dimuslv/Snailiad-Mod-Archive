@@ -58,7 +58,7 @@ package
       {
          if((int(this._value) ^ NOISE[this._localHashIndex]) != this._hash)
          {
-            FlxG.cheated = true;
+            FlxG.equal = true;
             if(dieOnCheating)
             {
                return 0;

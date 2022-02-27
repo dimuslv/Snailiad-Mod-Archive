@@ -52,6 +52,7 @@ package
             return;
          }
          text = "ITEM COLLECTION " + param1.toString() + "% COMPLETE!";
+         Kong.reportItems(param1);
          if(param1 == 100)
          {
             NgMedal.unlockTreasureHunter();

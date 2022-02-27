@@ -1,6 +1,11 @@
  
 package
 {
+   import flash.display.Loader;
+   import flash.display.LoaderInfo;
+   import flash.events.Event;
+   import flash.net.URLRequest;
+   import flash.system.Security;
    import flash.utils.clearInterval;
    import org.flixel.FlxG;
    import org.flixel.FlxGroup;
@@ -150,6 +155,8 @@ package
       public static var boss2rush:Boss;
       
       public static var This:PlayState;
+      
+      public static var kongregate = null;
        
       
       public function PlayState()
@@ -581,6 +588,7 @@ package
       {
          var _loc3_:Array = ["there is no boss #0","SHELLBREAKER","STOMPY","SPACE BOX","MOON SNAIL"];
          var _loc4_:* = _loc3_[param1] + (!!param2 ? " DEFEATED!" : "");
+         Kong.defeatBoss(param1);
          if(param2 && param1 == 4)
          {
             if(player._insaneMode)
@@ -590,6 +598,7 @@ package
                   player.bestInsaneTime.value = player.gameTime.value;
                   _loc4_ += "\nNEW BEST TIME - INSANE MODE " + GameTimeDisplay.formatExact(player.bestInsaneTime.value);
                   player.hasWonInsaneMode = true;
+                  Kong.reportHundredPercentTime(player.gameTime.value);
                }
             }
             else if(player._hardMode)
@@ -598,11 +607,13 @@ package
                {
                   player.bestHardTime.value = player.gameTime.value;
                   _loc4_ += "\nNEW BEST TIME - SLUG MODE " + GameTimeDisplay.formatExact(player.bestHardTime.value);
+                  Kong.reportHardTime(player.gameTime.value);
                }
                if((player.bestInsaneTime.value == 0 || player.bestInsaneTime.value > player.gameTime.value) && player.getPercentComplete() == 100)
                {
                   player.bestInsaneTime.value = player.gameTime.value;
                   _loc4_ += "\nNEW BEST 100% TIME - " + GameTimeDisplay.formatExact(player.bestInsaneTime.value);
+                  Kong.reportHundredPercentTime(player.gameTime.value);
                }
             }
             else if(player._easyMode)
@@ -615,11 +626,13 @@ package
                {
                   player.bestMainTime.value = player.gameTime.value;
                   _loc4_ += "\nNEW BEST TIME - NORMAL MODE " + GameTimeDisplay.formatExact(player.bestMainTime.value);
+                  Kong.reportNormalTime(player.gameTime.value);
                }
                if((player.bestInsaneTime.value == 0 || player.bestInsaneTime.value > player.gameTime.value) && player.getPercentComplete() == 100)
                {
                   player.bestInsaneTime.value = player.gameTime.value;
                   _loc4_ += "\nNEW BEST TIME - 100% " + GameTimeDisplay.formatExact(player.bestInsaneTime.value);
+                  Kong.reportHundredPercentTime(player.gameTime.value);
                }
                if(!player.hasWonGame)
                {
@@ -639,6 +652,7 @@ package
       
       public static function bossRushComplete() : void
       {
+         Kong.reportBossRushTime(bossRushTimer.now.value);
          player.x -= 60;
          var _loc1_:SaveData = PlayState.saveData;
          _loc1_.loadAll();
@@ -723,8 +737,30 @@ package
          super.destroy();
       }
       
+      public function loadKongApi() : void
+      {
+         var _loc1_:Object = LoaderInfo(root.loaderInfo).parameters;
+         var _loc2_:String = _loc1_.kongregate_api_path || "http://www.kongregate.com/flash/API_AS3_Local.swf";
+         Security.allowDomain(_loc2_);
+         var _loc3_:URLRequest = new URLRequest(_loc2_);
+         var _loc4_:Loader;
+         (_loc4_ = new Loader()).contentLoaderInfo.addEventListener(Event.COMPLETE,this.loadKongComplete);
+         _loc4_.load(_loc3_);
+         stage.addChild(_loc4_);
+      }
+      
+      public function loadKongComplete(param1:Event) : void
+      {
+         kongregate = param1.target.content;
+         kongregate.services.connect();
+      }
+      
       override public function create() : void
       {
+         if(kongregate == null)
+         {
+            this.loadKongApi();
+         }
          This = this;
          goToMainMenu();
       }

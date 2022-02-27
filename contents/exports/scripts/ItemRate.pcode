@@ -219,6 +219,9 @@ package
          pushstring "% COMPLETE!"
          add
          initproperty QName(PackageNamespace(""),"text")
+         getlex QName(PackageNamespace(""),"Kong")
+         getlocal1
+         callpropvoid QName(PackageNamespace(""),"reportItems"), 1
          getlocal1
          pushbyte 100
          ifne ofs1

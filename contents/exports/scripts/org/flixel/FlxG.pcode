@@ -44,7 +44,7 @@ package org.flixel
    public class FlxG
    {
       
-      public static var cheated:Boolean = false;
+      public static var equal:Boolean = false;
       
       public static var _curSongVolume:Number = 1.0;
       
@@ -150,9 +150,9 @@ package org.flixel
          code
          getlocal0
          pushscope
-         findproperty QName(PackageNamespace(""),"cheated")
+         findproperty QName(PackageNamespace(""),"equal")
          pushfalse
-         setproperty QName(PackageNamespace(""),"cheated")
+         setproperty QName(PackageNamespace(""),"equal")
          findproperty QName(PackageNamespace(""),"_curSongVolume")
          pushbyte 1
          setproperty QName(PackageNamespace(""),"_curSongVolume")

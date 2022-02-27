@@ -7267,7 +7267,7 @@ package
          ifeq ofs0
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          pushtrue
-         setproperty QName(PackageNamespace(""),"cheated")
+         setproperty QName(PackageNamespace(""),"equal")
          getlex QName(PrivateNamespace(null,"#CheckBool"),"dieOnCheating")
          iffalse ofs0
          pushfalse

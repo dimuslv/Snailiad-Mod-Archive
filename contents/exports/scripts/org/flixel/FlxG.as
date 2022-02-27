@@ -17,7 +17,7 @@ package org.flixel
    public class FlxG
    {
       
-      public static var cheated:Boolean = false;
+      public static var equal:Boolean = false;
       
       public static var _curSongVolume:Number = 1;
       
