@@ -1,0 +1,85 @@
+
+{
+   method
+   name null
+   returns null
+   
+   body
+   maxstack 2
+   localcount 1
+   initscopedepth 1
+   maxscopedepth 5
+   
+   code
+   getlocal0
+   pushscope
+   findpropstrict Multiname("FlxGame_junk",[PackageNamespace("org.flixel")])
+   getlex QName(PackageNamespace(""),"Object")
+   pushscope
+   getlex QName(PackageNamespace("flash.text"),"Font")
+   pushscope
+   getlex QName(PackageNamespace("mx.core"),"FontAsset")
+   pushscope
+   getlex QName(PackageNamespace("mx.core"),"FontAsset")
+   newclass #FlxGame_junk
+   popscope
+   popscope
+   popscope
+   initproperty QName(PackageNamespace("org.flixel"),"FlxGame_junk")
+   returnvoid
+   end ; code
+   end ; body
+   end ; method
+}
+
+package org.flixel
+{
+   import mx.core.FontAsset;
+   
+   public class FlxGame_junk extends FontAsset
+   {
+      
+      {
+         method
+         name null
+         returns null
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function FlxGame_junk()
+      {
+         method
+         name null
+         returns null
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 6
+         maxscopedepth 7
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         constructsuper 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+   }
+}

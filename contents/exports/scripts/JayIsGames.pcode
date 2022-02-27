@@ -1,0 +1,273 @@
+
+{
+   method
+   name null
+   returns null
+   
+   body
+   maxstack 2
+   localcount 1
+   initscopedepth 1
+   maxscopedepth 7
+   
+   code
+   getlocal0
+   pushscope
+   findpropstrict Multiname("JayIsGames",[PackageNamespace("")])
+   getlex QName(PackageNamespace(""),"Object")
+   pushscope
+   getlex QName(PackageNamespace("org.flixel"),"FlxPoint")
+   pushscope
+   getlex QName(PackageNamespace("org.flixel"),"FlxRect")
+   pushscope
+   getlex QName(PackageNamespace("org.flixel"),"FlxObject")
+   pushscope
+   getlex QName(PackageNamespace("org.flixel"),"FlxSprite")
+   pushscope
+   getlex QName(PackageNamespace("org.flixel"),"FlxSprite")
+   newclass #JayIsGames
+   popscope
+   popscope
+   popscope
+   popscope
+   popscope
+   initproperty QName(PackageNamespace(""),"JayIsGames")
+   returnvoid
+   end ; code
+   end ; body
+   end ; method
+}
+
+package
+{
+   import flash.net.URLRequest;
+   import flash.net.navigateToURL;
+   import org.flixel.FlxG;
+   import org.flixel.FlxSprite;
+   
+   public class JayIsGames extends FlxSprite
+   {
+      
+      private static const IMG_WIDTH:int = 93;
+      
+      private static const IMG_HEIGHT:int = 25;
+      
+      private static const _jigUrl:String = "http://jayisgames.com/";
+      
+      {
+         method
+         name null
+         returns null
+         
+         body
+         maxstack 2
+         localcount 1
+         initscopedepth 7
+         maxscopedepth 8
+         
+         code
+         getlocal0
+         pushscope
+         findproperty QName(PrivateNamespace(null,"#JayIsGames"),"IMG_WIDTH")
+         pushbyte 93
+         initproperty QName(PrivateNamespace(null,"#JayIsGames"),"IMG_WIDTH")
+         findproperty QName(PrivateNamespace(null,"#JayIsGames"),"IMG_HEIGHT")
+         pushbyte 25
+         initproperty QName(PrivateNamespace(null,"#JayIsGames"),"IMG_HEIGHT")
+         findproperty QName(PrivateNamespace(null,"#JayIsGames"),"_jigUrl")
+         pushstring "http://jayisgames.com/"
+         initproperty QName(PrivateNamespace(null,"#JayIsGames"),"_jigUrl")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function JayIsGames()
+      {
+         method
+         name null
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 6
+         localcount 1
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         constructsuper 0
+         findproperty QName(PackageNamespace(""),"x")
+         pushbyte 0
+         initproperty QName(PackageNamespace(""),"x")
+         findproperty QName(PackageNamespace(""),"y")
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"height")
+         getlex QName(PrivateNamespace(null,"#JayIsGames"),"IMG_HEIGHT")
+         subtract
+         initproperty QName(PackageNamespace(""),"y")
+         getlex QName(PackageNamespace(""),"scrollFactor")
+         pushbyte 0
+         setproperty QName(PackageNamespace(""),"x")
+         getlex QName(PackageNamespace(""),"scrollFactor")
+         pushbyte 0
+         setproperty QName(PackageNamespace(""),"y")
+         findproperty QName(PackageNamespace(""),"visible")
+         pushtrue
+         initproperty QName(PackageNamespace(""),"visible")
+         findpropstrict QName(PackageNamespace(""),"loadGraphic")
+         getlex QName(PackageNamespace(""),"Art")
+         getproperty QName(PackageNamespace(""),"JayIsGames")
+         pushfalse
+         pushfalse
+         getlex QName(PrivateNamespace(null,"#JayIsGames"),"IMG_WIDTH")
+         getlex QName(PrivateNamespace(null,"#JayIsGames"),"IMG_HEIGHT")
+         callpropvoid QName(PackageNamespace(""),"loadGraphic"), 5
+         findpropstrict QName(PackageNamespace(""),"addAnimation")
+         pushstring "normal"
+         pushbyte 0
+         newarray 1
+         callpropvoid QName(PackageNamespace(""),"addAnimation"), 2
+         findpropstrict QName(PackageNamespace(""),"play")
+         pushstring "normal"
+         callpropvoid QName(PackageNamespace(""),"play"), 1
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function show() : void
+      {
+         trait method QName(PackageNamespace(""),"show")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 1
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal0
+         pushscope
+         findproperty QName(PackageNamespace(""),"alpha")
+         pushbyte 1
+         initproperty QName(PackageNamespace(""),"alpha")
+         findproperty QName(PackageNamespace(""),"visible")
+         pushtrue
+         initproperty QName(PackageNamespace(""),"visible")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function hide() : void
+      {
+         trait method QName(PackageNamespace(""),"hide")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 1
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal0
+         pushscope
+         findproperty QName(PackageNamespace(""),"alpha")
+         pushdouble 0.05
+         initproperty QName(PackageNamespace(""),"alpha")
+         findproperty QName(PackageNamespace(""),"visible")
+         pushtrue
+         initproperty QName(PackageNamespace(""),"visible")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      override public function update() : void
+      {
+         trait method QName(PackageNamespace(""),"update")
+         flag OVERRIDE
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 1
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace(""),"visible")
+         convert_b
+         dup
+         iffalse ofs0
+         pop
+         getlex QName(PackageNamespace(""),"dead")
+         not
+         ofs0:
+         dup
+         iffalse ofs1
+         pop
+         getlex QName(PackageNamespace(""),"alpha")
+         pushbyte 1
+         equals
+         ofs1:
+         iffalse ofs2
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"mouse")
+         callproperty QName(PackageNamespace(""),"justPressed"), 0
+         convert_b
+         dup
+         iffalse ofs3
+         pop
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"mouse")
+         getproperty QName(PackageNamespace(""),"screenX")
+         getlex QName(PackageNamespace(""),"width")
+         lessthan
+         ofs3:
+         dup
+         iffalse ofs4
+         pop
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"mouse")
+         getproperty QName(PackageNamespace(""),"screenY")
+         getlex QName(PackageNamespace(""),"y")
+         greaterequals
+         ofs4:
+         iffalse ofs2
+         findpropstrict QName(PackageNamespace("flash.net"),"navigateToURL")
+         findpropstrict QName(PackageNamespace("flash.net"),"URLRequest")
+         getlex QName(PrivateNamespace(null,"#JayIsGames"),"_jigUrl")
+         constructprop QName(PackageNamespace("flash.net"),"URLRequest"), 1
+         pushstring "_self"
+         callpropvoid QName(PackageNamespace("flash.net"),"navigateToURL"), 2
+         ofs2:
+         getlocal0
+         callsupervoid QName(PackageNamespace(""),"update"), 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+   }
+}

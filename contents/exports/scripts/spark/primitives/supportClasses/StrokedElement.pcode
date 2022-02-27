@@ -1,0 +1,108 @@
+
+{
+   method
+   name null
+   returns null
+   
+   body
+   maxstack 2
+   localcount 1
+   initscopedepth 1
+   maxscopedepth 5
+   
+   code
+   getlocal0
+   pushscope
+   findpropstrict Multiname("StrokedElement",[PackageNamespace("spark.primitives.supportClasses")])
+   getlex QName(PackageNamespace(""),"Object")
+   pushscope
+   getlex QName(PackageNamespace("flash.events"),"EventDispatcher")
+   pushscope
+   getlex QName(PackageNamespace("spark.primitives.supportClasses"),"GraphicElement")
+   pushscope
+   getlex QName(PackageNamespace("spark.primitives.supportClasses"),"GraphicElement")
+   newclass #StrokedElement
+   popscope
+   popscope
+   popscope
+   initproperty QName(PackageNamespace("spark.primitives.supportClasses"),"StrokedElement")
+   returnvoid
+   end ; code
+   end ; body
+   end ; method
+}
+
+package spark.primitives.supportClasses
+{
+   import flash.display.Graphics;
+   import flash.display.LineScaleMode;
+   import flash.display.Sprite;
+   import flash.events.EventDispatcher;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import mx.core.mx_internal;
+   import mx.events.PropertyChangeEvent;
+   import mx.graphics.IStroke;
+   
+   use namespace mx_internal;
+   
+   public class StrokedElement extends GraphicElement
+   {
+      
+      mx_internal static const VERSION:String = "4.1.0.16076";
+      
+      {
+         method
+         name null
+         returns null
+         
+         body
+         maxstack 2
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         findproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"VERSION")
+         pushstring "4.1.0.16076"
+         initproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"VERSION")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      mx_internal var _stroke:IStroke;
+      
+      public function StrokedElement()
+      {
+         method
+         name null
+         returns null
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 6
+         maxscopedepth 7
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         constructsuper 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      [Bindable("propertyChange")]
+      public function get stroke() : IStroke
+      {
+         trait getter QName(PackageNamespace(""),"stroke")
+         flag METADATA
+         metadata"Bindable"
+         item "

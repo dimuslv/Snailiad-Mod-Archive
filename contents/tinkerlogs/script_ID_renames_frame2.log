@@ -1,0 +1,1295 @@
+Class IDs:
+0: FlxGame -
+1: main 0
+2: _main_Styles 0
+3: _CompiledResourceBundleInfo 0
+4: FlxPoint -
+5: FlxRect -
+6: FlxObject -
+7: FlxGroup -
+8: FlxG -
+9: FlxSave -
+10: FlxState -
+11: FlxConsole -
+12: FlxPause -
+13: FontAsset -
+14: FlxGame_junk 0
+15: PlayState -
+16: PauseLayer -
+17: CSSSelector -
+18: CSSStyleDeclaration -
+19: IUID -
+20: IPropertyChangeNotifier -
+21: IUIComponent -
+22: IDeferredInstantiationUIComponent -
+23: IValidatorListener -
+24: ILayoutElement -
+25: IVisualElement -
+26: IInvalidating -
+27: ILayoutManagerClient -
+28: FlexSprite -
+29: ISimpleStyleClient -
+30: IStyleClient -
+31: IAdvancedStyleClient -
+32: IFlexModule -
+33: IConstraintClient -
+34: IToolTipManagerClient -
+35: IChildList -
+36: IAutomationObject -
+37: IStateClient -
+38: MethodQueueElement 
+39: UIComponent -
+40: HighlightBitmapCaptureSkin -
+41: FocusSkin -
+42: ErrorSkin -
+43: BusyCursor -
+44: IViewport -
+45: GroupBase -
+46: IVisualElementContainer -
+47: ISharedDisplayObject -
+48: Group -
+49: Skin -
+50: SparkSkin -
+51: SparkSkinForHalo -
+52: IBorder -
+53: IRectangularBorder -
+54: BorderSkin 0
+55: IIMESupport -
+56: IUITextField -
+57: FlexTextField -
+58: UITextField -
+59: SpriteAsset -
+60: _main_Styles__embed_css_Assets_swf_mx_skins_cursor_BusyCursor_1985550340 0
+61: CSSCondition -
+62: IFlexModuleFactory -
+63: ObjectUtil -
+64: FlexShape -
+65: IProgrammaticSkin -
+66: ProgrammaticSkin -
+67: Border -
+68: RectangularBorder -
+69: ToolTipBorder -
+70: HaloFocusRect -
+71: IStyleManager -
+72: IStyleManager2 -
+73: FlxU -
+74: FlxMouse -
+75: FlxSprite -
+76: FlxFlash -
+77: FlxKong 0
+78: FlxSound -
+79: FlxFade -
+80: FlxInput -
+81: FlxKeyboard 0
+82: FlxGamepad -
+83: FlxPanel -
+84: FlxQuake -
+85: FlxMonitor -
+86: FlxPause_ImgKeyMinus -
+87: FlxPause_ImgKeyPlus -
+88: FlxText -
+89: FlxPause_ImgKeyP -
+90: FlxPause_ImgKey0 -
+91: FixBlocks -
+92: PlayerBulletGroups -
+93: MainMenu -
+94: Player -
+95: AiTriggerPool -
+96: ItemRateHud -
+97: SnowLayer -
+98: UniqueBlocks -
+99: SaveData -
+100: Configurable -
+101: SplashLayer -
+102: Enemy -
+103: Boss -
+104: ControlHelp -
+105: SavingText -
+106: Item -
+107: Boss4BulletGroups -
+108: NgMedal 0
+109: Music -
+110: EnemyBullet -
+111: Npc -
+112: DamageNumberPool -
+113: Dialogue -
+114: StarLayer -
+115: AiTrigger -
+116: Zzz -
+117: WorldMap -
+118: PlayerBullet -
+119: ExplosionPool -
+120: Boss4SecondFormBulletGroups -
+121: MiniMap -
+122: Hud -
+123: BossRushTimer -
+124: GameTimeDisplay -
+125: Ending -
+126: Intro -
+127: EnemyBulletPool -
+128: Fonts -
+129: CSSConditionKind -
+130: ISystemManager -
+131: Singleton -
+132: SystemManagerGlobals -
+133: ComponentDescriptor -
+134: UIComponentDescriptor -
+135: ValidationResultEvent -
+136: IMXMLObject -
+137: DesignLayer -
+138: TransformOffsets -
+139: ContainerGlobals -
+140: StyleManager -
+141: LuminosityShader -
+142: Transform -
+143: ColorUtil -
+144: BaseFilter -
+145: ColorDodgeShader -
+146: RoundedRectangle -
+147: MoveEvent -
+148: ICursorManager -
+149: IResourceBundle -
+150: ResourceBundle -
+151: en_US$core_properties 0
+152: BindingManager -
+153: EffectManager -
+154: EffectNode 
+155: IContainer -
+156: DragEvent -
+157: DynamicEvent -
+158: IRawChildrenContainer -
+159: UITextFormat -
+160: ToolTipManager -
+161: ResourceManager -
+162: StateChangeEvent -
+163: FlexEvent -
+164: IFocusManager -
+165: PropertyChangeEvent -
+166: IBitmapFilter -
+167: IEffectInstance -
+168: ColorShader -
+169: IFocusManagerContainer -
+170: FlexVersion -
+171: IFlexContextMenu -
+172: FlexMouseEvent -
+173: HueShader -
+174: IFocusManagerComponent -
+175: IEmbeddedFontRegistry -
+176: LayoutElementUIComponentUtils -
+177: State -
+178: ChildExistenceChangedEvent -
+179: UIComponentGlobals -
+180: ColorBurnShader -
+181: ValidationResult -
+182: UIComponentCachePolicy -
+183: MatrixUtil -
+184: StyleProtoChain -
+185: FlexGlobals -
+186: ToolTipEvent -
+187: IAbstractEffect -
+188: IEffect -
+189: ExclusionShader -
+190: IStateClient2 -
+191: IRepeater -
+192: StringUtil -
+193: IResourceManager -
+194: ResizeEvent -
+195: SoftLightShader -
+196: SaturationShader -
+197: en_US$skins_properties 0
+198: LayoutDirection -
+199: IFontContextComponent -
+200: GraphicsUtil -
+201: EventPriority -
+202: EffectEvent -
+203: AdvancedLayoutFeatures -
+204: SystemManager -
+205: Transition -
+206: CursorManager -
+207: SkinnableComponent -
+208: DisplayLayer -
+209: FTETextUtil -
+210: OnDemandEventDispatcher -
+211: LayoutBase -
+212: BasicLayout -
+213: ResizeMode -
+214: MaskUtil -
+215: MaskType -
+216: OverlayDepth -
+217: LuminosityMaskShader -
+218: DisplayLayerObjectExistenceEvent -
+219: en_US$components_properties 0
+220: ElementExistenceEvent -
+221: DisplayObjectSharingMode -
+222: IGraphicElement -
+223: GraphicElement -
+224: EdgeMetrics -
+225: StrokedElement -
+226: FilledElement -
+227: Rect -
+228: RectangularDropShadow -
+229: IFill -
+230: SolidColor 0
+231: IStroke -
+232: SolidColorStroke -
+233: DescribeTypeCache -
+234: ObjectProxy -
+235: IList -
+236: FlexLoader -
+237: FlxQuadTree -
+238: FlxMouse_ImgDefaultCursor -
+239: FlxAnim -
+240: FlxPanel_ImgDonate -
+241: FlxPanel_ImgTwitter -
+242: FlxButton -
+243: FlxPanel_ImgDelicious -
+244: FlxPanel_ImgReddit -
+245: FlxPanel_ImgStumble -
+246: FlxPanel_ImgDigg -
+247: FlxPanel_ImgClose -
+248: BrokenBlock -
+249: PlayerBullet1 -
+250: PlayerBullet2 -
+251: PlayerBullet4 -
+252: PlayerBullet3 -
+253: PlayerBullet6 -
+254: PlayerBullet5 -
+255: MenuBall -
+256: JayIsGames -
+257: Utility -
+258: EnterKeyLayer -
+259: TitleText -
+260: MainMenuCursor -
+261: EndingGroup -
+262: SponsorMoreGames -
+263: Sfx -
+264: CipherInt 0
+265: ShadowNumber 0
+266: CheckBool 0
+267: Art -
+268: Snow -
+269: Cipher -
+270: ByteArrayAsset -
+271: Configurable_configXmlFile -
+272: SponsorSplash -
+273: Boss4Bullet -
+274: Boss4Bullet5 -
+275: Boss4Bullet6 -
+276: Boss4Bullet4 -
+277: SoundAsset -
+278: Music_Area4Song -
+279: Music_TownSong -
+280: Music_Area2Song -
+281: Music_Area3Song -
+282: Music_Boss1Song -
+283: Music_Ending2Song -
+284: Music_TitleSong -
+285: Music_Boss2Song -
+286: Music_IsisSong -
+287: Music_Area1Song -
+288: DamageNumber -
+289: Star -
+290: WorldMap_WorldMapSkyTxt 0
+291: SuperUniqueItem -
+292: GravJump 0
+293: EnemyKurage 0
+294: EnemyBat 0
+295: WorldMap_WorldMapFgTxt 0
+296: Boss3 0
+297: Boss4 -
+298: Boss1 0
+299: Boss2 -
+300: Fire 0
+301: EnemySpikey2 0
+302: EnemySpider2 0
+303: SnailNpc 0
+304: EnemyDandelion 0
+305: Grass 0
+306: IceSnail 0
+307: EnemyFireball 0
+308: Smoke 0
+309: EnemyBalloonGenerator 0
+310: EnemyFloatSpike 0
+311: EnemyBabyfish2 -
+312: EnemySeahorse 0
+313: EnemyDandelionGenerator 0
+314: UniqueItem -
+315: HelixFragment 0
+316: EnemyDrone 0
+317: EnemyCannonBottom2 -
+318: FlxTilemap -
+319: EnemyBabyfish -
+320: EnemyKitty 0
+321: EnemyWalleye 0
+322: Boss1Rush -
+323: Platform5 0
+324: Platform4 0
+325: ShellShield 0
+326: EnemyBird 0
+327: EnemySpikey 0
+328: Boss4Rush -
+329: SavePoint 0
+330: Boss2Rush -
+331: GiantBlock1 0
+332: IceSpikeTop 0
+333: Devastator 0
+334: EnemyFireball2 0
+335: EnemyBird2Generator -
+336: EnemyMoth -
+337: EnemyFloatSpike2 -
+338: EnemyTallfish2 -
+339: Boss3Rush -
+340: EnemyCannonLeft -
+341: Muck -
+342: WorldMap_WorldMapBgTxt 0
+343: EnemyPincer2 -
+344: IceSpike -
+345: IceSpikeLeft 0
+346: GravityShock 0
+347: EnemyGravTurtle 0
+348: EnemyBlob 0
+349: HiJump 0
+350: EnemyBirdGenerator 0
+351: Gun3 0
+352: Gun2 0
+353: Door 0
+354: Gun1 0
+355: HeartContainer 0
+356: EnemyGear 0
+357: Breakable 0
+358: EnemySnake3 -
+359: Platform4b -
+360: EnemySnake2 -
+361: EnemyCannonBottom -
+362: EnemyTallfish -
+363: EnemyCannonTop -
+364: EnemyCannonTop2 -
+365: EnemyGravTurtle2 -
+366: TurtleNpc -
+367: Platform5b -
+368: PowerGrass -
+369: WorldMap_WorldMapSpTxt 0
+370: Step -
+371: EnemyCannonLeft2 -
+372: EnemySnelk -
+373: EnemySnake -
+374: EnemyPincer -
+375: EnemySpider -
+376: EnemyKitty2 -
+377: EnemySpike -
+378: Armor -
+379: BubbleGenerator -
+380: TurboFire -
+381: EnemyBlob4 -
+382: EnemyBlob3 -
+383: EnemyBlob2 -
+384: Explosion -
+385: ExplosionTiny -
+386: ExplosionSmall -
+387: ExplosionHuge -
+388: ExplosionBig -
+389: Boss4Bullet7 -
+390: SkillText -
+391: MapRate -
+392: Subscreen -
+393: ItemRate -
+394: ItemName -
+395: Radar -
+396: AreaName -
+397: BossBarHud -
+398: HeartHud -
+399: EndingCredits -
+400: EndingZzz -
+401: EndingSunSnail -
+402: EndingDialogue -
+403: EndingStarBg -
+404: EndingMoonSnail -
+405: IntroPicture -
+406: IntroBg -
+407: IntroDialogue -
+408: EnemyBulletDonut2 -
+409: EnemyBulletSpikeBall -
+410: EnemyBulletDonut -
+411: EnemyBulletLaser -
+412: EnemyBulletFire -
+413: EnemyBulletRotaryPea -
+414: Boss1Boomerang -
+415: EnemyBulletSpikeBall2 -
+416: EnemyBulletPea -
+417: Fonts_normalFont -
+418: PropertyChangeEventKind -
+419: IButton -
+420: StyleEventDispatcher 
+421: StyleModuleInfo 
+422: StyleManagerImpl -
+423: LuminosityShader_ShaderClass -
+424: ColorDodgeShader_ShaderClass -
+425: IBindingClient -
+426: Binding -
+427: Effect -
+428: TweenEffect -
+429: Zoom -
+430: EffectInstance -
+431: en_US$effects_properties 0
+432: DragSource -
+433: ITextFieldFactory -
+434: IToolTip -
+435: IToolTipManager2 -
+436: ToolTipManagerImpl -
+437: ResourceModuleInfo 
+438: ResourceEventDispatcher 
+439: ResourceManagerImpl -
+440: PropertyChanges -
+441: IEffectTargetHost -
+442: ColorShader_ShaderClass -
+443: HueShader_ShaderClass -
+444: EmbeddedFont -
+445: IOverride -
+446: ILayoutManager -
+447: ColorBurnShader_ShaderClass -
+448: IModuleInfo -
+449: ModuleManager -
+450: ModuleManagerImpl 
+451: ModuleInfo 
+452: FactoryInfo 
+453: ModuleInfoProxy 
+454: IModule -
+455: OrderedObject -
+456: StyleProxy -
+457: EffectTargetFilter -
+458: ExclusionShader_ShaderClass -
+459: SoftLightShader_ShaderClass -
+460: SaturationShader_ShaderClass -
+461: CompoundTransform -
+462: SandboxMouseEvent -
+463: RSLItem -
+464: SystemRawChildrenList -
+465: Request -
+466: LoaderUtil -
+467: Preloader -
+468: RSLEvent -
+469: SystemChildrenList -
+470: ISystemManagerChildManager -
+471: CursorQueueItem 
+472: CursorManagerImpl -
+473: SkinPartEvent -
+474: IFactory -
+475: ISWFContext -
+476: NavigationUnit -
+477: DropLocation -
+478: LayoutElementHelper -
+479: en_US$layout_properties 0
+480: LuminosityMaskShader_ShaderClass -
+481: InvalidatingSprite -
+482: DescribeTypeCacheRecord -
+483: BindabilityInfo -
+484: UIDUtil -
+485: CollectionEvent -
+486: FlxList -
+487: Bubble -
+488: TitleLetter -
+489: EndingPicture -
+490: EndingBg -
+491: Sfx_Ending1Song -
+492: Sfx_Pickup4 -
+493: Sfx_Pickup3 -
+494: Sfx_Pickup2 -
+495: Sfx_Shot3 -
+496: Sfx_EnemyPingOffArmor -
+497: Sfx_Shot2 -
+498: Sfx_Shot1 -
+499: Sfx_Shot7 -
+500: Sfx_Stomp1 -
+501: Sfx_EnemyKilled -
+502: Sfx_PongMiss -
+503: Sfx_PongBounce -
+504: Sfx_Laser1 -
+505: Sfx_Cannon2 -
+506: Sfx_Cannon1 -
+507: Sfx_CloseDoor -
+508: Sfx_Jingle3 -
+509: Sfx_Shot3b -
+510: Sfx_Jingle4 -
+511: Sfx_Explode1 -
+512: Sfx_Explode2 -
+513: Sfx_Chirp1 -
+514: Sfx_Explode3 -
+515: Sfx_Explode4 -
+516: Sfx_Shell1 -
+517: Sfx_Save1 -
+518: Sfx_MenuBeep2 -
+519: Sfx_MenuBeep1 -
+520: Sfx_Snelk -
+521: Sfx_PongHit -
+522: Sfx_Hurt -
+523: Sfx_Shot2b -
+524: Sfx_Grow -
+525: Sfx_GigaWave -
+526: Sfx_Death -
+527: Sfx_BossHpBleep -
+528: Sfx_Jump1 -
+529: Sfx_Shot1b -
+530: Sfx_DialogueLetter1 -
+531: Sfx_DialogueLetter0 -
+532: Sfx_DialogueLetter3 -
+533: Sfx_DialogueLetter2 -
+534: Sfx_Splash1 -
+535: Sfx_ShotHit -
+536: Sfx_EnemyKilled3 -
+537: Sfx_Health -
+538: Sfx_OpenDoor -
+539: Sfx_EnemyKilled2 -
+540: Art_Zzz -
+541: Art_Boss1Eyes -
+542: Art_EnemyCannonLeft2 -
+543: Art_JayIsGames -
+544: Art_EnemyDandelion -
+545: Art_SleepyMoonSnail -
+546: Art_Boss2Eyelid -
+547: Art_SnailySnail -
+548: Art_Boss4RushSecondForm -
+549: Art_EnemySnelk -
+550: Art_Boss3RushSpawn -
+551: Art_MiniMapSpecialSheet -
+552: Art_EnemyBalloon -
+553: Art_MiniMapCenter -
+554: Art_Boss1Rush -
+555: Art_ItemHiJump -
+556: Art_DoorVert -
+557: Art_Boss1Shield -
+558: Art_ItemDevastator -
+559: Art_PlayerBullet5 -
+560: Art_Boss3Shield -
+561: Art_PlayerBullet6 -
+562: Art_PlayerBullet3 -
+563: Art_PlayerBullet4 -
+564: Art_PlayerBullet1 -
+565: Art_PlayerBullet2 -
+566: Art_HeartHudSingle -
+567: Art_ItemHelixFragment -
+568: Art_TitleLetter -
+569: Art_ItemArmor -
+570: Art_ExplosionBig -
+571: Art_ItemGravJump -
+572: Art_TheEnd -
+573: Art_EnemyBulletLaser -
+574: Art_EnemyDrone -
+575: Art_EnemyCannonLeft -
+576: Art_Boss2RushFoot -
+577: Art_Platform5b -
+578: Art_EnemyCannonBottom2 -
+579: Art_DoorHoriz -
+580: Art_SavePoint -
+581: Art_IceSpikeTop -
+582: Art_EnemyCannon2 -
+583: Art_EnemySnake3 -
+584: Art_MiniMapSheet -
+585: Art_EnemySnake2 -
+586: Art_Boss3Spawn -
+587: Art_Boss2Eye -
+588: Art_Grass -
+589: Art_EnemyFireball -
+590: Art_PixelPeople -
+591: Art_EnemyTallfish -
+592: Art_SponsorSplash -
+593: Art_EnemySpider -
+594: Art_SponsorMoreGames -
+595: Art_IntroPicture5Slug -
+596: Art_ExplosionHuge -
+597: Art_ExplosionTiny -
+598: Art_PowerNom -
+599: Art_ItemRapidFire -
+600: Art_Boss2Foot -
+601: Art_ItemGravityShock -
+602: Art_EnemyKitty2 -
+603: Art_EnemyBulletDonut -
+604: Art_EnemySpikey -
+605: Art_Boss4SecondForm -
+606: Art_GiantBlock1 -
+607: Art_EnemyBlob -
+608: Art_Subscreen -
+609: Art_EnemySpider2 -
+610: Art_ItemHeartContainer -
+611: Art_IntroSpiral -
+612: Art_EnemyPincer -
+613: Art_EnemyCannonTop -
+614: Art_Boss4ShadowBall -
+615: Art_EnemyBulletSpikeBall -
+616: Art_Fire -
+617: Art_EnemyBabyfish -
+618: Art_Smoke -
+619: Art_Boss2Pupil -
+620: Art_ControlHelpLetters -
+621: Art_Platform4b -
+622: Art_Platform4 -
+623: Art_EnemyFireball2 -
+624: Art_Platform5 -
+625: Art_Boss4Bullet6 -
+626: Art_Boss4Bullet5 -
+627: Art_Boss4Bullet7 -
+628: Art_EnemyCannon -
+629: Art_Boss1 -
+630: Art_Boss4 -
+631: Art_Boss3 -
+632: Art_TurtleNpc -
+633: Art_EnemyWalleye -
+634: Art_SubscreenSlug -
+635: Art_Muck -
+636: Art_EnemyFloatSpike2 -
+637: Art_EnemyFloatSpike -
+638: Art_Dialogue -
+639: Art_ItemGun3 -
+640: Art_ItemGun1 -
+641: Art_EnemySnake -
+642: Art_ItemGun2 -
+643: Art_EnemyTallfish2 -
+644: Art_ExplosionSmall -
+645: Art_Star -
+646: Art_Boss3RushShield -
+647: Art_Bubble -
+648: Art_SnailNpc -
+649: Art_ControlHelpBg -
+650: Art_ItemIceSnail -
+651: Art_EnemyKitty -
+652: Art_Boss4Rush -
+653: Art_EnemyGravTurtle2 -
+654: Art_PowerGrass -
+655: Art_EnemyPincer2 -
+656: Art_EnemySpike -
+657: Art_EnemyGear -
+658: Art_Boss1Hand -
+659: Art_IntroPicture3 -
+660: Art_Snow -
+661: Art_IntroPicture2 -
+662: Art_IntroPicture5 -
+663: Art_EnemyCannonBottom -
+664: Art_IntroPicture4 -
+665: Art_Dust -
+666: Art_IntroPicture1 -
+667: Art_EndingBg -
+668: Art_EnemyBulletFire -
+669: Art_BossZzz -
+670: Art_ItemShellShield -
+671: Art_TileSheet -
+672: Art_EnemyMoth -
+673: Art_EnemyCannonTop2 -
+674: Art_Boss3Rush -
+675: Art_EnemyBird -
+676: Art_Boss1RushHand -
+677: Art_Nom -
+678: Art_EndingPicture2 -
+679: Art_EndingPicture1 -
+680: Art_EnemySeahorse -
+681: Art_EnemyKurage -
+682: Art_IceSpike -
+683: Art_EnemyBat -
+684: Art_EnemySpikey2 -
+685: Art_EnemyBird2 -
+686: Art_EndingPicture4 -
+687: Art_EndingPicture3 -
+688: Art_IceSpikeLeft -
+689: Art_EndingPicture5 -
+690: Art_EnemyGravTurtle -
+691: Base64Decoder -
+692: Base64Encoder -
+693: DustRing -
+694: Boss3Shield -
+695: Boss3Spawn -
+696: QueuedExplosion -
+697: Boss4RingCenter -
+698: Boss4SecondForm -
+699: Boss4ShadowBall -
+700: Boss1Eyes -
+701: Boss1Hand -
+702: Boss2Eye -
+703: Boss2Foot -
+704: Nom -
+705: EnemyBalloon -
+706: EnemyCannon2 -
+707: FlxTilemap_ImgAutoAlt -
+708: FlxTilemap_ImgAuto -
+709: Boss1RushHand -
+710: Boss4RushSecondForm -
+711: EnemyCannonTopBossRush -
+712: Boss2RushFoot -
+713: Boss2RushEye -
+714: EnemyBird2 -
+715: Boss3RushShield -
+716: Boss3RushSpawn -
+717: EnemyCannon -
+718: PowerNom -
+719: HelixHud -
+720: HeartHudSingle -
+721: EndingEnemy -
+722: StarOutwardLayer -
+723: IntroSpiral -
+724: CSSMergedStyleDeclaration -
+725: IStyleModule -
+726: en_US$styles_properties 0
+727: ModuleEvent -
+728: FlexChangeEvent -
+729: StyleEvent -
+730: ItemPendingError -
+731: IResponder -
+732: EvalBindingResponder -
+733: LayoutManager -
+734: HideShowEffectTargetFilter -
+735: AddRemoveEffectTargetFilter -
+736: TweenEvent -
+737: TweenEffectInstance -
+738: ZoomInstance -
+739: ToolTip -
+740: LocaleSorter -
+741: LocaleID 
+742: LocaleRegistry 
+743: IResourceModule -
+744: ResourceEvent -
+745: EmbeddedFontRegistry -
+746: ModuleManagerGlobals -
+747: ResourceModuleRSLItem -
+748: IPreloaderDisplay -
+749: RSLListLoader -
+750: ISystemCursorClient -
+751: CursorManagerPriority -
+752: XMLNotifier -
+753: XMLNotifierSingleton 
+754: en_US$utils_properties 0
+755: Dust -
+756: Boss4SecondFormBg -
+757: BossZzz -
+758: Boss2Pupil -
+759: Boss2Eyelid -
+760: EnemyCannonBossRush -
+761: Boss2RushEyelid -
+762: Boss2RushPupil -
+763: StarOutward -
+764: PriorityQueue -
+765: Tween -
+766: IXMLNotifiable -
+767: StarInwardLayer -
+768: StarInward -
+
+PrivateNamespace IDs:
+0: ModuleManager/1
+1: CursorManagerImpl/1
+2: LocaleSorter/1
+3: XMLNotifier/1
+4: FlxPause
+5: CSSSelector
+6: CSSStyleDeclaration
+7: UIComponent/1
+8: UIComponent
+9: HighlightBitmapCaptureSkin
+10: FocusSkin
+11: BusyCursor
+12: GroupBase
+13: Group
+14: SparkSkin
+15: BorderSkin
+16: UITextField
+17: SpriteAsset
+18: CSSCondition
+19: ProgrammaticSkin
+20: RectangularBorder
+21: ToolTipBorder
+22: HaloFocusRect
+23: FlxInput
+24: FlxPanel
+25: PlayerBulletGroups
+26: MainMenu
+27: Player
+28: AiTriggerPool
+29: SnowLayer
+30: Configurable
+31: SplashLayer
+32: Enemy
+33: ControlHelp
+34: Item
+35: Boss4BulletGroups
+36: EnemyBullet
+37: DamageNumberPool
+38: Dialogue
+39: StarLayer
+40: AiTrigger
+41: WorldMap
+42: PlayerBullet
+43: ExplosionPool
+44: Boss4SecondFormBulletGroups
+45: MiniMap
+46: Ending
+47: Intro
+48: EnemyBulletPool
+49: ComponentDescriptor
+50: DesignLayer
+51: TransformOffsets
+52: Transform
+53: ResourceBundle
+54: EffectManager/1
+55: UITextFormat
+56: State
+57: AdvancedLayoutFeatures
+58: SystemManager
+59: SkinnableComponent
+60: DisplayLayer
+61: OnDemandEventDispatcher
+62: LayoutBase
+63: BasicLayout
+64: GraphicElement
+65: FilledElement
+66: Rect
+67: RectangularDropShadow
+68: SolidColor
+69: SolidColorStroke
+70: ObjectProxy
+71: PlayerBullet4
+72: TitleText
+73: MainMenuCursor
+74: SponsorMoreGames
+75: CipherInt
+76: ShadowNumber
+77: CheckBool
+78: Snow
+79: Boss4Bullet4
+80: DamageNumber
+81: SuperUniqueItem
+82: GravJump
+83: EnemyKurage
+84: EnemyBat
+85: Boss3
+86: Boss4
+87: Boss1
+88: Boss2
+89: Fire
+90: EnemySpikey2
+91: EnemySpider2
+92: SnailNpc
+93: EnemyDandelion
+94: Grass
+95: EnemyFireball
+96: EnemyBalloonGenerator
+97: EnemyFloatSpike
+98: EnemyBabyfish2
+99: EnemySeahorse
+100: EnemyDandelionGenerator
+101: UniqueItem
+102: EnemyDrone
+103: EnemyCannonBottom2
+104: FlxTilemap
+105: EnemyBabyfish
+106: EnemyKitty
+107: EnemyWalleye
+108: Boss1Rush
+109: Platform5
+110: Platform4
+111: EnemyBird
+112: EnemySpikey
+113: Boss4Rush
+114: SavePoint
+115: Boss2Rush
+116: GiantBlock1
+117: IceSpikeTop
+118: EnemyFireball2
+119: EnemyBird2Generator
+120: EnemyFloatSpike2
+121: EnemyTallfish2
+122: Boss3Rush
+123: EnemyCannonLeft
+124: Muck
+125: EnemyPincer2
+126: IceSpike
+127: IceSpikeLeft
+128: EnemyGravTurtle
+129: EnemyBlob
+130: EnemyBirdGenerator
+131: Door
+132: EnemyGear
+133: Breakable
+134: EnemySnake3
+135: Platform4b
+136: EnemySnake2
+137: EnemyCannonBottom
+138: EnemyTallfish
+139: EnemyCannonTop
+140: EnemyCannonTop2
+141: EnemyGravTurtle2
+142: TurtleNpc
+143: Platform5b
+144: PowerGrass
+145: Step
+146: EnemyCannonLeft2
+147: EnemySnelk
+148: EnemySnake
+149: EnemyPincer
+150: EnemySpider
+151: EnemyKitty2
+152: BubbleGenerator
+153: EnemyBlob4
+154: EnemyBlob3
+155: EnemyBlob2
+156: Subscreen
+157: BossBarHud
+158: HeartHud
+159: EndingCredits
+160: EndingZzz
+161: EndingSunSnail
+162: EndingDialogue
+163: EndingStarBg
+164: EndingMoonSnail
+165: IntroPicture
+166: IntroBg
+167: IntroDialogue
+168: EnemyBulletRotaryPea
+169: StyleManagerImpl/1
+170: StyleEventDispatcher
+171: StyleManagerImpl
+172: Binding
+173: Effect
+174: EffectInstance
+175: DragSource
+176: ToolTipManagerImpl
+177: ResourceManagerImpl/1
+178: ResourceEventDispatcher
+179: ResourceManagerImpl
+180: EmbeddedFont
+181: ModuleManagerImpl
+182: ModuleInfo
+183: ModuleInfoProxy
+184: OrderedObject
+185: StyleProxy
+186: CompoundTransform
+187: RSLItem
+188: SystemRawChildrenList
+189: Preloader
+190: SystemChildrenList
+191: CursorManagerImpl
+192: InvalidatingSprite
+193: DescribeTypeCacheRecord
+194: BindabilityInfo
+195: Bubble
+196: TitleLetter
+197: Base64Decoder
+198: Base64Encoder
+199: DustRing
+200: Boss3Spawn
+201: QueuedExplosion
+202: Boss4RingCenter
+203: Boss4SecondForm
+204: Boss2Eye
+205: Boss2Foot
+206: Nom
+207: EnemyBalloon
+208: EnemyCannon2
+209: Boss4RushSecondForm
+210: EnemyCannonTopBossRush
+211: Boss2RushFoot
+212: Boss2RushEye
+213: EnemyBird2
+214: Boss3RushSpawn
+215: EnemyCannon
+216: PowerNom
+217: EndingEnemy
+218: StarOutwardLayer
+219: CSSMergedStyleDeclaration
+220: ModuleEvent
+221: ItemPendingError
+222: EvalBindingResponder
+223: LayoutManager
+224: TweenEffectInstance
+225: ZoomInstance
+226: ToolTip
+227: LocaleID
+228: EmbeddedFontRegistry
+229: ResourceModuleRSLItem
+230: RSLListLoader
+231: Boss4SecondFormBg
+232: BossZzz
+233: EnemyCannonBossRush
+234: PriorityQueue
+235: Tween
+236: StarInwardLayer
+237: main
+238: _main_Styles
+239: ErrorSkin
+240: Skin
+241: ObjectUtil
+242: Boss
+243: SavingText
+244: Music
+245: Zzz
+246: Singleton
+247: StyleManager
+248: LuminosityShader
+249: ColorDodgeShader
+250: BindingManager
+251: EffectManager
+252: ToolTipManager
+253: ResourceManager
+254: ColorShader
+255: FlexVersion
+256: HueShader
+257: LayoutElementUIComponentUtils
+258: UIComponentGlobals
+259: ColorBurnShader
+260: MatrixUtil
+261: StyleProtoChain
+262: ExclusionShader
+263: StringUtil
+264: SoftLightShader
+265: SaturationShader
+266: CursorManager
+267: FTETextUtil
+268: MaskUtil
+269: LuminosityMaskShader
+270: DescribeTypeCache
+271: PlayerBullet1
+272: PlayerBullet2
+273: PlayerBullet3
+274: PlayerBullet6
+275: PlayerBullet5
+276: MenuBall
+277: JayIsGames
+278: Cipher
+279: SponsorSplash
+280: Boss4Bullet
+281: Boss4Bullet5
+282: Boss4Bullet6
+283: Star
+284: IceSnail
+285: Smoke
+286: HelixFragment
+287: ShellShield
+288: Devastator
+289: EnemyMoth
+290: GravityShock
+291: HiJump
+292: Gun3
+293: Gun2
+294: Gun1
+295: HeartContainer
+296: EnemySpike
+297: Armor
+298: TurboFire
+299: ExplosionTiny
+300: ExplosionSmall
+301: ExplosionHuge
+302: ExplosionBig
+303: Boss4Bullet7
+304: ItemRate
+305: ItemName
+306: Radar
+307: AreaName
+308: EnemyBulletDonut2
+309: EnemyBulletSpikeBall
+310: EnemyBulletDonut
+311: EnemyBulletLaser
+312: EnemyBulletFire
+313: Boss1Boomerang
+314: EnemyBulletSpikeBall2
+315: EnemyBulletPea
+316: Zoom
+317: ModuleManager
+318: LoaderUtil
+319: LayoutElementHelper
+320: UIDUtil
+321: EndingPicture
+322: EndingBg
+323: Boss3Shield
+324: Boss4ShadowBall
+325: Boss1Eyes
+326: Boss1Hand
+327: Boss1RushHand
+328: Boss3RushShield
+329: HelixHud
+330: HeartHudSingle
+331: IntroSpiral
+332: LocaleSorter
+333: LocaleRegistry
+334: XMLNotifier
+335: Dust
+336: Boss2Pupil
+337: Boss2Eyelid
+338: Boss2RushEyelid
+339: Boss2RushPupil
+340: StarOutward
+341: StarInward
+342: FlxGame/1
+343: FlxGame/2
+344: 
+345: FlxObject/1
+346: FlxObject/2
+347: FlxGroup/1
+348: FlxGroup/2
+349: FlxG/1
+350: FlxG/2
+351: FlxSave/1
+352: FlxSave/2
+353: FlxConsole/1
+354: FlxConsole/2
+355: PlayState/1
+356: PlayState/2
+357: CSSStyleDeclaration/1
+358: GroupBase/1
+359: Group/1
+360: Skin/1
+361: SparkSkin/1
+362: SparkSkinForHalo/1
+363: SparkSkinForHalo/2
+364: UITextField/1
+365: SpriteAsset/1
+366: CSSCondition/1
+367: ObjectUtil/1
+368: ProgrammaticSkin/1
+369: RectangularBorder/1
+370: HaloFocusRect/1
+371: FlxU/1
+372: FlxU/2
+373: FlxSprite/1
+374: FlxSprite/2
+375: FlxKong/1
+376: FlxKong/2
+377: FlxInput/1
+378: FlxGamepad/1
+379: FlxGamepad/2
+380: FlxMonitor/1
+381: FlxMonitor/2
+382: FixBlocks/1
+383: FixBlocks/2
+384: PlayerBulletGroups/1
+385: MainMenu/1
+386: Player/1
+387: AiTriggerPool/1
+388: SnowLayer/1
+389: UniqueBlocks/1
+390: UniqueBlocks/2
+391: SaveData/1
+392: SaveData/2
+393: ControlHelp/1
+394: Boss4BulletGroups/1
+395: StarLayer/1
+396: WorldMap/1
+397: ExplosionPool/1
+398: Boss4SecondFormBulletGroups/1
+399: MiniMap/1
+400: Ending/1
+401: EnemyBulletPool/1
+402: Singleton/1
+403: ComponentDescriptor/1
+404: ValidationResultEvent/1
+405: ValidationResultEvent/2
+406: DesignLayer/1
+407: StyleManager/1
+408: Transform/1
+409: ResourceBundle/1
+410: BindingManager/1
+411: DynamicEvent/1
+412: DynamicEvent/2
+413: UITextFormat/1
+414: FlexVersion/1
+415: State/1
+416: MatrixUtil/1
+417: StyleProtoChain/1
+418: StringUtil/1
+419: AdvancedLayoutFeatures/1
+420: SystemManager/1
+421: 
+422: DisplayLayer/1
+423: LayoutBase/1
+424: MaskUtil/1
+425: LuminosityMaskShader/1
+426: GraphicElement/1
+427: DescribeTypeCache/1
+428: ObjectProxy/1
+429: FlxQuadTree/1
+430: FlxQuadTree/2
+431: BrokenBlock/1
+432: BrokenBlock/2
+433: PlayerBullet3/1
+434: PlayerBullet6/1
+435: TitleText/1
+436: CipherInt/1
+437: ShadowNumber/1
+438: CheckBool/1
+439: Cipher/1
+440: Boss4Bullet6/1
+441: SuperUniqueItem/1
+442: Boss3/1
+443: Boss4/1
+444: Boss1/1
+445: Boss2/1
+446: EnemySpider2/1
+447: SnailNpc/1
+448: EnemyBalloonGenerator/1
+449: EnemyDandelionGenerator/1
+450: UniqueItem/1
+451: FlxTilemap/1
+452: EnemyKitty/1
+453: Boss1Rush/1
+454: Boss4Rush/1
+455: Boss2Rush/1
+456: EnemyBird2Generator/1
+457: Boss3Rush/1
+458: EnemyPincer2/1
+459: EnemyGravTurtle/1
+460: EnemyBlob/1
+461: EnemyBirdGenerator/1
+462: Door/1
+463: Breakable/1
+464: EnemySnake3/1
+465: EnemyGravTurtle2/1
+466: EnemySnelk/1
+467: EnemyPincer/1
+468: EnemySpider/1
+469: EnemyKitty2/1
+470: BubbleGenerator/1
+471: EnemyBlob4/1
+472: EnemyBlob3/1
+473: EnemyBlob2/1
+474: Subscreen/1
+475: ItemRate/1
+476: ItemName/1
+477: HeartHud/1
+478: IntroBg/1
+479: EnemyBulletFire/1
+480: Binding/1
+481: Effect/1
+482: EffectInstance/1
+483: DragSource/1
+484: ToolTipManagerImpl/1
+485: OrderedObject/1
+486: EffectTargetFilter/1
+487: EffectTargetFilter/2
+488: CompoundTransform/1
+489: SandboxMouseEvent/1
+490: SandboxMouseEvent/2
+491: RSLItem/1
+492: LoaderUtil/1
+493: Preloader/1
+494: SystemChildrenList/1
+495: LayoutElementHelper/1
+496: DescribeTypeCacheRecord/1
+497: BindabilityInfo/1
+498: UIDUtil/1
+499: Base64Decoder/1
+500: Base64Encoder/1
+501: DustRing/1
+502: Boss4RingCenter/1
+503: Boss4SecondForm/1
+504: EnemyCannon2/1
+505: Boss4RushSecondForm/1
+506: EnemyCannon/1
+507: StarOutwardLayer/1
+508: CSSMergedStyleDeclaration/1
+509: LayoutManager/1
+510: HideShowEffectTargetFilter/1
+511: HideShowEffectTargetFilter/2
+512: AddRemoveEffectTargetFilter/1
+513: AddRemoveEffectTargetFilter/2
+514: ZoomInstance/1
+515: EmbeddedFontRegistry/1
+516: ResourceModuleRSLItem/1
+517: RSLListLoader/1
+518: Boss4SecondFormBg/1
+519: EnemyCannonBossRush/1
+520: PriorityQueue/1
+521: Tween/1
+522: StarInwardLayer/1

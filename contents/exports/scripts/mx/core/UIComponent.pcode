@@ -1,0 +1,1448 @@
+
+{
+   method
+   name null
+   returns null
+   
+   body
+   maxstack 2
+   localcount 1
+   initscopedepth 1
+   maxscopedepth 9
+   
+   code
+   getlocal0
+   pushscope
+   findpropstrict Multiname("UIComponent",[PackageNamespace("mx.core")])
+   getlex QName(PackageNamespace(""),"Object")
+   pushscope
+   getlex QName(PackageNamespace("flash.events"),"EventDispatcher")
+   pushscope
+   getlex QName(PackageNamespace("flash.display"),"DisplayObject")
+   pushscope
+   getlex QName(PackageNamespace("flash.display"),"InteractiveObject")
+   pushscope
+   getlex QName(PackageNamespace("flash.display"),"DisplayObjectContainer")
+   pushscope
+   getlex QName(PackageNamespace("flash.display"),"Sprite")
+   pushscope
+   getlex QName(PackageNamespace("mx.core"),"FlexSprite")
+   pushscope
+   getlex QName(PackageNamespace("mx.core"),"FlexSprite")
+   newclass #UIComponent
+   popscope
+   popscope
+   popscope
+   popscope
+   popscope
+   popscope
+   popscope
+   initproperty QName(PackageNamespace("mx.core"),"UIComponent")
+   findpropstrict Multiname("MethodQueueElement",[PrivateNamespace(null,"#UIComponent/1")])
+   getlex QName(PackageNamespace(""),"Object")
+   pushscope
+   getlex QName(PackageNamespace(""),"Object")
+   newclass #MethodQueueElement
+   popscope
+   initproperty QName(PrivateNamespace(null,"#UIComponent/1"),"MethodQueueElement")
+   returnvoid
+   end ; code
+   end ; body
+   end ; method
+}
+
+package mx.core
+{
+   import flash.accessibility.Accessibility;
+   import flash.accessibility.AccessibilityProperties;
+   import flash.display.BlendMode;
+   import flash.display.DisplayObject;
+   import flash.display.DisplayObjectContainer;
+   import flash.display.GradientType;
+   import flash.display.Graphics;
+   import flash.display.InteractiveObject;
+   import flash.display.Loader;
+   import flash.display.Shader;
+   import flash.display.Sprite;
+   import flash.display.Stage;
+   import flash.events.Event;
+   import flash.events.EventPhase;
+   import flash.events.FocusEvent;
+   import flash.events.IEventDispatcher;
+   import flash.events.KeyboardEvent;
+   import flash.geom.ColorTransform;
+   import flash.geom.Matrix;
+   import flash.geom.Matrix3D;
+   import flash.geom.PerspectiveProjection;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import flash.geom.Transform;
+   import flash.geom.Vector3D;
+   import flash.system.ApplicationDomain;
+   import flash.system.Capabilities;
+   import flash.text.TextFormatAlign;
+   import flash.text.TextLineMetrics;
+   import flash.ui.Keyboard;
+   import flash.utils.getQualifiedClassName;
+   import mx.automation.IAutomationObject;
+   import mx.binding.BindingManager;
+   import mx.controls.IFlexContextMenu;
+   import mx.effects.EffectManager;
+   import mx.effects.IEffect;
+   import mx.effects.IEffectInstance;
+   import mx.events.ChildExistenceChangedEvent;
+   import mx.events.DynamicEvent;
+   import mx.events.EffectEvent;
+   import mx.events.FlexEvent;
+   import mx.events.MoveEvent;
+   import mx.events.PropertyChangeEvent;
+   import mx.events.ResizeEvent;
+   import mx.events.StateChangeEvent;
+   import mx.events.ValidationResultEvent;
+   import mx.filters.BaseFilter;
+   import mx.filters.IBitmapFilter;
+   import mx.geom.RoundedRectangle;
+   import mx.geom.Transform;
+   import mx.geom.TransformOffsets;
+   import mx.graphics.shaderClasses.ColorBurnShader;
+   import mx.graphics.shaderClasses.ColorDodgeShader;
+   import mx.graphics.shaderClasses.ColorShader;
+   import mx.graphics.shaderClasses.ExclusionShader;
+   import mx.graphics.shaderClasses.HueShader;
+   import mx.graphics.shaderClasses.LuminosityShader;
+   import mx.graphics.shaderClasses.SaturationShader;
+   import mx.graphics.shaderClasses.SoftLightShader;
+   import mx.managers.CursorManager;
+   import mx.managers.ICursorManager;
+   import mx.managers.IFocusManager;
+   import mx.managers.IFocusManagerComponent;
+   import mx.managers.IFocusManagerContainer;
+   import mx.managers.ILayoutManagerClient;
+   import mx.managers.ISystemManager;
+   import mx.managers.IToolTipManagerClient;
+   import mx.managers.SystemManager;
+   import mx.managers.SystemManagerGlobals;
+   import mx.managers.ToolTipManager;
+   import mx.resources.IResourceManager;
+   import mx.resources.ResourceManager;
+   import mx.states.State;
+   import mx.states.Transition;
+   import mx.styles.CSSStyleDeclaration;
+   import mx.styles.IAdvancedStyleClient;
+   import mx.styles.ISimpleStyleClient;
+   import mx.styles.IStyleClient;
+   import mx.styles.IStyleManager2;
+   import mx.styles.StyleManager;
+   import mx.styles.StyleProtoChain;
+   import mx.utils.ColorUtil;
+   import mx.utils.GraphicsUtil;
+   import mx.utils.MatrixUtil;
+   import mx.utils.NameUtil;
+   import mx.utils.StringUtil;
+   import mx.validators.IValidatorListener;
+   import mx.validators.ValidationResult;
+   
+   use namespace mx_internal;
+   
+   public class UIComponent extends FlexSprite implements IAutomationObject, IChildList, IConstraintClient, IDeferredInstantiationUIComponent, IFlexDisplayObject, IFlexModule, IInvalidating, ILayoutManagerClient, IPropertyChangeNotifier, IRepeaterClient, IStateClient, IAdvancedStyleClient, IToolTipManagerClient, IUIComponent, IValidatorListener, IVisualElement
+   {
+      
+      mx_internal static const VERSION:String = "4.1.0.16076";
+      
+      public static const DEFAULT_MEASURED_WIDTH:Number = 160;
+      
+      public static const DEFAULT_MEASURED_MIN_WIDTH:Number = 40;
+      
+      public static const DEFAULT_MEASURED_HEIGHT:Number = 22;
+      
+      public static const DEFAULT_MEASURED_MIN_HEIGHT:Number = 22;
+      
+      public static const DEFAULT_MAX_WIDTH:Number = 10000;
+      
+      public static const DEFAULT_MAX_HEIGHT:Number = 10000;
+      
+      mx_internal static var createAccessibilityImplementation:Function;
+      
+      private static var noEmbeddedFonts:Boolean;
+      
+      private static var _embeddedFontRegistry:IEmbeddedFontRegistry;
+      
+      private static var compositeEffectType:Class;
+      
+      private static var compositeEffectLoaded:Boolean = false;
+      
+      mx_internal static var dispatchEventHook:Function;
+      
+      private static var fakeMouseX:QName;
+      
+      private static var fakeMouseY:QName;
+      
+      private static var xformPt:Point;
+      
+      {
+         method
+         name null
+         returns null
+         
+         body
+         maxstack 4
+         localcount 1
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal0
+         pushscope
+         findproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"VERSION")
+         pushstring "4.1.0.16076"
+         initproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"VERSION")
+         findproperty QName(PackageNamespace(""),"DEFAULT_MEASURED_WIDTH")
+         pushshort 160
+         initproperty QName(PackageNamespace(""),"DEFAULT_MEASURED_WIDTH")
+         findproperty QName(PackageNamespace(""),"DEFAULT_MEASURED_MIN_WIDTH")
+         pushbyte 40
+         initproperty QName(PackageNamespace(""),"DEFAULT_MEASURED_MIN_WIDTH")
+         findproperty QName(PackageNamespace(""),"DEFAULT_MEASURED_HEIGHT")
+         pushbyte 22
+         initproperty QName(PackageNamespace(""),"DEFAULT_MEASURED_HEIGHT")
+         findproperty QName(PackageNamespace(""),"DEFAULT_MEASURED_MIN_HEIGHT")
+         pushbyte 22
+         initproperty QName(PackageNamespace(""),"DEFAULT_MEASURED_MIN_HEIGHT")
+         findproperty QName(PackageNamespace(""),"DEFAULT_MAX_WIDTH")
+         pushshort 10000
+         initproperty QName(PackageNamespace(""),"DEFAULT_MAX_WIDTH")
+         findproperty QName(PackageNamespace(""),"DEFAULT_MAX_HEIGHT")
+         pushshort 10000
+         initproperty QName(PackageNamespace(""),"DEFAULT_MAX_HEIGHT")
+         findproperty QName(PrivateNamespace(null,"#UIComponent"),"compositeEffectLoaded")
+         pushfalse
+         setproperty QName(PrivateNamespace(null,"#UIComponent"),"compositeEffectLoaded")
+         findproperty QName(PrivateNamespace(null,"#UIComponent"),"fakeMouseX")
+         findpropstrict QName(PackageNamespace(""),"QName")
+         getlex QName(PackageNamespace("mx.core"),"mx_internal")
+         pushstring "_mouseX"
+         constructprop QName(PackageNamespace(""),"QName"), 2
+         setproperty QName(PrivateNamespace(null,"#UIComponent"),"fakeMouseX")
+         findproperty QName(PrivateNamespace(null,"#UIComponent"),"fakeMouseY")
+         findpropstrict QName(PackageNamespace(""),"QName")
+         getlex QName(PackageNamespace("mx.core"),"mx_internal")
+         pushstring "_mouseY"
+         constructprop QName(PackageNamespace(""),"QName"), 2
+         setproperty QName(PrivateNamespace(null,"#UIComponent"),"fakeMouseY")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private var deferredSetStyles:Object;
+      
+      private var listeningForRender:Boolean = false;
+      
+      private var methodQueue:Array;
+      
+      private var hasFocusRect:Boolean = false;
+      
+      private var transitionFromState:String;
+      
+      private var transitionToState:String;
+      
+      private var parentChangedFlag:Boolean = false;
+      
+      private var _initialized:Boolean = false;
+      
+      private var _processedDescriptors:Boolean = false;
+      
+      private var _updateCompletePendingFlag:Boolean = false;
+      
+      mx_internal var invalidatePropertiesFlag:Boolean = false;
+      
+      mx_internal var invalidateSizeFlag:Boolean = false;
+      
+      mx_internal var invalidateDisplayListFlag:Boolean = false;
+      
+      mx_internal var setActualSizeCalled:Boolean = false;
+      
+      private var oldX:Number = 0;
+      
+      private var oldY:Number = 0;
+      
+      private var oldWidth:Number = 0;
+      
+      private var oldHeight:Number = 0;
+      
+      private var oldMinWidth:Number;
+      
+      private var oldMinHeight:Number;
+      
+      private var oldExplicitWidth:Number;
+      
+      private var oldExplicitHeight:Number;
+      
+      private var oldScaleX:Number = 1.0;
+      
+      private var oldScaleY:Number = 1.0;
+      
+      private var hasFontContextBeenSaved:Boolean = false;
+      
+      private var oldEmbeddedFontContext:IFlexModuleFactory = null;
+      
+      mx_internal var _layoutFeatures:AdvancedLayoutFeatures;
+      
+      private var _transform:flash.geom.Transform;
+      
+      private var cachedTextFormat:UITextFormat;
+      
+      mx_internal var effectOverlay:UIComponent;
+      
+      mx_internal var effectOverlayColor:uint;
+      
+      mx_internal var effectOverlayReferenceCount:int = 0;
+      
+      mx_internal var saveBorderColor:Boolean = true;
+      
+      mx_internal var origBorderColor:Number;
+      
+      mx_internal var automaticRadioButtonGroups:Object;
+      
+      private var _usingBridge:int = -1;
+      
+      mx_internal var _owner:DisplayObjectContainer;
+      
+      mx_internal var _parent:DisplayObjectContainer;
+      
+      mx_internal var _width:Number;
+      
+      mx_internal var _height:Number;
+      
+      private var _scaleX:Number = 1.0;
+      
+      private var _scaleY:Number = 1.0;
+      
+      private var _visible:Boolean = true;
+      
+      private var _alpha:Number = 1.0;
+      
+      private var _blendMode:String = "normal";
+      
+      private var blendShaderChanged:Boolean;
+      
+      private var blendModeChanged:Boolean;
+      
+      private var _enabled:Boolean = false;
+      
+      private var _filters:Array;
+      
+      private var _designLayer:DesignLayer;
+      
+      private var _tweeningProperties:Array;
+      
+      private var _focusManager:IFocusManager;
+      
+      private var _resourceManager:IResourceManager;
+      
+      private var _systemManager:ISystemManager;
+      
+      private var _systemManagerDirty:Boolean = false;
+      
+      private var _nestLevel:int = 0;
+      
+      mx_internal var _descriptor:UIComponentDescriptor;
+      
+      mx_internal var _document:Object;
+      
+      mx_internal var _documentDescriptor:UIComponentDescriptor;
+      
+      private var _id:String;
+      
+      private var _moduleFactory:IFlexModuleFactory;
+      
+      private var _inheritingStyles:Object;
+      
+      private var _nonInheritingStyles:Object;
+      
+      private var _styleDeclaration:CSSStyleDeclaration;
+      
+      private var _cachePolicy:String = "auto";
+      
+      private var cacheAsBitmapCount:int = 0;
+      
+      private var _focusPane:Sprite;
+      
+      private var _focusEnabled:Boolean = true;
+      
+      private var _hasFocusableChildren:Boolean = false;
+      
+      private var _mouseFocusEnabled:Boolean = true;
+      
+      private var _tabFocusEnabled:Boolean = true;
+      
+      private var _measuredMinWidth:Number = 0;
+      
+      private var _measuredMinHeight:Number = 0;
+      
+      private var _measuredWidth:Number = 0;
+      
+      private var _measuredHeight:Number = 0;
+      
+      private var _percentWidth:Number;
+      
+      private var _percentHeight:Number;
+      
+      mx_internal var _explicitMinWidth:Number;
+      
+      mx_internal var _explicitMinHeight:Number;
+      
+      mx_internal var _explicitMaxWidth:Number;
+      
+      mx_internal var _explicitMaxHeight:Number;
+      
+      private var _explicitWidth:Number;
+      
+      private var _explicitHeight:Number;
+      
+      private var _hasComplexLayoutMatrix:Boolean = false;
+      
+      private var _includeInLayout:Boolean = true;
+      
+      mx_internal var oldLayoutDirection:String = "ltr";
+      
+      private var _instanceIndices:Array;
+      
+      private var _repeaters:Array;
+      
+      private var _repeaterIndices:Array;
+      
+      private var _currentState:String;
+      
+      private var requestedCurrentState:String;
+      
+      private var playStateTransition:Boolean = true;
+      
+      private var _currentStateChanged:Boolean;
+      
+      private var _currentStateDeferred:String;
+      
+      private var _states:Array;
+      
+      private var _currentTransition:Transition;
+      
+      private var _transitions:Array;
+      
+      private var _flexContextMenu:IFlexContextMenu;
+      
+      private var _styleName:Object;
+      
+      mx_internal var _toolTip:String;
+      
+      private var _uid:String;
+      
+      private var _isPopUp:Boolean;
+      
+      private var _automationDelegate:IAutomationObject;
+      
+      private var _automationName:String = null;
+      
+      private var _showInAutomationHierarchy:Boolean = true;
+      
+      mx_internal var _errorString:String = "";
+      
+      private var errorArray:Array;
+      
+      private var errorObjectArray:Array;
+      
+      private var errorStringChanged:Boolean = false;
+      
+      private var _validationSubField:String;
+      
+      private var lastUnscaledWidth:Number;
+      
+      private var lastUnscaledHeight:Number;
+      
+      mx_internal var _effectsStarted:Array;
+      
+      mx_internal var _affectedProperties:Object;
+      
+      private var _isEffectStarted:Boolean = false;
+      
+      private var preventDrawFocus:Boolean = false;
+      
+      private var _endingEffectInstances:Array;
+      
+      private var _maintainProjectionCenter:Boolean = false;
+      
+      public function UIComponent()
+      {
+         method
+         name null
+         returns null
+         
+         body
+         maxstack 6
+         localcount 1
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         newarray 0
+         initproperty QName(PrivateNamespace(null,"#UIComponent"),"methodQueue")
+         getlocal0
+         getlex QName(PackageNamespace("mx.resources"),"ResourceManager")
+         callproperty QName(PackageNamespace(""),"getInstance"), 0
+         initproperty QName(PrivateNamespace(null,"#UIComponent"),"_resourceManager")
+         getlocal0
+         getlex QName(PackageNamespace("mx.styles"),"StyleProtoChain")
+         getproperty QName(PackageNamespace(""),"STYLE_UNINITIALIZED")
+         initproperty QName(PrivateNamespace(null,"#UIComponent"),"_inheritingStyles")
+         getlocal0
+         getlex QName(PackageNamespace("mx.styles"),"StyleProtoChain")
+         getproperty QName(PackageNamespace(""),"STYLE_UNINITIALIZED")
+         initproperty QName(PrivateNamespace(null,"#UIComponent"),"_nonInheritingStyles")
+         getlocal0
+         newarray 0
+         initproperty QName(PrivateNamespace(null,"#UIComponent"),"_states")
+         getlocal0
+         newarray 0
+         initproperty QName(PrivateNamespace(null,"#UIComponent"),"_transitions")
+         getlocal0
+         newarray 0
+         initproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"_effectsStarted")
+         getlocal0
+         newobject 0
+         initproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"_affectedProperties")
+         getlocal0
+         newarray 0
+         initproperty QName(PrivateNamespace(null,"#UIComponent"),"_endingEffectInstances")
+         getlocal0
+         constructsuper 0
+         findproperty QName(PackageNamespace(""),"focusRect")
+         pushfalse
+         initproperty QName(PackageNamespace(""),"focusRect")
+         findproperty QName(PackageNamespace(""),"tabEnabled")
+         getlocal0
+         getlex QName(PackageNamespace("mx.managers"),"IFocusManagerComponent")
+         istypelate
+         initproperty QName(PackageNamespace(""),"tabEnabled")
+         getlocal0
+         getlocal0
+         getlex QName(PackageNamespace("mx.managers"),"IFocusManagerComponent")
+         istypelate
+         initproperty QName(PackageNamespace(""),"tabFocusEnabled")
+         getlocal0
+         pushtrue
+         initproperty QName(PackageNamespace(""),"enabled")
+         getlocal0
+         pushfalse
+         initproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"$visible")
+         findpropstrict QName(PackageNamespace(""),"addEventListener")
+         getlex QName(PackageNamespace("flash.events"),"Event")
+         getproperty QName(PackageNamespace(""),"ADDED")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#UIComponent"),"addedHandler")
+         callpropvoid QName(PackageNamespace(""),"addEventListener"), 2
+         findpropstrict QName(PackageNamespace(""),"addEventListener")
+         getlex QName(PackageNamespace("flash.events"),"Event")
+         getproperty QName(PackageNamespace(""),"REMOVED")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#UIComponent"),"removedHandler")
+         callpropvoid QName(PackageNamespace(""),"addEventListener"), 2
+         getlocal0
+         getlex QName(PackageNamespace("mx.managers"),"IFocusManagerComponent")
+         istypelate
+         iffalse ofs0
+         findpropstrict QName(PackageNamespace(""),"addEventListener")
+         getlex QName(PackageNamespace("flash.events"),"FocusEvent")
+         getproperty QName(PackageNamespace(""),"FOCUS_IN")
+         getlocal0
+         getproperty QName(ProtectedNamespace("mx.core:UIComponent"),"focusInHandler")
+         callpropvoid QName(PackageNamespace(""),"addEventListener"), 2
+         findpropstrict QName(PackageNamespace(""),"addEventListener")
+         getlex QName(PackageNamespace("flash.events"),"FocusEvent")
+         getproperty QName(PackageNamespace(""),"FOCUS_OUT")
+         getlocal0
+         getproperty QName(ProtectedNamespace("mx.core:UIComponent"),"focusOutHandler")
+         callpropvoid QName(PackageNamespace(""),"addEventListener"), 2
+         findpropstrict QName(PackageNamespace(""),"addEventListener")
+         getlex QName(PackageNamespace("flash.events"),"KeyboardEvent")
+         getproperty QName(PackageNamespace(""),"KEY_DOWN")
+         getlocal0
+         getproperty QName(ProtectedNamespace("mx.core:UIComponent"),"keyDownHandler")
+         callpropvoid QName(PackageNamespace(""),"addEventListener"), 2
+         findpropstrict QName(PackageNamespace(""),"addEventListener")
+         getlex QName(PackageNamespace("flash.events"),"KeyboardEvent")
+         getproperty QName(PackageNamespace(""),"KEY_UP")
+         getlocal0
+         getproperty QName(ProtectedNamespace("mx.core:UIComponent"),"keyUpHandler")
+         callpropvoid QName(PackageNamespace(""),"addEventListener"), 2
+         ofs0:
+         getlocal0
+         callpropvoid QName(ProtectedNamespace("mx.core:UIComponent"),"resourcesChanged"), 0
+         getlocal0
+         getproperty QName(ProtectedNamespace("mx.core:UIComponent"),"resourceManager")
+         getlex QName(PackageNamespace("flash.events"),"Event")
+         getproperty QName(PackageNamespace(""),"CHANGE")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#UIComponent"),"resourceManager_changeHandler")
+         pushfalse
+         pushbyte 0
+         pushtrue
+         callpropvoid QName(Namespace("flash.events:IEventDispatcher"),"addEventListener"), 5
+         getlocal0
+         getlocal0
+         getsuper QName(PackageNamespace(""),"width")
+         initproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"_width")
+         getlocal0
+         getlocal0
+         getsuper QName(PackageNamespace(""),"height")
+         initproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"_height")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      mx_internal static function get embeddedFontRegistry() : IEmbeddedFontRegistry
+      {
+         trait getter QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"embeddedFontRegistry")
+         flag FINAL
+         dispid 3
+         method
+         name null
+         flag NEED_ACTIVATION
+         returns QName(PackageNamespace("mx.core"),"IEmbeddedFontRegistry")
+         
+         body
+         maxstack 4
+         localcount 3
+         initscopedepth 10
+         maxscopedepth 15
+         
+         code
+         getlocal0
+         pushscope
+         newactivation
+         dup
+         setlocal1
+         pushscope
+         getlex QName(PrivateNamespace(null,"#UIComponent"),"_embeddedFontRegistry")
+         not
+         dup
+         iffalse ofs0
+         pop
+         getlex QName(PrivateNamespace(null,"#UIComponent"),"noEmbeddedFonts")
+         not
+         ofs0:
+         iffalse ofs1
+         ofs2:
+         findproperty QName(PrivateNamespace(null,"#UIComponent"),"_embeddedFontRegistry")
+         findpropstrict QName(PackageNamespace("mx.core"),"IEmbeddedFontRegistry")
+         getlex QName(PackageNamespace("mx.core"),"Singleton")
+         pushstring "mx.core::IEmbeddedFontRegistry"
+         callproperty QName(PackageNamespace(""),"getInstance"), 1
+         callproperty QName(PackageNamespace("mx.core"),"IEmbeddedFontRegistry"), 1
+         setproperty QName(PrivateNamespace(null,"#UIComponent"),"_embeddedFontRegistry")
+         ofs3:
+         jump ofs1
+         ofs4:
+         getlocal0
+         pushscope
+         getlocal1
+         pushscope
+         newcatch 0
+         dup
+         setlocal2
+         dup
+         pushscope
+         swap
+         setslot 1
+         findproperty QName(PrivateNamespace(null,"#UIComponent"),"noEmbeddedFonts")
+         pushtrue
+         setproperty QName(PrivateNamespace(null,"#UIComponent"),"noEmbeddedFonts")
+         popscope
+         kill 2
+         ofs1:
+         getlex QName(PrivateNamespace(null,"#UIComponent"),"_embeddedFontRegistry")
+         returnvalue
+         end ; code
+         try from ofs2 to ofs3 target ofs4 type QName(PackageNamespace(""),"Error") name QName(PackageNamespace(""),"e") end
+         end ; body
+         end ; method
+      }
+      
+      public static function suspendBackgroundProcessing() : void
+      {
+         trait method QName(PackageNamespace(""),"suspendBackgroundProcessing")
+         flag FINAL
+         dispid 4
+         method
+         name null
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 3
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace("mx.core"),"UIComponentGlobals")
+         dup
+         setlocal1
+         getproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"callLaterSuspendCount")
+         increment_i
+         setlocal2
+         getlocal1
+         getlocal2
+         setproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"callLaterSuspendCount")
+         kill 2
+         kill 1
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public static function resumeBackgroundProcessing() : void
+      {
+         trait method QName(PackageNamespace(""),"resumeBackgroundProcessing")
+         flag FINAL
+         dispid 5
+         method
+         name null
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 4
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal0
+         pushscope
+         pushnull
+         coerce QName(PackageNamespace("mx.managers"),"ISystemManager")
+         setlocal1
+         getlex QName(PackageNamespace("mx.core"),"UIComponentGlobals")
+         getproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"callLaterSuspendCount")
+         pushbyte 0
+         ifngt ofs0
+         getlex QName(PackageNamespace("mx.core"),"UIComponentGlobals")
+         dup
+         setlocal2
+         getproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"callLaterSuspendCount")
+         decrement_i
+         setlocal3
+         getlocal2
+         getlocal3
+         setproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"callLaterSuspendCount")
+         kill 3
+         kill 2
+         getlex QName(PackageNamespace("mx.core"),"UIComponentGlobals")
+         getproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"callLaterSuspendCount")
+         pushbyte 0
+         ifne ofs0
+         getlex QName(PackageNamespace("mx.managers"),"SystemManagerGlobals")
+         getproperty QName(PackageNamespace(""),"topLevelSystemManagers")
+         pushbyte 0
+         getproperty MultinameL([PackageNamespace(""),PrivateNamespace(null,"#UIComponent/1"),PrivateNamespace(null,"#UIComponent"),Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace("mx.core"),PackageInternalNs("mx.core"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.core:UIComponent"),StaticProtectedNs("mx.core:UIComponent"),StaticProtectedNs("mx.core:FlexSprite"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         coerce QName(PackageNamespace("mx.managers"),"ISystemManager")
+         setlocal1
+         getlocal1
+         convert_b
+         dup
+         iffalse ofs1
+         pop
+         getlocal1
+         getproperty QName(Namespace("mx.managers:ISystemManager"),"stage")
+         convert_b
+         ofs1:
+         iffalse ofs0
+         getlocal1
+         getproperty QName(Namespace("mx.managers:ISystemManager"),"stage")
+         callpropvoid QName(PackageNamespace(""),"invalidate"), 0
+         ofs0:
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get initialized() : Boolean
+      {
+         trait getter QName(PackageNamespace(""),"initialized")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"Boolean")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#UIComponent"),"_initialized")
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set initialized(param1:Boolean) : void
+      {
+         trait setter QName(PackageNamespace(""),"initialized")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"Boolean")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 2
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getlocal1
+         initproperty QName(PrivateNamespace(null,"#UIComponent"),"_initialized")
+         getlocal1
+         iffalse ofs0
+         getlocal0
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#UIComponent"),"_visible")
+         pushtrue
+         callpropvoid QName(PackageNamespace(""),"setVisible"), 2
+         getlocal0
+         findpropstrict QName(PackageNamespace("mx.events"),"FlexEvent")
+         getlex QName(PackageNamespace("mx.events"),"FlexEvent")
+         getproperty QName(PackageNamespace(""),"CREATION_COMPLETE")
+         constructprop QName(PackageNamespace("mx.events"),"FlexEvent"), 1
+         callpropvoid QName(PackageNamespace(""),"dispatchEvent"), 1
+         ofs0:
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get processedDescriptors() : Boolean
+      {
+         trait getter QName(PackageNamespace(""),"processedDescriptors")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"Boolean")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#UIComponent"),"_processedDescriptors")
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set processedDescriptors(param1:Boolean) : void
+      {
+         trait setter QName(PackageNamespace(""),"processedDescriptors")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"Boolean")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 2
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getlocal1
+         initproperty QName(PrivateNamespace(null,"#UIComponent"),"_processedDescriptors")
+         getlocal1
+         iffalse ofs0
+         getlocal0
+         findpropstrict QName(PackageNamespace("mx.events"),"FlexEvent")
+         getlex QName(PackageNamespace("mx.events"),"FlexEvent")
+         getproperty QName(PackageNamespace(""),"INITIALIZE")
+         constructprop QName(PackageNamespace("mx.events"),"FlexEvent"), 1
+         callpropvoid QName(PackageNamespace(""),"dispatchEvent"), 1
+         ofs0:
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get updateCompletePendingFlag() : Boolean
+      {
+         trait getter QName(PackageNamespace(""),"updateCompletePendingFlag")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"Boolean")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#UIComponent"),"_updateCompletePendingFlag")
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set updateCompletePendingFlag(param1:Boolean) : void
+      {
+         trait setter QName(PackageNamespace(""),"updateCompletePendingFlag")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"Boolean")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getlocal1
+         initproperty QName(PrivateNamespace(null,"#UIComponent"),"_updateCompletePendingFlag")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get accessibilityEnabled() : Boolean
+      {
+         trait getter QName(PackageNamespace(""),"accessibilityEnabled")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"Boolean")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace(""),"accessibilityProperties")
+         iffalse ofs0
+         getlex QName(PackageNamespace(""),"accessibilityProperties")
+         getproperty QName(PackageNamespace(""),"silent")
+         not
+         jump ofs1
+         ofs0:
+         pushtrue
+         ofs1:
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set accessibilityEnabled(param1:Boolean) : void
+      {
+         trait setter QName(PackageNamespace(""),"accessibilityEnabled")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"Boolean")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace("flash.system"),"Capabilities")
+         getproperty QName(PackageNamespace(""),"hasAccessibility")
+         iftrue ofs0
+         returnvoid
+         ofs0:
+         getlex QName(PackageNamespace(""),"accessibilityProperties")
+         iftrue ofs1
+         findproperty QName(PackageNamespace(""),"accessibilityProperties")
+         findpropstrict QName(PackageNamespace("flash.accessibility"),"AccessibilityProperties")
+         constructprop QName(PackageNamespace("flash.accessibility"),"AccessibilityProperties"), 0
+         initproperty QName(PackageNamespace(""),"accessibilityProperties")
+         ofs1:
+         getlex QName(PackageNamespace(""),"accessibilityProperties")
+         getlocal1
+         not
+         setproperty QName(PackageNamespace(""),"silent")
+         getlex QName(PackageNamespace("flash.accessibility"),"Accessibility")
+         callpropvoid QName(PackageNamespace(""),"updateProperties"), 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get accessibilityName() : String
+      {
+         trait getter QName(PackageNamespace(""),"accessibilityName")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"String")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace(""),"accessibilityProperties")
+         iffalse ofs0
+         getlex QName(PackageNamespace(""),"accessibilityProperties")
+         getproperty QName(PackageNamespace(""),"name")
+         coerce_s
+         jump ofs1
+         ofs0:
+         pushstring ""
+         ofs1:
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set accessibilityName(param1:String) : void
+      {
+         trait setter QName(PackageNamespace(""),"accessibilityName")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"String")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace("flash.system"),"Capabilities")
+         getproperty QName(PackageNamespace(""),"hasAccessibility")
+         iftrue ofs0
+         returnvoid
+         ofs0:
+         getlex QName(PackageNamespace(""),"accessibilityProperties")
+         iftrue ofs1
+         findproperty QName(PackageNamespace(""),"accessibilityProperties")
+         findpropstrict QName(PackageNamespace("flash.accessibility"),"AccessibilityProperties")
+         constructprop QName(PackageNamespace("flash.accessibility"),"AccessibilityProperties"), 0
+         initproperty QName(PackageNamespace(""),"accessibilityProperties")
+         ofs1:
+         getlex QName(PackageNamespace(""),"accessibilityProperties")
+         getlocal1
+         setproperty QName(PackageNamespace(""),"name")
+         getlex QName(PackageNamespace("flash.accessibility"),"Accessibility")
+         callpropvoid QName(PackageNamespace(""),"updateProperties"), 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get accessibilityDescription() : String
+      {
+         trait getter QName(PackageNamespace(""),"accessibilityDescription")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"String")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace(""),"accessibilityProperties")
+         iffalse ofs0
+         getlex QName(PackageNamespace(""),"accessibilityProperties")
+         getproperty QName(PackageNamespace(""),"description")
+         coerce_s
+         jump ofs1
+         ofs0:
+         pushstring ""
+         ofs1:
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set accessibilityDescription(param1:String) : void
+      {
+         trait setter QName(PackageNamespace(""),"accessibilityDescription")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"String")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace("flash.system"),"Capabilities")
+         getproperty QName(PackageNamespace(""),"hasAccessibility")
+         iftrue ofs0
+         returnvoid
+         ofs0:
+         getlex QName(PackageNamespace(""),"accessibilityProperties")
+         iftrue ofs1
+         findproperty QName(PackageNamespace(""),"accessibilityProperties")
+         findpropstrict QName(PackageNamespace("flash.accessibility"),"AccessibilityProperties")
+         constructprop QName(PackageNamespace("flash.accessibility"),"AccessibilityProperties"), 0
+         initproperty QName(PackageNamespace(""),"accessibilityProperties")
+         ofs1:
+         getlex QName(PackageNamespace(""),"accessibilityProperties")
+         getlocal1
+         setproperty QName(PackageNamespace(""),"description")
+         getlex QName(PackageNamespace("flash.accessibility"),"Accessibility")
+         callpropvoid QName(PackageNamespace(""),"updateProperties"), 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get accessibilityShortcut() : String
+      {
+         trait getter QName(PackageNamespace(""),"accessibilityShortcut")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"String")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace(""),"accessibilityProperties")
+         iffalse ofs0
+         getlex QName(PackageNamespace(""),"accessibilityProperties")
+         getproperty QName(PackageNamespace(""),"shortcut")
+         coerce_s
+         jump ofs1
+         ofs0:
+         pushstring ""
+         ofs1:
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set accessibilityShortcut(param1:String) : void
+      {
+         trait setter QName(PackageNamespace(""),"accessibilityShortcut")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"String")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace("flash.system"),"Capabilities")
+         getproperty QName(PackageNamespace(""),"hasAccessibility")
+         iftrue ofs0
+         returnvoid
+         ofs0:
+         getlex QName(PackageNamespace(""),"accessibilityProperties")
+         iftrue ofs1
+         findproperty QName(PackageNamespace(""),"accessibilityProperties")
+         findpropstrict QName(PackageNamespace("flash.accessibility"),"AccessibilityProperties")
+         constructprop QName(PackageNamespace("flash.accessibility"),"AccessibilityProperties"), 0
+         initproperty QName(PackageNamespace(""),"accessibilityProperties")
+         ofs1:
+         getlex QName(PackageNamespace(""),"accessibilityProperties")
+         getlocal1
+         setproperty QName(PackageNamespace(""),"shortcut")
+         getlex QName(PackageNamespace("flash.accessibility"),"Accessibility")
+         callpropvoid QName(PackageNamespace(""),"updateProperties"), 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function get usingBridge() : Boolean
+      {
+         trait getter QName(PrivateNamespace(null,"#UIComponent"),"usingBridge")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"Boolean")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#UIComponent"),"_usingBridge")
+         pushbyte 0
+         ifne ofs0
+         pushfalse
+         returnvalue
+         ofs0:
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#UIComponent"),"_usingBridge")
+         pushbyte 1
+         ifne ofs1
+         pushtrue
+         returnvalue
+         ofs1:
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#UIComponent"),"_systemManager")
+         iftrue ofs2
+         pushfalse
+         returnvalue
+         ofs2:
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#UIComponent"),"_systemManager")
+         pushstring "mx.managers.IMarshallPlanSystemManager"
+         callproperty QName(Namespace("mx.core:IFlexModuleFactory"),"getImplementation"), 1
+         coerce QName(PackageNamespace(""),"Object")
+         setlocal1
+         getlocal1
+         iftrue ofs3
+         getlocal0
+         pushbyte 0
+         initproperty QName(PrivateNamespace(null,"#UIComponent"),"_usingBridge")
+         pushfalse
+         returnvalue
+         ofs3:
+         getlocal1
+         callproperty Multiname("useSWFBridge",[PackageNamespace(""),PrivateNamespace(null,"#UIComponent/1"),PrivateNamespace(null,"#UIComponent"),Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace("mx.core"),PackageInternalNs("mx.core"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.core:UIComponent"),StaticProtectedNs("mx.core:UIComponent"),StaticProtectedNs("mx.core:FlexSprite"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")]), 0
+         iffalse ofs4
+         getlocal0
+         pushbyte 1
+         initproperty QName(PrivateNamespace(null,"#UIComponent"),"_usingBridge")
+         pushtrue
+         returnvalue
+         ofs4:
+         getlocal0
+         pushbyte 0
+         initproperty QName(PrivateNamespace(null,"#UIComponent"),"_usingBridge")
+         pushfalse
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get owner() : DisplayObjectContainer
+      {
+         trait getter QName(PackageNamespace(""),"owner")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace("flash.display"),"DisplayObjectContainer")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"_owner")
+         iffalse ofs0
+         getlocal0
+         getproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"_owner")
+         coerce QName(PackageNamespace("flash.display"),"DisplayObjectContainer")
+         jump ofs1
+         ofs0:
+         getlocal0
+         getproperty QName(PackageNamespace(""),"parent")
+         coerce QName(PackageNamespace("flash.display"),"DisplayObjectContainer")
+         ofs1:
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set owner(param1:DisplayObjectContainer) : void
+      {
+         trait setter QName(PackageNamespace(""),"owner")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace("flash.display"),"DisplayObjectContainer")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getlocal1
+         initproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"_owner")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      override public function get parent() : DisplayObjectContainer
+      {
+         trait getter QName(PackageNamespace(""),"parent")
+         flag OVERRIDE
+         dispid 0
+         method
+         name null
+         flag NEED_ACTIVATION
+         returns QName(PackageNamespace("flash.display"),"DisplayObjectContainer")
+         
+         body
+         maxstack 3
+         localcount 3
+         initscopedepth 11
+         maxscopedepth 16
+         
+         code
+         getlocal0
+         pushscope
+         newactivation
+         dup
+         setlocal1
+         pushscope
+         ofs0:
+         getlocal0
+         getproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"_parent")
+         iffalse ofs1
+         getlocal0
+         getproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"_parent")
+         coerce QName(PackageNamespace("flash.display"),"DisplayObjectContainer")
+         jump ofs2
+         ofs1:
+         getlocal0
+         getsuper QName(PackageNamespace(""),"parent")
+         coerce QName(PackageNamespace("flash.display"),"DisplayObjectContainer")
+         ofs2:
+         returnvalue
+         ofs3:
+         jump ofs4
+         ofs4:
+         getlocal0
+         pushscope
+         getlocal1
+         pushscope
+         newcatch 0
+         dup
+         setlocal2
+         dup
+         pushscope
+         swap
+         setslot 1
+         popscope
+         kill 2
+         pushnull
+         returnvalue
+         end ; code
+         try from ofs0 to ofs3 target ofs4 type QName(PackageNamespace(""),"SecurityError") name QName(PackageNamespace(""),"e") end
+         end ; body
+         end ; method
+      }
+      
+      [Bindable("xChanged")]
+      override public function get x() : Number
+      {
+         trait getter QName(PackageNamespace(""),"x")
+         flag OVERRIDE
+         flag METADATA
+         metadata"Bindable"
+         item "
