@@ -167,9 +167,7 @@ package org.flixel
          getlex QName(PackageNamespace("flash.display"),"StageAlign")
          getproperty QName(PackageNamespace(""),"TOP_LEFT")
          setproperty QName(PackageNamespace(""),"align")
-         getlex QName(PackageNamespace("org.flixel"),"FlxG")
-         getproperty QName(PackageNamespace(""),"debug")
-         not
+         pushfalse
          dup
          iffalse ofs0
          pop
