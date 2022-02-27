@@ -25,6 +25,7 @@ package
       {
          super();
          FlxG.mouse.show();
+         FlxG.noPause = true;
          this.bg = new FlxSprite();
          this.bg.y = 0;
          this.bg.x = 0;
@@ -60,6 +61,7 @@ package
             {
                this.bg.visible = false;
                this.splash.visible = false;
+               FlxG.noPause = false;
                kill();
                return;
             }

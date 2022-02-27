@@ -134,6 +134,9 @@ package
          getlocal0
          constructsuper 0
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         pushtrue
+         setproperty QName(PackageNamespace(""),"noPause")
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"mouse")
          callpropvoid QName(PackageNamespace(""),"hide"), 0
          getlocal0
@@ -912,6 +915,9 @@ package
          getlocal0
          getproperty QName(PrivateNamespace(null,"#Intro"),"_modeInitialized")
          iftrue ofs0
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         pushfalse
+         setproperty QName(PackageNamespace(""),"noPause")
          getlocal0
          pushtrue
          initproperty QName(PrivateNamespace(null,"#Intro"),"_modeInitialized")

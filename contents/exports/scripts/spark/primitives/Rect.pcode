@@ -220,7 +220,7 @@ package spark.primitives
          getlocal 4
          setslot 4
          getscopeobject 1
-         newfunction 3761
+         newfunction 3764
          coerce QName(PackageNamespace(""),"Function")
          setslot 9
          getscopeobject 1

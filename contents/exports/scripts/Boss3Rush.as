@@ -126,6 +126,11 @@ package
          this.playAnim("mid");
          PlayState.player.x += 20;
          PlayState.player.setFaceDir(Player.FACE_FLOOR_RIGHT);
+         if(PlayState.player._slugMode)
+         {
+            this.SHOT_NUM += 2;
+            this._bossSpeed += 0.3;
+         }
          this._spawn = new Array();
          this._shields = new Array();
       }

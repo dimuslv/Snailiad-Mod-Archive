@@ -40,8 +40,6 @@ package
       
       private static const IMG_OFS_Y:int = 0;
       
-      private static const MAX_HP:int = 12500;
-      
       private static const DEFENSE:int = 0;
       
       private static const OFFENSE:int = 0;
@@ -157,6 +155,8 @@ package
       
       private var _decisionTableIndex:int = 0;
       
+      private var MAX_HP:int = 12500;
+      
       private var _currentWeapon:int = 2;
       
       private var _nextMove:Number = 0.0;
@@ -252,7 +252,11 @@ package
       public function Boss4Rush(param1:int, param2:int)
       {
          this._hasWeapon = [true,true,true];
-         super(param1,param2,MAX_HP,DEFENSE,OFFENSE);
+         if(PlayState.player._slugMode)
+         {
+            this._bossSpeed += 0.1;
+         }
+         super(param1,param2,this.MAX_HP,DEFENSE,OFFENSE);
          this._originX = param1;
          this._originY = param2;
          this._decisionTableIndex = PlayState.player.getMaxHp() + PlayState.player.getPercentComplete();
@@ -275,10 +279,6 @@ package
          this._runSpeed = 410;
          this._maxSpeed = 600;
          this._gravity = 1200;
-         if(PlayState.player._slugMode)
-         {
-            this._bossSpeed += 0.1;
-         }
          maxVelocity.x = this._maxSpeed;
          maxVelocity.y = this._maxSpeed;
          this._shadowBall = new Array();
@@ -1838,7 +1838,7 @@ package
       
       override public function hurt(param1:Number) : void
       {
-         if(_hp <= MAX_HP * 0.4 && this._attackPhase < 1)
+         if(_hp <= this.MAX_HP * 0.4 && this._attackPhase < 1)
          {
             this._bossSpeed += 0.2;
             this._attackPhase = 1;

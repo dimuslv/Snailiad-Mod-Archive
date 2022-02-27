@@ -3,6 +3,7 @@ package
 {
    import flash.utils.getTimer;
    import org.flixel.FlxG;
+   import org.flixel.FlxSound;
    import org.flixel.FlxU;
    
    public class Sfx
@@ -51,6 +52,8 @@ package
       public static const EXPLOSION_TIMEOUT:int = 25;
       
       public static var nextExplosion:int = 0;
+      
+      public static var EndingSfx:FlxSound;
       
       public static const DOOROPEN_TIMEOUT:int = 30;
       
@@ -389,7 +392,12 @@ package
       public static function playEnding1() : void
       {
          var _loc1_:Class = Sfx_Ending1Song;
-         FlxG.play(_loc1_,0.75 * FlxG.musicVolume);
+         EndingSfx = FlxG.play(_loc1_,0.75 * FlxG.musicVolume);
+      }
+      
+      public static function stopEnding1() : void
+      {
+         EndingSfx.fadeOut(1);
       }
       
       public static function playOpenDoor() : void
@@ -485,6 +493,12 @@ package
             case 2:
                playEnemyKilled3();
          }
+      }
+      
+      public static function playSlugMode() : void
+      {
+         var _loc1_:Class = Sfx_SlugMode;
+         FlxG.play(_loc1_);
       }
       
       public static function playEnemyHurt() : void

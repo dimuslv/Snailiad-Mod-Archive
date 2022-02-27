@@ -57,6 +57,10 @@ package
          var _loc11_:Number = this.xml.vars.bestHardTime;
          var _loc12_:Number = this.xml.vars.bestInsaneTime;
          var _loc13_:XML = new XML(<vars/>);
+         if(Player.firingMode == Player.FIRING_MODE_TOGGLE)
+         {
+            _loc13_.appendChild(<toggleFire>true</toggleFire>);
+         }
          if(_loc8_)
          {
             _loc13_.appendChild(<hideMiniMap>{_loc8_}</hideMiniMap>);

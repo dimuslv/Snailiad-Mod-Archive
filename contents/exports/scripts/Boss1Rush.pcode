@@ -55,17 +55,9 @@ package
       
       private static const IMGBODY_HEIGHT:int = 48;
       
-      private static const MAX_HP:int = 10000;
-      
       private static const DEFENSE:int = 3;
       
       private static const OFFENSE:int = 2;
-      
-      private static const HAND_NUM:int = 12;
-      
-      private static const SHOT_NUM:int = 12;
-      
-      private static const SHOT_DELAY:Number = 0.3;
       
       private static const PATTERN_DELAY:Number = 5.0;
       
@@ -91,24 +83,12 @@ package
          findproperty QName(PrivateNamespace(null,"#Boss1Rush"),"IMGBODY_HEIGHT")
          pushbyte 48
          initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"IMGBODY_HEIGHT")
-         findproperty QName(PrivateNamespace(null,"#Boss1Rush"),"MAX_HP")
-         pushshort 10000
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"MAX_HP")
          findproperty QName(PrivateNamespace(null,"#Boss1Rush"),"DEFENSE")
          pushbyte 3
          initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"DEFENSE")
          findproperty QName(PrivateNamespace(null,"#Boss1Rush"),"OFFENSE")
          pushbyte 2
          initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"OFFENSE")
-         findproperty QName(PrivateNamespace(null,"#Boss1Rush"),"HAND_NUM")
-         pushbyte 12
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"HAND_NUM")
-         findproperty QName(PrivateNamespace(null,"#Boss1Rush"),"SHOT_NUM")
-         pushbyte 12
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"SHOT_NUM")
-         findproperty QName(PrivateNamespace(null,"#Boss1Rush"),"SHOT_DELAY")
-         pushdouble 0.3
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"SHOT_DELAY")
          findproperty QName(PrivateNamespace(null,"#Boss1Rush"),"PATTERN_DELAY")
          pushbyte 5
          initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"PATTERN_DELAY")
@@ -120,6 +100,8 @@ package
          end ; body
          end ; method
       }
+      
+      private var MAX_HP:int = 10000;
       
       private var started:Boolean = false;
       
@@ -137,11 +119,17 @@ package
       
       private var _targetY:int;
       
+      private var HAND_NUM:int = 12;
+      
+      private var SHOT_NUM:int = 12;
+      
       private var _shotNum:int = 0;
       
       private var _shotMax:int = 8;
       
       private var _shotTimeout:Number = 0;
+      
+      private var SHOT_DELAY:Number = 0.3;
       
       private var _firingPattern:int = 0;
       
@@ -180,10 +168,30 @@ package
          code
          getlocal0
          pushscope
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"player")
+         convert_b
+         dup
+         iffalse ofs0
+         pop
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"player")
+         getproperty QName(PackageNamespace(""),"_hardMode")
+         convert_b
+         ofs0:
+         iffalse ofs1
+         getlocal0
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"HAND_NUM")
+         pushbyte 24
+         add
+         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"HAND_NUM")
+         ofs1:
          getlocal0
          getlocal1
          getlocal2
-         getlex QName(PrivateNamespace(null,"#Boss1Rush"),"MAX_HP")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"MAX_HP")
          getlex QName(PrivateNamespace(null,"#Boss1Rush"),"DEFENSE")
          getlex QName(PrivateNamespace(null,"#Boss1Rush"),"OFFENSE")
          constructsuper 5
@@ -266,8 +274,8 @@ package
          initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_handThetaSpeed")
          pushbyte 0
          setlocal3
-         jump ofs0
-         ofs1:
+         jump ofs2
+         ofs3:
          label
          getlocal0
          getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_handThetaCur")
@@ -276,7 +284,8 @@ package
          getlex QName(PackageNamespace(""),"Math")
          getproperty QName(PackageNamespace(""),"PI")
          multiply
-         getlex QName(PrivateNamespace(null,"#Boss1Rush"),"HAND_NUM")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"HAND_NUM")
          divide
          setproperty MultinameL([PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
@@ -304,10 +313,11 @@ package
          getproperty MultinameL([PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          callpropvoid QName(PackageNamespace(""),"add"), 1
          inclocal_i 3
-         ofs0:
+         ofs2:
          getlocal3
-         getlex QName(PrivateNamespace(null,"#Boss1Rush"),"HAND_NUM")
-         iflt ofs1
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"HAND_NUM")
+         iflt ofs3
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          getlex QName(PackageNamespace(""),"PlayState")
@@ -724,7 +734,8 @@ package
          inclocal_i 5
          ofs3:
          getlocal 5
-         getlex QName(PrivateNamespace(null,"#Boss1Rush"),"HAND_NUM")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"HAND_NUM")
          iflt ofs4
          getlocal0
          callsupervoid QName(PackageNamespace(""),"update"), 0
@@ -886,7 +897,8 @@ package
          ifngt ofs1
          getlocal0
          getlocal1
-         getlex QName(PrivateNamespace(null,"#Boss1Rush"),"SHOT_DELAY")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"SHOT_DELAY")
          getlocal0
          getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_turboMultiplier")
          multiply
@@ -1104,7 +1116,8 @@ package
          inclocal_i 1
          ofs2:
          getlocal1
-         getlex QName(PrivateNamespace(null,"#Boss1Rush"),"HAND_NUM")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"HAND_NUM")
          iflt ofs3
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"enemyBulletPool")
@@ -1147,7 +1160,8 @@ package
          getlocal0
          pushscope
          getlex QName(ProtectedNamespace("Enemy"),"_hp")
-         getlex QName(PrivateNamespace(null,"#Boss1Rush"),"MAX_HP")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"MAX_HP")
          pushdouble 0.33
          multiply
          lessequals
@@ -1178,7 +1192,8 @@ package
          jump ofs2
          ofs1:
          getlex QName(ProtectedNamespace("Enemy"),"_hp")
-         getlex QName(PrivateNamespace(null,"#Boss1Rush"),"MAX_HP")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"MAX_HP")
          pushdouble 0.66
          multiply
          lessequals

@@ -306,8 +306,19 @@ package
          constructprop QName(PackageNamespace(""),"XML"), 1
          coerce QName(PackageNamespace(""),"XML")
          setlocal 13
+         getlex QName(PackageNamespace(""),"Player")
+         getproperty QName(PackageNamespace(""),"firingMode")
+         getlex QName(PackageNamespace(""),"Player")
+         getproperty QName(PackageNamespace(""),"FIRING_MODE_TOGGLE")
+         ifne ofs0
+         getlocal 13
+         getlex QName(PackageNamespace(""),"XML")
+         pushstring "<toggleFire>true</toggleFire>"
+         construct 1
+         callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
+         ofs0:
          getlocal 8
-         iffalse ofs0
+         iffalse ofs1
          getlocal 13
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<hideMiniMap>"
@@ -318,9 +329,9 @@ package
          add
          construct 1
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
-         ofs0:
+         ofs1:
          getlocal 7
-         iffalse ofs1
+         iffalse ofs2
          getlocal 13
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<hideTab>"
@@ -331,9 +342,9 @@ package
          add
          construct 1
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
-         ofs1:
+         ofs2:
          getlocal1
-         iffalse ofs2
+         iffalse ofs3
          getlocal 13
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<hasWonGame>"
@@ -344,9 +355,9 @@ package
          add
          construct 1
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
-         ofs2:
+         ofs3:
          getlocal3
-         iffalse ofs3
+         iffalse ofs4
          getlocal 13
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<hasWonHardMode>"
@@ -357,9 +368,9 @@ package
          add
          construct 1
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
-         ofs3:
+         ofs4:
          getlocal 4
-         iffalse ofs4
+         iffalse ofs5
          getlocal 13
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<hasWonInsaneMode>"
@@ -370,9 +381,9 @@ package
          add
          construct 1
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
-         ofs4:
+         ofs5:
          getlocal 6
-         iffalse ofs5
+         iffalse ofs6
          getlocal 13
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<hasFullClear>"
@@ -383,9 +394,9 @@ package
          add
          construct 1
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
-         ofs5:
+         ofs6:
          getlocal 5
-         iffalse ofs6
+         iffalse ofs7
          getlocal 13
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<hasWonBossRush>"
@@ -396,7 +407,7 @@ package
          add
          construct 1
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
-         ofs6:
+         ofs7:
          getlocal 13
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<bestBossRushTime>"
@@ -440,223 +451,223 @@ package
          getlocal0
          pushstring "mapKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
-         iffalse ofs7
+         iffalse ofs8
          getlocal 13
          getlocal0
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
          getproperty Multiname("mapKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
-         ofs7:
-         getlocal0
-         pushstring "jumpKey"
-         callproperty QName(PackageNamespace(""),"isVarSet"), 1
-         iffalse ofs8
-         getlocal 13
-         getlocal0
-         getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
-         getproperty Multiname("jumpKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
-         callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
          ofs8:
          getlocal0
-         pushstring "shootKey"
+         pushstring "jumpKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iffalse ofs9
          getlocal 13
          getlocal0
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
-         getproperty Multiname("shootKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
+         getproperty Multiname("jumpKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
          ofs9:
          getlocal0
-         pushstring "strafeKey"
+         pushstring "shootKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iffalse ofs10
          getlocal 13
          getlocal0
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
-         getproperty Multiname("strafeKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
+         getproperty Multiname("shootKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
          ofs10:
          getlocal0
-         pushstring "upKey"
+         pushstring "strafeKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iffalse ofs11
          getlocal 13
          getlocal0
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
-         getproperty Multiname("upKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
+         getproperty Multiname("strafeKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
          ofs11:
          getlocal0
-         pushstring "downKey"
+         pushstring "upKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iffalse ofs12
          getlocal 13
          getlocal0
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
-         getproperty Multiname("downKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
+         getproperty Multiname("upKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
          ofs12:
          getlocal0
-         pushstring "leftKey"
+         pushstring "downKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iffalse ofs13
          getlocal 13
          getlocal0
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
-         getproperty Multiname("leftKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
+         getproperty Multiname("downKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
          ofs13:
          getlocal0
-         pushstring "rightKey"
+         pushstring "leftKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iffalse ofs14
          getlocal 13
          getlocal0
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
-         getproperty Multiname("rightKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
+         getproperty Multiname("leftKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
          ofs14:
          getlocal0
-         pushstring "jumpAltKey"
+         pushstring "rightKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iffalse ofs15
          getlocal 13
          getlocal0
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
-         getproperty Multiname("jumpAltKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
+         getproperty Multiname("rightKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
          ofs15:
          getlocal0
-         pushstring "shootAltKey"
+         pushstring "jumpAltKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iffalse ofs16
          getlocal 13
          getlocal0
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
-         getproperty Multiname("shootAltKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
+         getproperty Multiname("jumpAltKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
          ofs16:
          getlocal0
-         pushstring "strafeAltKey"
+         pushstring "shootAltKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iffalse ofs17
          getlocal 13
          getlocal0
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
-         getproperty Multiname("strafeAltKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
+         getproperty Multiname("shootAltKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
          ofs17:
          getlocal0
-         pushstring "upAltKey"
+         pushstring "strafeAltKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iffalse ofs18
          getlocal 13
          getlocal0
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
-         getproperty Multiname("upAltKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
+         getproperty Multiname("strafeAltKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
          ofs18:
          getlocal0
-         pushstring "downAltKey"
+         pushstring "upAltKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iffalse ofs19
          getlocal 13
          getlocal0
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
-         getproperty Multiname("downAltKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
+         getproperty Multiname("upAltKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
          ofs19:
          getlocal0
-         pushstring "leftAltKey"
+         pushstring "downAltKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iffalse ofs20
          getlocal 13
          getlocal0
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
-         getproperty Multiname("leftAltKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
+         getproperty Multiname("downAltKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
          ofs20:
          getlocal0
-         pushstring "rightAltKey"
+         pushstring "leftAltKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iffalse ofs21
          getlocal 13
          getlocal0
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
-         getproperty Multiname("rightAltKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
+         getproperty Multiname("leftAltKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
          ofs21:
          getlocal0
-         pushstring "weap1Key"
+         pushstring "rightAltKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iffalse ofs22
          getlocal 13
          getlocal0
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
-         getproperty Multiname("weap1Key",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
+         getproperty Multiname("rightAltKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
          ofs22:
          getlocal0
-         pushstring "weap2Key"
+         pushstring "weap1Key"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iffalse ofs23
          getlocal 13
          getlocal0
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
-         getproperty Multiname("weap2Key",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
+         getproperty Multiname("weap1Key",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
          ofs23:
          getlocal0
-         pushstring "weap3Key"
+         pushstring "weap2Key"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iffalse ofs24
          getlocal 13
          getlocal0
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
-         getproperty Multiname("weap3Key",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
+         getproperty Multiname("weap2Key",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
          ofs24:
          getlocal0
-         pushstring "weapNextKey"
+         pushstring "weap3Key"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iffalse ofs25
          getlocal 13
          getlocal0
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
-         getproperty Multiname("weapNextKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
+         getproperty Multiname("weap3Key",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
          ofs25:
          getlocal0
-         pushstring "weapPrevKey"
+         pushstring "weapNextKey"
          callproperty QName(PackageNamespace(""),"isVarSet"), 1
          iffalse ofs26
          getlocal 13
          getlocal0
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
-         getproperty Multiname("weapPrevKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
+         getproperty Multiname("weapNextKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
          ofs26:
+         getlocal0
+         pushstring "weapPrevKey"
+         callproperty QName(PackageNamespace(""),"isVarSet"), 1
+         iffalse ofs27
+         getlocal 13
+         getlocal0
+         getproperty QName(PackageNamespace(""),"xml")
+         getproperty Multiname("vars",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
+         getproperty Multiname("weapPrevKey",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")])
+         callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
+         ofs27:
          getlocal 13
          returnvalue
          end ; code

@@ -175,6 +175,9 @@ package
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"mouse")
          callpropvoid QName(PackageNamespace(""),"hide"), 0
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         pushtrue
+         setproperty QName(PackageNamespace(""),"noPause")
          getlocal0
          getlex QName(PrivateNamespace(null,"#Ending"),"MODE_WAIT_START")
          callpropvoid QName(PackageNamespace(""),"setMode"), 1
@@ -825,14 +828,54 @@ package
          subtract
          callpropvoid QName(PackageNamespace(""),"setAlpha"), 1
          ofs26:
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"keys")
+         pushstring "ESCAPE"
+         callproperty QName(PackageNamespace(""),"justPressed"), 1
+         iffalse ofs27
+         getlex QName(PackageNamespace(""),"Sfx")
+         callpropvoid QName(PackageNamespace(""),"stopEnding1"), 0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Ending"),"_modeElapsed")
-         pushbyte 26
-         ifngt ofs27
+         getproperty QName(PrivateNamespace(null,"#Ending"),"_dialogueLayer")
+         pushbyte 0
+         callpropvoid QName(PackageNamespace(""),"setAlpha"), 1
          getlocal0
          getlex QName(PrivateNamespace(null,"#Ending"),"MODE_WAIT_CREDITS")
          callpropvoid QName(PackageNamespace(""),"setMode"), 1
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Ending"),"_moonSprite")
+         pushbyte 0
+         getproperty MultinameL([PrivateNamespace(null,"#Ending"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#Ending/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("Ending"),StaticProtectedNs("Ending"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         pushbyte 0
+         callpropvoid Multiname("setTargetAlpha",[PrivateNamespace(null,"#Ending"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#Ending/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("Ending"),StaticProtectedNs("Ending"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Ending"),"_moonSprite")
+         pushbyte 1
+         getproperty MultinameL([PrivateNamespace(null,"#Ending"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#Ending/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("Ending"),StaticProtectedNs("Ending"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         pushbyte 0
+         callpropvoid Multiname("setTargetAlpha",[PrivateNamespace(null,"#Ending"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#Ending/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("Ending"),StaticProtectedNs("Ending"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Ending"),"_moonSprite")
+         pushbyte 2
+         getproperty MultinameL([PrivateNamespace(null,"#Ending"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#Ending/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("Ending"),StaticProtectedNs("Ending"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         pushbyte 0
+         callpropvoid Multiname("setTargetAlpha",[PrivateNamespace(null,"#Ending"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#Ending/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("Ending"),StaticProtectedNs("Ending"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Ending"),"_moonSprite")
+         pushbyte 3
+         getproperty MultinameL([PrivateNamespace(null,"#Ending"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#Ending/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("Ending"),StaticProtectedNs("Ending"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         pushbyte 0
+         callpropvoid Multiname("setTargetAlpha",[PrivateNamespace(null,"#Ending"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#Ending/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("Ending"),StaticProtectedNs("Ending"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
+         returnvoid
          ofs27:
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Ending"),"_modeElapsed")
+         pushbyte 26
+         ifngt ofs28
+         getlocal0
+         getlex QName(PrivateNamespace(null,"#Ending"),"MODE_WAIT_CREDITS")
+         callpropvoid QName(PackageNamespace(""),"setMode"), 1
+         ofs28:
          returnvoid
          end ; code
          end ; body
@@ -1000,10 +1043,23 @@ package
          getlex QName(PrivateNamespace(null,"#Ending"),"CREDITS_DONE_TIME")
          initproperty QName(PrivateNamespace(null,"#Ending"),"_creditsDoneTimer")
          ofs0:
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"keys")
+         pushstring "ESCAPE"
+         callproperty QName(PackageNamespace(""),"justPressed"), 1
+         iffalse ofs5
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Ending"),"_credits")
+         pushtrue
+         setproperty QName(PackageNamespace(""),"scrollDone")
+         getlocal0
+         pushbyte 0
+         initproperty QName(PrivateNamespace(null,"#Ending"),"_creditsDoneTimer")
+         ofs5:
          getlocal0
          getproperty QName(PrivateNamespace(null,"#Ending"),"_credits")
          getproperty QName(PackageNamespace(""),"scrollDone")
-         iffalse ofs5
+         iffalse ofs6
          getlocal0
          getlocal0
          getproperty QName(PrivateNamespace(null,"#Ending"),"_creditsDoneTimer")
@@ -1014,11 +1070,11 @@ package
          getlocal0
          getproperty QName(PrivateNamespace(null,"#Ending"),"_creditsDoneTimer")
          pushbyte 0
-         ifnlt ofs5
+         ifnlt ofs6
          getlocal0
          getlex QName(PrivateNamespace(null,"#Ending"),"MODE_WAIT_PICTURE")
          callpropvoid QName(PackageNamespace(""),"setMode"), 1
-         ofs5:
+         ofs6:
          returnvoid
          end ; code
          end ; body
@@ -1321,6 +1377,9 @@ package
          getproperty QName(PrivateNamespace(null,"#Ending"),"endingFadeTimeout")
          pushbyte 0
          ifnlt ofs1
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         pushfalse
+         setproperty QName(PackageNamespace(""),"noPause")
          getlex QName(PackageNamespace(""),"PlayState")
          callpropvoid QName(PackageNamespace(""),"endEnding"), 0
          ofs1:

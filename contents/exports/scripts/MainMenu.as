@@ -291,6 +291,10 @@ package
             this.hasEnding[0] = true;
             this.bgColor = 4278202384;
          }
+         if(_loc1_.xml.vars && _loc1_.isVarTrue("toggleFire"))
+         {
+            Player.firingMode = Player.FIRING_MODE_TOGGLE;
+         }
          if(_loc1_.xml.vars && _loc1_.isVarTrue("hasWonBossRush"))
          {
             this.hasHardMode = true;
@@ -1404,6 +1408,29 @@ package
          this.centerMenu();
       }
       
+      public function toggleShootingMode() : void
+      {
+         var _loc3_:XMLList = null;
+         Player.firingMode ^= 1;
+         this.changeOption(this.curOption,"SHOOTING: " + (Player.firingMode == Player.FIRING_MODE_NORMAL ? "NORMAL" : "TOGGLE"),this.toggleShootingMode);
+         var _loc1_:String = "toggleFire";
+         var _loc2_:SaveData = new SaveData();
+         _loc2_.loadAll();
+         if(_loc2_.isVarSet(_loc1_))
+         {
+            _loc3_ = _loc2_.xml.vars.child(_loc1_);
+            if(_loc3_)
+            {
+               delete _loc3_.parent().*[_loc3_.childIndex()];
+            }
+         }
+         if(Player.firingMode == Player.FIRING_MODE_TOGGLE)
+         {
+            _loc2_.xml.vars.appendChild(new XML("<" + _loc1_ + ">true</" + _loc1_ + ">"));
+         }
+         _loc2_.saveAll();
+      }
+      
       public function makeOptionsMenu() : void
       {
          this.clearMenu();
@@ -1415,6 +1442,7 @@ package
          this.addOption("SOUND OPTIONS",this.soundOptionsMenu,false);
          this.addOption("DISPLAY OPTIONS",this.displayOptionsMenu,false);
          this.addOption("SET CONTROLS",this.controlMenu,false);
+         this.addOption("SHOOTING: " + (Player.firingMode == Player.FIRING_MODE_NORMAL ? "NORMAL" : "TOGGLE"),this.toggleShootingMode,false);
          this.addOption("",null,false);
          this.addOption("ERASE SAVE DATA",this.confirmEraseSave);
          this.addOption("",null,false);

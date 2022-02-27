@@ -688,11 +688,29 @@ package
          iffalse ofs12
          pop
          getlocal1
-         pushstring "hasWonBossRush"
+         pushstring "toggleFire"
          callproperty QName(PackageNamespace(""),"isVarTrue"), 1
          convert_b
          ofs12:
          iffalse ofs13
+         getlex QName(PackageNamespace(""),"Player")
+         getlex QName(PackageNamespace(""),"Player")
+         getproperty QName(PackageNamespace(""),"FIRING_MODE_TOGGLE")
+         setproperty QName(PackageNamespace(""),"firingMode")
+         ofs13:
+         getlocal1
+         getproperty QName(PackageNamespace(""),"xml")
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         convert_b
+         dup
+         iffalse ofs14
+         pop
+         getlocal1
+         pushstring "hasWonBossRush"
+         callproperty QName(PackageNamespace(""),"isVarTrue"), 1
+         convert_b
+         ofs14:
+         iffalse ofs15
          getlocal0
          pushtrue
          initproperty QName(PackageNamespace(""),"hasHardMode")
@@ -701,30 +719,30 @@ package
          getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getproperty Multiname("bestBossRushTime",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushbyte 0
-         ifngt ofs14
+         ifngt ofs16
          getlocal0
          getproperty QName(PackageNamespace(""),"hasEnding")
          pushbyte 1
          pushtrue
          setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         ofs14:
+         ofs16:
          getlocal0
          pushdouble 4.281335856E9
          initproperty QName(PackageNamespace(""),"bgColor")
-         ofs13:
+         ofs15:
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          dup
-         iffalse ofs15
+         iffalse ofs17
          pop
          getlocal1
          pushstring "hasWonHardMode"
          callproperty QName(PackageNamespace(""),"isVarTrue"), 1
          convert_b
-         ofs15:
-         iffalse ofs16
+         ofs17:
+         iffalse ofs18
          getlocal0
          pushfalse
          initproperty QName(PackageNamespace(""),"hasInsaneMode")
@@ -736,83 +754,83 @@ package
          getlocal0
          pushdouble 4.278202416E9
          initproperty QName(PackageNamespace(""),"bgColor")
-         ofs16:
-         getlocal0
-         getproperty QName(PackageNamespace(""),"bestNormalTime")
-         pushbyte 0
-         greaterthan
-         dup
-         iffalse ofs17
-         pop
-         getlocal0
-         getproperty QName(PackageNamespace(""),"bestNormalTime")
-         getlex QName(PackageNamespace(""),"FAST_ENDING_CUTOFF")
-         lessthan
-         ofs17:
-         dup
-         iftrue ofs18
-         pop
-         getlocal0
-         getproperty QName(PackageNamespace(""),"bestHardTime")
-         pushbyte 0
-         greaterthan
-         dup
-         iffalse ofs18
-         pop
-         getlocal0
-         getproperty QName(PackageNamespace(""),"bestHardTime")
-         getlex QName(PackageNamespace(""),"FAST_ENDING_CUTOFF")
-         lessthan
          ofs18:
-         dup
-         iftrue ofs19
-         pop
          getlocal0
-         getproperty QName(PackageNamespace(""),"bestInsaneTime")
+         getproperty QName(PackageNamespace(""),"bestNormalTime")
          pushbyte 0
          greaterthan
          dup
          iffalse ofs19
          pop
          getlocal0
-         getproperty QName(PackageNamespace(""),"bestInsaneTime")
+         getproperty QName(PackageNamespace(""),"bestNormalTime")
          getlex QName(PackageNamespace(""),"FAST_ENDING_CUTOFF")
          lessthan
          ofs19:
+         dup
+         iftrue ofs20
+         pop
+         getlocal0
+         getproperty QName(PackageNamespace(""),"bestHardTime")
+         pushbyte 0
+         greaterthan
+         dup
          iffalse ofs20
+         pop
+         getlocal0
+         getproperty QName(PackageNamespace(""),"bestHardTime")
+         getlex QName(PackageNamespace(""),"FAST_ENDING_CUTOFF")
+         lessthan
+         ofs20:
+         dup
+         iftrue ofs21
+         pop
+         getlocal0
+         getproperty QName(PackageNamespace(""),"bestInsaneTime")
+         pushbyte 0
+         greaterthan
+         dup
+         iffalse ofs21
+         pop
+         getlocal0
+         getproperty QName(PackageNamespace(""),"bestInsaneTime")
+         getlex QName(PackageNamespace(""),"FAST_ENDING_CUTOFF")
+         lessthan
+         ofs21:
+         iffalse ofs22
          getlocal0
          getproperty QName(PackageNamespace(""),"hasEnding")
          pushbyte 3
          pushtrue
          setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         ofs20:
+         ofs22:
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          dup
-         iffalse ofs21
+         iffalse ofs23
          pop
          getlocal1
          pushstring "hasWonInsaneMode"
          callproperty QName(PackageNamespace(""),"isVarTrue"), 1
          convert_b
-         ofs21:
-         iffalse ofs22
+         ofs23:
+         iffalse ofs24
          getlocal0
          pushdouble 4.278202416E9
          initproperty QName(PackageNamespace(""),"bgColor")
-         ofs22:
+         ofs24:
          getlocal0
          getproperty QName(PackageNamespace(""),"bestInsaneTime")
          pushbyte 0
-         ifngt ofs23
+         ifngt ofs25
          getlocal0
          getproperty QName(PackageNamespace(""),"hasEnding")
          pushbyte 4
          pushtrue
          setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         ofs23:
+         ofs25:
          returnvoid
          end ; code
          end ; body
@@ -5709,6 +5727,111 @@ package
          end ; method
       }
       
+      public function toggleShootingMode() : void
+      {
+         trait method QName(PackageNamespace(""),"toggleShootingMode")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 5
+         localcount 4
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal0
+         pushscope
+         pushnull
+         coerce QName(PackageNamespace(""),"XMLList")
+         setlocal3
+         getlex QName(PackageNamespace(""),"Player")
+         getlex QName(PackageNamespace(""),"Player")
+         getproperty QName(PackageNamespace(""),"firingMode")
+         pushbyte 1
+         bitxor
+         setproperty QName(PackageNamespace(""),"firingMode")
+         getlocal0
+         getlocal0
+         getproperty QName(PackageNamespace(""),"curOption")
+         pushstring "SHOOTING: "
+         getlex QName(PackageNamespace(""),"Player")
+         getproperty QName(PackageNamespace(""),"firingMode")
+         getlex QName(PackageNamespace(""),"Player")
+         getproperty QName(PackageNamespace(""),"FIRING_MODE_NORMAL")
+         equals
+         iffalse ofs0
+         pushstring "NORMAL"
+         coerce_a
+         jump ofs1
+         ofs0:
+         pushstring "TOGGLE"
+         coerce_a
+         ofs1:
+         add
+         getlocal0
+         getproperty QName(PackageNamespace(""),"toggleShootingMode")
+         callpropvoid QName(PackageNamespace(""),"changeOption"), 3
+         pushstring "toggleFire"
+         setlocal1
+         findpropstrict QName(PackageNamespace(""),"SaveData")
+         constructprop QName(PackageNamespace(""),"SaveData"), 0
+         coerce QName(PackageNamespace(""),"SaveData")
+         setlocal2
+         getlocal2
+         callpropvoid QName(PackageNamespace(""),"loadAll"), 0
+         getlocal2
+         getlocal1
+         callproperty QName(PackageNamespace(""),"isVarSet"), 1
+         iffalse ofs2
+         getlocal2
+         getproperty QName(PackageNamespace(""),"xml")
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlocal1
+         callproperty Multiname("child",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
+         coerce QName(PackageNamespace(""),"XMLList")
+         setlocal3
+         getlocal3
+         iffalse ofs2
+         getlocal3
+         callproperty Multiname("parent",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
+         getproperty Multiname(null,[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlocal3
+         callproperty Multiname("childIndex",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
+         deleteproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         pop
+         ofs2:
+         getlex QName(PackageNamespace(""),"Player")
+         getproperty QName(PackageNamespace(""),"firingMode")
+         getlex QName(PackageNamespace(""),"Player")
+         getproperty QName(PackageNamespace(""),"FIRING_MODE_TOGGLE")
+         ifne ofs3
+         getlocal2
+         getproperty QName(PackageNamespace(""),"xml")
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"XML")
+         pushstring "<"
+         getlocal1
+         add
+         pushstring ">true</"
+         add
+         getlocal1
+         add
+         pushstring ">"
+         add
+         construct 1
+         callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
+         ofs3:
+         getlocal2
+         callpropvoid QName(PackageNamespace(""),"saveAll"), 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
       public function makeOptionsMenu() : void
       {
          trait method QName(PackageNamespace(""),"makeOptionsMenu")
@@ -5759,6 +5882,26 @@ package
          pushstring "SET CONTROLS"
          getlocal0
          getproperty QName(PackageNamespace(""),"controlMenu")
+         pushfalse
+         callpropvoid QName(PackageNamespace(""),"addOption"), 3
+         getlocal0
+         pushstring "SHOOTING: "
+         getlex QName(PackageNamespace(""),"Player")
+         getproperty QName(PackageNamespace(""),"firingMode")
+         getlex QName(PackageNamespace(""),"Player")
+         getproperty QName(PackageNamespace(""),"FIRING_MODE_NORMAL")
+         equals
+         iffalse ofs0
+         pushstring "NORMAL"
+         coerce_a
+         jump ofs1
+         ofs0:
+         pushstring "TOGGLE"
+         coerce_a
+         ofs1:
+         add
+         getlocal0
+         getproperty QName(PackageNamespace(""),"toggleShootingMode")
          pushfalse
          callpropvoid QName(PackageNamespace(""),"addOption"), 3
          getlocal0

@@ -85,8 +85,6 @@ package
       
       private static const IMG_OFS_Y:int = 0;
       
-      private static const MAX_HP:int = 12500;
-      
       private static const DEFENSE:int = 0;
       
       private static const OFFENSE:int = 0;
@@ -312,9 +310,6 @@ package
          findproperty QName(PrivateNamespace(null,"#Boss4Rush"),"IMG_OFS_Y")
          pushbyte 0
          initproperty QName(PrivateNamespace(null,"#Boss4Rush"),"IMG_OFS_Y")
-         findproperty QName(PrivateNamespace(null,"#Boss4Rush"),"MAX_HP")
-         pushshort 12500
-         initproperty QName(PrivateNamespace(null,"#Boss4Rush"),"MAX_HP")
          findproperty QName(PrivateNamespace(null,"#Boss4Rush"),"DEFENSE")
          pushbyte 0
          initproperty QName(PrivateNamespace(null,"#Boss4Rush"),"DEFENSE")
@@ -478,6 +473,8 @@ package
       
       private var _decisionTableIndex:int = 0;
       
+      private var MAX_HP:int = 12500;
+      
       private var _currentWeapon:int = 2;
       
       private var _nextMove:Number = 0.0;
@@ -593,10 +590,22 @@ package
          pushtrue
          newarray 3
          initproperty QName(PrivateNamespace(null,"#Boss4Rush"),"_hasWeapon")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"player")
+         getproperty QName(PackageNamespace(""),"_slugMode")
+         iffalse ofs0
+         getlocal0
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Boss4Rush"),"_bossSpeed")
+         pushdouble 0.1
+         add
+         initproperty QName(PrivateNamespace(null,"#Boss4Rush"),"_bossSpeed")
+         ofs0:
          getlocal0
          getlocal1
          getlocal2
-         getlex QName(PrivateNamespace(null,"#Boss4Rush"),"MAX_HP")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Boss4Rush"),"MAX_HP")
          getlex QName(PrivateNamespace(null,"#Boss4Rush"),"DEFENSE")
          getlex QName(PrivateNamespace(null,"#Boss4Rush"),"OFFENSE")
          constructsuper 5
@@ -632,8 +641,8 @@ package
          callpropvoid QName(PackageNamespace(""),"loadGraphic"), 5
          pushbyte 0
          setlocal3
-         jump ofs0
-         ofs1:
+         jump ofs1
+         ofs2:
          label
          findpropstrict QName(PackageNamespace(""),"addAnimation")
          pushstring "snail"
@@ -833,10 +842,10 @@ package
          pushtrue
          callpropvoid QName(PackageNamespace(""),"addAnimation"), 4
          inclocal_i 3
-         ofs0:
+         ofs1:
          getlocal3
          pushbyte 2
-         iflt ofs1
+         iflt ofs2
          getlocal0
          pushshort 410
          initproperty QName(PrivateNamespace(null,"#Boss4Rush"),"_runSpeed")
@@ -846,17 +855,6 @@ package
          getlocal0
          pushshort 1200
          initproperty QName(PrivateNamespace(null,"#Boss4Rush"),"_gravity")
-         getlex QName(PackageNamespace(""),"PlayState")
-         getproperty QName(PackageNamespace(""),"player")
-         getproperty QName(PackageNamespace(""),"_slugMode")
-         iffalse ofs2
-         getlocal0
-         getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss4Rush"),"_bossSpeed")
-         pushdouble 0.1
-         add
-         initproperty QName(PrivateNamespace(null,"#Boss4Rush"),"_bossSpeed")
-         ofs2:
          getlex QName(PackageNamespace(""),"maxVelocity")
          getlocal0
          getproperty QName(PrivateNamespace(null,"#Boss4Rush"),"_maxSpeed")
@@ -7873,7 +7871,8 @@ package
          getlocal0
          pushscope
          getlex QName(ProtectedNamespace("Enemy"),"_hp")
-         getlex QName(PrivateNamespace(null,"#Boss4Rush"),"MAX_HP")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Boss4Rush"),"MAX_HP")
          pushdouble 0.4
          multiply
          lessequals

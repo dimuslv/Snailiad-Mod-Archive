@@ -47,6 +47,7 @@ package
       {
          var _loc1_:FlxText = null;
          super();
+         FlxG.noPause = true;
          FlxG.mouse.hide();
          this.setMode(MODE_WAIT_START);
          this._bg = new IntroBg();
@@ -232,6 +233,7 @@ package
       {
          if(!this._modeInitialized)
          {
+            FlxG.noPause = false;
             this._modeInitialized = true;
             FlxG.fade.start(4278206591,1,PlayState.loadGame);
             FlxG.music.fadeOut(1);

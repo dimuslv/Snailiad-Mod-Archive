@@ -1717,7 +1717,7 @@ package
          getproperty QName(PackageNamespace(""),"_slugMode")
          iffalse ofs3
          getlocal0
-         pushbyte 5
+         pushbyte 6
          initproperty QName(PrivateNamespace(null,"#Boss4RushSecondForm"),"ZZZ_MAX")
          ofs3:
          getlex QName(PackageNamespace(""),"acceleration")
@@ -2404,20 +2404,30 @@ package
          getlocal0
          pushtrue
          initproperty QName(PrivateNamespace(null,"#Boss4RushSecondForm"),"_aimed")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"player")
+         getproperty QName(PackageNamespace(""),"_slugMode")
+         iffalse ofs5
+         getlocal0
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Boss4RushSecondForm"),"_strafeThetaVel")
+         pushdouble 1.6
+         multiply
+         initproperty QName(PrivateNamespace(null,"#Boss4RushSecondForm"),"_strafeThetaVel")
          ofs5:
          getlocal0
          getproperty QName(PrivateNamespace(null,"#Boss4RushSecondForm"),"_strafeThetaVel")
          getlex QName(PackageNamespace(""),"Math")
          getproperty QName(PackageNamespace(""),"PI")
          negate
-         pushbyte 7
+         pushbyte 5
          divide
          ifnlt ofs9
          getlocal0
          getlex QName(PackageNamespace(""),"Math")
          getproperty QName(PackageNamespace(""),"PI")
          negate
-         pushbyte 7
+         pushbyte 5
          divide
          initproperty QName(PrivateNamespace(null,"#Boss4RushSecondForm"),"_strafeThetaVel")
          ofs9:
@@ -2425,13 +2435,13 @@ package
          getproperty QName(PrivateNamespace(null,"#Boss4RushSecondForm"),"_strafeThetaVel")
          getlex QName(PackageNamespace(""),"Math")
          getproperty QName(PackageNamespace(""),"PI")
-         pushbyte 7
+         pushbyte 5
          divide
          ifngt ofs10
          getlocal0
          getlex QName(PackageNamespace(""),"Math")
          getproperty QName(PackageNamespace(""),"PI")
-         pushbyte 7
+         pushbyte 5
          divide
          initproperty QName(PrivateNamespace(null,"#Boss4RushSecondForm"),"_strafeThetaVel")
          ofs10:

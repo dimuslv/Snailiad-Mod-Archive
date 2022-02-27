@@ -90,13 +90,13 @@ Class IDs:
 88: FlxText -
 89: FlxPause_ImgKeyP -
 90: FlxPause_ImgKey0 -
-91: FixBlocks -
-92: PlayerBulletGroups -
+91: PlayerBulletGroups -
+92: FixBlocks -
 93: MainMenu -
 94: Player -
-95: SnowLayer -
-96: ItemRateHud -
-97: AiTriggerPool -
+95: ItemRateHud -
+96: AiTriggerPool -
+97: SnowLayer -
 98: UniqueBlocks -
 99: SaveData -
 100: Configurable -
@@ -109,20 +109,20 @@ Class IDs:
 107: Boss4BulletGroups -
 108: NgMedal 0
 109: Music -
-110: EnemyBullet -
-111: Npc -
+110: Npc -
+111: EnemyBullet -
 112: DamageNumberPool -
-113: Dialogue -
-114: StarLayer -
-115: AiTrigger -
-116: Zzz -
+113: StarLayer -
+114: Dialogue -
+115: Zzz -
+116: AiTrigger -
 117: WorldMap -
 118: PlayerBullet -
 119: ExplosionPool -
 120: Boss4SecondFormBulletGroups -
 121: MiniMap -
-122: BossRushTimer -
-123: Hud -
+122: Hud -
+123: BossRushTimer -
 124: GameTimeDisplay -
 125: Ending -
 126: Intro -
@@ -247,13 +247,13 @@ Class IDs:
 245: FlxPanel_ImgStumble -
 246: FlxPanel_ImgDigg -
 247: FlxPanel_ImgClose -
-248: BrokenBlock -
-249: PlayerBullet1 -
-250: PlayerBullet2 -
-251: PlayerBullet4 -
-252: PlayerBullet3 -
-253: PlayerBullet6 -
-254: PlayerBullet5 -
+248: PlayerBullet1 -
+249: PlayerBullet2 -
+250: PlayerBullet4 -
+251: PlayerBullet3 -
+252: PlayerBullet6 -
+253: PlayerBullet5 -
+254: BrokenBlock -
 255: MenuBall -
 256: JayIsGames -
 257: Utility -
@@ -315,8 +315,8 @@ Class IDs:
 313: EnemyDandelionGenerator 0
 314: UniqueItem -
 315: HelixFragment -
-316: EnemyCannonBottom2 -
-317: EnemyDrone 0
+316: EnemyDrone 0
+317: EnemyCannonBottom2 -
 318: FlxTilemap -
 319: EnemyBabyfish -
 320: EnemyKitty 0
@@ -353,23 +353,23 @@ Class IDs:
 351: Gun3 -
 352: Gun2 -
 353: Door -
-354: HeartContainer -
-355: Gun1 -
+354: Gun1 -
+355: HeartContainer -
 356: EnemyGear -
 357: Breakable -
 358: EnemySnake3 -
-359: EnemySnake2 -
-360: EnemyCannonBottom -
-361: Platform4b -
+359: EnemyCannonBottom -
+360: Platform4b -
+361: EnemySnake2 -
 362: EnemyTallfish -
 363: EnemyCannonTop -
 364: EnemyCannonTop2 -
 365: EnemyGravTurtle2 -
 366: TurtleNpc -
-367: Platform5b -
-368: PowerGrass -
-369: WorldMap_WorldMapSpTxt 0
-370: Step -
+367: PowerGrass -
+368: Platform5b -
+369: Step -
+370: WorldMap_WorldMapSpTxt 0
 371: EnemyCannonLeft2 -
 372: EnemySnelk -
 373: EnemySnake -
@@ -393,8 +393,8 @@ Class IDs:
 391: MapRate -
 392: Subscreen -
 393: ItemRate -
-394: ItemName -
-395: Radar -
+394: Radar -
+395: ItemName -
 396: AreaName -
 397: BossBarHud -
 398: HeartHud -
@@ -494,280 +494,281 @@ Class IDs:
 492: Sfx_Pickup4 -
 493: Sfx_Pickup3 -
 494: Sfx_Pickup2 -
-495: Sfx_EnemyPingOffArmor -
-496: Sfx_Shot3 -
+495: Sfx_Shot3 -
+496: Sfx_EnemyPingOffArmor -
 497: Sfx_Shot2 -
 498: Sfx_Shot1 -
 499: Sfx_Shot7 -
 500: Sfx_Stomp1 -
-501: Sfx_EnemyKilled -
-502: Sfx_PongMiss -
-503: Sfx_PongBounce -
-504: Sfx_Laser1 -
-505: Sfx_Cannon2 -
-506: Sfx_Cannon1 -
+501: Sfx_SlugMode -
+502: Sfx_EnemyKilled -
+503: Sfx_PongMiss -
+504: Sfx_PongBounce -
+505: Sfx_Laser1 -
+506: Sfx_Cannon2 -
 507: Sfx_CloseDoor -
-508: Sfx_Jingle3 -
-509: Sfx_Shot3b -
-510: Sfx_Jingle4 -
-511: Sfx_Explode1 -
-512: Sfx_Explode2 -
-513: Sfx_Chirp1 -
-514: Sfx_Explode3 -
-515: Sfx_Explode4 -
-516: Sfx_Shell1 -
-517: Sfx_Save1 -
-518: Sfx_MenuBeep2 -
-519: Sfx_MenuBeep1 -
+508: Sfx_Cannon1 -
+509: Sfx_Jingle3 -
+510: Sfx_Shot3b -
+511: Sfx_Jingle4 -
+512: Sfx_Explode1 -
+513: Sfx_Explode2 -
+514: Sfx_Chirp1 -
+515: Sfx_Explode3 -
+516: Sfx_Explode4 -
+517: Sfx_Shell1 -
+518: Sfx_Save1 -
+519: Sfx_MenuBeep2 -
 520: Sfx_Snelk -
-521: Sfx_PongHit -
-522: Sfx_Hurt -
-523: Sfx_Shot2b -
-524: Sfx_Grow -
-525: Sfx_GigaWave -
-526: Sfx_Death -
-527: Sfx_BossHpBleep -
-528: Sfx_Jump1 -
-529: Sfx_Shot1b -
-530: Sfx_DialogueLetter1 -
-531: Sfx_DialogueLetter0 -
-532: Sfx_DialogueLetter3 -
-533: Sfx_DialogueLetter2 -
-534: Sfx_Splash1 -
-535: Sfx_ShotHit -
-536: Sfx_EnemyKilled3 -
-537: Sfx_Health -
-538: Sfx_OpenDoor -
-539: Sfx_EnemyKilled2 -
-540: Art_Zzz -
-541: Art_Boss1Eyes -
-542: Art_EnemyCannonLeft2 -
-543: Art_JayIsGames -
-544: Art_EnemyDandelion -
-545: Art_SleepyMoonSnail -
-546: Art_Boss2Eyelid -
-547: Art_SnailySnail -
-548: Art_Boss4RushSecondForm -
-549: Art_EnemySnelk -
-550: Art_Boss3RushSpawn -
-551: Art_MiniMapSpecialSheet -
-552: Art_EnemyBalloon -
-553: Art_MiniMapCenter -
-554: Art_Boss1Rush -
-555: Art_ItemHiJump -
-556: Art_DoorVert -
-557: Art_Boss1Shield -
-558: Art_ItemDevastator -
-559: Art_PlayerBullet5 -
-560: Art_Boss3Shield -
-561: Art_PlayerBullet6 -
-562: Art_PlayerBullet3 -
-563: Art_PlayerBullet4 -
-564: Art_PlayerBullet1 -
-565: Art_PlayerBullet2 -
-566: Art_HeartHudSingle -
-567: Art_ItemHelixFragment -
-568: Art_TitleLetter -
-569: Art_ItemArmor -
-570: Art_ExplosionBig -
-571: Art_ItemGravJump -
-572: Art_TheEnd -
-573: Art_EnemyBulletLaser -
-574: Art_EnemyDrone -
-575: Art_EnemyCannonLeft -
-576: Art_Boss2RushFoot -
+521: Sfx_MenuBeep1 -
+522: Sfx_PongHit -
+523: Sfx_Hurt -
+524: Sfx_Shot2b -
+525: Sfx_Grow -
+526: Sfx_GigaWave -
+527: Sfx_Death -
+528: Sfx_BossHpBleep -
+529: Sfx_Jump1 -
+530: Sfx_Shot1b -
+531: Sfx_DialogueLetter1 -
+532: Sfx_DialogueLetter0 -
+533: Sfx_DialogueLetter3 -
+534: Sfx_DialogueLetter2 -
+535: Sfx_Splash1 -
+536: Sfx_ShotHit -
+537: Sfx_EnemyKilled3 -
+538: Sfx_Health -
+539: Sfx_OpenDoor -
+540: Sfx_EnemyKilled2 -
+541: Art_Zzz -
+542: Art_Boss1Eyes -
+543: Art_EnemyCannonLeft2 -
+544: Art_JayIsGames -
+545: Art_EnemyDandelion -
+546: Art_SleepyMoonSnail -
+547: Art_Boss2Eyelid -
+548: Art_SnailySnail -
+549: Art_Boss4RushSecondForm -
+550: Art_EnemySnelk -
+551: Art_Boss3RushSpawn -
+552: Art_MiniMapSpecialSheet -
+553: Art_EnemyBalloon -
+554: Art_MiniMapCenter -
+555: Art_Boss1Rush -
+556: Art_ItemHiJump -
+557: Art_DoorVert -
+558: Art_Boss1Shield -
+559: Art_ItemDevastator -
+560: Art_PlayerBullet5 -
+561: Art_Boss3Shield -
+562: Art_PlayerBullet6 -
+563: Art_PlayerBullet3 -
+564: Art_PlayerBullet4 -
+565: Art_PlayerBullet1 -
+566: Art_PlayerBullet2 -
+567: Art_HeartHudSingle -
+568: Art_ItemHelixFragment -
+569: Art_TitleLetter -
+570: Art_ItemArmor -
+571: Art_ExplosionBig -
+572: Art_ItemGravJump -
+573: Art_TheEnd -
+574: Art_EnemyBulletLaser -
+575: Art_EnemyDrone -
+576: Art_EnemyCannonLeft -
 577: Art_Platform5b -
-578: Art_EnemyCannonBottom2 -
-579: Art_SavePoint -
+578: Art_Boss2RushFoot -
+579: Art_EnemyCannonBottom2 -
 580: Art_DoorHoriz -
-581: Art_IceSpikeTop -
-582: Art_EnemyCannon2 -
-583: Art_MiniMapSheet -
+581: Art_SavePoint -
+582: Art_IceSpikeTop -
+583: Art_EnemyCannon2 -
 584: Art_EnemySnake3 -
-585: Art_EnemySnake2 -
-586: Art_Boss3Spawn -
-587: Art_Boss2Eye -
-588: Art_Grass -
-589: Art_EnemyFireball -
-590: Art_PixelPeople -
-591: Art_SponsorSplash -
+585: Art_MiniMapSheet -
+586: Art_EnemySnake2 -
+587: Art_Boss3Spawn -
+588: Art_Boss2Eye -
+589: Art_Grass -
+590: Art_EnemyFireball -
+591: Art_PixelPeople -
 592: Art_EnemyTallfish -
-593: Art_EnemySpider -
-594: Art_SponsorMoreGames -
-595: Art_IntroPicture5Slug -
-596: Art_ExplosionHuge -
-597: Art_ExplosionTiny -
-598: Art_PowerNom -
-599: Art_ItemRapidFire -
-600: Art_Boss2Foot -
-601: Art_ItemGravityShock -
-602: Art_EnemyKitty2 -
+593: Art_SponsorSplash -
+594: Art_EnemySpider -
+595: Art_SponsorMoreGames -
+596: Art_IntroPicture5Slug -
+597: Art_ExplosionHuge -
+598: Art_ExplosionTiny -
+599: Art_PowerNom -
+600: Art_ItemRapidFire -
+601: Art_Boss2Foot -
+602: Art_ItemGravityShock -
 603: Art_EnemyBulletDonut -
-604: Art_EnemySpikey -
-605: Art_Boss4SecondForm -
-606: Art_GiantBlock1 -
-607: Art_EnemyBlob -
-608: Art_Subscreen -
-609: Art_EnemySpider2 -
-610: Art_ItemHeartContainer -
-611: Art_IntroSpiral -
-612: Art_EnemyPincer -
-613: Art_EnemyCannonTop -
-614: Art_Boss4ShadowBall -
-615: Art_EnemyBulletSpikeBall -
-616: Art_Fire -
-617: Art_EnemyBabyfish -
-618: Art_Smoke -
-619: Art_Boss2Pupil -
-620: Art_ControlHelpLetters -
-621: Art_Platform4b -
-622: Art_Platform4 -
-623: Art_EnemyFireball2 -
-624: Art_Platform5 -
-625: Art_Boss4Bullet6 -
-626: Art_Boss4Bullet5 -
-627: Art_Boss4Bullet7 -
-628: Art_EnemyCannon -
-629: Art_Boss1 -
-630: Art_Boss4 -
-631: Art_Boss3 -
-632: Art_TurtleNpc -
-633: Art_EnemyWalleye -
-634: Art_SubscreenSlug -
-635: Art_Muck -
-636: Art_EnemyFloatSpike2 -
-637: Art_EnemyFloatSpike -
-638: Art_Dialogue -
-639: Art_ItemGun3 -
-640: Art_ItemGun1 -
-641: Art_EnemySnake -
-642: Art_ItemGun2 -
-643: Art_EnemyTallfish2 -
-644: Art_ExplosionSmall -
-645: Art_Star -
-646: Art_Boss3RushShield -
-647: Art_Bubble -
-648: Art_SnailNpc -
-649: Art_ControlHelpBg -
+604: Art_EnemyKitty2 -
+605: Art_EnemySpikey -
+606: Art_Boss4SecondForm -
+607: Art_GiantBlock1 -
+608: Art_EnemyBlob -
+609: Art_Subscreen -
+610: Art_EnemySpider2 -
+611: Art_ItemHeartContainer -
+612: Art_IntroSpiral -
+613: Art_EnemyPincer -
+614: Art_EnemyCannonTop -
+615: Art_Boss4ShadowBall -
+616: Art_EnemyBulletSpikeBall -
+617: Art_Fire -
+618: Art_EnemyBabyfish -
+619: Art_Smoke -
+620: Art_Boss2Pupil -
+621: Art_ControlHelpLetters -
+622: Art_Platform4b -
+623: Art_Platform4 -
+624: Art_EnemyFireball2 -
+625: Art_Platform5 -
+626: Art_Boss4Bullet6 -
+627: Art_Boss4Bullet5 -
+628: Art_Boss4Bullet7 -
+629: Art_EnemyCannon -
+630: Art_Boss1 -
+631: Art_Boss4 -
+632: Art_Boss3 -
+633: Art_TurtleNpc -
+634: Art_EnemyWalleye -
+635: Art_SubscreenSlug -
+636: Art_Muck -
+637: Art_EnemyFloatSpike2 -
+638: Art_EnemyFloatSpike -
+639: Art_Dialogue -
+640: Art_ItemGun3 -
+641: Art_ItemGun1 -
+642: Art_EnemySnake -
+643: Art_ItemGun2 -
+644: Art_EnemyTallfish2 -
+645: Art_ExplosionSmall -
+646: Art_Star -
+647: Art_Boss3RushShield -
+648: Art_Bubble -
+649: Art_SnailNpc -
 650: Art_ItemIceSnail -
-651: Art_EnemyKitty -
+651: Art_ControlHelpBg -
 652: Art_Boss4Rush -
-653: Art_EnemyGravTurtle2 -
-654: Art_PowerGrass -
-655: Art_EnemyPincer2 -
-656: Art_EnemySpike -
-657: Art_EnemyGear -
-658: Art_Boss1Hand -
-659: Art_IntroPicture3 -
-660: Art_Snow -
-661: Art_IntroPicture2 -
-662: Art_IntroPicture5 -
-663: Art_EnemyCannonBottom -
-664: Art_IntroPicture4 -
-665: Art_Dust -
-666: Art_IntroPicture1 -
-667: Art_EndingBg -
-668: Art_EnemyBulletFire -
-669: Art_BossZzz -
-670: Art_ItemShellShield -
-671: Art_TileSheet -
-672: Art_EnemyMoth -
-673: Art_EnemyCannonTop2 -
-674: Art_Boss3Rush -
-675: Art_Boss1RushHand -
+653: Art_EnemyKitty -
+654: Art_EnemyGravTurtle2 -
+655: Art_PowerGrass -
+656: Art_EnemyPincer2 -
+657: Art_EnemySpike -
+658: Art_EnemyGear -
+659: Art_Boss1Hand -
+660: Art_IntroPicture3 -
+661: Art_Snow -
+662: Art_IntroPicture2 -
+663: Art_IntroPicture5 -
+664: Art_EnemyCannonBottom -
+665: Art_IntroPicture4 -
+666: Art_Dust -
+667: Art_IntroPicture1 -
+668: Art_EndingBg -
+669: Art_EnemyBulletFire -
+670: Art_BossZzz -
+671: Art_ItemShellShield -
+672: Art_TileSheet -
+673: Art_EnemyMoth -
+674: Art_EnemyCannonTop2 -
+675: Art_Boss3Rush -
 676: Art_EnemyBird -
-677: Art_Nom -
-678: Art_EndingPicture2 -
-679: Art_EndingPicture1 -
+677: Art_Boss1RushHand -
+678: Art_Nom -
+679: Art_EndingPicture2 -
 680: Art_EnemySeahorse -
-681: Art_EnemyKurage -
-682: Art_IceSpike -
-683: Art_EnemyBat -
-684: Art_EnemySpikey2 -
-685: Art_EnemyBird2 -
-686: Art_EndingPicture4 -
-687: Art_EndingPicture3 -
-688: Art_IceSpikeLeft -
-689: Art_EndingPicture5 -
+681: Art_EndingPicture1 -
+682: Art_EnemyKurage -
+683: Art_IceSpike -
+684: Art_EnemyBat -
+685: Art_EnemySpikey2 -
+686: Art_EnemyBird2 -
+687: Art_EndingPicture4 -
+688: Art_EndingPicture3 -
+689: Art_IceSpikeLeft -
 690: Art_EnemyGravTurtle -
-691: Base64Decoder -
-692: Base64Encoder -
-693: DustRing -
-694: Boss3Shield -
+691: Art_EndingPicture5 -
+692: Base64Decoder -
+693: Base64Encoder -
+694: DustRing -
 695: Boss3Spawn -
-696: QueuedExplosion -
-697: Boss4RingCenter -
-698: Boss4SecondForm -
-699: Boss4ShadowBall -
-700: Boss1Eyes -
-701: Boss1Hand -
-702: Boss2Eye -
-703: Boss2Foot -
-704: Nom -
-705: EnemyBalloon -
-706: EnemyCannon2 -
-707: FlxTilemap_ImgAutoAlt -
-708: FlxTilemap_ImgAuto -
-709: Boss1RushHand -
-710: Boss4RushSecondForm -
-711: EnemyCannonTopBossRush -
-712: Boss2RushFoot -
-713: Boss2RushEye -
-714: EnemyBird2 -
-715: Boss3RushSpawn -
+696: Boss3Shield -
+697: QueuedExplosion -
+698: Boss4RingCenter -
+699: Boss4SecondForm -
+700: Boss4ShadowBall -
+701: Boss1Eyes -
+702: Boss1Hand -
+703: Boss2Eye -
+704: Boss2Foot -
+705: Nom -
+706: EnemyBalloon -
+707: EnemyCannon2 -
+708: FlxTilemap_ImgAutoAlt -
+709: FlxTilemap_ImgAuto -
+710: Boss1RushHand -
+711: Boss4RushSecondForm -
+712: EnemyCannonTopBossRush -
+713: Boss2RushFoot -
+714: Boss2RushEye -
+715: EnemyBird2 -
 716: Boss3RushShield -
-717: EnemyCannon -
-718: PowerNom -
-719: HelixHud -
-720: HeartHudSingle -
-721: EndingEnemy -
-722: StarOutwardLayer -
-723: IntroSpiral -
-724: CSSMergedStyleDeclaration -
-725: IStyleModule -
-726: en_US$styles_properties 0
-727: ModuleEvent -
-728: FlexChangeEvent -
-729: StyleEvent -
-730: ItemPendingError -
-731: IResponder -
-732: EvalBindingResponder -
-733: LayoutManager -
-734: HideShowEffectTargetFilter -
-735: AddRemoveEffectTargetFilter -
-736: TweenEvent -
-737: TweenEffectInstance -
-738: ZoomInstance -
-739: ToolTip -
-740: LocaleSorter -
-741: LocaleID 
-742: LocaleRegistry 
-743: IResourceModule -
-744: ResourceEvent -
-745: EmbeddedFontRegistry -
-746: ModuleManagerGlobals -
-747: ResourceModuleRSLItem -
-748: IPreloaderDisplay -
-749: RSLListLoader -
-750: ISystemCursorClient -
-751: CursorManagerPriority -
-752: XMLNotifier -
-753: XMLNotifierSingleton 
-754: en_US$utils_properties 0
-755: Dust -
-756: Boss4SecondFormBg -
-757: BossZzz -
-758: Boss2Pupil -
-759: Boss2Eyelid -
-760: EnemyCannonBossRush -
-761: Boss2RushEyelid -
-762: Boss2RushPupil -
-763: StarOutward -
-764: PriorityQueue -
-765: Tween -
-766: IXMLNotifiable -
-767: StarInwardLayer -
-768: StarInward -
+717: Boss3RushSpawn -
+718: EnemyCannon -
+719: PowerNom -
+720: HelixHud -
+721: HeartHudSingle -
+722: EndingEnemy -
+723: StarOutwardLayer -
+724: IntroSpiral -
+725: CSSMergedStyleDeclaration -
+726: IStyleModule -
+727: en_US$styles_properties 0
+728: ModuleEvent -
+729: FlexChangeEvent -
+730: StyleEvent -
+731: ItemPendingError -
+732: IResponder -
+733: EvalBindingResponder -
+734: LayoutManager -
+735: HideShowEffectTargetFilter -
+736: AddRemoveEffectTargetFilter -
+737: TweenEvent -
+738: TweenEffectInstance -
+739: ZoomInstance -
+740: ToolTip -
+741: LocaleSorter -
+742: LocaleID 
+743: LocaleRegistry 
+744: IResourceModule -
+745: ResourceEvent -
+746: EmbeddedFontRegistry -
+747: ModuleManagerGlobals -
+748: ResourceModuleRSLItem -
+749: IPreloaderDisplay -
+750: RSLListLoader -
+751: ISystemCursorClient -
+752: CursorManagerPriority -
+753: XMLNotifier -
+754: XMLNotifierSingleton 
+755: en_US$utils_properties 0
+756: Dust -
+757: Boss4SecondFormBg -
+758: BossZzz -
+759: Boss2Pupil -
+760: Boss2Eyelid -
+761: EnemyCannonBossRush -
+762: Boss2RushEyelid -
+763: Boss2RushPupil -
+764: StarOutward -
+765: PriorityQueue -
+766: Tween -
+767: IXMLNotifiable -
+768: StarInwardLayer -
+769: StarInward -
 
 PrivateNamespace IDs:
 0: ModuleManager/1
@@ -798,8 +799,8 @@ PrivateNamespace IDs:
 25: PlayerBulletGroups
 26: MainMenu
 27: Player
-28: SnowLayer
-29: AiTriggerPool
+28: AiTriggerPool
+29: SnowLayer
 30: Configurable
 31: SplashLayer
 32: Enemy
@@ -808,8 +809,8 @@ PrivateNamespace IDs:
 35: Boss4BulletGroups
 36: EnemyBullet
 37: DamageNumberPool
-38: Dialogue
-39: StarLayer
+38: StarLayer
+39: Dialogue
 40: AiTrigger
 41: WorldMap
 42: PlayerBullet
@@ -873,8 +874,8 @@ PrivateNamespace IDs:
 100: EnemySeahorse
 101: EnemyDandelionGenerator
 102: UniqueItem
-103: EnemyCannonBottom2
-104: EnemyDrone
+103: EnemyDrone
+104: EnemyCannonBottom2
 105: FlxTilemap
 106: EnemyBabyfish
 107: EnemyKitty
@@ -906,16 +907,16 @@ PrivateNamespace IDs:
 133: EnemyGear
 134: Breakable
 135: EnemySnake3
-136: EnemySnake2
-137: EnemyCannonBottom
-138: Platform4b
+136: EnemyCannonBottom
+137: Platform4b
+138: EnemySnake2
 139: EnemyTallfish
 140: EnemyCannonTop
 141: EnemyCannonTop2
 142: EnemyGravTurtle2
 143: TurtleNpc
-144: Platform5b
-145: PowerGrass
+144: PowerGrass
+145: Platform5b
 146: Step
 147: EnemyCannonLeft2
 148: EnemySnelk
@@ -1064,8 +1065,8 @@ PrivateNamespace IDs:
 291: HiJump
 292: Gun3
 293: Gun2
-294: HeartContainer
-295: Gun1
+294: Gun1
+295: HeartContainer
 296: EnemySpike
 297: Armor
 298: TurboFire
@@ -1075,8 +1076,8 @@ PrivateNamespace IDs:
 302: ExplosionBig
 303: Boss4Bullet7
 304: ItemRate
-305: ItemName
-306: Radar
+305: Radar
+306: ItemName
 307: AreaName
 308: EnemyBulletDonut2
 309: EnemyBulletSpikeBall
@@ -1152,13 +1153,13 @@ PrivateNamespace IDs:
 379: FlxGamepad/2
 380: FlxMonitor/1
 381: FlxMonitor/2
-382: FixBlocks/1
-383: FixBlocks/2
-384: PlayerBulletGroups/1
+382: PlayerBulletGroups/1
+383: FixBlocks/1
+384: FixBlocks/2
 385: MainMenu/1
 386: Player/1
-387: SnowLayer/1
-388: AiTriggerPool/1
+387: AiTriggerPool/1
+388: SnowLayer/1
 389: UniqueBlocks/1
 390: UniqueBlocks/2
 391: SaveData/1
@@ -1201,10 +1202,10 @@ PrivateNamespace IDs:
 428: ObjectProxy/1
 429: FlxQuadTree/1
 430: FlxQuadTree/2
-431: BrokenBlock/1
-432: BrokenBlock/2
-433: PlayerBullet3/1
-434: PlayerBullet6/1
+431: PlayerBullet3/1
+432: PlayerBullet6/1
+433: BrokenBlock/1
+434: BrokenBlock/2
 435: TitleText/1
 436: ShadowNumber/1
 437: CipherInt/1

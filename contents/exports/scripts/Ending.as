@@ -71,6 +71,7 @@ package
       {
          super();
          FlxG.mouse.hide();
+         FlxG.noPause = true;
          this.setMode(MODE_WAIT_START);
          this._targetAlpha = new Array();
          this._moonSprite = new Array();
@@ -255,6 +256,17 @@ package
          {
             this._dialogueLayer.setAlpha(26 - this._modeElapsed);
          }
+         if(FlxG.keys.justPressed("ESCAPE"))
+         {
+            Sfx.stopEnding1();
+            this._dialogueLayer.setAlpha(0);
+            this.setMode(MODE_WAIT_CREDITS);
+            this._moonSprite[0].setTargetAlpha(0);
+            this._moonSprite[1].setTargetAlpha(0);
+            this._moonSprite[2].setTargetAlpha(0);
+            this._moonSprite[3].setTargetAlpha(0);
+            return;
+         }
          if(this._modeElapsed > 26)
          {
             this.setMode(MODE_WAIT_CREDITS);
@@ -310,6 +322,11 @@ package
             this._credits = new EndingCredits();
             add(this._credits);
             this._creditsDoneTimer = CREDITS_DONE_TIME;
+         }
+         if(FlxG.keys.justPressed("ESCAPE"))
+         {
+            this._credits.scrollDone = true;
+            this._creditsDoneTimer = 0;
          }
          if(this._credits.scrollDone)
          {
@@ -395,6 +412,7 @@ package
          this.endingFadeTimeout -= FlxG.elapsed;
          if(this.endingFadeTimeout < 0)
          {
+            FlxG.noPause = false;
             PlayState.endEnding();
          }
       }

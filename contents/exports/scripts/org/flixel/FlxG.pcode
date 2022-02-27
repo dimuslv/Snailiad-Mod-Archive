@@ -44,6 +44,8 @@ package org.flixel
    public class FlxG
    {
       
+      public static var noPause:Boolean = false;
+      
       public static var cheated:Boolean = false;
       
       public static var _curSongVolume:Number = 1.0;
@@ -150,6 +152,9 @@ package org.flixel
          code
          getlocal0
          pushscope
+         findproperty QName(PackageNamespace(""),"noPause")
+         pushfalse
+         setproperty QName(PackageNamespace(""),"noPause")
          findproperty QName(PackageNamespace(""),"cheated")
          pushfalse
          setproperty QName(PackageNamespace(""),"cheated")

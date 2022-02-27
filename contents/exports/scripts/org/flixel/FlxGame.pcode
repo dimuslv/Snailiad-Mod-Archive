@@ -748,6 +748,11 @@ package org.flixel
          getlocal0
          pushscope
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"noPause")
+         iffalse ofs0
+         returnvoid
+         ofs0:
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"mouse")
          callpropvoid QName(PackageNamespace(""),"show"), 0
          getlex QName(PackageNamespace("org.flixel"),"FlxG")

@@ -6,8 +6,6 @@ package
    public class Boss2Rush extends Boss
    {
       
-      private static const MAX_HP:int = 10000;
-      
       public static const DEFENSE:int = 5;
       
       private static const OFFENSE:int = 0;
@@ -66,6 +64,8 @@ package
       
       private static const SEC_PER_TICK:Number = 0.01;
        
+      
+      private var MAX_HP:int = 10000;
       
       private var _originX:int = 0;
       
@@ -171,7 +171,12 @@ package
       
       public function Boss2Rush(param1:int, param2:int)
       {
-         super(param1,param2,MAX_HP,DEFENSE,OFFENSE,true);
+         if(PlayState.player && PlayState.player._hardMode)
+         {
+            this._bossSpeed + 0.35;
+            this.MAX_HP *= 1.3;
+         }
+         super(param1,param2,this.MAX_HP,DEFENSE,OFFENSE,true);
          y += 41;
          this.mineyey = y - 80;
          PlayState.boss2rush = this;
@@ -727,7 +732,7 @@ package
       
       override public function hurt(param1:Number) : void
       {
-         if(_hp <= MAX_HP * 0.2 && this._attackMode < 2)
+         if(_hp <= this.MAX_HP * 0.2 && this._attackMode < 2)
          {
             this._bossSpeed = 1.4;
             this._attackMode = 2;
@@ -736,7 +741,7 @@ package
             this.lfoot.play("hurt");
             this.rfoot.play("hurt");
          }
-         else if(_hp <= MAX_HP * 0.66 && this._attackMode < 1)
+         else if(_hp <= this.MAX_HP * 0.66 && this._attackMode < 1)
          {
             this._bossSpeed = 1.3;
             this._attackMode = 1;

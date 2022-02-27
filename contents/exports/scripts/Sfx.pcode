@@ -30,6 +30,7 @@ package
 {
    import flash.utils.getTimer;
    import org.flixel.FlxG;
+   import org.flixel.FlxSound;
    import org.flixel.FlxU;
    
    public class Sfx
@@ -78,6 +79,8 @@ package
       public static const EXPLOSION_TIMEOUT:int = 25;
       
       public static var nextExplosion:int = 0;
+      
+      public static var EndingSfx:FlxSound;
       
       public static const DOOROPEN_TIMEOUT:int = 30;
       
@@ -1633,7 +1636,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 4
+         maxstack 5
          localcount 2
          initscopedepth 3
          maxscopedepth 4
@@ -1644,13 +1647,42 @@ package
          getlex QName(PackageNamespace(""),"Sfx_Ending1Song")
          coerce QName(PackageNamespace(""),"Class")
          setlocal1
+         findproperty QName(PackageNamespace(""),"EndingSfx")
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getlocal1
          pushdouble 0.75
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"musicVolume")
          multiply
-         callpropvoid QName(PackageNamespace(""),"play"), 2
+         callproperty QName(PackageNamespace(""),"play"), 2
+         setproperty QName(PackageNamespace(""),"EndingSfx")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public static function stopEnding1() : void
+      {
+         trait method QName(PackageNamespace(""),"stopEnding1")
+         flag FINAL
+         dispid 43
+         method
+         name null
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 1
+         initscopedepth 3
+         maxscopedepth 4
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace(""),"EndingSfx")
+         pushbyte 1
+         callpropvoid QName(PackageNamespace(""),"fadeOut"), 1
          returnvoid
          end ; code
          end ; body
@@ -1661,7 +1693,7 @@ package
       {
          trait method QName(PackageNamespace(""),"playOpenDoor")
          flag FINAL
-         dispid 43
+         dispid 44
          method
          name null
          returns QName(PackageNamespace(""),"void")
@@ -1705,7 +1737,7 @@ package
       {
          trait method QName(PackageNamespace(""),"playCloseDoor")
          flag FINAL
-         dispid 44
+         dispid 45
          method
          name null
          returns QName(PackageNamespace(""),"void")
@@ -1735,7 +1767,7 @@ package
       {
          trait method QName(PackageNamespace(""),"playBossHpBleep")
          flag FINAL
-         dispid 45
+         dispid 46
          method
          name null
          returns QName(PackageNamespace(""),"void")
@@ -1779,7 +1811,7 @@ package
       {
          trait method QName(PackageNamespace(""),"playDialogueLetter")
          flag FINAL
-         dispid 46
+         dispid 47
          method
          name null
          flag HAS_OPTIONAL
@@ -1912,7 +1944,7 @@ package
       {
          trait method QName(PackageNamespace(""),"playEnemyKilled")
          flag FINAL
-         dispid 47
+         dispid 48
          method
          name null
          returns QName(PackageNamespace(""),"void")
@@ -1942,7 +1974,7 @@ package
       {
          trait method QName(PackageNamespace(""),"playEnemyKilled2")
          flag FINAL
-         dispid 48
+         dispid 49
          method
          name null
          returns QName(PackageNamespace(""),"void")
@@ -1972,7 +2004,7 @@ package
       {
          trait method QName(PackageNamespace(""),"playEnemyKilled3")
          flag FINAL
-         dispid 49
+         dispid 50
          method
          name null
          returns QName(PackageNamespace(""),"void")
@@ -2002,7 +2034,7 @@ package
       {
          trait method QName(PackageNamespace(""),"playRandomEnemyKilled")
          flag FINAL
-         dispid 50
+         dispid 51
          method
          name null
          returns QName(PackageNamespace(""),"void")
@@ -2077,11 +2109,41 @@ package
          end ; method
       }
       
+      public static function playSlugMode() : void
+      {
+         trait method QName(PackageNamespace(""),"playSlugMode")
+         flag FINAL
+         dispid 52
+         method
+         name null
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 3
+         maxscopedepth 4
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace(""),"Sfx_SlugMode")
+         coerce QName(PackageNamespace(""),"Class")
+         setlocal1
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getlocal1
+         callpropvoid QName(PackageNamespace(""),"play"), 1
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
       public static function playEnemyHurt() : void
       {
          trait method QName(PackageNamespace(""),"playEnemyHurt")
          flag FINAL
-         dispid 51
+         dispid 53
          method
          name null
          returns QName(PackageNamespace(""),"void")
@@ -2105,7 +2167,7 @@ package
       {
          trait method QName(PackageNamespace(""),"playEnemyPingOffArmor")
          flag FINAL
-         dispid 52
+         dispid 54
          method
          name null
          returns QName(PackageNamespace(""),"void")

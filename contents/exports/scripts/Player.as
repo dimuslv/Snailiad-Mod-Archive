@@ -175,6 +175,14 @@ package
       public static var ALT_RIGHT_KEY:String = DEFAULT_ALT_RIGHT_KEY;
       
       private static const SLEEP_TIMEOUT:Number = 30;
+      
+      public static var fireToggle:Boolean = false;
+      
+      public static const FIRING_MODE_NORMAL:int = 0;
+      
+      public static const FIRING_MODE_TOGGLE:int = 1;
+      
+      public static var firingMode:int = FIRING_MODE_NORMAL;
        
       
       private var _cuteLittleSnails:Boolean = false;
@@ -420,6 +428,10 @@ package
             {
                _loc3_.hasTurbo = false;
             }
+            if(!_loc2_.isVarSet("toggleFire"))
+            {
+               _loc3_.toggleFire = false;
+            }
             if(!_loc2_.isVarSet("hasHighJump"))
             {
                _loc3_.hasHighJump = false;
@@ -573,6 +585,14 @@ package
             this.setHasWeapon(1,_loc2_.isVarTrue("hasWeaponOne"));
             this.setHasWeapon(2,_loc2_.isVarTrue("hasWeaponTwo"));
             this.setHasTurbo(_loc2_.isVarTrue("hasTurbo"));
+            if(_loc2_.isVarTrue("toggleFire"))
+            {
+               firingMode = FIRING_MODE_TOGGLE;
+            }
+            else
+            {
+               firingMode = FIRING_MODE_NORMAL;
+            }
             this.setHighJump(_loc2_.isVarTrue("hasHighJump"));
             this.setHasDevastator(_loc2_.isVarTrue("hasDevastator"));
             this.setHasGravityShock(_loc2_.isVarTrue("hasGravityShock"));
@@ -749,13 +769,82 @@ package
          }
       }
       
+      public function checkInput_handleSkyFishCheat() : void
+      {
+         if(PlayState.bossRush || PlayState.area != 0)
+         {
+            return;
+         }
+         if(FlxG.keys.getLastKeys(6) == "SKYFIS" && (PlayState.bossesKilled[1] || PlayState.bossesKilled[2] || PlayState.bossesKilled[3] || PlayState.bossesKilled[4]))
+         {
+            Sfx.playSlugMode();
+            PlayState.bossesKilled[1] = false;
+            PlayState.bossesKilled[2] = false;
+            PlayState.bossesKilled[3] = false;
+            PlayState.bossesKilled[4] = false;
+            this.saveNoCoords();
+            PlayState.hud.areaName.setArea("- SKYFISH FLIES AGAIN -");
+         }
+      }
+      
+      public function checkInput_handleSlugCheat() : void
+      {
+         var _loc1_:int = 0;
+         var _loc2_:int = 0;
+         if(!PlayState.bossRush || PlayState.bossRushTimer.started || this._slugMode)
+         {
+            return;
+         }
+         if(FlxG.keys.getLastKeys(4) == "SLUG")
+         {
+            Sfx.playSlugMode();
+            this.hideInShell(false);
+            this._maxHp.value /= this.hpPerHeart();
+            this._slugMode = true;
+            this._hardMode = true;
+            this._maxHp.value *= this.hpPerHeart();
+            this.setMaxHp(this.getMaxHp());
+            this.setCurHp(999999999);
+            this.WEAPON_TIMEOUTS[0] = 0.046;
+            this.WEAPON_TIMEOUTS[1] = 0.23;
+            this.WEAPON_TIMEOUTS[2] = 0.13;
+            _animations = new Array();
+            _loc1_ = 0;
+            while(_loc1_ < 4)
+            {
+               _loc2_ = _loc1_ * 20;
+               if(this._slugMode)
+               {
+                  _loc2_ += 4 * 20;
+               }
+               addAnimation("snail" + (_loc1_ + 1).toString() + "_floor_right_move",[0 + _loc2_,1 + _loc2_],3,true);
+               addAnimation("snail" + (_loc1_ + 1).toString() + "_floor_right_hide",[3 + _loc2_],9,false);
+               addAnimation("snail" + (_loc1_ + 1).toString() + "_rwall_up_move",[4 + _loc2_,5 + _loc2_],3,true);
+               addAnimation("snail" + (_loc1_ + 1).toString() + "_rwall_up_hide",[7 + _loc2_],9,false);
+               addAnimation("snail" + (_loc1_ + 1).toString() + "_rwall_down_move",[8 + _loc2_,9 + _loc2_],3,true);
+               addAnimation("snail" + (_loc1_ + 1).toString() + "_rwall_down_hide",[11 + _loc2_],9,false);
+               addAnimation("snail" + (_loc1_ + 1).toString() + "_ceil_right_move",[12 + _loc2_,13 + _loc2_],3,true);
+               addAnimation("snail" + (_loc1_ + 1).toString() + "_ceil_right_hide",[15 + _loc2_],9,false);
+               addAnimation("snail" + (_loc1_ + 1).toString() + "_death",[16 + _loc2_,17 + _loc2_,18 + _loc2_,19 + _loc2_],30,true);
+               _loc1_++;
+            }
+            this.playAnim("death");
+            this.setSnailType(this._snailType.value);
+            PlayState.hud.areaName.setArea("- OMEGA SLUG ENGAGE -");
+         }
+      }
+      
       public function checkInput_hideInShell() : void
       {
          if(this._slugMode)
          {
             return;
          }
-         if(this.pressedShoot())
+         if(firingMode == FIRING_MODE_NORMAL && this.pressedShoot())
+         {
+            return;
+         }
+         if(firingMode == FIRING_MODE_TOGGLE && this.pressedStrafe())
          {
             return;
          }
@@ -781,7 +870,18 @@ package
       
       public function checkInput_shoot() : void
       {
-         if(this.pressedShoot() && !this._hidingInShell)
+         if(firingMode == FIRING_MODE_TOGGLE)
+         {
+            if(this.justPressedShoot() && this.hasAnyWeapon())
+            {
+               fireToggle = !fireToggle;
+            }
+         }
+         else
+         {
+            fireToggle = this.pressedShoot();
+         }
+         if(fireToggle && !this._hidingInShell)
          {
             this.shootCurrentWeapon();
          }
@@ -1080,6 +1180,8 @@ package
          if(!dead && !this._paralyzed)
          {
             this.checkInput_handleHelp();
+            this.checkInput_handleSkyFishCheat();
+            this.checkInput_handleSlugCheat();
             this.checkInput_hideInShell();
             this.checkInput_shoot();
             this.checkInput_performGravityJump();
@@ -1763,7 +1865,8 @@ package
       
       public function moveSnailCheckFullBounds(param1:int, param2:int) : void
       {
-         var _loc3_:int = param2;
+         var _loc3_:int = 0;
+         _loc3_ = param2;
          if(param2 < 0)
          {
             param2 = PlayState.worldMap.findFirstFullNotSolidTop(x,y,width,height,param2);
@@ -2337,9 +2440,10 @@ package
       
       public function setFaceDirNotHiding(param1:int, param2:Boolean = false) : void
       {
+         var _loc5_:int = 0;
          var _loc3_:int = offset.x;
          var _loc4_:int = offset.y;
-         var _loc5_:int = width;
+         _loc5_ = width;
          var _loc6_:int = height;
          switch(this._faceDir)
          {
@@ -2480,7 +2584,11 @@ package
       
       public function justPressedShoot() : Boolean
       {
-         return FlxG.keys.justPressed(SHOOT_KEY) || FlxG.keys.pressed(ALT_SHOOT_KEY) || FlxG.keys.pressed(STRAFE_KEY) || FlxG.keys.pressed(ALT_STRAFE_KEY);
+         if(firingMode == FIRING_MODE_NORMAL)
+         {
+            return FlxG.keys.justPressed(SHOOT_KEY) || FlxG.keys.justPressed(ALT_SHOOT_KEY) || FlxG.keys.justPressed(STRAFE_KEY) || FlxG.keys.justPressed(ALT_STRAFE_KEY);
+         }
+         return FlxG.keys.justPressed(SHOOT_KEY) || FlxG.keys.justPressed(ALT_SHOOT_KEY);
       }
       
       public function pressedStrafe() : Boolean
@@ -2490,7 +2598,11 @@ package
       
       public function pressedShoot() : Boolean
       {
-         return FlxG.keys.pressed(SHOOT_KEY) || FlxG.keys.pressed(ALT_SHOOT_KEY) || FlxG.keys.pressed(STRAFE_KEY) || FlxG.keys.pressed(ALT_STRAFE_KEY);
+         if(firingMode == FIRING_MODE_NORMAL)
+         {
+            return FlxG.keys.pressed(SHOOT_KEY) || FlxG.keys.pressed(ALT_SHOOT_KEY) || FlxG.keys.pressed(STRAFE_KEY) || FlxG.keys.pressed(ALT_STRAFE_KEY);
+         }
+         return FlxG.keys.pressed(SHOOT_KEY) || FlxG.keys.pressed(ALT_SHOOT_KEY);
       }
       
       public function justPressedJump() : Boolean
@@ -2585,6 +2697,10 @@ package
          (_loc4_ = new XML(<vars/>)).appendChild(<savex>{param1}</savex>);
          _loc4_.appendChild(<savey>{param2}</savey>);
          _loc4_.appendChild(<lastWeapon>{this._currentWeapon.value}</lastWeapon>);
+         if(firingMode)
+         {
+            _loc4_.appendChild(<toggleFire>true</toggleFire>);
+         }
          if(this._hasTurbo.value)
          {
             _loc4_.appendChild(<hasTurbo>true</hasTurbo>);

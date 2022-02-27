@@ -108,6 +108,9 @@ package
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"mouse")
          callpropvoid QName(PackageNamespace(""),"show"), 0
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         pushtrue
+         setproperty QName(PackageNamespace(""),"noPause")
          getlocal0
          findpropstrict QName(PackageNamespace("org.flixel"),"FlxSprite")
          constructprop QName(PackageNamespace("org.flixel"),"FlxSprite"), 0
@@ -276,6 +279,9 @@ package
          getproperty QName(PrivateNamespace(null,"#SplashLayer"),"splash")
          pushfalse
          setproperty QName(PackageNamespace(""),"visible")
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         pushfalse
+         setproperty QName(PackageNamespace(""),"noPause")
          findpropstrict QName(PackageNamespace(""),"kill")
          callpropvoid QName(PackageNamespace(""),"kill"), 0
          returnvoid

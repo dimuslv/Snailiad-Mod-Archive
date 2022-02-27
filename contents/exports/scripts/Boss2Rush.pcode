@@ -51,8 +51,6 @@ package
    public class Boss2Rush extends Boss
    {
       
-      private static const MAX_HP:int = 10000;
-      
       public static const DEFENSE:int = 5;
       
       private static const OFFENSE:int = 0;
@@ -125,9 +123,6 @@ package
          code
          getlocal0
          pushscope
-         findproperty QName(PrivateNamespace(null,"#Boss2Rush"),"MAX_HP")
-         pushshort 10000
-         initproperty QName(PrivateNamespace(null,"#Boss2Rush"),"MAX_HP")
          findproperty QName(PackageNamespace(""),"DEFENSE")
          pushbyte 5
          initproperty QName(PackageNamespace(""),"DEFENSE")
@@ -220,6 +215,8 @@ package
          end ; body
          end ; method
       }
+      
+      private var MAX_HP:int = 10000;
       
       private var _originX:int = 0;
       
@@ -403,10 +400,35 @@ package
          pushdouble 0.24251
          newarray 60
          initproperty QName(PrivateNamespace(null,"#Boss2Rush"),"TIMEOUTS")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"player")
+         convert_b
+         dup
+         iffalse ofs0
+         pop
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"player")
+         getproperty QName(PackageNamespace(""),"_hardMode")
+         convert_b
+         ofs0:
+         iffalse ofs1
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Boss2Rush"),"_bossSpeed")
+         pushdouble 0.35
+         add
+         pop
+         getlocal0
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Boss2Rush"),"MAX_HP")
+         pushdouble 1.3
+         multiply
+         initproperty QName(PrivateNamespace(null,"#Boss2Rush"),"MAX_HP")
+         ofs1:
          getlocal0
          getlocal1
          getlocal2
-         getlex QName(PrivateNamespace(null,"#Boss2Rush"),"MAX_HP")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Boss2Rush"),"MAX_HP")
          getlex QName(PackageNamespace(""),"DEFENSE")
          getlex QName(PrivateNamespace(null,"#Boss2Rush"),"OFFENSE")
          pushtrue
@@ -2732,7 +2754,8 @@ package
          getlocal0
          pushscope
          getlex QName(ProtectedNamespace("Enemy"),"_hp")
-         getlex QName(PrivateNamespace(null,"#Boss2Rush"),"MAX_HP")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Boss2Rush"),"MAX_HP")
          pushdouble 0.2
          multiply
          lessequals
@@ -2772,7 +2795,8 @@ package
          jump ofs2
          ofs1:
          getlex QName(ProtectedNamespace("Enemy"),"_hp")
-         getlex QName(PrivateNamespace(null,"#Boss2Rush"),"MAX_HP")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Boss2Rush"),"MAX_HP")
          pushdouble 0.66
          multiply
          lessequals

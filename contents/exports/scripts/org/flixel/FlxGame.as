@@ -215,6 +215,10 @@ package org.flixel
       
       protected function onFocusLost(param1:Event = null) : void
       {
+         if(FlxG.noPause)
+         {
+            return;
+         }
          FlxG.mouse.show();
          FlxG.pause = true;
       }

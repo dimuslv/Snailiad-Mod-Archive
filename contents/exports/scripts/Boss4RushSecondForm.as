@@ -460,7 +460,7 @@ package
             this._zzzTimeout = ZZZ_TIMEOUT;
             if(PlayState.player._slugMode)
             {
-               this.ZZZ_MAX = 5;
+               this.ZZZ_MAX = 6;
             }
             acceleration.y = 900;
             Sfx.playShell();
@@ -668,14 +668,18 @@ package
                this._strafeThetaAcc = -this._strafeThetaVel * 1.3;
             }
             this._aimed = true;
+            if(PlayState.player._slugMode)
+            {
+               this._strafeThetaVel *= 1.6;
+            }
          }
-         if(this._strafeThetaVel < -Math.PI / 7)
+         if(this._strafeThetaVel < -Math.PI / 5)
          {
-            this._strafeThetaVel = -Math.PI / 7;
+            this._strafeThetaVel = -Math.PI / 5;
          }
-         if(this._strafeThetaVel > Math.PI / 7)
+         if(this._strafeThetaVel > Math.PI / 5)
          {
-            this._strafeThetaVel = Math.PI / 7;
+            this._strafeThetaVel = Math.PI / 5;
          }
          this._strafeTheta += this._strafeThetaVel * FlxG.elapsed * this._bossSpeed;
          this._strafeThetaVel += this._strafeThetaAcc * FlxG.elapsed * this._bossSpeed;
