@@ -128,8 +128,7 @@ package
          getlocal0
          getlocal 4
          initproperty QName(PrivateNamespace(null,"#SuperUniqueItem"),"_customFinish")
-         getlex QName(PackageNamespace(""),"PlayState")
-         getproperty QName(PackageNamespace(""),"bossRush")
+         pushtrue
          iffalse ofs0
          getlocal0
          pushfalse
