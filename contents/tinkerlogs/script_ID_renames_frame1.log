@@ -1,96 +1,91 @@
 Class IDs:
-0: FlxNGPreloader -
-1: Preloader -
-2: MedalPopup -
-3: FlxLoaderBar -
-4: API -
-5: FlashAd -
-6: APIEvent -
-7: FlxLoaderFrame -
-8: FlxLoaderPlay -
-9: IFlexAsset -
-10: FlexBitmap -
-11: ILayoutDirectionElement -
-12: IFlexDisplayObject -
-13: BitmapAsset -
-14: Preloader_LoadBg -
-15: Medal -
-16: BaseN -
-17: SaveGroupQuery -
-18: SmartURLLoader -
-19: File 
-20: SaveFile -
-21: Bridge -
-22: SaveGroup -
-23: ScoreBoard -
-24: RC4 -
-25: JSON -
-26: APIError -
-27: MD5 -
-28: SaveRating -
-29: PNGEncoder -
-30: NewgroundsAPIAsset_FlashAd_Container_23 0
-31: NewgroundsAPIAsset_Load_Indicator_3 0
-32: NameUtil -
-33: IAssetLayoutFeatures -
-34: SaveKey -
-35: Score -
-36: ScoreBoardPeriod -
-37: JSONEncoder -
-38: JSONDecoder -
-39: IntUtil -
-40: IRepeaterClient -
-41: JSONTokenizer -
-42: JSONToken -
-43: JSONTokenType -
-44: JSONParseError -
+0: FlxPreloader 0
+1: Preloader 0
+2: FlxU -
+3: IFlexAsset -
+4: IFlexDisplayObject -
+5: FlexBitmap -
+6: ILayoutDirectionElement -
+7: BitmapAsset -
+8: FlxPreloader_ImgLogoCorners -
+9: FlxPreloader_ImgLogo -
+10: FlxPreloader_ImgLogoLight -
+11: FlxG -
+12: FlxPoint -
+13: FlxRect -
+14: FlxQuadTree -
+15: FlxObject -
+16: NameUtil -
+17: IAssetLayoutFeatures -
+18: FlxInput -
+19: FlxKeyboard 0
+20: FlxGame -
+21: FlxPanel -
+22: FlxGamepad -
+23: FlxSound -
+24: FlxSprite -
+25: FlxMouse -
+26: FlxState -
+27: FlxFade -
+28: FlxFlash -
+29: FlxQuake -
+30: FlxKong 0
+31: FlxList -
+32: FlxGroup -
+33: IRepeaterClient -
+34: FlxSave -
+35: FlxPause -
+36: FontAsset -
+37: FlxGame_junk 0
+38: FlxConsole -
+39: FlxPanel_ImgClose -
+40: FlxButton -
+41: FlxPanel_ImgDonate -
+42: FlxPanel_ImgReddit -
+43: FlxPanel_ImgTwitter -
+44: FlxPanel_ImgDigg -
+45: FlxPanel_ImgDelicious -
+46: FlxText -
+47: FlxPanel_ImgStumble -
+48: FlxAnim -
+49: FlxMouse_ImgDefaultCursor -
+50: FlxPause_ImgKeyPlus -
+51: FlxPause_ImgKeyMinus -
+52: FlxPause_ImgKey0 -
+53: FlxPause_ImgKeyP -
+54: FlxMonitor -
 
 PrivateNamespace IDs:
-0: FlxNGPreloader
-1: Preloader
-2: MedalPopup
-3: FlashAd
-4: APIEvent
-5: BitmapAsset
-6: Medal
-7: BaseN
-8: SaveGroupQuery
-9: SmartURLLoader
-10: File
-11: SaveFile
-12: Bridge
-13: SaveGroup
-14: ScoreBoard
-15: SaveRating
-16: SaveKey
-17: Score
-18: JSONEncoder
-19: JSONDecoder
-20: JSONTokenizer
-21: JSONToken
-22: JSONParseError
-23: API
-24: RC4
-25: APIError
-26: MD5
-27: PNGEncoder
-28: NameUtil
-29: IntUtil
-30: MedalPopup/1
-31: API/1
-32: FlashAd/1
-33: BitmapAsset/1
-34: Medal/1
-35: BaseN/1
-36: SaveGroupQuery/1
-37: SaveFile/1
-38: Bridge/1
-39: SaveGroup/1
-40: ScoreBoard/1
-41: RC4/1
-42: APIError/1
-43: MD5/1
-44: PNGEncoder/1
-45: NameUtil/1
-46: JSONEncoder/1
-47: JSONDecoder/1
+0: FlxPreloader
+1: BitmapAsset
+2: FlxInput
+3: FlxPanel
+4: FlxPause
+5: NameUtil
+6: FlxU/1
+7: FlxU/2
+8: BitmapAsset/1
+9: FlxG/1
+10: FlxG/2
+11: FlxQuadTree/1
+12: FlxQuadTree/2
+13: FlxObject/1
+14: FlxObject/2
+15: NameUtil/1
+16: FlxInput/1
+17: FlxGame/1
+18: FlxGame/2
+19: FlxGamepad/1
+20: FlxGamepad/2
+21: FlxSprite/1
+22: FlxSprite/2
+23: FlxKong/1
+24: FlxKong/2
+25: FlxGroup/1
+26: FlxGroup/2
+27: FlxSave/1
+28: FlxSave/2
+29: FlxConsole/1
+30: FlxConsole/2
+31: FlxMonitor/1
+32: FlxMonitor/2

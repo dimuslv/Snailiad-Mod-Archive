@@ -46,7 +46,6 @@
 
 package
 {
-   import com.newgrounds.API;
    import flash.events.ContextMenuEvent;
    import flash.net.URLRequest;
    import flash.net.navigateToURL;
@@ -99,18 +98,6 @@ package
          code
          getlocal0
          pushscope
-         pushbyte 0
-         convert_u
-         setlocal1
-         pushbyte 0
-         convert_u
-         setlocal2
-         pushbyte 0
-         convert_u
-         setlocal3
-         getlex QName(PackageNamespace(""),"Preloader")
-         getproperty QName(PackageNamespace(""),"fail")
-         iftrue ofs0
          pushshort 400
          convert_u
          setlocal1
@@ -142,7 +129,6 @@ package
          findproperty QName(PackageNamespace(""),"useDefaultHotKeys")
          pushfalse
          initproperty QName(PackageNamespace(""),"useDefaultHotKeys")
-         ofs0:
          getlocal0
          callpropvoid QName(PackageNamespace(""),"createContextMenu"), 0
          returnvoid
@@ -215,32 +201,16 @@ package
          constructprop QName(PackageNamespace("flash.ui"),"ContextMenuItem"), 1
          coerce QName(PackageNamespace("flash.ui"),"ContextMenuItem")
          setslot 4
-         getlex QName(PackageNamespace("com.newgrounds"),"API")
-         callproperty QName(PackageNamespace(""),"isNewgrounds"), 0
-         iffalse ofs0
-         getscopeobject 1
-         findpropstrict QName(PackageNamespace("flash.ui"),"ContextMenuItem")
-         getlex QName(PrivateNamespace(null,"#main"),"myPageUrl")
-         constructprop QName(PackageNamespace("flash.ui"),"ContextMenuItem"), 1
-         coerce QName(PackageNamespace("flash.ui"),"ContextMenuItem")
-         setslot 4
-         getscopeobject 1
-         getslot 4
-         pushfalse
-         setproperty QName(PackageNamespace(""),"enabled")
-         jump ofs1
-         ofs0:
          getscopeobject 1
          getslot 4
          getlex QName(PackageNamespace("flash.events"),"ContextMenuEvent")
          getproperty QName(PackageNamespace(""),"MENU_ITEM_SELECT")
-         newfunction 15
+         newfunction 1
          callpropvoid QName(PackageNamespace(""),"addEventListener"), 2
          getscopeobject 1
          getslot 4
          pushtrue
          setproperty QName(PackageNamespace(""),"enabled")
-         ofs1:
          getscopeobject 1
          getslot 3
          pushfalse

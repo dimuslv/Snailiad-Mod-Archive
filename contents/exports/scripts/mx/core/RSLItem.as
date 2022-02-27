@@ -57,13 +57,12 @@ package mx.core
       
       public function load(param1:Function, param2:Function, param3:Function, param4:Function, param5:Function) : void
       {
-         var _loc6_:Loader = null;
          this.chainedProgressHandler = param1;
          this.chainedCompleteHandler = param2;
          this.chainedIOErrorHandler = param3;
          this.chainedSecurityErrorHandler = param4;
          this.chainedRSLErrorHandler = param5;
-         _loc6_ = new Loader();
+         var _loc6_:Loader = new Loader();
          var _loc7_:LoaderContext = new LoaderContext();
          this.urlRequest = new URLRequest(LoaderUtil.createAbsoluteURL(this.rootURL,this.url));
          _loc6_.contentLoaderInfo.addEventListener(ProgressEvent.PROGRESS,this.itemProgressHandler);

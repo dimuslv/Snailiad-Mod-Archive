@@ -474,7 +474,7 @@ package
                PlayState.player.doJump();
                PlayState.player.setFaceDir(Player.FACE_CEIL_RIGHT);
             }
-            PlayState.player.velocity.x = PlayState.player._runSpeed.value;
+            PlayState.player.velocity.x = PlayState.player._runSpeed;
          }
          if(!this._createdChildren)
          {

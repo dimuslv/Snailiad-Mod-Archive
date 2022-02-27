@@ -1507,6 +1507,35 @@ package
          end ; method
       }
       
+      public function updateTimer() : void
+      {
+         trait method QName(PackageNamespace(""),"updateTimer")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 1
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PackageNamespace(""),"escText")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"player")
+         callproperty QName(PackageNamespace(""),"getGameTimeExact"), 0
+         setproperty QName(PackageNamespace(""),"text")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
       override public function update() : void
       {
          trait method QName(PackageNamespace(""),"update")
@@ -1525,6 +1554,8 @@ package
          code
          getlocal0
          pushscope
+         getlocal0
+         callpropvoid QName(PackageNamespace(""),"updateTimer"), 0
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"realState")
          getlex QName(PackageNamespace(""),"PlayState")

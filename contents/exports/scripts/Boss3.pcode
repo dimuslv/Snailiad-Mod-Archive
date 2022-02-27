@@ -1896,7 +1896,6 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"_runSpeed")
-         getproperty QName(PackageNamespace(""),"value")
          setproperty QName(PackageNamespace(""),"x")
          ofs3:
          jump ofs4
@@ -1920,7 +1919,6 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"_runSpeed")
-         getproperty QName(PackageNamespace(""),"value")
          setproperty QName(PackageNamespace(""),"x")
          ofs4:
          getlocal0

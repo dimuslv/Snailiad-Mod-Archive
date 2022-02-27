@@ -1254,7 +1254,6 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"clearTime")
-         getproperty QName(PackageNamespace(""),"value")
          callproperty QName(PackageNamespace(""),"formatExact"), 1
          add
          pushstring "\n"

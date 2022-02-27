@@ -346,7 +346,6 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"_runSpeed")
-         getproperty QName(PackageNamespace(""),"value")
          setproperty QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
@@ -432,9 +431,8 @@ package
          initproperty QName(PrivateNamespace(null,"#GravJump"),"_shot")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
-         getproperty QName(PackageNamespace(""),"_weaponTimeout")
          pushbyte 0
-         setproperty QName(PackageNamespace(""),"value")
+         setproperty QName(PackageNamespace(""),"_weaponTimeout")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          pushbyte 2

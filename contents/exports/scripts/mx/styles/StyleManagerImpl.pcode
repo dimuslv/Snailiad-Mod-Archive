@@ -2781,7 +2781,7 @@ package mx.styles
          coerce QName(PackageNamespace("mx.styles"),"IStyleManager2")
          setslot 6
          getscopeobject 1
-         newfunction 5309
+         newfunction 4909
          coerce QName(PackageNamespace(""),"Function")
          setslot 7
          getscopeobject 1
@@ -2802,7 +2802,7 @@ package mx.styles
          coerce QName(PrivateNamespace(null,"#StyleManagerImpl/1"),"StyleEventDispatcher")
          setslot 8
          getscopeobject 1
-         newfunction 5310
+         newfunction 4910
          coerce QName(PackageNamespace(""),"Function")
          setslot 9
          getscopeobject 1
@@ -2835,7 +2835,7 @@ package mx.styles
          coerce QName(PackageNamespace("flash.utils"),"Timer")
          setslot 10
          getscopeobject 1
-         newfunction 5311
+         newfunction 4911
          coerce QName(PackageNamespace(""),"Function")
          setslot 11
          getscopeobject 1

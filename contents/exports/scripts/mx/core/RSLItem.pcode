@@ -156,9 +156,6 @@ package mx.core
          code
          getlocal0
          pushscope
-         pushnull
-         coerce QName(PackageNamespace("flash.display"),"Loader")
-         setlocal 6
          getlocal0
          getlocal1
          initproperty QName(ProtectedNamespace("mx.core:RSLItem"),"chainedProgressHandler")

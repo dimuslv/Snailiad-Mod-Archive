@@ -100,7 +100,7 @@ package
                      PlayState.player.playAnim("floor_right_move");
                      PlayState.player.facing = RIGHT;
                   }
-                  PlayState.player.velocity.x = PlayState.player._runSpeed.value;
+                  PlayState.player.velocity.x = PlayState.player._runSpeed;
                   if(!PlayState.player._jumping && PlayState.player.y > 345 * 16 + 8)
                   {
                      PlayState.player.doJump();
@@ -121,7 +121,7 @@ package
                      if(!this._shot)
                      {
                         this._shot = true;
-                        PlayState.player._weaponTimeout.value = 0;
+                        PlayState.player._weaponTimeout = 0;
                         PlayState.player.switchToWeapon(2);
                         FlxG.keys.unpress(Player.ALT_UP_KEY);
                         FlxG.keys.unpress(Player.ALT_LEFT_KEY);

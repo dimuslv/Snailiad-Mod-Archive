@@ -378,7 +378,7 @@ package
             this._finalText.outline = true;
             this._finalText.outlineColor = 4278190080;
             this._finalText.alignment = "center";
-            this._finalText.text = "CONGRATULATIONS!!\n\n" + "ITEMS COLLECTED: " + PlayState.player.getPercentComplete() + "%\n" + "CLEAR TIME: " + GameTimeDisplay.formatExact(PlayState.player.clearTime.value) + "\n";
+            this._finalText.text = "CONGRATULATIONS!!\n\n" + "ITEMS COLLECTED: " + PlayState.player.getPercentComplete() + "%\n" + "CLEAR TIME: " + GameTimeDisplay.formatExact(PlayState.player.clearTime) + "\n";
             this._finalText.scrollFactor.x = this._finalText.scrollFactor.y = 0;
             this._finalText.alpha = 0;
             add(this._finalText);

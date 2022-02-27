@@ -8,7 +8,7 @@ package
    {
        
       
-      public var now:ShadowNumber;
+      public var now:Number;
       
       public var started:Boolean = false;
       
@@ -17,7 +17,7 @@ package
       public function BossRushTimer()
       {
          super(0,4,FlxG.width - 4);
-         this.now = new ShadowNumber();
+         this.now = 0;
          font = Fonts.normal;
          size = 20;
          color = 16777215;
@@ -25,14 +25,14 @@ package
          alignment = "right";
          scrollFactor.x = scrollFactor.y = 0;
          setShadowDistance(1);
-         this.now.value = 0;
+         this.now = 0;
          this.going = false;
          this.started = false;
       }
       
       override public function destroy() : void
       {
-         this.now = null;
+         this.now = 0;
          super.destroy();
       }
       
@@ -47,12 +47,12 @@ package
       
       public function getTime() : String
       {
-         return int(this.now.value / 60).toString() + ":" + this.padZero(int(this.now.value % 60));
+         return int(this.now / 60).toString() + ":" + this.padZero(int(this.now % 60));
       }
       
       public function getTimeExact() : String
       {
-         return int(this.now.value / 60).toString() + ":" + this.padZero(int(this.now.value % 60)) + "." + this.padZero(int(this.now.value * 100 % 100));
+         return int(this.now / 60).toString() + ":" + this.padZero(int(this.now % 60)) + "." + this.padZero(int(this.now * 100 % 100));
       }
       
       override public function update() : void
@@ -63,7 +63,7 @@ package
          }
          if(this.going)
          {
-            this.now.value += FlxG.elapsed;
+            this.now += FlxG.elapsed;
             text = this.getTime();
          }
          visible = this.started;

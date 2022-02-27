@@ -317,7 +317,7 @@ package
             --this.tileMinY;
          }
          this.tileMaxY = param2;
-         while(this.tileMaxY < this.bgmap.widthInTiles)
+         while(this.tileMaxY < this.bgmap.heightInTiles)
          {
             if(this.isEdge(param1,this.tileMaxY))
             {

@@ -1625,7 +1625,7 @@ package mx.styles
          ofs5:
          iffalse ofs6
          getscopeobject 1
-         newfunction 262
+         newfunction 1500
          coerce QName(PackageNamespace(""),"Function")
          setslot 9
          getscopeobject 1
@@ -1700,7 +1700,7 @@ package mx.styles
          coerce QName(PackageNamespace(""),"Object")
          setslot 10
          getscopeobject 1
-         newfunction 263
+         newfunction 1501
          coerce QName(PackageNamespace(""),"Function")
          setslot 11
          getscopeobject 1

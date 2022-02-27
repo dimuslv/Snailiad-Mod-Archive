@@ -347,8 +347,14 @@ package
          }
       }
       
+      public function updateTimer() : void
+      {
+         this.escText.text = PlayState.player.getGameTimeExact();
+      }
+      
       override public function update() : void
       {
+         this.updateTimer();
          if(PlayState.realState != PlayState.STATE_SUBSCREEN)
          {
             this.hide();

@@ -1637,7 +1637,7 @@ package
          getproperty QName(PackageNamespace(""),"tileMaxY")
          getlocal0
          getproperty QName(PackageNamespace(""),"bgmap")
-         getproperty QName(PackageNamespace(""),"widthInTiles")
+         getproperty QName(PackageNamespace(""),"heightInTiles")
          iflt ofs13
          ofs15:
          getlocal0

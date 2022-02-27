@@ -393,7 +393,7 @@ package
       
       public static function triggerEnding() : void
       {
-         PlayState.player.clearTime.value = PlayState.player.gameTime.value;
+         PlayState.player.clearTime = PlayState.player.gameTime;
          var _loc1_:int = 1;
          if(PlayState.bossRush)
          {
@@ -403,7 +403,7 @@ package
          {
             _loc1_ = 3;
          }
-         if(PlayState.player.gameTime.value < 30 * 60)
+         if(PlayState.player.gameTime < 30 * 60)
          {
             NgMedal.unlockSpeedrunner();
             _loc1_ = 4;
@@ -559,7 +559,7 @@ package
             NgMedal.unlockPilgrim();
             if(isBossDead(4) && !hasGoodEnding && player.getHelixFragments() == 30)
             {
-               player.bestInsaneTime.value = player.gameTime.value;
+               player.bestInsaneTime = player.gameTime;
                triggerEnding();
             }
          }
@@ -585,24 +585,24 @@ package
          {
             if(player._insaneMode)
             {
-               if(player.bestInsaneTime.value == 0 || player.bestInsaneTime.value > player.gameTime.value)
+               if(player.bestInsaneTime == 0 || player.bestInsaneTime > player.gameTime)
                {
-                  player.bestInsaneTime.value = player.gameTime.value;
-                  _loc4_ += "\nNEW BEST TIME - INSANE MODE " + GameTimeDisplay.formatExact(player.bestInsaneTime.value);
+                  player.bestInsaneTime = player.gameTime;
+                  _loc4_ += "\nNEW BEST TIME - INSANE MODE " + GameTimeDisplay.formatExact(player.bestInsaneTime);
                   player.hasWonInsaneMode = true;
                }
             }
             else if(player._hardMode)
             {
-               if(player.bestHardTime.value == 0 || player.bestHardTime.value > player.gameTime.value)
+               if(player.bestHardTime == 0 || player.bestHardTime > player.gameTime)
                {
-                  player.bestHardTime.value = player.gameTime.value;
-                  _loc4_ += "\nNEW BEST TIME - SLUG MODE " + GameTimeDisplay.formatExact(player.bestHardTime.value);
+                  player.bestHardTime = player.gameTime;
+                  _loc4_ += "\nNEW BEST TIME - SLUG MODE " + GameTimeDisplay.formatExact(player.bestHardTime);
                }
-               if((player.bestInsaneTime.value == 0 || player.bestInsaneTime.value > player.gameTime.value) && player.getPercentComplete() == 100)
+               if((player.bestInsaneTime == 0 || player.bestInsaneTime > player.gameTime) && player.getPercentComplete() == 100)
                {
-                  player.bestInsaneTime.value = player.gameTime.value;
-                  _loc4_ += "\nNEW BEST 100% TIME - " + GameTimeDisplay.formatExact(player.bestInsaneTime.value);
+                  player.bestInsaneTime = player.gameTime;
+                  _loc4_ += "\nNEW BEST 100% TIME - " + GameTimeDisplay.formatExact(player.bestInsaneTime);
                }
             }
             else if(player._easyMode)
@@ -611,15 +611,15 @@ package
             }
             else
             {
-               if(player.bestMainTime.value == 0 || player.bestMainTime.value > player.gameTime.value)
+               if(player.bestMainTime == 0 || player.bestMainTime > player.gameTime)
                {
-                  player.bestMainTime.value = player.gameTime.value;
-                  _loc4_ += "\nNEW BEST TIME - NORMAL MODE " + GameTimeDisplay.formatExact(player.bestMainTime.value);
+                  player.bestMainTime = player.gameTime;
+                  _loc4_ += "\nNEW BEST TIME - NORMAL MODE " + GameTimeDisplay.formatExact(player.bestMainTime);
                }
-               if((player.bestInsaneTime.value == 0 || player.bestInsaneTime.value > player.gameTime.value) && player.getPercentComplete() == 100)
+               if((player.bestInsaneTime == 0 || player.bestInsaneTime > player.gameTime) && player.getPercentComplete() == 100)
                {
-                  player.bestInsaneTime.value = player.gameTime.value;
-                  _loc4_ += "\nNEW BEST TIME - 100% " + GameTimeDisplay.formatExact(player.bestInsaneTime.value);
+                  player.bestInsaneTime = player.gameTime;
+                  _loc4_ += "\nNEW BEST TIME - 100% " + GameTimeDisplay.formatExact(player.bestInsaneTime);
                }
                if(!player.hasWonGame)
                {
@@ -653,9 +653,9 @@ package
          {
             hud.areaName.setArea("BOSS RUSH COMPLETE - " + bossRushTimer.getTimeExact());
          }
-         if(_loc1_.xml.vars.bestBossRushTime == 0 || _loc1_.xml.vars.bestBossRushTime > PlayState.bossRushTimer.now.value)
+         if(_loc1_.xml.vars.bestBossRushTime == 0 || _loc1_.xml.vars.bestBossRushTime > PlayState.bossRushTimer.now)
          {
-            _loc1_.xml.vars.bestBossRushTime = PlayState.bossRushTimer.now.value;
+            _loc1_.xml.vars.bestBossRushTime = PlayState.bossRushTimer.now;
          }
          _loc1_.saveAll();
          PlayState.isBossRushComplete = true;
@@ -743,7 +743,6 @@ package
             {
                realState = STATE_MENU;
                splashLayer = null;
-               Preloader.bg.visible = false;
             }
             return;
          }

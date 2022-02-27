@@ -235,7 +235,7 @@ package
          ifne ofs0
          getscopeobject 1
          getslot 6
-         newfunction 20
+         newfunction 6
          setproperty QName(PackageNamespace(""),"defaultFactory")
          ofs0:
          getscopeobject 1
@@ -341,7 +341,7 @@ package
          ifne ofs3
          getscopeobject 1
          getslot 6
-         newfunction 21
+         newfunction 7
          setproperty QName(PackageNamespace(""),"defaultFactory")
          ofs3:
          getscopeobject 1
@@ -447,7 +447,7 @@ package
          ifne ofs6
          getscopeobject 1
          getslot 6
-         newfunction 22
+         newfunction 8
          setproperty QName(PackageNamespace(""),"defaultFactory")
          ofs6:
          getscopeobject 1
@@ -553,7 +553,7 @@ package
          ifne ofs9
          getscopeobject 1
          getslot 6
-         newfunction 23
+         newfunction 9
          setproperty QName(PackageNamespace(""),"defaultFactory")
          ofs9:
          getscopeobject 1
@@ -659,7 +659,7 @@ package
          ifne ofs12
          getscopeobject 1
          getslot 6
-         newfunction 24
+         newfunction 10
          setproperty QName(PackageNamespace(""),"defaultFactory")
          ofs12:
          getscopeobject 1
@@ -765,7 +765,7 @@ package
          ifne ofs15
          getscopeobject 1
          getslot 6
-         newfunction 25
+         newfunction 11
          setproperty QName(PackageNamespace(""),"defaultFactory")
          ofs15:
          getscopeobject 1
@@ -871,7 +871,7 @@ package
          ifne ofs18
          getscopeobject 1
          getslot 6
-         newfunction 26
+         newfunction 12
          setproperty QName(PackageNamespace(""),"defaultFactory")
          ofs18:
          getscopeobject 1
@@ -977,7 +977,7 @@ package
          ifne ofs21
          getscopeobject 1
          getslot 6
-         newfunction 27
+         newfunction 13
          setproperty QName(PackageNamespace(""),"defaultFactory")
          ofs21:
          getscopeobject 1
@@ -1083,7 +1083,7 @@ package
          ifne ofs24
          getscopeobject 1
          getslot 6
-         newfunction 28
+         newfunction 14
          setproperty QName(PackageNamespace(""),"defaultFactory")
          ofs24:
          getscopeobject 1
@@ -1177,7 +1177,7 @@ package
          ifne ofs27
          getscopeobject 1
          getslot 6
-         newfunction 29
+         newfunction 15
          setproperty QName(PackageNamespace(""),"defaultFactory")
          ofs27:
          getscopeobject 1
@@ -1271,7 +1271,7 @@ package
          ifne ofs30
          getscopeobject 1
          getslot 6
-         newfunction 30
+         newfunction 16
          setproperty QName(PackageNamespace(""),"defaultFactory")
          ofs30:
          getscopeobject 1
@@ -1365,7 +1365,7 @@ package
          ifne ofs33
          getscopeobject 1
          getslot 6
-         newfunction 31
+         newfunction 17
          setproperty QName(PackageNamespace(""),"defaultFactory")
          ofs33:
          getscopeobject 1

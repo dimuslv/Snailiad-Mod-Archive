@@ -653,7 +653,6 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"_runSpeed")
-         getproperty QName(PackageNamespace(""),"value")
          negate
          setproperty QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"PlayState")
@@ -2066,7 +2065,6 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"_runSpeed")
-         getproperty QName(PackageNamespace(""),"value")
          setproperty QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
@@ -2085,7 +2083,6 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"_runSpeed")
-         getproperty QName(PackageNamespace(""),"value")
          negate
          setproperty QName(PackageNamespace(""),"x")
          ofs8:
@@ -2150,7 +2147,6 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"_runSpeed")
-         getproperty QName(PackageNamespace(""),"value")
          setproperty QName(PackageNamespace(""),"x")
          ofs13:
          jump ofs9

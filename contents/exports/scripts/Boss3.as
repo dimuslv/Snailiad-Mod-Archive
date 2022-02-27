@@ -444,12 +444,12 @@ package
          {
             if(this._elapsed > 2.2 && this._elapsed < 2.9)
             {
-               PlayState.player.velocity.x = PlayState.player._runSpeed.value;
+               PlayState.player.velocity.x = PlayState.player._runSpeed;
             }
          }
          else if(this._elapsed > 2.7 && this._elapsed < 3.4)
          {
-            PlayState.player.velocity.x = PlayState.player._runSpeed.value;
+            PlayState.player.velocity.x = PlayState.player._runSpeed;
          }
          if(!this._createdChildren)
          {

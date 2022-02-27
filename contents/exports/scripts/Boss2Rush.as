@@ -206,7 +206,7 @@ package
          play("normal");
          PlayState.player.x -= 20;
          PlayState.player.setFaceDir(Player.FACE_FLOOR_LEFT);
-         PlayState.player.velocity.x = -PlayState.player._runSpeed.value;
+         PlayState.player.velocity.x = -PlayState.player._runSpeed;
          PlayState.player.paralyze(true);
          this.moveChildren();
       }
@@ -571,13 +571,13 @@ package
                   }
                   if(PlayState.player.x < x - 109)
                   {
-                     PlayState.player.velocity.x = PlayState.player._runSpeed.value;
+                     PlayState.player.velocity.x = PlayState.player._runSpeed;
                      PlayState.player.setFaceDir(Player.FACE_FLOOR_RIGHT,true);
                      this.mode = MODE_INTRO2;
                   }
                   else
                   {
-                     PlayState.player.velocity.x = -PlayState.player._runSpeed.value;
+                     PlayState.player.velocity.x = -PlayState.player._runSpeed;
                   }
                   break;
                case MODE_INTRO2:
@@ -597,7 +597,7 @@ package
                   }
                   else
                   {
-                     PlayState.player.velocity.x = PlayState.player._runSpeed.value;
+                     PlayState.player.velocity.x = PlayState.player._runSpeed;
                   }
             }
          }

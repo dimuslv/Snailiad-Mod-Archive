@@ -2023,7 +2023,6 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"_runSpeed")
-         getproperty QName(PackageNamespace(""),"value")
          setproperty QName(PackageNamespace(""),"x")
          ofs2:
          getlocal0
