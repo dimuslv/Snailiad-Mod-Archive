@@ -2869,10 +2869,6 @@ package
          findproperty QName(PackageNamespace(""),"splashLayer")
          pushnull
          setproperty QName(PackageNamespace(""),"splashLayer")
-         getlex QName(PackageNamespace(""),"Preloader")
-         getproperty QName(PackageNamespace(""),"bg")
-         pushfalse
-         setproperty QName(PackageNamespace(""),"visible")
          ofs2:
          returnvoid
          ofs0:

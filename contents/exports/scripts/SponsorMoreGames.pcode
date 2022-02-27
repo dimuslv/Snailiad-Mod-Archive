@@ -40,17 +40,18 @@
 
 package
 {
-   import com.newgrounds.API;
    import flash.events.MouseEvent;
+   import flash.net.URLRequest;
+   import flash.net.navigateToURL;
    import org.flixel.FlxG;
    import org.flixel.FlxSprite;
    
    public class SponsorMoreGames extends FlxSprite
    {
       
-      private static const IMG_WIDTH:int = 80;
+      private static const IMG_WIDTH:int = 90;
       
-      private static const IMG_HEIGHT:int = 104;
+      private static const IMG_HEIGHT:int = 71;
       
       {
          method
@@ -67,10 +68,10 @@ package
          getlocal0
          pushscope
          findproperty QName(PrivateNamespace(null,"#SponsorMoreGames"),"IMG_WIDTH")
-         pushbyte 80
+         pushbyte 90
          initproperty QName(PrivateNamespace(null,"#SponsorMoreGames"),"IMG_WIDTH")
          findproperty QName(PrivateNamespace(null,"#SponsorMoreGames"),"IMG_HEIGHT")
-         pushbyte 104
+         pushbyte 71
          initproperty QName(PrivateNamespace(null,"#SponsorMoreGames"),"IMG_HEIGHT")
          returnvoid
          end ; code
@@ -247,8 +248,12 @@ package
          equals
          ofs6:
          iffalse ofs7
-         getlex QName(PackageNamespace("com.newgrounds"),"API")
-         callpropvoid QName(PackageNamespace(""),"loadNewgrounds"), 0
+         findpropstrict QName(PackageNamespace("flash.net"),"navigateToURL")
+         findpropstrict QName(PackageNamespace("flash.net"),"URLRequest")
+         pushstring "http://armorgames.com/"
+         constructprop QName(PackageNamespace("flash.net"),"URLRequest"), 1
+         pushstring "_blank"
+         callpropvoid QName(PackageNamespace("flash.net"),"navigateToURL"), 2
          ofs7:
          returnvoid
          end ; code

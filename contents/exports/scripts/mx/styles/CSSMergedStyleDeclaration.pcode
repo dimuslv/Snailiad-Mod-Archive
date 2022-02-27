@@ -297,7 +297,7 @@ package mx.styles
          ofs2:
          iffalse ofs3
          getlocal0
-         newfunction 6875
+         newfunction 6494
          initproperty QName(PrivateNamespace(null,"#CSSMergedStyleDeclaration"),"_defaultFactory")
          ofs3:
          getlocal0
@@ -399,7 +399,7 @@ package mx.styles
          ofs2:
          iffalse ofs3
          getlocal0
-         newfunction 6878
+         newfunction 6497
          initproperty QName(PrivateNamespace(null,"#CSSMergedStyleDeclaration"),"_factory")
          ofs3:
          getlocal0

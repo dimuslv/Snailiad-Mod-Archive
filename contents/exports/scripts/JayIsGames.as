@@ -10,11 +10,11 @@ package
    public class JayIsGames extends FlxSprite
    {
       
-      private static const IMG_WIDTH:int = 93;
+      private static const IMG_WIDTH:int = 24;
       
-      private static const IMG_HEIGHT:int = 25;
+      private static const IMG_HEIGHT:int = 24;
       
-      private static const _jigUrl:String = "http://jayisgames.com/archives/2011/06/snailiad.php";
+      private static const _jigUrl:String = "http://www.facebook.com/ArmorGames";
        
       
       private var _initialized:Boolean = false;

@@ -1,0 +1,1081 @@
+
+{
+   method
+   name null
+   returns null
+   
+   body
+   maxstack 2
+   localcount 1
+   initscopedepth 1
+   maxscopedepth 9
+   
+   code
+   getlocal0
+   pushscope
+   findpropstrict Multiname("FlxPreloader",[PackageNamespace("org.flixel")])
+   getlex QName(PackageNamespace(""),"Object")
+   pushscope
+   getlex QName(PackageNamespace("flash.events"),"EventDispatcher")
+   pushscope
+   getlex QName(PackageNamespace("flash.display"),"DisplayObject")
+   pushscope
+   getlex QName(PackageNamespace("flash.display"),"InteractiveObject")
+   pushscope
+   getlex QName(PackageNamespace("flash.display"),"DisplayObjectContainer")
+   pushscope
+   getlex QName(PackageNamespace("flash.display"),"Sprite")
+   pushscope
+   getlex QName(PackageNamespace("flash.display"),"MovieClip")
+   pushscope
+   getlex QName(PackageNamespace("flash.display"),"MovieClip")
+   newclass #FlxPreloader
+   popscope
+   popscope
+   popscope
+   popscope
+   popscope
+   popscope
+   popscope
+   initproperty QName(PackageNamespace("org.flixel"),"FlxPreloader")
+   returnvoid
+   end ; code
+   end ; body
+   end ; method
+}
+
+package org.flixel
+{
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.display.DisplayObject;
+   import flash.display.MovieClip;
+   import flash.display.Sprite;
+   import flash.display.StageAlign;
+   import flash.display.StageScaleMode;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import flash.net.URLRequest;
+   import flash.net.navigateToURL;
+   import flash.text.TextField;
+   import flash.text.TextFormat;
+   import flash.utils.getDefinitionByName;
+   import flash.utils.getTimer;
+   
+   public class FlxPreloader extends MovieClip
+   {
+      
+      {
+         method
+         name null
+         returns null
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 9
+         maxscopedepth 10
+         
+         code
+         getlocal0
+         pushscope
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      protected var ImgLogo:Class;
+      
+      protected var ImgLogoCorners:Class;
+      
+      protected var ImgLogoLight:Class;
+      
+      protected var fglTextFormat:TextFormat;
+      
+      protected var fglTextField:TextField;
+      
+      protected var _init:Boolean;
+      
+      protected var _buffer:Sprite;
+      
+      protected var _bmpBar:Bitmap;
+      
+      protected var _text:TextField;
+      
+      protected var _width:uint;
+      
+      protected var _height:uint;
+      
+      protected var _logo:Bitmap;
+      
+      protected var _logoGlow:Bitmap;
+      
+      protected var _min:uint;
+      
+      public var className:String;
+      
+      public var myURL:String;
+      
+      public var minDisplayTime:Number;
+      
+      public function FlxPreloader()
+      {
+         method
+         name null
+         returns null
+         
+         body
+         maxstack 6
+         localcount 4
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         pushnull
+         coerce QName(PackageNamespace("flash.display"),"Bitmap")
+         setlocal1
+         pushnull
+         coerce QName(PackageNamespace("flash.text"),"TextFormat")
+         setlocal2
+         pushnull
+         coerce QName(PackageNamespace("flash.text"),"TextField")
+         setlocal3
+         getlocal0
+         getlex QName(PackageNamespace("org.flixel"),"FlxPreloader_ImgLogo")
+         initproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"ImgLogo")
+         getlocal0
+         getlex QName(PackageNamespace("org.flixel"),"FlxPreloader_ImgLogoCorners")
+         initproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"ImgLogoCorners")
+         getlocal0
+         getlex QName(PackageNamespace("org.flixel"),"FlxPreloader_ImgLogoLight")
+         initproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"ImgLogoLight")
+         getlocal0
+         constructsuper 0
+         getlocal0
+         pushbyte 0
+         initproperty QName(PackageNamespace(""),"minDisplayTime")
+         findpropstrict QName(PackageNamespace(""),"stop")
+         callpropvoid QName(PackageNamespace(""),"stop"), 0
+         getlex QName(PackageNamespace(""),"stage")
+         getlex QName(PackageNamespace("flash.display"),"StageScaleMode")
+         getproperty QName(PackageNamespace(""),"NO_SCALE")
+         setproperty QName(PackageNamespace(""),"scaleMode")
+         getlex QName(PackageNamespace(""),"stage")
+         getlex QName(PackageNamespace("flash.display"),"StageAlign")
+         getproperty QName(PackageNamespace(""),"TOP_LEFT")
+         setproperty QName(PackageNamespace(""),"align")
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"debug")
+         not
+         dup
+         iffalse ofs0
+         pop
+         getlocal0
+         getproperty QName(PackageNamespace(""),"myURL")
+         pushnull
+         equals
+         not
+         ofs0:
+         dup
+         iffalse ofs1
+         pop
+         getlex QName(PackageNamespace(""),"root")
+         getproperty QName(PackageNamespace(""),"loaderInfo")
+         getproperty QName(PackageNamespace(""),"url")
+         getlocal0
+         getproperty QName(PackageNamespace(""),"myURL")
+         callproperty QName(Namespace("http://adobe.com/AS3/2006/builtin"),"indexOf"), 1
+         pushbyte 0
+         lessthan
+         ofs1:
+         iffalse ofs2
+         findpropstrict QName(PackageNamespace("flash.display"),"Bitmap")
+         findpropstrict QName(PackageNamespace("flash.display"),"BitmapData")
+         getlex QName(PackageNamespace(""),"stage")
+         getproperty QName(PackageNamespace(""),"stageWidth")
+         getlex QName(PackageNamespace(""),"stage")
+         getproperty QName(PackageNamespace(""),"stageHeight")
+         pushtrue
+         pushdouble 4.294967295E9
+         constructprop QName(PackageNamespace("flash.display"),"BitmapData"), 4
+         constructprop QName(PackageNamespace("flash.display"),"Bitmap"), 1
+         coerce QName(PackageNamespace("flash.display"),"Bitmap")
+         setlocal1
+         findpropstrict QName(PackageNamespace(""),"addChild")
+         getlocal1
+         callpropvoid QName(PackageNamespace(""),"addChild"), 1
+         findpropstrict QName(PackageNamespace("flash.text"),"TextFormat")
+         constructprop QName(PackageNamespace("flash.text"),"TextFormat"), 0
+         coerce QName(PackageNamespace("flash.text"),"TextFormat")
+         setlocal2
+         getlocal2
+         pushbyte 0
+         setproperty QName(PackageNamespace(""),"color")
+         getlocal2
+         pushbyte 16
+         setproperty QName(PackageNamespace(""),"size")
+         getlocal2
+         pushstring "center"
+         setproperty QName(PackageNamespace(""),"align")
+         getlocal2
+         pushtrue
+         setproperty QName(PackageNamespace(""),"bold")
+         getlocal2
+         pushstring "system"
+         setproperty QName(PackageNamespace(""),"font")
+         findpropstrict QName(PackageNamespace("flash.text"),"TextField")
+         constructprop QName(PackageNamespace("flash.text"),"TextField"), 0
+         coerce QName(PackageNamespace("flash.text"),"TextField")
+         setlocal3
+         getlocal3
+         getlocal1
+         getproperty QName(PackageNamespace(""),"width")
+         pushbyte 16
+         subtract
+         setproperty QName(PackageNamespace(""),"width")
+         getlocal3
+         getlocal1
+         getproperty QName(PackageNamespace(""),"height")
+         pushbyte 16
+         subtract
+         setproperty QName(PackageNamespace(""),"height")
+         getlocal3
+         pushbyte 8
+         setproperty QName(PackageNamespace(""),"y")
+         getlocal3
+         pushtrue
+         setproperty QName(PackageNamespace(""),"multiline")
+         getlocal3
+         pushtrue
+         setproperty QName(PackageNamespace(""),"wordWrap")
+         getlocal3
+         pushtrue
+         setproperty QName(PackageNamespace(""),"embedFonts")
+         getlocal3
+         getlocal2
+         setproperty QName(PackageNamespace(""),"defaultTextFormat")
+         getlocal3
+         pushstring "Hi there!  It looks like somebody copied this game without my permission.  Just click anywhere, or copy-paste this URL into your browser.\n\n"
+         getlocal0
+         getproperty QName(PackageNamespace(""),"myURL")
+         add
+         pushstring "\n\nto play the game at my site.  Thanks, and have fun!"
+         add
+         setproperty QName(PackageNamespace(""),"text")
+         findpropstrict QName(PackageNamespace(""),"addChild")
+         getlocal3
+         callpropvoid QName(PackageNamespace(""),"addChild"), 1
+         getlocal3
+         getlex QName(PackageNamespace("flash.events"),"MouseEvent")
+         getproperty QName(PackageNamespace(""),"CLICK")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#FlxPreloader"),"goToMyURL")
+         callpropvoid QName(PackageNamespace(""),"addEventListener"), 2
+         getlocal1
+         getlex QName(PackageNamespace("flash.events"),"MouseEvent")
+         getproperty QName(PackageNamespace(""),"CLICK")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#FlxPreloader"),"goToMyURL")
+         callpropvoid QName(PackageNamespace(""),"addEventListener"), 2
+         returnvoid
+         ofs2:
+         getlocal0
+         pushfalse
+         initproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_init")
+         findpropstrict QName(PackageNamespace(""),"addEventListener")
+         getlex QName(PackageNamespace("flash.events"),"Event")
+         getproperty QName(PackageNamespace(""),"ENTER_FRAME")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#FlxPreloader"),"onEnterFrame")
+         callpropvoid QName(PackageNamespace(""),"addEventListener"), 2
+         findpropstrict QName(PackageNamespace(""),"addEventListener")
+         getlex QName(PackageNamespace("flash.events"),"Event")
+         getproperty QName(PackageNamespace(""),"REMOVED_FROM_STAGE")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#FlxPreloader"),"destroy")
+         callpropvoid QName(PackageNamespace(""),"addEventListener"), 2
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function destroy(param1:Event = null) : void
+      {
+         trait method QName(PrivateNamespace(null,"#FlxPreloader"),"destroy")
+         dispid 0
+         method
+         name null
+         flag HAS_OPTIONAL
+         param QName(PackageNamespace("flash.events"),"Event")
+         optional Null()
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 2
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         findpropstrict QName(PackageNamespace(""),"removeEventListener")
+         getlex QName(PackageNamespace("flash.events"),"Event")
+         getproperty QName(PackageNamespace(""),"REMOVED_FROM_STAGE")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#FlxPreloader"),"destroy")
+         callpropvoid QName(PackageNamespace(""),"removeEventListener"), 2
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_bmpBar")
+         getproperty QName(PackageNamespace(""),"bitmapData")
+         callpropvoid QName(PackageNamespace(""),"dispose"), 0
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logo")
+         getproperty QName(PackageNamespace(""),"bitmapData")
+         callpropvoid QName(PackageNamespace(""),"dispose"), 0
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logoGlow")
+         getproperty QName(PackageNamespace(""),"bitmapData")
+         callpropvoid QName(PackageNamespace(""),"dispose"), 0
+         getlocal0
+         pushnull
+         initproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_text")
+         jump ofs0
+         ofs1:
+         label
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_buffer")
+         pushbyte 0
+         callpropvoid QName(PackageNamespace(""),"removeChildAt"), 1
+         ofs0:
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_buffer")
+         getproperty QName(PackageNamespace(""),"numChildren")
+         pushbyte 0
+         ifgt ofs1
+         getlocal0
+         pushnull
+         initproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_buffer")
+         jump ofs2
+         ofs3:
+         label
+         findpropstrict QName(PackageNamespace(""),"removeChildAt")
+         pushbyte 0
+         callpropvoid QName(PackageNamespace(""),"removeChildAt"), 1
+         ofs2:
+         getlex QName(PackageNamespace(""),"numChildren")
+         pushbyte 0
+         ifgt ofs3
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function goToMyURL(param1:MouseEvent = null) : void
+      {
+         trait method QName(PrivateNamespace(null,"#FlxPreloader"),"goToMyURL")
+         dispid 0
+         method
+         name null
+         flag HAS_OPTIONAL
+         param QName(PackageNamespace("flash.events"),"MouseEvent")
+         optional Null()
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 4
+         localcount 2
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         findpropstrict QName(PackageNamespace("flash.net"),"navigateToURL")
+         findpropstrict QName(PackageNamespace("flash.net"),"URLRequest")
+         pushstring "http://"
+         getlocal0
+         getproperty QName(PackageNamespace(""),"myURL")
+         add
+         constructprop QName(PackageNamespace("flash.net"),"URLRequest"), 1
+         callpropvoid QName(PackageNamespace("flash.net"),"navigateToURL"), 1
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function onEnterFrame(param1:Event) : void
+      {
+         trait method QName(PrivateNamespace(null,"#FlxPreloader"),"onEnterFrame")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace("flash.events"),"Event")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 7
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         pushbyte 0
+         setlocal2
+         pushnull
+         coerce QName(PackageNamespace(""),"Class")
+         setlocal 4
+         pushnull
+         coerce QName(PackageNamespace(""),"Object")
+         setlocal 5
+         pushnan
+         setlocal 6
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_init")
+         iftrue ofs0
+         getlex QName(PackageNamespace(""),"stage")
+         getproperty QName(PackageNamespace(""),"stageWidth")
+         pushbyte 0
+         lessequals
+         dup
+         iftrue ofs1
+         pop
+         getlex QName(PackageNamespace(""),"stage")
+         getproperty QName(PackageNamespace(""),"stageHeight")
+         pushbyte 0
+         lessequals
+         ofs1:
+         iffalse ofs2
+         returnvoid
+         ofs2:
+         getlocal0
+         callpropvoid QName(ProtectedNamespace("org.flixel:FlxPreloader"),"create"), 0
+         getlocal0
+         pushtrue
+         initproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_init")
+         ofs0:
+         getlex QName(PackageNamespace(""),"graphics")
+         callpropvoid QName(PackageNamespace(""),"clear"), 0
+         findpropstrict QName(PackageNamespace("flash.utils"),"getTimer")
+         callproperty QName(PackageNamespace("flash.utils"),"getTimer"), 0
+         convert_u
+         setlocal3
+         getlex QName(PackageNamespace(""),"framesLoaded")
+         getlex QName(PackageNamespace(""),"totalFrames")
+         greaterequals
+         dup
+         iffalse ofs3
+         pop
+         getlocal3
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_min")
+         greaterthan
+         ofs3:
+         iffalse ofs4
+         findpropstrict QName(PackageNamespace(""),"removeEventListener")
+         getlex QName(PackageNamespace("flash.events"),"Event")
+         getproperty QName(PackageNamespace(""),"ENTER_FRAME")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#FlxPreloader"),"onEnterFrame")
+         callpropvoid QName(PackageNamespace(""),"removeEventListener"), 2
+         findpropstrict QName(PackageNamespace(""),"nextFrame")
+         callpropvoid QName(PackageNamespace(""),"nextFrame"), 0
+         findpropstrict QName(PackageNamespace(""),"Class")
+         findpropstrict QName(PackageNamespace("flash.utils"),"getDefinitionByName")
+         getlocal0
+         getproperty QName(PackageNamespace(""),"className")
+         callproperty QName(PackageNamespace("flash.utils"),"getDefinitionByName"), 1
+         callproperty QName(PackageNamespace(""),"Class"), 1
+         coerce QName(PackageNamespace(""),"Class")
+         dup
+         setlocal 4
+         iffalse ofs5
+         getlocal 4
+         construct 0
+         coerce QName(PackageNamespace(""),"Object")
+         setlocal 5
+         findpropstrict QName(PackageNamespace(""),"addChild")
+         getlocal 5
+         getlex QName(PackageNamespace("flash.display"),"DisplayObject")
+         astypelate
+         callpropvoid QName(PackageNamespace(""),"addChild"), 1
+         ofs5:
+         findpropstrict QName(PackageNamespace(""),"removeChild")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_buffer")
+         callpropvoid QName(PackageNamespace(""),"removeChild"), 1
+         jump ofs6
+         ofs4:
+         getlex QName(PackageNamespace(""),"root")
+         getproperty QName(PackageNamespace(""),"loaderInfo")
+         getproperty QName(PackageNamespace(""),"bytesLoaded")
+         getlex QName(PackageNamespace(""),"root")
+         getproperty QName(PackageNamespace(""),"loaderInfo")
+         getproperty QName(PackageNamespace(""),"bytesTotal")
+         divide
+         convert_d
+         setlocal 6
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_min")
+         pushbyte 0
+         greaterthan
+         dup
+         iffalse ofs7
+         pop
+         getlocal 6
+         getlocal3
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_min")
+         divide
+         greaterthan
+         ofs7:
+         iffalse ofs8
+         getlocal3
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_min")
+         divide
+         convert_d
+         setlocal 6
+         ofs8:
+         getlocal0
+         getlocal 6
+         callpropvoid QName(ProtectedNamespace("org.flixel:FlxPreloader"),"update"), 1
+         ofs6:
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      protected function create() : void
+      {
+         trait method QName(ProtectedNamespace("org.flixel:FlxPreloader"),"create")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 7
+         localcount 5
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         pushbyte 0
+         initproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_min")
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"debug")
+         iftrue ofs0
+         getlocal0
+         getlocal0
+         getproperty QName(PackageNamespace(""),"minDisplayTime")
+         pushshort 1000
+         multiply
+         initproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_min")
+         ofs0:
+         getlocal0
+         findpropstrict QName(PackageNamespace("flash.display"),"Sprite")
+         constructprop QName(PackageNamespace("flash.display"),"Sprite"), 0
+         initproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_buffer")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_buffer")
+         pushbyte 2
+         setproperty QName(PackageNamespace(""),"scaleX")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_buffer")
+         pushbyte 2
+         setproperty QName(PackageNamespace(""),"scaleY")
+         findpropstrict QName(PackageNamespace(""),"addChild")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_buffer")
+         callpropvoid QName(PackageNamespace(""),"addChild"), 1
+         getlocal0
+         getlex QName(PackageNamespace(""),"stage")
+         getproperty QName(PackageNamespace(""),"stageWidth")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_buffer")
+         getproperty QName(PackageNamespace(""),"scaleX")
+         divide
+         initproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_width")
+         getlocal0
+         getlex QName(PackageNamespace(""),"stage")
+         getproperty QName(PackageNamespace(""),"stageHeight")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_buffer")
+         getproperty QName(PackageNamespace(""),"scaleY")
+         divide
+         initproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_height")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_buffer")
+         findpropstrict QName(PackageNamespace("flash.display"),"Bitmap")
+         findpropstrict QName(PackageNamespace("flash.display"),"BitmapData")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_width")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_height")
+         pushfalse
+         pushshort 13406
+         constructprop QName(PackageNamespace("flash.display"),"BitmapData"), 4
+         constructprop QName(PackageNamespace("flash.display"),"Bitmap"), 1
+         callpropvoid QName(PackageNamespace(""),"addChild"), 1
+         getlocal0
+         constructprop QName(ProtectedNamespace("org.flixel:FlxPreloader"),"ImgLogoLight"), 0
+         coerce QName(PackageNamespace("flash.display"),"Bitmap")
+         setlocal1
+         getlocal1
+         pushtrue
+         setproperty QName(PackageNamespace(""),"smoothing")
+         getlocal1
+         getlocal1
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_height")
+         dup
+         setlocal 4
+         setproperty QName(PackageNamespace(""),"height")
+         getlocal 4
+         kill 4
+         setproperty QName(PackageNamespace(""),"width")
+         getlocal1
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_width")
+         getlocal1
+         getproperty QName(PackageNamespace(""),"width")
+         subtract
+         pushbyte 2
+         divide
+         setproperty QName(PackageNamespace(""),"x")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_buffer")
+         getlocal1
+         callpropvoid QName(PackageNamespace(""),"addChild"), 1
+         getlocal0
+         findpropstrict QName(PackageNamespace("flash.display"),"Bitmap")
+         findpropstrict QName(PackageNamespace("flash.display"),"BitmapData")
+         pushbyte 1
+         pushbyte 7
+         pushfalse
+         pushint 6253311
+         constructprop QName(PackageNamespace("flash.display"),"BitmapData"), 4
+         constructprop QName(PackageNamespace("flash.display"),"Bitmap"), 1
+         initproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_bmpBar")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_bmpBar")
+         pushbyte 4
+         setproperty QName(PackageNamespace(""),"x")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_bmpBar")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_height")
+         pushbyte 11
+         subtract
+         setproperty QName(PackageNamespace(""),"y")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_buffer")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_bmpBar")
+         callpropvoid QName(PackageNamespace(""),"addChild"), 1
+         getlocal0
+         findpropstrict QName(PackageNamespace("flash.text"),"TextField")
+         constructprop QName(PackageNamespace("flash.text"),"TextField"), 0
+         initproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_text")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_text")
+         findpropstrict QName(PackageNamespace("flash.text"),"TextFormat")
+         pushstring "system"
+         pushbyte 8
+         pushint 6253311
+         constructprop QName(PackageNamespace("flash.text"),"TextFormat"), 3
+         setproperty QName(PackageNamespace(""),"defaultTextFormat")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_text")
+         pushtrue
+         setproperty QName(PackageNamespace(""),"embedFonts")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_text")
+         pushfalse
+         setproperty QName(PackageNamespace(""),"selectable")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_text")
+         pushfalse
+         setproperty QName(PackageNamespace(""),"multiline")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_text")
+         pushbyte 2
+         setproperty QName(PackageNamespace(""),"x")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_text")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_bmpBar")
+         getproperty QName(PackageNamespace(""),"y")
+         pushbyte 11
+         subtract
+         setproperty QName(PackageNamespace(""),"y")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_text")
+         pushbyte 80
+         setproperty QName(PackageNamespace(""),"width")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_buffer")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_text")
+         callpropvoid QName(PackageNamespace(""),"addChild"), 1
+         getlocal0
+         getlocal0
+         constructprop QName(ProtectedNamespace("org.flixel:FlxPreloader"),"ImgLogo"), 0
+         initproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logo")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logo")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logo")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_height")
+         pushbyte 8
+         divide
+         dup
+         setlocal 4
+         setproperty QName(PackageNamespace(""),"scaleY")
+         getlocal 4
+         kill 4
+         setproperty QName(PackageNamespace(""),"scaleX")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logo")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_width")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logo")
+         getproperty QName(PackageNamespace(""),"width")
+         subtract
+         pushbyte 2
+         divide
+         setproperty QName(PackageNamespace(""),"x")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logo")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_height")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logo")
+         getproperty QName(PackageNamespace(""),"height")
+         subtract
+         pushbyte 2
+         divide
+         setproperty QName(PackageNamespace(""),"y")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_buffer")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logo")
+         callpropvoid QName(PackageNamespace(""),"addChild"), 1
+         getlocal0
+         getlocal0
+         constructprop QName(ProtectedNamespace("org.flixel:FlxPreloader"),"ImgLogo"), 0
+         initproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logoGlow")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logoGlow")
+         pushtrue
+         setproperty QName(PackageNamespace(""),"smoothing")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logoGlow")
+         pushstring "screen"
+         setproperty QName(PackageNamespace(""),"blendMode")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logoGlow")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logoGlow")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_height")
+         pushbyte 8
+         divide
+         dup
+         setlocal 4
+         setproperty QName(PackageNamespace(""),"scaleY")
+         getlocal 4
+         kill 4
+         setproperty QName(PackageNamespace(""),"scaleX")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logoGlow")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_width")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logoGlow")
+         getproperty QName(PackageNamespace(""),"width")
+         subtract
+         pushbyte 2
+         divide
+         setproperty QName(PackageNamespace(""),"x")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logoGlow")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_height")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logoGlow")
+         getproperty QName(PackageNamespace(""),"height")
+         subtract
+         pushbyte 2
+         divide
+         setproperty QName(PackageNamespace(""),"y")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_buffer")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logoGlow")
+         callpropvoid QName(PackageNamespace(""),"addChild"), 1
+         getlocal0
+         constructprop QName(ProtectedNamespace("org.flixel:FlxPreloader"),"ImgLogoCorners"), 0
+         coerce QName(PackageNamespace("flash.display"),"Bitmap")
+         setlocal1
+         getlocal1
+         pushtrue
+         setproperty QName(PackageNamespace(""),"smoothing")
+         getlocal1
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_width")
+         setproperty QName(PackageNamespace(""),"width")
+         getlocal1
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_height")
+         setproperty QName(PackageNamespace(""),"height")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_buffer")
+         getlocal1
+         callpropvoid QName(PackageNamespace(""),"addChild"), 1
+         findpropstrict QName(PackageNamespace("flash.display"),"Bitmap")
+         findpropstrict QName(PackageNamespace("flash.display"),"BitmapData")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_width")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_height")
+         pushfalse
+         pushint 16777215
+         constructprop QName(PackageNamespace("flash.display"),"BitmapData"), 4
+         constructprop QName(PackageNamespace("flash.display"),"Bitmap"), 1
+         coerce QName(PackageNamespace("flash.display"),"Bitmap")
+         setlocal1
+         pushbyte 0
+         convert_u
+         setlocal2
+         pushbyte 0
+         convert_u
+         setlocal3
+         jump ofs1
+         ofs2:
+         label
+         pushbyte 0
+         convert_u
+         setlocal3
+         jump ofs3
+         ofs4:
+         label
+         getlocal1
+         getproperty QName(PackageNamespace(""),"bitmapData")
+         getlocal3
+         convert_d
+         dup
+         increment
+         convert_u
+         setlocal3
+         getlocal2
+         pushbyte 0
+         callpropvoid QName(PackageNamespace(""),"setPixel"), 3
+         ofs3:
+         getlocal3
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_width")
+         iflt ofs4
+         getlocal2
+         pushbyte 2
+         add
+         convert_u
+         setlocal2
+         ofs1:
+         getlocal2
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_height")
+         iflt ofs2
+         getlocal1
+         pushstring "overlay"
+         setproperty QName(PackageNamespace(""),"blendMode")
+         getlocal1
+         pushdouble 0.25
+         setproperty QName(PackageNamespace(""),"alpha")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_buffer")
+         getlocal1
+         callpropvoid QName(PackageNamespace(""),"addChild"), 1
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      protected function update(param1:Number) : void
+      {
+         trait method QName(ProtectedNamespace("org.flixel:FlxPreloader"),"update")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"Number")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 4
+         localcount 2
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_bmpBar")
+         getlocal1
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_width")
+         pushbyte 8
+         subtract
+         multiply
+         setproperty QName(PackageNamespace(""),"scaleX")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_text")
+         getlex QName(PackageNamespace("org.flixel"),"FlxU")
+         getlocal1
+         pushbyte 100
+         multiply
+         callproperty QName(PackageNamespace(""),"floor"), 1
+         pushstring "%"
+         add
+         setproperty QName(PackageNamespace(""),"text")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_text")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_text")
+         getproperty QName(PackageNamespace(""),"defaultTextFormat")
+         callpropvoid QName(PackageNamespace(""),"setTextFormat"), 1
+         getlocal1
+         pushdouble 0.1
+         ifnlt ofs0
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logoGlow")
+         pushbyte 0
+         setproperty QName(PackageNamespace(""),"alpha")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logo")
+         pushbyte 0
+         setproperty QName(PackageNamespace(""),"alpha")
+         jump ofs1
+         ofs0:
+         getlocal1
+         pushdouble 0.15
+         ifnlt ofs2
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logoGlow")
+         getlex QName(PackageNamespace("org.flixel"),"FlxU")
+         callproperty QName(PackageNamespace(""),"random"), 0
+         setproperty QName(PackageNamespace(""),"alpha")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logo")
+         pushbyte 0
+         setproperty QName(PackageNamespace(""),"alpha")
+         jump ofs1
+         ofs2:
+         getlocal1
+         pushdouble 0.2
+         ifnlt ofs3
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logoGlow")
+         pushbyte 0
+         setproperty QName(PackageNamespace(""),"alpha")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logo")
+         pushbyte 0
+         setproperty QName(PackageNamespace(""),"alpha")
+         jump ofs1
+         ofs3:
+         getlocal1
+         pushdouble 0.25
+         ifnlt ofs4
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logoGlow")
+         pushbyte 0
+         setproperty QName(PackageNamespace(""),"alpha")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logo")
+         getlex QName(PackageNamespace("org.flixel"),"FlxU")
+         callproperty QName(PackageNamespace(""),"random"), 0
+         setproperty QName(PackageNamespace(""),"alpha")
+         jump ofs1
+         ofs4:
+         getlocal1
+         pushdouble 0.7
+         ifnlt ofs5
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logoGlow")
+         getlocal1
+         pushdouble 0.45
+         subtract
+         pushdouble 0.45
+         divide
+         setproperty QName(PackageNamespace(""),"alpha")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logo")
+         pushbyte 1
+         setproperty QName(PackageNamespace(""),"alpha")
+         jump ofs1
+         ofs5:
+         getlocal1
+         pushdouble 0.8
+         greaterthan
+         dup
+         iffalse ofs6
+         pop
+         getlocal1
+         pushdouble 0.9
+         lessthan
+         ofs6:
+         iffalse ofs7
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logoGlow")
+         pushbyte 1
+         getlocal1
+         pushdouble 0.8
+         subtract
+         pushdouble 0.1
+         divide
+         subtract
+         setproperty QName(PackageNamespace(""),"alpha")
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_logo")
+         pushbyte 0
+         setproperty QName(PackageNamespace(""),"alpha")
+         jump ofs1
+         ofs7:
+         getlocal1
+         pushdouble 0.9
+         ifngt ofs1
+         getlocal0
+         getproperty QName(ProtectedNamespace("org.flixel:FlxPreloader"),"_buffer")
+         pushbyte 1
+         getlocal1
+         pushdouble 0.9
+         subtract
+         pushdouble 0.1
+         divide
+         subtract
+         setproperty QName(PackageNamespace(""),"alpha")
+         ofs1:
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+   }
+}

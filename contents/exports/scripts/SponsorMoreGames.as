@@ -1,17 +1,18 @@
  
 package
 {
-   import com.newgrounds.API;
    import flash.events.MouseEvent;
+   import flash.net.URLRequest;
+   import flash.net.navigateToURL;
    import org.flixel.FlxG;
    import org.flixel.FlxSprite;
    
    public class SponsorMoreGames extends FlxSprite
    {
       
-      private static const IMG_WIDTH:int = 80;
+      private static const IMG_WIDTH:int = 90;
       
-      private static const IMG_HEIGHT:int = 104;
+      private static const IMG_HEIGHT:int = 71;
        
       
       private var _initialized:Boolean = false;
@@ -49,7 +50,7 @@ package
          }
          if(!dead && alpha == 1)
          {
-            API.loadNewgrounds();
+            navigateToURL(new URLRequest("http://armorgames.com/"),"_blank");
          }
       }
       

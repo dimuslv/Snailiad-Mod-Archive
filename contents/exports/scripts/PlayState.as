@@ -743,7 +743,6 @@ package
             {
                realState = STATE_MENU;
                splashLayer = null;
-               Preloader.bg.visible = false;
             }
             return;
          }

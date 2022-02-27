@@ -40,16 +40,22 @@
 
 package
 {
+   import flash.display.Loader;
+   import flash.display.MovieClip;
+   import flash.events.Event;
+   import flash.events.EventDispatcher;
+   import flash.events.IEventDispatcher;
+   import mx.events.PropertyChangeEvent;
    import org.flixel.FlxG;
    import org.flixel.FlxGroup;
    import org.flixel.FlxSprite;
    
-   public class SplashLayer extends FlxGroup
+   public class SplashLayer extends FlxGroup implements IEventDispatcher
    {
       
       private static const FADE_IN_TIME:Number = 0.78;
       
-      private static const STATIC_TIME:Number = 1.12;
+      private static const STATIC_TIME:Number = 2.42;
       
       private static const FADE_OUT_TIME:Number = 0.78;
       
@@ -71,7 +77,7 @@ package
          pushdouble 0.78
          initproperty QName(PrivateNamespace(null,"#SplashLayer"),"FADE_IN_TIME")
          findproperty QName(PrivateNamespace(null,"#SplashLayer"),"STATIC_TIME")
-         pushdouble 1.12
+         pushdouble 2.42
          initproperty QName(PrivateNamespace(null,"#SplashLayer"),"STATIC_TIME")
          findproperty QName(PrivateNamespace(null,"#SplashLayer"),"FADE_OUT_TIME")
          pushdouble 0.78
@@ -82,11 +88,21 @@ package
          end ; method
       }
       
-      private var splash:SponsorSplash;
+      private var _1811999097Splash:Class;
+      
+      private var splash:MovieClip;
       
       private var bg:FlxSprite;
       
       private var elapsed:Number = 0;
+      
+      private var loader:Loader;
+      
+      private var _loaded:Boolean = false;
+      
+      private var _initialized:Boolean = false;
+      
+      private var _bindingEventDispatcher:EventDispatcher;
       
       public function SplashLayer()
       {
@@ -104,10 +120,23 @@ package
          getlocal0
          pushscope
          getlocal0
+         getlex QName(PackageNamespace(""),"SplashLayer_Splash")
+         initproperty QName(PrivateNamespace(null,"#SplashLayer"),"_1811999097Splash")
+         getlocal0
+         findpropstrict QName(PackageNamespace("flash.events"),"EventDispatcher")
+         findpropstrict QName(PackageNamespace("flash.events"),"IEventDispatcher")
+         getlocal0
+         callproperty QName(PackageNamespace("flash.events"),"IEventDispatcher"), 1
+         constructprop QName(PackageNamespace("flash.events"),"EventDispatcher"), 1
+         initproperty QName(PrivateNamespace(null,"#SplashLayer"),"_bindingEventDispatcher")
+         getlocal0
          constructsuper 0
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"mouse")
          callpropvoid QName(PackageNamespace(""),"show"), 0
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         pushbyte 45
+         setproperty QName(PackageNamespace(""),"framerate")
          getlocal0
          findpropstrict QName(PackageNamespace("org.flixel"),"FlxSprite")
          constructprop QName(PackageNamespace("org.flixel"),"FlxSprite"), 0
@@ -146,17 +175,14 @@ package
          getproperty QName(PrivateNamespace(null,"#SplashLayer"),"bg")
          callpropvoid QName(PackageNamespace(""),"add"), 1
          getlocal0
-         findpropstrict QName(PackageNamespace(""),"SponsorSplash")
-         constructprop QName(PackageNamespace(""),"SponsorSplash"), 0
+         getlocal0
+         constructprop QName(PackageNamespace(""),"Splash"), 0
          initproperty QName(PrivateNamespace(null,"#SplashLayer"),"splash")
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"stage")
          getlocal0
          getproperty QName(PrivateNamespace(null,"#SplashLayer"),"splash")
-         pushbyte 0
-         setproperty QName(PackageNamespace(""),"alpha")
-         findpropstrict QName(PackageNamespace(""),"add")
-         getlocal0
-         getproperty QName(PrivateNamespace(null,"#SplashLayer"),"splash")
-         callpropvoid QName(PackageNamespace(""),"add"), 1
+         callpropvoid QName(PackageNamespace(""),"addChild"), 1
          returnvoid
          end ; code
          end ; body
@@ -189,6 +215,33 @@ package
          initproperty QName(PrivateNamespace(null,"#SplashLayer"),"bg")
          getlocal0
          callsupervoid QName(PackageNamespace(""),"destroy"), 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function loadCompleteListener(param1:Event) : void
+      {
+         trait method QName(PackageNamespace(""),"loadCompleteListener")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace("flash.events"),"Event")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         pushtrue
+         initproperty QName(PrivateNamespace(null,"#SplashLayer"),"_loaded")
          returnvoid
          end ; code
          end ; body
@@ -276,6 +329,17 @@ package
          getproperty QName(PrivateNamespace(null,"#SplashLayer"),"splash")
          pushfalse
          setproperty QName(PackageNamespace(""),"visible")
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"stage")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#SplashLayer"),"splash")
+         callpropvoid QName(PackageNamespace(""),"removeChild"), 1
+         getlocal0
+         pushnull
+         initproperty QName(PrivateNamespace(null,"#SplashLayer"),"splash")
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         pushbyte 120
+         setproperty QName(PackageNamespace(""),"framerate")
          findpropstrict QName(PackageNamespace(""),"kill")
          callpropvoid QName(PackageNamespace(""),"kill"), 0
          returnvoid
@@ -283,6 +347,241 @@ package
          getlocal0
          callsupervoid QName(PackageNamespace(""),"update"), 0
          returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      [Bindable(event="propertyChange")]
+      public function get Splash() : Class
+      {
+         trait getter QName(PackageNamespace(""),"Splash")
+         flag METADATA
+         metadata"Bindable"
+         item "event" "propertyChange"
+         end ; metadata
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"Class")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#SplashLayer"),"_1811999097Splash")
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set Splash(param1:Class) : void
+      {
+         trait setter QName(PackageNamespace(""),"Splash")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"Class")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 6
+         localcount 3
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#SplashLayer"),"_1811999097Splash")
+         coerce QName(PackageNamespace(""),"Object")
+         setlocal2
+         getlocal2
+         getlocal1
+         ifstricteq ofs0
+         getlocal0
+         getlocal1
+         setproperty QName(PrivateNamespace(null,"#SplashLayer"),"_1811999097Splash")
+         getlocal0
+         pushstring "propertyChange"
+         callproperty QName(PackageNamespace(""),"hasEventListener"), 1
+         iffalse ofs0
+         getlocal0
+         getlex QName(PackageNamespace("mx.events"),"PropertyChangeEvent")
+         getlocal0
+         pushstring "Splash"
+         getlocal2
+         getlocal1
+         callproperty QName(PackageNamespace(""),"createUpdateEvent"), 4
+         callpropvoid QName(PackageNamespace(""),"dispatchEvent"), 1
+         ofs0:
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function addEventListener(param1:String, param2:Function, param3:Boolean = false, param4:int = 0, param5:Boolean = false) : void
+      {
+         trait method QName(PackageNamespace(""),"addEventListener")
+         dispid 0
+         method
+         name null
+         flag HAS_OPTIONAL
+         param QName(PackageNamespace(""),"String")
+         param QName(PackageNamespace(""),"Function")
+         param QName(PackageNamespace(""),"Boolean")
+         param QName(PackageNamespace(""),"int")
+         param QName(PackageNamespace(""),"Boolean")
+         optional False()
+         optional Integer(0)
+         optional False()
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 6
+         localcount 6
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#SplashLayer"),"_bindingEventDispatcher")
+         getlocal1
+         getlocal2
+         getlocal3
+         getlocal 4
+         getlocal 5
+         callpropvoid QName(PackageNamespace(""),"addEventListener"), 5
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function dispatchEvent(param1:Event) : Boolean
+      {
+         trait method QName(PackageNamespace(""),"dispatchEvent")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace("flash.events"),"Event")
+         returns QName(PackageNamespace(""),"Boolean")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#SplashLayer"),"_bindingEventDispatcher")
+         getlocal1
+         callproperty QName(PackageNamespace(""),"dispatchEvent"), 1
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function hasEventListener(param1:String) : Boolean
+      {
+         trait method QName(PackageNamespace(""),"hasEventListener")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"String")
+         returns QName(PackageNamespace(""),"Boolean")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#SplashLayer"),"_bindingEventDispatcher")
+         getlocal1
+         callproperty QName(PackageNamespace(""),"hasEventListener"), 1
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function removeEventListener(param1:String, param2:Function, param3:Boolean = false) : void
+      {
+         trait method QName(PackageNamespace(""),"removeEventListener")
+         dispid 0
+         method
+         name null
+         flag HAS_OPTIONAL
+         param QName(PackageNamespace(""),"String")
+         param QName(PackageNamespace(""),"Function")
+         param QName(PackageNamespace(""),"Boolean")
+         optional False()
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 4
+         localcount 4
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#SplashLayer"),"_bindingEventDispatcher")
+         getlocal1
+         getlocal2
+         getlocal3
+         callpropvoid QName(PackageNamespace(""),"removeEventListener"), 3
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function willTrigger(param1:String) : Boolean
+      {
+         trait method QName(PackageNamespace(""),"willTrigger")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"String")
+         returns QName(PackageNamespace(""),"Boolean")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#SplashLayer"),"_bindingEventDispatcher")
+         getlocal1
+         callproperty QName(PackageNamespace(""),"willTrigger"), 1
+         returnvalue
          end ; code
          end ; body
          end ; method

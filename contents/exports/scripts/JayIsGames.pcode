@@ -49,11 +49,11 @@ package
    public class JayIsGames extends FlxSprite
    {
       
-      private static const IMG_WIDTH:int = 93;
+      private static const IMG_WIDTH:int = 24;
       
-      private static const IMG_HEIGHT:int = 25;
+      private static const IMG_HEIGHT:int = 24;
       
-      private static const _jigUrl:String = "http://jayisgames.com/archives/2011/06/snailiad.php";
+      private static const _jigUrl:String = "http://www.facebook.com/ArmorGames";
       
       {
          method
@@ -70,13 +70,13 @@ package
          getlocal0
          pushscope
          findproperty QName(PrivateNamespace(null,"#JayIsGames"),"IMG_WIDTH")
-         pushbyte 93
+         pushbyte 24
          initproperty QName(PrivateNamespace(null,"#JayIsGames"),"IMG_WIDTH")
          findproperty QName(PrivateNamespace(null,"#JayIsGames"),"IMG_HEIGHT")
-         pushbyte 25
+         pushbyte 24
          initproperty QName(PrivateNamespace(null,"#JayIsGames"),"IMG_HEIGHT")
          findproperty QName(PrivateNamespace(null,"#JayIsGames"),"_jigUrl")
-         pushstring "http://jayisgames.com/archives/2011/06/snailiad.php"
+         pushstring "http://www.facebook.com/ArmorGames"
          initproperty QName(PrivateNamespace(null,"#JayIsGames"),"_jigUrl")
          returnvoid
          end ; code
