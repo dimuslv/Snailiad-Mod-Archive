@@ -1369,7 +1369,7 @@ package
             this.endingGroup.destroy();
             this.endingGroup = null;
          }
-         var _loc1_:Array = ["NORMAL CLEAR","BOSS RUSH CLEAR","SLUG MODE CLEAR","CLEAR < 30 MIN","100% CLEAR"];
+         var _loc1_:Array = ["REGULAR CLEAR","BOSS RUSH CLEAR","SLUG MODE CLEAR","CLEAR < 30 MIN","100% CLEAR"];
          if(this.hasEnding[0])
          {
             this.addOption(_loc1_[0],this.showEnding1,false);

@@ -6,8 +6,8 @@ exports\binaryData\54_mx.graphics.shaderClasses.ExclusionShader_ShaderClass_mx.g
 exports\binaryData\52_mx.graphics.shaderClasses.HueShader_ShaderClass_mx.graphics.shaderClasses.HueShader_ShaderClass.bin -> mx.graphics.shaderClasses.HueShader_ShaderClass_mx.graphics.shaderClasses.HueShader_ShaderClass.bin
 exports\binaryData\57_mx.graphics.shaderClasses.LuminosityMaskShader_ShaderClass_mx.graphics.shaderClasses.LuminosityMaskShader_ShaderClass.bin -> mx.graphics.shaderClasses.LuminosityMaskShader_ShaderClass_mx.graphics.shaderClasses.LuminosityMaskShader_ShaderClass.bin
 exports\binaryData\49_mx.graphics.shaderClasses.LuminosityShader_ShaderClass_mx.graphics.shaderClasses.LuminosityShader_ShaderClass.bin -> mx.graphics.shaderClasses.LuminosityShader_ShaderClass_mx.graphics.shaderClasses.LuminosityShader_ShaderClass.bin
-exports\binaryData\56_mx.graphics.shaderClasses.SaturationShader_ShaderClass_mx.graphics.shaderClasses.SaturationShader_ShaderClass.bin -> mx.graphics.shaderClasses.SaturationShader_ShaderClass_mx.graphics.shaderClasses.SaturationShader_ShaderClass.bin
-exports\binaryData\55_mx.graphics.shaderClasses.SoftLightShader_ShaderClass_mx.graphics.shaderClasses.SoftLightShader_ShaderClass.bin -> mx.graphics.shaderClasses.SoftLightShader_ShaderClass_mx.graphics.shaderClasses.SoftLightShader_ShaderClass.bin
+exports\binaryData\55_mx.graphics.shaderClasses.SaturationShader_ShaderClass_mx.graphics.shaderClasses.SaturationShader_ShaderClass.bin -> mx.graphics.shaderClasses.SaturationShader_ShaderClass_mx.graphics.shaderClasses.SaturationShader_ShaderClass.bin
+exports\binaryData\56_mx.graphics.shaderClasses.SoftLightShader_ShaderClass_mx.graphics.shaderClasses.SoftLightShader_ShaderClass.bin -> mx.graphics.shaderClasses.SoftLightShader_ShaderClass_mx.graphics.shaderClasses.SoftLightShader_ShaderClass.bin
 exports\binaryData\158_WorldMap_WorldMapBgTxt.bin -> WorldMap_WorldMapBgTxt.bin
 exports\binaryData\202_WorldMap_WorldMapFgTxt.bin -> WorldMap_WorldMapFgTxt.bin
 exports\binaryData\107_WorldMap_WorldMapSkyTxt.bin -> WorldMap_WorldMapSkyTxt.bin
@@ -243,7 +243,7 @@ exports\sounds\105_opendoor_Sfx_OpenDoor.mp3 -> opendoor_Sfx_OpenDoor.mp3
 exports\sounds\59_pickup4_Sfx_Pickup4.mp3 -> pickup4_Sfx_Pickup4.mp3
 exports\sounds\60_pickup3_Sfx_Pickup3.mp3 -> pickup3_Sfx_Pickup3.mp3
 exports\sounds\61_pickup2_Sfx_Pickup2.mp3 -> pickup2_Sfx_Pickup2.mp3
-exports\sounds\63_ping_Sfx_EnemyPingOffArmor.mp3 -> ping_Sfx_EnemyPingOffArmor.mp3
+exports\sounds\62_ping_Sfx_EnemyPingOffArmor.mp3 -> ping_Sfx_EnemyPingOffArmor.mp3
 exports\sounds\84_save1_Sfx_Save1.mp3 -> save1_Sfx_Save1.mp3
 exports\sounds\58_Sfx_Ending1Song_Sfx_Ending1Song.mp3 -> Sfx_Ending1Song_Sfx_Ending1Song.mp3
 exports\sounds\92_Sfx_GigaWave_Sfx_GigaWave.mp3 -> Sfx_GigaWave_Sfx_GigaWave.mp3
@@ -253,7 +253,7 @@ exports\sounds\88_Sfx_PongHit_Sfx_PongHit.mp3 -> Sfx_PongHit_Sfx_PongHit.mp3
 exports\sounds\69_Sfx_PongMiss_Sfx_PongMiss.mp3 -> Sfx_PongMiss_Sfx_PongMiss.mp3
 exports\sounds\87_Sfx_Snelk_Sfx_Snelk.mp3 -> Sfx_Snelk_Sfx_Snelk.mp3
 exports\sounds\83_shell1_Sfx_Shell1.mp3 -> shell1_Sfx_Shell1.mp3
-exports\sounds\62_shot3_Sfx_Shot3.mp3 -> shot3_Sfx_Shot3.mp3
+exports\sounds\63_shot3_Sfx_Shot3.mp3 -> shot3_Sfx_Shot3.mp3
 exports\sounds\64_shot2_Sfx_Shot2.mp3 -> shot2_Sfx_Shot2.mp3
 exports\sounds\65_shot1_Sfx_Shot1.mp3 -> shot1_Sfx_Shot1.mp3
 exports\sounds\66_shot7_Sfx_Shot7.mp3 -> shot7_Sfx_Shot7.mp3

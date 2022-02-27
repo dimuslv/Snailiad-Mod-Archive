@@ -5593,7 +5593,7 @@ package
          pushnull
          initproperty QName(PackageNamespace(""),"endingGroup")
          ofs3:
-         pushstring "NORMAL CLEAR"
+         pushstring "REGULAR CLEAR"
          pushstring "BOSS RUSH CLEAR"
          pushstring "SLUG MODE CLEAR"
          pushstring "CLEAR < 30 MIN"

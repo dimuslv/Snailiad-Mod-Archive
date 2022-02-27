@@ -782,7 +782,7 @@ package mx.resources
          coerce QName(PrivateNamespace(null,"#ResourceManagerImpl/1"),"ResourceEventDispatcher")
          setslot 6
          getscopeobject 1
-         newfunction 5560
+         newfunction 5562
          coerce QName(PackageNamespace(""),"Function")
          setslot 7
          getscopeobject 1
@@ -796,7 +796,7 @@ package mx.resources
          pushtrue
          callpropvoid QName(Namespace("flash.events:IEventDispatcher"),"addEventListener"), 5
          getscopeobject 1
-         newfunction 5561
+         newfunction 5563
          coerce QName(PackageNamespace(""),"Function")
          setslot 8
          getscopeobject 1
@@ -829,7 +829,7 @@ package mx.resources
          coerce QName(PackageNamespace("flash.utils"),"Timer")
          setslot 9
          getscopeobject 1
-         newfunction 5562
+         newfunction 5564
          coerce QName(PackageNamespace(""),"Function")
          setslot 10
          getscopeobject 1

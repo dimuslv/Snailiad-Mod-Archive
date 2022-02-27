@@ -1,6 +1,7 @@
  
 package
 {
+   import flash.events.MouseEvent;
    import flash.net.URLRequest;
    import flash.net.navigateToURL;
    import org.flixel.FlxG;
@@ -13,8 +14,10 @@ package
       
       private static const IMG_HEIGHT:int = 25;
       
-      private static const _jigUrl:String = "http://jayisgames.com/";
+      private static const _jigUrl:String = "http://jayisgames.com/archives/2011/06/snailiad.php";
        
+      
+      private var _initialized:Boolean = false;
       
       public function JayIsGames()
       {
@@ -29,6 +32,14 @@ package
          play("normal");
       }
       
+      override public function destroy() : void
+      {
+         if(FlxG.stage != null)
+         {
+            FlxG.stage.removeEventListener(MouseEvent.MOUSE_UP,this.onMouseUp);
+         }
+      }
+      
       public function show() : void
       {
          alpha = 1;
@@ -41,13 +52,33 @@ package
          visible = true;
       }
       
-      override public function update() : void
+      protected function onMouseUp(param1:MouseEvent) : void
       {
-         if(visible && !dead && alpha == 1)
+         if(!exists || !visible || !active || !FlxG.mouse.justReleased() || FlxG.pause)
+         {
+            return;
+         }
+         if(!overlapsPoint(FlxG.mouse.x,FlxG.mouse.y))
+         {
+            return;
+         }
+         if(!dead && alpha == 1)
          {
             if(FlxG.mouse.justPressed() && FlxG.mouse.screenX < width && FlxG.mouse.screenY >= y)
             {
-               navigateToURL(new URLRequest(_jigUrl),"_self");
+               navigateToURL(new URLRequest(_jigUrl),"_blank");
+            }
+         }
+      }
+      
+      override public function update() : void
+      {
+         if(!this._initialized)
+         {
+            if(FlxG.stage != null)
+            {
+               FlxG.stage.addEventListener(MouseEvent.MOUSE_UP,this.onMouseUp);
+               this._initialized = true;
             }
          }
          super.update();

@@ -40,6 +40,7 @@
 
 package
 {
+   import flash.events.MouseEvent;
    import flash.net.URLRequest;
    import flash.net.navigateToURL;
    import org.flixel.FlxG;
@@ -52,7 +53,7 @@ package
       
       private static const IMG_HEIGHT:int = 25;
       
-      private static const _jigUrl:String = "http://jayisgames.com/";
+      private static const _jigUrl:String = "http://jayisgames.com/archives/2011/06/snailiad.php";
       
       {
          method
@@ -75,13 +76,15 @@ package
          pushbyte 25
          initproperty QName(PrivateNamespace(null,"#JayIsGames"),"IMG_HEIGHT")
          findproperty QName(PrivateNamespace(null,"#JayIsGames"),"_jigUrl")
-         pushstring "http://jayisgames.com/"
+         pushstring "http://jayisgames.com/archives/2011/06/snailiad.php"
          initproperty QName(PrivateNamespace(null,"#JayIsGames"),"_jigUrl")
          returnvoid
          end ; code
          end ; body
          end ; method
       }
+      
+      private var _initialized:Boolean = false;
       
       public function JayIsGames()
       {
@@ -134,6 +137,42 @@ package
          findpropstrict QName(PackageNamespace(""),"play")
          pushstring "normal"
          callpropvoid QName(PackageNamespace(""),"play"), 1
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      override public function destroy() : void
+      {
+         trait method QName(PackageNamespace(""),"destroy")
+         flag OVERRIDE
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 1
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"stage")
+         pushnull
+         ifeq ofs0
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"stage")
+         getlex QName(PackageNamespace("flash.events"),"MouseEvent")
+         getproperty QName(PackageNamespace(""),"MOUSE_UP")
+         getlocal0
+         getproperty QName(ProtectedNamespace("JayIsGames"),"onMouseUp")
+         callpropvoid QName(PackageNamespace(""),"removeEventListener"), 2
+         ofs0:
          returnvoid
          end ; code
          end ; body
@@ -198,6 +237,113 @@ package
          end ; method
       }
       
+      protected function onMouseUp(param1:MouseEvent) : void
+      {
+         trait method QName(ProtectedNamespace("JayIsGames"),"onMouseUp")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace("flash.events"),"MouseEvent")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 2
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace(""),"exists")
+         not
+         dup
+         iftrue ofs0
+         pop
+         getlex QName(PackageNamespace(""),"visible")
+         not
+         ofs0:
+         dup
+         iftrue ofs1
+         pop
+         getlex QName(PackageNamespace(""),"active")
+         not
+         ofs1:
+         dup
+         iftrue ofs2
+         pop
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"mouse")
+         callproperty QName(PackageNamespace(""),"justReleased"), 0
+         not
+         ofs2:
+         dup
+         iftrue ofs3
+         pop
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"pause")
+         convert_b
+         ofs3:
+         iffalse ofs4
+         returnvoid
+         ofs4:
+         findpropstrict QName(PackageNamespace(""),"overlapsPoint")
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"mouse")
+         getproperty QName(PackageNamespace(""),"x")
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"mouse")
+         getproperty QName(PackageNamespace(""),"y")
+         callproperty QName(PackageNamespace(""),"overlapsPoint"), 2
+         iftrue ofs5
+         returnvoid
+         ofs5:
+         getlex QName(PackageNamespace(""),"dead")
+         not
+         dup
+         iffalse ofs6
+         pop
+         getlex QName(PackageNamespace(""),"alpha")
+         pushbyte 1
+         equals
+         ofs6:
+         iffalse ofs7
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"mouse")
+         callproperty QName(PackageNamespace(""),"justPressed"), 0
+         convert_b
+         dup
+         iffalse ofs8
+         pop
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"mouse")
+         getproperty QName(PackageNamespace(""),"screenX")
+         getlex QName(PackageNamespace(""),"width")
+         lessthan
+         ofs8:
+         dup
+         iffalse ofs9
+         pop
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"mouse")
+         getproperty QName(PackageNamespace(""),"screenY")
+         getlex QName(PackageNamespace(""),"y")
+         greaterequals
+         ofs9:
+         iffalse ofs7
+         findpropstrict QName(PackageNamespace("flash.net"),"navigateToURL")
+         findpropstrict QName(PackageNamespace("flash.net"),"URLRequest")
+         getlex QName(PrivateNamespace(null,"#JayIsGames"),"_jigUrl")
+         constructprop QName(PackageNamespace("flash.net"),"URLRequest"), 1
+         pushstring "_blank"
+         callpropvoid QName(PackageNamespace("flash.net"),"navigateToURL"), 2
+         ofs7:
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
       override public function update() : void
       {
          trait method QName(PackageNamespace(""),"update")
@@ -216,52 +362,24 @@ package
          code
          getlocal0
          pushscope
-         getlex QName(PackageNamespace(""),"visible")
-         convert_b
-         dup
-         iffalse ofs0
-         pop
-         getlex QName(PackageNamespace(""),"dead")
-         not
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#JayIsGames"),"_initialized")
+         iftrue ofs0
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"stage")
+         pushnull
+         ifeq ofs0
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"stage")
+         getlex QName(PackageNamespace("flash.events"),"MouseEvent")
+         getproperty QName(PackageNamespace(""),"MOUSE_UP")
+         getlocal0
+         getproperty QName(ProtectedNamespace("JayIsGames"),"onMouseUp")
+         callpropvoid QName(PackageNamespace(""),"addEventListener"), 2
+         getlocal0
+         pushtrue
+         initproperty QName(PrivateNamespace(null,"#JayIsGames"),"_initialized")
          ofs0:
-         dup
-         iffalse ofs1
-         pop
-         getlex QName(PackageNamespace(""),"alpha")
-         pushbyte 1
-         equals
-         ofs1:
-         iffalse ofs2
-         getlex QName(PackageNamespace("org.flixel"),"FlxG")
-         getproperty QName(PackageNamespace(""),"mouse")
-         callproperty QName(PackageNamespace(""),"justPressed"), 0
-         convert_b
-         dup
-         iffalse ofs3
-         pop
-         getlex QName(PackageNamespace("org.flixel"),"FlxG")
-         getproperty QName(PackageNamespace(""),"mouse")
-         getproperty QName(PackageNamespace(""),"screenX")
-         getlex QName(PackageNamespace(""),"width")
-         lessthan
-         ofs3:
-         dup
-         iffalse ofs4
-         pop
-         getlex QName(PackageNamespace("org.flixel"),"FlxG")
-         getproperty QName(PackageNamespace(""),"mouse")
-         getproperty QName(PackageNamespace(""),"screenY")
-         getlex QName(PackageNamespace(""),"y")
-         greaterequals
-         ofs4:
-         iffalse ofs2
-         findpropstrict QName(PackageNamespace("flash.net"),"navigateToURL")
-         findpropstrict QName(PackageNamespace("flash.net"),"URLRequest")
-         getlex QName(PrivateNamespace(null,"#JayIsGames"),"_jigUrl")
-         constructprop QName(PackageNamespace("flash.net"),"URLRequest"), 1
-         pushstring "_self"
-         callpropvoid QName(PackageNamespace("flash.net"),"navigateToURL"), 2
-         ofs2:
          getlocal0
          callsupervoid QName(PackageNamespace(""),"update"), 0
          returnvoid
