@@ -9,9 +9,9 @@ package
       
       private static const Y_POS:int = 15;
       
-      private static const SPACING:int = 4;
+      private static const SPACING:int = 0;
       
-      private static const LETTER_DELAY:Number = Math.PI / 11;
+      private static const LETTER_DELAY:Number = Math.PI / 50;
       
       private static const LETTER_START:Number = -2.5;
       
@@ -39,9 +39,19 @@ package
          this._letters.push(new TitleLetter("A"));
          this._letters.push(new TitleLetter("I"));
          this._letters.push(new TitleLetter("L"));
-         this._letters.push(new TitleLetter("I"));
-         this._letters.push(new TitleLetter("A"));
          this._letters.push(new TitleLetter("D"));
+         this._letters.push(new TitleLetter("B"));
+         this._letters.push(new TitleLetter("C"));
+         this._letters.push(new TitleLetter("E"));
+         this._letters.push(new TitleLetter("F"));
+         this._letters.push(new TitleLetter("G"));
+         this._letters.push(new TitleLetter("H"));
+         this._letters.push(new TitleLetter("J"));
+         this._letters.push(new TitleLetter("K"));
+         this._letters.push(new TitleLetter("M"));
+         this._letters.push(new TitleLetter("O"));
+         this._letters.push(new TitleLetter("P"));
+         this._letters.push(new TitleLetter("Q"));
          var _loc2_:int = 0;
          while(_loc2_ < this._letters.length)
          {

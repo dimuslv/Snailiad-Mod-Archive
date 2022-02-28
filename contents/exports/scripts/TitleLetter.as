@@ -7,9 +7,9 @@ package
    public class TitleLetter extends FlxSprite
    {
       
-      private static const IMG_WIDTH:int = 28;
+      private static const IMG_WIDTH:int = 10;
       
-      private static const IMG_HEIGHT:int = 43;
+      private static const IMG_HEIGHT:int = 67;
       
       private static const IMG_OFS_X:int = 0;
       
@@ -46,38 +46,51 @@ package
                break;
             case "D":
                _loc2_ = 5;
+               break;
+            case "B":
+               _loc2_ = 6;
+               break;
+            case "C":
+               _loc2_ = 7;
+               break;
+            case "E":
+               _loc2_ = 8;
+               break;
+            case "F":
+               _loc2_ = 9;
+               break;
+            case "G":
+               _loc2_ = 10;
+               break;
+            case "H":
+               _loc2_ = 11;
+               break;
+            case "J":
+               _loc2_ = 12;
+               break;
+            case "K":
+               _loc2_ = 13;
+               break;
+            case "M":
+               _loc2_ = 14;
+               break;
+            case "O":
+               _loc2_ = 15;
+               break;
+            case "P":
+               _loc2_ = 16;
+               break;
+            case "Q":
+               _loc2_ = 17;
          }
          loadGraphic(Art.TitleLetter,true,true,IMG_WIDTH,IMG_HEIGHT);
-         switch(_loc2_)
-         {
-            case 0:
-               width = 25;
-               height = 43;
-               break;
-            case 1:
-               width = 24;
-               height = 43;
-               break;
-            case 2:
-               width = 28;
-               height = 43;
-               break;
-            case 3:
-               width = 6;
-               height = 43;
-               break;
-            case 4:
-               width = 6;
-               height = 43;
-               break;
-            case 5:
-               width = 28;
-               height = 43;
-         }
-         addAnimation("normal",[6 * 0 + _loc2_,6 * 3 + _loc2_,6 * 4 + _loc2_,6 * 3 + _loc2_,6 * 0 + _loc2_],10,false);
-         addAnimation("flash1",[6 * 0 + _loc2_,6 * 1 + _loc2_,6 * 2 + _loc2_,6 * 3 + _loc2_,6 * 4 + _loc2_,6 * 5 + _loc2_,6 * 6 + _loc2_,6 * 7 + _loc2_],30,true);
-         addAnimation("flash2",[6 * 0 + _loc2_,6 * 1 + _loc2_,6 * 2 + _loc2_,6 * 3 + _loc2_,6 * 4 + _loc2_,6 * 5 + _loc2_,6 * 6 + _loc2_,6 * 7 + _loc2_],20,true);
-         addAnimation("flash3",[6 * 0 + _loc2_,6 * 1 + _loc2_,6 * 2 + _loc2_,6 * 3 + _loc2_,6 * 4 + _loc2_,6 * 5 + _loc2_,6 * 6 + _loc2_,6 * 7 + _loc2_],10,true);
+         width = 10;
+         height = 67;
+         addAnimation("normal",[18 * 0 + _loc2_,18 * 3 + _loc2_,18 * 4 + _loc2_,18 * 3 + _loc2_,18 * 0 + _loc2_],10,false);
+         addAnimation("normal2",[18 * 8 + _loc2_],1,false);
+         addAnimation("flash1",[18 * 0 + _loc2_,18 * 1 + _loc2_,18 * 2 + _loc2_,18 * 3 + _loc2_,18 * 4 + _loc2_,18 * 5 + _loc2_,18 * 6 + _loc2_,18 * 7 + _loc2_],30,true);
+         addAnimation("flash2",[18 * 0 + _loc2_,18 * 1 + _loc2_,18 * 2 + _loc2_,18 * 3 + _loc2_,18 * 4 + _loc2_,18 * 5 + _loc2_,18 * 6 + _loc2_,18 * 7 + _loc2_],20,true);
+         addAnimation("flash3",[18 * 0 + _loc2_,18 * 1 + _loc2_,18 * 2 + _loc2_,18 * 3 + _loc2_,18 * 4 + _loc2_,18 * 5 + _loc2_,18 * 6 + _loc2_,18 * 7 + _loc2_],10,true);
          scrollFactor.x = scrollFactor.y = 0;
          active = true;
          visible = false;
@@ -90,7 +103,7 @@ package
             this.animStopTimeout -= FlxG.elapsed;
             if(this.animStopTimeout < 0)
             {
-               play("normal");
+               play("normal2");
             }
             else
             {

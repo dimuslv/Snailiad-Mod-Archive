@@ -930,7 +930,7 @@ package
          divide
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"width")
-         pushstring "CLICK TO PLAY!"
+         pushstring "\nCLICK TO PLAY!"
          constructprop QName(PackageNamespace("org.flixel"),"FlxText"), 4
          coerce QName(PackageNamespace("org.flixel"),"FlxText")
          setlocal1
@@ -4515,7 +4515,7 @@ package
          ofs0:
          iffalse ofs1
          getlocal0
-         pushstring "SLUG"
+         pushstring "PAPER SHELL"
          getlocal0
          getproperty QName(PackageNamespace(""),"justinSnailyAnim")
          pushfalse
@@ -5305,7 +5305,7 @@ package
          pushbyte 0
          ifngt ofs2
          getlocal0
-         pushstring "SLUG MODE     "
+         pushstring "PAPER MODE    "
          getlex QName(PackageNamespace(""),"GameTimeDisplay")
          getlocal0
          getproperty QName(PackageNamespace(""),"bestHardTime")
@@ -5613,7 +5613,7 @@ package
          ofs3:
          pushstring "REGULAR CLEAR"
          pushstring "BOSS RUSH CLEAR"
-         pushstring "SLUG MODE CLEAR"
+         pushstring "PAPER MODE CLEAR"
          pushstring "CLEAR < 30 MIN"
          pushstring "100% CLEAR"
          newarray 5

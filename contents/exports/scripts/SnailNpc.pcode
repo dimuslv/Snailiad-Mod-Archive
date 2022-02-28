@@ -1,7 +1,7 @@
 
 {
    method
-   name null
+   name ""
    returns null
    
    body
@@ -60,33 +60,33 @@ package
       
       {
          method
-         name null
+         name ""
          returns null
          
          body
          maxstack 2
          localcount 1
-         initscopedepth 8
-         maxscopedepth 9
+         initscopedepth 9
+         maxscopedepth 10
          
          code
          getlocal0
          pushscope
-         findproperty QName(PrivateNamespace(null,"#SnailNpc"),"IMG_WIDTH")
+         findproperty QName(PrivateNamespace(":SnailNpc"),"IMG_WIDTH")
          pushbyte 32
-         initproperty QName(PrivateNamespace(null,"#SnailNpc"),"IMG_WIDTH")
-         findproperty QName(PrivateNamespace(null,"#SnailNpc"),"IMG_HEIGHT")
+         initproperty QName(PrivateNamespace(":SnailNpc"),"IMG_WIDTH")
+         findproperty QName(PrivateNamespace(":SnailNpc"),"IMG_HEIGHT")
          pushbyte 16
-         initproperty QName(PrivateNamespace(null,"#SnailNpc"),"IMG_HEIGHT")
-         findproperty QName(PrivateNamespace(null,"#SnailNpc"),"IMG_OFS_X")
+         initproperty QName(PrivateNamespace(":SnailNpc"),"IMG_HEIGHT")
+         findproperty QName(PrivateNamespace(":SnailNpc"),"IMG_OFS_X")
          pushbyte 0
-         initproperty QName(PrivateNamespace(null,"#SnailNpc"),"IMG_OFS_X")
-         findproperty QName(PrivateNamespace(null,"#SnailNpc"),"IMG_OFS_Y")
+         initproperty QName(PrivateNamespace(":SnailNpc"),"IMG_OFS_X")
+         findproperty QName(PrivateNamespace(":SnailNpc"),"IMG_OFS_Y")
          pushbyte 0
-         initproperty QName(PrivateNamespace(null,"#SnailNpc"),"IMG_OFS_Y")
-         findproperty QName(PrivateNamespace(null,"#SnailNpc"),"talkedToCaveSnail")
+         initproperty QName(PrivateNamespace(":SnailNpc"),"IMG_OFS_Y")
+         findproperty QName(PrivateNamespace(":SnailNpc"),"talkedToCaveSnail")
          pushfalse
-         setproperty QName(PrivateNamespace(null,"#SnailNpc"),"talkedToCaveSnail")
+         setproperty QName(PrivateNamespace(":SnailNpc"),"talkedToCaveSnail")
          returnvoid
          end ; code
          end ; body
@@ -108,28 +108,34 @@ package
       public function SnailNpc(param1:int, param2:int, param3:int)
       {
          method
-         name null
+         name ":SnailNpc/SnailNpc"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
-         returns QName(PackageNamespace(""),"void")
+         returns null
          
          body
          maxstack 6
          localcount 4
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
+         getlocal0
+         pushdouble 1.0
+         setproperty QName(PrivateNamespace(":SnailNpc"),"_speed")
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "param3", 2, 0
          getlocal1
-         getlex QName(PrivateNamespace(null,"#SnailNpc"),"IMG_OFS_X")
+         getlex QName(PrivateNamespace(":SnailNpc"),"IMG_OFS_X")
          subtract
          convert_i
          setlocal1
          getlocal2
-         getlex QName(PrivateNamespace(null,"#SnailNpc"),"IMG_OFS_Y")
+         getlex QName(PrivateNamespace(":SnailNpc"),"IMG_OFS_Y")
          subtract
          convert_i
          setlocal2
@@ -142,15 +148,15 @@ package
          getproperty QName(PackageNamespace(""),"SnailNpc")
          pushtrue
          pushtrue
-         getlex QName(PrivateNamespace(null,"#SnailNpc"),"IMG_WIDTH")
-         getlex QName(PrivateNamespace(null,"#SnailNpc"),"IMG_HEIGHT")
+         getlex QName(PrivateNamespace(":SnailNpc"),"IMG_WIDTH")
+         getlex QName(PrivateNamespace(":SnailNpc"),"IMG_HEIGHT")
          callpropvoid QName(PackageNamespace(""),"loadGraphic"), 5
-         findproperty QName(PackageNamespace(""),"width")
-         getlex QName(PrivateNamespace(null,"#SnailNpc"),"IMG_WIDTH")
-         initproperty QName(PackageNamespace(""),"width")
-         findproperty QName(PackageNamespace(""),"height")
-         getlex QName(PrivateNamespace(null,"#SnailNpc"),"IMG_HEIGHT")
-         initproperty QName(PackageNamespace(""),"height")
+         findpropstrict QName(PackageNamespace(""),"width")
+         getlex QName(PrivateNamespace(":SnailNpc"),"IMG_WIDTH")
+         setproperty QName(PackageNamespace(""),"width")
+         findpropstrict QName(PackageNamespace(""),"height")
+         getlex QName(PrivateNamespace(":SnailNpc"),"IMG_HEIGHT")
+         setproperty QName(PackageNamespace(""),"height")
          getlocal3
          pushbyte 26
          equals
@@ -160,7 +166,6 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"_slugMode")
-         convert_b
          ofs0:
          iffalse ofs1
          pushbyte 44
@@ -172,11 +177,12 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"bossesKilled")
          pushbyte 4
-         getproperty MultinameL([PrivateNamespace(null,"#SnailNpc"),PackageNamespace(""),PrivateNamespace(null,"#SnailNpc/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SnailNpc"),StaticProtectedNs("SnailNpc"),StaticProtectedNs("Npc"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         iftrue ofs3
-         findproperty QName(PackageNamespace(""),"exists")
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":SnailNpc"),ProtectedNamespace(":SnailNpc"),StaticProtectedNs(":SnailNpc"),PrivateNamespace("SnailNpc.as$302")])
+         not
+         iffalse ofs3
+         findpropstrict QName(PackageNamespace(""),"exists")
          pushfalse
-         initproperty QName(PackageNamespace(""),"exists")
+         setproperty QName(PackageNamespace(""),"exists")
          jump ofs2
          ofs3:
          getlex QName(PackageNamespace(""),"PlayState")
@@ -186,16 +192,16 @@ package
          ifnlt ofs2
          pushbyte 49
          setlocal3
-         findproperty QName(PackageNamespace(""),"y")
+         findpropstrict QName(PackageNamespace(""),"y")
          getlex QName(PackageNamespace(""),"y")
          pushbyte 32
          add
-         initproperty QName(PackageNamespace(""),"y")
-         findproperty QName(PackageNamespace(""),"x")
+         setproperty QName(PackageNamespace(""),"y")
+         findpropstrict QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"x")
          pushbyte 16
          add
-         initproperty QName(PackageNamespace(""),"x")
+         setproperty QName(PackageNamespace(""),"x")
          ofs2:
          findpropstrict QName(PackageNamespace(""),"addAnimation")
          pushstring "normal"
@@ -205,8 +211,7 @@ package
          pushbyte 2
          getlocal3
          multiply
-         pushbyte 1
-         add
+         increment
          newarray 2
          pushbyte 3
          pushtrue
@@ -216,7 +221,7 @@ package
          callpropvoid QName(PackageNamespace(""),"play"), 1
          getlocal0
          getlocal3
-         initproperty QName(PrivateNamespace(null,"#SnailNpc"),"_snailNum")
+         setproperty QName(PrivateNamespace(":SnailNpc"),"_snailNum")
          getlex QName(PackageNamespace(""),"acceleration")
          pushshort 1200
          setproperty QName(PackageNamespace(""),"y")
@@ -289,61 +294,78 @@ package
          flag OVERRIDE
          dispid 0
          method
-         name null
+         name "SnailNpc:touch"
          param QName(PackageNamespace(""),"Player")
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 6
          localcount 11
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "_loc2_", 1, 85
+         debug 1, "_loc3_", 2, 86
+         debug 1, "_loc4_", 3, 91
+         debug 1, "_loc5_", 4, 96
+         debug 1, "_loc6_", 5, 81
+         debug 1, "_loc7_", 6, 82
+         debug 1, "_loc8_", 7, 83
+         debug 1, "_loc9_", 8, 84
          pushbyte 0
          setlocal 6
          pushbyte 0
          setlocal 7
          pushfalse
+         convert_b
          setlocal 8
          pushnull
-         coerce_s
+         coerce_a
          setlocal 9
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_snailNum")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_snailNum")
          pushbyte 4
          modulo
          convert_i
          setlocal2
-         pushstring "Snaily"
+         pushstring "Leggy"
+         coerce_s
          setlocal3
          getlocal1
          getproperty QName(PackageNamespace(""),"_slugMode")
          iffalse ofs0
-         pushstring "Sluggy"
+         pushstring "Leggy"
+         coerce_s
          setlocal3
          ofs0:
-         pushstring "Snaily Snail"
+         pushstring "Leggy Snail"
+         coerce_s
          setlocal 4
          getlocal1
          getproperty QName(PackageNamespace(""),"_slugMode")
          iffalse ofs1
-         pushstring "Sluggy Slug"
+         pushstring "Leggy Snail"
+         coerce_s
          setlocal 4
          ofs1:
          pushstring "snail"
+         coerce_s
          setlocal 5
          getlocal1
          getproperty QName(PackageNamespace(""),"_slugMode")
          iffalse ofs2
-         pushstring "slug"
+         pushstring "snail"
+         coerce_s
          setlocal 5
          ofs2:
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_talkOpen")
-         iftrue ofs3
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_talkOpen")
+         not
+         iffalse ofs3
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          callproperty QName(PackageNamespace(""),"getPercentComplete"), 0
@@ -355,14 +377,16 @@ package
          convert_i
          setlocal 7
          pushfalse
+         convert_b
          setlocal 8
          pushstring "[no text yet: NPC #"
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_snailNum")
-         callproperty QName(Namespace("http://adobe.com/AS3/2006/builtin"),"toString"), 0
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_snailNum")
+         callproperty Multiname("toString",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":SnailNpc"),ProtectedNamespace(":SnailNpc"),StaticProtectedNs(":SnailNpc"),PrivateNamespace("SnailNpc.as$302")]), 0
          add
          pushstring "]"
          add
+         coerce_a
          setlocal 9
          jump ofs4
          ofs5:
@@ -371,16 +395,18 @@ package
          getproperty QName(PackageNamespace(""),"player")
          pushbyte 0
          callproperty QName(PackageNamespace(""),"hasWeapon"), 1
-         iftrue ofs6
+         not
+         iffalse ofs6
          pushstring "Hi, "
          getlocal3
          add
          pushstring "!!  Why don\'t you try\n"
          add
-         pushstring "climbing up the walls?\n"
+         pushstring "flipping gravity?\n"
          add
-         pushstring "    Just hold \"UP\" and \"RIGHT\".\n"
+         pushstring "  Just press \"JUMP\" in the air!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs7
          ofs6:
@@ -388,12 +414,14 @@ package
          getproperty QName(PackageNamespace(""),"player")
          pushbyte 1
          callproperty QName(PackageNamespace(""),"hasWeapon"), 1
-         iftrue ofs8
+         not
+         iffalse ofs8
          pushstring "Oh, nice pea shooter!  I heard\n"
          pushstring "you can shoot a blue door open\n"
          add
          pushstring "with one of those!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs7
          ofs8:
@@ -401,24 +429,28 @@ package
          getproperty QName(PackageNamespace(""),"player")
          pushbyte 2
          callproperty QName(PackageNamespace(""),"hasWeapon"), 1
-         iftrue ofs9
+         not
+         iffalse ofs9
          pushstring "Wow, a boomerang!  You could\n"
          pushstring "break a pink door open with\n"
          add
          pushstring "just one of those!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs7
          ofs9:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          callproperty QName(PackageNamespace(""),"getHasDevastator"), 0
-         iftrue ofs10
+         not
+         iffalse ofs10
          pushstring "Is that a rainbow wave!?  Well,\n"
          pushstring "then!  You can open a red door\n"
          add
          pushstring "with one of those!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs7
          ofs10:
@@ -430,6 +462,7 @@ package
          add
          pushstring "all three weapons!  Wow!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs7
          ofs11:
@@ -438,6 +471,7 @@ package
          add
          pushstring "used a flame whip!\n"
          add
+         coerce_a
          setlocal 9
          ofs7:
          jump ofs12
@@ -477,6 +511,7 @@ package
          add
          pushstring "\"!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs17
          ofs16:
@@ -484,7 +519,8 @@ package
          getproperty QName(PackageNamespace(""),"player")
          pushbyte 0
          callproperty QName(PackageNamespace(""),"hasWeapon"), 1
-         iftrue ofs18
+         not
+         iffalse ofs18
          pushstring ""
          getlocal3
          add
@@ -494,6 +530,7 @@ package
          add
          pushstring "for them?  I\'m getting worried!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs17
          ofs18:
@@ -509,6 +546,7 @@ package
          add
          pushstring "!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs17
          ofs19:
@@ -521,6 +559,7 @@ package
          add
          pushstring "whole thing!!!  Om nom nom!\n"
          add
+         coerce_a
          setlocal 9
          ofs17:
          jump ofs12
@@ -550,13 +589,14 @@ package
          add
          pushstring "somewhere under the water!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs23
          ofs22:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"bossesKilled")
          pushbyte 1
-         getproperty MultinameL([PrivateNamespace(null,"#SnailNpc"),PackageNamespace(""),PrivateNamespace(null,"#SnailNpc/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SnailNpc"),StaticProtectedNs("SnailNpc"),StaticProtectedNs("Npc"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":SnailNpc"),ProtectedNamespace(":SnailNpc"),StaticProtectedNs(":SnailNpc"),PrivateNamespace("SnailNpc.as$302")])
          not
          dup
          iffalse ofs24
@@ -564,7 +604,7 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"bossesKilled")
          pushbyte 2
-         getproperty MultinameL([PrivateNamespace(null,"#SnailNpc"),PackageNamespace(""),PrivateNamespace(null,"#SnailNpc/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SnailNpc"),StaticProtectedNs("SnailNpc"),StaticProtectedNs("Npc"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":SnailNpc"),ProtectedNamespace(":SnailNpc"),StaticProtectedNs(":SnailNpc"),PrivateNamespace("SnailNpc.as$302")])
          not
          ofs24:
          iffalse ofs25
@@ -577,6 +617,7 @@ package
          add
          pushstring "right part of the map!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs23
          ofs25:
@@ -584,7 +625,8 @@ package
          getproperty QName(PackageNamespace(""),"player")
          pushbyte 1
          callproperty QName(PackageNamespace(""),"hasWeapon"), 1
-         iftrue ofs26
+         not
+         iffalse ofs26
          pushstring "I can see the past, "
          getlocal3
          add
@@ -594,14 +636,16 @@ package
          add
          pushstring "boomerang after Shellbreaker!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs23
          ofs26:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"bossesKilled")
          pushbyte 2
-         getproperty MultinameL([PrivateNamespace(null,"#SnailNpc"),PackageNamespace(""),PrivateNamespace(null,"#SnailNpc/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SnailNpc"),StaticProtectedNs("SnailNpc"),StaticProtectedNs("Npc"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         iftrue ofs27
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":SnailNpc"),ProtectedNamespace(":SnailNpc"),StaticProtectedNs(":SnailNpc"),PrivateNamespace("SnailNpc.as$302")])
+         not
+         iffalse ofs27
          pushstring "I can see the future, "
          getlocal3
          add
@@ -611,6 +655,7 @@ package
          add
          pushstring "right part of the map!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs23
          ofs27:
@@ -618,7 +663,8 @@ package
          getproperty QName(PackageNamespace(""),"player")
          pushbyte 2
          callproperty QName(PackageNamespace(""),"hasWeapon"), 1
-         iftrue ofs28
+         not
+         iffalse ofs28
          pushstring "I can see the past, "
          getlocal3
          add
@@ -628,14 +674,16 @@ package
          add
          pushstring "rainbow wave after Stompy!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs23
          ofs28:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"bossesKilled")
          pushbyte 3
-         getproperty MultinameL([PrivateNamespace(null,"#SnailNpc"),PackageNamespace(""),PrivateNamespace(null,"#SnailNpc/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SnailNpc"),StaticProtectedNs("SnailNpc"),StaticProtectedNs("Npc"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         iftrue ofs29
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":SnailNpc"),ProtectedNamespace(":SnailNpc"),StaticProtectedNs(":SnailNpc"),PrivateNamespace("SnailNpc.as$302")])
+         not
+         iffalse ofs29
          pushstring "I can see the future, "
          getlocal3
          add
@@ -645,13 +693,15 @@ package
          add
          pushstring "left part of the map!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs23
          ofs29:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          callproperty QName(PackageNamespace(""),"hasTurbo"), 0
-         iftrue ofs30
+         not
+         iffalse ofs30
          pushstring "I can see the past, "
          getlocal3
          add
@@ -661,14 +711,16 @@ package
          add
          pushstring "rapid fire before Space Box!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs23
          ofs30:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"bossesKilled")
          pushbyte 4
-         getproperty MultinameL([PrivateNamespace(null,"#SnailNpc"),PackageNamespace(""),PrivateNamespace(null,"#SnailNpc/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SnailNpc"),StaticProtectedNs("SnailNpc"),StaticProtectedNs("Npc"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         iftrue ofs31
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":SnailNpc"),ProtectedNamespace(":SnailNpc"),StaticProtectedNs(":SnailNpc"),PrivateNamespace("SnailNpc.as$302")])
+         not
+         iffalse ofs31
          pushstring "I can see the future, "
          getlocal3
          add
@@ -678,6 +730,7 @@ package
          add
          pushstring "left part of the map!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs23
          ofs31:
@@ -693,13 +746,15 @@ package
          add
          pushstring "map, finding little shells!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs23
          ofs32:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"hasSeenIsis")
-         iftrue ofs33
+         not
+         iffalse ofs33
          pushstring "I can see the future, "
          getlocal3
          add
@@ -709,13 +764,15 @@ package
          add
          pushstring "screens to the left of here!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs23
          ofs33:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"_slugMode")
-         iftrue ofs34
+         not
+         iffalse ofs34
          pushstring "I can see the future, "
          getlocal3
          add
@@ -725,6 +782,7 @@ package
          add
          pushstring "baby snails!!  Congratulations!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs23
          ofs34:
@@ -737,6 +795,7 @@ package
          add
          pushstring "baby slugs!!  Congratulations!!\n"
          add
+         coerce_a
          setlocal 9
          ofs23:
          jump ofs12
@@ -745,7 +804,8 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          callproperty QName(PackageNamespace(""),"hasGravityJump"), 0
-         iftrue ofs36
+         not
+         iffalse ofs36
          pushstring "I wonder why I can\'t crawl on\n"
          pushstring "ceiling corners...  Do you think\n"
          add
@@ -755,13 +815,15 @@ package
          add
          pushstring "?\n"
          add
+         coerce_a
          setlocal 9
          jump ofs37
          ofs36:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          callproperty QName(PackageNamespace(""),"hasArmor"), 0
-         iftrue ofs38
+         not
+         iffalse ofs38
          pushstring "Oh, my, you\'re a gravity "
          getlocal 5
          add
@@ -771,6 +833,7 @@ package
          add
          pushstring "crawling around ceilings!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs37
          ofs38:
@@ -781,6 +844,7 @@ package
          add
          pushstring "at crawling around ceilings!!\n"
          add
+         coerce_a
          setlocal 9
          ofs37:
          jump ofs12
@@ -791,13 +855,14 @@ package
          getproperty QName(PackageNamespace(""),"bgmap")
          pushshort 295
          pushshort 143
-         callproperty Multiname("getTile",[PrivateNamespace(null,"#SnailNpc"),PackageNamespace(""),PrivateNamespace(null,"#SnailNpc/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SnailNpc"),StaticProtectedNs("SnailNpc"),StaticProtectedNs("Npc"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 2
+         callproperty QName(PackageNamespace(""),"getTile"), 2
          iffalse ofs40
          pushstring "I wish I had some way to break\n"
          pushstring "green blocks.  Those suckers\n"
          add
          pushstring "are always getting in my way!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs41
          ofs40:
@@ -810,6 +875,7 @@ package
          add
          pushstring "attack!!  You saved the day!!\n"
          add
+         coerce_a
          setlocal 9
          ofs41:
          jump ofs12
@@ -823,6 +889,7 @@ package
          add
          pushstring "Have you found them all?\n"
          add
+         coerce_a
          setlocal 9
          jump ofs44
          ofs43:
@@ -831,6 +898,7 @@ package
          add
          pushstring "But what about slug skill?\n"
          add
+         coerce_a
          setlocal 9
          ofs44:
          jump ofs12
@@ -839,29 +907,28 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          callproperty QName(PackageNamespace(""),"hasHighJump"), 0
-         convert_b
          dup
+         convert_b
          iftrue ofs46
          pop
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          callproperty QName(PackageNamespace(""),"hasGravityJump"), 0
-         convert_b
          ofs46:
          iffalse ofs47
          pushstring "Don\'t you think it\'s weird that\n"
          pushstring "we all live in treehouses?\n"
          add
+         coerce_a
          setlocal 9
          jump ofs48
          ofs47:
          pushstring "Hey "
          getlocal3
          add
-         pushstring ", how\'d you get up\n"
+         pushstring ", what\'s up?\n"
          add
-         pushstring "here?  And how do I get down?\n"
-         add
+         coerce_a
          setlocal 9
          ofs48:
          jump ofs12
@@ -871,7 +938,8 @@ package
          getproperty QName(PackageNamespace(""),"player")
          pushbyte 0
          callproperty QName(PackageNamespace(""),"hasWeapon"), 1
-         iftrue ofs50
+         not
+         iffalse ofs50
          pushstring "Are you leaving town, "
          getlocal3
          add
@@ -881,6 +949,7 @@ package
          add
          pushstring "you save your game often!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs51
          ofs50:
@@ -888,7 +957,8 @@ package
          getproperty QName(PackageNamespace(""),"player")
          pushbyte 1
          callproperty QName(PackageNamespace(""),"hasWeapon"), 1
-         iftrue ofs52
+         not
+         iffalse ofs52
          pushstring "Hey, "
          getlocal3
          add
@@ -896,6 +966,7 @@ package
          add
          pushstring "the pea shooter?\n"
          add
+         coerce_a
          setlocal 9
          jump ofs51
          ofs52:
@@ -903,19 +974,22 @@ package
          getproperty QName(PackageNamespace(""),"player")
          pushbyte 2
          callproperty QName(PackageNamespace(""),"hasWeapon"), 1
-         iftrue ofs53
+         not
+         iffalse ofs53
          pushstring "Ooh, boomerangs!  If I had\n"
          pushstring "those, I\'d try breaking the\n"
          add
          pushstring "ceiling over the save spot!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs51
          ofs53:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          callproperty QName(PackageNamespace(""),"getHasDevastator"), 0
-         iftrue ofs54
+         not
+         iffalse ofs54
          pushstring "Rainbows are so pretty!\n"
          pushstring "Don\'t you think so, "
          add
@@ -923,13 +997,15 @@ package
          add
          pushstring "?\n"
          add
+         coerce_a
          setlocal 9
          jump ofs51
          ofs54:
          getlex QName(PackageNamespace(""),"PlayState")
          pushbyte 4
          callproperty QName(PackageNamespace(""),"isBossDead"), 1
-         iftrue ofs55
+         not
+         iffalse ofs55
          pushstring "I\'m scared, "
          getlocal3
          add
@@ -939,6 +1015,7 @@ package
          add
          pushstring "me away like the others?\n"
          add
+         coerce_a
          setlocal 9
          jump ofs51
          ofs55:
@@ -949,6 +1026,7 @@ package
          add
          pushstring "!\n"
          add
+         coerce_a
          setlocal 9
          ofs51:
          jump ofs12
@@ -959,17 +1037,19 @@ package
          getproperty QName(PackageNamespace(""),"bgmap")
          pushshort 328
          pushshort 185
-         callproperty Multiname("getTile",[PrivateNamespace(null,"#SnailNpc"),PackageNamespace(""),PrivateNamespace(null,"#SnailNpc/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SnailNpc"),StaticProtectedNs("SnailNpc"),StaticProtectedNs("Npc"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 2
+         callproperty QName(PackageNamespace(""),"getTile"), 2
          iffalse ofs57
          pushstring "There\'s something funny about\n"
          pushstring "that tree...\n"
          add
+         coerce_a
          setlocal 9
          jump ofs58
          ofs57:
          pushstring "I knew there was something\n"
          pushstring "weird about that tree!!\n"
          add
+         coerce_a
          setlocal 9
          ofs58:
          jump ofs12
@@ -983,6 +1063,7 @@ package
          add
          pushstring "Isn\'t it nice in here?\n"
          add
+         coerce_a
          setlocal 9
          jump ofs61
          ofs60:
@@ -991,20 +1072,22 @@ package
          add
          pushstring "home!\n"
          add
+         coerce_a
          setlocal 9
          ofs61:
          jump ofs12
          ofs62:
          label
-         pushstring "Oh, "
-         getlocal 4
+         pushstring "Oh, hi, "
+         getlocal3
          add
-         pushstring "!  My heart\n"
+         pushstring "!  How are you? If\n"
          add
-         pushstring "will forever belong to you!\n"
+         pushstring "you see Snaily Snail, could you\n"
          add
-         pushstring "             <3\n"
+         pushstring "tell him I\'m looking for him?\n"
          add
+         coerce_a
          setlocal 9
          jump ofs12
          ofs63:
@@ -1013,7 +1096,8 @@ package
          getproperty QName(PackageNamespace(""),"player")
          pushbyte 0
          callproperty QName(PackageNamespace(""),"hasWeapon"), 1
-         iftrue ofs64
+         not
+         iffalse ofs64
          pushstring ""
          getlocal3
          add
@@ -1028,6 +1112,7 @@ package
          add
          pushstring "\" to shoot with it!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs65
          ofs64:
@@ -1041,6 +1126,7 @@ package
          add
          pushstring "weapon at stuff!!\n"
          add
+         coerce_a
          setlocal 9
          ofs65:
          jump ofs12
@@ -1051,7 +1137,7 @@ package
          getproperty QName(PackageNamespace(""),"spmap")
          pushshort 359
          pushshort 174
-         callproperty Multiname("getTile",[PrivateNamespace(null,"#SnailNpc"),PackageNamespace(""),PrivateNamespace(null,"#SnailNpc/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SnailNpc"),StaticProtectedNs("SnailNpc"),StaticProtectedNs("Npc"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 2
+         callproperty QName(PackageNamespace(""),"getTile"), 2
          iffalse ofs67
          pushstring "Heya, "
          getlocal3
@@ -1062,10 +1148,12 @@ package
          add
          pushstring "fresh slime! Enjoy!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs68
          ofs67:
          pushstring "Isn\'t breaking blocks fun!?\n"
+         coerce_a
          setlocal 9
          ofs68:
          jump ofs12
@@ -1075,7 +1163,7 @@ package
          pushstring "found "
          add
          getlocal 6
-         callproperty QName(Namespace("http://adobe.com/AS3/2006/builtin"),"toString"), 0
+         callproperty Multiname("toString",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":SnailNpc"),ProtectedNamespace(":SnailNpc"),StaticProtectedNs(":SnailNpc"),PrivateNamespace("SnailNpc.as$302")]), 0
          add
          pushstring "% of the items in this\n"
          add
@@ -1085,6 +1173,7 @@ package
          add
          pushstring "!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs12
          ofs70:
@@ -1101,6 +1190,7 @@ package
          add
          pushstring "look like spinning white shells!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs72
          ofs71:
@@ -1119,6 +1209,7 @@ package
          pushstring "They say that the Shrine of\n"
          pushstring "Iris is not located on any map!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs72
          ofs74:
@@ -1131,6 +1222,7 @@ package
          add
          pushstring "should become a detective!\n"
          add
+         coerce_a
          setlocal 9
          ofs72:
          jump ofs12
@@ -1148,6 +1240,7 @@ package
          add
          pushstring "each area to find secret items!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs77
          ofs76:
@@ -1165,12 +1258,13 @@ package
          pushstring "Hi, "
          getlocal3
          add
-         pushstring "!  Let me give you a\n"
+         pushstring "!  Y\'know, I never\n"
          add
-         pushstring "little hint: A shell can fit\n"
+         pushstring "noticed how big and stylish\n"
          add
-         pushstring "where a snail cannot!\n"
+         pushstring "your shell is!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs77
          ofs79:
@@ -1182,7 +1276,6 @@ package
          pop
          getlocal1
          getproperty QName(PackageNamespace(""),"_slugMode")
-         convert_b
          ofs80:
          iffalse ofs81
          pushstring "Hi, "
@@ -1194,6 +1287,7 @@ package
          add
          pushstring "snails, but they\'re also faster!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs77
          ofs81:
@@ -1209,6 +1303,7 @@ package
          add
          pushstring "secret if you cling to a wall!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs77
          ofs82:
@@ -1224,6 +1319,7 @@ package
          add
          pushstring "jump\" before any other item!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs77
          ofs83:
@@ -1239,6 +1335,7 @@ package
          add
          pushstring "somewhere in Snail Town!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs77
          ofs84:
@@ -1251,6 +1348,7 @@ package
          add
          pushstring "somewhere in the main menu!\n"
          add
+         coerce_a
          setlocal 9
          ofs77:
          jump ofs12
@@ -1276,6 +1374,7 @@ package
          add
          pushstring "to stay fit and healthy!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs88
          ofs87:
@@ -1283,6 +1382,7 @@ package
          pushshort 2656
          ifnlt ofs89
          pushstring "I want to go for a ride!!!\n"
+         coerce_a
          setlocal 9
          jump ofs88
          ofs89:
@@ -1293,6 +1393,7 @@ package
          add
          pushstring "!  Let\'s do it again!!\n"
          add
+         coerce_a
          setlocal 9
          ofs88:
          jump ofs12
@@ -1306,6 +1407,7 @@ package
          add
          pushstring "how to get in yet, though...\n"
          add
+         coerce_a
          setlocal 9
          jump ofs92
          ofs91:
@@ -1314,6 +1416,7 @@ package
          add
          pushstring "upside down!"
          add
+         coerce_a
          setlocal 9
          ofs92:
          jump ofs12
@@ -1324,7 +1427,7 @@ package
          getproperty QName(PackageNamespace(""),"spmap")
          pushshort 215
          pushshort 140
-         callproperty Multiname("getTile",[PrivateNamespace(null,"#SnailNpc"),PackageNamespace(""),PrivateNamespace(null,"#SnailNpc/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SnailNpc"),StaticProtectedNs("SnailNpc"),StaticProtectedNs("Npc"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 2
+         callproperty QName(PackageNamespace(""),"getTile"), 2
          iffalse ofs94
          pushstring "You found the super secret\n"
          pushstring "boomerang!  Way to go!\n"
@@ -1336,6 +1439,7 @@ package
          add
          pushstring "\" to shoot with it!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs95
          ofs94:
@@ -1349,6 +1453,7 @@ package
          add
          pushstring "weapon at stuff!!\n"
          add
+         coerce_a
          setlocal 9
          ofs95:
          jump ofs12
@@ -1358,7 +1463,8 @@ package
          getproperty QName(PackageNamespace(""),"player")
          pushbyte 1
          callproperty QName(PackageNamespace(""),"hasWeapon"), 1
-         iftrue ofs97
+         not
+         iffalse ofs97
          pushstring "Hey, "
          getlocal3
          add
@@ -1368,6 +1474,7 @@ package
          add
          pushstring "all sorts of walls!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs98
          ofs97:
@@ -1376,6 +1483,7 @@ package
          add
          pushstring "that\'s for some other game.\n"
          add
+         coerce_a
          setlocal 9
          ofs98:
          jump ofs12
@@ -1385,12 +1493,14 @@ package
          getproperty QName(PackageNamespace(""),"player")
          pushbyte 1
          callproperty QName(PackageNamespace(""),"hasWeapon"), 1
-         iftrue ofs100
+         not
+         iffalse ofs100
          pushstring "There\'s some kind of secret\n"
          pushstring "passage to the right, but I\'m\n"
          add
          pushstring "not sure how to get through...\n"
          add
+         coerce_a
          setlocal 9
          jump ofs101
          ofs100:
@@ -1402,6 +1512,7 @@ package
          add
          pushstring "as brave as me, you know!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs101
          ofs102:
@@ -1410,6 +1521,7 @@ package
          add
          pushstring "!!  Yay!!\n"
          add
+         coerce_a
          setlocal 9
          ofs101:
          jump ofs12
@@ -1419,7 +1531,8 @@ package
          getproperty QName(PackageNamespace(""),"player")
          pushbyte 1
          callproperty QName(PackageNamespace(""),"hasWeapon"), 1
-         iftrue ofs104
+         not
+         iffalse ofs104
          pushstring "Yay, "
          getlocal3
          add
@@ -1429,6 +1542,7 @@ package
          add
          pushstring "some walls open!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs105
          ofs104:
@@ -1437,6 +1551,7 @@ package
          add
          pushstring "like \"1\" or \"2\"!\n"
          add
+         coerce_a
          setlocal 9
          ofs105:
          jump ofs12
@@ -1448,15 +1563,17 @@ package
          pushstring "I are Cave Snail!\n"
          pushstring "Thorgle Borgle!!!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs108
          ofs107:
          pushstring "Thorgle Borgle!!!!!!!\n"
+         coerce_a
          setlocal 9
          ofs108:
-         findproperty QName(PrivateNamespace(null,"#SnailNpc"),"talkedToCaveSnail")
+         findpropstrict QName(PrivateNamespace(":SnailNpc"),"talkedToCaveSnail")
          pushtrue
-         setproperty QName(PrivateNamespace(null,"#SnailNpc"),"talkedToCaveSnail")
+         setproperty QName(PrivateNamespace(":SnailNpc"),"talkedToCaveSnail")
          jump ofs12
          ofs109:
          label
@@ -1466,13 +1583,14 @@ package
          dup
          iffalse ofs110
          pop
-         getlex QName(PrivateNamespace(null,"#SnailNpc"),"talkedToCaveSnail")
+         getlex QName(PrivateNamespace(":SnailNpc"),"talkedToCaveSnail")
          not
          ofs110:
          iffalse ofs111
          pushstring "Cave Snail scares me!\n"
          pushstring "I\'m staying over here!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs112
          ofs111:
@@ -1484,12 +1602,14 @@ package
          add
          pushstring "town!  You won\'t lose any items!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs112
          ofs113:
          pushstring "Do you think Cave Snail\n"
          pushstring "is single?\n"
          add
+         coerce_a
          setlocal 9
          ofs112:
          jump ofs12
@@ -1500,13 +1620,14 @@ package
          getproperty QName(PackageNamespace(""),"spmap")
          pushshort 291
          pushshort 220
-         callproperty Multiname("getTile",[PrivateNamespace(null,"#SnailNpc"),PackageNamespace(""),PrivateNamespace(null,"#SnailNpc/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SnailNpc"),StaticProtectedNs("SnailNpc"),StaticProtectedNs("Npc"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 2
+         callproperty QName(PackageNamespace(""),"getTile"), 2
          iffalse ofs115
          pushstring "Take this Helix Fragment!\n"
          pushstring "Legend says it is but one\n"
          add
          pushstring "piece of Iris, the Godsnail!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs116
          ofs115:
@@ -1519,6 +1640,7 @@ package
          add
          pushstring "very close to Snail Town!!\n"
          add
+         coerce_a
          setlocal 9
          ofs116:
          jump ofs12
@@ -1539,6 +1661,7 @@ package
          add
          pushstring "and hit \"ESC\" for the menu!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs119
          ofs118:
@@ -1559,6 +1682,7 @@ package
          add
          pushstring "\"!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs119
          ofs120:
@@ -1569,6 +1693,7 @@ package
          add
          pushstring "any good plants around town?\n"
          add
+         coerce_a
          setlocal 9
          ofs119:
          jump ofs12
@@ -1579,6 +1704,7 @@ package
          add
          pushstring "hide in your shell!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs12
          ofs122:
@@ -1586,14 +1712,13 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          callproperty QName(PackageNamespace(""),"hasArmor"), 0
-         convert_b
          dup
+         convert_b
          iftrue ofs123
          pop
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          callproperty QName(PackageNamespace(""),"hasGravityJump"), 0
-         convert_b
          ofs123:
          iffalse ofs124
          pushstring "Hey, "
@@ -1603,6 +1728,7 @@ package
          add
          pushstring "back to visit!!  Yay!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs125
          ofs124:
@@ -1623,6 +1749,7 @@ package
          add
          pushstring "room ahead won\'t hurt you!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs125
          ofs126:
@@ -1639,6 +1766,7 @@ package
          add
          pushstring "ahead will be too difficult!\n"
          add
+         coerce_a
          setlocal 9
          ofs125:
          jump ofs12
@@ -1657,6 +1785,7 @@ package
          add
          pushstring "direction and press jump again!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs129
          ofs128:
@@ -1673,6 +1802,7 @@ package
          add
          pushstring "!!\n"
          add
+         coerce_a
          setlocal 9
          ofs129:
          jump ofs12
@@ -1680,14 +1810,13 @@ package
          label
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
-         convert_b
          dup
+         convert_b
          iffalse ofs131
          pop
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"_insaneMode")
-         convert_b
          ofs131:
          iffalse ofs132
          pushstring "Oh, no!! "
@@ -1699,6 +1828,7 @@ package
          add
          pushstring "mode! Good luck without it!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs133
          ofs132:
@@ -1711,9 +1841,11 @@ package
          add
          pushstring "guys and icicles can\'t hurt me!\n"
          add
+         coerce_a
          setlocal 9
          ofs133:
          pushtrue
+         convert_b
          setlocal 8
          jump ofs12
          ofs134:
@@ -1740,13 +1872,15 @@ package
          add
          pushstring "Snail will eat you for lunch!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs137
          ofs136:
          getlex QName(PackageNamespace(""),"PlayState")
          pushbyte 4
          callproperty QName(PackageNamespace(""),"isBossDead"), 1
-         iftrue ofs138
+         not
+         iffalse ofs138
          pushstring ""
          getlocal3
          add
@@ -1756,6 +1890,7 @@ package
          add
          pushstring "bad!!  You need to defeat him!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs137
          ofs138:
@@ -1780,6 +1915,7 @@ package
          add
          pushstring "still restore Moon Snail!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs137
          ofs140:
@@ -1792,9 +1928,11 @@ package
          add
          pushstring "moon snail or a sun snail?\n"
          add
+         coerce_a
          setlocal 9
          ofs137:
          pushtrue
+         convert_b
          setlocal 8
          jump ofs12
          ofs141:
@@ -1802,12 +1940,14 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          pushbyte 4
          callproperty QName(PackageNamespace(""),"isBossDead"), 1
-         iftrue ofs142
+         not
+         iffalse ofs142
          pushstring "Moon Snail is still a snail!!  He\n"
          pushstring "was once known as Sun Snail\n"
          add
          pushstring "and enjoyed nomming on grass!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs143
          ofs142:
@@ -1820,7 +1960,6 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          pushbyte 4
          callproperty QName(PackageNamespace(""),"isBossDead"), 1
-         convert_b
          ofs144:
          dup
          iftrue ofs145
@@ -1836,6 +1975,7 @@ package
          add
          pushstring "Have you found it yet?\n"
          add
+         coerce_a
          setlocal 9
          jump ofs143
          ofs146:
@@ -1844,9 +1984,11 @@ package
          add
          pushstring "REALISTIC!!  WHAT GIVES??\n"
          add
+         coerce_a
          setlocal 9
          ofs143:
          pushtrue
+         convert_b
          setlocal 8
          jump ofs12
          ofs147:
@@ -1873,6 +2015,7 @@ package
          add
          pushstring "Snail yet!!  Turn back!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs150
          ofs149:
@@ -1893,6 +2036,7 @@ package
          add
          pushstring "light once he\'s defeated!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs150
          ofs152:
@@ -1917,6 +2061,7 @@ package
          add
          pushstring "him to his former light!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs150
          ofs154:
@@ -1945,6 +2090,7 @@ package
          add
          pushstring "!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs150
          ofs156:
@@ -1957,9 +2103,11 @@ package
          add
          pushstring "anyway?\n"
          add
+         coerce_a
          setlocal 9
          ofs150:
          pushtrue
+         convert_b
          setlocal 8
          jump ofs12
          ofs157:
@@ -1981,6 +2129,7 @@ package
          add
          pushstring " ever!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs159
          ofs158:
@@ -1989,7 +2138,7 @@ package
          getproperty QName(PackageNamespace(""),"spmap")
          pushbyte 34
          pushbyte 7
-         callproperty Multiname("getTile",[PrivateNamespace(null,"#SnailNpc"),PackageNamespace(""),PrivateNamespace(null,"#SnailNpc/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SnailNpc"),StaticProtectedNs("SnailNpc"),StaticProtectedNs("Npc"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 2
+         callproperty QName(PackageNamespace(""),"getTile"), 2
          iffalse ofs160
          pushstring ""
          getlocal3
@@ -2000,6 +2149,7 @@ package
          add
          pushstring "to defeat Moon Snail!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs159
          ofs160:
@@ -2008,9 +2158,11 @@ package
          add
          pushstring "!!\n"
          add
+         coerce_a
          setlocal 9
          ofs159:
          pushtrue
+         convert_b
          setlocal 8
          jump ofs12
          ofs161:
@@ -2036,6 +2188,7 @@ package
          add
          pushstring "all, find the Shrine of Iris!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs164
          ofs163:
@@ -2048,9 +2201,11 @@ package
          add
          pushstring "of Iris!!\n"
          add
+         coerce_a
          setlocal 9
          ofs164:
          pushtrue
+         convert_b
          setlocal 8
          jump ofs12
          ofs165:
@@ -2058,8 +2213,10 @@ package
          pushstring "Wow! You found the secret room\n"
          pushstring "full of Snelks!! _@_v!!\n"
          add
+         coerce_a
          setlocal 9
          pushtrue
+         convert_b
          setlocal 8
          jump ofs12
          ofs166:
@@ -2067,14 +2224,16 @@ package
          pushstring "Heya, "
          getlocal3
          add
-         pushstring "!  Gravity shock\n"
+         pushstring "!  Corkscrew Jump\n"
          add
          pushstring "upgrades your gravity jump!\n"
          add
          pushstring "Pretty neat, huh?\n"
          add
+         coerce_a
          setlocal 9
          pushtrue
+         convert_b
          setlocal 8
          jump ofs12
          ofs167:
@@ -2088,8 +2247,10 @@ package
          add
          pushstring "on purpose?\n"
          add
+         coerce_a
          setlocal 9
          pushtrue
+         convert_b
          setlocal 8
          jump ofs12
          ofs168:
@@ -2103,6 +2264,7 @@ package
          add
          pushstring "hobby: collecting prime numbers!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs12
          ofs169:
@@ -2114,7 +2276,8 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          pushbyte 4
          callproperty QName(PackageNamespace(""),"isBossDead"), 1
-         iftrue ofs170
+         not
+         iffalse ofs170
          getlocal 7
          pushbyte 0
          ifne ofs171
@@ -2127,6 +2290,7 @@ package
          add
          pushstring "Fragments, I am powerless...\n"
          add
+         coerce_a
          setlocal 9
          jump ofs172
          ofs171:
@@ -2141,7 +2305,7 @@ package
          pushstring "Godsnail. But with only "
          add
          getlocal 7
-         callproperty QName(Namespace("http://adobe.com/AS3/2006/builtin"),"toString"), 0
+         callproperty Multiname("toString",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":SnailNpc"),ProtectedNamespace(":SnailNpc"),StaticProtectedNs(":SnailNpc"),PrivateNamespace("SnailNpc.as$302")]), 0
          add
          pushstring " Helix\n"
          add
@@ -2149,18 +2313,16 @@ package
          add
          getlocal 7
          pushbyte 1
-         equals
-         iffalse ofs174
+         ifne ofs174
          pushstring ""
-         coerce_a
          jump ofs175
          ofs174:
          pushstring "s"
-         coerce_a
          ofs175:
          add
          pushstring ", I am powerless...\n"
          add
+         coerce_a
          setlocal 9
          jump ofs172
          ofs173:
@@ -2173,12 +2335,13 @@ package
          pushbyte 30
          getlocal 7
          subtract
-         callproperty QName(Namespace("http://adobe.com/AS3/2006/builtin"),"toString"), 0
+         callproperty Multiname("toString",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":SnailNpc"),ProtectedNamespace(":SnailNpc"),StaticProtectedNs(":SnailNpc"),PrivateNamespace("SnailNpc.as$302")]), 0
          add
          pushstring " more Helix Fragments,\n"
          add
          pushstring "perhaps we can save Moon Snail!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs172
          ofs176:
@@ -2190,6 +2353,7 @@ package
          add
          pushstring "perhaps we can save Moon Snail!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs172
          ofs177:
@@ -2205,6 +2369,7 @@ package
          add
          pushstring "My power will restore him!\n"
          add
+         coerce_a
          setlocal 9
          ofs172:
          jump ofs178
@@ -2221,6 +2386,7 @@ package
          add
          pushstring "and is now the Sun Snail!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs178
          ofs179:
@@ -2230,7 +2396,7 @@ package
          pushbyte 30
          getlocal 7
          subtract
-         callproperty QName(Namespace("http://adobe.com/AS3/2006/builtin"),"toString"), 0
+         callproperty Multiname("toString",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":SnailNpc"),ProtectedNamespace(":SnailNpc"),StaticProtectedNs(":SnailNpc"),PrivateNamespace("SnailNpc.as$302")]), 0
          add
          pushstring "\n"
          add
@@ -2240,14 +2406,11 @@ package
          getlocal 7
          subtract
          pushbyte 1
-         equals
-         iffalse ofs180
+         ifne ofs180
          pushstring ""
-         coerce_a
          jump ofs181
          ofs180:
          pushstring "s"
-         coerce_a
          ofs181:
          add
          pushstring ", "
@@ -2256,6 +2419,7 @@ package
          add
          pushstring "!\n"
          add
+         coerce_a
          setlocal 9
          ofs178:
          jump ofs12
@@ -2264,7 +2428,8 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          pushbyte 2
          callproperty QName(PackageNamespace(""),"isBossDead"), 1
-         iftrue ofs183
+         not
+         iffalse ofs183
          pushstring "Be careful, "
          getlocal3
          add
@@ -2274,6 +2439,7 @@ package
          add
          pushstring "the next room!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs184
          ofs183:
@@ -2284,6 +2450,7 @@ package
          add
          pushstring "!!\n"
          add
+         coerce_a
          setlocal 9
          ofs184:
          jump ofs12
@@ -2292,7 +2459,8 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          pushbyte 1
          callproperty QName(PackageNamespace(""),"isBossDead"), 1
-         iftrue ofs186
+         not
+         iffalse ofs186
          pushstring "Watch out, "
          getlocal 4
          add
@@ -2302,6 +2470,7 @@ package
          add
          pushstring "in the next room!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs187
          ofs186:
@@ -2309,12 +2478,14 @@ package
          getproperty QName(PackageNamespace(""),"player")
          pushbyte 1
          callproperty QName(PackageNamespace(""),"hasWeapon"), 1
-         iftrue ofs188
+         not
+         iffalse ofs188
          pushstring "Oh hey, that grey door below\n"
          pushstring "and to the left opened up!\n"
          add
          pushstring "I wonder what\'s inside?\n"
          add
+         coerce_a
          setlocal 9
          jump ofs187
          ofs188:
@@ -2326,13 +2497,15 @@ package
          add
          pushstring "!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs187
          ofs189:
          getlex QName(PackageNamespace(""),"PlayState")
          pushbyte 4
          callproperty QName(PackageNamespace(""),"isBossDead"), 1
-         iftrue ofs190
+         not
+         iffalse ofs190
          pushstring "Good luck, "
          getlocal3
          add
@@ -2342,6 +2515,7 @@ package
          add
          pushstring "of baby snails later, okay?\n"
          add
+         coerce_a
          setlocal 9
          jump ofs187
          ofs190:
@@ -2350,6 +2524,7 @@ package
          add
          pushstring "back!!  Yay!!\n"
          add
+         coerce_a
          setlocal 9
          ofs187:
          jump ofs12
@@ -2358,7 +2533,8 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          callproperty QName(PackageNamespace(""),"hasTurbo"), 0
-         iftrue ofs192
+         not
+         iffalse ofs192
          pushstring "Hey, "
          getlocal3
          add
@@ -2368,18 +2544,21 @@ package
          add
          pushstring "without \"Rapid Fire\"!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs193
          ofs192:
          getlex QName(PackageNamespace(""),"PlayState")
          pushbyte 3
          callproperty QName(PackageNamespace(""),"isBossDead"), 1
-         iftrue ofs194
+         not
+         iffalse ofs194
          pushstring "Moon Snail brought me here!\n"
          pushstring "Isn\'t he nice?  All the pink\n"
          add
          pushstring "grass I could ever eat!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs193
          ofs194:
@@ -2392,6 +2571,7 @@ package
          add
          pushstring "??\n"
          add
+         coerce_a
          setlocal 9
          ofs193:
          jump ofs12
@@ -2400,12 +2580,14 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          callproperty QName(PackageNamespace(""),"hasGravityJump"), 0
-         iftrue ofs196
+         not
+         iffalse ofs196
          pushstring "I can\'t seem to crawl around\n"
          pushstring "these corners!  I wonder if\n"
          add
          pushstring "I\'ll ever be able to do it...\n"
          add
+         coerce_a
          setlocal 9
          jump ofs197
          ofs196:
@@ -2418,6 +2600,7 @@ package
          add
          pushstring "I wish I were a Gravity Snail!\n"
          add
+         coerce_a
          setlocal 9
          ofs197:
          jump ofs12
@@ -2434,7 +2617,8 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          callproperty QName(PackageNamespace(""),"hasArmor"), 0
-         iftrue ofs201
+         not
+         iffalse ofs201
          pushstring "Hey, "
          getlocal3
          add
@@ -2444,27 +2628,32 @@ package
          add
          pushstring "half damage from enemies!!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs202
          ofs201:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"_slugMode")
-         iftrue ofs203
+         not
+         iffalse ofs203
          pushstring "Ooh, a Full Metal Snail!  Now\n"
          pushstring "you\'re as tough as iron, and as\n"
          add
          pushstring "quick as Mercury!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs202
          ofs203:
          pushstring "Ooh, a Full Power Slug, the\n"
          pushstring "fastest slug on earth!!\n"
          add
+         coerce_a
          setlocal 9
          ofs202:
          pushtrue
+         convert_b
          setlocal 8
          jump ofs12
          ofs204:
@@ -2478,6 +2667,7 @@ package
          add
          pushstring "them, right on the same wall!\n"
          add
+         coerce_a
          setlocal 9
          jump ofs12
          ofs205:
@@ -2487,14 +2677,16 @@ package
          add
          pushstring "snelk room yet?  _@_v!!\n"
          add
+         coerce_a
          setlocal 9
          pushtrue
+         convert_b
          setlocal 8
          jump ofs12
          ofs206:
          label
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_nexted")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_nexted")
          pushbyte 0
          ifne ofs207
          pushstring "Hey, "
@@ -2502,11 +2694,12 @@ package
          add
          pushstring ", what\'s up?\n"
          add
+         coerce_a
          setlocal 9
          jump ofs208
          ofs207:
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_nexted")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_nexted")
          pushbyte 1
          ifne ofs209
          pushbyte 3
@@ -2516,14 +2709,16 @@ package
          add
          pushstring "\{27}E\n"
          add
+         coerce_a
          setlocal 9
          jump ofs208
          ofs209:
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_nexted")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_nexted")
          pushbyte 2
          ifne ofs208
          pushstring "Whew!!  That was scary!!\n"
+         coerce_a
          setlocal 9
          ofs208:
          jump ofs12
@@ -2534,6 +2729,7 @@ package
          add
          pushstring "zzzzz...  2,425,991...  zzzzz...\n"
          add
+         coerce_a
          setlocal 9
          jump ofs12
          ofs211:
@@ -2546,14 +2742,14 @@ package
          add
          pushstring "shoot while holding still!\n"
          add
+         coerce_a
          setlocal 9
-         jump ofs12
          ofs212:
          label
          jump ofs12
          ofs4:
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_snailNum")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_snailNum")
          setlocal 10
          pushbyte 0
          getlocal 10
@@ -2862,13 +3058,13 @@ package
          jump ofs214
          ofs264:
          jump ofs265
-         pushbyte 51
+         pushbyte -1
          jump ofs265
          ofs265:
-         pushbyte 51
+         pushbyte -1
          ofs214:
          kill 10
-         lookupswitch ofs212, [ofs5, ofs13, ofs20, ofs35, ofs39, ofs42, ofs45, ofs49, ofs56, ofs59, ofs62, ofs63, ofs66, ofs69, ofs70, ofs75, ofs85, ofs90, ofs93, ofs96, ofs99, ofs103, ofs106, ofs109, ofs114, ofs117, ofs121, ofs122, ofs127, ofs130, ofs134, ofs141, ofs147, ofs157, ofs161, ofs165, ofs166, ofs167, ofs168, ofs169, ofs182, ofs185, ofs191, ofs195, ofs198, ofs200, ofs204, ofs205, ofs206, ofs210, ofs211, ofs212]
+         lookupswitch ofs212, [ofs5, ofs13, ofs20, ofs35, ofs39, ofs42, ofs45, ofs49, ofs56, ofs59, ofs62, ofs63, ofs66, ofs69, ofs70, ofs75, ofs85, ofs90, ofs93, ofs96, ofs99, ofs103, ofs106, ofs109, ofs114, ofs117, ofs121, ofs122, ofs127, ofs130, ofs134, ofs141, ofs147, ofs157, ofs161, ofs165, ofs166, ofs167, ofs168, ofs169, ofs182, ofs185, ofs191, ofs195, ofs198, ofs200, ofs204, ofs205, ofs206, ofs210, ofs211]
          ofs12:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"dialogue")
@@ -2876,14 +3072,14 @@ package
          getlocal2
          getlocal 8
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_speed")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_speed")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_snailNum")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_snailNum")
          callpropvoid QName(PackageNamespace(""),"start"), 5
          ofs3:
          getlocal0
          pushtrue
-         initproperty QName(PrivateNamespace(null,"#SnailNpc"),"_talkOpen")
+         setproperty QName(PrivateNamespace(":SnailNpc"),"_talkOpen")
          returnvoid
          end ; code
          end ; body
@@ -2895,14 +3091,14 @@ package
          trait method QName(PackageNamespace(""),"stopTalking")
          dispid 0
          method
-         name null
+         name "SnailNpc:stopTalking"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 2
          localcount 1
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
@@ -2910,11 +3106,11 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"dialogue")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_snailNum")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_snailNum")
          callpropvoid QName(PackageNamespace(""),"stop"), 1
          getlocal0
          pushfalse
-         initproperty QName(PrivateNamespace(null,"#SnailNpc"),"_talkOpen")
+         setproperty QName(PrivateNamespace(":SnailNpc"),"_talkOpen")
          returnvoid
          end ; code
          end ; body
@@ -2927,18 +3123,20 @@ package
          flag OVERRIDE
          dispid 0
          method
-         name null
+         name "SnailNpc:update"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 4
          localcount 4
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
+         debug 1, "_loc1_", 0, 768
+         debug 1, "_loc2_", 1, 769
          pushbyte 0
          setlocal1
          pushbyte 0
@@ -2951,57 +3149,56 @@ package
          returnvoid
          ofs0:
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_snailNum")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_snailNum")
          pushbyte 39
          equals
          dup
          iftrue ofs1
          pop
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_snailNum")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_snailNum")
          pushbyte 38
          equals
          ofs1:
          iffalse ofs2
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_elapsed")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_elapsed")
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"elapsed")
          add
-         initproperty QName(PrivateNamespace(null,"#SnailNpc"),"_elapsed")
+         setproperty QName(PrivateNamespace(":SnailNpc"),"_elapsed")
          getlex QName(PackageNamespace(""),"offset")
          getlex QName(PackageNamespace(""),"Math")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_elapsed")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_elapsed")
          pushdouble 0.5
          multiply
-         callproperty QName(PackageNamespace(""),"sin"), 1
+         callproperty Multiname("sin",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":SnailNpc"),ProtectedNamespace(":SnailNpc"),StaticProtectedNs(":SnailNpc"),PrivateNamespace("SnailNpc.as$302")]), 1
          pushbyte 5
          multiply
          setproperty QName(PackageNamespace(""),"y")
          ofs2:
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_talkOpen")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_talkOpen")
          iffalse ofs3
          jump ofs4
          ofs5:
          label
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"hasJumped")
-         convert_b
          dup
          iffalse ofs6
          pop
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_nexted")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_nexted")
          pushbyte 0
          equals
          ofs6:
          iffalse ofs7
          getlocal0
          pushbyte 1
-         initproperty QName(PrivateNamespace(null,"#SnailNpc"),"_nexted")
+         setproperty QName(PrivateNamespace(":SnailNpc"),"_nexted")
          getlocal0
          callpropvoid QName(PackageNamespace(""),"stopTalking"), 0
          ofs7:
@@ -3013,21 +3210,21 @@ package
          getproperty QName(PackageNamespace(""),"bgmap")
          pushshort 295
          pushshort 143
-         callproperty Multiname("getTile",[PrivateNamespace(null,"#SnailNpc"),PackageNamespace(""),PrivateNamespace(null,"#SnailNpc/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SnailNpc"),StaticProtectedNs("SnailNpc"),StaticProtectedNs("Npc"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 2
+         callproperty QName(PackageNamespace(""),"getTile"), 2
          pushbyte 0
          equals
          dup
          iffalse ofs10
          pop
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_nexted")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_nexted")
          pushbyte 0
          equals
          ofs10:
          iffalse ofs11
          getlocal0
          pushbyte 1
-         initproperty QName(PrivateNamespace(null,"#SnailNpc"),"_nexted")
+         setproperty QName(PrivateNamespace(":SnailNpc"),"_nexted")
          getlocal0
          callpropvoid QName(PackageNamespace(""),"stopTalking"), 0
          ofs11:
@@ -3039,21 +3236,21 @@ package
          getproperty QName(PackageNamespace(""),"bgmap")
          pushshort 328
          pushshort 185
-         callproperty Multiname("getTile",[PrivateNamespace(null,"#SnailNpc"),PackageNamespace(""),PrivateNamespace(null,"#SnailNpc/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SnailNpc"),StaticProtectedNs("SnailNpc"),StaticProtectedNs("Npc"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 2
+         callproperty QName(PackageNamespace(""),"getTile"), 2
          pushbyte 0
          equals
          dup
          iffalse ofs13
          pop
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_nexted")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_nexted")
          pushbyte 0
          equals
          ofs13:
          iffalse ofs14
          getlocal0
          pushbyte 1
-         initproperty QName(PrivateNamespace(null,"#SnailNpc"),"_nexted")
+         setproperty QName(PrivateNamespace(":SnailNpc"),"_nexted")
          getlocal0
          callpropvoid QName(PackageNamespace(""),"stopTalking"), 0
          ofs14:
@@ -3067,14 +3264,14 @@ package
          iffalse ofs16
          pop
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_nexted")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_nexted")
          pushbyte 0
          equals
          ofs16:
          iffalse ofs17
          getlocal0
          pushbyte 1
-         initproperty QName(PrivateNamespace(null,"#SnailNpc"),"_nexted")
+         setproperty QName(PrivateNamespace(":SnailNpc"),"_nexted")
          getlocal0
          callpropvoid QName(PackageNamespace(""),"stopTalking"), 0
          ofs17:
@@ -3090,17 +3287,17 @@ package
          iffalse ofs19
          pop
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_nexted")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_nexted")
          pushbyte 0
          equals
          ofs19:
          iffalse ofs20
          getlocal0
          pushbyte 2
-         initproperty QName(PrivateNamespace(null,"#SnailNpc"),"_speed")
+         setproperty QName(PrivateNamespace(":SnailNpc"),"_speed")
          getlocal0
          pushbyte 1
-         initproperty QName(PrivateNamespace(null,"#SnailNpc"),"_nexted")
+         setproperty QName(PrivateNamespace(":SnailNpc"),"_nexted")
          getlocal0
          callpropvoid QName(PackageNamespace(""),"stopTalking"), 0
          jump ofs21
@@ -3122,17 +3319,17 @@ package
          iffalse ofs23
          pop
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_nexted")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_nexted")
          pushbyte 1
          equals
          ofs23:
          iffalse ofs21
          getlocal0
          pushbyte 1
-         initproperty QName(PrivateNamespace(null,"#SnailNpc"),"_speed")
+         setproperty QName(PrivateNamespace(":SnailNpc"),"_speed")
          getlocal0
          pushbyte 2
-         initproperty QName(PrivateNamespace(null,"#SnailNpc"),"_nexted")
+         setproperty QName(PrivateNamespace(":SnailNpc"),"_nexted")
          getlocal0
          callpropvoid QName(PackageNamespace(""),"stopTalking"), 0
          ofs21:
@@ -3140,7 +3337,7 @@ package
          jump ofs8
          ofs4:
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_snailNum")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_snailNum")
          setlocal3
          pushbyte 1
          getlocal3
@@ -3173,13 +3370,13 @@ package
          jump ofs25
          ofs29:
          jump ofs30
-         pushbyte 5
+         pushbyte -1
          jump ofs30
          ofs30:
-         pushbyte 5
+         pushbyte -1
          ofs25:
          kill 3
-         lookupswitch ofs21, [ofs5, ofs9, ofs12, ofs15, ofs18, ofs21]
+         lookupswitch ofs21, [ofs5, ofs9, ofs12, ofs15, ofs18]
          ofs8:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
@@ -3203,7 +3400,7 @@ package
          multiply
          add
          pushbyte 120
-         dup
+         pushbyte 120
          multiply
          ifngt ofs3
          getlocal0
@@ -3212,38 +3409,39 @@ package
          getlocal0
          callsupervoid QName(PackageNamespace(""),"update"), 0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_snailNum")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_snailNum")
          pushbyte 44
          equals
          dup
          iftrue ofs31
          pop
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_snailNum")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_snailNum")
          pushbyte 49
          equals
          ofs31:
          iffalse ofs32
-         findproperty QName(PackageNamespace(""),"facing")
+         findpropstrict QName(PackageNamespace(""),"facing")
          getlex QName(PackageNamespace(""),"RIGHT")
-         initproperty QName(PackageNamespace(""),"facing")
+         setproperty QName(PackageNamespace(""),"facing")
          jump ofs33
          ofs32:
-         findproperty QName(PackageNamespace(""),"facing")
+         findpropstrict QName(PackageNamespace(""),"facing")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"x")
-         lessthan
-         iffalse ofs34
+         ifnlt ofs34
+         findpropstrict QName(PackageNamespace(""),"uint")
          getlex QName(PackageNamespace(""),"LEFT")
-         convert_u
+         callproperty QName(PackageNamespace(""),"uint"), 1
          jump ofs35
          ofs34:
+         findpropstrict QName(PackageNamespace(""),"uint")
          getlex QName(PackageNamespace(""),"RIGHT")
-         convert_u
+         callproperty QName(PackageNamespace(""),"uint"), 1
          ofs35:
-         initproperty QName(PackageNamespace(""),"facing")
+         setproperty QName(PackageNamespace(""),"facing")
          ofs33:
          returnvoid
          end ; code
@@ -3257,14 +3455,14 @@ package
          flag OVERRIDE
          dispid 0
          method
-         name null
+         name "SnailNpc:kill"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 1
          localcount 1
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
@@ -3272,7 +3470,7 @@ package
          getlocal0
          callsupervoid QName(PackageNamespace(""),"kill"), 0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_talkOpen")
+         getproperty QName(PrivateNamespace(":SnailNpc"),"_talkOpen")
          iffalse ofs0
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"dialogue")

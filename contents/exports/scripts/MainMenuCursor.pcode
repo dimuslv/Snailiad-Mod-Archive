@@ -131,7 +131,9 @@ package
          pushstring "normal"
          pushbyte 0
          pushbyte 1
-         newarray 2
+         pushbyte 0
+         pushbyte 2
+         newarray 4
          pushbyte 3
          pushtrue
          callpropvoid QName(PackageNamespace(""),"addAnimation"), 4

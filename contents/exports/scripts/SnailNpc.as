@@ -31,6 +31,7 @@ package
       
       public function SnailNpc(param1:int, param2:int, param3:int)
       {
+         this._speed = 1;
          param1 -= IMG_OFS_X;
          param2 -= IMG_OFS_Y;
          super(param1,param2);
@@ -84,20 +85,20 @@ package
          var _loc8_:Boolean = false;
          var _loc9_:* = null;
          var _loc2_:int = this._snailNum % 4;
-         var _loc3_:String = "Snaily";
+         var _loc3_:String = "Leggy";
          if(param1._slugMode)
          {
-            _loc3_ = "Sluggy";
+            _loc3_ = "Leggy";
          }
-         var _loc4_:String = "Snaily Snail";
+         var _loc4_:String = "Leggy Snail";
          if(param1._slugMode)
          {
-            _loc4_ = "Sluggy Slug";
+            _loc4_ = "Leggy Snail";
          }
          var _loc5_:String = "snail";
          if(param1._slugMode)
          {
-            _loc5_ = "slug";
+            _loc5_ = "snail";
          }
          if(!this._talkOpen)
          {
@@ -110,7 +111,7 @@ package
                case 0:
                   if(!PlayState.player.hasWeapon(0))
                   {
-                     _loc9_ = "Hi, " + _loc3_ + "!!  Why don\'t you try\n" + "climbing up the walls?\n" + "    Just hold \"UP\" and \"RIGHT\".\n";
+                     _loc9_ = "Hi, " + _loc3_ + "!!  Why don\'t you try\n" + "flipping gravity?\n" + "  Just press \"JUMP\" in the air!\n";
                   }
                   else if(!PlayState.player.hasWeapon(1))
                   {
@@ -242,7 +243,7 @@ package
                   }
                   else
                   {
-                     _loc9_ = "Hey " + _loc3_ + ", how\'d you get up\n" + "here?  And how do I get down?\n";
+                     _loc9_ = "Hey " + _loc3_ + ", what\'s up?\n";
                   }
                   break;
                case 7:
@@ -292,7 +293,7 @@ package
                   }
                   break;
                case 10:
-                  _loc9_ = "Oh, " + _loc4_ + "!  My heart\n" + "will forever belong to you!\n" + "             <3\n";
+                  _loc9_ = "Oh, hi, " + _loc3_ + "!  How are you? If\n" + "you see Snaily Snail, could you\n" + "tell him I\'m looking for him?\n";
                   break;
                case 11:
                   if(!PlayState.player.hasWeapon(0))
@@ -338,7 +339,7 @@ package
                   }
                   else if(_loc6_ < 40 && !param1._slugMode)
                   {
-                     _loc9_ = "Hi, " + _loc3_ + "!  Let me give you a\n" + "little hint: A shell can fit\n" + "where a snail cannot!\n";
+                     _loc9_ = "Hi, " + _loc3_ + "!  Y\'know, I never\n" + "noticed how big and stylish\n" + "your shell is!!\n";
                   }
                   else if(_loc6_ < 40 && param1._slugMode)
                   {
@@ -604,7 +605,7 @@ package
                   _loc8_ = true;
                   break;
                case 36:
-                  _loc9_ = "Heya, " + _loc3_ + "!  Gravity shock\n" + "upgrades your gravity jump!\n" + "Pretty neat, huh?\n";
+                  _loc9_ = "Heya, " + _loc3_ + "!  Corkscrew Jump\n" + "upgrades your gravity jump!\n" + "Pretty neat, huh?\n";
                   _loc8_ = true;
                   break;
                case 37:

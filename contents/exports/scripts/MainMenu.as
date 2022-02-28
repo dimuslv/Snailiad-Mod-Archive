@@ -340,7 +340,7 @@ package
       {
          var _loc1_:FlxText = null;
          FlxG.mouse.show();
-         _loc1_ = new FlxText(0,FlxG.height / 2,FlxG.width,"CLICK TO PLAY!");
+         _loc1_ = new FlxText(0,FlxG.height / 2,FlxG.width,"\nCLICK TO PLAY!");
          _loc1_.font = Fonts.normal;
          _loc1_.size = 20;
          _loc1_.color = 16777215;
@@ -1128,7 +1128,7 @@ package
          this.addOption("NORMAL",PlayState.startNewGame,false);
          if(TESTING_ALL_MODES_AVAILABLE || this.hasHardMode)
          {
-            this.addOption("SLUG",this.justinSnailyAnim,false);
+            this.addOption("PAPER SHELL",this.justinSnailyAnim,false);
          }
          this.curOption = 3;
          this.centerMenu();
@@ -1301,7 +1301,7 @@ package
          }
          if(this.bestHardTime > 0)
          {
-            this.addOption("SLUG MODE     " + GameTimeDisplay.formatExact(this.bestHardTime),null,false);
+            this.addOption("PAPER MODE    " + GameTimeDisplay.formatExact(this.bestHardTime),null,false);
          }
          if(this.bestBossRushTime > 0)
          {
@@ -1373,7 +1373,7 @@ package
             this.endingGroup.destroy();
             this.endingGroup = null;
          }
-         var _loc1_:Array = ["REGULAR CLEAR","BOSS RUSH CLEAR","SLUG MODE CLEAR","CLEAR < 30 MIN","100% CLEAR"];
+         var _loc1_:Array = ["REGULAR CLEAR","BOSS RUSH CLEAR","PAPER MODE CLEAR","CLEAR < 30 MIN","100% CLEAR"];
          if(this.hasEnding[0])
          {
             this.addOption(_loc1_[0],this.showEnding1,false);

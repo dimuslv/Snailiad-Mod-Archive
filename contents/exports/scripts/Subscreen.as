@@ -160,7 +160,7 @@ package
             this.makeText(TEXT_HIGHJUMP,GROUP_ABILITY,1,"HIGH JUMP");
             this.makeText(TEXT_RAPIDFIRE,GROUP_ABILITY,2,"RAPID FIRE");
             this.makeText(TEXT_DEVASTATOR,GROUP_ABILITY,3,"DEVASTATOR");
-            this.makeText(TEXT_GRAVITYSHOCK,GROUP_ABILITY,4,"GRAVITY SHOCK");
+            this.makeText(TEXT_GRAVITYSHOCK,GROUP_ABILITY,4,"CORKSCREW JUMP");
          }
          this.weaponText = new Array();
          var _loc1_:int = 0;

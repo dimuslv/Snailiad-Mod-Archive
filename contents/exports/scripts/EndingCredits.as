@@ -100,9 +100,7 @@ package
          this.createY += 30;
          this.addEnemy(0,EndingEnemy.TYPE_GIGA_SNAIL,"GIGA SNAIL");
          this.createY += 30;
-         this.addEnemy(0,EndingEnemy.TYPE_SNAILY_SNAIL,"SNAILY SNAIL");
-         this.createY += 30;
-         this.addEnemy(0,EndingEnemy.TYPE_SLUGGY_SLUG,"SLUGGY SLUG");
+         this.addEnemy(0,EndingEnemy.TYPE_SNAILY_SNAIL,"LEGGY SNAIL");
          this.createY += 30;
          this.addEnemy(0,EndingEnemy.TYPE_TARSH,"NEWSTARSHIPSMELL\n(TESTED SNAILY GAME EXTENSIVELY!!)");
          this.createY += 10;
@@ -111,6 +109,8 @@ package
          this.addEnemy(0,EndingEnemy.TYPE_ADAMATOMIC,"ADAMATOMIC\n(CREATED FLIXEL, WITHOUT WHICH\nSNAILY GAME WOULD NOT EXIST!)");
          this.createY += 10;
          this.addEnemy(0,EndingEnemy.TYPE_AURIPLANE,"AURIPLANE\n(AUTHOR ARTIST COMPOSER ETC ETC)");
+         this.createY += 10;
+         this.addEnemy(0,EndingEnemy.TYPE_EPSILON,"EPSILON\n(MODDED SNAILY GAME TO PLAY\nAS THE FUNNY TURTLE)");
          this.createY += 70;
          this.addEnemy(0,EndingEnemy.TYPE_NONE,"AND YOU\n\n\n" + "BECAUSE SERIOUSLY, WHY NOT\n\n\n" + "ALL THE OTHER GAMES\n" + "PUT \"AND YOU\" IN THE CREDITS\n" + "SO I FIGURE, \"AND YOU\" MUST BE\n" + "SOMEONE PRETTY COOL\n\n\n" + "THANKS, AND YOU!!");
          this.createY += 40;
@@ -139,7 +139,7 @@ package
          _loc5_.size = 20;
          _loc5_.color = 16777215;
          _loc5_.outline = true;
-         _loc5_.outlineColor = 4278190080;
+         _loc5_.outlineColor = -16777216;
          _loc5_.alignment = "center";
          _loc5_.text = param3;
          _loc5_.scrollFactor.x = _loc5_.scrollFactor.y = 0;

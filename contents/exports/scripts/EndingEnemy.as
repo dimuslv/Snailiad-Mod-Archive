@@ -134,6 +134,8 @@ package
       public static const TYPE_AURIPLANE:int = 61;
       
       public static const TYPE_THE_END:int = 62;
+      
+      public static const TYPE_EPSILON:int = 63;
        
       
       private var _hand:Boolean = false;
@@ -402,7 +404,7 @@ package
                break;
             case TYPE_SNAILY_SNAIL:
                loadGraphic(Art.SnailySnail,true,true,32,32);
-               addAnimation("normal",[0,1],3,true);
+               addAnimation("normal",[0,1,0,2],3,true);
                break;
             case TYPE_SLUGGY_SLUG:
                loadGraphic(Art.SnailySnail,true,true,32,32);
@@ -427,6 +429,10 @@ package
             case TYPE_THE_END:
                loadGraphic(Art.TheEnd,true,true,194,122);
                addAnimation("normal",[0]);
+               break;
+            case TYPE_EPSILON:
+               loadGraphic(Art.PixelPeople,true,true,18,32);
+               addAnimation("normal",[4]);
          }
          play("normal");
          x = FlxG.width / 2 - width / 2 + param1;
