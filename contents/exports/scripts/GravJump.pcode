@@ -242,22 +242,10 @@ package
          getproperty QName(PackageNamespace(""),"player")
          callpropvoid QName(PackageNamespace(""),"addGravityJump"), 0
          getlex QName(PackageNamespace(""),"PlayState")
-         getproperty QName(PackageNamespace(""),"player")
-         getproperty QName(PackageNamespace(""),"_slugMode")
-         iffalse ofs0
-         getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"hud")
          getproperty QName(PackageNamespace(""),"itemName")
-         pushstring "GRAVITY SLUG"
+         pushstring "GRAVITY JUMP"
          callpropvoid QName(PackageNamespace(""),"setItem"), 1
-         jump ofs1
-         ofs0:
-         getlex QName(PackageNamespace(""),"PlayState")
-         getproperty QName(PackageNamespace(""),"hud")
-         getproperty QName(PackageNamespace(""),"itemName")
-         pushstring "GRAVITY SNAIL"
-         callpropvoid QName(PackageNamespace(""),"setItem"), 1
-         ofs1:
          getlocal0
          getlocal1
          callsupervoid QName(PackageNamespace(""),"touch"), 1

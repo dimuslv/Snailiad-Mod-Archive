@@ -45,6 +45,8 @@ package
       
       private var _speed:int = 0;
       
+      private var _seesPlayer:Boolean = false;
+      
       public function EnemyMoth(param1:int, param2:int)
       {
          super(param1,param2,MAX_HP,DEFENSE,OFFENSE);
@@ -112,43 +114,101 @@ package
          y += this._moveDir[1] * this._speed;
       }
       
+      public function findWalls() : void
+      {
+         var testingCoord:* = 0;
+         var foundWall:* = false;
+         if(this._facingDir == 1 || this._facingDir == 3)
+         {
+            testingCoord = PlayState.player.x;
+         }
+         else
+         {
+            testingCoord = PlayState.player.y;
+         }
+         switch(this._facingDir)
+         {
+            case 1:
+               while(testingCoord < x)
+               {
+                  if(PlayState.worldMap.enemySolidAt(testingCoord,y))
+                  {
+                     foundWall = true;
+                  }
+                  testingCoord += 16;
+               }
+               break;
+            case 2:
+               while(testingCoord < y)
+               {
+                  if(PlayState.worldMap.enemySolidAt(x,testingCoord))
+                  {
+                     foundWall = true;
+                  }
+                  testingCoord += 16;
+               }
+               break;
+            case 3:
+               while(testingCoord > x)
+               {
+                  if(PlayState.worldMap.enemySolidAt(testingCoord,y))
+                  {
+                     foundWall = true;
+                  }
+                  testingCoord -= 16;
+               }
+               break;
+            case 4:
+               while(testingCoord > y)
+               {
+                  if(PlayState.worldMap.enemySolidAt(x,testingCoord))
+                  {
+                     foundWall = true;
+                  }
+                  testingCoord -= 16;
+               }
+         }
+         if(!foundWall)
+         {
+            this._seesPlayer = true;
+         }
+      }
+      
       override public function update() : void
       {
-         var seesPlayer:* = undefined;
          if(PlayState.realState != PlayState.STATE_GAME)
          {
             return;
          }
          if(onScreen() && !PlayState.player.dead)
          {
-            seesPlayer = false;
             switch(this._facingDir)
             {
                case 1:
-                  if(Math.abs(PlayState.player.y - y) < CHECK_WIDTH)
+                  if(Math.abs(PlayState.player.y - y) < CHECK_WIDTH && PlayState.player.x - x < 0)
                   {
-                     seesPlayer = true;
+                     this.findWalls();
                   }
                   break;
                case 2:
-                  if(Math.abs(PlayState.player.x - x) < CHECK_WIDTH)
+                  if(Math.abs(PlayState.player.x - x) < CHECK_WIDTH && PlayState.player.y - y < 0)
                   {
-                     seesPlayer = true;
+                     this.findWalls();
                   }
                   break;
                case 3:
-                  if(Math.abs(PlayState.player.y - y) < CHECK_WIDTH)
+                  if(Math.abs(PlayState.player.y - y) < CHECK_WIDTH && PlayState.player.x - x > 0)
                   {
-                     seesPlayer = true;
+                     this.findWalls();
                   }
                   break;
                case 4:
-                  if(Math.abs(PlayState.player.x - x) < CHECK_WIDTH)
+                  if(Math.abs(PlayState.player.x - x) < CHECK_WIDTH && PlayState.player.y - y > 0)
                   {
-                     seesPlayer = true;
+                     this.findWalls();
                   }
             }
-            if(seesPlayer && !this._isAttacking)
+            if(this._seesPlayer && !this._isAttacking)
             {
                play("attack" + this._facingDir);
                this._isAttacking = true;

@@ -58,14 +58,7 @@ package
       override public function touch(param1:Player) : void
       {
          PlayState.player.addGravityJump();
-         if(PlayState.player._slugMode)
-         {
-            PlayState.hud.itemName.setItem("GRAVITY SLUG");
-         }
-         else
-         {
-            PlayState.hud.itemName.setItem("GRAVITY SNAIL");
-         }
+         PlayState.hud.itemName.setItem("GRAVITY JUMP");
          super.touch(param1);
       }
       

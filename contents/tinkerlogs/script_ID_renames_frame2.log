@@ -291,7 +291,7 @@ Class IDs:
 289: Star -
 290: WorldMap_WorldMapSkyTxt 0
 291: EnemyKurage -
-292: SuperUniqueItem -
+292: SuperUniqueItem 0
 293: GravJump 0
 294: EnemyBat -
 295: WorldMap_WorldMapFgTxt 0
@@ -854,7 +854,7 @@ PrivateNamespace IDs:
 80: Boss4Bullet4
 81: DamageNumber
 82: EnemyKurage
-83: SuperUniqueItem
+83: 
 84: 
 85: EnemyBat
 86: 
@@ -1212,7 +1212,7 @@ PrivateNamespace IDs:
 438: CheckBool/1
 439: Cipher/1
 440: Boss4Bullet6/1
-441: SuperUniqueItem/1
+441: 
 442: 
 443: Boss4/1
 444: 

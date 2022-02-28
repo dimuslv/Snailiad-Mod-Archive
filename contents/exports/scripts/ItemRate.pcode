@@ -226,7 +226,7 @@ package
          callpropvoid QName(PackageNamespace(""),"unlockTreasureHunter"), 0
          findproperty QName(PackageNamespace(""),"text")
          getlex QName(PackageNamespace(""),"text")
-         pushstring "\nFIND THE SHRINE OF IRIS!"
+         pushstring "\nGET TO THE SHRINE OF IRIS!"
          add
          initproperty QName(PackageNamespace(""),"text")
          findproperty QName(PrivateNamespace(null,"#ItemRate"),"_fadeOutStart")

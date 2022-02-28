@@ -1819,27 +1819,27 @@ package
                case 9:
                   Sfx.playMenuBeep1();
                   this.changeOption(2,"ENGAGE",null);
-                  this.changeOption(3,"MSM---",null);
+                  this.changeOption(3,"MSN---",null);
                   break;
                case 10:
                   Sfx.playMenuBeep1();
                   this.changeOption(2,"ENGAGE",null);
-                  this.changeOption(3,"MSMO--",null);
+                  this.changeOption(3,"MSNA--",null);
                   break;
                case 11:
                   Sfx.playMenuBeep1();
                   this.changeOption(2,"ENGAGE",null);
-                  this.changeOption(3,"MSMOF-",null);
+                  this.changeOption(3,"MSNAI-",null);
                   break;
                case 12:
                   Sfx.playMenuBeep1();
                   this.changeOption(2,"ENGAGE",null);
-                  this.changeOption(3,"MSMOFO",null);
+                  this.changeOption(3,"MSNAIL",null);
                   break;
                case 13:
                   Sfx.playMenuBeep2();
                   this.changeOption(2,"ENGAGE",null);
-                  this.changeOption(3,"MSMOFO",null);
+                  this.changeOption(3,"MSNAIL",null);
                   PlayState.startHardNewGame();
             }
          }

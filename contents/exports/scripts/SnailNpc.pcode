@@ -855,7 +855,7 @@ package
          jump ofs12
          ofs41:
          label
-         pushstring "I feel privilaged, "
+         pushstring "I feel privileged, "
          getlocal3
          add
          pushstring "! My\n"
@@ -2131,18 +2131,18 @@ package
          add
          pushstring ", you did it!  Sun Snail\n"
          add
-         pushstring "has returned to us!  I must speak\n"
+         pushstring "has returned to us!  Now, I\n"
          add
-         pushstring "with him at once...\n"
+         pushstring "must speak with him at once...\n"
          add
          coerce_a
          setlocal 9
          jump ofs154
          ofs155:
-         pushstring "Moon Snail is weakened, yet\n"
-         pushstring "yet I still feel the binding\n"
+         pushstring "Moon Snail is weakened, yet I\n"
+         pushstring "still feel the binding claws\n"
          add
-         pushstring "claws of corruption around him...\n"
+         pushstring "of corruption around him...\n"
          add
          coerce_a
          setlocal 9

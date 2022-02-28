@@ -10306,36 +10306,43 @@ package
          pushscope
          debug 1, "param1", 0, 0
          getlocal0
+         getproperty QName(PrivateNamespace(":Player"),"_hasColdFoot")
+         getproperty QName(PackageNamespace(""),"value")
+         dup
+         iffalse ofs0
+         pop
+         getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_hasArmor")
          getproperty QName(PackageNamespace(""),"value")
-         iffalse ofs0
-         getlocal0
-         pushstring "snail4_"
-         setproperty QName(PrivateNamespace(":Player"),"_snailTypePrefix")
-         jump ofs1
          ofs0:
-         getlocal0
-         getproperty QName(PrivateNamespace(":Player"),"_hasGravityJump")
-         getproperty QName(PackageNamespace(""),"value")
-         iffalse ofs2
+         iffalse ofs1
          getlocal0
          pushstring "snail3_"
          setproperty QName(PrivateNamespace(":Player"),"_snailTypePrefix")
-         jump ofs1
-         ofs2:
+         jump ofs2
+         ofs1:
          getlocal0
-         getproperty QName(PrivateNamespace(":Player"),"_hasColdFoot")
+         getproperty QName(PrivateNamespace(":Player"),"_hasArmor")
          getproperty QName(PackageNamespace(""),"value")
          iffalse ofs3
          getlocal0
+         pushstring "snail4_"
+         setproperty QName(PrivateNamespace(":Player"),"_snailTypePrefix")
+         jump ofs2
+         ofs3:
+         getlocal0
+         getproperty QName(PrivateNamespace(":Player"),"_hasColdFoot")
+         getproperty QName(PackageNamespace(""),"value")
+         iffalse ofs4
+         getlocal0
          pushstring "snail2_"
          setproperty QName(PrivateNamespace(":Player"),"_snailTypePrefix")
-         jump ofs1
-         ofs3:
+         jump ofs2
+         ofs4:
          getlocal0
          pushstring "snail1_"
          setproperty QName(PrivateNamespace(":Player"),"_snailTypePrefix")
-         ofs1:
+         ofs2:
          findpropstrict QName(PackageNamespace(""),"play")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_snailTypePrefix")

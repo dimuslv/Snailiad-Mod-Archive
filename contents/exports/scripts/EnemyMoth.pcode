@@ -148,6 +148,8 @@ package
       
       private var _speed:int = 0;
       
+      private var _seesPlayer:Boolean = false;
+      
       public function EnemyMoth(param1:int, param2:int)
       {
          method
@@ -462,7 +464,7 @@ package
          
          body
          maxstack 4
-         localcount 3
+         localcount 1
          initscopedepth 10
          maxscopedepth 11
          
@@ -474,16 +476,10 @@ package
          getlex QName(PrivateNamespace(":EnemyMoth"),"MAX_SPEED")
          ifnlt ofs0
          getlocal0
-         dup
-         setlocal1
+         getlocal0
          getproperty QName(PrivateNamespace(":EnemyMoth"),"_speed")
-         increment_i
-         setlocal2
-         getlocal1
-         getlocal2
+         increment
          setproperty QName(PrivateNamespace(":EnemyMoth"),"_speed")
-         kill 2
-         kill 1
          ofs0:
          findpropstrict QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"x")
@@ -513,6 +509,211 @@ package
          end ; method
       }
       
+      public function findWalls() : void
+      {
+         trait method QName(PackageNamespace(""),"findWalls")
+         dispid 0
+         method
+         name "EnemyMoth:findWalls"
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 4
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         debug 1, "testingCoord", 0, 118
+         debug 1, "foundWall", 1, 119
+         pushbyte 0
+         coerce_a
+         setlocal1
+         pushfalse
+         coerce_a
+         setlocal2
+         getlocal0
+         getproperty QName(PrivateNamespace(":EnemyMoth"),"_facingDir")
+         pushbyte 1
+         equals
+         dup
+         iftrue ofs0
+         pop
+         getlocal0
+         getproperty QName(PrivateNamespace(":EnemyMoth"),"_facingDir")
+         pushbyte 3
+         equals
+         ofs0:
+         iffalse ofs1
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"player")
+         getproperty QName(PackageNamespace(""),"x")
+         coerce_a
+         setlocal1
+         jump ofs2
+         ofs1:
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"player")
+         getproperty QName(PackageNamespace(""),"y")
+         coerce_a
+         setlocal1
+         ofs2:
+         jump ofs3
+         ofs4:
+         label
+         jump ofs5
+         ofs6:
+         label
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldMap")
+         getlocal1
+         getlex QName(PackageNamespace(""),"y")
+         callproperty QName(PackageNamespace(""),"enemySolidAt"), 2
+         iffalse ofs7
+         pushtrue
+         coerce_a
+         setlocal2
+         ofs7:
+         getlocal1
+         pushbyte 16
+         add
+         coerce_a
+         setlocal1
+         ofs5:
+         getlocal1
+         getlex QName(PackageNamespace(""),"x")
+         iflt ofs6
+         jump ofs8
+         ofs9:
+         label
+         jump ofs10
+         ofs11:
+         label
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldMap")
+         getlex QName(PackageNamespace(""),"x")
+         getlocal1
+         callproperty QName(PackageNamespace(""),"enemySolidAt"), 2
+         iffalse ofs12
+         pushtrue
+         coerce_a
+         setlocal2
+         ofs12:
+         getlocal1
+         pushbyte 16
+         add
+         coerce_a
+         setlocal1
+         ofs10:
+         getlocal1
+         getlex QName(PackageNamespace(""),"y")
+         iflt ofs11
+         jump ofs8
+         ofs13:
+         label
+         jump ofs14
+         ofs15:
+         label
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldMap")
+         getlocal1
+         getlex QName(PackageNamespace(""),"y")
+         callproperty QName(PackageNamespace(""),"enemySolidAt"), 2
+         iffalse ofs16
+         pushtrue
+         coerce_a
+         setlocal2
+         ofs16:
+         getlocal1
+         pushbyte 16
+         subtract
+         coerce_a
+         setlocal1
+         ofs14:
+         getlocal1
+         getlex QName(PackageNamespace(""),"x")
+         ifgt ofs15
+         jump ofs8
+         ofs17:
+         label
+         jump ofs18
+         ofs19:
+         label
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldMap")
+         getlex QName(PackageNamespace(""),"x")
+         getlocal1
+         callproperty QName(PackageNamespace(""),"enemySolidAt"), 2
+         iffalse ofs20
+         pushtrue
+         coerce_a
+         setlocal2
+         ofs20:
+         getlocal1
+         pushbyte 16
+         subtract
+         coerce_a
+         setlocal1
+         ofs18:
+         getlocal1
+         getlex QName(PackageNamespace(""),"y")
+         ifgt ofs19
+         jump ofs8
+         ofs21:
+         label
+         jump ofs8
+         ofs3:
+         getlocal0
+         getproperty QName(PrivateNamespace(":EnemyMoth"),"_facingDir")
+         setlocal3
+         pushbyte 1
+         getlocal3
+         ifstrictne ofs22
+         pushbyte 0
+         jump ofs23
+         ofs22:
+         pushbyte 2
+         getlocal3
+         ifstrictne ofs24
+         pushbyte 1
+         jump ofs23
+         ofs24:
+         pushbyte 3
+         getlocal3
+         ifstrictne ofs25
+         pushbyte 2
+         jump ofs23
+         ofs25:
+         pushbyte 4
+         getlocal3
+         ifstrictne ofs26
+         pushbyte 3
+         jump ofs23
+         ofs26:
+         jump ofs27
+         pushbyte -1
+         jump ofs27
+         ofs27:
+         pushbyte -1
+         ofs23:
+         kill 3
+         lookupswitch ofs21, [ofs4, ofs9, ofs13, ofs17]
+         ofs8:
+         getlocal2
+         not
+         iffalse ofs28
+         getlocal0
+         pushtrue
+         setproperty QName(PrivateNamespace(":EnemyMoth"),"_seesPlayer")
+         ofs28:
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
       override public function update() : void
       {
          trait method QName(PackageNamespace(""),"update")
@@ -524,17 +725,13 @@ package
          
          body
          maxstack 4
-         localcount 3
+         localcount 2
          initscopedepth 10
          maxscopedepth 11
          
          code
          getlocal0
          pushscope
-         debug 1, "seesPlayer", 0, 116
-         pushundefined
-         coerce_a
-         setlocal1
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"realState")
          getlex QName(PackageNamespace(""),"PlayState")
@@ -554,9 +751,6 @@ package
          not
          ofs1:
          iffalse ofs2
-         pushfalse
-         coerce_a
-         setlocal1
          jump ofs3
          ofs4:
          label
@@ -568,13 +762,24 @@ package
          subtract
          callproperty Multiname("abs",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":EnemyMoth"),ProtectedNamespace(":EnemyMoth"),StaticProtectedNs(":EnemyMoth"),PrivateNamespace("EnemyMoth.as$335")]), 1
          getlex QName(PrivateNamespace(":EnemyMoth"),"CHECK_WIDTH")
-         ifnlt ofs5
-         pushtrue
-         coerce_a
-         setlocal1
+         lessthan
+         dup
+         iffalse ofs5
+         pop
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"player")
+         getproperty QName(PackageNamespace(""),"x")
+         getlex QName(PackageNamespace(""),"x")
+         subtract
+         pushbyte 0
+         lessthan
          ofs5:
-         jump ofs6
-         ofs7:
+         iffalse ofs6
+         getlocal0
+         callpropvoid QName(PackageNamespace(""),"findWalls"), 0
+         ofs6:
+         jump ofs7
+         ofs8:
          label
          getlex QName(PackageNamespace(""),"Math")
          getlex QName(PackageNamespace(""),"PlayState")
@@ -584,13 +789,24 @@ package
          subtract
          callproperty Multiname("abs",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":EnemyMoth"),ProtectedNamespace(":EnemyMoth"),StaticProtectedNs(":EnemyMoth"),PrivateNamespace("EnemyMoth.as$335")]), 1
          getlex QName(PrivateNamespace(":EnemyMoth"),"CHECK_WIDTH")
-         ifnlt ofs8
-         pushtrue
-         coerce_a
-         setlocal1
-         ofs8:
-         jump ofs6
+         lessthan
+         dup
+         iffalse ofs9
+         pop
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"player")
+         getproperty QName(PackageNamespace(""),"y")
+         getlex QName(PackageNamespace(""),"y")
+         subtract
+         pushbyte 0
+         lessthan
          ofs9:
+         iffalse ofs10
+         getlocal0
+         callpropvoid QName(PackageNamespace(""),"findWalls"), 0
+         ofs10:
+         jump ofs7
+         ofs11:
          label
          getlex QName(PackageNamespace(""),"Math")
          getlex QName(PackageNamespace(""),"PlayState")
@@ -600,13 +816,24 @@ package
          subtract
          callproperty Multiname("abs",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":EnemyMoth"),ProtectedNamespace(":EnemyMoth"),StaticProtectedNs(":EnemyMoth"),PrivateNamespace("EnemyMoth.as$335")]), 1
          getlex QName(PrivateNamespace(":EnemyMoth"),"CHECK_WIDTH")
-         ifnlt ofs10
-         pushtrue
-         coerce_a
-         setlocal1
-         ofs10:
-         jump ofs6
-         ofs11:
+         lessthan
+         dup
+         iffalse ofs12
+         pop
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"player")
+         getproperty QName(PackageNamespace(""),"x")
+         getlex QName(PackageNamespace(""),"x")
+         subtract
+         pushbyte 0
+         greaterthan
+         ofs12:
+         iffalse ofs13
+         getlocal0
+         callpropvoid QName(PackageNamespace(""),"findWalls"), 0
+         ofs13:
+         jump ofs7
+         ofs14:
          label
          getlex QName(PackageNamespace(""),"Math")
          getlex QName(PackageNamespace(""),"PlayState")
@@ -616,59 +843,72 @@ package
          subtract
          callproperty Multiname("abs",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":EnemyMoth"),ProtectedNamespace(":EnemyMoth"),StaticProtectedNs(":EnemyMoth"),PrivateNamespace("EnemyMoth.as$335")]), 1
          getlex QName(PrivateNamespace(":EnemyMoth"),"CHECK_WIDTH")
-         ifnlt ofs12
-         pushtrue
-         coerce_a
-         setlocal1
-         ofs12:
+         lessthan
+         dup
+         iffalse ofs15
+         pop
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"player")
+         getproperty QName(PackageNamespace(""),"y")
+         getlex QName(PackageNamespace(""),"y")
+         subtract
+         pushbyte 0
+         greaterthan
+         ofs15:
+         iffalse ofs16
+         getlocal0
+         callpropvoid QName(PackageNamespace(""),"findWalls"), 0
+         ofs16:
+         jump ofs7
+         ofs17:
          label
-         jump ofs6
+         jump ofs7
          ofs3:
          getlocal0
          getproperty QName(PrivateNamespace(":EnemyMoth"),"_facingDir")
-         setlocal2
+         setlocal1
          pushbyte 1
-         getlocal2
-         ifstrictne ofs13
-         pushbyte 0
-         jump ofs14
-         ofs13:
-         pushbyte 2
-         getlocal2
-         ifstrictne ofs15
-         pushbyte 1
-         jump ofs14
-         ofs15:
-         pushbyte 3
-         getlocal2
-         ifstrictne ofs16
-         pushbyte 2
-         jump ofs14
-         ofs16:
-         pushbyte 4
-         getlocal2
-         ifstrictne ofs17
-         pushbyte 3
-         jump ofs14
-         ofs17:
-         jump ofs18
-         pushbyte -1
-         jump ofs18
-         ofs18:
-         pushbyte -1
-         ofs14:
-         kill 2
-         lookupswitch ofs12, [ofs4, ofs7, ofs9, ofs11]
-         ofs6:
          getlocal1
+         ifstrictne ofs18
+         pushbyte 0
+         jump ofs19
+         ofs18:
+         pushbyte 2
+         getlocal1
+         ifstrictne ofs20
+         pushbyte 1
+         jump ofs19
+         ofs20:
+         pushbyte 3
+         getlocal1
+         ifstrictne ofs21
+         pushbyte 2
+         jump ofs19
+         ofs21:
+         pushbyte 4
+         getlocal1
+         ifstrictne ofs22
+         pushbyte 3
+         jump ofs19
+         ofs22:
+         jump ofs23
+         pushbyte -1
+         jump ofs23
+         ofs23:
+         pushbyte -1
+         ofs19:
+         kill 1
+         lookupswitch ofs17, [ofs4, ofs8, ofs11, ofs14]
+         ofs7:
+         getlocal0
+         getproperty QName(PrivateNamespace(":EnemyMoth"),"_seesPlayer")
          dup
-         convert_b
-         iffalse ofs19
+         iffalse ofs24
          pop
          getlocal0
          getproperty QName(PrivateNamespace(":EnemyMoth"),"_isAttacking")
          not
-         ofs19:
+         ofs24:
          iffalse ofs2
          findpropstrict QName(PackageNamespace(""),"play")
          pushstring "attack"
@@ -684,10 +924,10 @@ package
          ofs2:
          getlocal0
          getproperty QName(PrivateNamespace(":EnemyMoth"),"_isAttacking")
-         iffalse ofs20
+         iffalse ofs25
          getlocal0
          callpropvoid QName(PackageNamespace(""),"updatePosition"), 0
-         ofs20:
+         ofs25:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"worldMap")
          getlex QName(PackageNamespace(""),"x")
@@ -697,7 +937,7 @@ package
          pushbyte 8
          add
          callproperty QName(PackageNamespace(""),"enemySolidAt"), 2
-         iffalse ofs21
+         iffalse ofs26
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"explosionPool")
          getlex QName(PackageNamespace(""),"x")
@@ -712,7 +952,7 @@ package
          callpropvoid QName(PackageNamespace(""),"playEnemyKilled"), 0
          findpropstrict QName(PackageNamespace(""),"kill")
          callpropvoid QName(PackageNamespace(""),"kill"), 0
-         ofs21:
+         ofs26:
          getlocal0
          callsupervoid QName(PackageNamespace(""),"update"), 0
          returnvoid

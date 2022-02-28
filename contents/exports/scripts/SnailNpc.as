@@ -218,7 +218,7 @@ package
                   }
                   break;
                case 4:
-                  _loc9_ = "I feel privilaged, " + _loc3_ + "! My\n" + "house is the only one this\n" + "side of town with some grass!!\n";
+                  _loc9_ = "I feel privileged, " + _loc3_ + "! My\n" + "house is the only one this\n" + "side of town with some grass!!\n";
                   break;
                case 5:
                   if(_loc6_ < 100)
@@ -571,11 +571,11 @@ package
                   }
                   else if(_loc7_ == 30)
                   {
-                     _loc9_ = "" + _loc3_ + ", you did it!  Sun Snail\n" + "has returned to us!  I must speak\n" + "with him at once...\n";
+                     _loc9_ = "" + _loc3_ + ", you did it!  Sun Snail\n" + "has returned to us!  Now, I\n" + "must speak with him at once...\n";
                   }
                   else
                   {
-                     _loc9_ = "Moon Snail is weakened, yet\n" + "yet I still feel the binding\n" + "claws of corruption around him...\n";
+                     _loc9_ = "Moon Snail is weakened, yet I\n" + "still feel the binding claws\n" + "of corruption around him...\n";
                   }
                   break;
                case 40:

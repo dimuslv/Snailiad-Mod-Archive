@@ -485,7 +485,7 @@ package
          getlex QName(PrivateNamespace(null,"#Subscreen"),"TEXT_GRAVITY")
          getlex QName(PrivateNamespace(null,"#Subscreen"),"GROUP_SHELL")
          pushbyte 2
-         pushstring "GRAVITY SLUG"
+         pushstring "GRAVITY JUMP"
          callpropvoid QName(PrivateNamespace(null,"#Subscreen"),"makeText"), 4
          getlocal0
          getlex QName(PrivateNamespace(null,"#Subscreen"),"TEXT_ARMOR")
@@ -541,7 +541,7 @@ package
          getlex QName(PrivateNamespace(null,"#Subscreen"),"TEXT_GRAVITY")
          getlex QName(PrivateNamespace(null,"#Subscreen"),"GROUP_SHELL")
          pushbyte 2
-         pushstring "GRAVITY SHELL"
+         pushstring "GRAVITY JUMP"
          callpropvoid QName(PrivateNamespace(null,"#Subscreen"),"makeText"), 4
          getlocal0
          getlex QName(PrivateNamespace(null,"#Subscreen"),"TEXT_ARMOR")

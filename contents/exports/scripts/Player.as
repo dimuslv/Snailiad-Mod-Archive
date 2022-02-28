@@ -2277,13 +2277,13 @@ package
       
       public function playAnim(param1:String) : void
       {
-         if(this._hasArmor.value)
-         {
-            this._snailTypePrefix = "snail4_";
-         }
-         else if(this._hasGravityJump.value)
+         if(this._hasColdFoot.value && this._hasArmor.value)
          {
             this._snailTypePrefix = "snail3_";
+         }
+         else if(this._hasArmor.value)
+         {
+            this._snailTypePrefix = "snail4_";
          }
          else if(this._hasColdFoot.value)
          {

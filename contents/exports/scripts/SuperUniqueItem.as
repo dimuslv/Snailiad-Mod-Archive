@@ -122,6 +122,26 @@ package
                else
                {
                   PlayState.player.paralyze(false);
+                  switch(PlayState.area)
+                  {
+                     case 0:
+                        Music.playTown();
+                        break;
+                     case 1:
+                        Music.playArea1();
+                        break;
+                     case 2:
+                        Music.playArea2();
+                        break;
+                     case 3:
+                        Music.playArea3();
+                        break;
+                     case 4:
+                        Music.playArea4();
+                        break;
+                     case 5:
+                        Music.playIsis();
+                  }
                   kill();
                }
             }
