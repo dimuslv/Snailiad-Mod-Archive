@@ -136,6 +136,8 @@ package
          dup
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"width")
+         pushbyte 35
+         subtract
          constructprop QName(PackageNamespace("org.flixel"),"FlxText"), 3
          initproperty QName(PrivateNamespace(null,"#Dialogue"),"_msg")
          getlocal0

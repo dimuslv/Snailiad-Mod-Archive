@@ -23,13 +23,13 @@
    popscope
    popscope
    initproperty QName(PackageNamespace("mx.managers"),"CursorManagerImpl")
-   findpropstrict Multiname("CursorQueueItem",[PrivateNamespace(null,"#CursorManagerImpl/1")])
+   findpropstrict Multiname("CursorQueueItem",[PrivateNamespace(null,"#WorldMap/1")])
    getlex QName(PackageNamespace(""),"Object")
    pushscope
    getlex QName(PackageNamespace(""),"Object")
    newclass #CursorQueueItem
    popscope
-   initproperty QName(PrivateNamespace(null,"#CursorManagerImpl/1"),"CursorQueueItem")
+   initproperty QName(PrivateNamespace(null,"#WorldMap/1"),"CursorQueueItem")
    returnvoid
    end ; code
    end ; body
@@ -193,7 +193,7 @@ package mx.managers
          getlex QName(PackageNamespace("mx.managers"),"SystemManagerGlobals")
          getproperty QName(PackageNamespace(""),"topLevelSystemManagers")
          pushbyte 0
-         getproperty MultinameL([Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#CursorManagerImpl/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getproperty MultinameL([Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#WorldMap/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
          getlex QName(PackageNamespace("mx.managers"),"ISystemManager")
          astypelate
          initproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"systemManager")
@@ -211,7 +211,7 @@ package mx.managers
          label
          getlex QName(PackageNamespace(""),"mixins")
          getlocal3
-         getproperty MultinameL([Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#CursorManagerImpl/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getproperty MultinameL([Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#WorldMap/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
          getlocal0
          construct 1
          pop
@@ -597,9 +597,9 @@ package mx.managers
          kill 8
          convert_i
          setlocal 5
-         findpropstrict QName(PrivateNamespace(null,"#CursorManagerImpl/1"),"CursorQueueItem")
-         constructprop QName(PrivateNamespace(null,"#CursorManagerImpl/1"),"CursorQueueItem"), 0
-         coerce QName(PrivateNamespace(null,"#CursorManagerImpl/1"),"CursorQueueItem")
+         findpropstrict QName(PrivateNamespace(null,"#WorldMap/1"),"CursorQueueItem")
+         constructprop QName(PrivateNamespace(null,"#WorldMap/1"),"CursorQueueItem"), 0
+         coerce QName(PrivateNamespace(null,"#WorldMap/1"),"CursorQueueItem")
          dup
          setlocal 6
          getlocal 5
@@ -628,7 +628,7 @@ package mx.managers
          getlocal 6
          getlex QName(PackageNamespace("mx.core"),"FlexGlobals")
          getproperty QName(PackageNamespace(""),"topLevelApplication")
-         getproperty Multiname("systemManager",[Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#CursorManagerImpl/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getproperty Multiname("systemManager",[Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#WorldMap/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
          setproperty QName(PackageNamespace(""),"systemManager")
          ofs2:
          getlocal0
@@ -655,8 +655,8 @@ package mx.managers
          dispid 0
          method
          name null
-         param QName(PrivateNamespace(null,"#CursorManagerImpl/1"),"CursorQueueItem")
-         param QName(PrivateNamespace(null,"#CursorManagerImpl/1"),"CursorQueueItem")
+         param QName(PrivateNamespace(null,"#WorldMap/1"),"CursorQueueItem")
+         param QName(PrivateNamespace(null,"#WorldMap/1"),"CursorQueueItem")
          returns QName(PackageNamespace(""),"int")
          
          body
@@ -713,7 +713,7 @@ package mx.managers
          coerce QName(PackageNamespace(""),"Object")
          setlocal2
          pushnull
-         coerce QName(PrivateNamespace(null,"#CursorManagerImpl/1"),"CursorQueueItem")
+         coerce QName(PrivateNamespace(null,"#WorldMap/1"),"CursorQueueItem")
          setlocal3
          findpropstrict QName(PackageNamespace(""),"hasEventListener")
          pushstring "removeCursor"
@@ -747,8 +747,8 @@ package mx.managers
          getlocal0
          getproperty QName(PrivateNamespace(null,"#CursorManagerImpl"),"cursorList")
          getlocal2
-         getproperty MultinameL([Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#CursorManagerImpl/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
-         coerce QName(PrivateNamespace(null,"#CursorManagerImpl/1"),"CursorQueueItem")
+         getproperty MultinameL([Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#WorldMap/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         coerce QName(PrivateNamespace(null,"#WorldMap/1"),"CursorQueueItem")
          setlocal3
          getlocal3
          getproperty QName(PackageNamespace(""),"cursorID")
@@ -945,7 +945,7 @@ package mx.managers
          getlocal0
          pushscope
          pushnull
-         coerce QName(PrivateNamespace(null,"#CursorManagerImpl/1"),"CursorQueueItem")
+         coerce QName(PrivateNamespace(null,"#WorldMap/1"),"CursorQueueItem")
          setlocal1
          pushnull
          coerce QName(PackageNamespace("flash.events"),"Event")
@@ -1025,8 +1025,8 @@ package mx.managers
          getlocal0
          getproperty QName(PrivateNamespace(null,"#CursorManagerImpl"),"cursorList")
          pushbyte 0
-         getproperty MultinameL([Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#CursorManagerImpl/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
-         coerce QName(PrivateNamespace(null,"#CursorManagerImpl/1"),"CursorQueueItem")
+         getproperty MultinameL([Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#WorldMap/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         coerce QName(PrivateNamespace(null,"#WorldMap/1"),"CursorQueueItem")
          setlocal1
          getlocal0
          getproperty QName(PackageNamespace(""),"currentCursorID")
@@ -1630,19 +1630,19 @@ package mx.managers
          getproperty QName(PackageNamespace(""),"PROGRESS")
          getlocal0
          getproperty QName(PrivateNamespace(null,"#CursorManagerImpl"),"progressHandler")
-         callpropvoid Multiname("addEventListener",[Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#CursorManagerImpl/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")]), 2
+         callpropvoid Multiname("addEventListener",[Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#WorldMap/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")]), 2
          getlocal1
          getlex QName(PackageNamespace("flash.events"),"Event")
          getproperty QName(PackageNamespace(""),"COMPLETE")
          getlocal0
          getproperty QName(PrivateNamespace(null,"#CursorManagerImpl"),"completeHandler")
-         callpropvoid Multiname("addEventListener",[Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#CursorManagerImpl/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")]), 2
+         callpropvoid Multiname("addEventListener",[Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#WorldMap/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")]), 2
          getlocal1
          getlex QName(PackageNamespace("flash.events"),"IOErrorEvent")
          getproperty QName(PackageNamespace(""),"IO_ERROR")
          getlocal0
          getproperty QName(PrivateNamespace(null,"#CursorManagerImpl"),"completeHandler")
-         callpropvoid Multiname("addEventListener",[Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#CursorManagerImpl/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")]), 2
+         callpropvoid Multiname("addEventListener",[Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#WorldMap/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")]), 2
          ofs2:
          returnvoid
          end ; code
@@ -1698,19 +1698,19 @@ package mx.managers
          getproperty QName(PackageNamespace(""),"PROGRESS")
          getlocal0
          getproperty QName(PrivateNamespace(null,"#CursorManagerImpl"),"progressHandler")
-         callpropvoid Multiname("removeEventListener",[Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#CursorManagerImpl/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")]), 2
+         callpropvoid Multiname("removeEventListener",[Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#WorldMap/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")]), 2
          getlocal1
          getlex QName(PackageNamespace("flash.events"),"Event")
          getproperty QName(PackageNamespace(""),"COMPLETE")
          getlocal0
          getproperty QName(PrivateNamespace(null,"#CursorManagerImpl"),"completeHandler")
-         callpropvoid Multiname("removeEventListener",[Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#CursorManagerImpl/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")]), 2
+         callpropvoid Multiname("removeEventListener",[Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#WorldMap/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")]), 2
          getlocal1
          getlex QName(PackageNamespace("flash.events"),"IOErrorEvent")
          getproperty QName(PackageNamespace(""),"IO_ERROR")
          getlocal0
          getproperty QName(PrivateNamespace(null,"#CursorManagerImpl"),"completeHandler")
-         callpropvoid Multiname("removeEventListener",[Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#CursorManagerImpl/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")]), 2
+         callpropvoid Multiname("removeEventListener",[Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#WorldMap/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")]), 2
          ofs2:
          returnvoid
          end ; code
@@ -1817,7 +1817,7 @@ package mx.managers
          getlocal0
          getproperty QName(PrivateNamespace(null,"#CursorManagerImpl"),"sourceArray")
          getlocal3
-         getproperty MultinameL([Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#CursorManagerImpl/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getproperty MultinameL([Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#WorldMap/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
          getlocal1
          ifstrictne ofs2
          getlocal3
@@ -1949,7 +1949,7 @@ package mx.managers
          iffalse ofs0
          pop
          getlocal3
-         getproperty Multiname("type",[Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#CursorManagerImpl/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getproperty Multiname("type",[Namespace("http://www.adobe.com/2006/flex/mx/internal"),PackageNamespace(""),PackageNamespace("mx.managers"),PrivateNamespace(null,"#WorldMap/1"),PrivateNamespace(null,"#CursorManagerImpl"),PackageInternalNs("mx.managers"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.managers:CursorManagerImpl"),StaticProtectedNs("mx.managers:CursorManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
          getlex QName(PackageNamespace("flash.text"),"TextFieldType")
          getproperty QName(PackageNamespace(""),"INPUT")
          equals

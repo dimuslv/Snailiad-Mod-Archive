@@ -64,6 +64,10 @@ package
       private static const KEY_WEAP_PREV:int = 18;
       
       private static const KEY_MAP:int = 19;
+      
+      public static var hasHardMode2:Boolean = false;
+      
+      public static var hasBossRush2:Boolean = false;
        
       
       public var scrollingMenu:Boolean = false;
@@ -204,6 +208,10 @@ package
       
       public var fadeInterval:uint = 0;
       
+      public var isInputting:Boolean = false;
+      
+      public var input:String = "";
+      
       public function MainMenu()
       {
          this.hasEnding = [false,false,false,false,false,false];
@@ -246,12 +254,50 @@ package
       public function loadXML() : void
       {
          this.xmlLoader = new URLLoader();
-         this.xmlLoader.load(new URLRequest("test.xml"));
+         this.xmlLoader.load(new URLRequest((!!this.isInputting ? this.input : PlayState.boundTo) + ".tmx"));
          this.xmlLoader.addEventListener(Event.COMPLETE,this.handleMyData);
       }
       
       public function handleMyData(param1:Event) : void
       {
+         PlayState.worldXML = new XML(this.xmlLoader.data);
+         var _loc2_:int = 0;
+         var _loc3_:int = PlayState.worldXML.objectgroup.children().length();
+         hasHardMode2 = false;
+         hasBossRush2 = false;
+         PlayState.textArray = new Array();
+         while(_loc2_ < _loc3_)
+         {
+            if(PlayState.worldXML.objectgroup.object[_loc2_].@name == "slug")
+            {
+               hasHardMode2 = true;
+            }
+            else if(PlayState.worldXML.objectgroup.object[_loc2_].@name == "bossrush")
+            {
+               hasBossRush2 = true;
+            }
+            else
+            {
+               PlayState.textArray[PlayState.worldXML.objectgroup.object[_loc2_].@name] = PlayState.worldXML.objectgroup.object[_loc2_].text.replace(/\r\n/g,"\n");
+            }
+            _loc2_++;
+         }
+         PlayState.isStartOld = true;
+         PlayState.isBrStartOld = true;
+         if(this.isInputting)
+         {
+            PlayState.boundTo = this.input;
+            this.eraseSaveData();
+         }
+         else
+         {
+            PlayState.worldMap = new WorldMap();
+            PlayState.This.defaultGroup.members[0] = PlayState.worldMap.skymap;
+            PlayState.This.defaultGroup.members[2] = PlayState.worldMap.bgmap;
+            PlayState.This.defaultGroup.members[7] = PlayState.worldMap.fgmap;
+            this.makeMainOptions();
+         }
+         Sfx.playSave1();
       }
       
       override public function destroy() : void
@@ -612,15 +658,18 @@ package
       
       public function eraseSaveData() : void
       {
-         var _loc1_:SaveData = null;
-         FlxG.flash.stop();
-         FlxG.fade.stop();
-         this.fading = false;
-         _loc1_ = new SaveData();
-         _loc1_.eraseAll();
-         this.hasSave = false;
+         if(!this.isInputting)
+         {
+            var _loc1_:SaveData = null;
+            FlxG.flash.stop();
+            FlxG.fade.stop();
+            this.fading = false;
+            _loc1_ = new SaveData();
+            _loc1_.eraseAll();
+         }
          this.hasBossRush = false;
          this.hasHardMode = false;
+         this.hasSave = false;
          this.hasInsaneMode = false;
          this.erasedSave = true;
          this.resetMenu();
@@ -1142,7 +1191,7 @@ package
          this.addOption("",null,false);
          this.addOption("EASY",PlayState.startEasyNewGame,false);
          this.addOption("NORMAL",PlayState.startNewGame,false);
-         if(TESTING_ALL_MODES_AVAILABLE || this.hasHardMode)
+         if(hasHardMode2 || this.hasHardMode)
          {
             this.addOption("SLUG",this.justinSnailyAnim,false);
          }
@@ -1485,6 +1534,7 @@ package
       
       public function makeMainOptions() : void
       {
+         this.isInputting = false;
          this.curOption = 0;
          this.sponsorMoreGames.show();
          this.jayIsGames.show();
@@ -1520,7 +1570,7 @@ package
          {
             this.addOption("NEW GAME",this.selectNewGameModeSetOldOption,false);
          }
-         if(TESTING_ALL_MODES_AVAILABLE || this.hasBossRush)
+         if(hasBossRush2 || this.hasBossRush)
          {
             if(PlayState.bossRush)
             {
@@ -1531,7 +1581,7 @@ package
                this.addOption("BOSS RUSH",this.confirmBossRush,false);
             }
          }
-         this.addOption("",null);
+         this.addOption("RELOAD " + PlayState.boundTo + ".tmx",this.loadXML,false);
          this.addOption("OPTIONS",this.makeOptionsMenuPreserveOption,false);
          this.addOption("CREDITS",this.showCredits,false);
          if(this.hasScores && !this.erasedSave)
@@ -1542,6 +1592,7 @@ package
          {
             this.addOption("GALLERY",this.showEndingsMenu,false);
          }
+         this.addOption("SELECT A MAP",this.insertName,false);
          this.curOption = this.oldMenuOption;
          this.centerMenu();
          this.musicVolOption = -1;
@@ -1865,6 +1916,13 @@ package
       {
          var _loc1_:int = 0;
          var _loc2_:int = 0;
+         if(!this.isInputting)
+         {
+            if(FlxG.keys.justPressed("R"))
+            {
+               this.loadXML();
+            }
+         }
          if(PlayState.realState != PlayState.STATE_MENU)
          {
             super.update();
@@ -1988,10 +2046,13 @@ package
          }
          if((FlxG.keys.justPressed("P") || FlxG.keys.justPressed("ESCAPE") && !this.escToMain && !this.escToOptions) && PlayState.startedGame)
          {
-            this.lastWasMouse = false;
-            PlayState.realState = PlayState.STATE_GAME;
-            FlxG.flash.start(2130706432,0.34);
-            return;
+            if(!this.isInputting)
+            {
+               this.lastWasMouse = false;
+               PlayState.realState = PlayState.STATE_GAME;
+               FlxG.flash.start(2130706432,0.34);
+               return;
+            }
          }
          if(FlxG.keys.justPressed("ESCAPE") && this.escToMain)
          {
@@ -2045,9 +2106,40 @@ package
                _loc1_++;
             }
          }
-         if(FlxG.keys.justPressed("Z") || FlxG.keys.justPressed("X") || FlxG.keys.justPressed("J") || FlxG.keys.justPressed("K") || FlxG.keys.justPressed("SPACE") || FlxG.keys.justPressed("ENTER") || this.curOption == this.musicVolOption && (FlxG.keys.justPressed("LEFT") || FlxG.keys.justPressed("RIGHT")))
+         if(!this.isInputting)
          {
-            this.doOption(this.curOption);
+            if(FlxG.keys.justPressed("Z") || FlxG.keys.justPressed("X") || FlxG.keys.justPressed("J") || FlxG.keys.justPressed("K") || FlxG.keys.justPressed("SPACE") || FlxG.keys.justPressed("ENTER") || this.curOption == this.musicVolOption && (FlxG.keys.justPressed("LEFT") || FlxG.keys.justPressed("RIGHT")))
+            {
+               this.doOption(this.curOption);
+            }
+         }
+         else
+         {
+            if(FlxG.keys.justPressed("SPACE") || FlxG.keys.justPressed("ENTER"))
+            {
+               this.doOption(this.curOption);
+            }
+            if(Utility.justPressedAnyKey())
+            {
+               if(FlxG.keys.getLastKeys(1).length == 1)
+               {
+                  this.input += FlxG.keys.getLastKeys(1).toLowerCase();
+                  this.changeOption(2,this.input + ".tmx",null);
+                  Sfx.playMenuBeep1();
+               }
+               if(FlxG.keys.justPressed("MINUS"))
+               {
+                  this.input += "-";
+                  this.changeOption(2,this.input + ".tmx",null);
+                  Sfx.playMenuBeep1();
+               }
+            }
+            if(FlxG.keys.justPressed("BACKSPACE"))
+            {
+               this.input = this.input.slice(0,-1);
+               this.changeOption(2,this.input + ".tmx",null);
+               Sfx.playMenuBeep1();
+            }
          }
          super.update();
       }
@@ -2073,6 +2165,25 @@ package
          this.actions[this.curOption]();
          this.fading = false;
          FlxG.flash.start(2130706432,0.34);
+      }
+      
+      public function insertName() : void
+      {
+         this.clearMenu();
+         this.escToMain = true;
+         this.oldMenuOption = this.curOption;
+         this.sponsorMoreGames.hide();
+         this.jayIsGames.hide();
+         this.isInputting = true;
+         this.input = "";
+         this.addOption("Insert the name",null,false);
+         this.addOption("of the map file:",null,false);
+         this.addOption(".tmx",null,false);
+         this.addOption("",null,false);
+         this.addOption("LOAD THE MAP",this.loadXML,false);
+         this.addOption("Exit to Menu",this.makeMainOptions,false);
+         this.curOption = 4;
+         this.centerMenu();
       }
    }
 }

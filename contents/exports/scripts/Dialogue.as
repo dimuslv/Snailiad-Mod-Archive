@@ -44,7 +44,7 @@ package
       {
          super();
          this._active = false;
-         this._msg = new FlxText(20,20,FlxG.width);
+         this._msg = new FlxText(20,20,FlxG.width - 35);
          this._msg.font = Fonts.normal;
          this._msg.size = 20;
          this._msg.color = 16777215;
