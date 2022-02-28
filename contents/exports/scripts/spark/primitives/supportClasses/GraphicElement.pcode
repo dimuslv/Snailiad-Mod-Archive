@@ -1,0 +1,1718 @@
+
+{
+   method
+   name null
+   returns null
+   
+   body
+   maxstack 2
+   localcount 1
+   initscopedepth 1
+   maxscopedepth 4
+   
+   code
+   getlocal0
+   pushscope
+   findpropstrict Multiname("GraphicElement",[PackageNamespace("spark.primitives.supportClasses")])
+   getlex QName(PackageNamespace(""),"Object")
+   pushscope
+   getlex QName(PackageNamespace("flash.events"),"EventDispatcher")
+   pushscope
+   getlex QName(PackageNamespace("flash.events"),"EventDispatcher")
+   newclass #GraphicElement
+   popscope
+   popscope
+   initproperty QName(PackageNamespace("spark.primitives.supportClasses"),"GraphicElement")
+   returnvoid
+   end ; code
+   end ; body
+   end ; method
+}
+
+package spark.primitives.supportClasses
+{
+   import flash.display.BitmapData;
+   import flash.display.BlendMode;
+   import flash.display.DisplayObject;
+   import flash.display.DisplayObjectContainer;
+   import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.EventDispatcher;
+   import flash.events.IEventDispatcher;
+   import flash.geom.ColorTransform;
+   import flash.geom.Matrix;
+   import flash.geom.Matrix3D;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import flash.geom.Transform;
+   import flash.geom.Vector3D;
+   import mx.core.AdvancedLayoutFeatures;
+   import mx.core.DesignLayer;
+   import mx.core.IInvalidating;
+   import mx.core.ILayoutDirectionElement;
+   import mx.core.ILayoutElement;
+   import mx.core.IMXMLObject;
+   import mx.core.IUIComponent;
+   import mx.core.IVisualElement;
+   import mx.core.LayoutDirection;
+   import mx.core.UIComponent;
+   import mx.core.UIComponentGlobals;
+   import mx.core.mx_internal;
+   import mx.events.FlexEvent;
+   import mx.events.PropertyChangeEvent;
+   import mx.filters.BaseFilter;
+   import mx.filters.IBitmapFilter;
+   import mx.geom.Transform;
+   import mx.geom.TransformOffsets;
+   import mx.graphics.shaderClasses.ColorBurnShader;
+   import mx.graphics.shaderClasses.ColorDodgeShader;
+   import mx.graphics.shaderClasses.ColorShader;
+   import mx.graphics.shaderClasses.ExclusionShader;
+   import mx.graphics.shaderClasses.HueShader;
+   import mx.graphics.shaderClasses.LuminosityShader;
+   import mx.graphics.shaderClasses.SaturationShader;
+   import mx.graphics.shaderClasses.SoftLightShader;
+   import mx.managers.ILayoutManagerClient;
+   import mx.utils.MatrixUtil;
+   import spark.components.Group;
+   import spark.components.supportClasses.InvalidatingSprite;
+   import spark.core.DisplayObjectSharingMode;
+   import spark.core.IGraphicElement;
+   import spark.utils.MaskUtil;
+   
+   use namespace mx_internal;
+   
+   public class GraphicElement extends EventDispatcher implements IGraphicElement, IInvalidating, ILayoutElement, IVisualElement, IMXMLObject
+   {
+      
+      mx_internal static const VERSION:String = "4.1.0.16076";
+      
+      private static const DEFAULT_MAX_WIDTH:Number = 10000;
+      
+      private static const DEFAULT_MAX_HEIGHT:Number = 10000;
+      
+      private static const DEFAULT_MIN_WIDTH:Number = 0;
+      
+      private static const DEFAULT_MIN_HEIGHT:Number = 0;
+      
+      mx_internal static var _strokeExtents:Rectangle;
+      
+      {
+         method
+         name null
+         returns null
+         
+         body
+         maxstack 2
+         localcount 1
+         initscopedepth 4
+         maxscopedepth 5
+         
+         code
+         getlocal0
+         pushscope
+         findproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"VERSION")
+         pushstring "4.1.0.16076"
+         initproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"VERSION")
+         findproperty QName(PrivateNamespace(null,"#GraphicElement"),"DEFAULT_MAX_WIDTH")
+         pushshort 10000
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"DEFAULT_MAX_WIDTH")
+         findproperty QName(PrivateNamespace(null,"#GraphicElement"),"DEFAULT_MAX_HEIGHT")
+         pushshort 10000
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"DEFAULT_MAX_HEIGHT")
+         findproperty QName(PrivateNamespace(null,"#GraphicElement"),"DEFAULT_MIN_WIDTH")
+         pushbyte 0
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"DEFAULT_MIN_WIDTH")
+         findproperty QName(PrivateNamespace(null,"#GraphicElement"),"DEFAULT_MIN_HEIGHT")
+         pushbyte 0
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"DEFAULT_MIN_HEIGHT")
+         findproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"_strokeExtents")
+         findpropstrict QName(PackageNamespace("flash.geom"),"Rectangle")
+         constructprop QName(PackageNamespace("flash.geom"),"Rectangle"), 0
+         setproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"_strokeExtents")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private var displayObjectChanged:Boolean;
+      
+      private var _colorTransform:ColorTransform;
+      
+      private var colorTransformChanged:Boolean;
+      
+      private var _drawnDisplayObject:InvalidatingSprite;
+      
+      mx_internal var invalidatePropertiesFlag:Boolean = false;
+      
+      mx_internal var invalidateSizeFlag:Boolean = false;
+      
+      mx_internal var invalidateDisplayListFlag:Boolean = false;
+      
+      protected var layoutFeatures:AdvancedLayoutFeatures;
+      
+      private var _x:Number = 0;
+      
+      private var _y:Number = 0;
+      
+      private var _alpha:Number = 1.0;
+      
+      private var _effectiveAlpha:Number = 1.0;
+      
+      private var alphaChanged:Boolean = false;
+      
+      private var _baseline:Object;
+      
+      private var _blendMode:String = "auto";
+      
+      private var blendModeChanged:Boolean;
+      
+      private var blendShaderChanged:Boolean;
+      
+      private var blendModeExplicitlySet:Boolean = false;
+      
+      private var _bottom:Object;
+      
+      private var _owner:DisplayObjectContainer;
+      
+      private var _designLayer:DesignLayer;
+      
+      private var _parent:DisplayObjectContainer;
+      
+      private var _explicitHeight:Number;
+      
+      private var _explicitWidth:Number;
+      
+      private var _filters:Array;
+      
+      private var filtersChanged:Boolean;
+      
+      private var _clonedFilters:Array;
+      
+      mx_internal var _height:Number = 0;
+      
+      private var _horizontalCenter:Object;
+      
+      private var _id:String;
+      
+      private var _left:Object;
+      
+      private var _mask:DisplayObject;
+      
+      private var maskChanged:Boolean;
+      
+      private var _maskType:String = "clip";
+      
+      private var maskTypeChanged:Boolean;
+      
+      private var _luminosityInvert:Boolean = false;
+      
+      private var luminositySettingsChanged:Boolean;
+      
+      private var _luminosityClip:Boolean = false;
+      
+      private var _maxHeight:Number;
+      
+      mx_internal var _maxWidth:Number;
+      
+      private var _measuredHeight:Number = 0;
+      
+      private var _measuredWidth:Number = 0;
+      
+      private var _measuredX:Number = 0;
+      
+      private var _measuredY:Number = 0;
+      
+      private var _minHeight:Number;
+      
+      private var _minWidth:Number;
+      
+      private var _percentHeight:Number;
+      
+      private var _percentWidth:Number;
+      
+      private var _right:Object;
+      
+      private var _top:Object;
+      
+      private var _transform:flash.geom.Transform;
+      
+      private var _verticalCenter:Object;
+      
+      mx_internal var _width:Number = 0;
+      
+      private var _visible:Boolean = true;
+      
+      protected var _effectiveVisibility:Boolean = true;
+      
+      private var visibleChanged:Boolean;
+      
+      private var _displayObject:DisplayObject;
+      
+      private var _includeInLayout:Boolean = true;
+      
+      private var _displayObjectSharingMode:String;
+      
+      private var _layoutDirection:String = null;
+      
+      private var _alwaysCreateDisplayObject:Boolean;
+      
+      public function GraphicElement()
+      {
+         method
+         name null
+         returns null
+         
+         body
+         maxstack 2
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         newarray 0
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"_filters")
+         getlocal0
+         constructsuper 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get postLayoutTransformOffsets() : TransformOffsets
+      {
+         trait getter QName(PackageNamespace(""),"postLayoutTransformOffsets")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace("mx.geom"),"TransformOffsets")
+         
+         body
+         maxstack 2
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"layoutFeatures")
+         pushnull
+         ifne ofs0
+         pushnull
+         coerce QName(PackageNamespace("mx.geom"),"TransformOffsets")
+         jump ofs1
+         ofs0:
+         getlocal0
+         getproperty QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"layoutFeatures")
+         getproperty QName(PackageNamespace(""),"postLayoutTransformOffsets")
+         coerce QName(PackageNamespace("mx.geom"),"TransformOffsets")
+         ofs1:
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set postLayoutTransformOffsets(param1:TransformOffsets) : void
+      {
+         trait setter QName(PackageNamespace(""),"postLayoutTransformOffsets")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace("mx.geom"),"TransformOffsets")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 2
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal1
+         pushnull
+         ifeq ofs0
+         getlocal0
+         callpropvoid QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"allocateLayoutFeatures"), 0
+         ofs0:
+         getlocal0
+         getproperty QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"layoutFeatures")
+         getproperty QName(PackageNamespace(""),"postLayoutTransformOffsets")
+         pushnull
+         ifeq ofs1
+         getlocal0
+         getproperty QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"layoutFeatures")
+         getproperty QName(PackageNamespace(""),"postLayoutTransformOffsets")
+         getlex QName(PackageNamespace("flash.events"),"Event")
+         getproperty QName(PackageNamespace(""),"CHANGE")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"transformOffsetsChangedHandler")
+         callpropvoid QName(PackageNamespace(""),"removeEventListener"), 2
+         ofs1:
+         getlocal0
+         getproperty QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"layoutFeatures")
+         getlocal1
+         setproperty QName(PackageNamespace(""),"postLayoutTransformOffsets")
+         getlocal0
+         getproperty QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"layoutFeatures")
+         getproperty QName(PackageNamespace(""),"postLayoutTransformOffsets")
+         pushnull
+         ifeq ofs2
+         getlocal0
+         getproperty QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"layoutFeatures")
+         getproperty QName(PackageNamespace(""),"postLayoutTransformOffsets")
+         getlex QName(PackageNamespace("flash.events"),"Event")
+         getproperty QName(PackageNamespace(""),"CHANGE")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"transformOffsetsChangedHandler")
+         callpropvoid QName(PackageNamespace(""),"addEventListener"), 2
+         ofs2:
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      mx_internal function allocateLayoutFeatures() : void
+      {
+         trait method QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"allocateLayoutFeatures")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"layoutFeatures")
+         pushnull
+         ifeq ofs0
+         returnvoid
+         ofs0:
+         getlocal0
+         findpropstrict QName(PackageNamespace("mx.core"),"AdvancedLayoutFeatures")
+         constructprop QName(PackageNamespace("mx.core"),"AdvancedLayoutFeatures"), 0
+         initproperty QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"layoutFeatures")
+         getlocal0
+         getproperty QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"layoutFeatures")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_x")
+         setproperty QName(PackageNamespace(""),"layoutX")
+         getlocal0
+         getproperty QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"layoutFeatures")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_y")
+         setproperty QName(PackageNamespace(""),"layoutY")
+         getlocal0
+         getproperty QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"layoutFeatures")
+         getlocal0
+         getproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"_width")
+         setproperty QName(PackageNamespace(""),"layoutWidth")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function invalidateTransform(param1:Boolean = true, param2:Boolean = true) : void
+      {
+         trait method QName(PrivateNamespace(null,"#GraphicElement"),"invalidateTransform")
+         dispid 0
+         method
+         name null
+         flag HAS_OPTIONAL
+         param QName(PackageNamespace(""),"Boolean")
+         param QName(PackageNamespace(""),"Boolean")
+         optional True()
+         optional True()
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 3
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal1
+         iffalse ofs0
+         getlocal0
+         callpropvoid QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"invalidateDisplayObjectSharing"), 0
+         ofs0:
+         getlocal0
+         getproperty QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"layoutFeatures")
+         pushnull
+         ifeq ofs1
+         getlocal0
+         getproperty QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"layoutFeatures")
+         pushtrue
+         setproperty QName(PackageNamespace(""),"updatePending")
+         ofs1:
+         getlocal0
+         getproperty QName(PackageNamespace(""),"displayObjectSharingMode")
+         getlex QName(PackageNamespace("spark.core"),"DisplayObjectSharingMode")
+         getproperty QName(PackageNamespace(""),"OWNS_UNSHARED_OBJECT")
+         ifeq ofs2
+         getlocal0
+         callpropvoid QName(PackageNamespace(""),"invalidateDisplayList"), 0
+         jump ofs3
+         ofs2:
+         getlocal0
+         callpropvoid QName(PackageNamespace(""),"invalidateProperties"), 0
+         ofs3:
+         getlocal2
+         iffalse ofs4
+         getlocal0
+         callpropvoid QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"invalidateParentSizeAndDisplayList"), 0
+         ofs4:
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private function transformOffsetsChangedHandler(param1:Event) : void
+      {
+         trait method QName(PrivateNamespace(null,"#GraphicElement"),"transformOffsetsChangedHandler")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace("flash.events"),"Event")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 1
+         localcount 2
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         callpropvoid QName(PrivateNamespace(null,"#GraphicElement"),"invalidateTransform"), 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get alpha() : Number
+      {
+         trait getter QName(PackageNamespace(""),"alpha")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"Number")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_alpha")
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set alpha(param1:Number) : void
+      {
+         trait setter QName(PackageNamespace(""),"alpha")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"Number")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 4
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_alpha")
+         getlocal1
+         ifne ofs0
+         returnvoid
+         ofs0:
+         getlocal0
+         getproperty QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"needsDisplayObject")
+         convert_b
+         setlocal2
+         getlocal0
+         getlocal1
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"_alpha")
+         getlocal0
+         getproperty QName(PackageNamespace(""),"designLayer")
+         iffalse ofs1
+         getlocal1
+         getlocal0
+         getproperty QName(PackageNamespace(""),"designLayer")
+         getproperty QName(PackageNamespace(""),"effectiveAlpha")
+         multiply
+         convert_d
+         setlocal1
+         ofs1:
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_blendMode")
+         pushstring "auto"
+         ifne ofs2
+         getlocal1
+         pushbyte 0
+         greaterthan
+         dup
+         iffalse ofs3
+         pop
+         getlocal1
+         pushbyte 1
+         lessthan
+         ofs3:
+         dup
+         iffalse ofs4
+         pop
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_effectiveAlpha")
+         pushbyte 0
+         equals
+         dup
+         iftrue ofs4
+         pop
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_effectiveAlpha")
+         pushbyte 1
+         equals
+         ofs4:
+         dup
+         iftrue ofs5
+         pop
+         getlocal1
+         pushbyte 0
+         equals
+         dup
+         iftrue ofs6
+         pop
+         getlocal1
+         pushbyte 1
+         equals
+         ofs6:
+         dup
+         iffalse ofs5
+         pop
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_effectiveAlpha")
+         pushbyte 0
+         greaterthan
+         dup
+         iffalse ofs5
+         pop
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_effectiveAlpha")
+         pushbyte 1
+         lessthan
+         ofs5:
+         iffalse ofs2
+         getlocal0
+         pushtrue
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"blendModeChanged")
+         ofs2:
+         getlocal0
+         getlocal1
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"_effectiveAlpha")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_transform")
+         getlex QName(PackageNamespace("mx.geom"),"Transform")
+         astypelate
+         coerce QName(PackageNamespace("mx.geom"),"Transform")
+         setlocal3
+         getlocal3
+         iffalse ofs7
+         getlocal3
+         pushfalse
+         setproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"applyColorTransformAlpha")
+         ofs7:
+         getlocal2
+         getlocal0
+         getproperty QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"needsDisplayObject")
+         ifeq ofs8
+         getlocal0
+         callpropvoid QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"invalidateDisplayObjectSharing"), 0
+         ofs8:
+         getlocal0
+         pushtrue
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"alphaChanged")
+         getlocal0
+         callpropvoid QName(PackageNamespace(""),"invalidateProperties"), 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get baseline() : Object
+      {
+         trait getter QName(PackageNamespace(""),"baseline")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"Object")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_baseline")
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set baseline(param1:Object) : void
+      {
+         trait setter QName(PackageNamespace(""),"baseline")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"Object")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_baseline")
+         getlocal1
+         ifne ofs0
+         returnvoid
+         ofs0:
+         getlocal0
+         getlocal1
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"_baseline")
+         getlocal0
+         callpropvoid QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"invalidateParentSizeAndDisplayList"), 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get baselinePosition() : Number
+      {
+         trait getter QName(PackageNamespace(""),"baselinePosition")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"Number")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         pushbyte 0
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get blendMode() : String
+      {
+         trait getter QName(PackageNamespace(""),"blendMode")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"String")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_blendMode")
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set blendMode(param1:String) : void
+      {
+         trait setter QName(PackageNamespace(""),"blendMode")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"String")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 3
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal1
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_blendMode")
+         ifne ofs0
+         returnvoid
+         ofs0:
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_blendMode")
+         coerce_s
+         setlocal2
+         getlocal0
+         getlocal1
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"_blendMode")
+         getlocal0
+         pushtrue
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"blendModeChanged")
+         getlocal0
+         getlocal1
+         callproperty QName(PrivateNamespace(null,"#GraphicElement"),"isAIMBlendMode"), 1
+         iffalse ofs1
+         getlocal0
+         pushtrue
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"blendShaderChanged")
+         ofs1:
+         getlocal2
+         getlex QName(PackageNamespace("flash.display"),"BlendMode")
+         getproperty QName(PackageNamespace(""),"NORMAL")
+         equals
+         dup
+         iftrue ofs2
+         pop
+         getlocal1
+         getlex QName(PackageNamespace("flash.display"),"BlendMode")
+         getproperty QName(PackageNamespace(""),"NORMAL")
+         equals
+         ofs2:
+         dup
+         iffalse ofs3
+         pop
+         getlocal2
+         getlex QName(PackageNamespace("flash.display"),"BlendMode")
+         getproperty QName(PackageNamespace(""),"NORMAL")
+         equals
+         dup
+         iffalse ofs4
+         pop
+         getlocal1
+         getlex QName(PackageNamespace("flash.display"),"BlendMode")
+         getproperty QName(PackageNamespace(""),"NORMAL")
+         equals
+         ofs4:
+         not
+         ofs3:
+         iffalse ofs5
+         getlocal0
+         callpropvoid QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"invalidateDisplayObjectSharing"), 0
+         ofs5:
+         getlocal0
+         callpropvoid QName(PackageNamespace(""),"invalidateProperties"), 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get bottom() : Object
+      {
+         trait getter QName(PackageNamespace(""),"bottom")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"Object")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_bottom")
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set bottom(param1:Object) : void
+      {
+         trait setter QName(PackageNamespace(""),"bottom")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"Object")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_bottom")
+         getlocal1
+         ifne ofs0
+         returnvoid
+         ofs0:
+         getlocal0
+         getlocal1
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"_bottom")
+         getlocal0
+         callpropvoid QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"invalidateParentSizeAndDisplayList"), 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get owner() : DisplayObjectContainer
+      {
+         trait getter QName(PackageNamespace(""),"owner")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace("flash.display"),"DisplayObjectContainer")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_owner")
+         iffalse ofs0
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_owner")
+         coerce QName(PackageNamespace("flash.display"),"DisplayObjectContainer")
+         jump ofs1
+         ofs0:
+         getlocal0
+         getproperty QName(PackageNamespace(""),"parent")
+         coerce QName(PackageNamespace("flash.display"),"DisplayObjectContainer")
+         ofs1:
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set owner(param1:DisplayObjectContainer) : void
+      {
+         trait setter QName(PackageNamespace(""),"owner")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace("flash.display"),"DisplayObjectContainer")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getlocal1
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"_owner")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get designLayer() : DesignLayer
+      {
+         trait getter QName(PackageNamespace(""),"designLayer")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace("mx.core"),"DesignLayer")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_designLayer")
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set designLayer(param1:DesignLayer) : void
+      {
+         trait setter QName(PackageNamespace(""),"designLayer")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace("mx.core"),"DesignLayer")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 6
+         localcount 2
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_designLayer")
+         iffalse ofs0
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_designLayer")
+         pushstring "layerPropertyChange"
+         getlocal0
+         getproperty QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"layer_PropertyChange")
+         pushfalse
+         callpropvoid QName(PackageNamespace(""),"removeEventListener"), 3
+         ofs0:
+         getlocal0
+         getlocal1
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"_designLayer")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_designLayer")
+         iffalse ofs1
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_designLayer")
+         pushstring "layerPropertyChange"
+         getlocal0
+         getproperty QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"layer_PropertyChange")
+         pushfalse
+         pushbyte 0
+         pushtrue
+         callpropvoid QName(PackageNamespace(""),"addEventListener"), 5
+         ofs1:
+         getlocal0
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_designLayer")
+         iffalse ofs2
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_alpha")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_designLayer")
+         getproperty QName(PackageNamespace(""),"effectiveAlpha")
+         multiply
+         convert_d
+         jump ofs3
+         ofs2:
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_alpha")
+         convert_d
+         ofs3:
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"_effectiveAlpha")
+         getlocal0
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_designLayer")
+         iffalse ofs4
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_visible")
+         convert_b
+         dup
+         iffalse ofs5
+         pop
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_designLayer")
+         getproperty QName(PackageNamespace(""),"effectiveVisibility")
+         convert_b
+         ofs5:
+         jump ofs6
+         ofs4:
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_visible")
+         convert_b
+         ofs6:
+         initproperty QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"_effectiveVisibility")
+         getlocal0
+         pushtrue
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"alphaChanged")
+         getlocal0
+         pushtrue
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"visibleChanged")
+         getlocal0
+         callpropvoid QName(PackageNamespace(""),"invalidateProperties"), 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get parent() : DisplayObjectContainer
+      {
+         trait getter QName(PackageNamespace(""),"parent")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace("flash.display"),"DisplayObjectContainer")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_parent")
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function parentChanged(param1:Group) : void
+      {
+         trait method QName(PackageNamespace(""),"parentChanged")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace("spark.components"),"Group")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getlocal1
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"_parent")
+         getlocal0
+         callpropvoid QName(PackageNamespace(""),"invalidateLayoutDirection"), 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get explicitHeight() : Number
+      {
+         trait getter QName(PackageNamespace(""),"explicitHeight")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"Number")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_explicitHeight")
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set explicitHeight(param1:Number) : void
+      {
+         trait setter QName(PackageNamespace(""),"explicitHeight")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"Number")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_explicitHeight")
+         getlocal1
+         ifne ofs0
+         returnvoid
+         ofs0:
+         findpropstrict QName(PackageNamespace(""),"isNaN")
+         getlocal1
+         callproperty QName(PackageNamespace(""),"isNaN"), 1
+         iftrue ofs1
+         getlocal0
+         getlex QName(PackageNamespace(""),"NaN")
+         initproperty QName(PackageNamespace(""),"percentHeight")
+         ofs1:
+         getlocal0
+         getlocal1
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"_explicitHeight")
+         getlocal0
+         callpropvoid QName(PackageNamespace(""),"invalidateSize"), 0
+         getlocal0
+         callpropvoid QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"invalidateParentSizeAndDisplayList"), 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get explicitMaxHeight() : Number
+      {
+         trait getter QName(PackageNamespace(""),"explicitMaxHeight")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"Number")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PackageNamespace(""),"maxHeight")
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set explicitMaxHeight(param1:Number) : void
+      {
+         trait setter QName(PackageNamespace(""),"explicitMaxHeight")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"Number")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getlocal1
+         initproperty QName(PackageNamespace(""),"maxHeight")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get explicitMaxWidth() : Number
+      {
+         trait getter QName(PackageNamespace(""),"explicitMaxWidth")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"Number")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PackageNamespace(""),"maxWidth")
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set explicitMaxWidth(param1:Number) : void
+      {
+         trait setter QName(PackageNamespace(""),"explicitMaxWidth")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"Number")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getlocal1
+         initproperty QName(PackageNamespace(""),"maxWidth")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get explicitMinHeight() : Number
+      {
+         trait getter QName(PackageNamespace(""),"explicitMinHeight")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"Number")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PackageNamespace(""),"minHeight")
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set explicitMinHeight(param1:Number) : void
+      {
+         trait setter QName(PackageNamespace(""),"explicitMinHeight")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"Number")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getlocal1
+         initproperty QName(PackageNamespace(""),"minHeight")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get explicitMinWidth() : Number
+      {
+         trait getter QName(PackageNamespace(""),"explicitMinWidth")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"Number")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PackageNamespace(""),"minWidth")
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set explicitMinWidth(param1:Number) : void
+      {
+         trait setter QName(PackageNamespace(""),"explicitMinWidth")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"Number")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getlocal1
+         initproperty QName(PackageNamespace(""),"minWidth")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get explicitWidth() : Number
+      {
+         trait getter QName(PackageNamespace(""),"explicitWidth")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"Number")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_explicitWidth")
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set explicitWidth(param1:Number) : void
+      {
+         trait setter QName(PackageNamespace(""),"explicitWidth")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"Number")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 2
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_explicitWidth")
+         getlocal1
+         ifne ofs0
+         returnvoid
+         ofs0:
+         findpropstrict QName(PackageNamespace(""),"isNaN")
+         getlocal1
+         callproperty QName(PackageNamespace(""),"isNaN"), 1
+         iftrue ofs1
+         getlocal0
+         getlex QName(PackageNamespace(""),"NaN")
+         initproperty QName(PackageNamespace(""),"percentWidth")
+         ofs1:
+         getlocal0
+         getlocal1
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"_explicitWidth")
+         getlocal0
+         callpropvoid QName(PackageNamespace(""),"invalidateSize"), 0
+         getlocal0
+         callpropvoid QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"invalidateParentSizeAndDisplayList"), 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function get filters() : Array
+      {
+         trait getter QName(PackageNamespace(""),"filters")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"Array")
+         
+         body
+         maxstack 1
+         localcount 1
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_filters")
+         callproperty QName(Namespace("http://adobe.com/AS3/2006/builtin"),"slice"), 0
+         returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function set filters(param1:Array) : void
+      {
+         trait setter QName(PackageNamespace(""),"filters")
+         dispid 0
+         method
+         name null
+         param QName(PackageNamespace(""),"Array")
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 4
+         localcount 7
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         pushnull
+         coerce QName(PackageNamespace("flash.events"),"IEventDispatcher")
+         setlocal 5
+         pushbyte 0
+         setlocal2
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_filters")
+         iffalse ofs0
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_filters")
+         getproperty QName(PackageNamespace(""),"length")
+         convert_i
+         jump ofs1
+         ofs0:
+         pushbyte 0
+         ofs1:
+         convert_i
+         setlocal3
+         getlocal1
+         iffalse ofs2
+         getlocal1
+         getproperty QName(PackageNamespace(""),"length")
+         convert_i
+         jump ofs3
+         ofs2:
+         pushbyte 0
+         ofs3:
+         convert_i
+         setlocal 4
+         getlocal3
+         pushbyte 0
+         equals
+         dup
+         iffalse ofs4
+         pop
+         getlocal 4
+         pushbyte 0
+         equals
+         ofs4:
+         iffalse ofs5
+         returnvoid
+         ofs5:
+         pushbyte 0
+         setlocal2
+         jump ofs6
+         ofs7:
+         label
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_filters")
+         getlocal2
+         getproperty MultinameL([PrivateNamespace(null,"#GraphicElement"),Namespace("http://www.adobe.com/2006/flex/mx/internal"),ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#GraphicElement/1"),PackageNamespace("spark.primitives.supportClasses"),PackageInternalNs("spark.primitives.supportClasses"),StaticProtectedNs("spark.primitives.supportClasses:GraphicElement"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace("flash.events"),"IEventDispatcher")
+         astypelate
+         coerce QName(PackageNamespace("flash.events"),"IEventDispatcher")
+         dup
+         setlocal 5
+         iffalse ofs8
+         getlocal 5
+         getlex QName(PackageNamespace("mx.filters"),"BaseFilter")
+         getproperty QName(PackageNamespace(""),"CHANGE")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"filterChangedHandler")
+         callpropvoid QName(Namespace("flash.events:IEventDispatcher"),"removeEventListener"), 2
+         ofs8:
+         inclocal_i 2
+         ofs6:
+         getlocal2
+         getlocal3
+         iflt ofs7
+         getlocal0
+         getproperty QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"needsDisplayObject")
+         convert_b
+         setlocal 6
+         getlocal0
+         getlocal1
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"_filters")
+         getlocal 6
+         getlocal0
+         getproperty QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"needsDisplayObject")
+         ifeq ofs9
+         getlocal0
+         callpropvoid QName(ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),"invalidateDisplayObjectSharing"), 0
+         ofs9:
+         getlocal0
+         newarray 0
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"_clonedFilters")
+         pushbyte 0
+         setlocal2
+         jump ofs10
+         ofs11:
+         label
+         getlocal1
+         getlocal2
+         getproperty MultinameL([PrivateNamespace(null,"#GraphicElement"),Namespace("http://www.adobe.com/2006/flex/mx/internal"),ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#GraphicElement/1"),PackageNamespace("spark.primitives.supportClasses"),PackageInternalNs("spark.primitives.supportClasses"),StaticProtectedNs("spark.primitives.supportClasses:GraphicElement"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace("mx.filters"),"IBitmapFilter")
+         istypelate
+         iffalse ofs12
+         getlocal1
+         getlocal2
+         getproperty MultinameL([PrivateNamespace(null,"#GraphicElement"),Namespace("http://www.adobe.com/2006/flex/mx/internal"),ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#GraphicElement/1"),PackageNamespace("spark.primitives.supportClasses"),PackageInternalNs("spark.primitives.supportClasses"),StaticProtectedNs("spark.primitives.supportClasses:GraphicElement"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace("flash.events"),"IEventDispatcher")
+         astypelate
+         coerce QName(PackageNamespace("flash.events"),"IEventDispatcher")
+         dup
+         setlocal 5
+         iffalse ofs13
+         getlocal 5
+         getlex QName(PackageNamespace("mx.filters"),"BaseFilter")
+         getproperty QName(PackageNamespace(""),"CHANGE")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"filterChangedHandler")
+         callpropvoid QName(Namespace("flash.events:IEventDispatcher"),"addEventListener"), 2
+         ofs13:
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_clonedFilters")
+         findpropstrict QName(PackageNamespace("mx.filters"),"IBitmapFilter")
+         getlocal1
+         getlocal2
+         getproperty MultinameL([PrivateNamespace(null,"#GraphicElement"),Namespace("http://www.adobe.com/2006/flex/mx/internal"),ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#GraphicElement/1"),PackageNamespace("spark.primitives.supportClasses"),PackageInternalNs("spark.primitives.supportClasses"),StaticProtectedNs("spark.primitives.supportClasses:GraphicElement"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         callproperty QName(PackageNamespace("mx.filters"),"IBitmapFilter"), 1
+         callproperty QName(Namespace("mx.filters:IBitmapFilter"),"clone"), 0
+         callpropvoid QName(Namespace("http://adobe.com/AS3/2006/builtin"),"push"), 1
+         jump ofs14
+         ofs12:
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#GraphicElement"),"_clonedFilters")
+         getlocal1
+         getlocal2
+         getproperty MultinameL([PrivateNamespace(null,"#GraphicElement"),Namespace("http://www.adobe.com/2006/flex/mx/internal"),ProtectedNamespace("spark.primitives.supportClasses:GraphicElement"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#GraphicElement/1"),PackageNamespace("spark.primitives.supportClasses"),PackageInternalNs("spark.primitives.supportClasses"),StaticProtectedNs("spark.primitives.supportClasses:GraphicElement"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         callpropvoid QName(Namespace("http://adobe.com/AS3/2006/builtin"),"push"), 1
+         ofs14:
+         inclocal_i 2
+         ofs10:
+         getlocal2
+         getlocal 4
+         iflt ofs11
+         getlocal0
+         pushtrue
+         initproperty QName(PrivateNamespace(null,"#GraphicElement"),"filtersChanged")
+         getlocal0
+         callpropvoid QName(PackageNamespace(""),"invalidateProperties"), 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      [Bindable("propertyChange")]
+      public function get height() : Number
+      {
+         trait getter QName(PackageNamespace(""),"height")
+         flag METADATA
+         metadata"Bindable"
+         item "

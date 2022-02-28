@@ -1,0 +1,160 @@
+
+{
+   method
+   name null
+   returns null
+   
+   body
+   maxstack 2
+   localcount 1
+   initscopedepth 1
+   maxscopedepth 4
+   
+   code
+   getlocal0
+   pushscope
+   findpropstrict Multiname("SolidColorStroke",[PackageNamespace("mx.graphics")])
+   getlex QName(PackageNamespace(""),"Object")
+   pushscope
+   getlex QName(PackageNamespace("flash.events"),"EventDispatcher")
+   pushscope
+   getlex QName(PackageNamespace("flash.events"),"EventDispatcher")
+   newclass #SolidColorStroke
+   popscope
+   popscope
+   initproperty QName(PackageNamespace("mx.graphics"),"SolidColorStroke")
+   returnvoid
+   end ; code
+   end ; body
+   end ; method
+}
+
+package mx.graphics
+{
+   import flash.display.CapsStyle;
+   import flash.display.Graphics;
+   import flash.display.GraphicsSolidFill;
+   import flash.display.GraphicsStroke;
+   import flash.events.EventDispatcher;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import mx.core.mx_internal;
+   import mx.events.PropertyChangeEvent;
+   
+   use namespace mx_internal;
+   
+   public class SolidColorStroke extends EventDispatcher implements IStroke
+   {
+      
+      mx_internal static const VERSION:String = "4.1.0.16076";
+      
+      {
+         method
+         name null
+         returns null
+         
+         body
+         maxstack 2
+         localcount 1
+         initscopedepth 4
+         maxscopedepth 5
+         
+         code
+         getlocal0
+         pushscope
+         findproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"VERSION")
+         pushstring "4.1.0.16076"
+         initproperty QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"),"VERSION")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      private var _alpha:Number = 0.0;
+      
+      private var _caps:String = "round";
+      
+      private var _color:uint = 0;
+      
+      private var _joints:String = "round";
+      
+      private var _miterLimit:Number = 3;
+      
+      private var _pixelHinting:Boolean = false;
+      
+      private var _scaleMode:String = "normal";
+      
+      private var _weight:Number;
+      
+      public function SolidColorStroke(param1:uint = 0, param2:Number = 1, param3:Number = 1.0, param4:Boolean = false, param5:String = "normal", param6:String = "round", param7:String = "round", param8:Number = 3)
+      {
+         method
+         name null
+         flag HAS_OPTIONAL
+         param QName(PackageNamespace(""),"uint")
+         param QName(PackageNamespace(""),"Number")
+         param QName(PackageNamespace(""),"Number")
+         param QName(PackageNamespace(""),"Boolean")
+         param QName(PackageNamespace(""),"String")
+         param QName(PackageNamespace(""),"String")
+         param QName(PackageNamespace(""),"String")
+         param QName(PackageNamespace(""),"Number")
+         optional Integer(0)
+         optional Integer(1)
+         optional Double(1.0)
+         optional False()
+         optional Utf8("normal")
+         optional Utf8("round")
+         optional Utf8("round")
+         optional Integer(3)
+         returns null
+         
+         body
+         maxstack 2
+         localcount 9
+         initscopedepth 5
+         maxscopedepth 6
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         constructsuper 0
+         getlocal0
+         getlocal1
+         initproperty QName(PackageNamespace(""),"color")
+         getlocal0
+         getlocal2
+         initproperty QName(PrivateNamespace(null,"#SolidColorStroke"),"_weight")
+         getlocal0
+         getlocal3
+         initproperty QName(PackageNamespace(""),"alpha")
+         getlocal0
+         getlocal 4
+         initproperty QName(PackageNamespace(""),"pixelHinting")
+         getlocal0
+         getlocal 5
+         initproperty QName(PackageNamespace(""),"scaleMode")
+         getlocal0
+         getlocal 6
+         initproperty QName(PackageNamespace(""),"caps")
+         getlocal0
+         getlocal 7
+         initproperty QName(PackageNamespace(""),"joints")
+         getlocal0
+         getlocal 8
+         initproperty QName(PackageNamespace(""),"miterLimit")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      [Bindable("propertyChange")]
+      public function get alpha() : Number
+      {
+         trait getter QName(PackageNamespace(""),"alpha")
+         flag METADATA
+         metadata"Bindable"
+         item "
