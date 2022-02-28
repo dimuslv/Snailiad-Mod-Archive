@@ -763,7 +763,7 @@ package
          iflt ofs2
          ofs0:
          getlocal0
-         getproperty QName(PackageNamespace(""),"bgmap")
+         getproperty QName(PackageNamespace(""),"fgmap")
          findpropstrict QName(PackageNamespace(""),"int")
          getlocal1
          pushbyte 16

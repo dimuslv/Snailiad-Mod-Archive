@@ -824,11 +824,11 @@ package
                intro.kill();
                intro = null;
             }
-            FlxU.collide(worldMap.bgmap,playerBulletGroups.groups[0]);
+            FlxU.collide(worldMap.fgmap,playerBulletGroups.groups[0]);
             FlxU.collide(worldMap.bgmap,enemyBulletPool.groups[1]);
             if(!player.noCollide)
             {
-               FlxU.collide(worldMap.bgmap,player);
+               FlxU.collide(worldMap.fgmap,player);
             }
             FlxU.collide(worldMap.bgmap,npcs);
             FlxU.collide(worldMap.bgmap,solidItems);
