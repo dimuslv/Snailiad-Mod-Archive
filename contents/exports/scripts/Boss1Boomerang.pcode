@@ -1,7 +1,7 @@
 
 {
    method
-   name null
+   name ""
    returns null
    
    body
@@ -48,9 +48,9 @@ package
    public class Boss1Boomerang extends EnemyBullet
    {
       
-      private static const WIDTH:int = 24;
+      private static const WIDTH:int = 100;
       
-      private static const HEIGHT:int = 24;
+      private static const HEIGHT:int = 100;
       
       private static const FIREPOWER:int = 2;
       
@@ -58,7 +58,7 @@ package
       
       {
          method
-         name null
+         name ""
          returns null
          
          body
@@ -70,18 +70,18 @@ package
          code
          getlocal0
          pushscope
-         findproperty QName(PrivateNamespace(null,"#Boss1Boomerang"),"WIDTH")
-         pushbyte 24
-         initproperty QName(PrivateNamespace(null,"#Boss1Boomerang"),"WIDTH")
-         findproperty QName(PrivateNamespace(null,"#Boss1Boomerang"),"HEIGHT")
-         pushbyte 24
-         initproperty QName(PrivateNamespace(null,"#Boss1Boomerang"),"HEIGHT")
-         findproperty QName(PrivateNamespace(null,"#Boss1Boomerang"),"FIREPOWER")
+         findproperty QName(PrivateNamespace(":Boss1Boomerang"),"WIDTH")
+         pushbyte 100
+         initproperty QName(PrivateNamespace(":Boss1Boomerang"),"WIDTH")
+         findproperty QName(PrivateNamespace(":Boss1Boomerang"),"HEIGHT")
+         pushbyte 100
+         initproperty QName(PrivateNamespace(":Boss1Boomerang"),"HEIGHT")
+         findproperty QName(PrivateNamespace(":Boss1Boomerang"),"FIREPOWER")
          pushbyte 2
-         initproperty QName(PrivateNamespace(null,"#Boss1Boomerang"),"FIREPOWER")
-         findproperty QName(PrivateNamespace(null,"#Boss1Boomerang"),"DEFAULT_LIFETIME")
+         initproperty QName(PrivateNamespace(":Boss1Boomerang"),"FIREPOWER")
+         findproperty QName(PrivateNamespace(":Boss1Boomerang"),"DEFAULT_LIFETIME")
          pushbyte 4
-         initproperty QName(PrivateNamespace(null,"#Boss1Boomerang"),"DEFAULT_LIFETIME")
+         initproperty QName(PrivateNamespace(":Boss1Boomerang"),"DEFAULT_LIFETIME")
          returnvoid
          end ; code
          end ; body
@@ -91,8 +91,8 @@ package
       public function Boss1Boomerang()
       {
          method
-         name null
-         returns QName(PackageNamespace(""),"void")
+         name ":Boss1Boomerang/Boss1Boomerang"
+         returns null
          
          body
          maxstack 10
@@ -104,22 +104,24 @@ package
          getlocal0
          pushscope
          getlocal0
-         getlex QName(PrivateNamespace(null,"#Boss1Boomerang"),"FIREPOWER")
+         getlex QName(PrivateNamespace(":Boss1Boomerang"),"FIREPOWER")
          constructsuper 1
          findpropstrict QName(PackageNamespace(""),"loadGraphic")
          getlex QName(PackageNamespace(""),"Art")
          getproperty QName(PackageNamespace(""),"PlayerBullet5")
          pushtrue
          pushtrue
-         getlex QName(PrivateNamespace(null,"#Boss1Boomerang"),"WIDTH")
-         getlex QName(PrivateNamespace(null,"#Boss1Boomerang"),"HEIGHT")
+         getlex QName(PrivateNamespace(":Boss1Boomerang"),"WIDTH")
+         getlex QName(PrivateNamespace(":Boss1Boomerang"),"HEIGHT")
          callpropvoid QName(PackageNamespace(""),"loadGraphic"), 5
-         findproperty QName(PackageNamespace(""),"width")
-         getlex QName(PrivateNamespace(null,"#Boss1Boomerang"),"WIDTH")
-         initproperty QName(PackageNamespace(""),"width")
-         findproperty QName(PackageNamespace(""),"height")
-         getlex QName(PrivateNamespace(null,"#Boss1Boomerang"),"HEIGHT")
-         initproperty QName(PackageNamespace(""),"height")
+         findpropstrict QName(PackageNamespace(""),"width")
+         getlex QName(PrivateNamespace(":Boss1Boomerang"),"WIDTH")
+         convert_d
+         setproperty QName(PackageNamespace(""),"width")
+         findpropstrict QName(PackageNamespace(""),"height")
+         getlex QName(PrivateNamespace(":Boss1Boomerang"),"HEIGHT")
+         convert_d
+         setproperty QName(PackageNamespace(""),"height")
          findpropstrict QName(PackageNamespace(""),"addAnimation")
          pushstring "normal"
          pushbyte 0
@@ -146,7 +148,7 @@ package
          flag OVERRIDE
          dispid 0
          method
-         name null
+         name "Boss1Boomerang:shoot"
          flag HAS_OPTIONAL
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
@@ -165,6 +167,11 @@ package
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "param3", 2, 0
+         debug 1, "param4", 3, 0
+         debug 1, "param5", 4, 0
          getlocal0
          getlocal1
          getlocal2
@@ -176,11 +183,13 @@ package
          getlocal3
          pushdouble -1.5
          multiply
+         convert_d
          setproperty QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"acceleration")
          getlocal 4
          pushdouble -1.5
          multiply
+         convert_d
          setproperty QName(PackageNamespace(""),"y")
          getlex QName(PackageNamespace(""),"Sfx")
          callpropvoid QName(PackageNamespace(""),"playShot2b"), 0
@@ -199,7 +208,7 @@ package
          flag OVERRIDE
          dispid 0
          method
-         name null
+         name "Boss1Boomerang:hitPlayer"
          param QName(PackageNamespace(""),"Player")
          returns QName(PackageNamespace(""),"void")
          
@@ -212,6 +221,7 @@ package
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
          getlocal0
          getlocal1
          callsupervoid QName(PackageNamespace(""),"hitPlayer"), 1
@@ -227,7 +237,7 @@ package
          flag OVERRIDE
          dispid 0
          method
-         name null
+         name "Boss1Boomerang:update"
          returns QName(PackageNamespace(""),"void")
          
          body

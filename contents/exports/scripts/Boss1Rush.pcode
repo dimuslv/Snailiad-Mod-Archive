@@ -1,7 +1,7 @@
 
 {
    method
-   name null
+   name ""
    returns null
    
    body
@@ -51,21 +51,21 @@ package
    public class Boss1Rush extends Boss
    {
       
-      private static const IMGBODY_WIDTH:int = 48;
+      private static const IMGBODY_WIDTH:int = 100;
       
-      private static const IMGBODY_HEIGHT:int = 48;
+      private static const IMGBODY_HEIGHT:int = 100;
       
       private static const DEFENSE:int = 3;
       
       private static const OFFENSE:int = 2;
       
-      private static const PATTERN_DELAY:Number = 5.0;
+      private static const PATTERN_DELAY:Number = 5;
       
       private static const WEAPON_SPEED:Number = 330;
       
       {
          method
-         name null
+         name ""
          returns null
          
          body
@@ -77,24 +77,24 @@ package
          code
          getlocal0
          pushscope
-         findproperty QName(PrivateNamespace(null,"#Boss1Rush"),"IMGBODY_WIDTH")
-         pushbyte 48
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"IMGBODY_WIDTH")
-         findproperty QName(PrivateNamespace(null,"#Boss1Rush"),"IMGBODY_HEIGHT")
-         pushbyte 48
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"IMGBODY_HEIGHT")
-         findproperty QName(PrivateNamespace(null,"#Boss1Rush"),"DEFENSE")
+         findproperty QName(PrivateNamespace(":Boss1Rush"),"IMGBODY_WIDTH")
+         pushbyte 100
+         initproperty QName(PrivateNamespace(":Boss1Rush"),"IMGBODY_WIDTH")
+         findproperty QName(PrivateNamespace(":Boss1Rush"),"IMGBODY_HEIGHT")
+         pushbyte 100
+         initproperty QName(PrivateNamespace(":Boss1Rush"),"IMGBODY_HEIGHT")
+         findproperty QName(PrivateNamespace(":Boss1Rush"),"DEFENSE")
          pushbyte 3
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"DEFENSE")
-         findproperty QName(PrivateNamespace(null,"#Boss1Rush"),"OFFENSE")
+         initproperty QName(PrivateNamespace(":Boss1Rush"),"DEFENSE")
+         findproperty QName(PrivateNamespace(":Boss1Rush"),"OFFENSE")
          pushbyte 2
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"OFFENSE")
-         findproperty QName(PrivateNamespace(null,"#Boss1Rush"),"PATTERN_DELAY")
+         initproperty QName(PrivateNamespace(":Boss1Rush"),"OFFENSE")
+         findproperty QName(PrivateNamespace(":Boss1Rush"),"PATTERN_DELAY")
          pushbyte 5
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"PATTERN_DELAY")
-         findproperty QName(PrivateNamespace(null,"#Boss1Rush"),"WEAPON_SPEED")
+         initproperty QName(PrivateNamespace(":Boss1Rush"),"PATTERN_DELAY")
+         findproperty QName(PrivateNamespace(":Boss1Rush"),"WEAPON_SPEED")
          pushshort 330
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"WEAPON_SPEED")
+         initproperty QName(PrivateNamespace(":Boss1Rush"),"WEAPON_SPEED")
          returnvoid
          end ; code
          end ; body
@@ -103,7 +103,7 @@ package
       
       private var MAX_HP:int = 10000;
       
-      private var started:Boolean = false;
+      private var started:Boolean;
       
       private var _hand:Array;
       
@@ -147,17 +147,17 @@ package
       
       private var _attackMode:int = 0;
       
-      private var _createdChildren:Boolean = false;
+      private var _createdChildren:Boolean;
       
       private var _totalElapsed:Number = 0;
       
       public function Boss1Rush(param1:int, param2:int)
       {
          method
-         name null
+         name ":Boss1Rush/Boss1Rush"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
-         returns QName(PackageNamespace(""),"void")
+         returns null
          
          body
          maxstack 6
@@ -168,65 +168,85 @@ package
          code
          getlocal0
          pushscope
+         getlocal0
+         pushdouble 0.3
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"SHOT_DELAY")
+         getlocal0
+         pushdouble 1.0
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_turboMultiplier")
+         getlocal0
+         pushdouble 1.0
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_radiusMultTarget")
+         getlocal0
+         pushdouble 1.0
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_radiusMultCur")
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "_loc3_", 2, 97
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
-         convert_b
          dup
+         convert_b
          iffalse ofs0
          pop
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"_hardMode")
-         convert_b
          ofs0:
          iffalse ofs1
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"HAND_NUM")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"HAND_NUM")
          pushbyte 24
          add
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"HAND_NUM")
+         convert_i
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"HAND_NUM")
          ofs1:
          getlocal0
          getlocal1
          getlocal2
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"MAX_HP")
-         getlex QName(PrivateNamespace(null,"#Boss1Rush"),"DEFENSE")
-         getlex QName(PrivateNamespace(null,"#Boss1Rush"),"OFFENSE")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"MAX_HP")
+         getlex QName(PrivateNamespace(":Boss1Rush"),"DEFENSE")
+         getlex QName(PrivateNamespace(":Boss1Rush"),"OFFENSE")
          constructsuper 5
          findpropstrict QName(PackageNamespace(""),"loadGraphic")
          getlex QName(PackageNamespace(""),"Art")
          getproperty QName(PackageNamespace(""),"Boss1Rush")
          pushtrue
          pushtrue
-         getlex QName(PrivateNamespace(null,"#Boss1Rush"),"IMGBODY_WIDTH")
-         getlex QName(PrivateNamespace(null,"#Boss1Rush"),"IMGBODY_HEIGHT")
+         getlex QName(PrivateNamespace(":Boss1Rush"),"IMGBODY_WIDTH")
+         getlex QName(PrivateNamespace(":Boss1Rush"),"IMGBODY_HEIGHT")
          callpropvoid QName(PackageNamespace(""),"loadGraphic"), 5
-         findproperty QName(PackageNamespace(""),"width")
-         getlex QName(PrivateNamespace(null,"#Boss1Rush"),"IMGBODY_WIDTH")
-         initproperty QName(PackageNamespace(""),"width")
-         findproperty QName(PackageNamespace(""),"height")
-         getlex QName(PrivateNamespace(null,"#Boss1Rush"),"IMGBODY_HEIGHT")
-         initproperty QName(PackageNamespace(""),"height")
+         findpropstrict QName(PackageNamespace(""),"width")
+         getlex QName(PrivateNamespace(":Boss1Rush"),"IMGBODY_WIDTH")
+         convert_d
+         setproperty QName(PackageNamespace(""),"width")
+         findpropstrict QName(PackageNamespace(""),"height")
+         getlex QName(PrivateNamespace(":Boss1Rush"),"IMGBODY_HEIGHT")
+         convert_d
+         setproperty QName(PackageNamespace(""),"height")
          getlocal0
          pushdouble 0.6
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_turboMultiplier")
+         convert_d
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_turboMultiplier")
          getlocal0
          getlocal1
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_originX")
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_originX")
          getlocal0
          getlocal2
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_originY")
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_originY")
          getlocal0
          pushbyte 1
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_radiusMultTarget")
+         convert_d
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_radiusMultTarget")
          getlocal0
          pushbyte 1
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_radiusMultCur")
+         convert_d
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_radiusMultCur")
          getlocal0
          pushbyte 0
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_attackMode")
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_attackMode")
          findpropstrict QName(PackageNamespace(""),"addAnimation")
          pushstring "normal0"
          pushbyte 0
@@ -263,60 +283,60 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"Array")
          constructprop QName(PackageNamespace(""),"Array"), 0
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_hand")
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_hand")
          getlocal0
          findpropstrict QName(PackageNamespace(""),"Array")
          constructprop QName(PackageNamespace(""),"Array"), 0
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_handThetaCur")
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_handThetaCur")
          getlocal0
          findpropstrict QName(PackageNamespace(""),"Array")
          constructprop QName(PackageNamespace(""),"Array"), 0
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_handThetaSpeed")
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_handThetaSpeed")
          pushbyte 0
          setlocal3
          jump ofs2
          ofs3:
          label
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_handThetaCur")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_handThetaCur")
          getlocal3
          pushbyte 2
          getlex QName(PackageNamespace(""),"Math")
-         getproperty QName(PackageNamespace(""),"PI")
+         getproperty Multiname("PI",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          multiply
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"HAND_NUM")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"HAND_NUM")
          divide
-         setproperty MultinameL([PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_handThetaSpeed")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_handThetaSpeed")
          getlocal3
          pushdouble 2.5
          getlocal3
          pushdouble 0.75
          multiply
          add
-         setproperty MultinameL([PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_hand")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_hand")
          getlocal3
          findpropstrict QName(PackageNamespace(""),"Boss1RushHand")
          getlex QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"y")
          constructprop QName(PackageNamespace(""),"Boss1RushHand"), 2
-         setproperty MultinameL([PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"enemies")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_hand")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_hand")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          callpropvoid QName(PackageNamespace(""),"add"), 1
          inclocal_i 3
          ofs2:
          getlocal3
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"HAND_NUM")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"HAND_NUM")
          iflt ofs3
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
@@ -325,6 +345,7 @@ package
          getproperty QName(PackageNamespace(""),"x")
          pushbyte 28
          add
+         convert_d
          setproperty QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
@@ -343,7 +364,7 @@ package
          flag OVERRIDE
          dispid 0
          method
-         name null
+         name "Boss1Rush:destroy"
          returns QName(PackageNamespace(""),"void")
          
          body
@@ -355,13 +376,14 @@ package
          code
          getlocal0
          pushscope
+         debug 1, "_loc1_", 0, 112
          pushnull
-         coerce_s
+         coerce_a
          setlocal1
          pushbyte 0
          setlocal2
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_hand")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_hand")
          coerce_a
          setlocal3
          jump ofs0
@@ -370,13 +392,13 @@ package
          getlocal3
          getlocal2
          nextname
-         coerce_s
+         coerce_a
          setlocal1
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_hand")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_hand")
          getlocal1
          pushnull
-         setproperty MultinameL([PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          ofs0:
          hasnext2 3, 2
          iftrue ofs1
@@ -384,16 +406,20 @@ package
          kill 2
          getlocal0
          pushnull
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_hand")
+         coerce QName(PackageNamespace(""),"Array")
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_hand")
          getlocal0
          pushnull
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_eyes")
+         coerce QName(PackageNamespace(""),"Enemy")
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_eyes")
          getlocal0
          pushnull
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_handThetaCur")
+         coerce QName(PackageNamespace(""),"Array")
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_handThetaCur")
          getlocal0
          pushnull
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_handThetaSpeed")
+         coerce QName(PackageNamespace(""),"Array")
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_handThetaSpeed")
          getlocal0
          callsupervoid QName(PackageNamespace(""),"destroy"), 0
          returnvoid
@@ -407,7 +433,7 @@ package
          trait method QName(PackageNamespace(""),"now")
          dispid 0
          method
-         name null
+         name "Boss1Rush:now"
          returns QName(PackageNamespace(""),"Number")
          
          body
@@ -420,7 +446,7 @@ package
          getlocal0
          pushscope
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_totalElapsed")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_totalElapsed")
          pushdouble 1.15
          multiply
          returnvalue
@@ -435,7 +461,7 @@ package
          flag OVERRIDE
          dispid 0
          method
-         name null
+         name "Boss1Rush:touch"
          param QName(PackageNamespace(""),"Player")
          returns QName(PackageNamespace(""),"void")
          
@@ -448,6 +474,7 @@ package
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
          getlocal0
          getlocal1
          callsupervoid QName(PackageNamespace(""),"touch"), 1
@@ -463,7 +490,7 @@ package
          flag OVERRIDE
          dispid 0
          method
-         name null
+         name "Boss1Rush:update"
          returns QName(PackageNamespace(""),"void")
          
          body
@@ -475,6 +502,11 @@ package
          code
          getlocal0
          pushscope
+         debug 1, "_loc1_", 0, 136
+         debug 1, "_loc2_", 1, 137
+         debug 1, "_loc3_", 2, 138
+         debug 1, "_loc4_", 3, 139
+         debug 1, "_loc5_", 4, 167
          pushnan
          setlocal1
          pushnan
@@ -492,32 +524,35 @@ package
          ofs0:
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_totalElapsed")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_totalElapsed")
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"elapsed")
          add
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_totalElapsed")
+         convert_d
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_totalElapsed")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_createdChildren")
-         iftrue ofs1
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_createdChildren")
+         not
+         iffalse ofs1
          getlocal0
          findpropstrict QName(PackageNamespace(""),"Boss1Eyes")
          getlex QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"y")
          constructprop QName(PackageNamespace(""),"Boss1Eyes"), 2
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_eyes")
+         coerce QName(PackageNamespace(""),"Enemy")
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_eyes")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"enemies")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_eyes")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_eyes")
          callpropvoid QName(PackageNamespace(""),"add"), 1
          getlocal0
          pushtrue
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_createdChildren")
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_createdChildren")
          ofs1:
          getlocal0
          callproperty QName(PackageNamespace(""),"now"), 0
-         convert_d
+         coerce QName(PackageNamespace(""),"Number")
          setlocal1
          getlex QName(PackageNamespace(""),"Math")
          getlex QName(PackageNamespace(""),"y")
@@ -530,11 +565,10 @@ package
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"x")
          subtract
-         callproperty QName(PackageNamespace(""),"atan2"), 2
-         convert_d
+         callproperty Multiname("atan2",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")]), 2
+         coerce QName(PackageNamespace(""),"Number")
          setlocal2
          getlocal1
-         convert_d
          setlocal3
          getlex QName(PackageNamespace(""),"Math")
          pushbyte 3
@@ -542,58 +576,62 @@ package
          divide
          getlocal3
          multiply
-         callproperty QName(PackageNamespace(""),"sin"), 1
-         convert_d
+         callproperty Multiname("sin",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")]), 1
+         coerce QName(PackageNamespace(""),"Number")
          setlocal 4
-         findproperty QName(PackageNamespace(""),"x")
+         findpropstrict QName(PackageNamespace(""),"x")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_originX")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_originX")
          pushbyte 9
          pushbyte 16
          multiply
          getlex QName(PackageNamespace(""),"Math")
          getlocal3
-         callproperty QName(PackageNamespace(""),"cos"), 1
+         callproperty Multiname("cos",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")]), 1
          multiply
          getlocal 4
          multiply
          add
-         initproperty QName(PackageNamespace(""),"x")
-         findproperty QName(PackageNamespace(""),"y")
+         convert_d
+         setproperty QName(PackageNamespace(""),"x")
+         findpropstrict QName(PackageNamespace(""),"y")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_originY")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_originY")
          pushbyte 7
          pushbyte 16
          multiply
          getlex QName(PackageNamespace(""),"Math")
          getlocal3
-         callproperty QName(PackageNamespace(""),"sin"), 1
+         callproperty Multiname("sin",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")]), 1
          multiply
          getlocal 4
          multiply
          add
-         initproperty QName(PackageNamespace(""),"y")
+         convert_d
+         setproperty QName(PackageNamespace(""),"y")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_eyes")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_eyes")
          getlex QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"Math")
          getlocal2
-         callproperty QName(PackageNamespace(""),"cos"), 1
+         callproperty Multiname("cos",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")]), 1
          pushbyte 2
          multiply
          subtract
          pushdouble 0.5
          add
+         convert_d
          setproperty QName(PackageNamespace(""),"x")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_eyes")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_eyes")
          getlex QName(PackageNamespace(""),"y")
          getlex QName(PackageNamespace(""),"Math")
          getlocal2
-         callproperty QName(PackageNamespace(""),"sin"), 1
+         callproperty Multiname("sin",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")]), 1
          pushdouble 2.5
          multiply
          subtract
+         convert_d
          setproperty QName(PackageNamespace(""),"y")
          getlocal0
          getlocal1
@@ -608,53 +646,57 @@ package
          multiply
          pushbyte 3
          divide
-         callproperty QName(PackageNamespace(""),"sin"), 1
-         callproperty QName(PackageNamespace(""),"sin"), 1
+         callproperty Multiname("sin",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")]), 1
+         callproperty Multiname("sin",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")]), 1
          multiply
          add
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_handRadius")
+         convert_d
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_handRadius")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_handRadius")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_handRadius")
          pushbyte 50
          ifnlt ofs2
          getlocal0
          pushbyte 50
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_handRadius")
+         convert_d
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_handRadius")
          ofs2:
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_handRadius")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_handRadius")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_radiusMultCur")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_radiusMultCur")
          multiply
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_handRadius")
+         convert_d
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_handRadius")
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_radiusMultCur")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_radiusMultCur")
          pushdouble 0.9
          multiply
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_radiusMultTarget")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_radiusMultTarget")
          pushdouble 0.1
          multiply
          add
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_radiusMultCur")
+         convert_d
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_radiusMultCur")
          pushbyte 0
          setlocal 5
          jump ofs3
          ofs4:
          label
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_handThetaCur")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_handThetaCur")
          getlocal 5
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_handThetaCur")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_handThetaCur")
          getlocal 5
-         getproperty MultinameL([PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_handThetaSpeed")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_handThetaSpeed")
          getlocal 5
-         getproperty MultinameL([PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"elapsed")
          multiply
@@ -665,17 +707,17 @@ package
          multiply
          pushbyte 4
          divide
-         callproperty QName(PackageNamespace(""),"sin"), 1
+         callproperty Multiname("sin",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")]), 1
          add
          multiply
          pushdouble 1.2
          multiply
          add
-         setproperty MultinameL([PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_hand")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_hand")
          getlocal 5
-         getproperty MultinameL([PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          getlex QName(PackageNamespace(""),"x")
          pushbyte 12
          subtract
@@ -683,19 +725,19 @@ package
          add
          getlex QName(PackageNamespace(""),"Math")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_handThetaCur")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_handThetaCur")
          getlocal 5
-         getproperty MultinameL([PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         callproperty QName(PackageNamespace(""),"sin"), 1
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
+         callproperty Multiname("sin",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")]), 1
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_handRadius")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_handRadius")
          multiply
          subtract
-         setproperty Multiname("x",[PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty Multiname("x",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_hand")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_hand")
          getlocal 5
-         getproperty MultinameL([PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          getlex QName(PackageNamespace(""),"y")
          pushbyte 12
          subtract
@@ -703,45 +745,47 @@ package
          add
          getlex QName(PackageNamespace(""),"Math")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_handThetaCur")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_handThetaCur")
          getlocal 5
-         getproperty MultinameL([PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         callproperty QName(PackageNamespace(""),"cos"), 1
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
+         callproperty Multiname("cos",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")]), 1
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_handRadius")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_handRadius")
          multiply
          add
-         setproperty Multiname("y",[PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty Multiname("y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_radiusMultTarget")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_radiusMultTarget")
          pushbyte 0
          ifne ofs5
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_hand")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_hand")
          getlocal 5
-         getproperty MultinameL([PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          pushfalse
-         setproperty Multiname("solid",[PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         coerce_a
+         setproperty Multiname("solid",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          jump ofs6
          ofs5:
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_hand")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_hand")
          getlocal 5
-         getproperty MultinameL([PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          pushtrue
-         setproperty Multiname("solid",[PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         coerce_a
+         setproperty Multiname("solid",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          ofs6:
          inclocal_i 5
          ofs3:
          getlocal 5
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"HAND_NUM")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"HAND_NUM")
          iflt ofs4
          getlocal0
          callsupervoid QName(PackageNamespace(""),"update"), 0
          getlex QName(ProtectedNamespace("Boss"),"_introDone")
-         convert_b
          dup
+         convert_b
          iffalse ofs7
          pop
          getlex QName(PackageNamespace(""),"PlayState")
@@ -753,13 +797,13 @@ package
          iffalse ofs8
          pop
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"started")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"started")
          not
          ofs8:
          iffalse ofs9
          getlocal0
          pushtrue
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"started")
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"started")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"bossRushTimer")
          pushtrue
@@ -780,7 +824,7 @@ package
          trait method QName(PackageNamespace(""),"shoot")
          dispid 0
          method
-         name null
+         name "Boss1Rush:shoot"
          param QName(PackageNamespace(""),"Number")
          returns QName(PackageNamespace(""),"void")
          
@@ -793,32 +837,38 @@ package
          code
          getlocal0
          pushscope
-         getlex QName(PrivateNamespace(null,"#Boss1Rush"),"WEAPON_SPEED")
-         convert_d
+         debug 1, "param1", 0, 0
+         debug 1, "_loc2_", 1, 194
+         debug 1, "_loc3_", 2, 195
+         debug 1, "_loc4_", 3, 196
+         debug 1, "_loc5_", 4, 197
+         getlex QName(PrivateNamespace(":Boss1Rush"),"WEAPON_SPEED")
          setlocal2
+         pushbyte 0
          getlex QName(PackageNamespace(""),"Math")
          getlocal1
-         callproperty QName(PackageNamespace(""),"cos"), 1
-         negate
+         callproperty Multiname("cos",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")]), 1
+         subtract
          getlocal2
          multiply
-         convert_d
+         coerce QName(PackageNamespace(""),"Number")
          setlocal3
+         pushbyte 0
          getlex QName(PackageNamespace(""),"Math")
          getlocal1
-         callproperty QName(PackageNamespace(""),"sin"), 1
-         negate
+         callproperty Multiname("sin",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")]), 1
+         subtract
          getlocal2
          multiply
-         convert_d
+         coerce QName(PackageNamespace(""),"Number")
          setlocal 4
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"enemyBulletPool")
          pushbyte 0
          callproperty QName(PackageNamespace(""),"getBullet"), 1
          coerce QName(PackageNamespace(""),"EnemyBullet")
-         dup
          setlocal 5
+         getlocal 5
          iffalse ofs0
          getlocal 5
          getlex QName(PackageNamespace(""),"x")
@@ -846,7 +896,7 @@ package
          trait method QName(PackageNamespace(""),"fire")
          dispid 0
          method
-         name null
+         name "Boss1Rush:fire"
          param QName(PackageNamespace(""),"Number")
          returns QName(PackageNamespace(""),"void")
          
@@ -859,8 +909,11 @@ package
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "_loc2_", 1, 11
          getlex QName(ProtectedNamespace("Boss"),"_introDone")
-         iftrue ofs0
+         not
+         iffalse ofs0
          returnvoid
          ofs0:
          getlex QName(PackageNamespace(""),"Math")
@@ -874,45 +927,47 @@ package
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"x")
          subtract
-         callproperty QName(PackageNamespace(""),"atan2"), 2
-         convert_d
+         callproperty Multiname("atan2",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")]), 2
+         coerce QName(PackageNamespace(""),"Number")
          setlocal2
          getlocal1
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_firingPatternTimeout")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_firingPatternTimeout")
          ifngt ofs1
          findpropstrict QName(PackageNamespace(""),"play")
          pushstring "shoot"
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_attackMode")
-         callproperty QName(Namespace("http://adobe.com/AS3/2006/builtin"),"toString"), 0
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_attackMode")
+         callproperty Multiname("toString",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")]), 0
          add
          callpropvoid QName(PackageNamespace(""),"play"), 1
          getlocal0
-         pushdouble 0.0
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_radiusMultTarget")
+         pushbyte 0
+         convert_d
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_radiusMultTarget")
          getlocal1
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_shotTimeout")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_shotTimeout")
          ifngt ofs1
          getlocal0
          getlocal1
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"SHOT_DELAY")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"SHOT_DELAY")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_turboMultiplier")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_turboMultiplier")
          multiply
          add
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_shotTimeout")
+         convert_d
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_shotTimeout")
          getlocal0
          dup
          setlocal3
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_shotNum")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_shotNum")
          increment_i
          setlocal 4
          getlocal3
          getlocal 4
-         setproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_shotNum")
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_shotNum")
          kill 4
          kill 3
          jump ofs2
@@ -927,17 +982,17 @@ package
          getlocal0
          getlocal2
          getlex QName(PackageNamespace(""),"Math")
-         getproperty QName(PackageNamespace(""),"PI")
+         getproperty Multiname("PI",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_shotMax")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_shotMax")
          divide
          getlex QName(PackageNamespace(""),"Math")
-         getproperty QName(PackageNamespace(""),"PI")
+         getproperty Multiname("PI",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          pushbyte 2
          divide
          subtract
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_shotNum")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_shotNum")
          multiply
          pushbyte 8
          divide
@@ -949,7 +1004,7 @@ package
          getlocal0
          getlocal2
          getlex QName(PackageNamespace(""),"Math")
-         getproperty QName(PackageNamespace(""),"PI")
+         getproperty Multiname("PI",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          add
          callpropvoid QName(PackageNamespace(""),"shoot"), 1
          jump ofs4
@@ -958,29 +1013,28 @@ package
          getlocal0
          getlocal2
          getlex QName(PackageNamespace(""),"Math")
-         getproperty QName(PackageNamespace(""),"PI")
+         getproperty Multiname("PI",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_shotMax")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_shotMax")
          divide
          getlex QName(PackageNamespace(""),"Math")
-         getproperty QName(PackageNamespace(""),"PI")
+         getproperty Multiname("PI",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
          pushbyte 2
          divide
          subtract
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_shotNum")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_shotNum")
          multiply
          pushbyte 8
          divide
          subtract
          callpropvoid QName(PackageNamespace(""),"shoot"), 1
-         jump ofs4
          ofs8:
          label
          jump ofs4
          ofs2:
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_firingPattern")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_firingPattern")
          setlocal3
          pushbyte 0
          getlocal3
@@ -1007,43 +1061,45 @@ package
          jump ofs10
          ofs13:
          jump ofs14
-         pushbyte 4
+         pushbyte -1
          jump ofs14
          ofs14:
-         pushbyte 4
+         pushbyte -1
          ofs10:
          kill 3
-         lookupswitch ofs8, [ofs3, ofs5, ofs6, ofs7, ofs8]
+         lookupswitch ofs8, [ofs3, ofs5, ofs6, ofs7]
          ofs4:
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_shotNum")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_shotNum")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_shotMax")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_shotMax")
          ifnge ofs1
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_firingPattern")
-         pushbyte 1
-         add
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_firingPattern")
+         increment
          pushbyte 4
          modulo
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_firingPattern")
+         convert_i
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_firingPattern")
          getlocal0
          getlocal1
-         getlex QName(PrivateNamespace(null,"#Boss1Rush"),"PATTERN_DELAY")
+         getlex QName(PrivateNamespace(":Boss1Rush"),"PATTERN_DELAY")
          add
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_firingPatternTimeout")
+         convert_d
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_firingPatternTimeout")
          getlocal0
          pushbyte 1
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_radiusMultTarget")
+         convert_d
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_radiusMultTarget")
          getlocal0
          pushbyte 0
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_shotNum")
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_shotNum")
          findpropstrict QName(PackageNamespace(""),"play")
          pushstring "normal"
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_attackMode")
-         callproperty QName(Namespace("http://adobe.com/AS3/2006/builtin"),"toString"), 0
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_attackMode")
+         callproperty Multiname("toString",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")]), 0
          add
          callpropvoid QName(PackageNamespace(""),"play"), 1
          ofs1:
@@ -1059,7 +1115,7 @@ package
          flag OVERRIDE
          dispid 0
          method
-         name null
+         name "Boss1Rush:kill"
          returns QName(PackageNamespace(""),"void")
          
          body
@@ -1071,6 +1127,7 @@ package
          code
          getlocal0
          pushscope
+         debug 1, "_loc1_", 0, 25
          getlocal0
          callsupervoid QName(PackageNamespace(""),"kill"), 0
          getlex QName(ProtectedNamespace("Enemy"),"_hp")
@@ -1101,7 +1158,7 @@ package
          callpropvoid QName(PackageNamespace(""),"add"), 1
          ofs1:
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_eyes")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_eyes")
          callpropvoid QName(PackageNamespace(""),"kill"), 0
          pushbyte 0
          setlocal1
@@ -1109,31 +1166,31 @@ package
          ofs3:
          label
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_hand")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_hand")
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         callpropvoid Multiname("kill",[PrivateNamespace(null,"#Boss1Rush"),PrivateNamespace(null,"#Boss1Rush/1"),PackageNamespace(""),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("Boss1Rush"),StaticProtectedNs("Boss1Rush"),StaticProtectedNs("Boss"),StaticProtectedNs("Enemy"),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")])
+         callpropvoid Multiname("kill",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Boss1Rush"),ProtectedNamespace(":Boss1Rush"),StaticProtectedNs(":Boss1Rush"),PrivateNamespace("Boss1Rush.as$321")]), 0
          inclocal_i 1
          ofs2:
          getlocal1
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"HAND_NUM")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"HAND_NUM")
          iflt ofs3
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"enemyBulletPool")
          callpropvoid QName(PackageNamespace(""),"destroyAll"), 0
-         findproperty QName(PackageNamespace(""),"dead")
+         findpropstrict QName(PackageNamespace(""),"dead")
          pushtrue
-         initproperty QName(PackageNamespace(""),"dead")
-         findproperty QName(PackageNamespace(""),"exists")
+         setproperty QName(PackageNamespace(""),"dead")
+         findpropstrict QName(PackageNamespace(""),"exists")
          pushfalse
-         initproperty QName(PackageNamespace(""),"exists")
-         findproperty QName(PackageNamespace(""),"active")
+         setproperty QName(PackageNamespace(""),"exists")
+         findpropstrict QName(PackageNamespace(""),"active")
          pushfalse
-         initproperty QName(PackageNamespace(""),"active")
-         findproperty QName(PackageNamespace(""),"visible")
+         setproperty QName(PackageNamespace(""),"active")
+         findpropstrict QName(PackageNamespace(""),"visible")
          pushfalse
-         initproperty QName(PackageNamespace(""),"visible")
+         setproperty QName(PackageNamespace(""),"visible")
          returnvoid
          end ; code
          end ; body
@@ -1146,7 +1203,7 @@ package
          flag OVERRIDE
          dispid 0
          method
-         name null
+         name "Boss1Rush:hurt"
          param QName(PackageNamespace(""),"Number")
          returns QName(PackageNamespace(""),"void")
          
@@ -1159,9 +1216,10 @@ package
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
          getlex QName(ProtectedNamespace("Enemy"),"_hp")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"MAX_HP")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"MAX_HP")
          pushdouble 0.33
          multiply
          lessequals
@@ -1169,23 +1227,25 @@ package
          iffalse ofs0
          pop
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_attackMode")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_attackMode")
          pushbyte 2
          lessthan
          ofs0:
          iffalse ofs1
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_shotMax")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_shotMax")
          pushbyte 27
          add
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_shotMax")
+         convert_i
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_shotMax")
          getlocal0
          pushdouble 0.19
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_turboMultiplier")
+         convert_d
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_turboMultiplier")
          getlocal0
          pushbyte 2
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_attackMode")
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_attackMode")
          findpropstrict QName(PackageNamespace(""),"play")
          pushstring "normal2"
          callpropvoid QName(PackageNamespace(""),"play"), 1
@@ -1193,7 +1253,7 @@ package
          ofs1:
          getlex QName(ProtectedNamespace("Enemy"),"_hp")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"MAX_HP")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"MAX_HP")
          pushdouble 0.66
          multiply
          lessequals
@@ -1201,23 +1261,25 @@ package
          iffalse ofs3
          pop
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_attackMode")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_attackMode")
          pushbyte 1
          lessthan
          ofs3:
          iffalse ofs2
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_shotMax")
+         getproperty QName(PrivateNamespace(":Boss1Rush"),"_shotMax")
          pushbyte 9
          add
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_shotMax")
+         convert_i
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_shotMax")
          getlocal0
          pushdouble 0.28
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_turboMultiplier")
+         convert_d
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_turboMultiplier")
          getlocal0
          pushbyte 1
-         initproperty QName(PrivateNamespace(null,"#Boss1Rush"),"_attackMode")
+         setproperty QName(PrivateNamespace(":Boss1Rush"),"_attackMode")
          findpropstrict QName(PackageNamespace(""),"play")
          pushstring "normal1"
          callpropvoid QName(PackageNamespace(""),"play"), 1

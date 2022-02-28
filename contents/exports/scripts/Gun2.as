@@ -4,9 +4,9 @@ package
    public class Gun2 extends UniqueItem
    {
       
-      private static const IMG_WIDTH:int = 32;
+      private static const IMG_WIDTH:int = 100;
       
-      private static const IMG_HEIGHT:int = 32;
+      private static const IMG_HEIGHT:int = 100;
       
       private static const IMG_OFS_X:int = 0;
       
@@ -19,8 +19,8 @@ package
          x -= IMG_OFS_X;
          y -= IMG_OFS_Y;
          loadGraphic(Art.ItemGun2,true,true,IMG_WIDTH,IMG_HEIGHT);
-         width = IMG_WIDTH;
-         height = IMG_HEIGHT;
+         width = Number(IMG_WIDTH);
+         height = Number(IMG_HEIGHT);
          addAnimation("normal",[0,1,2,3,4,5,6,7],22,true);
          play("normal");
          active = true;

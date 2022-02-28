@@ -6,9 +6,9 @@ package
    public class PlayerBullet2 extends PlayerBullet
    {
       
-      private static const WIDTH:int = 16;
+      private static const WIDTH:int = 20;
       
-      private static const HEIGHT:int = 16;
+      private static const HEIGHT:int = 20;
       
       private static const FIREPOWER:int = 20;
        
@@ -17,16 +17,16 @@ package
       {
          super(FIREPOWER);
          loadGraphic(Art.PlayerBullet2,true,true,WIDTH,HEIGHT);
-         width = WIDTH;
-         height = HEIGHT;
+         width = Number(WIDTH);
+         height = Number(HEIGHT);
          addAnimation("normal",[0,1,2,3,4,5,6,7],22,true);
       }
       
       override public function shoot(param1:int, param2:int, param3:int, param4:int) : void
       {
          super.shoot(param1,param2,param3,param4);
-         acceleration.x = param3 * -1.5;
-         acceleration.y = param4 * -1.5;
+         acceleration.x = Number(param3 * -10.5);
+         acceleration.y = Number(param4 * -10.5);
          Sfx.playShot2();
          play("normal");
       }
