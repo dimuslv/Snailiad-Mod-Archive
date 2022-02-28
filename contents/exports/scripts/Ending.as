@@ -80,7 +80,7 @@ package
          this._dialogueLayer = new EndingDialogue();
          add(this._dialogueLayer);
          FlxG.fade.stop();
-         FlxG.flash.start(4278190080,1.4);
+         FlxG.flash.start(-16777216,1.4);
          if(PlayState.player.getHelixFragments() == 30)
          {
             PlayState.hasGoodEnding = true;
@@ -132,7 +132,7 @@ package
             _loc1_++;
          }
          FlxG.fade.stop();
-         FlxG.flash.start(4294967295,1.4);
+         FlxG.flash.start(-1,1.4);
          this.bg.setTargetRgb(228,0,96);
          this._sunSnailSprite = new EndingSunSnail(264,140);
          add(this._sunSnailSprite);
@@ -145,7 +145,7 @@ package
          {
             this._modeInitialized = true;
             FlxG.fade.stop();
-            FlxG.flash.start(4278190080,1.4);
+            FlxG.flash.start(-16777216,1.4);
             this.bg.setRgb(0,0,0);
             if(PlayState.player.getHelixFragments() == 30)
             {
@@ -191,7 +191,7 @@ package
                if(!this._hasSunSnailAppeared)
                {
                   this._hasSunSnailAppeared = true;
-                  FlxG.fade.start(4294967295,0.6,this.makeSunSnail);
+                  FlxG.fade.start(-1,0.6,this.makeSunSnail);
                }
             }
             else
@@ -225,7 +225,7 @@ package
                this._dialogueMode = 2;
                if(PlayState.player.getHelixFragments() == 30)
                {
-                  this._dialogueLayer.start("   MOON SNAIL ONCE AGAIN\n" + "     REGAINED HIS LIGHT\n");
+                  this._dialogueLayer.start("   MOON SNAIL SHED HIS\n" + "     AURA OF MALICE\n");
                }
                else
                {
@@ -244,11 +244,11 @@ package
                this._dialogueMode = 3;
                if(PlayState.player.getHelixFragments() == 30)
                {
-                  this._dialogueLayer.start("     AND BECAME THE\n" + "  LEGENDARY SUN SNAIL\n");
+                  this._dialogueLayer.start("     AND WOKE UP ANEW,\n" + "  AS SUN SNAIL ONCE MORE\n");
                }
                else
                {
-                  this._dialogueLayer.start("BUT COULD HE EVER BECOME\n" + "      SUN SNAIL ONCE MORE?\n");
+                  this._dialogueLayer.start("YET HE STILL REEKED OF THE\n" + "DARK AURA THAT ENGULFED HIM\n");
                }
             }
          }
@@ -278,7 +278,7 @@ package
          if(!this._modeInitialized)
          {
             this._modeInitialized = true;
-            FlxG.fade.start(4278190080,1.9);
+            FlxG.fade.start(-16777216,1.9);
          }
          if(this._modeElapsed > 2)
          {
@@ -306,7 +306,7 @@ package
             this.bg.setRgb(0,0,48);
             this.bg.setTargetRgb(0,0,48);
             FlxG.fade.stop();
-            FlxG.flash.start(4278190080,1.4);
+            FlxG.flash.start(-16777216,1.4);
             _loc2_ = 0;
             while(_loc2_ < 4)
             {
@@ -343,7 +343,7 @@ package
          if(!this._modeInitialized)
          {
             this._modeInitialized = true;
-            FlxG.fade.start(4278190080,1.9);
+            FlxG.fade.start(-16777216,1.9);
          }
          if(this._modeElapsed > 2)
          {
@@ -365,7 +365,7 @@ package
             this.pictureLayer = new EndingGroup(PlayState.endingNum);
             add(this.pictureLayer);
             FlxG.fade.stop();
-            FlxG.flash.start(4278190080,1.4);
+            FlxG.flash.start(-16777216,1.4);
          }
          if(this._modeElapsed > 3 && !this._finalText)
          {
@@ -373,10 +373,10 @@ package
             this._finalText.font = Fonts.normal;
             this._finalText.size = 20;
             this._finalText.color = 16777215;
-            this._finalText.shadow = 4278190081;
+            this._finalText.shadow = -16777215;
             this._finalText.setShadowDistance(2);
             this._finalText.outline = true;
-            this._finalText.outlineColor = 4278190080;
+            this._finalText.outlineColor = -16777216;
             this._finalText.alignment = "center";
             this._finalText.text = "CONGRATULATIONS!!\n\n" + "ITEMS COLLECTED: " + PlayState.player.getPercentComplete() + "%\n" + "CLEAR TIME: " + GameTimeDisplay.formatExact(PlayState.player.clearTime.value) + "\n";
             this._finalText.scrollFactor.x = this._finalText.scrollFactor.y = 0;
@@ -406,7 +406,7 @@ package
             PauseLayer.hideMe = false;
             this._modeInitialized = true;
             this.endingFadeTimeout = ENDING_FADE_TIMEOUT;
-            FlxG.fade.start(4278190080,ENDING_FADE_TIMEOUT);
+            FlxG.fade.start(-16777216,ENDING_FADE_TIMEOUT);
             FlxG.music.fadeOut(ENDING_FADE_TIMEOUT);
          }
          this.endingFadeTimeout -= FlxG.elapsed;

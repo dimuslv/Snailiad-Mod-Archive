@@ -30,18 +30,18 @@ package
       {
          if(PlayState.bossRush)
          {
-            return 246;
+            return 237;
          }
-         return 299;
+         return 99;
       }
       
       public function getPlayerStartY(param1:int = 0) : int
       {
          if(PlayState.bossRush)
          {
-            return 329;
+            return 313;
          }
-         return 166;
+         return 169;
       }
    }
 }

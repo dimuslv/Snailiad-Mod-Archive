@@ -1,7 +1,7 @@
 
 {
    method
-   name null
+   name ""
    returns null
    
    body
@@ -35,14 +35,14 @@ package
       
       {
          method
-         name null
+         name ""
          returns null
          
          body
          maxstack 1
          localcount 1
-         initscopedepth 3
-         maxscopedepth 4
+         initscopedepth 4
+         maxscopedepth 5
          
          code
          getlocal0
@@ -60,38 +60,40 @@ package
       public function Configurable()
       {
          method
-         name null
+         name ":Configurable/Configurable"
          returns null
          
          body
          maxstack 3
          localcount 3
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "_loc1_", 0, 17
+         debug 1, "_loc2_", 1, 18
          getlocal0
          getlex QName(PackageNamespace(""),"Configurable_configXmlFile")
-         initproperty QName(PrivateNamespace(null,"#Configurable"),"configXmlFile")
+         setproperty QName(PrivateNamespace(":Configurable"),"configXmlFile")
          getlocal0
          constructsuper 0
          getlocal0
-         constructprop QName(PrivateNamespace(null,"#Configurable"),"configXmlFile"), 0
+         constructprop QName(PrivateNamespace(":Configurable"),"configXmlFile"), 0
          coerce QName(PackageNamespace("flash.utils"),"ByteArray")
          setlocal1
          getlocal1
          getlocal1
-         getproperty QName(PackageNamespace(""),"length")
-         callproperty QName(PackageNamespace(""),"readUTFBytes"), 1
+         getproperty Multiname("length",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":Configurable"),ProtectedNamespace(":Configurable"),StaticProtectedNs(":Configurable"),PrivateNamespace("Configurable.as$99")])
+         callproperty Multiname("readUTFBytes",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":Configurable"),ProtectedNamespace(":Configurable"),StaticProtectedNs(":Configurable"),PrivateNamespace("Configurable.as$99")]), 1
          coerce_s
          setlocal2
          getlocal0
          findpropstrict QName(PackageNamespace(""),"XML")
          getlocal2
          constructprop QName(PackageNamespace(""),"XML"), 1
-         initproperty QName(PrivateNamespace(null,"#Configurable"),"_xml")
+         setproperty QName(PrivateNamespace(":Configurable"),"_xml")
          returnvoid
          end ; code
          end ; body
@@ -103,24 +105,24 @@ package
          trait method QName(PackageNamespace(""),"destroy")
          dispid 0
          method
-         name null
+         name "Configurable:destroy"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 2
          localcount 1
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
          getlocal0
          pushnull
-         initproperty QName(PrivateNamespace(null,"#Configurable"),"_xml")
+         setproperty QName(PrivateNamespace(":Configurable"),"_xml")
          getlocal0
          pushnull
-         initproperty QName(PrivateNamespace(null,"#Configurable"),"configXmlFile")
+         setproperty QName(PrivateNamespace(":Configurable"),"configXmlFile")
          returnvoid
          end ; code
          end ; body
@@ -132,7 +134,7 @@ package
          trait method QName(PackageNamespace(""),"getPlayerStartX")
          dispid 0
          method
-         name null
+         name "Configurable:getPlayerStartX"
          flag HAS_OPTIONAL
          param QName(PackageNamespace(""),"int")
          optional Integer(0)
@@ -141,19 +143,20 @@ package
          body
          maxstack 1
          localcount 2
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"bossRush")
          iffalse ofs0
-         pushshort 246
+         pushshort 237
          returnvalue
          ofs0:
-         pushshort 299
+         pushbyte 99
          returnvalue
          end ; code
          end ; body
@@ -165,7 +168,7 @@ package
          trait method QName(PackageNamespace(""),"getPlayerStartY")
          dispid 0
          method
-         name null
+         name "Configurable:getPlayerStartY"
          flag HAS_OPTIONAL
          param QName(PackageNamespace(""),"int")
          optional Integer(0)
@@ -174,19 +177,20 @@ package
          body
          maxstack 1
          localcount 2
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"bossRush")
          iffalse ofs0
-         pushshort 329
+         pushshort 313
          returnvalue
          ofs0:
-         pushshort 166
+         pushshort 169
          returnvalue
          end ; code
          end ; body

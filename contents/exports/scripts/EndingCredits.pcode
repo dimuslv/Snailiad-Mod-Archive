@@ -1,7 +1,7 @@
 
 {
    method
-   name null
+   name ""
    returns null
    
    body
@@ -56,27 +56,27 @@ package
       
       {
          method
-         name null
+         name ""
          returns null
          
          body
          maxstack 2
          localcount 1
-         initscopedepth 7
-         maxscopedepth 8
+         initscopedepth 8
+         maxscopedepth 9
          
          code
          getlocal0
          pushscope
-         findproperty QName(PrivateNamespace(null,"#EndingCredits"),"VELOCITY_Y")
+         findproperty QName(PrivateNamespace(":EndingCredits"),"VELOCITY_Y")
          pushbyte -33
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"VELOCITY_Y")
-         findproperty QName(PrivateNamespace(null,"#EndingCredits"),"SPACING_Y_MINOR")
+         initproperty QName(PrivateNamespace(":EndingCredits"),"VELOCITY_Y")
+         findproperty QName(PrivateNamespace(":EndingCredits"),"SPACING_Y_MINOR")
          pushbyte 2
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"SPACING_Y_MINOR")
-         findproperty QName(PrivateNamespace(null,"#EndingCredits"),"SPACING_Y_MAJOR")
+         initproperty QName(PrivateNamespace(":EndingCredits"),"SPACING_Y_MINOR")
+         findproperty QName(PrivateNamespace(":EndingCredits"),"SPACING_Y_MAJOR")
          pushbyte 32
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"SPACING_Y_MAJOR")
+         initproperty QName(PrivateNamespace(":EndingCredits"),"SPACING_Y_MAJOR")
          returnvoid
          end ; code
          end ; body
@@ -87,29 +87,31 @@ package
       
       private var _theEnd:FlxObject;
       
-      public var scrollDone:Boolean = false;
+      public var scrollDone:Boolean;
       
       public function EndingCredits()
       {
          method
-         name null
-         returns QName(PackageNamespace(""),"void")
+         name ":EndingCredits/EndingCredits"
+         returns null
          
          body
          maxstack 5
          localcount 1
-         initscopedepth 8
-         maxscopedepth 9
+         initscopedepth 9
+         maxscopedepth 10
          
          code
          getlocal0
          pushscope
          getlocal0
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"height")
          pushbyte 4
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         callproperty QName(PackageNamespace(""),"Number"), 1
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          constructsuper 0
          getlocal0
@@ -120,10 +122,10 @@ package
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          pushbyte 40
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          pushbyte -30
          getlex QName(PackageNamespace(""),"EndingEnemy")
@@ -233,6 +235,18 @@ package
          pushstring "GHOST DANDELION"
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
+         pushbyte -12
+         getlex QName(PackageNamespace(""),"EndingEnemy")
+         getproperty Multiname("TYPE_DYNAMITE",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":EndingCredits"),ProtectedNamespace(":EndingCredits"),StaticProtectedNs(":EndingCredits"),PrivateNamespace("EndingCredits.as$398")])
+         pushstring ""
+         callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
+         getlocal0
+         pushbyte 12
+         getlex QName(PackageNamespace(""),"EndingEnemy")
+         getproperty Multiname("TYPE_DYNATITE",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":EndingCredits"),ProtectedNamespace(":EndingCredits"),StaticProtectedNs(":EndingCredits"),PrivateNamespace("EndingCredits.as$398")])
+         pushstring "DYNAMITE AND DYNATITE"
+         callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
+         getlocal0
          pushbyte -30
          getlex QName(PackageNamespace(""),"EndingEnemy")
          getproperty QName(PackageNamespace(""),"TYPE_CANNON")
@@ -258,10 +272,10 @@ package
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          pushbyte 30
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          pushbyte 0
          getlex QName(PackageNamespace(""),"EndingEnemy")
@@ -372,16 +386,16 @@ package
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          pushbyte 30
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          pushbyte 30
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          pushbyte 0
          getlex QName(PackageNamespace(""),"EndingEnemy")
@@ -432,16 +446,16 @@ package
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          pushbyte 30
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          pushbyte 30
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          pushbyte -100
          getlex QName(PackageNamespace(""),"EndingEnemy")
@@ -456,10 +470,10 @@ package
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          pushbyte 27
          subtract
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          pushbyte -49
          getlex QName(PackageNamespace(""),"EndingEnemy")
@@ -498,16 +512,16 @@ package
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          pushbyte 27
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          pushshort 160
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          pushbyte 0
          getlex QName(PackageNamespace(""),"EndingEnemy")
@@ -516,10 +530,10 @@ package
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          pushbyte 30
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          pushbyte 0
          getlex QName(PackageNamespace(""),"EndingEnemy")
@@ -528,10 +542,10 @@ package
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          pushbyte 30
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          pushbyte 0
          getlex QName(PackageNamespace(""),"EndingEnemy")
@@ -540,10 +554,10 @@ package
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          pushbyte 30
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          pushbyte 0
          getlex QName(PackageNamespace(""),"EndingEnemy")
@@ -552,10 +566,10 @@ package
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          pushbyte 30
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          pushbyte 0
          getlex QName(PackageNamespace(""),"EndingEnemy")
@@ -564,10 +578,10 @@ package
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          pushbyte 30
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          pushbyte 0
          getlex QName(PackageNamespace(""),"EndingEnemy")
@@ -576,10 +590,10 @@ package
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          pushbyte 30
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          pushbyte 0
          getlex QName(PackageNamespace(""),"EndingEnemy")
@@ -588,10 +602,10 @@ package
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          pushbyte 10
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          pushbyte 0
          getlex QName(PackageNamespace(""),"EndingEnemy")
@@ -600,10 +614,10 @@ package
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          pushbyte 10
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          pushbyte 0
          getlex QName(PackageNamespace(""),"EndingEnemy")
@@ -612,10 +626,10 @@ package
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          pushbyte 10
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          pushbyte 0
          getlex QName(PackageNamespace(""),"EndingEnemy")
@@ -624,10 +638,34 @@ package
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
+         pushbyte 10
+         add
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
+         getlocal0
+         pushbyte 0
+         getlex QName(PackageNamespace(""),"EndingEnemy")
+         getproperty Multiname("TYPE_EPSILON",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":EndingCredits"),ProtectedNamespace(":EndingCredits"),StaticProtectedNs(":EndingCredits"),PrivateNamespace("EndingCredits.as$398")])
+         pushstring "EPSILON\n(MAPPER AND MODDER)"
+         callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
+         getlocal0
+         getlocal0
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
+         pushbyte 10
+         add
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
+         getlocal0
+         pushbyte 0
+         getlex QName(PackageNamespace(""),"EndingEnemy")
+         getproperty QName(PackageNamespace(""),"TYPE_NONE")
+         pushstring "THOSE ON THE SNAILIAD\nDISCORD WHO HELPED ME\nWHEN I NEEDED IT"
+         callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
+         getlocal0
+         getlocal0
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          pushbyte 70
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          pushbyte 0
          getlex QName(PackageNamespace(""),"EndingEnemy")
@@ -648,10 +686,10 @@ package
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          pushbyte 40
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          getlocal0
          pushbyte 0
@@ -659,7 +697,7 @@ package
          getproperty QName(PackageNamespace(""),"TYPE_THE_END")
          pushstring ""
          callproperty QName(PackageNamespace(""),"addEnemy"), 3
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"_theEnd")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"_theEnd")
          returnvoid
          end ; code
          end ; body
@@ -672,21 +710,21 @@ package
          flag OVERRIDE
          dispid 0
          method
-         name null
+         name "EndingCredits:destroy"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 2
          localcount 1
-         initscopedepth 8
-         maxscopedepth 9
+         initscopedepth 9
+         maxscopedepth 10
          
          code
          getlocal0
          pushscope
          getlocal0
          pushnull
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"_theEnd")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"_theEnd")
          getlocal0
          callsupervoid QName(PackageNamespace(""),"destroy"), 0
          returnvoid
@@ -700,7 +738,7 @@ package
          trait method QName(PackageNamespace(""),"addEnemy")
          dispid 0
          method
-         name null
+         name "EndingCredits:addEnemy"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"String")
@@ -709,12 +747,17 @@ package
          body
          maxstack 4
          localcount 7
-         initscopedepth 8
-         maxscopedepth 9
+         initscopedepth 9
+         maxscopedepth 10
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "param3", 2, 0
+         debug 1, "_loc4_", 3, 133
+         debug 1, "_loc5_", 4, 134
          pushnull
          coerce QName(PackageNamespace(""),"EndingEnemy")
          setlocal 4
@@ -724,14 +767,14 @@ package
          findpropstrict QName(PackageNamespace(""),"EndingEnemy")
          getlocal1
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal2
          constructprop QName(PackageNamespace(""),"EndingEnemy"), 3
          coerce QName(PackageNamespace(""),"EndingEnemy")
          dup
          setlocal 4
          getproperty QName(PackageNamespace(""),"velocity")
-         getlex QName(PrivateNamespace(null,"#EndingCredits"),"VELOCITY_Y")
+         getlex QName(PrivateNamespace(":EndingCredits"),"VELOCITY_Y")
          setproperty QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"add")
          getlocal 4
@@ -744,21 +787,21 @@ package
          ofs0:
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal 4
          getproperty QName(PackageNamespace(""),"height")
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
-         getlex QName(PrivateNamespace(null,"#EndingCredits"),"SPACING_Y_MINOR")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
+         getlex QName(PrivateNamespace(":EndingCredits"),"SPACING_Y_MINOR")
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          findpropstrict QName(PackageNamespace("org.flixel"),"FlxText")
          pushbyte -4
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"width")
          constructprop QName(PackageNamespace("org.flixel"),"FlxText"), 3
@@ -772,13 +815,17 @@ package
          pushbyte 20
          setproperty QName(PackageNamespace(""),"size")
          getlocal 5
+         findpropstrict QName(PackageNamespace(""),"uint")
          pushint 16777215
+         callproperty QName(PackageNamespace(""),"uint"), 1
          setproperty QName(PackageNamespace(""),"color")
          getlocal 5
          pushtrue
          setproperty QName(PackageNamespace(""),"outline")
          getlocal 5
-         pushdouble 4.27819008E9
+         findpropstrict QName(PackageNamespace(""),"uint")
+         pushint -16777216
+         callproperty QName(PackageNamespace(""),"uint"), 1
          setproperty QName(PackageNamespace(""),"outlineColor")
          getlocal 5
          pushstring "center"
@@ -799,24 +846,24 @@ package
          setproperty QName(PackageNamespace(""),"x")
          getlocal 5
          getproperty QName(PackageNamespace(""),"velocity")
-         getlex QName(PrivateNamespace(null,"#EndingCredits"),"VELOCITY_Y")
+         getlex QName(PrivateNamespace(":EndingCredits"),"VELOCITY_Y")
          setproperty QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"add")
          getlocal 5
          callpropvoid QName(PackageNamespace(""),"add"), 1
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal 5
          getproperty QName(PackageNamespace(""),"realHeight")
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
-         getlex QName(PrivateNamespace(null,"#EndingCredits"),"SPACING_Y_MAJOR")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
+         getlex QName(PrivateNamespace(":EndingCredits"),"SPACING_Y_MAJOR")
          add
-         initproperty QName(PrivateNamespace(null,"#EndingCredits"),"createY")
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
          getlocal 5
          returnvalue
          end ; code
@@ -830,53 +877,55 @@ package
          flag OVERRIDE
          dispid 0
          method
-         name null
+         name "EndingCredits:update"
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 4
+         maxstack 5
          localcount 1
-         initscopedepth 8
-         maxscopedepth 9
+         initscopedepth 9
+         maxscopedepth 10
          
          code
          getlocal0
          pushscope
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"_theEnd")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"_theEnd")
          getproperty QName(PackageNamespace(""),"y")
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"height")
          pushbyte 2
          divide
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"_theEnd")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"_theEnd")
          getproperty QName(PackageNamespace(""),"height")
          pushbyte 2
          divide
          subtract
          ifnlt ofs0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"_theEnd")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"_theEnd")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"height")
          pushbyte 2
          divide
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"_theEnd")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"_theEnd")
          getproperty QName(PackageNamespace(""),"height")
          pushbyte 2
          divide
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          setproperty QName(PackageNamespace(""),"y")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#EndingCredits"),"_theEnd")
+         getproperty QName(PrivateNamespace(":EndingCredits"),"_theEnd")
          getproperty QName(PackageNamespace(""),"velocity")
          pushbyte 0
          setproperty QName(PackageNamespace(""),"y")
          getlocal0
          pushtrue
-         initproperty QName(PackageNamespace(""),"scrollDone")
+         setproperty QName(PackageNamespace(""),"scrollDone")
          ofs0:
          getlocal0
          callsupervoid QName(PackageNamespace(""),"update"), 0

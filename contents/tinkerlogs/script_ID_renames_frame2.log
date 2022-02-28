@@ -14,7 +14,7 @@ Class IDs:
 12: FlxPause -
 13: FontAsset -
 14: FlxGame_junk 0
-15: PlayState -
+15: PlayState 0
 16: PauseLayer -
 17: CSSSelector -
 18: CSSStyleDeclaration -
@@ -93,13 +93,13 @@ Class IDs:
 91: PlayerBulletGroups -
 92: FixBlocks 0
 93: MainMenu -
-94: Player -
+94: Player 0
 95: ItemRateHud -
 96: AiTriggerPool -
 97: SnowLayer -
 98: UniqueBlocks -
-99: SaveData -
-100: Configurable -
+99: SaveData 0
+100: Configurable 0
 101: SplashLayer -
 102: Enemy -
 103: Boss -
@@ -116,7 +116,7 @@ Class IDs:
 114: Dialogue -
 115: AiTrigger -
 116: Zzz -
-117: WorldMap -
+117: WorldMap 0
 118: PlayerBullet -
 119: ExplosionPool -
 120: Boss4SecondFormBulletGroups -
@@ -124,8 +124,8 @@ Class IDs:
 122: Hud -
 123: BossRushTimer -
 124: GameTimeDisplay -
-125: Ending -
-126: Intro -
+125: Ending 0
+126: Intro 0
 127: EnemyBulletPool -
 128: Fonts -
 129: CSSConditionKind -
@@ -257,7 +257,7 @@ Class IDs:
 255: MenuBall -
 256: EnterKeyLayer -
 257: Utility -
-258: TitleText -
+258: TitleText 0
 259: JayIsGames -
 260: MainMenuCursor -
 261: EndingGroup -
@@ -292,17 +292,17 @@ Class IDs:
 290: WorldMap_WorldMapSkyTxt 0
 291: EnemyKurage -
 292: SuperUniqueItem -
-293: GravJump -
+293: GravJump 0
 294: EnemyBat -
 295: WorldMap_WorldMapFgTxt 0
-296: Boss3 -
+296: Boss3 0
 297: Boss4 -
-298: Boss1 -
+298: Boss1 0
 299: Boss2 -
-300: Fire -
+300: Fire 0
 301: EnemySpikey2 -
 302: EnemySpider2 -
-303: SnailNpc -
+303: SnailNpc 0
 304: EnemyDandelion -
 305: Grass -
 306: IceSnail -
@@ -321,7 +321,7 @@ Class IDs:
 319: EnemyBabyfish -
 320: EnemyKitty -
 321: EnemyWalleye -
-322: Boss1Rush -
+322: Boss1Rush 0
 323: Platform5 -
 324: Platform4 -
 325: ShellShield -
@@ -335,7 +335,7 @@ Class IDs:
 333: Devastator -
 334: EnemyFireball2 -
 335: EnemyBird2Generator -
-336: EnemyMoth -
+336: EnemyMoth 0
 337: EnemyFloatSpike2 -
 338: EnemyTallfish2 -
 339: Boss3Rush -
@@ -398,7 +398,7 @@ Class IDs:
 396: AreaName -
 397: BossBarHud -
 398: HeartHud -
-399: EndingCredits -
+399: EndingCredits 0
 400: EndingZzz -
 401: EndingSunSnail -
 402: EndingDialogue -
@@ -487,7 +487,7 @@ Class IDs:
 485: CollectionEvent -
 486: FlxList -
 487: Bubble -
-488: TitleLetter -
+488: TitleLetter 0
 489: EndingPicture -
 490: EndingBg -
 491: Sfx_Ending1Song -
@@ -721,7 +721,7 @@ Class IDs:
 719: PowerNom -
 720: HelixHud -
 721: HeartHudSingle -
-722: EndingEnemy -
+722: EndingEnemy 0
 723: StarOutwardLayer -
 724: IntroSpiral -
 725: CSSMergedStyleDeclaration -
@@ -798,10 +798,10 @@ PrivateNamespace IDs:
 24: FlxPanel
 25: PlayerBulletGroups
 26: MainMenu
-27: Player
+27: 
 28: AiTriggerPool
 29: SnowLayer
-30: Configurable
+30: 
 31: SplashLayer
 32: Enemy
 33: ControlHelp
@@ -812,13 +812,13 @@ PrivateNamespace IDs:
 38: StarLayer
 39: Dialogue
 40: AiTrigger
-41: WorldMap
+41: 
 42: PlayerBullet
 43: ExplosionPool
 44: Boss4SecondFormBulletGroups
 45: MiniMap
-46: Ending
-47: Intro
+46: 
+47: 
 48: EnemyBulletPool
 49: ComponentDescriptor
 50: DesignLayer
@@ -843,7 +843,7 @@ PrivateNamespace IDs:
 69: SolidColorStroke
 70: ObjectProxy
 71: PlayerBullet4
-72: TitleText
+72: 
 73: JayIsGames
 74: MainMenuCursor
 75: SponsorMoreGames
@@ -855,16 +855,16 @@ PrivateNamespace IDs:
 81: DamageNumber
 82: EnemyKurage
 83: SuperUniqueItem
-84: GravJump
+84: 
 85: EnemyBat
-86: Boss3
+86: 
 87: Boss4
-88: Boss1
+88: 
 89: Boss2
-90: Fire
+90: 
 91: EnemySpikey2
 92: EnemySpider2
-93: SnailNpc
+93: 
 94: EnemyDandelion
 95: Grass
 96: EnemyFireball
@@ -880,7 +880,7 @@ PrivateNamespace IDs:
 106: EnemyBabyfish
 107: EnemyKitty
 108: EnemyWalleye
-109: Boss1Rush
+109: 
 110: Platform5
 111: Platform4
 112: EnemyBird
@@ -931,7 +931,7 @@ PrivateNamespace IDs:
 157: Subscreen
 158: BossBarHud
 159: HeartHud
-160: EndingCredits
+160: 
 161: EndingZzz
 162: EndingSunSnail
 163: EndingDialogue
@@ -968,7 +968,7 @@ PrivateNamespace IDs:
 194: DescribeTypeCacheRecord
 195: BindabilityInfo
 196: Bubble
-197: TitleLetter
+197: 
 198: Base64Decoder
 199: Base64Encoder
 200: DustRing
@@ -989,7 +989,7 @@ PrivateNamespace IDs:
 215: Boss3RushSpawn
 216: EnemyCannon
 217: PowerNom
-218: EndingEnemy
+218: 
 219: StarOutwardLayer
 220: CSSMergedStyleDeclaration
 221: ModuleEvent
@@ -1060,7 +1060,7 @@ PrivateNamespace IDs:
 286: HelixFragment
 287: ShellShield
 288: Devastator
-289: EnemyMoth
+289: 
 290: GravityShock
 291: HiJump
 292: Gun3
@@ -1126,8 +1126,8 @@ PrivateNamespace IDs:
 352: FlxSave/2
 353: FlxConsole/1
 354: FlxConsole/2
-355: PlayState/1
-356: PlayState/2
+355: 
+356: 
 357: CSSStyleDeclaration/1
 358: SpriteAsset/1
 359: GroupBase/1
@@ -1157,21 +1157,21 @@ PrivateNamespace IDs:
 383: FixBlocks/1
 384: FixBlocks/2
 385: MainMenu/1
-386: Player/1
+386: 
 387: AiTriggerPool/1
 388: SnowLayer/1
 389: UniqueBlocks/1
 390: UniqueBlocks/2
-391: SaveData/1
-392: SaveData/2
+391: 
+392: 
 393: ControlHelp/1
 394: Boss4BulletGroups/1
 395: StarLayer/1
-396: WorldMap/1
+396: 
 397: ExplosionPool/1
 398: Boss4SecondFormBulletGroups/1
 399: MiniMap/1
-400: Ending/1
+400: 
 401: EnemyBulletPool/1
 402: Singleton/1
 403: ComponentDescriptor/1
@@ -1206,25 +1206,25 @@ PrivateNamespace IDs:
 432: PlayerBullet6/1
 433: BrokenBlock/1
 434: BrokenBlock/2
-435: TitleText/1
+435: 
 436: ShadowNumber/1
 437: CipherInt/1
 438: CheckBool/1
 439: Cipher/1
 440: Boss4Bullet6/1
 441: SuperUniqueItem/1
-442: Boss3/1
+442: 
 443: Boss4/1
-444: Boss1/1
+444: 
 445: Boss2/1
 446: EnemySpider2/1
-447: SnailNpc/1
+447: 
 448: EnemyBalloonGenerator/1
 449: EnemyDandelionGenerator/1
 450: UniqueItem/1
 451: FlxTilemap/1
 452: EnemyKitty/1
-453: Boss1Rush/1
+453: 
 454: Boss4Rush/1
 455: Boss2Rush/1
 456: EnemyBird2Generator/1

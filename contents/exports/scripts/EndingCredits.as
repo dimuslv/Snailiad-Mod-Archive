@@ -20,11 +20,11 @@ package
       
       private var _theEnd:FlxObject;
       
-      public var scrollDone:Boolean = false;
+      public var scrollDone:Boolean;
       
       public function EndingCredits()
       {
-         this.createY = FlxG.height + 4;
+         this.createY = Number(FlxG.height + 4);
          super();
          this.addEnemy(0,EndingEnemy.TYPE_NONE,"CREDITS");
          this.createY += 40;
@@ -46,6 +46,8 @@ package
          this.addEnemy(0,EndingEnemy.TYPE_SECRET_SNELK,"SECRET SNELK");
          this.addEnemy(0,EndingEnemy.TYPE_KITTY,"KITTY!!");
          this.addEnemy(0,EndingEnemy.TYPE_DANDELION,"GHOST DANDELION");
+         this.addEnemy(-12,EndingEnemy.TYPE_DYNAMITE,"");
+         this.addEnemy(12,EndingEnemy.TYPE_DYNATITE,"DYNAMITE AND DYNATITE");
          this.addEnemy(-30,EndingEnemy.TYPE_CANNON,"");
          this.addEnemy(-30,EndingEnemy.TYPE_CANNON_HUB,"");
          this.addEnemy(30,EndingEnemy.TYPE_CANNON2,"");
@@ -111,6 +113,10 @@ package
          this.addEnemy(0,EndingEnemy.TYPE_ADAMATOMIC,"ADAMATOMIC\n(CREATED FLIXEL, WITHOUT WHICH\nSNAILY GAME WOULD NOT EXIST!)");
          this.createY += 10;
          this.addEnemy(0,EndingEnemy.TYPE_AURIPLANE,"AURIPLANE\n(AUTHOR ARTIST COMPOSER ETC ETC)");
+         this.createY += 10;
+         this.addEnemy(0,EndingEnemy.TYPE_EPSILON,"EPSILON\n(MAPPER AND MODDER)");
+         this.createY += 10;
+         this.addEnemy(0,EndingEnemy.TYPE_NONE,"THOSE ON THE SNAILIAD\nDISCORD WHO HELPED ME\nWHEN I NEEDED IT");
          this.createY += 70;
          this.addEnemy(0,EndingEnemy.TYPE_NONE,"AND YOU\n\n\n" + "BECAUSE SERIOUSLY, WHY NOT\n\n\n" + "ALL THE OTHER GAMES\n" + "PUT \"AND YOU\" IN THE CREDITS\n" + "SO I FIGURE, \"AND YOU\" MUST BE\n" + "SOMEONE PRETTY COOL\n\n\n" + "THANKS, AND YOU!!");
          this.createY += 40;
@@ -137,9 +143,9 @@ package
          this.createY += SPACING_Y_MINOR;
          (_loc5_ = new FlxText(-4,this.createY,FlxG.width)).font = Fonts.normal;
          _loc5_.size = 20;
-         _loc5_.color = 16777215;
+         _loc5_.color = uint(16777215);
          _loc5_.outline = true;
-         _loc5_.outlineColor = 4278190080;
+         _loc5_.outlineColor = uint(-16777216);
          _loc5_.alignment = "center";
          _loc5_.text = param3;
          _loc5_.scrollFactor.x = _loc5_.scrollFactor.y = 0;
@@ -154,7 +160,7 @@ package
       {
          if(this._theEnd.y < FlxG.height / 2 - this._theEnd.height / 2)
          {
-            this._theEnd.y = FlxG.height / 2 - this._theEnd.height / 2;
+            this._theEnd.y = Number(FlxG.height / 2 - this._theEnd.height / 2);
             this._theEnd.velocity.y = 0;
             this.scrollDone = true;
          }

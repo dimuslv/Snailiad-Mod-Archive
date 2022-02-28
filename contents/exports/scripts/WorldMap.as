@@ -440,6 +440,7 @@ package
          PlayState.starLayer.destroyAll();
          PlayState.snowLayer.destroyAll();
          PlayState.doors = new Array();
+         PlayState.fxStompActive = false;
          this.waterLevelY = new Array();
          this.fakeMinX = this.minX;
          this.fakeMaxX = this.maxX;
@@ -957,6 +958,18 @@ package
                      break;
                   case 461:
                      NgMedal.unlockSnelkHunterB();
+                     break;
+                  case 462:
+                     if(!PlayState.isBossDead(2))
+                     {
+                        PlayState.fxStompActive = true;
+                     }
+                     break;
+                  case 463:
+                     if(!PlayState.isBossDead(3))
+                     {
+                        PlayState.fxStompActive = true;
+                     }
                      break;
                   case 1133:
                   case 1134:

@@ -1,7 +1,7 @@
 
 {
    method
-   name null
+   name ""
    returns null
    
    body
@@ -44,30 +44,30 @@ package
       
       {
          method
-         name null
+         name ""
          returns null
          
          body
          maxstack 2
          localcount 1
-         initscopedepth 3
-         maxscopedepth 4
+         initscopedepth 4
+         maxscopedepth 5
          
          code
          getlocal0
          pushscope
-         findproperty QName(PrivateNamespace(null,"#WorldMap"),"FG_OFFSET")
+         findproperty QName(PrivateNamespace(":WorldMap"),"FG_OFFSET")
          pushshort 1000
-         initproperty QName(PrivateNamespace(null,"#WorldMap"),"FG_OFFSET")
-         findproperty QName(PrivateNamespace(null,"#WorldMap"),"TILE_SIZE")
+         initproperty QName(PrivateNamespace(":WorldMap"),"FG_OFFSET")
+         findproperty QName(PrivateNamespace(":WorldMap"),"TILE_SIZE")
          pushbyte 16
-         initproperty QName(PrivateNamespace(null,"#WorldMap"),"TILE_SIZE")
-         findproperty QName(PrivateNamespace(null,"#WorldMap"),"MAP_WIDTH")
+         initproperty QName(PrivateNamespace(":WorldMap"),"TILE_SIZE")
+         findproperty QName(PrivateNamespace(":WorldMap"),"MAP_WIDTH")
          pushshort 676
-         initproperty QName(PrivateNamespace(null,"#WorldMap"),"MAP_WIDTH")
-         findproperty QName(PrivateNamespace(null,"#WorldMap"),"MAP_HEIGHT")
+         initproperty QName(PrivateNamespace(":WorldMap"),"MAP_WIDTH")
+         findproperty QName(PrivateNamespace(":WorldMap"),"MAP_HEIGHT")
          pushshort 353
-         initproperty QName(PrivateNamespace(null,"#WorldMap"),"MAP_HEIGHT")
+         initproperty QName(PrivateNamespace(":WorldMap"),"MAP_HEIGHT")
          returnvoid
          end ; code
          end ; body
@@ -127,41 +127,40 @@ package
       public function WorldMap()
       {
          method
-         name null
-         returns QName(PackageNamespace(""),"void")
+         name ":WorldMap/WorldMap"
+         returns null
          
          body
          maxstack 6
          localcount 1
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
          getlocal0
          getlex QName(PackageNamespace(""),"WorldMap_WorldMapSkyTxt")
-         initproperty QName(PrivateNamespace(null,"#WorldMap"),"WorldMapSkyTxt")
+         initproperty QName(PrivateNamespace(":WorldMap"),"WorldMapSkyTxt")
          getlocal0
          getlex QName(PackageNamespace(""),"WorldMap_WorldMapBgTxt")
-         initproperty QName(PrivateNamespace(null,"#WorldMap"),"WorldMapBgTxt")
+         initproperty QName(PrivateNamespace(":WorldMap"),"WorldMapBgTxt")
          getlocal0
          getlex QName(PackageNamespace(""),"WorldMap_WorldMapFgTxt")
-         initproperty QName(PrivateNamespace(null,"#WorldMap"),"WorldMapFgTxt")
+         initproperty QName(PrivateNamespace(":WorldMap"),"WorldMapFgTxt")
          getlocal0
          getlex QName(PackageNamespace(""),"WorldMap_WorldMapSpTxt")
-         initproperty QName(PrivateNamespace(null,"#WorldMap"),"WorldMapSpTxt")
+         initproperty QName(PrivateNamespace(":WorldMap"),"WorldMapSpTxt")
          getlocal0
          constructsuper 0
          getlocal0
          findpropstrict QName(PackageNamespace("org.flixel"),"FlxTilemap")
          constructprop QName(PackageNamespace("org.flixel"),"FlxTilemap"), 0
-         initproperty QName(PackageNamespace(""),"skymap")
+         setproperty QName(PackageNamespace(""),"skymap")
          getlocal0
          getproperty QName(PackageNamespace(""),"skymap")
-         getlex QName(PrivateNamespace(null,"#WorldMap"),"FG_OFFSET")
-         pushbyte 1
-         add
+         getlex QName(PrivateNamespace(":WorldMap"),"FG_OFFSET")
+         increment
          setproperty QName(PackageNamespace(""),"collideIndex")
          getlocal0
          getproperty QName(PackageNamespace(""),"skymap")
@@ -170,22 +169,21 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"skymap")
          getlocal0
-         constructprop QName(PrivateNamespace(null,"#WorldMap"),"WorldMapSkyTxt"), 0
+         constructprop QName(PrivateNamespace(":WorldMap"),"WorldMapSkyTxt"), 0
          getlex QName(PackageNamespace(""),"Art")
          getproperty QName(PackageNamespace(""),"TileSheet")
-         getlex QName(PrivateNamespace(null,"#WorldMap"),"TILE_SIZE")
-         getlex QName(PrivateNamespace(null,"#WorldMap"),"TILE_SIZE")
+         getlex QName(PrivateNamespace(":WorldMap"),"TILE_SIZE")
+         getlex QName(PrivateNamespace(":WorldMap"),"TILE_SIZE")
          pushstring "sky"
          callpropvoid QName(PackageNamespace(""),"loadMap"), 5
          getlocal0
          findpropstrict QName(PackageNamespace("org.flixel"),"FlxTilemap")
          constructprop QName(PackageNamespace("org.flixel"),"FlxTilemap"), 0
-         initproperty QName(PackageNamespace(""),"bgmap")
+         setproperty QName(PackageNamespace(""),"bgmap")
          getlocal0
          getproperty QName(PackageNamespace(""),"bgmap")
-         getlex QName(PrivateNamespace(null,"#WorldMap"),"FG_OFFSET")
-         pushbyte 1
-         add
+         getlex QName(PrivateNamespace(":WorldMap"),"FG_OFFSET")
+         increment
          setproperty QName(PackageNamespace(""),"collideIndex")
          getlocal0
          getproperty QName(PackageNamespace(""),"bgmap")
@@ -194,22 +192,21 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"bgmap")
          getlocal0
-         constructprop QName(PrivateNamespace(null,"#WorldMap"),"WorldMapBgTxt"), 0
+         constructprop QName(PrivateNamespace(":WorldMap"),"WorldMapBgTxt"), 0
          getlex QName(PackageNamespace(""),"Art")
          getproperty QName(PackageNamespace(""),"TileSheet")
-         getlex QName(PrivateNamespace(null,"#WorldMap"),"TILE_SIZE")
-         getlex QName(PrivateNamespace(null,"#WorldMap"),"TILE_SIZE")
+         getlex QName(PrivateNamespace(":WorldMap"),"TILE_SIZE")
+         getlex QName(PrivateNamespace(":WorldMap"),"TILE_SIZE")
          pushstring "bg"
          callpropvoid QName(PackageNamespace(""),"loadMap"), 5
          getlocal0
          findpropstrict QName(PackageNamespace("org.flixel"),"FlxTilemap")
          constructprop QName(PackageNamespace("org.flixel"),"FlxTilemap"), 0
-         initproperty QName(PackageNamespace(""),"fgmap")
+         setproperty QName(PackageNamespace(""),"fgmap")
          getlocal0
          getproperty QName(PackageNamespace(""),"fgmap")
-         getlex QName(PrivateNamespace(null,"#WorldMap"),"FG_OFFSET")
-         pushbyte 1
-         add
+         getlex QName(PrivateNamespace(":WorldMap"),"FG_OFFSET")
+         increment
          setproperty QName(PackageNamespace(""),"collideIndex")
          getlocal0
          getproperty QName(PackageNamespace(""),"fgmap")
@@ -218,22 +215,21 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"fgmap")
          getlocal0
-         constructprop QName(PrivateNamespace(null,"#WorldMap"),"WorldMapFgTxt"), 0
+         constructprop QName(PrivateNamespace(":WorldMap"),"WorldMapFgTxt"), 0
          getlex QName(PackageNamespace(""),"Art")
          getproperty QName(PackageNamespace(""),"TileSheet")
-         getlex QName(PrivateNamespace(null,"#WorldMap"),"TILE_SIZE")
-         getlex QName(PrivateNamespace(null,"#WorldMap"),"TILE_SIZE")
+         getlex QName(PrivateNamespace(":WorldMap"),"TILE_SIZE")
+         getlex QName(PrivateNamespace(":WorldMap"),"TILE_SIZE")
          pushstring "fg"
          callpropvoid QName(PackageNamespace(""),"loadMap"), 5
          getlocal0
          findpropstrict QName(PackageNamespace("org.flixel"),"FlxTilemap")
          constructprop QName(PackageNamespace("org.flixel"),"FlxTilemap"), 0
-         initproperty QName(PackageNamespace(""),"spmap")
+         setproperty QName(PackageNamespace(""),"spmap")
          getlocal0
          getproperty QName(PackageNamespace(""),"spmap")
-         getlex QName(PrivateNamespace(null,"#WorldMap"),"FG_OFFSET")
-         pushbyte 1
-         add
+         getlex QName(PrivateNamespace(":WorldMap"),"FG_OFFSET")
+         increment
          setproperty QName(PackageNamespace(""),"collideIndex")
          getlocal0
          getproperty QName(PackageNamespace(""),"spmap")
@@ -242,11 +238,11 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"spmap")
          getlocal0
-         constructprop QName(PrivateNamespace(null,"#WorldMap"),"WorldMapSpTxt"), 0
+         constructprop QName(PrivateNamespace(":WorldMap"),"WorldMapSpTxt"), 0
          getlex QName(PackageNamespace(""),"Art")
          getproperty QName(PackageNamespace(""),"TileSheet")
-         getlex QName(PrivateNamespace(null,"#WorldMap"),"TILE_SIZE")
-         getlex QName(PrivateNamespace(null,"#WorldMap"),"TILE_SIZE")
+         getlex QName(PrivateNamespace(":WorldMap"),"TILE_SIZE")
+         getlex QName(PrivateNamespace(":WorldMap"),"TILE_SIZE")
          pushstring "sp"
          callpropvoid QName(PackageNamespace(""),"loadMap"), 5
          returnvoid
@@ -260,30 +256,30 @@ package
          trait method QName(PackageNamespace(""),"destroy")
          dispid 0
          method
-         name null
+         name "WorldMap:destroy"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 2
          localcount 1
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
          getlocal0
          pushnull
-         initproperty QName(PackageNamespace(""),"skymap")
+         setproperty QName(PackageNamespace(""),"skymap")
          getlocal0
          pushnull
-         initproperty QName(PackageNamespace(""),"bgmap")
+         setproperty QName(PackageNamespace(""),"bgmap")
          getlocal0
          pushnull
-         initproperty QName(PackageNamespace(""),"fgmap")
+         setproperty QName(PackageNamespace(""),"fgmap")
          getlocal0
          pushnull
-         initproperty QName(PackageNamespace(""),"spmap")
+         setproperty QName(PackageNamespace(""),"spmap")
          returnvoid
          end ; code
          end ; body
@@ -295,19 +291,22 @@ package
          trait method QName(PackageNamespace(""),"checkRoomBounds")
          dispid 0
          method
-         name null
+         name "WorldMap:checkRoomBounds"
          param QName(PackageNamespace(""),"Player")
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 4
          localcount 4
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "_loc2_", 1, 99
+         debug 1, "_loc3_", 2, 100
          getlocal1
          getproperty QName(PackageNamespace(""),"x")
          getlocal1
@@ -334,8 +333,8 @@ package
          pushbyte 16
          divide
          callproperty QName(PackageNamespace(""),"isLethalEdge"), 2
-         convert_b
          dup
+         convert_b
          iffalse ofs0
          pop
          getlocal1
@@ -412,7 +411,9 @@ package
          getlocal3
          getlocal0
          getproperty QName(PackageNamespace(""),"minY")
-         ifnlt ofs6
+         ifnge ofs6
+         returnvoid
+         ofs6:
          getlocal1
          getlocal1
          getproperty QName(PackageNamespace(""),"y")
@@ -427,9 +428,6 @@ package
          pushbyte 16
          subtract
          callpropvoid QName(PackageNamespace(""),"findRoomBounds"), 2
-         jump ofs3
-         ofs6:
-         returnvoid
          ofs3:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"playerBulletGroups")
@@ -450,7 +448,7 @@ package
          trait method QName(PackageNamespace(""),"enemySolidAt")
          dispid 0
          method
-         name null
+         name "WorldMap:enemySolidAt"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
          returns QName(PackageNamespace(""),"Boolean")
@@ -458,12 +456,15 @@ package
          body
          maxstack 5
          localcount 4
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "_loc3_", 2, 36
          pushbyte 0
          setlocal3
          getlex QName(PackageNamespace(""),"PlayState")
@@ -477,22 +478,20 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("solid",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         coerce_a
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
+         getproperty Multiname("solid",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          dup
+         convert_b
          iffalse ofs3
          pop
          getlocal1
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("x",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
+         getproperty Multiname("x",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          greaterthan
-         coerce_a
          ofs3:
-         coerce_a
          dup
          iffalse ofs4
          pop
@@ -500,19 +499,16 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("x",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
+         getproperty Multiname("x",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("width",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
+         getproperty Multiname("width",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          add
          lessthan
-         coerce_a
          ofs4:
-         coerce_a
-         convert_b
          dup
          iffalse ofs5
          pop
@@ -520,11 +516,9 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("y",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
+         getproperty Multiname("y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          greaterthan
-         coerce_a
-         convert_b
          ofs5:
          dup
          iffalse ofs6
@@ -533,13 +527,13 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("y",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
+         getproperty Multiname("y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("height",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
+         getproperty Multiname("height",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          add
          lessthan
          ofs6:
@@ -552,7 +546,7 @@ package
          getlocal3
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
-         getproperty QName(PackageNamespace(""),"length")
+         getproperty Multiname("length",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          iflt ofs2
          ofs0:
          getlocal0
@@ -568,7 +562,7 @@ package
          divide
          callproperty QName(PackageNamespace(""),"int"), 1
          callproperty QName(PackageNamespace(""),"getTile"), 2
-         getlex QName(PrivateNamespace(null,"#WorldMap"),"FG_OFFSET")
+         getlex QName(PrivateNamespace(":WorldMap"),"FG_OFFSET")
          greaterequals
          dup
          iftrue ofs8
@@ -657,7 +651,7 @@ package
          trait method QName(PackageNamespace(""),"solidAt")
          dispid 0
          method
-         name null
+         name "WorldMap:solidAt"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
          returns QName(PackageNamespace(""),"Boolean")
@@ -665,12 +659,15 @@ package
          body
          maxstack 5
          localcount 4
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "_loc3_", 2, 6
          pushbyte 0
          setlocal3
          getlex QName(PackageNamespace(""),"PlayState")
@@ -684,22 +681,20 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("solid",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         coerce_a
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
+         getproperty Multiname("solid",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          dup
+         convert_b
          iffalse ofs3
          pop
          getlocal1
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("x",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
+         getproperty Multiname("x",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          greaterthan
-         coerce_a
          ofs3:
-         coerce_a
          dup
          iffalse ofs4
          pop
@@ -707,19 +702,16 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("x",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
+         getproperty Multiname("x",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("width",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
+         getproperty Multiname("width",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          add
          lessthan
-         coerce_a
          ofs4:
-         coerce_a
-         convert_b
          dup
          iffalse ofs5
          pop
@@ -727,11 +719,9 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("y",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
+         getproperty Multiname("y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          greaterthan
-         coerce_a
-         convert_b
          ofs5:
          dup
          iffalse ofs6
@@ -740,13 +730,13 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("y",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
+         getproperty Multiname("y",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("height",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
+         getproperty Multiname("height",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          add
          lessthan
          ofs6:
@@ -759,7 +749,7 @@ package
          getlocal3
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
-         getproperty QName(PackageNamespace(""),"length")
+         getproperty Multiname("length",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          iflt ofs2
          ofs0:
          getlocal0
@@ -775,7 +765,7 @@ package
          divide
          callproperty QName(PackageNamespace(""),"int"), 1
          callproperty QName(PackageNamespace(""),"getTile"), 2
-         getlex QName(PrivateNamespace(null,"#WorldMap"),"FG_OFFSET")
+         getlex QName(PrivateNamespace(":WorldMap"),"FG_OFFSET")
          greaterequals
          returnvalue
          end ; code
@@ -788,7 +778,7 @@ package
          trait method QName(PackageNamespace(""),"findFirstFullNotSolidTop")
          dispid 0
          method
-         name null
+         name "WorldMap:findFirstFullNotSolidTop"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
@@ -799,12 +789,17 @@ package
          body
          maxstack 4
          localcount 6
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "param3", 2, 0
+         debug 1, "param4", 3, 0
+         debug 1, "param5", 4, 0
          jump ofs0
          ofs1:
          label
@@ -865,7 +860,7 @@ package
          trait method QName(PackageNamespace(""),"findFirstFullNotSolidBottom")
          dispid 0
          method
-         name null
+         name "WorldMap:findFirstFullNotSolidBottom"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
@@ -876,12 +871,17 @@ package
          body
          maxstack 4
          localcount 6
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "param3", 2, 0
+         debug 1, "param4", 3, 0
+         debug 1, "param5", 4, 0
          jump ofs0
          ofs1:
          label
@@ -933,9 +933,7 @@ package
          iffalse ofs4
          jump ofs5
          ofs4:
-         getlocal 5
-         decrement_i
-         setlocal 5
+         declocal_i 5
          ofs0:
          getlocal 5
          pushbyte 0
@@ -953,7 +951,7 @@ package
          trait method QName(PackageNamespace(""),"findFirstFullNotSolidLeft")
          dispid 0
          method
-         name null
+         name "WorldMap:findFirstFullNotSolidLeft"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
@@ -964,12 +962,17 @@ package
          body
          maxstack 5
          localcount 6
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "param3", 2, 0
+         debug 1, "param4", 3, 0
+         debug 1, "param5", 4, 0
          jump ofs0
          ofs1:
          label
@@ -1030,7 +1033,7 @@ package
          trait method QName(PackageNamespace(""),"findFirstFullNotSolidRight")
          dispid 0
          method
-         name null
+         name "WorldMap:findFirstFullNotSolidRight"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
@@ -1041,12 +1044,17 @@ package
          body
          maxstack 5
          localcount 6
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "param3", 2, 0
+         debug 1, "param4", 3, 0
+         debug 1, "param5", 4, 0
          jump ofs0
          ofs1:
          label
@@ -1098,9 +1106,7 @@ package
          iffalse ofs4
          jump ofs5
          ofs4:
-         getlocal 5
-         decrement_i
-         setlocal 5
+         declocal_i 5
          ofs0:
          getlocal 5
          pushbyte 0
@@ -1118,7 +1124,7 @@ package
          trait method QName(PackageNamespace(""),"findFirstNotSolidTop")
          dispid 0
          method
-         name null
+         name "WorldMap:findFirstNotSolidTop"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
@@ -1129,12 +1135,17 @@ package
          body
          maxstack 4
          localcount 6
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "param3", 2, 0
+         debug 1, "param4", 3, 0
+         debug 1, "param5", 4, 0
          jump ofs0
          ofs1:
          label
@@ -1195,7 +1206,7 @@ package
          trait method QName(PackageNamespace(""),"findFirstNotSolidBottom")
          dispid 0
          method
-         name null
+         name "WorldMap:findFirstNotSolidBottom"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
@@ -1206,12 +1217,17 @@ package
          body
          maxstack 4
          localcount 6
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "param3", 2, 0
+         debug 1, "param4", 3, 0
+         debug 1, "param5", 4, 0
          jump ofs0
          ofs1:
          label
@@ -1228,12 +1244,11 @@ package
          getlocal 5
          add
          callproperty QName(PackageNamespace(""),"solidAt"), 2
-         iftrue ofs2
+         not
+         iffalse ofs2
          jump ofs3
          ofs2:
-         getlocal 5
-         decrement_i
-         setlocal 5
+         declocal_i 5
          ofs0:
          getlocal 5
          pushbyte 0
@@ -1251,7 +1266,7 @@ package
          trait method QName(PackageNamespace(""),"findFirstNotSolidLeft")
          dispid 0
          method
-         name null
+         name "WorldMap:findFirstNotSolidLeft"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
@@ -1262,12 +1277,17 @@ package
          body
          maxstack 5
          localcount 6
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "param3", 2, 0
+         debug 1, "param4", 3, 0
+         debug 1, "param5", 4, 0
          jump ofs0
          ofs1:
          label
@@ -1281,7 +1301,8 @@ package
          divide
          add
          callproperty QName(PackageNamespace(""),"solidAt"), 2
-         iftrue ofs2
+         not
+         iffalse ofs2
          jump ofs3
          ofs2:
          inclocal_i 5
@@ -1302,7 +1323,7 @@ package
          trait method QName(PackageNamespace(""),"findFirstNotSolidRight")
          dispid 0
          method
-         name null
+         name "WorldMap:findFirstNotSolidRight"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
@@ -1313,12 +1334,17 @@ package
          body
          maxstack 5
          localcount 6
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "param3", 2, 0
+         debug 1, "param4", 3, 0
+         debug 1, "param5", 4, 0
          jump ofs0
          ofs1:
          label
@@ -1370,9 +1396,7 @@ package
          iffalse ofs4
          jump ofs5
          ofs4:
-         getlocal 5
-         decrement_i
-         setlocal 5
+         declocal_i 5
          ofs0:
          getlocal 5
          pushbyte 0
@@ -1390,7 +1414,7 @@ package
          trait method QName(PackageNamespace(""),"isLethalEdge")
          dispid 0
          method
-         name null
+         name "WorldMap:isLethalEdge"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
          returns QName(PackageNamespace(""),"Boolean")
@@ -1398,12 +1422,14 @@ package
          body
          maxstack 3
          localcount 3
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
          getlocal0
          getproperty QName(PackageNamespace(""),"spmap")
          getlocal1
@@ -1422,7 +1448,7 @@ package
          trait method QName(PackageNamespace(""),"isEdge")
          dispid 0
          method
-         name null
+         name "WorldMap:isEdge"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
          returns QName(PackageNamespace(""),"Boolean")
@@ -1430,12 +1456,14 @@ package
          body
          maxstack 3
          localcount 3
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
          getlocal0
          getproperty QName(PackageNamespace(""),"spmap")
          getlocal1
@@ -1476,7 +1504,7 @@ package
          trait method QName(PackageNamespace(""),"findRoomBounds")
          dispid 0
          method
-         name null
+         name "WorldMap:findRoomBounds"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
          returns QName(PackageNamespace(""),"void")
@@ -1484,12 +1512,15 @@ package
          body
          maxstack 5
          localcount 6
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "_loc3_", 2, 120
          pushbyte 0
          setlocal3
          getlocal1
@@ -1514,7 +1545,7 @@ package
          setlocal2
          getlocal0
          getlocal1
-         initproperty QName(PackageNamespace(""),"tileMinX")
+         setproperty QName(PackageNamespace(""),"tileMinX")
          jump ofs0
          ofs1:
          label
@@ -1545,7 +1576,7 @@ package
          ofs3:
          getlocal0
          getlocal1
-         initproperty QName(PackageNamespace(""),"tileMaxX")
+         setproperty QName(PackageNamespace(""),"tileMaxX")
          jump ofs4
          ofs5:
          label
@@ -1578,7 +1609,7 @@ package
          ofs7:
          getlocal0
          getlocal2
-         initproperty QName(PackageNamespace(""),"tileMinY")
+         setproperty QName(PackageNamespace(""),"tileMinY")
          jump ofs8
          ofs9:
          label
@@ -1609,7 +1640,7 @@ package
          ofs11:
          getlocal0
          getlocal2
-         initproperty QName(PackageNamespace(""),"tileMaxY")
+         setproperty QName(PackageNamespace(""),"tileMaxY")
          jump ofs12
          ofs13:
          label
@@ -1647,7 +1678,7 @@ package
          multiply
          pushbyte 16
          add
-         initproperty QName(PackageNamespace(""),"minX")
+         setproperty QName(PackageNamespace(""),"minX")
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"tileMinY")
@@ -1655,7 +1686,7 @@ package
          multiply
          pushbyte 16
          add
-         initproperty QName(PackageNamespace(""),"minY")
+         setproperty QName(PackageNamespace(""),"minY")
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"tileMaxX")
@@ -1663,7 +1694,7 @@ package
          multiply
          pushbyte 0
          add
-         initproperty QName(PackageNamespace(""),"maxX")
+         setproperty QName(PackageNamespace(""),"maxX")
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"tileMaxY")
@@ -1671,7 +1702,7 @@ package
          multiply
          pushbyte 0
          add
-         initproperty QName(PackageNamespace(""),"maxY")
+         setproperty QName(PackageNamespace(""),"maxY")
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getlocal0
          getproperty QName(PackageNamespace(""),"minX")
@@ -1702,18 +1733,27 @@ package
          trait method QName(PackageNamespace(""),"scanMiniMap")
          dispid 0
          method
-         name null
+         name "WorldMap:scanMiniMap"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 5
          localcount 10
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "_loc1_", 0, 183
+         debug 1, "_loc2_", 1, 175
+         debug 1, "_loc3_", 2, 176
+         debug 1, "_loc4_", 3, 177
+         debug 1, "_loc5_", 4, 178
+         debug 1, "_loc6_", 5, 179
+         debug 1, "_loc7_", 6, 180
+         debug 1, "_loc8_", 7, 181
+         debug 1, "_loc9_", 8, 182
          pushbyte 0
          setlocal2
          pushbyte 0
@@ -1870,7 +1910,7 @@ package
          trait method QName(PackageNamespace(""),"setTileBounds")
          dispid 0
          method
-         name null
+         name "WorldMap:setTileBounds"
          flag HAS_OPTIONAL
          param QName(PackageNamespace(""),"Number")
          param QName(PackageNamespace(""),"Number")
@@ -1883,12 +1923,17 @@ package
          body
          maxstack 6
          localcount 6
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "param3", 2, 0
+         debug 1, "param4", 3, 0
+         debug 1, "param5", 4, 0
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getlocal1
          pushbyte 16
@@ -1923,18 +1968,24 @@ package
          trait method QName(PackageNamespace(""),"processSpecialTiles")
          dispid 0
          method
-         name null
+         name "WorldMap:processSpecialTiles"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 7
          localcount 8
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "_loc1_", 0, 230
+         debug 1, "_loc2_", 1, 231
+         debug 1, "_loc3_", 2, 232
+         debug 1, "_loc4_", 3, 233
+         debug 1, "_loc5_", 4, 234
+         debug 1, "_loc6_", 5, 235
          pushbyte 0
          setlocal1
          pushbyte 0
@@ -1959,32 +2010,31 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         convert_b
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          dup
+         convert_b
          iffalse ofs3
          pop
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("fixBlocks",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         convert_b
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
+         getproperty Multiname("fixBlocks",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          ofs3:
          iffalse ofs4
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("fixBlocks",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         callpropvoid Multiname("repairAll",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")]), 0
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
+         getproperty Multiname("fixBlocks",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
+         callpropvoid Multiname("repairAll",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")]), 0
          ofs4:
          inclocal_i 3
          ofs1:
          getlocal3
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
-         getproperty QName(PackageNamespace(""),"length")
+         getproperty Multiname("length",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          iflt ofs2
          ofs0:
          getlex QName(PackageNamespace(""),"PlayState")
@@ -2008,7 +2058,7 @@ package
          getproperty QName(PackageNamespace(""),"enemies")
          getproperty QName(PackageNamespace(""),"members")
          pushbyte 0
-         setproperty QName(PackageNamespace(""),"length")
+         setproperty Multiname("length",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"enemiesNoCollide")
          findpropstrict QName(PackageNamespace(""),"Array")
@@ -2018,7 +2068,7 @@ package
          getproperty QName(PackageNamespace(""),"enemiesNoCollide")
          getproperty QName(PackageNamespace(""),"members")
          pushbyte 0
-         setproperty QName(PackageNamespace(""),"length")
+         setproperty Multiname("length",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"items")
          findpropstrict QName(PackageNamespace(""),"Array")
@@ -2028,7 +2078,7 @@ package
          getproperty QName(PackageNamespace(""),"items")
          getproperty QName(PackageNamespace(""),"members")
          pushbyte 0
-         setproperty QName(PackageNamespace(""),"length")
+         setproperty Multiname("length",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"solidItems")
          findpropstrict QName(PackageNamespace(""),"Array")
@@ -2038,7 +2088,7 @@ package
          getproperty QName(PackageNamespace(""),"solidItems")
          getproperty QName(PackageNamespace(""),"members")
          pushbyte 0
-         setproperty QName(PackageNamespace(""),"length")
+         setproperty Multiname("length",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"npcs")
          findpropstrict QName(PackageNamespace(""),"Array")
@@ -2048,7 +2098,7 @@ package
          getproperty QName(PackageNamespace(""),"npcs")
          getproperty QName(PackageNamespace(""),"members")
          pushbyte 0
-         setproperty QName(PackageNamespace(""),"length")
+         setproperty Multiname("length",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"emitters")
          findpropstrict QName(PackageNamespace(""),"Array")
@@ -2058,7 +2108,7 @@ package
          getproperty QName(PackageNamespace(""),"emitters")
          getproperty QName(PackageNamespace(""),"members")
          pushbyte 0
-         setproperty QName(PackageNamespace(""),"length")
+         setproperty Multiname("length",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"sprites")
          findpropstrict QName(PackageNamespace(""),"Array")
@@ -2068,7 +2118,7 @@ package
          getproperty QName(PackageNamespace(""),"sprites")
          getproperty QName(PackageNamespace(""),"members")
          pushbyte 0
-         setproperty QName(PackageNamespace(""),"length")
+         setproperty Multiname("length",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"bossBgLayer")
          findpropstrict QName(PackageNamespace(""),"Array")
@@ -2078,7 +2128,7 @@ package
          getproperty QName(PackageNamespace(""),"bossBgLayer")
          getproperty QName(PackageNamespace(""),"members")
          pushbyte 0
-         setproperty QName(PackageNamespace(""),"length")
+         setproperty Multiname("length",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"dialogue")
          callpropvoid QName(PackageNamespace(""),"stop"), 0
@@ -2095,7 +2145,7 @@ package
          getproperty QName(PackageNamespace(""),"bubbles")
          getproperty QName(PackageNamespace(""),"members")
          pushbyte 0
-         setproperty QName(PackageNamespace(""),"length")
+         setproperty Multiname("length",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"aiTriggerPool")
          callpropvoid QName(PackageNamespace(""),"destroyAll"), 0
@@ -2109,30 +2159,32 @@ package
          findpropstrict QName(PackageNamespace(""),"Array")
          constructprop QName(PackageNamespace(""),"Array"), 0
          setproperty QName(PackageNamespace(""),"doors")
+         getlex QName(PackageNamespace(""),"PlayState")
+         pushfalse
+         setproperty QName(PackageNamespace(""),"fxStompActive")
          getlocal0
          findpropstrict QName(PackageNamespace(""),"Array")
          constructprop QName(PackageNamespace(""),"Array"), 0
-         initproperty QName(PackageNamespace(""),"waterLevelY")
+         setproperty QName(PackageNamespace(""),"waterLevelY")
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"minX")
-         initproperty QName(PackageNamespace(""),"fakeMinX")
+         setproperty QName(PackageNamespace(""),"fakeMinX")
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"maxX")
-         initproperty QName(PackageNamespace(""),"fakeMaxX")
+         setproperty QName(PackageNamespace(""),"fakeMaxX")
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"minY")
-         initproperty QName(PackageNamespace(""),"fakeMinY")
+         setproperty QName(PackageNamespace(""),"fakeMinY")
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"maxY")
-         initproperty QName(PackageNamespace(""),"fakeMaxY")
+         setproperty QName(PackageNamespace(""),"fakeMaxY")
          getlocal0
          getproperty QName(PackageNamespace(""),"tileMinX")
-         pushbyte 1
-         add
+         increment
          convert_i
          setlocal1
          jump ofs5
@@ -2140,8 +2192,7 @@ package
          label
          getlocal0
          getproperty QName(PackageNamespace(""),"tileMinY")
-         pushbyte 1
-         add
+         increment
          convert_i
          setlocal2
          jump ofs7
@@ -2156,14 +2207,13 @@ package
          setlocal 4
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
-         convert_b
          dup
+         convert_b
          iffalse ofs9
          pop
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"_insaneMode")
-         convert_b
          ofs9:
          iffalse ofs10
          getlocal 4
@@ -2660,7 +2710,7 @@ package
          getlocal 5
          pushbyte 16
          divide
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          not
          dup
          iftrue ofs57
@@ -2670,7 +2720,7 @@ package
          getlocal 5
          pushbyte 16
          divide
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          getlocal 6
          lessthan
          ofs57:
@@ -2681,7 +2731,7 @@ package
          pushbyte 16
          divide
          getlocal 6
-         setproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         setproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),PrivateNamespace(":WorldMap"),ProtectedNamespace(":WorldMap"),StaticProtectedNs(":WorldMap"),PrivateNamespace("WorldMap.as$116")])
          ofs58:
          jump ofs16
          ofs59:
@@ -2815,7 +2865,7 @@ package
          getlex QName(PackageNamespace(""),"Door")
          getproperty QName(PackageNamespace(""),"SIDE_RIGHT")
          pushbyte 3
-         dup
+         pushbyte 3
          constructprop QName(PackageNamespace(""),"Door"), 5
          callpropvoid QName(PackageNamespace(""),"add"), 1
          jump ofs16
@@ -2829,7 +2879,7 @@ package
          getlex QName(PackageNamespace(""),"Door")
          getproperty QName(PackageNamespace(""),"SIDE_LEFT")
          pushbyte 3
-         dup
+         pushbyte 3
          constructprop QName(PackageNamespace(""),"Door"), 5
          callpropvoid QName(PackageNamespace(""),"add"), 1
          jump ofs16
@@ -2843,7 +2893,7 @@ package
          getlex QName(PackageNamespace(""),"Door")
          getproperty QName(PackageNamespace(""),"SIDE_TOP")
          pushbyte 3
-         dup
+         pushbyte 3
          constructprop QName(PackageNamespace(""),"Door"), 5
          callpropvoid QName(PackageNamespace(""),"add"), 1
          jump ofs16
@@ -2857,7 +2907,7 @@ package
          getlex QName(PackageNamespace(""),"Door")
          getproperty QName(PackageNamespace(""),"SIDE_BOTTOM")
          pushbyte 3
-         dup
+         pushbyte 3
          constructprop QName(PackageNamespace(""),"Door"), 5
          callpropvoid QName(PackageNamespace(""),"add"), 1
          jump ofs16
@@ -3024,7 +3074,7 @@ package
          ifngt ofs90
          getlocal0
          getlocal 5
-         initproperty QName(PackageNamespace(""),"fakeMaxX")
+         setproperty QName(PackageNamespace(""),"fakeMaxX")
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"tileMinX")
@@ -3039,7 +3089,7 @@ package
          ofs90:
          getlocal0
          getlocal 5
-         initproperty QName(PackageNamespace(""),"fakeMinX")
+         setproperty QName(PackageNamespace(""),"fakeMinX")
          getlocal0
          getlocal1
          getlocal0
@@ -3061,7 +3111,7 @@ package
          ifngt ofs93
          getlocal0
          getlocal 6
-         initproperty QName(PackageNamespace(""),"fakeMaxY")
+         setproperty QName(PackageNamespace(""),"fakeMaxY")
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"tileMinX")
@@ -3076,7 +3126,7 @@ package
          ofs93:
          getlocal0
          getlocal 6
-         initproperty QName(PackageNamespace(""),"fakeMinY")
+         setproperty QName(PackageNamespace(""),"fakeMinY")
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"tileMinX")
@@ -3155,7 +3205,8 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"_slugMode")
-         iftrue ofs101
+         not
+         iffalse ofs101
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"items")
          findpropstrict QName(PackageNamespace(""),"ShellShield")
@@ -3354,7 +3405,7 @@ package
          ifngt ofs122
          getlocal0
          getlocal 6
-         initproperty QName(PackageNamespace(""),"fakeMaxY")
+         setproperty QName(PackageNamespace(""),"fakeMaxY")
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"tileMinX")
@@ -3950,6 +4001,30 @@ package
          ofs178:
          label
          getlex QName(PackageNamespace(""),"PlayState")
+         pushbyte 2
+         callproperty QName(PackageNamespace(""),"isBossDead"), 1
+         not
+         iffalse ofs179
+         getlex QName(PackageNamespace(""),"PlayState")
+         pushtrue
+         setproperty QName(PackageNamespace(""),"fxStompActive")
+         ofs179:
+         jump ofs16
+         ofs180:
+         label
+         getlex QName(PackageNamespace(""),"PlayState")
+         pushbyte 3
+         callproperty QName(PackageNamespace(""),"isBossDead"), 1
+         not
+         iffalse ofs181
+         getlex QName(PackageNamespace(""),"PlayState")
+         pushtrue
+         setproperty QName(PackageNamespace(""),"fxStompActive")
+         ofs181:
+         jump ofs16
+         ofs182:
+         label
+         getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"items")
          findpropstrict QName(PackageNamespace(""),"Fire")
          getlocal 5
@@ -3957,7 +4032,7 @@ package
          constructprop QName(PackageNamespace(""),"Fire"), 2
          callpropvoid QName(PackageNamespace(""),"add"), 1
          jump ofs16
-         ofs179:
+         ofs183:
          label
          jump ofs16
          ofs27:
@@ -3965,876 +4040,888 @@ package
          setlocal 7
          pushbyte 28
          getlocal 7
-         ifstrictne ofs180
-         pushbyte 0
-         jump ofs181
-         ofs180:
-         pushbyte 29
-         getlocal 7
-         ifstrictne ofs182
-         pushbyte 1
-         jump ofs181
-         ofs182:
-         pushbyte 30
-         getlocal 7
-         ifstrictne ofs183
-         pushbyte 2
-         jump ofs181
-         ofs183:
-         pushbyte 31
-         getlocal 7
          ifstrictne ofs184
-         pushbyte 3
-         jump ofs181
+         pushbyte 0
+         jump ofs185
          ofs184:
-         pushbyte 32
-         getlocal 7
-         ifstrictne ofs185
-         pushbyte 4
-         jump ofs181
-         ofs185:
-         pushbyte 73
+         pushbyte 29
          getlocal 7
          ifstrictne ofs186
-         pushbyte 5
-         jump ofs181
+         pushbyte 1
+         jump ofs185
          ofs186:
-         pushbyte 74
+         pushbyte 30
          getlocal 7
          ifstrictne ofs187
-         pushbyte 6
-         jump ofs181
+         pushbyte 2
+         jump ofs185
          ofs187:
-         pushbyte 75
+         pushbyte 31
          getlocal 7
          ifstrictne ofs188
-         pushbyte 7
-         jump ofs181
+         pushbyte 3
+         jump ofs185
          ofs188:
-         pushbyte 76
+         pushbyte 32
          getlocal 7
          ifstrictne ofs189
-         pushbyte 8
-         jump ofs181
+         pushbyte 4
+         jump ofs185
          ofs189:
-         pushbyte 77
+         pushbyte 73
          getlocal 7
          ifstrictne ofs190
-         pushbyte 9
-         jump ofs181
+         pushbyte 5
+         jump ofs185
          ofs190:
-         pushbyte 78
+         pushbyte 74
          getlocal 7
          ifstrictne ofs191
-         pushbyte 10
-         jump ofs181
+         pushbyte 6
+         jump ofs185
          ofs191:
-         pushbyte 79
+         pushbyte 75
          getlocal 7
          ifstrictne ofs192
-         pushbyte 11
-         jump ofs181
+         pushbyte 7
+         jump ofs185
          ofs192:
-         pushbyte 80
+         pushbyte 76
          getlocal 7
          ifstrictne ofs193
-         pushbyte 12
-         jump ofs181
+         pushbyte 8
+         jump ofs185
          ofs193:
-         pushbyte 81
+         pushbyte 77
          getlocal 7
          ifstrictne ofs194
-         pushbyte 13
-         jump ofs181
+         pushbyte 9
+         jump ofs185
          ofs194:
-         pushbyte 82
+         pushbyte 78
          getlocal 7
          ifstrictne ofs195
-         pushbyte 14
-         jump ofs181
+         pushbyte 10
+         jump ofs185
          ofs195:
-         pushbyte 83
+         pushbyte 79
          getlocal 7
          ifstrictne ofs196
-         pushbyte 15
-         jump ofs181
+         pushbyte 11
+         jump ofs185
          ofs196:
-         pushbyte 84
+         pushbyte 80
          getlocal 7
          ifstrictne ofs197
-         pushbyte 16
-         jump ofs181
+         pushbyte 12
+         jump ofs185
          ofs197:
-         pushbyte 85
+         pushbyte 81
          getlocal 7
          ifstrictne ofs198
-         pushbyte 17
-         jump ofs181
+         pushbyte 13
+         jump ofs185
          ofs198:
-         pushbyte 86
+         pushbyte 82
          getlocal 7
          ifstrictne ofs199
-         pushbyte 18
-         jump ofs181
+         pushbyte 14
+         jump ofs185
          ofs199:
-         pushbyte 87
+         pushbyte 83
          getlocal 7
          ifstrictne ofs200
-         pushbyte 19
-         jump ofs181
+         pushbyte 15
+         jump ofs185
          ofs200:
-         pushbyte 88
+         pushbyte 84
          getlocal 7
          ifstrictne ofs201
-         pushbyte 20
-         jump ofs181
+         pushbyte 16
+         jump ofs185
          ofs201:
-         pushbyte 89
+         pushbyte 85
          getlocal 7
          ifstrictne ofs202
-         pushbyte 21
-         jump ofs181
+         pushbyte 17
+         jump ofs185
          ofs202:
-         pushbyte 90
+         pushbyte 86
          getlocal 7
          ifstrictne ofs203
-         pushbyte 22
-         jump ofs181
+         pushbyte 18
+         jump ofs185
          ofs203:
-         pushbyte 91
+         pushbyte 87
          getlocal 7
          ifstrictne ofs204
-         pushbyte 23
-         jump ofs181
+         pushbyte 19
+         jump ofs185
          ofs204:
-         pushbyte 92
+         pushbyte 88
          getlocal 7
          ifstrictne ofs205
-         pushbyte 24
-         jump ofs181
+         pushbyte 20
+         jump ofs185
          ofs205:
-         pushshort 333
+         pushbyte 89
          getlocal 7
          ifstrictne ofs206
-         pushbyte 25
-         jump ofs181
+         pushbyte 21
+         jump ofs185
          ofs206:
-         pushshort 334
+         pushbyte 90
          getlocal 7
          ifstrictne ofs207
-         pushbyte 26
-         jump ofs181
+         pushbyte 22
+         jump ofs185
          ofs207:
-         pushshort 335
+         pushbyte 91
          getlocal 7
          ifstrictne ofs208
-         pushbyte 27
-         jump ofs181
+         pushbyte 23
+         jump ofs185
          ofs208:
-         pushshort 336
+         pushbyte 92
          getlocal 7
          ifstrictne ofs209
-         pushbyte 28
-         jump ofs181
+         pushbyte 24
+         jump ofs185
          ofs209:
-         pushshort 337
+         pushshort 333
          getlocal 7
          ifstrictne ofs210
-         pushbyte 29
-         jump ofs181
+         pushbyte 25
+         jump ofs185
          ofs210:
-         pushshort 338
+         pushshort 334
          getlocal 7
          ifstrictne ofs211
-         pushbyte 30
-         jump ofs181
+         pushbyte 26
+         jump ofs185
          ofs211:
-         pushshort 339
+         pushshort 335
          getlocal 7
          ifstrictne ofs212
-         pushbyte 31
-         jump ofs181
+         pushbyte 27
+         jump ofs185
          ofs212:
-         pushshort 340
+         pushshort 336
          getlocal 7
          ifstrictne ofs213
-         pushbyte 32
-         jump ofs181
+         pushbyte 28
+         jump ofs185
          ofs213:
-         pushshort 341
+         pushshort 337
          getlocal 7
          ifstrictne ofs214
-         pushbyte 33
-         jump ofs181
+         pushbyte 29
+         jump ofs185
          ofs214:
-         pushshort 342
+         pushshort 338
          getlocal 7
          ifstrictne ofs215
-         pushbyte 34
-         jump ofs181
+         pushbyte 30
+         jump ofs185
          ofs215:
-         pushshort 343
+         pushshort 339
          getlocal 7
          ifstrictne ofs216
-         pushbyte 35
-         jump ofs181
+         pushbyte 31
+         jump ofs185
          ofs216:
-         pushshort 344
+         pushshort 340
          getlocal 7
          ifstrictne ofs217
-         pushbyte 36
-         jump ofs181
+         pushbyte 32
+         jump ofs185
          ofs217:
-         pushshort 345
+         pushshort 341
          getlocal 7
          ifstrictne ofs218
-         pushbyte 37
-         jump ofs181
+         pushbyte 33
+         jump ofs185
          ofs218:
-         pushshort 346
+         pushshort 342
          getlocal 7
          ifstrictne ofs219
-         pushbyte 38
-         jump ofs181
+         pushbyte 34
+         jump ofs185
          ofs219:
-         pushshort 347
+         pushshort 343
          getlocal 7
          ifstrictne ofs220
-         pushbyte 39
-         jump ofs181
+         pushbyte 35
+         jump ofs185
          ofs220:
-         pushshort 348
+         pushshort 344
          getlocal 7
          ifstrictne ofs221
-         pushbyte 40
-         jump ofs181
+         pushbyte 36
+         jump ofs185
          ofs221:
-         pushshort 349
+         pushshort 345
          getlocal 7
          ifstrictne ofs222
-         pushbyte 41
-         jump ofs181
+         pushbyte 37
+         jump ofs185
          ofs222:
-         pushshort 350
+         pushshort 346
          getlocal 7
          ifstrictne ofs223
-         pushbyte 42
-         jump ofs181
+         pushbyte 38
+         jump ofs185
          ofs223:
-         pushshort 351
+         pushshort 347
          getlocal 7
          ifstrictne ofs224
-         pushbyte 43
-         jump ofs181
+         pushbyte 39
+         jump ofs185
          ofs224:
-         pushshort 352
+         pushshort 348
          getlocal 7
          ifstrictne ofs225
-         pushbyte 44
-         jump ofs181
+         pushbyte 40
+         jump ofs185
          ofs225:
-         pushshort 353
+         pushshort 349
          getlocal 7
          ifstrictne ofs226
-         pushbyte 45
-         jump ofs181
+         pushbyte 41
+         jump ofs185
          ofs226:
-         pushshort 354
+         pushshort 350
          getlocal 7
          ifstrictne ofs227
-         pushbyte 46
-         jump ofs181
+         pushbyte 42
+         jump ofs185
          ofs227:
-         pushshort 355
+         pushshort 351
          getlocal 7
          ifstrictne ofs228
-         pushbyte 47
-         jump ofs181
+         pushbyte 43
+         jump ofs185
          ofs228:
-         pushshort 356
+         pushshort 352
          getlocal 7
          ifstrictne ofs229
-         pushbyte 48
-         jump ofs181
+         pushbyte 44
+         jump ofs185
          ofs229:
-         pushshort 357
+         pushshort 353
          getlocal 7
          ifstrictne ofs230
-         pushbyte 49
-         jump ofs181
+         pushbyte 45
+         jump ofs185
          ofs230:
-         pushshort 358
+         pushshort 354
          getlocal 7
          ifstrictne ofs231
-         pushbyte 50
-         jump ofs181
+         pushbyte 46
+         jump ofs185
          ofs231:
-         pushshort 359
+         pushshort 355
          getlocal 7
          ifstrictne ofs232
-         pushbyte 51
-         jump ofs181
+         pushbyte 47
+         jump ofs185
          ofs232:
-         pushshort 360
+         pushshort 356
          getlocal 7
          ifstrictne ofs233
-         pushbyte 52
-         jump ofs181
+         pushbyte 48
+         jump ofs185
          ofs233:
-         pushshort 361
+         pushshort 357
          getlocal 7
          ifstrictne ofs234
-         pushbyte 53
-         jump ofs181
+         pushbyte 49
+         jump ofs185
          ofs234:
-         pushshort 362
+         pushshort 358
          getlocal 7
          ifstrictne ofs235
-         pushbyte 54
-         jump ofs181
+         pushbyte 50
+         jump ofs185
          ofs235:
-         pushshort 363
+         pushshort 359
          getlocal 7
          ifstrictne ofs236
-         pushbyte 55
-         jump ofs181
+         pushbyte 51
+         jump ofs185
          ofs236:
-         pushshort 364
+         pushshort 360
          getlocal 7
          ifstrictne ofs237
-         pushbyte 56
-         jump ofs181
+         pushbyte 52
+         jump ofs185
          ofs237:
-         pushshort 365
+         pushshort 361
          getlocal 7
          ifstrictne ofs238
-         pushbyte 57
-         jump ofs181
+         pushbyte 53
+         jump ofs185
          ofs238:
-         pushshort 366
+         pushshort 362
          getlocal 7
          ifstrictne ofs239
-         pushbyte 58
-         jump ofs181
+         pushbyte 54
+         jump ofs185
          ofs239:
-         pushshort 367
+         pushshort 363
          getlocal 7
          ifstrictne ofs240
-         pushbyte 59
-         jump ofs181
+         pushbyte 55
+         jump ofs185
          ofs240:
-         pushshort 368
+         pushshort 364
          getlocal 7
          ifstrictne ofs241
-         pushbyte 60
-         jump ofs181
+         pushbyte 56
+         jump ofs185
          ofs241:
-         pushshort 373
+         pushshort 365
          getlocal 7
          ifstrictne ofs242
-         pushbyte 61
-         jump ofs181
+         pushbyte 57
+         jump ofs185
          ofs242:
-         pushshort 374
+         pushshort 366
          getlocal 7
          ifstrictne ofs243
-         pushbyte 62
-         jump ofs181
+         pushbyte 58
+         jump ofs185
          ofs243:
-         pushshort 375
+         pushshort 367
          getlocal 7
          ifstrictne ofs244
-         pushbyte 63
-         jump ofs181
+         pushbyte 59
+         jump ofs185
          ofs244:
-         pushshort 376
+         pushshort 368
          getlocal 7
          ifstrictne ofs245
-         pushbyte 64
-         jump ofs181
+         pushbyte 60
+         jump ofs185
          ofs245:
-         pushshort 377
+         pushshort 373
          getlocal 7
          ifstrictne ofs246
-         pushbyte 65
-         jump ofs181
+         pushbyte 61
+         jump ofs185
          ofs246:
-         pushshort 378
+         pushshort 374
          getlocal 7
          ifstrictne ofs247
-         pushbyte 66
-         jump ofs181
+         pushbyte 62
+         jump ofs185
          ofs247:
-         pushshort 379
+         pushshort 375
          getlocal 7
          ifstrictne ofs248
-         pushbyte 67
-         jump ofs181
+         pushbyte 63
+         jump ofs185
          ofs248:
-         pushshort 380
+         pushshort 376
          getlocal 7
          ifstrictne ofs249
-         pushbyte 68
-         jump ofs181
+         pushbyte 64
+         jump ofs185
          ofs249:
-         pushshort 381
+         pushshort 377
          getlocal 7
          ifstrictne ofs250
-         pushbyte 69
-         jump ofs181
+         pushbyte 65
+         jump ofs185
          ofs250:
-         pushshort 383
+         pushshort 378
          getlocal 7
          ifstrictne ofs251
-         pushbyte 70
-         jump ofs181
+         pushbyte 66
+         jump ofs185
          ofs251:
-         pushshort 384
+         pushshort 379
          getlocal 7
          ifstrictne ofs252
-         pushbyte 71
-         jump ofs181
+         pushbyte 67
+         jump ofs185
          ofs252:
-         pushshort 387
+         pushshort 380
          getlocal 7
          ifstrictne ofs253
-         pushbyte 72
-         jump ofs181
+         pushbyte 68
+         jump ofs185
          ofs253:
-         pushshort 388
+         pushshort 381
          getlocal 7
          ifstrictne ofs254
-         pushbyte 73
-         jump ofs181
+         pushbyte 69
+         jump ofs185
          ofs254:
-         pushshort 389
+         pushshort 383
          getlocal 7
          ifstrictne ofs255
-         pushbyte 74
-         jump ofs181
+         pushbyte 70
+         jump ofs185
          ofs255:
-         pushshort 390
+         pushshort 384
          getlocal 7
          ifstrictne ofs256
-         pushbyte 75
-         jump ofs181
+         pushbyte 71
+         jump ofs185
          ofs256:
-         pushshort 391
+         pushshort 387
          getlocal 7
          ifstrictne ofs257
-         pushbyte 76
-         jump ofs181
+         pushbyte 72
+         jump ofs185
          ofs257:
-         pushshort 392
+         pushshort 388
          getlocal 7
          ifstrictne ofs258
-         pushbyte 77
-         jump ofs181
+         pushbyte 73
+         jump ofs185
          ofs258:
-         pushshort 393
+         pushshort 389
          getlocal 7
          ifstrictne ofs259
-         pushbyte 78
-         jump ofs181
+         pushbyte 74
+         jump ofs185
          ofs259:
-         pushshort 394
+         pushshort 390
          getlocal 7
          ifstrictne ofs260
-         pushbyte 79
-         jump ofs181
+         pushbyte 75
+         jump ofs185
          ofs260:
-         pushshort 395
+         pushshort 391
          getlocal 7
          ifstrictne ofs261
-         pushbyte 80
-         jump ofs181
+         pushbyte 76
+         jump ofs185
          ofs261:
-         pushshort 396
+         pushshort 392
          getlocal 7
          ifstrictne ofs262
-         pushbyte 81
-         jump ofs181
+         pushbyte 77
+         jump ofs185
          ofs262:
-         pushshort 397
+         pushshort 393
          getlocal 7
          ifstrictne ofs263
-         pushbyte 82
-         jump ofs181
+         pushbyte 78
+         jump ofs185
          ofs263:
-         pushshort 398
+         pushshort 394
          getlocal 7
          ifstrictne ofs264
-         pushbyte 83
-         jump ofs181
+         pushbyte 79
+         jump ofs185
          ofs264:
-         pushshort 399
+         pushshort 395
          getlocal 7
          ifstrictne ofs265
-         pushbyte 84
-         jump ofs181
+         pushbyte 80
+         jump ofs185
          ofs265:
-         pushshort 400
+         pushshort 396
          getlocal 7
          ifstrictne ofs266
-         pushbyte 85
-         jump ofs181
+         pushbyte 81
+         jump ofs185
          ofs266:
-         pushshort 401
+         pushshort 397
          getlocal 7
          ifstrictne ofs267
-         pushbyte 86
-         jump ofs181
+         pushbyte 82
+         jump ofs185
          ofs267:
-         pushshort 402
+         pushshort 398
          getlocal 7
          ifstrictne ofs268
-         pushbyte 87
-         jump ofs181
+         pushbyte 83
+         jump ofs185
          ofs268:
-         pushshort 403
+         pushshort 399
          getlocal 7
          ifstrictne ofs269
-         pushbyte 88
-         jump ofs181
+         pushbyte 84
+         jump ofs185
          ofs269:
-         pushshort 404
+         pushshort 400
          getlocal 7
          ifstrictne ofs270
-         pushbyte 89
-         jump ofs181
+         pushbyte 85
+         jump ofs185
          ofs270:
-         pushshort 405
+         pushshort 401
          getlocal 7
          ifstrictne ofs271
-         pushbyte 90
-         jump ofs181
+         pushbyte 86
+         jump ofs185
          ofs271:
-         pushshort 406
+         pushshort 402
          getlocal 7
          ifstrictne ofs272
-         pushbyte 91
-         jump ofs181
+         pushbyte 87
+         jump ofs185
          ofs272:
-         pushshort 407
+         pushshort 403
          getlocal 7
          ifstrictne ofs273
-         pushbyte 92
-         jump ofs181
+         pushbyte 88
+         jump ofs185
          ofs273:
-         pushshort 408
+         pushshort 404
          getlocal 7
          ifstrictne ofs274
-         pushbyte 93
-         jump ofs181
+         pushbyte 89
+         jump ofs185
          ofs274:
-         pushshort 409
+         pushshort 405
          getlocal 7
          ifstrictne ofs275
-         pushbyte 94
-         jump ofs181
+         pushbyte 90
+         jump ofs185
          ofs275:
-         pushshort 410
+         pushshort 406
          getlocal 7
          ifstrictne ofs276
-         pushbyte 95
-         jump ofs181
+         pushbyte 91
+         jump ofs185
          ofs276:
-         pushshort 411
+         pushshort 407
          getlocal 7
          ifstrictne ofs277
-         pushbyte 96
-         jump ofs181
+         pushbyte 92
+         jump ofs185
          ofs277:
-         pushshort 412
+         pushshort 408
          getlocal 7
          ifstrictne ofs278
-         pushbyte 97
-         jump ofs181
+         pushbyte 93
+         jump ofs185
          ofs278:
-         pushshort 413
+         pushshort 409
          getlocal 7
          ifstrictne ofs279
-         pushbyte 98
-         jump ofs181
+         pushbyte 94
+         jump ofs185
          ofs279:
-         pushshort 414
+         pushshort 410
          getlocal 7
          ifstrictne ofs280
-         pushbyte 99
-         jump ofs181
+         pushbyte 95
+         jump ofs185
          ofs280:
-         pushshort 415
+         pushshort 411
          getlocal 7
          ifstrictne ofs281
-         pushbyte 100
-         jump ofs181
+         pushbyte 96
+         jump ofs185
          ofs281:
-         pushshort 416
+         pushshort 412
          getlocal 7
          ifstrictne ofs282
-         pushbyte 101
-         jump ofs181
+         pushbyte 97
+         jump ofs185
          ofs282:
-         pushshort 417
+         pushshort 413
          getlocal 7
          ifstrictne ofs283
-         pushbyte 102
-         jump ofs181
+         pushbyte 98
+         jump ofs185
          ofs283:
-         pushshort 418
+         pushshort 414
          getlocal 7
          ifstrictne ofs284
-         pushbyte 103
-         jump ofs181
+         pushbyte 99
+         jump ofs185
          ofs284:
-         pushshort 419
+         pushshort 415
          getlocal 7
          ifstrictne ofs285
-         pushbyte 104
-         jump ofs181
+         pushbyte 100
+         jump ofs185
          ofs285:
-         pushshort 420
+         pushshort 416
          getlocal 7
          ifstrictne ofs286
-         pushbyte 105
-         jump ofs181
+         pushbyte 101
+         jump ofs185
          ofs286:
-         pushshort 421
+         pushshort 417
          getlocal 7
          ifstrictne ofs287
-         pushbyte 106
-         jump ofs181
+         pushbyte 102
+         jump ofs185
          ofs287:
-         pushshort 422
+         pushshort 418
          getlocal 7
          ifstrictne ofs288
-         pushbyte 107
-         jump ofs181
+         pushbyte 103
+         jump ofs185
          ofs288:
-         pushshort 423
+         pushshort 419
          getlocal 7
          ifstrictne ofs289
-         pushbyte 108
-         jump ofs181
+         pushbyte 104
+         jump ofs185
          ofs289:
-         pushshort 424
+         pushshort 420
          getlocal 7
          ifstrictne ofs290
-         pushbyte 109
-         jump ofs181
+         pushbyte 105
+         jump ofs185
          ofs290:
-         pushshort 425
+         pushshort 421
          getlocal 7
          ifstrictne ofs291
-         pushbyte 110
-         jump ofs181
+         pushbyte 106
+         jump ofs185
          ofs291:
-         pushshort 426
+         pushshort 422
          getlocal 7
          ifstrictne ofs292
-         pushbyte 111
-         jump ofs181
+         pushbyte 107
+         jump ofs185
          ofs292:
-         pushshort 427
+         pushshort 423
          getlocal 7
          ifstrictne ofs293
-         pushbyte 112
-         jump ofs181
+         pushbyte 108
+         jump ofs185
          ofs293:
-         pushshort 428
+         pushshort 424
          getlocal 7
          ifstrictne ofs294
-         pushbyte 113
-         jump ofs181
+         pushbyte 109
+         jump ofs185
          ofs294:
-         pushshort 429
+         pushshort 425
          getlocal 7
          ifstrictne ofs295
-         pushbyte 114
-         jump ofs181
+         pushbyte 110
+         jump ofs185
          ofs295:
-         pushshort 430
+         pushshort 426
          getlocal 7
          ifstrictne ofs296
-         pushbyte 115
-         jump ofs181
+         pushbyte 111
+         jump ofs185
          ofs296:
-         pushshort 431
+         pushshort 427
          getlocal 7
          ifstrictne ofs297
-         pushbyte 116
-         jump ofs181
+         pushbyte 112
+         jump ofs185
          ofs297:
-         pushshort 432
+         pushshort 428
          getlocal 7
          ifstrictne ofs298
-         pushbyte 117
-         jump ofs181
+         pushbyte 113
+         jump ofs185
          ofs298:
-         pushshort 433
+         pushshort 429
          getlocal 7
          ifstrictne ofs299
-         pushbyte 118
-         jump ofs181
+         pushbyte 114
+         jump ofs185
          ofs299:
-         pushshort 434
+         pushshort 430
          getlocal 7
          ifstrictne ofs300
-         pushbyte 119
-         jump ofs181
+         pushbyte 115
+         jump ofs185
          ofs300:
-         pushshort 435
+         pushshort 431
          getlocal 7
          ifstrictne ofs301
-         pushbyte 120
-         jump ofs181
+         pushbyte 116
+         jump ofs185
          ofs301:
-         pushshort 436
+         pushshort 432
          getlocal 7
          ifstrictne ofs302
-         pushbyte 121
-         jump ofs181
+         pushbyte 117
+         jump ofs185
          ofs302:
-         pushshort 441
+         pushshort 433
          getlocal 7
          ifstrictne ofs303
-         pushbyte 122
-         jump ofs181
+         pushbyte 118
+         jump ofs185
          ofs303:
-         pushshort 442
+         pushshort 434
          getlocal 7
          ifstrictne ofs304
-         pushbyte 123
-         jump ofs181
+         pushbyte 119
+         jump ofs185
          ofs304:
-         pushshort 443
+         pushshort 435
          getlocal 7
          ifstrictne ofs305
-         pushbyte 124
-         jump ofs181
+         pushbyte 120
+         jump ofs185
          ofs305:
-         pushshort 444
+         pushshort 436
          getlocal 7
          ifstrictne ofs306
-         pushbyte 125
-         jump ofs181
+         pushbyte 121
+         jump ofs185
          ofs306:
-         pushshort 445
+         pushshort 441
          getlocal 7
          ifstrictne ofs307
-         pushbyte 126
-         jump ofs181
+         pushbyte 122
+         jump ofs185
          ofs307:
-         pushshort 446
+         pushshort 442
          getlocal 7
          ifstrictne ofs308
-         pushbyte 127
-         jump ofs181
+         pushbyte 123
+         jump ofs185
          ofs308:
-         pushshort 447
+         pushshort 443
          getlocal 7
          ifstrictne ofs309
-         pushshort 128
-         jump ofs181
+         pushbyte 124
+         jump ofs185
          ofs309:
-         pushshort 448
+         pushshort 444
          getlocal 7
          ifstrictne ofs310
-         pushshort 129
-         jump ofs181
+         pushbyte 125
+         jump ofs185
          ofs310:
-         pushshort 449
+         pushshort 445
          getlocal 7
          ifstrictne ofs311
-         pushshort 130
-         jump ofs181
+         pushbyte 126
+         jump ofs185
          ofs311:
-         pushshort 450
+         pushshort 446
          getlocal 7
          ifstrictne ofs312
-         pushshort 131
-         jump ofs181
+         pushbyte 127
+         jump ofs185
          ofs312:
-         pushshort 451
+         pushshort 447
          getlocal 7
          ifstrictne ofs313
-         pushshort 132
-         jump ofs181
+         pushshort 128
+         jump ofs185
          ofs313:
-         pushshort 452
+         pushshort 448
          getlocal 7
          ifstrictne ofs314
-         pushshort 133
-         jump ofs181
+         pushshort 129
+         jump ofs185
          ofs314:
-         pushshort 453
+         pushshort 449
          getlocal 7
          ifstrictne ofs315
-         pushshort 134
-         jump ofs181
+         pushshort 130
+         jump ofs185
          ofs315:
-         pushshort 454
+         pushshort 450
          getlocal 7
          ifstrictne ofs316
-         pushshort 135
-         jump ofs181
+         pushshort 131
+         jump ofs185
          ofs316:
-         pushshort 455
+         pushshort 451
          getlocal 7
          ifstrictne ofs317
-         pushshort 136
-         jump ofs181
+         pushshort 132
+         jump ofs185
          ofs317:
-         pushshort 456
+         pushshort 452
          getlocal 7
          ifstrictne ofs318
-         pushshort 137
-         jump ofs181
+         pushshort 133
+         jump ofs185
          ofs318:
-         pushshort 457
+         pushshort 453
          getlocal 7
          ifstrictne ofs319
-         pushshort 138
-         jump ofs181
+         pushshort 134
+         jump ofs185
          ofs319:
-         pushshort 458
+         pushshort 454
          getlocal 7
          ifstrictne ofs320
-         pushshort 139
-         jump ofs181
+         pushshort 135
+         jump ofs185
          ofs320:
-         pushshort 460
+         pushshort 455
          getlocal 7
          ifstrictne ofs321
-         pushshort 140
-         jump ofs181
+         pushshort 136
+         jump ofs185
          ofs321:
-         pushshort 461
+         pushshort 456
          getlocal 7
          ifstrictne ofs322
-         pushshort 141
-         jump ofs181
+         pushshort 137
+         jump ofs185
          ofs322:
-         pushshort 1133
+         pushshort 457
          getlocal 7
          ifstrictne ofs323
-         pushshort 142
-         jump ofs181
+         pushshort 138
+         jump ofs185
          ofs323:
-         pushshort 1134
+         pushshort 458
          getlocal 7
          ifstrictne ofs324
-         pushshort 143
-         jump ofs181
+         pushshort 139
+         jump ofs185
          ofs324:
-         jump ofs325
-         pushshort 144
-         jump ofs325
+         pushshort 460
+         getlocal 7
+         ifstrictne ofs325
+         pushshort 140
+         jump ofs185
          ofs325:
+         pushshort 461
+         getlocal 7
+         ifstrictne ofs326
+         pushshort 141
+         jump ofs185
+         ofs326:
+         pushshort 462
+         getlocal 7
+         ifstrictne ofs327
+         pushshort 142
+         jump ofs185
+         ofs327:
+         pushshort 463
+         getlocal 7
+         ifstrictne ofs328
+         pushshort 143
+         jump ofs185
+         ofs328:
+         pushshort 1133
+         getlocal 7
+         ifstrictne ofs329
          pushshort 144
-         ofs181:
+         jump ofs185
+         ofs329:
+         pushshort 1134
+         getlocal 7
+         ifstrictne ofs330
+         pushshort 145
+         jump ofs185
+         ofs330:
+         jump ofs331
+         pushbyte -1
+         jump ofs331
+         ofs331:
+         pushbyte -1
+         ofs185:
          kill 7
-         lookupswitch ofs179, [ofs28, ofs29, ofs30, ofs31, ofs32, ofs33, ofs34, ofs35, ofs36, ofs37, ofs38, ofs39, ofs40, ofs41, ofs42, ofs43, ofs44, ofs45, ofs46, ofs47, ofs48, ofs49, ofs50, ofs51, ofs52, ofs53, ofs54, ofs55, ofs56, ofs59, ofs60, ofs61, ofs62, ofs63, ofs64, ofs65, ofs66, ofs67, ofs68, ofs69, ofs70, ofs71, ofs72, ofs73, ofs74, ofs75, ofs76, ofs77, ofs78, ofs79, ofs80, ofs81, ofs82, ofs83, ofs84, ofs85, ofs86, ofs87, ofs88, ofs89, ofs92, ofs95, ofs96, ofs97, ofs98, ofs99, ofs100, ofs102, ofs103, ofs104, ofs105, ofs106, ofs107, ofs108, ofs109, ofs110, ofs111, ofs112, ofs113, ofs114, ofs115, ofs116, ofs117, ofs118, ofs119, ofs120, ofs121, ofs123, ofs124, ofs125, ofs126, ofs127, ofs128, ofs129, ofs130, ofs131, ofs132, ofs133, ofs134, ofs135, ofs136, ofs137, ofs138, ofs139, ofs140, ofs141, ofs142, ofs143, ofs144, ofs145, ofs146, ofs147, ofs148, ofs149, ofs150, ofs151, ofs152, ofs153, ofs154, ofs155, ofs156, ofs157, ofs158, ofs159, ofs160, ofs161, ofs162, ofs163, ofs164, ofs165, ofs166, ofs167, ofs168, ofs169, ofs170, ofs171, ofs172, ofs173, ofs174, ofs175, ofs176, ofs177, ofs178, ofs178, ofs179]
+         lookupswitch ofs183, [ofs28, ofs29, ofs30, ofs31, ofs32, ofs33, ofs34, ofs35, ofs36, ofs37, ofs38, ofs39, ofs40, ofs41, ofs42, ofs43, ofs44, ofs45, ofs46, ofs47, ofs48, ofs49, ofs50, ofs51, ofs52, ofs53, ofs54, ofs55, ofs56, ofs59, ofs60, ofs61, ofs62, ofs63, ofs64, ofs65, ofs66, ofs67, ofs68, ofs69, ofs70, ofs71, ofs72, ofs73, ofs74, ofs75, ofs76, ofs77, ofs78, ofs79, ofs80, ofs81, ofs82, ofs83, ofs84, ofs85, ofs86, ofs87, ofs88, ofs89, ofs92, ofs95, ofs96, ofs97, ofs98, ofs99, ofs100, ofs102, ofs103, ofs104, ofs105, ofs106, ofs107, ofs108, ofs109, ofs110, ofs111, ofs112, ofs113, ofs114, ofs115, ofs116, ofs117, ofs118, ofs119, ofs120, ofs121, ofs123, ofs124, ofs125, ofs126, ofs127, ofs128, ofs129, ofs130, ofs131, ofs132, ofs133, ofs134, ofs135, ofs136, ofs137, ofs138, ofs139, ofs140, ofs141, ofs142, ofs143, ofs144, ofs145, ofs146, ofs147, ofs148, ofs149, ofs150, ofs151, ofs152, ofs153, ofs154, ofs155, ofs156, ofs157, ofs158, ofs159, ofs160, ofs161, ofs162, ofs163, ofs164, ofs165, ofs166, ofs167, ofs168, ofs169, ofs170, ofs171, ofs172, ofs173, ofs174, ofs175, ofs176, ofs177, ofs178, ofs180, ofs182, ofs182]
          ofs16:
          inclocal_i 2
          ofs7:
@@ -4854,54 +4941,54 @@ package
          getproperty QName(PackageNamespace(""),"fakeMinX")
          getlocal0
          getproperty QName(PackageNamespace(""),"minX")
-         ifne ofs326
+         ifne ofs332
          getlocal0
          pushint -10000000
-         initproperty QName(PackageNamespace(""),"fakeMinX")
-         ofs326:
+         setproperty QName(PackageNamespace(""),"fakeMinX")
+         ofs332:
          getlocal0
          getproperty QName(PackageNamespace(""),"fakeMaxX")
          getlocal0
          getproperty QName(PackageNamespace(""),"maxX")
-         ifne ofs327
+         ifne ofs333
          getlocal0
          pushint 10000000
-         initproperty QName(PackageNamespace(""),"fakeMaxX")
-         ofs327:
+         setproperty QName(PackageNamespace(""),"fakeMaxX")
+         ofs333:
          getlocal0
          getproperty QName(PackageNamespace(""),"fakeMinY")
          getlocal0
          getproperty QName(PackageNamespace(""),"minY")
-         ifne ofs328
+         ifne ofs334
          getlocal0
          pushint -10000000
-         initproperty QName(PackageNamespace(""),"fakeMinY")
-         ofs328:
+         setproperty QName(PackageNamespace(""),"fakeMinY")
+         ofs334:
          getlocal0
          getproperty QName(PackageNamespace(""),"fakeMaxY")
          getlocal0
          getproperty QName(PackageNamespace(""),"maxY")
-         ifne ofs329
+         ifne ofs335
          getlocal0
          pushint 10000000
-         initproperty QName(PackageNamespace(""),"fakeMaxY")
-         ofs329:
+         setproperty QName(PackageNamespace(""),"fakeMaxY")
+         ofs335:
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"fakeMinX")
-         initproperty QName(PackageNamespace(""),"dFakeMinX")
+         setproperty QName(PackageNamespace(""),"dFakeMinX")
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"fakeMaxX")
-         initproperty QName(PackageNamespace(""),"dFakeMaxX")
+         setproperty QName(PackageNamespace(""),"dFakeMaxX")
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"fakeMinY")
-         initproperty QName(PackageNamespace(""),"dFakeMinY")
+         setproperty QName(PackageNamespace(""),"dFakeMinY")
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"fakeMaxY")
-         initproperty QName(PackageNamespace(""),"dFakeMaxY")
+         setproperty QName(PackageNamespace(""),"dFakeMaxY")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"miniMap")
          callpropvoid QName(PackageNamespace(""),"setMapLittle"), 0
@@ -4916,7 +5003,7 @@ package
          trait method QName(PackageNamespace(""),"makeEnemy")
          dispid 0
          method
-         name null
+         name "WorldMap:makeEnemy"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
@@ -4925,25 +5012,28 @@ package
          body
          maxstack 4
          localcount 6
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "param3", 2, 0
+         debug 1, "_loc4_", 3, 413
          pushnull
          coerce QName(PackageNamespace(""),"Enemy")
          setlocal 4
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
-         convert_b
          dup
+         convert_b
          iffalse ofs0
          pop
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"_insaneMode")
-         convert_b
          ofs0:
          iffalse ofs1
          getlocal3
@@ -5140,7 +5230,6 @@ package
          constructprop QName(PackageNamespace(""),"EnemyDandelionGenerator"), 2
          coerce QName(PackageNamespace(""),"Enemy")
          setlocal 4
-         jump ofs7
          ofs25:
          label
          jump ofs7
@@ -5256,13 +5345,13 @@ package
          jump ofs27
          ofs44:
          jump ofs45
-         pushbyte 18
+         pushbyte -1
          jump ofs45
          ofs45:
-         pushbyte 18
+         pushbyte -1
          ofs27:
          kill 5
-         lookupswitch ofs25, [ofs6, ofs8, ofs9, ofs10, ofs11, ofs12, ofs13, ofs14, ofs15, ofs16, ofs17, ofs18, ofs19, ofs20, ofs21, ofs22, ofs23, ofs24, ofs25]
+         lookupswitch ofs25, [ofs6, ofs8, ofs9, ofs10, ofs11, ofs12, ofs13, ofs14, ofs15, ofs16, ofs17, ofs18, ofs19, ofs20, ofs21, ofs22, ofs23, ofs24]
          ofs7:
          getlocal 4
          callproperty QName(PackageNamespace(""),"collideTerrain"), 0
@@ -5289,7 +5378,7 @@ package
          trait method QName(PackageNamespace(""),"makeBoss")
          dispid 0
          method
-         name null
+         name "WorldMap:makeBoss"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
@@ -5298,12 +5387,16 @@ package
          body
          maxstack 3
          localcount 6
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "param3", 2, 0
+         debug 1, "_loc4_", 3, 501
          pushnull
          coerce QName(PackageNamespace(""),"Enemy")
          setlocal 4
@@ -5354,7 +5447,6 @@ package
          constructprop QName(PackageNamespace(""),"Boss4"), 2
          coerce QName(PackageNamespace(""),"Enemy")
          setlocal 4
-         jump ofs3
          ofs7:
          label
          jump ofs3
@@ -5386,13 +5478,13 @@ package
          jump ofs9
          ofs12:
          jump ofs13
-         pushbyte 4
+         pushbyte -1
          jump ofs13
          ofs13:
-         pushbyte 4
+         pushbyte -1
          ofs9:
          kill 5
-         lookupswitch ofs7, [ofs2, ofs4, ofs5, ofs6, ofs7]
+         lookupswitch ofs7, [ofs2, ofs4, ofs5, ofs6]
          ofs3:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"enemies")
@@ -5416,7 +5508,7 @@ package
          trait method QName(PackageNamespace(""),"makeBossRush")
          dispid 0
          method
-         name null
+         name "WorldMap:makeBossRush"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
@@ -5425,12 +5517,16 @@ package
          body
          maxstack 3
          localcount 6
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "param3", 2, 0
+         debug 1, "_loc4_", 3, 530
          pushnull
          coerce QName(PackageNamespace(""),"Enemy")
          setlocal 4
@@ -5476,7 +5572,6 @@ package
          constructprop QName(PackageNamespace(""),"Boss4Rush"), 2
          coerce QName(PackageNamespace(""),"Enemy")
          setlocal 4
-         jump ofs3
          ofs7:
          label
          jump ofs3
@@ -5508,13 +5603,13 @@ package
          jump ofs9
          ofs12:
          jump ofs13
-         pushbyte 4
+         pushbyte -1
          jump ofs13
          ofs13:
-         pushbyte 4
+         pushbyte -1
          ofs9:
          kill 5
-         lookupswitch ofs7, [ofs2, ofs4, ofs5, ofs6, ofs7]
+         lookupswitch ofs7, [ofs2, ofs4, ofs5, ofs6]
          ofs3:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"enemies")
@@ -5538,7 +5633,7 @@ package
          trait method QName(PackageNamespace(""),"checkFakeBounds")
          dispid 0
          method
-         name null
+         name "WorldMap:checkFakeBounds"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
          returns QName(PackageNamespace(""),"void")
@@ -5546,12 +5641,14 @@ package
          body
          maxstack 6
          localcount 4
-         initscopedepth 4
-         maxscopedepth 5
+         initscopedepth 5
+         maxscopedepth 6
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
          getlocal1
          getlocal0
          getproperty QName(PackageNamespace(""),"fakeMaxX")
@@ -5561,7 +5658,7 @@ package
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"maxX")
-         initproperty QName(PackageNamespace(""),"dFakeMaxX")
+         setproperty QName(PackageNamespace(""),"dFakeMaxX")
          ofs0:
          getlocal1
          getlocal0
@@ -5574,7 +5671,7 @@ package
          getproperty QName(PackageNamespace(""),"minX")
          pushbyte 16
          subtract
-         initproperty QName(PackageNamespace(""),"dFakeMinX")
+         setproperty QName(PackageNamespace(""),"dFakeMinX")
          ofs1:
          getlocal2
          getlocal0
@@ -5585,7 +5682,7 @@ package
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"maxY")
-         initproperty QName(PackageNamespace(""),"dFakeMaxY")
+         setproperty QName(PackageNamespace(""),"dFakeMaxY")
          ofs2:
          getlocal2
          getlocal0
@@ -5598,7 +5695,7 @@ package
          getproperty QName(PackageNamespace(""),"minY")
          pushbyte 16
          subtract
-         initproperty QName(PackageNamespace(""),"dFakeMinY")
+         setproperty QName(PackageNamespace(""),"dFakeMinY")
          ofs3:
          getlocal0
          getproperty QName(PackageNamespace(""),"dFakeMaxX")
@@ -5619,7 +5716,7 @@ package
          divide
          pushdouble 0.4
          add
-         initproperty QName(PackageNamespace(""),"fakeMaxX")
+         setproperty QName(PackageNamespace(""),"fakeMaxX")
          getlocal0
          getproperty QName(PackageNamespace(""),"fakeMaxX")
          getlocal0
@@ -5631,10 +5728,10 @@ package
          getproperty QName(PackageNamespace(""),"maxX")
          dup
          setlocal3
-         initproperty QName(PackageNamespace(""),"fakeMaxX")
+         setproperty QName(PackageNamespace(""),"fakeMaxX")
          getlocal3
          kill 3
-         initproperty QName(PackageNamespace(""),"dFakeMaxX")
+         setproperty QName(PackageNamespace(""),"dFakeMaxX")
          ofs5:
          getlocal0
          getlocal0
@@ -5669,7 +5766,7 @@ package
          divide
          pushdouble 0.4
          add
-         initproperty QName(PackageNamespace(""),"fakeMaxY")
+         setproperty QName(PackageNamespace(""),"fakeMaxY")
          getlocal0
          getproperty QName(PackageNamespace(""),"fakeMaxY")
          getlocal0
@@ -5681,10 +5778,10 @@ package
          getproperty QName(PackageNamespace(""),"maxY")
          dup
          setlocal3
-         initproperty QName(PackageNamespace(""),"fakeMaxY")
+         setproperty QName(PackageNamespace(""),"fakeMaxY")
          getlocal3
          kill 3
-         initproperty QName(PackageNamespace(""),"dFakeMaxY")
+         setproperty QName(PackageNamespace(""),"dFakeMaxY")
          ofs7:
          getlocal0
          getlocal0
@@ -5719,7 +5816,7 @@ package
          divide
          pushdouble 0.4
          subtract
-         initproperty QName(PackageNamespace(""),"fakeMinX")
+         setproperty QName(PackageNamespace(""),"fakeMinX")
          getlocal0
          getproperty QName(PackageNamespace(""),"fakeMinX")
          getlocal0
@@ -5735,10 +5832,10 @@ package
          subtract
          dup
          setlocal3
-         initproperty QName(PackageNamespace(""),"fakeMinX")
+         setproperty QName(PackageNamespace(""),"fakeMinX")
          getlocal3
          kill 3
-         initproperty QName(PackageNamespace(""),"dFakeMinX")
+         setproperty QName(PackageNamespace(""),"dFakeMinX")
          ofs9:
          getlocal0
          getlocal0
@@ -5773,7 +5870,7 @@ package
          divide
          pushdouble 0.4
          subtract
-         initproperty QName(PackageNamespace(""),"fakeMinY")
+         setproperty QName(PackageNamespace(""),"fakeMinY")
          getlocal0
          getproperty QName(PackageNamespace(""),"fakeMinY")
          getlocal0
@@ -5789,10 +5886,10 @@ package
          subtract
          dup
          setlocal3
-         initproperty QName(PackageNamespace(""),"fakeMinY")
+         setproperty QName(PackageNamespace(""),"fakeMinY")
          getlocal3
          kill 3
-         initproperty QName(PackageNamespace(""),"dFakeMinY")
+         setproperty QName(PackageNamespace(""),"dFakeMinY")
          ofs11:
          getlocal0
          getlocal0

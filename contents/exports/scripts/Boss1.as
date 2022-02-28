@@ -31,7 +31,7 @@ package
       
       private var _targetY:int;
       
-      private var HAND_NUM:int = 3;
+      private var HAND_NUM:int = 6;
       
       private var SHOT_NUM:int = 5;
       
@@ -63,12 +63,24 @@ package
       
       private var _attackMode:int = 0;
       
-      private var _createdChildren:Boolean = false;
+      private var _createdChildren:Boolean;
       
       private var _totalElapsed:Number = 0;
       
+      private var _shootInReverse:Boolean;
+      
       public function Boss1(param1:int, param2:int)
       {
+         this.SHOT_DELAY = 0.8;
+         this.PATTERN_DELAY = 3;
+         this._turboMultiplier = 1;
+         this._radiusMultTarget = 1;
+         this._radiusMultCur = 1;
+         this.SHOT_DELAY = 0.8;
+         this.PATTERN_DELAY = 3;
+         this._turboMultiplier = 1;
+         this._radiusMultTarget = 1;
+         this._radiusMultCur = 1;
          if(PlayState.player && PlayState.player._insaneMode)
          {
             this.HAND_NUM *= 4;
@@ -120,7 +132,7 @@ package
          }
          if(!dead)
          {
-            PlayState.player.x += 35;
+            PlayState.player.x -= 35;
             PlayState.player.setFaceDir(Player.FACE_FLOOR_RIGHT);
             Music.playBoss1();
          }
@@ -154,7 +166,7 @@ package
       {
          var _loc1_:Number = NaN;
          var _loc2_:Number = NaN;
-         var _loc3_:Number = NaN;
+         var _loc3_:* = NaN;
          if(PlayState.realState != PlayState.STATE_GAME)
          {
             return;
@@ -210,10 +222,15 @@ package
       
       public function shoot(param1:Number) : void
       {
-         var _loc2_:Number = this.WEAPON_SPEED;
-         var _loc3_:Number = -Math.cos(param1) * _loc2_;
-         var _loc4_:Number = -Math.sin(param1) * _loc2_;
-         var _loc5_:EnemyBullet;
+         var _loc5_:EnemyBullet = null;
+         var _loc2_:* = this.WEAPON_SPEED;
+         var _loc3_:Number = (0 - Math.cos(param1)) * _loc2_;
+         var _loc4_:Number = (0 - Math.sin(param1)) * _loc2_;
+         if(this._shootInReverse)
+         {
+            _loc3_ = 0 - _loc3_;
+            _loc4_ = 0 - _loc4_;
+         }
          if(_loc5_ = PlayState.enemyBulletPool.getBullet(0))
          {
             _loc5_.shoot(x + width / 2,y + height / 2,_loc3_,_loc4_);
@@ -233,21 +250,33 @@ package
             this._radiusMultTarget = 0;
             if(param1 > this._shotTimeout)
             {
-               this._shotTimeout = param1 + this.SHOT_DELAY * this._turboMultiplier;
+               this._shotTimeout = Number(Number(Number(Number(param1 + this.SHOT_DELAY * this._turboMultiplier))));
                ++this._shotNum;
                switch(this._firingPattern)
                {
                   case 0:
                      this.shoot(_loc2_);
+                     this._shootInReverse = !this._shootInReverse;
+                     this.shoot(_loc2_);
+                     this._shootInReverse = !this._shootInReverse;
                      break;
                   case 1:
                      this.shoot(_loc2_ + (Math.PI / this._shotMax - Math.PI / 2) * this._shotNum / 12);
+                     this._shootInReverse = !this._shootInReverse;
+                     this.shoot(_loc2_ + (Math.PI / this._shotMax - Math.PI / 2) * this._shotNum / 12);
+                     this._shootInReverse = !this._shootInReverse;
                      break;
                   case 2:
                      this.shoot(_loc2_ + Math.PI);
+                     this._shootInReverse = !this._shootInReverse;
+                     this.shoot(_loc2_ + Math.PI);
+                     this._shootInReverse = !this._shootInReverse;
                      break;
                   case 3:
                      this.shoot(_loc2_ - (Math.PI / this._shotMax - Math.PI / 2) * this._shotNum / 12);
+                     this._shootInReverse = !this._shootInReverse;
+                     this.shoot(_loc2_ - (Math.PI / this._shotMax - Math.PI / 2) * this._shotNum / 12);
+                     this._shootInReverse = !this._shootInReverse;
                }
                if(this._shotNum >= this._shotMax)
                {
@@ -273,7 +302,7 @@ package
             PlayState.player.saveGame();
          }
          PlayState.miniMap.setMapLittle();
-         Music.playArea1();
+         Music.playTown();
          this._eyes.kill();
          var _loc1_:int = 0;
          while(_loc1_ < this.HAND_NUM)

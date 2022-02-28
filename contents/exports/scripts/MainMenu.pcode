@@ -5992,7 +5992,7 @@ package
          pushtrue
          callpropvoid QName(PackageNamespace(""),"addOption"), 3
          getlocal0
-         pushstring "START FROM SNAIL TOWN"
+         pushstring "START FROM WESTERN TOWN"
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"loadGameFromTown")
          pushtrue
@@ -7422,7 +7422,7 @@ package
          callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
          getlocal0
          pushbyte 2
-         pushstring "J-----"
+         pushstring "E-----"
          pushnull
          callpropvoid QName(PackageNamespace(""),"changeOption"), 3
          getlocal0
@@ -7437,7 +7437,7 @@ package
          callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
          getlocal0
          pushbyte 2
-         pushstring "JU----"
+         pushstring "EN----"
          pushnull
          callpropvoid QName(PackageNamespace(""),"changeOption"), 3
          getlocal0
@@ -7452,7 +7452,7 @@ package
          callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
          getlocal0
          pushbyte 2
-         pushstring "JUS---"
+         pushstring "ENG---"
          pushnull
          callpropvoid QName(PackageNamespace(""),"changeOption"), 3
          getlocal0
@@ -7467,7 +7467,7 @@ package
          callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
          getlocal0
          pushbyte 2
-         pushstring "JUST--"
+         pushstring "ENGA--"
          pushnull
          callpropvoid QName(PackageNamespace(""),"changeOption"), 3
          getlocal0
@@ -7482,7 +7482,7 @@ package
          callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
          getlocal0
          pushbyte 2
-         pushstring "JUSTI-"
+         pushstring "ENGAG-"
          pushnull
          callpropvoid QName(PackageNamespace(""),"changeOption"), 3
          getlocal0
@@ -7497,7 +7497,7 @@ package
          callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
          getlocal0
          pushbyte 2
-         pushstring "JUSTIN"
+         pushstring "ENGAGE"
          pushnull
          callpropvoid QName(PackageNamespace(""),"changeOption"), 3
          getlocal0
@@ -7512,12 +7512,12 @@ package
          callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
          getlocal0
          pushbyte 2
-         pushstring "JUSTIN"
+         pushstring "ENGAGE"
          pushnull
          callpropvoid QName(PackageNamespace(""),"changeOption"), 3
          getlocal0
          pushbyte 3
-         pushstring "S-----"
+         pushstring "M-----"
          pushnull
          callpropvoid QName(PackageNamespace(""),"changeOption"), 3
          jump ofs4
@@ -7527,12 +7527,12 @@ package
          callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
          getlocal0
          pushbyte 2
-         pushstring "JUSTIN"
+         pushstring "ENGAGE"
          pushnull
          callpropvoid QName(PackageNamespace(""),"changeOption"), 3
          getlocal0
          pushbyte 3
-         pushstring "SN----"
+         pushstring "MS----"
          pushnull
          callpropvoid QName(PackageNamespace(""),"changeOption"), 3
          jump ofs4
@@ -7542,12 +7542,12 @@ package
          callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
          getlocal0
          pushbyte 2
-         pushstring "JUSTIN"
+         pushstring "ENGAGE"
          pushnull
          callpropvoid QName(PackageNamespace(""),"changeOption"), 3
          getlocal0
          pushbyte 3
-         pushstring "SNA---"
+         pushstring "MSM---"
          pushnull
          callpropvoid QName(PackageNamespace(""),"changeOption"), 3
          jump ofs4
@@ -7557,12 +7557,12 @@ package
          callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
          getlocal0
          pushbyte 2
-         pushstring "JUSTIN"
+         pushstring "ENGAGE"
          pushnull
          callpropvoid QName(PackageNamespace(""),"changeOption"), 3
          getlocal0
          pushbyte 3
-         pushstring "SNAI--"
+         pushstring "MSMO--"
          pushnull
          callpropvoid QName(PackageNamespace(""),"changeOption"), 3
          jump ofs4
@@ -7572,12 +7572,12 @@ package
          callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
          getlocal0
          pushbyte 2
-         pushstring "JUSTIN"
+         pushstring "ENGAGE"
          pushnull
          callpropvoid QName(PackageNamespace(""),"changeOption"), 3
          getlocal0
          pushbyte 3
-         pushstring "SNAIL-"
+         pushstring "MSMOF-"
          pushnull
          callpropvoid QName(PackageNamespace(""),"changeOption"), 3
          jump ofs4
@@ -7587,12 +7587,12 @@ package
          callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
          getlocal0
          pushbyte 2
-         pushstring "JUSTIN"
+         pushstring "ENGAGE"
          pushnull
          callpropvoid QName(PackageNamespace(""),"changeOption"), 3
          getlocal0
          pushbyte 3
-         pushstring "SNAILY"
+         pushstring "MSMOFO"
          pushnull
          callpropvoid QName(PackageNamespace(""),"changeOption"), 3
          jump ofs4
@@ -7602,12 +7602,12 @@ package
          callpropvoid QName(PackageNamespace(""),"playMenuBeep2"), 0
          getlocal0
          pushbyte 2
-         pushstring "JUSTIN"
+         pushstring "ENGAGE"
          pushnull
          callpropvoid QName(PackageNamespace(""),"changeOption"), 3
          getlocal0
          pushbyte 3
-         pushstring "SNAILY"
+         pushstring "MSMOFO"
          pushnull
          callpropvoid QName(PackageNamespace(""),"changeOption"), 3
          getlex QName(PackageNamespace(""),"PlayState")

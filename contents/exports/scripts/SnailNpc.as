@@ -19,18 +19,24 @@ package
       
       private var _snailNum:int = 0;
       
-      private var _talkOpen:Boolean = false;
+      private var _talkOpen:Boolean;
       
       private var _nexted:int = 0;
       
       private var _elapsed:Number = 0;
       
-      private var _hasFallen:Boolean = false;
+      private var _hasFallen:Boolean;
       
       private var _speed:Number = 1.0;
       
       public function SnailNpc(param1:int, param2:int, param3:int)
       {
+         this._speed = 1;
+         this._speed = 1;
+         this._speed = 1;
+         this._speed = 1;
+         this._speed = 1;
+         this._speed = 1;
          param1 -= IMG_OFS_X;
          param2 -= IMG_OFS_Y;
          super(param1,param2);
@@ -110,7 +116,7 @@ package
                case 0:
                   if(!PlayState.player.hasWeapon(0))
                   {
-                     _loc9_ = "Hi, " + _loc3_ + "!!  Why don\'t you try\n" + "climbing up the walls?\n" + "    Just hold \"UP\" and \"RIGHT\".\n";
+                     _loc9_ = "Hi, " + _loc3_ + "!!  Have I told you just\n" + "how much I love extensive\n" + "weapon collections?\n";
                   }
                   else if(!PlayState.player.hasWeapon(1))
                   {
@@ -130,55 +136,47 @@ package
                   }
                   else
                   {
-                     _loc9_ = "I hope the next game has more\n" + "weapons.  This game could have\n" + "used a flame whip!\n";
+                     _loc9_ = "I hope the next game has more\n" + "weapons.  This game could have\n" + "used a screw attack!\n";
                   }
                   break;
                case 1:
-                  if(!PlayState.hasJumped && !PlayState.player.hasWeapon(0) && !PlayState.player.hasWeapon(1))
+                  if(!PlayState.player.hasWeapon(0) && !PlayState.player.hasWeapon(1))
                   {
-                     _loc9_ = "Hiya, " + _loc3_ + "!  Did you know you\n" + "can jump?  Just press \"" + Player.JUMP_KEY + "\"!\n";
-                  }
-                  else if(!PlayState.player.hasWeapon(0))
-                  {
-                     _loc9_ = "" + _loc3_ + ", some snails are missing!\n" + "Do you think you could go look\n" + "for them?  I\'m getting worried!\n";
+                     _loc9_ = "Hiya, " + _loc3_ + "!  Welcome to my\n" + "personal tree branch!\n";
                   }
                   else if(_loc6_ < 100)
                   {
-                     _loc9_ = "I have a goal in life.  One day,\n" + "I will eat a pizza.  I mean it!!\n" + "Just you watch, " + _loc3_ + "!!\n";
+                     _loc9_ = "I\'m not gonna lie, " + _loc3_ + "...\n" + "This town has always given me a\n" + "case of deja vu.\n";
                   }
                   else
                   {
-                     _loc9_ = "" + _loc3_ + ", you missed it!  I made a\n" + "delicious pizza, and I ate the\n" + "whole thing!!!  Om nom nom!\n";
+                     _loc9_ = "Y\'know, who knows? Maybe it\'s\n" + "just me.\n";
                   }
                   break;
                case 2:
                   if(!PlayState.player.hasWeapon(0) && !PlayState.player.hasWeapon(1))
                   {
-                     _loc9_ = "I can see the future, " + _loc3_ + "!\n" + "I see you finding a weapon\n" + "somewhere under the water!\n";
+                     _loc9_ = "I can see the future, " + _loc3_ + "!\n" + "I see you finding a weapon\n" + "somewhere here in town!\n";
                   }
-                  else if(!PlayState.bossesKilled[1] && !PlayState.bossesKilled[2])
+                  else if(!PlayState.bossesKilled[1])
                   {
-                     _loc9_ = "I can see the future, " + _loc3_ + "!\n" + "I see you heading to the upper\n" + "right part of the map!!\n";
+                     _loc9_ = "I can see the future, " + _loc3_ + "!\n" + "I see you heading to the right\n" + "part of the map!!\n";
                   }
                   else if(!PlayState.player.hasWeapon(1))
                   {
                      _loc9_ = "I can see the past, " + _loc3_ + "!\n" + "I see you forgot to grab the\n" + "boomerang after Shellbreaker!\n";
                   }
-                  else if(!PlayState.bossesKilled[2])
+                  else if(!PlayState.bossesKilled[2] && !PlayState.bossesKilled[3])
+                  {
+                     _loc9_ = "I can see the future, " + _loc3_ + "!\n" + "I see you heading downward!!\n";
+                  }
+                  else if(PlayState.bossesKilled[2] && !PlayState.bossesKilled[3])
                   {
                      _loc9_ = "I can see the future, " + _loc3_ + "!\n" + "I see you heading to the lower\n" + "right part of the map!!\n";
                   }
-                  else if(!PlayState.player.hasWeapon(2))
-                  {
-                     _loc9_ = "I can see the past, " + _loc3_ + "!\n" + "I see you forgot to grab the\n" + "rainbow wave after Stompy!\n";
-                  }
-                  else if(!PlayState.bossesKilled[3])
+                  else if(!PlayState.bossesKilled[2] && PlayState.bossesKilled[3])
                   {
                      _loc9_ = "I can see the future, " + _loc3_ + "!\n" + "I see you heading to the lower\n" + "left part of the map!!\n";
-                  }
-                  else if(!PlayState.player.hasTurbo())
-                  {
-                     _loc9_ = "I can see the past, " + _loc3_ + "!\n" + "I see you forgot to grab the\n" + "rapid fire before Space Box!\n";
                   }
                   else if(!PlayState.bossesKilled[4])
                   {
@@ -190,7 +188,7 @@ package
                   }
                   else if(!PlayState.player.hasSeenIsis)
                   {
-                     _loc9_ = "I can see the future, " + _loc3_ + "!\n" + "I see you heading precisely two\n" + "screens to the left of here!!\n";
+                     _loc9_ = "I can see the future, " + _loc3_ + "!\n" + "I see you heading back up to\n" + "the upper left map area!!\n";
                   }
                   else if(!PlayState.player._slugMode)
                   {
@@ -202,33 +200,30 @@ package
                   }
                   break;
                case 3:
-                  if(!PlayState.player.hasGravityJump())
+                  if(!PlayState.player.hasGravityJump() && !PlayState.player.hasArmor())
                   {
-                     _loc9_ = "I wonder why I can\'t crawl on\n" + "ceiling corners...  Do you think\n" + "I\'ll ever be able to, " + _loc3_ + "?\n";
+                     _loc9_ = "Sometimes I wonder if I\'ll ever\n" + "stumble upon some mystical\n" + "pickup out in the world...\n";
                   }
                   else if(!PlayState.player.hasArmor())
                   {
                      _loc9_ = "Oh, my, you\'re a gravity " + _loc5_ + "!\n" + "You must be really good at\n" + "crawling around ceilings!!\n";
                   }
+                  else if(PlayState.player.hasArmor() && !PlayState.player.hasGravityJump())
+                  {
+                     _loc9_ = "Oh, my, you\'re a full metal\n" + _loc5_ + "!  You must be really strong\n" + "and fire-resistant!!\n";
+                  }
                   else
                   {
-                     _loc9_ = "Oh, my, you\'re a full metal\n" + _loc5_ + "! You must be really good\n" + "at crawling around ceilings!!\n";
+                     _loc9_ = "Woah, a metal gravity " + _loc5_ + "!!\n" + "You\'re amazingly versatile now,\n" + "aren\'t you?  That\'s incredible!!";
                   }
                   break;
                case 4:
-                  if(PlayState.worldMap.bgmap.getTile(295,143))
-                  {
-                     _loc9_ = "I wish I had some way to break\n" + "green blocks.  Those suckers\n" + "are always getting in my way!!\n";
-                  }
-                  else
-                  {
-                     _loc9_ = "Whew!  Thanks, " + _loc3_ + "!  I think\n" + "those blocks were planning to\n" + "attack!!  You saved the day!!\n";
-                  }
+                  _loc9_ = "I feel privilaged, " + _loc3_ + "! My\n" + "house is the only one this\n" + "side of town with some grass!!\n";
                   break;
                case 5:
                   if(_loc6_ < 100)
                   {
-                     _loc9_ = "There\'s a lot of secrets\n" + "in and around Snail Town.\n" + "Have you found them all?\n";
+                     _loc9_ = "There\'s a lot of secrets\n" + "in and around Snail Country.\n" + "Have you found them all?\n";
                   }
                   else
                   {
@@ -236,19 +231,19 @@ package
                   }
                   break;
                case 6:
-                  if(PlayState.player.hasHighJump() || PlayState.player.hasGravityJump())
+                  if(PlayState.worldMap.spmap.getTile(143,151))
                   {
-                     _loc9_ = "Don\'t you think it\'s weird that\n" + "we all live in treehouses?\n";
+                     _loc9_ = "Have you ever slipped and\n" + "fallen right through a wall?\n" + "The very idea of it scares me!!\n";
                   }
                   else
                   {
-                     _loc9_ = "Hey " + _loc3_ + ", how\'d you get up\n" + "here?  And how do I get down?\n";
+                     _loc9_ = "I always thought there was\n" + "something weird about that\n" + "wall!! Thanks, " + _loc3_ + "!!\n";
                   }
                   break;
                case 7:
                   if(!PlayState.player.hasWeapon(0))
                   {
-                     _loc9_ = "Are you leaving town, " + _loc3_ + "?\n" + "Well, be careful!  Make sure\n" + "you save your game often!!\n";
+                     _loc9_ = "Where are you going, " + _loc3_ + "?\n" + "Can I come with you?\n";
                   }
                   else if(!PlayState.player.hasWeapon(1))
                   {
@@ -256,7 +251,7 @@ package
                   }
                   else if(!PlayState.player.hasWeapon(2))
                   {
-                     _loc9_ = "Ooh, boomerangs!  If I had\n" + "those, I\'d try breaking the\n" + "ceiling over the save spot!\n";
+                     _loc9_ = "Ooh, boomerangs!  If I had\n" + "those, I\'d try breaking the\n" + "green blocks around town!\n";
                   }
                   else if(!PlayState.player.getHasDevastator())
                   {
@@ -264,289 +259,243 @@ package
                   }
                   else if(!PlayState.isBossDead(4))
                   {
-                     _loc9_ = "I\'m scared, " + _loc3_ + "!\n" + "Is Moon Snail going to take\n" + "me away like the others?\n";
+                     _loc9_ = "I\'m scared, " + _loc3_ + "!\n" + "What\'s been going on around\n" + "the country?  Are we safe?\n";
                   }
                   else
                   {
-                     _loc9_ = "Snail Town is safe again,\n" + "thanks to you, " + _loc3_ + "!\n";
+                     _loc9_ = "Snail Country is safe again,\n" + "thanks to you, " + _loc3_ + "!\n";
                   }
                   break;
                case 8:
-                  if(PlayState.worldMap.bgmap.getTile(328,185))
+                  if(!PlayState.isBossDead(2))
                   {
-                     _loc9_ = "There\'s something funny about\n" + "that tree...\n";
+                     _loc9_ = "I\'ve always wondered why the\n" + "town was built around this\n" + "weird tunnel...\n";
+                  }
+                  else if(!PlayState.isBossDead(4))
+                  {
+                     _loc9_ = "Wait, there\'s a whole area\n" + "under that tunnel?  How\n" + "have I never known about this?\n";
                   }
                   else
                   {
-                     _loc9_ = "I knew there was something\n" + "weird about that tree!!\n";
+                     _loc9_ = "Now that the country is safe,\n" + "I wanna turn that hidden area\n" + "into a tourist attraction!!\n";
                   }
                   break;
                case 9:
-                  if(_loc6_ < 100)
+                  if(!PlayState.player.hasWeapon(0))
                   {
-                     _loc9_ = "The other snails live in houses,\n" + "but I like it here in the dirt.\n" + "Isn\'t it nice in here?\n";
+                     _loc9_ = "Here, " + _loc3_ + "!!  If you\'re leaving\n" + "town, you\'ll need this!!\n" + "It\'s dangerous out there!!\n";
                   }
                   else
                   {
-                     _loc9_ = "It\'s so cozy in here!  I just\n" + "love my little underground\n" + "home!\n";
+                     _loc9_ = "Good luck out there, " + _loc3_ + "!!\n";
                   }
                   break;
                case 10:
-                  _loc9_ = "Oh, " + _loc4_ + "!  My heart\n" + "will forever belong to you!\n" + "             <3\n";
+                  _loc9_ = "" + _loc3_ + ", it\'s you!!  I\'ve been\n" + "stuck behind those blocks\n" + "for hours!  I\'m saved!!\n";
                   break;
                case 11:
-                  if(!PlayState.player.hasWeapon(0))
+                  if(!PlayState.player.hasSeenIsis)
                   {
-                     _loc9_ = "" + _loc3_ + ", it\'s dangerous to go\n" + "alone!  Take this Pea Shooter!\n" + "Press \"" + Player.SHOOT_KEY + "\" to shoot with it!!\n";
+                     _loc9_ = "Can you keep a secret, " + _loc3_ + "?\n" + "I have a little bit of a crush\n" + "on Iris...  Don\'t tell anyone!!\n";
                   }
                   else
                   {
-                     _loc9_ = "Don\'t forget!\n" + "Press \"" + Player.SHOOT_KEY + "\" to shoot your\n" + "weapon at stuff!!\n";
+                     _loc9_ = "What!?  You met Iris!?\n" + "Are you trying to make me\n" + "jealous, " + _loc3_ + "?\n";
                   }
                   break;
                case 12:
-                  if(PlayState.worldMap.spmap.getTile(359,174))
+                  if(_loc6_ < 100)
                   {
-                     _loc9_ = "Heya, " + _loc3_ + "! I filled the heart\n" + "container over there with some\n" + "fresh slime! Enjoy!!\n";
+                     _loc9_ = "One day, I wana go out there\n" + "and explore every last corner\n" + "of the world.  Mark my words!!\n";
                   }
                   else
                   {
-                     _loc9_ = "Isn\'t breaking blocks fun!?\n";
+                     _loc9_ = "Wow, " + _loc3_ + ", you went and\n" + "fulfilled my dream? How was it?\n" + "Was it worth it?\n";
                   }
                   break;
                case 13:
-                  _loc9_ = "Wow!  It looks like you\'ve\n" + "found " + _loc6_.toString() + "% of the items in this\n" + "game!  Nice going, " + _loc3_ + "!\n";
+                  _loc9_ = "Hi, " + _loc3_ + "!  Fun fact:\n" + "the snail to my left always\n" + "lies!!\n";
                   break;
                case 14:
-                  if(_loc7_ < 15)
-                  {
-                     _loc9_ = "Hey, " + _loc3_ + "!  Keep an eye out\n" + "for \"Helix Fragments\".  They\n" + "look like spinning white shells!\n";
-                  }
-                  else if(_loc7_ < 30 || !PlayState.player.hasSeenIsis)
-                  {
-                     _loc9_ = "They say that the Shrine of\n" + "Iris is not located on any map!\n";
-                  }
-                  else
-                  {
-                     _loc9_ = "Wow, " + _loc3_ + "!  You\'re pretty good\n" + "at finding secrets!  Maybe you\n" + "should become a detective!\n";
-                  }
+                  _loc9_ = "I was originally gonna say\n" + "something else, but I really\n" + "loved crashing Epsilon\'s game. :3\n";
                   break;
                case 15:
-                  if(_loc6_ < 20)
-                  {
-                     _loc9_ = "Hi, " + _loc3_ + "!  Let me give you a\n" + "hint: Come back to town after\n" + "each area to find secret items!\n";
-                  }
-                  else if(_loc6_ < 40 && !param1._slugMode)
-                  {
-                     _loc9_ = "Hi, " + _loc3_ + "!  Let me give you a\n" + "little hint: A shell can fit\n" + "where a snail cannot!\n";
-                  }
-                  else if(_loc6_ < 40 && param1._slugMode)
-                  {
-                     _loc9_ = "Hi, " + _loc3_ + "!  Here\'s a li\'l hint:\n" + "Slugs may be more fragile than\n" + "snails, but they\'re also faster!\n";
-                  }
-                  else if(_loc6_ < 60)
-                  {
-                     _loc9_ = "Hi, " + _loc3_ + "!  Let me give you a\n" + "hint: Sometimes, you\'ll miss a\n" + "secret if you cling to a wall!\n";
-                  }
-                  else if(_loc6_ < 80)
-                  {
-                     _loc9_ = "Hi, " + _loc3_ + "!  Let me give you a\n" + "hint: You can find the \"high\n" + "jump\" before any other item!\n";
-                  }
-                  else if(_loc6_ < 100)
-                  {
-                     _loc9_ = "Hi, " + _loc3_ + "!  Let me tell you a\n" + "secret: There\'s a boomerang\n" + "somewhere in Snail Town!\n";
-                  }
-                  else
-                  {
-                     _loc9_ = "Hi, " + _loc3_ + "!  Let me tell you a\n" + "secret: there\'s a secret\n" + "somewhere in the main menu!\n";
-                  }
+                  _loc9_ = "Hi, " + _loc3_ + "!  Fun fact:\n" + "the snail to my right always\n" + "tells the truth!!\n";
                   break;
                case 16:
-                  if(!PlayState.player.hasWeapon(0) && !PlayState.player.hasWeapon(1))
-                  {
-                     _loc9_ = "If you ever get hurt, eat some\n" + "plants!  You need to eat well\n" + "to stay fit and healthy!\n";
-                  }
-                  else if(y < 2656)
-                  {
-                     _loc9_ = "I want to go for a ride!!!\n";
-                  }
-                  else
-                  {
-                     _loc9_ = "WHEEEE!!  That was fun,\n" + "" + _loc3_ + "!  Let\'s do it again!!\n";
-                  }
+                  _loc9_ = "I\'ve never liked this long\n" + "tunnel to get out of town.\n" + "Do you think it\'s safe, " + _loc3_ + "?\n";
                   break;
                case 17:
-                  if(_loc6_ < 100)
-                  {
-                     _loc9_ = "There\'s a hidden room under the\n" + "path into town.  I don\'t know\n" + "how to get in yet, though...\n";
-                  }
-                  else
-                  {
-                     _loc9_ = "They call me upside-down snail,\n" + "but I think everyone else is\n" + "upside down!";
-                  }
+                  _loc9_ = "One day, I want an upside-down\n" + "house built just for me!!\n";
                   break;
                case 18:
-                  if(PlayState.worldMap.spmap.getTile(215,140))
+                  if(!PlayState.player.hasWeapon(0))
                   {
-                     _loc9_ = "You found the super secret\n" + "boomerang!  Way to go!\n" + "Press \"" + Player.SHOOT_KEY + "\" to shoot with it!\n";
+                     _loc9_ = "Are you leaving town, " + _loc3_ + "?\n" + "I\'m afraid you can\'t without\n" + "proper protection.\n";
+                  }
+                  else if(!PlayState.isBossDead(1))
+                  {
+                     _loc9_ = "Are you leaving town, " + _loc3_ + "?\n" + "Stay safe out there!!\n";
                   }
                   else
                   {
-                     _loc9_ = "Don\'t forget!\n" + "Press \"" + Player.SHOOT_KEY + "\" to shoot your\n" + "weapon at stuff!!\n";
+                     _loc9_ = "Welcome back, " + _loc3_ + "!!\n" + "Good to see you\'re still\n" + "doing alright!\n";
                   }
                   break;
                case 19:
-                  if(!PlayState.player.hasWeapon(1))
-                  {
-                     _loc9_ = "Hey, " + _loc3_ + "!  If you had a\n" + "boomerang, you could break\n" + "all sorts of walls!\n";
-                  }
-                  else
-                  {
-                     _loc9_ = "Up, up, down, down, left,\n" + "right...  Wait, never mind,\n" + "that\'s for some other game.\n";
-                  }
+                  _loc9_ = "Welcome to the mid-world\n" + "checkpoint!!  You have clearance\n" + "to pass, " + _loc4_ + "!!\n";
                   break;
                case 20:
                   if(!PlayState.player.hasWeapon(1))
                   {
-                     _loc9_ = "There\'s some kind of secret\n" + "passage to the right, but I\'m\n" + "not sure how to get through...\n";
+                     _loc9_ = "Hey, you\'re from western\n" + "town, right?  Welcome!!\n";
                   }
                   else if(_loc6_ < 100)
                   {
-                     _loc9_ = "I hope you can find all the\n" + "other snails!  They\'re not all\n" + "as brave as me, you know!!\n";
+                     _loc9_ = "I hope you\'re enjoying your\n" + "time this side of the map!!\n" + "It\'s quite expansive!!\n";
                   }
                   else
                   {
-                     _loc9_ = "" + _loc4_ + "!!  Yay!!\n";
+                     _loc9_ = "Hey, you came back to visit!!\n";
                   }
                   break;
                case 21:
                   if(!PlayState.player.hasWeapon(1))
                   {
-                     _loc9_ = "Yay, " + _loc3_ + ", it\'s you!!\n" + "Take this boomerang and break\n" + "some walls open!!\n";
+                     _loc9_ = "I\'ve heard of a scary\n" + "monster not far from here. I\'m\n" + "too afraid to see if it\'s true.\n";
                   }
                   else
                   {
-                     _loc9_ = "By the way, you can switch\n" + "weapons by pressing numbers,\n" + "like \"1\" or \"2\"!\n";
+                     _loc9_ = "Wow, you defeated the monster?\n" + "That\'s awesome!!  What was it\n" + "like? Was it big and scary?\n";
                   }
                   break;
                case 22:
-                  if(_loc6_ < 100)
+                  if(_loc7_ < 15)
                   {
-                     _loc9_ = "I are Cave Snail!\n" + "Thorgle Borgle!!!!\n";
+                     _loc9_ = "Have you heard about \"Helix\n" + "Fragments\"?  They\'re so pretty!\n" + "I wonder how many there are...\n";
+                  }
+                  else if(_loc7_ < 30)
+                  {
+                     _loc9_ = "Woah!!  " + _loc7_ + " Helix Fragments!?\n" + "Where did you find them all!?\n";
                   }
                   else
                   {
-                     _loc9_ = "Thorgle Borgle!!!!!!!\n";
+                     _loc9_ = "Woah!!  You found all 30 of\n" + "them!?  Amazing!!  Can I have\n" + "one?\n";
                   }
                   talkedToCaveSnail = true;
                   break;
                case 23:
-                  if(_loc6_ < 100 && !talkedToCaveSnail)
+                  if(PlayState.worldMap.spmap.getTile(517,67) && !talkedToCaveSnail)
                   {
-                     _loc9_ = "Cave Snail scares me!\n" + "I\'m staying over here!\n";
+                     _loc9_ = "There\'s a snail here in town\n" + "who\'s crazy about Helix\n" + "Fragments.  Have you met him?\n";
                   }
-                  else if(_loc6_ < 60)
+                  else if(PlayState.worldMap.spmap.getTile(517,67) && talkedToCaveSnail)
                   {
-                     _loc9_ = "Hey, if you get stuck, just hit\n" + "ESCAPE and load your game from\n" + "town!  You won\'t lose any items!\n";
+                     _loc9_ = "I can hear a Helix Fragment\n" + "nearby!  It must be somewhere\n" + "in this wall...\n";
                   }
                   else
                   {
-                     _loc9_ = "Do you think Cave Snail\n" + "is single?\n";
+                     _loc9_ = "Wow!  You found the\n" + "Helix Fragment?\n" + "Impressive!!\n";
                   }
                   break;
                case 24:
-                  if(PlayState.worldMap.spmap.getTile(291,220))
-                  {
-                     _loc9_ = "Take this Helix Fragment!\n" + "Legend says it is but one\n" + "piece of Iris, the Godsnail!\n";
-                  }
-                  else
-                  {
-                     _loc9_ = "" + _loc3_ + ", legend says the\n" + "Shrine of Iris is somewhere\n" + "very close to Snail Town!!\n";
-                  }
+                  _loc9_ = "Some day, I want to see\n" + "what\'s waiting below us in\n" + "that deep, icy ocean...\n";
                   break;
                case 25:
-                  if(PlayState.player.hasWeapon(0))
+                  _loc9_ = "My neighbor is in charge of the\n" + "checkpoint left of here. You\n" + "met her, right?\n";
+                  break;
+               case 26:
+                  if(!PlayState.player.hasTurbo())
                   {
-                     _loc9_ = "Have you tried hitting \"" + Player.MAP_KEY + "\"\n" + "yet?  It makes the map big!  Oh,\n" + "and hit \"ESC\" for the menu!\n";
+                     _loc9_ = "They say there\'s a cool weapon\n" + "enhancement somewhere below\n" + "town, but I can\'t find it!\n";
                   }
-                  else if(_loc6_ < 60)
+                  else if(_loc6_ < 100)
                   {
-                     _loc9_ = "" + _loc3_ + ", if you need to see the\n" + "controls again, just press \"F1\"!\n" + "By the way, try hitting \"" + Player.MAP_KEY + "\"!\n";
+                     _loc9_ = "Woah, a Rapid Fire enhancement!!\n" + "I wish I had one of those!!\n";
                   }
                   else
                   {
-                     _loc9_ = "Hey " + _loc3_ + ", I\'m hungry!  Know\n" + "any good plants around town?\n";
+                     _loc9_ = "I\'m bored!  Do you know of any\n" + "fun places to visit?  I\'m\n" + "itching for adventure!!\n";
                   }
-                  break;
-               case 26:
-                  _loc9_ = "With this \"Shell Shield\", you\n" + "won\'t take any damage when you\n" + "hide in your shell!\n";
                   break;
                case 27:
                   if(PlayState.player.hasArmor() || PlayState.player.hasGravityJump())
                   {
                      _loc9_ = "Hey, " + _loc3_ + "!  You came\n" + "back to visit!!  Yay!!\n";
                   }
-                  else if(PlayState.player.isIcy())
+                  else if(PlayState.player.isIcy() && PlayState.isBossDead(1))
                   {
-                     _loc9_ = "Oh, " + _loc3_ + ", you\'re an Ice " + _loc5_ + "!\n" + "That means the icicles in the\n" + "room ahead won\'t hurt you!\n";
+                     _loc9_ = "Oh, " + _loc3_ + ", you\'re an Ice " + _loc5_ + "!\n" + "I wanna be one too!!  Snow and\n" + "ice are so fun!\n";
+                  }
+                  else if(!PlayState.isBossDead(1))
+                  {
+                     _loc9_ = "" + _loc3_ + ", it\'s you!!  There\'s a\n" + "scary monster up ahead!  I\n" + "can hear it from here!!\n";
                   }
                   else
                   {
-                     _loc9_ = "Watch out, " + _loc3_ + "!  Without the\n" + "\"Ice " + _loc5_ + "\" power, the area\n" + "ahead will be too difficult!\n";
+                     _loc9_ = "Oh, " + _loc3_ + ", you beat the\n" + "monster!!  Thank you!!  I left my\n" + "drink in that other room!\n";
                   }
                   break;
                case 28:
-                  if(PlayState.player.hasGravityJump())
+                  if(!PlayState.isBossDead(2) && !PlayState.isBossDead(3))
                   {
-                     _loc9_ = "" + _loc3_ + ", you can gravity jump!\n" + "Jump in the air, then hold any\n" + "direction and press jump again!\n";
+                     _loc9_ = "" + _loc3_ + "!!  These doors are locked\n" + "tight!  This first one seems to\n" + "have feet imprinted on it!!\n";
+                  }
+                  else if(PlayState.isBossDead(2) && !PlayState.isBossDead(3))
+                  {
+                     _loc9_ = "" + _loc3_ + ", the first door unlocked!!\n" + "The next one looks like it has\n" + "a giant angry cube on it!!\n";
+                  }
+                  else if(!PlayState.isBossDead(2) && PlayState.isBossDead(3))
+                  {
+                     _loc9_ = "" + _loc3_ + ", I heard the second door\n" + "unlock!! Now we just have to open\n" + "the other door...\n";
+                  }
+                  else if(!PlayState.isBossDead(4))
+                  {
+                     _loc9_ = "They both unlocked!!  Moon Snail\n" + "is just through the next area!\n" + "Good luck, " + _loc3_ + "!!\n";
+                  }
+                  else if(PlayState.isBossDead(4) && _loc7_ < 30)
+                  {
+                     _loc9_ = "You defeated Moon Snail!!  Please,\n" + "" + _loc3_ + ", find all the Helix\n" + "Fragments to restore his light!!\n";
                   }
                   else
                   {
-                     _loc9_ = "Oh, " + _loc3_ + ", it\'s you!!  I\'m saved!!\n" + "Moon Snail took me here!  He\'s\n" + "gone bad, " + _loc3_ + "!!\n";
+                     _loc9_ = "" + _loc3_ + ", you did it!!  Sun Snail\n" + "has returned to us once again!!\n" + "Three cheers for " + _loc4_ + "!!\n";
                   }
                   break;
                case 29:
-                  if(PlayState.player && PlayState.player._insaneMode)
+                  if(!PlayState.player.isIcy())
                   {
-                     _loc9_ = "Oh, no!! " + _loc3_ + "!! The \"Ice Snail\"\n" + "power-up is missing on insane\n" + "mode! Good luck without it!!\n";
+                     _loc9_ = "Be careful up ahead! You\'re\n" + "not properly equipped for the\n" + "next area!!\n";
                   }
                   else
                   {
-                     _loc9_ = "Don\'t worry about me, " + _loc3_ + "!\n" + "I\'m an Ice Snail, so these ice\n" + "guys and icicles can\'t hurt me!\n";
+                     _loc9_ = "Hail, fellow Ice Snail!!\n" + "Come to explore the depths of\n" + "deep Maculata?  Good luck!!\n";
                   }
                   _loc8_ = true;
                   break;
                case 30:
-                  if(!PlayState.player.hasArmor() || !PlayState.player.hasTurbo())
+                  if(!PlayState.isBossDead(4))
                   {
-                     _loc9_ = "Be careful, " + _loc3_ + "!  With only\n" + "the powers you have now, Moon\n" + "Snail will eat you for lunch!!\n";
-                  }
-                  else if(!PlayState.isBossDead(4))
-                  {
-                     _loc9_ = "" + _loc3_ + ", Moon Snail\'s just ahead!\n" + "He brought us here!!  He\'s gone\n" + "bad!!  You need to defeat him!!\n";
-                  }
-                  else if(_loc7_ < 30 || !PlayState.player.hasSeenIsis)
-                  {
-                     _loc9_ = "" + _loc3_ + ", search for the helix\n" + "fragments!  Maybe Iris can\n" + "still restore Moon Snail!!\n";
+                     _loc9_ = "" + _loc3_ + "!  Am I glad to see\n" + "you!  I don\'t like this place...\n" + "It gives me the creeps!!\n";
                   }
                   else
                   {
-                     _loc9_ = "Congratulations, " + _loc3_ + "!!  Moon\n" + "Snail is saved!!  Wait, is he a\n" + "moon snail or a sun snail?\n";
+                     _loc9_ = "" + _loc3_ + ", you came back!!\n" + "Wait...  If Sun Snail returned,\n" + "what\'s gonna happen to this place?\n";
                   }
                   _loc8_ = true;
                   break;
                case 31:
-                  if(!PlayState.isBossDead(4))
+                  if(!PlayState.isBossDead(3))
                   {
-                     _loc9_ = "Moon Snail is still a snail!!  He\n" + "was once known as Sun Snail\n" + "and enjoyed nomming on grass!!\n";
+                     _loc9_ = "The mountain is shaking!!  There\n" + "must be something agitating\n" + "its core!!\n";
                   }
-                  else if(_loc7_ < 30 && PlayState.isBossDead(4) || !PlayState.player.hasSeenIsis)
+                  else if(!PlayState.isBossDead(4))
                   {
-                     _loc9_ = "I\'ve heard that the Shrine of\n" + "Iris is not marked on any map!\n" + "Have you found it yet?\n";
+                     _loc9_ = "The shaking stopped!  You\'ve\n" + "saved us from an eruption,\n" + _loc3_ + "!!\n";
                   }
                   else
                   {
-                     _loc9_ = "Don\'t moon snails live in the\n" + "ocean?  HEY, THIS GAME ISN\'T\n" + "REALISTIC!!  WHAT GIVES??\n";
+                     _loc9_ = "So I guess we just have a\n" + "volcano now, huh?  Cool!!\n";
                   }
                   _loc8_ = true;
                   break;
@@ -612,40 +561,21 @@ package
                   _loc8_ = true;
                   break;
                case 38:
-                  _loc9_ = "" + _loc3_ + ", thank you for helping\n" + "me!  Now I can get back to my\n" + "hobby: collecting prime numbers!\n";
+                  _loc9_ = "..." + _loc3_ + ", is that you? Where\n" + "am I?  My head hurts...  I need\n" + "to speak with Iris...\n";
                   break;
                case 39:
                   PlayState.player.hasSeenIsis = true;
                   if(!PlayState.isBossDead(4))
                   {
-                     if(_loc7_ == 0)
-                     {
-                        _loc9_ = "Hello, " + _loc3_ + "!  I am Iris, the\n" + "Godsnail.  But without the Helix\n" + "Fragments, I am powerless...\n";
-                     }
-                     else if(_loc7_ < 25)
-                     {
-                        _loc9_ = "Hello, " + _loc3_ + "! I am Iris, the\n" + "Godsnail. But with only " + _loc7_.toString() + " Helix\n" + "Fragment" + (_loc7_ == 1 ? "" : "s") + ", I am powerless...\n";
-                     }
-                     else if(_loc7_ < 29)
-                     {
-                        _loc9_ = "I can feel my power returning!\n" + "With " + (30 - _loc7_).toString() + " more Helix Fragments,\n" + "perhaps we can save Moon Snail!\n";
-                     }
-                     else if(_loc7_ < 30)
-                     {
-                        _loc9_ = "I can feel my power returning!\n" + "With 1 more Helix Fragment,\n" + "perhaps we can save Moon Snail!\n";
-                     }
-                     else if(_loc7_ == 30)
-                     {
-                        _loc9_ = "My power has returned!  Now go,\n" + "" + _loc3_ + ", and defeat Moon Snail!\n" + "My power will restore him!\n";
-                     }
+                     _loc9_ = "" + _loc4_ + "?!  You\'ve come!\n" + "But how did you get past Moon\n" + "Snail?  I still feel his presence...\n";
                   }
                   else if(_loc7_ == 30)
                   {
-                     _loc9_ = "Congratulations, " + _loc3_ + "! Thanks\n" + "to you, Moon Snail is restored,\n" + "and is now the Sun Snail!\n";
+                     _loc9_ = "" + _loc3_ + ", you did it!  Sun Snail\n" + "has returned to us!  I must speak\n" + "with him at once...\n";
                   }
                   else
                   {
-                     _loc9_ = "Moon Snail rests fitfully\n" + "upon the shrine steps...  Find " + (30 - _loc7_).toString() + "\n" + "more fragment" + (30 - _loc7_ == 1 ? "" : "s") + ", " + _loc4_ + "!\n";
+                     _loc9_ = "Moon Snail is weakened, yet\n" + "yet I still feel the binding\n" + "claws of corruption around him...\n";
                   }
                   break;
                case 40:
@@ -748,7 +678,7 @@ package
                   }
                   break;
                case 49:
-                  _loc9_ = "zzzzz...  4,978,213...  zzzzz...\n" + "7,723,297...  zzzzz...  6,017,093...\n" + "zzzzz...  2,425,991...  zzzzz...\n";
+                  _loc9_ = "...      n-no...   \n" + "   nngh...     \n" + "       ...g-get... back...\n";
                   break;
                case 50:
                   _loc9_ = "Have you tried hitting the\n" + Player.STRAFE_KEY + " key yet?  It lets you\n" + "shoot while holding still!\n";
@@ -775,53 +705,28 @@ package
          if(this._snailNum == 39 || this._snailNum == 38)
          {
             this._elapsed += FlxG.elapsed;
-            offset.y = Math.sin(this._elapsed * 0.5) * 5;
+            offset.y = Number(Math.sin(this._elapsed * 0.5) * 5);
          }
          if(this._talkOpen)
          {
             switch(this._snailNum)
             {
-               case 1:
-                  if(PlayState.hasJumped && this._nexted == 0)
-                  {
-                     this._nexted = 1;
-                     this.stopTalking();
-                  }
-                  break;
-               case 4:
-                  if(PlayState.worldMap.bgmap.getTile(295,143) == 0 && this._nexted == 0)
-                  {
-                     this._nexted = 1;
-                     this.stopTalking();
-                  }
-                  break;
-               case 8:
-                  if(PlayState.worldMap.bgmap.getTile(328,185) == 0 && this._nexted == 0)
-                  {
-                     this._nexted = 1;
-                     this.stopTalking();
-                  }
-                  break;
-               case 16:
-                  if(y > 2656 && this._nexted == 0)
-                  {
-                     this._nexted = 1;
-                     this.stopTalking();
-                  }
-                  break;
                case 48:
-                  if(y > 198 * 16 && this._nexted == 0)
+                  if(y > 171 * 16 && this._nexted == 0)
                   {
-                     this._speed = 2;
+                     this._speed = Number(Number(Number(2)));
                      this._nexted = 1;
                      this.stopTalking();
+                     break;
                   }
-                  else if(y > 232 * 16 && velocity.y < 150 && this._nexted == 1)
+                  if(y > 199 * 16 && velocity.y < 150 && this._nexted == 1)
                   {
-                     this._speed = 1;
+                     this._speed = Number(Number(Number(1)));
                      this._nexted = 2;
                      this.stopTalking();
+                     break;
                   }
+                  break;
             }
             _loc1_ = PlayState.player.x - x;
             _loc2_ = PlayState.player.y - y;
@@ -837,7 +742,7 @@ package
          }
          else
          {
-            facing = PlayState.player.x < x ? uint(LEFT) : uint(RIGHT);
+            facing = uint(uint(uint(PlayState.player.x < x ? uint(LEFT) : uint(RIGHT))));
          }
       }
       
