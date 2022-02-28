@@ -5093,8 +5093,37 @@ package
          pushfalse
          callpropvoid QName(PackageNamespace(""),"addOption"), 3
          getlocal0
-         pushstring ""
-         pushnull
+         pushstring "SHOW TIMER: "
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"showTimer")
+         iftrue ofs5
+         pushstring "HIDE"
+         coerce_a
+         jump ofs6
+         ofs5:
+         pushstring "SHOW"
+         coerce_a
+         ofs6:
+         add
+         getlocal0
+         getproperty QName(PackageNamespace(""),"toggleShowTimer")
+         pushfalse
+         callpropvoid QName(PackageNamespace(""),"addOption"), 3
+         getlocal0
+         pushstring "SHOW TIME ON SAVE: "
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"showSplash")
+         iftrue ofs7
+         pushstring "HIDE"
+         coerce_a
+         jump ofs8
+         ofs7:
+         pushstring "SHOW"
+         coerce_a
+         ofs8:
+         add
+         getlocal0
+         getproperty QName(PackageNamespace(""),"toggleShowSplash")
          pushfalse
          callpropvoid QName(PackageNamespace(""),"addOption"), 3
          getlocal0
@@ -9194,6 +9223,198 @@ package
          pushint 2130706432
          pushdouble 0.34
          callpropvoid QName(PackageNamespace(""),"start"), 2
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function toggleShowTimer() : void
+      {
+         trait method QName(PackageNamespace(""),"toggleShowTimer")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 4
+         localcount 3
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal0
+         pushscope
+         pushnull
+         coerce QName(PackageNamespace(""),"XMLList")
+         setlocal2
+         getlex QName(PackageNamespace(""),"PlayState")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"showTimer")
+         not
+         setproperty QName(PackageNamespace(""),"showTimer")
+         getlocal0
+         getlocal0
+         getproperty QName(PackageNamespace(""),"curOption")
+         pushstring "SHOW TIMER: "
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"showTimer")
+         iftrue ofs0
+         pushstring "HIDE"
+         coerce_a
+         jump ofs1
+         ofs0:
+         pushstring "SHOW"
+         coerce_a
+         ofs1:
+         add
+         getlocal0
+         getproperty QName(PackageNamespace(""),"toggleShowTimer")
+         callpropvoid QName(PackageNamespace(""),"changeOption"), 3
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"showTimer")
+         iftrue ofs2
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"miniMap")
+         getproperty QName(PackageNamespace(""),"subscreen")
+         getproperty QName(PackageNamespace(""),"escText")
+         pushstring "ESC"
+         setproperty QName(PackageNamespace(""),"text")
+         ofs2:
+         findpropstrict QName(PackageNamespace(""),"SaveData")
+         constructprop QName(PackageNamespace(""),"SaveData"), 0
+         coerce QName(PackageNamespace(""),"SaveData")
+         setlocal1
+         getlocal1
+         callpropvoid QName(PackageNamespace(""),"loadAll"), 0
+         getlocal1
+         pushstring "showTimer"
+         callproperty QName(PackageNamespace(""),"isVarSet"), 1
+         iffalse ofs3
+         getlocal1
+         getproperty QName(PackageNamespace(""),"xml")
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         pushstring "showTimer"
+         callproperty Multiname("child",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
+         coerce QName(PackageNamespace(""),"XMLList")
+         setlocal2
+         getlocal2
+         iffalse ofs3
+         getlocal2
+         callproperty Multiname("parent",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
+         getproperty Multiname(null,[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlocal2
+         callproperty Multiname("childIndex",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
+         deleteproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         pop
+         ofs3:
+         getlocal1
+         getproperty QName(PackageNamespace(""),"xml")
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"XML")
+         pushstring "<showTimer>"
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"showTimer")
+         esc_xelem
+         add
+         pushstring "</showTimer>"
+         add
+         construct 1
+         callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
+         getlocal1
+         callpropvoid QName(PackageNamespace(""),"saveAll"), 0
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function toggleShowSplash() : void
+      {
+         trait method QName(PackageNamespace(""),"toggleShowSplash")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 4
+         localcount 3
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal0
+         pushscope
+         pushnull
+         coerce QName(PackageNamespace(""),"XMLList")
+         setlocal2
+         getlex QName(PackageNamespace(""),"PlayState")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"showSplash")
+         not
+         setproperty QName(PackageNamespace(""),"showSplash")
+         getlocal0
+         getlocal0
+         getproperty QName(PackageNamespace(""),"curOption")
+         pushstring "SHOW TIME ON SAVE: "
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"showSplash")
+         iftrue ofs0
+         pushstring "HIDE"
+         coerce_a
+         jump ofs1
+         ofs0:
+         pushstring "SHOW"
+         coerce_a
+         ofs1:
+         add
+         getlocal0
+         getproperty QName(PackageNamespace(""),"toggleShowSplash")
+         callpropvoid QName(PackageNamespace(""),"changeOption"), 3
+         findpropstrict QName(PackageNamespace(""),"SaveData")
+         constructprop QName(PackageNamespace(""),"SaveData"), 0
+         coerce QName(PackageNamespace(""),"SaveData")
+         setlocal1
+         getlocal1
+         callpropvoid QName(PackageNamespace(""),"loadAll"), 0
+         getlocal1
+         pushstring "showSplash"
+         callproperty QName(PackageNamespace(""),"isVarSet"), 1
+         iffalse ofs2
+         getlocal1
+         getproperty QName(PackageNamespace(""),"xml")
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         pushstring "showSplash"
+         callproperty Multiname("child",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
+         coerce QName(PackageNamespace(""),"XMLList")
+         setlocal2
+         getlocal2
+         iffalse ofs2
+         getlocal2
+         callproperty Multiname("parent",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
+         getproperty Multiname(null,[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlocal2
+         callproperty Multiname("childIndex",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
+         deleteproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         pop
+         ofs2:
+         getlocal1
+         getproperty QName(PackageNamespace(""),"xml")
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"XML")
+         pushstring "<showSplash>"
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"showSplash")
+         esc_xelem
+         add
+         pushstring "</showSplash>"
+         add
+         construct 1
+         callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
+         getlocal1
+         callpropvoid QName(PackageNamespace(""),"saveAll"), 0
          returnvoid
          end ; code
          end ; body

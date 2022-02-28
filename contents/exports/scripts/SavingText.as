@@ -37,7 +37,7 @@ package
       
       public function setSaved() : void
       {
-         text = "GAME SAVED.";
+         text = !PlayState.showSplash ? "GAME SAVED." : PlayState.player.getGameTimeExact();
          active = true;
          alpha = 1;
          _fadeOutStart = FADEOUT_START;

@@ -1554,16 +1554,20 @@ package
          code
          getlocal0
          pushscope
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"showTimer")
+         iffalse ofs0
          getlocal0
          callpropvoid QName(PackageNamespace(""),"updateTimer"), 0
+         ofs0:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"realState")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"STATE_SUBSCREEN")
-         ifeq ofs0
+         ifeq ofs1
          getlocal0
          callpropvoid QName(PackageNamespace(""),"hide"), 0
-         ofs0:
+         ofs1:
          getlocal0
          callpropvoid QName(PackageNamespace(""),"updateWeapons"), 0
          getlocal0

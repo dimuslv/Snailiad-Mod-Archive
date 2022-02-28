@@ -14,7 +14,7 @@ package
       public function SaveData()
       {
          super();
-         bind("Snailiad");
+         bind("Snailiad_speedrun_mod");
          if(this.xml == null)
          {
             this.loadAll();
@@ -51,6 +51,8 @@ package
          var _loc5_:Boolean = this.isVarTrue("hasWonBossRush");
          var _loc6_:Boolean = this.isVarTrue("hasFullClear");
          var _loc7_:Boolean = this.isVarTrue("hideTab");
+         var _loc14_:Boolean = this.isVarTrue("showTimer");
+         var _loc15_:Boolean = this.isVarTrue("showSplash");
          var _loc8_:Boolean = this.isVarTrue("hideMiniMap");
          var _loc9_:Number = this.xml.vars.bestBossRushTime;
          var _loc10_:Number = this.xml.vars.bestMainTime;
@@ -68,6 +70,14 @@ package
          if(_loc7_)
          {
             _loc13_.appendChild(<hideTab>{_loc7_}</hideTab>);
+         }
+         if(_loc14_)
+         {
+            _loc13_.appendChild(<showTimer>{_loc14_}</showTimer>);
+         }
+         if(_loc15_)
+         {
+            _loc13_.appendChild(<showSplash>{_loc15_}</showSplash>);
          }
          if(_loc1_)
          {

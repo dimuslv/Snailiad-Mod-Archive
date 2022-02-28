@@ -1251,7 +1251,8 @@ package
          this.jayIsGames.hide();
          this.addOption("HIDE MINIMAP: " + (!!PlayState.hideMiniMap ? "HIDE" : "SHOW"),this.toggleHideMiniMap,false);
          this.addOption("HIDE BOTTOM KEYS: " + (!!PlayState.hideTab ? "HIDE" : "SHOW"),this.toggleHideTab,false);
-         this.addOption("",null,false);
+         this.addOption("SHOW TIMER: " + (!PlayState.showTimer ? "HIDE" : "SHOW"),this.toggleShowTimer,false);
+         this.addOption("SHOW TIME ON SAVE: " + (!PlayState.showSplash ? "HIDE" : "SHOW"),this.toggleShowSplash,false);
          this.addOption("BACK TO OPTIONS",this.makeOptionsMenu,false);
          this.curOption = param1;
          this.centerMenu();
@@ -2073,6 +2074,48 @@ package
          this.actions[this.curOption]();
          this.fading = false;
          FlxG.flash.start(2130706432,0.34);
+      }
+      
+      public function toggleShowTimer() : void
+      {
+         var _loc2_:XMLList = null;
+         PlayState.showTimer = !PlayState.showTimer;
+         this.changeOption(this.curOption,"SHOW TIMER: " + (!PlayState.showTimer ? "HIDE" : "SHOW"),this.toggleShowTimer);
+         if(!PlayState.showTimer)
+         {
+            PlayState.miniMap.subscreen.escText.text = "ESC";
+         }
+         var _loc1_:SaveData = new SaveData();
+         _loc1_.loadAll();
+         if(_loc1_.isVarSet("showTimer"))
+         {
+            _loc2_ = _loc1_.xml.vars.child("showTimer");
+            if(_loc2_)
+            {
+               delete _loc2_.parent().*[_loc2_.childIndex()];
+            }
+         }
+         _loc1_.xml.vars.appendChild(<showTimer>{PlayState.showTimer}</showTimer>);
+         _loc1_.saveAll();
+      }
+      
+      public function toggleShowSplash() : void
+      {
+         var _loc2_:XMLList = null;
+         PlayState.showSplash = !PlayState.showSplash;
+         this.changeOption(this.curOption,"SHOW TIME ON SAVE: " + (!PlayState.showSplash ? "HIDE" : "SHOW"),this.toggleShowSplash);
+         var _loc1_:SaveData = new SaveData();
+         _loc1_.loadAll();
+         if(_loc1_.isVarSet("showSplash"))
+         {
+            _loc2_ = _loc1_.xml.vars.child("showSplash");
+            if(_loc2_)
+            {
+               delete _loc2_.parent().*[_loc2_.childIndex()];
+            }
+         }
+         _loc1_.xml.vars.appendChild(<showSplash>{PlayState.showSplash}</showSplash>);
+         _loc1_.saveAll();
       }
    }
 }
