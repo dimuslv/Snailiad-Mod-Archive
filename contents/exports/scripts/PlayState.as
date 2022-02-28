@@ -2,11 +2,7 @@
 package
 {
    import flash.utils.clearInterval;
-   import org.flixel.FlxG;
-   import org.flixel.FlxGroup;
-   import org.flixel.FlxObject;
-   import org.flixel.FlxState;
-   import org.flixel.FlxU;
+   import org.flixel.*;
    
    public class PlayState extends FlxState
    {
@@ -164,18 +160,18 @@ package
             clearInterval(player.deathFadeInterval);
             clearInterval(player.reviveInterval);
             clearInterval(player.teleportInterval);
-            player._invincible = true;
-            player.dead = true;
+            player._invincible = Boolean(true);
+            player.dead = Boolean(true);
          }
          This.defaultGroup.kill();
          This.defaultGroup.members = new Array();
-         area = -1;
-         hasJumped = false;
-         bossRush = false;
-         startedGame = true;
-         isBossRushComplete = false;
-         startFromTown = param1;
-         realState = STATE_GAME;
+         area = int(-1);
+         hasJumped = Boolean(false);
+         bossRush = Boolean(false);
+         startedGame = Boolean(true);
+         isBossRushComplete = Boolean(false);
+         startFromTown = Boolean(param1);
+         realState = int(STATE_GAME);
          setup();
          FlxG.fade.stop();
       }
@@ -189,15 +185,15 @@ package
       {
          if(player)
          {
-            player.dead = true;
+            player.dead = Boolean(true);
          }
          This.defaultGroup.kill();
          This.defaultGroup.members = new Array();
-         bossRush = true;
-         startedGame = true;
-         isBossRushComplete = false;
-         bossRushCompleteTimeout = BOSS_RUSH_COMPLETE_TIMEOUT;
-         realState = STATE_GAME;
+         bossRush = Boolean(true);
+         startedGame = Boolean(true);
+         isBossRushComplete = Boolean(false);
+         bossRushCompleteTimeout = Number(BOSS_RUSH_COMPLETE_TIMEOUT);
+         realState = int(STATE_GAME);
          setup();
       }
       
@@ -231,41 +227,41 @@ package
       
       public static function startIntro(param1:Boolean = false) : void
       {
-         introSlugMode = param1;
-         realState = STATE_INTRO;
+         introSlugMode = Boolean(param1);
+         realState = int(STATE_INTRO);
       }
       
       public static function startEnding(param1:int) : void
       {
-         endingFromMenu = realState == STATE_MENU;
-         endingNum = param1;
-         isGameComplete = true;
-         gameCompleteTimeout = GAME_COMPLETE_TIMEOUT;
+         endingFromMenu = Boolean(realState == STATE_MENU);
+         endingNum = int(param1);
+         isGameComplete = Boolean(true);
+         gameCompleteTimeout = Number(GAME_COMPLETE_TIMEOUT);
       }
       
       public static function endEnding() : void
       {
          if(endingFromMenu)
          {
-            realState = STATE_MENU;
+            realState = int(STATE_MENU);
          }
          else
          {
-            realState = STATE_GAME;
+            realState = int(STATE_GAME);
          }
          FlxG.flash.start(4278190080,0.34);
       }
       
       public static function goToMainMenu() : void
       {
-         realState = STATE_SPLASH;
-         startedGame = false;
+         realState = int(STATE_SPLASH);
+         startedGame = Boolean(false);
       }
       
       public static function returnToGame() : void
       {
          FlxG.flash.start(2130706432,0.34);
-         realState = STATE_GAME;
+         realState = int(STATE_GAME);
       }
       
       public static function addTitleScreen() : void
@@ -280,7 +276,7 @@ package
             saveData = new SaveData();
          }
          bossesKilled = new Array();
-         var _loc1_:int = 0;
+         var _loc1_:* = 0;
          while(_loc1_ < 5)
          {
             bossesKilled[_loc1_] = false;
@@ -366,7 +362,7 @@ package
             if(!player.hasSeenHelp && !player._hardMode)
             {
                controlHelp.show();
-               player.hasSeenHelp = true;
+               player.hasSeenHelp = Boolean(true);
             }
          }
          if(bossRush)
@@ -378,7 +374,7 @@ package
          worldMap.checkRoomBounds(player);
          miniMap.updateMiniMap(true);
          FlxG.mouse.hide();
-         hasJumped = false;
+         hasJumped = Boolean(false);
       }
       
       public static function isBossDead(param1:int) : Boolean
@@ -393,8 +389,8 @@ package
       
       public static function triggerEnding() : void
       {
-         PlayState.player.clearTime.value = PlayState.player.gameTime.value;
-         var _loc1_:int = 1;
+         PlayState.player.clearTime.value = Number(PlayState.player.gameTime.value);
+         var _loc1_:* = 1;
          if(PlayState.bossRush)
          {
             _loc1_ = 2;
@@ -421,7 +417,7 @@ package
       
       public static function totalItemsInArea() : int
       {
-         var _loc1_:int = area;
+         var _loc1_:* = area;
          if(_loc1_ >= 6)
          {
             _loc1_ = 5;
@@ -430,7 +426,7 @@ package
          var _loc3_:int = _loc2_[_loc1_];
          if(_loc1_ == 1 && player._slugMode)
          {
-            _loc3_--;
+            _loc3_++;
          }
          return _loc3_;
       }
@@ -451,12 +447,12 @@ package
       
       public static function remainingItemsInArea() : int
       {
-         var _loc1_:int = area;
+         var _loc1_:* = area;
          if(_loc1_ >= 6)
          {
             _loc1_ = 5;
          }
-         var _loc2_:int = 0;
+         var _loc2_:* = 0;
          switch(_loc1_)
          {
             case 0:
@@ -555,11 +551,11 @@ package
          }
          if(param1 == 6)
          {
-            player.hasSeenIsis = true;
+            player.hasSeenIsis = Boolean(true);
             NgMedal.unlockPilgrim();
             if(isBossDead(4) && !hasGoodEnding && player.getHelixFragments() == 30)
             {
-               player.bestInsaneTime.value = player.gameTime.value;
+               player.bestInsaneTime.value = Number(player.gameTime.value);
                triggerEnding();
             }
          }
@@ -571,37 +567,37 @@ package
          {
             return;
          }
-         area = param1;
-         var _loc2_:Array = ["SNAIL TOWN","MARE CARELIA","SPIRALIS SILERE","AMASTRIDA ABYSSUS","LUX LIRATA","???","SHRINE OF IRIS","BOSS RUSH"];
+         area = int(param1);
+         var _loc2_:Array = ["SNAIL TOWN","MARE CARELIA","SPIRALIS SILERE","AMASTRIDA ABYSSUS","THE END","SOME SPACE FACTORY","SHRINE OF IRIS","BOSS RUSH"];
          hud.areaName.setArea(_loc2_[area]);
          hud.radar.setNumber();
       }
       
       public static function showBossName(param1:int, param2:Boolean = false) : void
       {
-         var _loc3_:Array = ["there is no boss #0","SHELLBREAKER","STOMPY","SPACE BOX","MOON SNAIL"];
-         var _loc4_:* = _loc3_[param1] + (!!param2 ? " DEFEATED!" : "");
+         var _loc3_:Array = ["there is no boss #0","SHELLBREAKER","STOMPY","MOVE SPACE BOX TO THE END","MOON SNAIL"];
+         var _loc4_:String = _loc3_[param1] + (!!param2 ? " DEFEATED!" : "");
          if(param2 && param1 == 4)
          {
             if(player._insaneMode)
             {
                if(player.bestInsaneTime.value == 0 || player.bestInsaneTime.value > player.gameTime.value)
                {
-                  player.bestInsaneTime.value = player.gameTime.value;
+                  player.bestInsaneTime.value = Number(player.gameTime.value);
                   _loc4_ += "\nNEW BEST TIME - INSANE MODE " + GameTimeDisplay.formatExact(player.bestInsaneTime.value);
-                  player.hasWonInsaneMode = true;
+                  player.hasWonInsaneMode = Boolean(true);
                }
             }
             else if(player._hardMode)
             {
                if(player.bestHardTime.value == 0 || player.bestHardTime.value > player.gameTime.value)
                {
-                  player.bestHardTime.value = player.gameTime.value;
+                  player.bestHardTime.value = Number(player.gameTime.value);
                   _loc4_ += "\nNEW BEST TIME - SLUG MODE " + GameTimeDisplay.formatExact(player.bestHardTime.value);
                }
                if((player.bestInsaneTime.value == 0 || player.bestInsaneTime.value > player.gameTime.value) && player.getPercentComplete() == 100)
                {
-                  player.bestInsaneTime.value = player.gameTime.value;
+                  player.bestInsaneTime.value = Number(player.gameTime.value);
                   _loc4_ += "\nNEW BEST 100% TIME - " + GameTimeDisplay.formatExact(player.bestInsaneTime.value);
                }
             }
@@ -613,18 +609,18 @@ package
             {
                if(player.bestMainTime.value == 0 || player.bestMainTime.value > player.gameTime.value)
                {
-                  player.bestMainTime.value = player.gameTime.value;
+                  player.bestMainTime.value = Number(player.gameTime.value);
                   _loc4_ += "\nNEW BEST TIME - NORMAL MODE " + GameTimeDisplay.formatExact(player.bestMainTime.value);
                }
                if((player.bestInsaneTime.value == 0 || player.bestInsaneTime.value > player.gameTime.value) && player.getPercentComplete() == 100)
                {
-                  player.bestInsaneTime.value = player.gameTime.value;
+                  player.bestInsaneTime.value = Number(player.gameTime.value);
                   _loc4_ += "\nNEW BEST TIME - 100% " + GameTimeDisplay.formatExact(player.bestInsaneTime.value);
                }
                if(!player.hasWonGame)
                {
                   _loc4_ += "\nBOSS RUSH UNLOCKED!";
-                  player.hasWonGame = true;
+                  player.hasWonGame = Boolean(true);
                }
             }
          }
@@ -645,6 +641,7 @@ package
          if(!_loc1_.isVarTrue("hasWonBossRush"))
          {
             delete _loc1_.xml.vars.hasWonBossRush;
+            true;
             _loc1_.xml.vars.appendChild(<hasWonBossRush>true</hasWonBossRush>);
             hud.areaName.setArea("BOSS RUSH COMPLETE - " + bossRushTimer.getTimeExact() + "\nSLUG MODE UNLOCKED!");
             hud.areaName.increaseTimer(5);
@@ -658,7 +655,7 @@ package
             _loc1_.xml.vars.bestBossRushTime = PlayState.bossRushTimer.now.value;
          }
          _loc1_.saveAll();
-         PlayState.isBossRushComplete = true;
+         PlayState.isBossRushComplete = Boolean(true);
       }
       
       override public function destroy() : void
@@ -698,8 +695,8 @@ package
          menuHideable = null;
          gameTimeDisplay = null;
          zzz = null;
-         bossRush = false;
-         isBossRushComplete = false;
+         bossRush = Boolean(false);
+         isBossRushComplete = Boolean(false);
          if(config)
          {
             config.destroy();
@@ -741,7 +738,7 @@ package
             }
             else if(splashLayer.dead)
             {
-               realState = STATE_MENU;
+               realState = int(STATE_MENU);
                splashLayer = null;
                Preloader.bg.visible = false;
             }
@@ -751,7 +748,7 @@ package
          {
             if(menuHideable)
             {
-               menuHideable.visible = false;
+               menuHideable.visible = Boolean(false);
             }
             if(mainMenu && mainMenu.endingShow)
             {
@@ -791,36 +788,36 @@ package
          }
          else if(realState == STATE_SUBSCREEN)
          {
-            dialogue.visible = false;
-            hud.areaName.visible = false;
-            hud.radar.visible = false;
+            dialogue.visible = Boolean(false);
+            hud.areaName.visible = Boolean(false);
+            hud.radar.visible = Boolean(false);
          }
          else if(realState == STATE_GAME)
          {
-            menuHideable.visible = true;
-            hud.areaName.visible = true;
-            hud.radar.visible = true;
-            dialogue.visible = true;
+            menuHideable.visible = Boolean(true);
+            hud.areaName.visible = Boolean(true);
+            hud.radar.visible = Boolean(true);
+            dialogue.visible = Boolean(true);
             FlxG.mouse.hide();
             if(mainMenu)
             {
-               mainMenu.exists = false;
-               mainMenu.active = false;
+               mainMenu.exists = Boolean(false);
+               mainMenu.active = Boolean(false);
                mainMenu.kill();
                mainMenu = null;
             }
             if(ending)
             {
                FlxG.fade.stop();
-               ending.exists = false;
-               ending.active = false;
+               ending.exists = Boolean(false);
+               ending.active = Boolean(false);
                ending.kill();
                ending = null;
             }
             if(intro)
             {
-               intro.exists = false;
-               intro.active = false;
+               intro.exists = Boolean(false);
+               intro.active = Boolean(false);
                intro.kill();
                intro = null;
             }
@@ -856,7 +853,7 @@ package
             }
             if(player.pressedJump())
             {
-               hasJumped = true;
+               hasJumped = Boolean(true);
             }
             if(bossRush && isBossRushComplete)
             {
@@ -864,18 +861,18 @@ package
                if(bossRushCompleteTimeout <= 0.4 && !bossRushFade)
                {
                   FlxG.fade.start(4278190080,0.34);
-                  bossRushFade = true;
+                  bossRushFade = Boolean(true);
                   NgMedal.unlockTheGauntlet();
                }
                if(bossRushCompleteTimeout <= 0)
                {
-                  startedGame = false;
-                  realState = STATE_MENU;
-                  bossRushFade = false;
-                  isBossRushComplete = false;
+                  startedGame = Boolean(false);
+                  realState = int(STATE_MENU);
+                  bossRushFade = Boolean(false);
+                  isBossRushComplete = Boolean(false);
                   FlxG.fade.stop();
                   FlxG.flash.start(4278190080,0.34);
-                  bossRush = false;
+                  bossRush = Boolean(false);
                }
             }
             if(!bossRush && isGameComplete)
@@ -886,13 +883,13 @@ package
                   NgMedal.unlockVictory();
                   FlxG.music.fadeOut(gameCompleteTimeout);
                   FlxG.fade.start(4278190080,gameCompleteTimeout);
-                  gameFade = true;
+                  gameFade = Boolean(true);
                }
                if(gameCompleteTimeout <= 0)
                {
-                  realState = STATE_ENDING;
-                  gameFade = false;
-                  isGameComplete = false;
+                  realState = int(STATE_ENDING);
+                  gameFade = Boolean(false);
+                  isGameComplete = Boolean(false);
                }
             }
          }
@@ -905,7 +902,8 @@ package
          if(param1 is Player && param2 is Npc)
          {
             _loc3_ = param1 as Player;
-            (_loc4_ = param2 as Npc).touch(_loc3_);
+            _loc4_ = param2 as Npc;
+            _loc4_.touch(_loc3_);
          }
       }
       
@@ -916,7 +914,8 @@ package
          if(param1 is Player && param2 is Item)
          {
             _loc3_ = param1 as Player;
-            (_loc4_ = param2 as Item).touch(_loc3_);
+            _loc4_ = param2 as Item;
+            _loc4_.touch(_loc3_);
          }
       }
       
@@ -951,7 +950,8 @@ package
          if(param1 is Player && param2 is Enemy)
          {
             _loc3_ = param1 as Player;
-            (_loc4_ = param2 as Enemy).touch(_loc3_);
+            _loc4_ = param2 as Enemy;
+            _loc4_.touch(_loc3_);
          }
       }
       
@@ -974,7 +974,8 @@ package
          if(param1 is AiTrigger && param2 is Enemy)
          {
             _loc3_ = param1 as AiTrigger;
-            (_loc4_ = param2 as Enemy).triggerAi(_loc3_.getNumber());
+            _loc4_ = param2 as Enemy;
+            _loc4_.triggerAi(_loc3_.getNumber());
          }
       }
       
@@ -985,7 +986,8 @@ package
          if(param1 is AiTrigger && param2 is Item)
          {
             _loc3_ = param1 as AiTrigger;
-            (_loc4_ = param2 as Item).triggerAi(_loc3_.getNumber());
+            _loc4_ = param2 as Item;
+            _loc4_.triggerAi(_loc3_.getNumber());
          }
       }
    }
