@@ -34,11 +34,11 @@ package
       {
          super();
          this._letters = new Array();
-         this._letters.push(new TitleLetter("S"));
-         this._letters.push(new TitleLetter("N"));
-         this._letters.push(new TitleLetter("A"));
-         this._letters.push(new TitleLetter("I"));
-         this._letters.push(new TitleLetter("L"));
+         this._letters.push(new TitleLetter(" "));
+         this._letters.push(new TitleLetter(" "));
+         this._letters.push(new TitleLetter(" "));
+         this._letters.push(new TitleLetter(" "));
+         this._letters.push(new TitleLetter(" "));
          this._letters.push(new TitleLetter("I"));
          this._letters.push(new TitleLetter("A"));
          this._letters.push(new TitleLetter("D"));

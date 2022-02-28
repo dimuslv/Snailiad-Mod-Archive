@@ -136,31 +136,31 @@ package
          getlocal0
          getproperty QName(PrivateNamespace(null,"#TitleText"),"_letters")
          findpropstrict QName(PackageNamespace(""),"TitleLetter")
-         pushstring "S"
+         pushstring " "
          constructprop QName(PackageNamespace(""),"TitleLetter"), 1
          callpropvoid QName(Namespace("http://adobe.com/AS3/2006/builtin"),"push"), 1
          getlocal0
          getproperty QName(PrivateNamespace(null,"#TitleText"),"_letters")
          findpropstrict QName(PackageNamespace(""),"TitleLetter")
-         pushstring "N"
+         pushstring " "
          constructprop QName(PackageNamespace(""),"TitleLetter"), 1
          callpropvoid QName(Namespace("http://adobe.com/AS3/2006/builtin"),"push"), 1
          getlocal0
          getproperty QName(PrivateNamespace(null,"#TitleText"),"_letters")
          findpropstrict QName(PackageNamespace(""),"TitleLetter")
-         pushstring "A"
+         pushstring " "
          constructprop QName(PackageNamespace(""),"TitleLetter"), 1
          callpropvoid QName(Namespace("http://adobe.com/AS3/2006/builtin"),"push"), 1
          getlocal0
          getproperty QName(PrivateNamespace(null,"#TitleText"),"_letters")
          findpropstrict QName(PackageNamespace(""),"TitleLetter")
-         pushstring "I"
+         pushstring " "
          constructprop QName(PackageNamespace(""),"TitleLetter"), 1
          callpropvoid QName(Namespace("http://adobe.com/AS3/2006/builtin"),"push"), 1
          getlocal0
          getproperty QName(PrivateNamespace(null,"#TitleText"),"_letters")
          findpropstrict QName(PackageNamespace(""),"TitleLetter")
-         pushstring "L"
+         pushstring " "
          constructprop QName(PackageNamespace(""),"TitleLetter"), 1
          callpropvoid QName(Namespace("http://adobe.com/AS3/2006/builtin"),"push"), 1
          getlocal0
