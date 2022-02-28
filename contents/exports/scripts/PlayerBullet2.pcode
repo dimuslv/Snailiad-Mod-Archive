@@ -1,7 +1,7 @@
 
 {
    method
-   name null
+   name ""
    returns null
    
    body
@@ -48,15 +48,15 @@ package
    public class PlayerBullet2 extends PlayerBullet
    {
       
-      private static const WIDTH:int = 16;
+      private static const WIDTH:int = 20;
       
-      private static const HEIGHT:int = 16;
+      private static const HEIGHT:int = 20;
       
       private static const FIREPOWER:int = 20;
       
       {
          method
-         name null
+         name ""
          returns null
          
          body
@@ -68,15 +68,15 @@ package
          code
          getlocal0
          pushscope
-         findproperty QName(PrivateNamespace(null,"#PlayerBullet2"),"WIDTH")
-         pushbyte 16
-         initproperty QName(PrivateNamespace(null,"#PlayerBullet2"),"WIDTH")
-         findproperty QName(PrivateNamespace(null,"#PlayerBullet2"),"HEIGHT")
-         pushbyte 16
-         initproperty QName(PrivateNamespace(null,"#PlayerBullet2"),"HEIGHT")
-         findproperty QName(PrivateNamespace(null,"#PlayerBullet2"),"FIREPOWER")
+         findproperty QName(PrivateNamespace(":PlayerBullet2"),"WIDTH")
          pushbyte 20
-         initproperty QName(PrivateNamespace(null,"#PlayerBullet2"),"FIREPOWER")
+         initproperty QName(PrivateNamespace(":PlayerBullet2"),"WIDTH")
+         findproperty QName(PrivateNamespace(":PlayerBullet2"),"HEIGHT")
+         pushbyte 20
+         initproperty QName(PrivateNamespace(":PlayerBullet2"),"HEIGHT")
+         findproperty QName(PrivateNamespace(":PlayerBullet2"),"FIREPOWER")
+         pushbyte 20
+         initproperty QName(PrivateNamespace(":PlayerBullet2"),"FIREPOWER")
          returnvoid
          end ; code
          end ; body
@@ -86,8 +86,8 @@ package
       public function PlayerBullet2()
       {
          method
-         name null
-         returns QName(PackageNamespace(""),"void")
+         name ":PlayerBullet2/PlayerBullet2"
+         returns null
          
          body
          maxstack 10
@@ -99,22 +99,24 @@ package
          getlocal0
          pushscope
          getlocal0
-         getlex QName(PrivateNamespace(null,"#PlayerBullet2"),"FIREPOWER")
+         getlex QName(PrivateNamespace(":PlayerBullet2"),"FIREPOWER")
          constructsuper 1
          findpropstrict QName(PackageNamespace(""),"loadGraphic")
          getlex QName(PackageNamespace(""),"Art")
          getproperty QName(PackageNamespace(""),"PlayerBullet2")
          pushtrue
          pushtrue
-         getlex QName(PrivateNamespace(null,"#PlayerBullet2"),"WIDTH")
-         getlex QName(PrivateNamespace(null,"#PlayerBullet2"),"HEIGHT")
+         getlex QName(PrivateNamespace(":PlayerBullet2"),"WIDTH")
+         getlex QName(PrivateNamespace(":PlayerBullet2"),"HEIGHT")
          callpropvoid QName(PackageNamespace(""),"loadGraphic"), 5
-         findproperty QName(PackageNamespace(""),"width")
-         getlex QName(PrivateNamespace(null,"#PlayerBullet2"),"WIDTH")
-         initproperty QName(PackageNamespace(""),"width")
-         findproperty QName(PackageNamespace(""),"height")
-         getlex QName(PrivateNamespace(null,"#PlayerBullet2"),"HEIGHT")
-         initproperty QName(PackageNamespace(""),"height")
+         findpropstrict QName(PackageNamespace(""),"width")
+         getlex QName(PrivateNamespace(":PlayerBullet2"),"WIDTH")
+         convert_d
+         setproperty QName(PackageNamespace(""),"width")
+         findpropstrict QName(PackageNamespace(""),"height")
+         getlex QName(PrivateNamespace(":PlayerBullet2"),"HEIGHT")
+         convert_d
+         setproperty QName(PackageNamespace(""),"height")
          findpropstrict QName(PackageNamespace(""),"addAnimation")
          pushstring "normal"
          pushbyte 0
@@ -141,7 +143,7 @@ package
          flag OVERRIDE
          dispid 0
          method
-         name null
+         name "PlayerBullet2:shoot"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
@@ -157,6 +159,10 @@ package
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "param3", 2, 0
+         debug 1, "param4", 3, 0
          getlocal0
          getlocal1
          getlocal2
@@ -165,13 +171,15 @@ package
          callsupervoid QName(PackageNamespace(""),"shoot"), 4
          getlex QName(PackageNamespace(""),"acceleration")
          getlocal3
-         pushdouble -1.5
+         pushdouble -10.5
          multiply
+         convert_d
          setproperty QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"acceleration")
          getlocal 4
-         pushdouble -1.5
+         pushdouble -10.5
          multiply
+         convert_d
          setproperty QName(PackageNamespace(""),"y")
          getlex QName(PackageNamespace(""),"Sfx")
          callpropvoid QName(PackageNamespace(""),"playShot2"), 0
@@ -190,7 +198,7 @@ package
          flag OVERRIDE
          dispid 0
          method
-         name null
+         name "PlayerBullet2:hitEnemy"
          param QName(PackageNamespace(""),"Enemy")
          returns QName(PackageNamespace(""),"void")
          
@@ -203,9 +211,11 @@ package
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
          findpropstrict QName(PackageNamespace(""),"onScreen")
          callproperty QName(PackageNamespace(""),"onScreen"), 0
-         iftrue ofs0
+         not
+         iffalse ofs0
          returnvoid
          ofs0:
          getlocal0
@@ -223,7 +233,7 @@ package
          flag OVERRIDE
          dispid 0
          method
-         name null
+         name "PlayerBullet2:update"
          returns QName(PackageNamespace(""),"void")
          
          body

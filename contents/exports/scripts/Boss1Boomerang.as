@@ -6,9 +6,9 @@ package
    public class Boss1Boomerang extends EnemyBullet
    {
       
-      private static const WIDTH:int = 24;
+      private static const WIDTH:int = 100;
       
-      private static const HEIGHT:int = 24;
+      private static const HEIGHT:int = 100;
       
       private static const FIREPOWER:int = 2;
       
@@ -19,16 +19,16 @@ package
       {
          super(FIREPOWER);
          loadGraphic(Art.PlayerBullet5,true,true,WIDTH,HEIGHT);
-         width = WIDTH;
-         height = HEIGHT;
+         width = Number(WIDTH);
+         height = Number(HEIGHT);
          addAnimation("normal",[0,1,2,3,4,5,6,7],45,true);
       }
       
       override public function shoot(param1:int, param2:int, param3:int, param4:int, param5:Number = 4) : void
       {
          super.shoot(param1,param2,param3,param4,param5);
-         acceleration.x = param3 * -1.5;
-         acceleration.y = param4 * -1.5;
+         acceleration.x = Number(param3 * -1.5);
+         acceleration.y = Number(param4 * -1.5);
          Sfx.playShot2b();
          play("normal");
       }

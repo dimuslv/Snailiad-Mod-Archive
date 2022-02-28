@@ -15757,7 +15757,7 @@
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="16" characterID="201" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="176" bitmapWidth="160" characterID="202" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item binaryData="" reserved="0" tag="203" type="DefineBinaryDataTag" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="256" bitmapWidth="640" characterID="204" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="960" bitmapWidth="742" characterID="204" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="128" bitmapWidth="256" characterID="205" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="8" bitmapWidth="40" characterID="206" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="32" bitmapWidth="16" characterID="207" type="DefineBitsLossless2Tag" zlibBitmapData="" />
@@ -18875,7 +18875,7 @@
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="138" bitmapWidth="400" characterID="267" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item binaryData="" reserved="0" tag="268" type="DefineBinaryDataTag" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="32" bitmapWidth="24" characterID="269" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="2960" bitmapWidth="256" characterID="270" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="525" bitmapWidth="339" characterID="270" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="16" characterID="271" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="16" characterID="272" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="256" bitmapWidth="640" characterID="273" type="DefineBitsLossless2Tag" zlibBitmapData="" />

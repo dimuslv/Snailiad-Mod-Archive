@@ -798,7 +798,7 @@ PrivateNamespace IDs:
 24: FlxPanel
 25: PlayerBulletGroups
 26: MainMenu
-27: Player
+27: 
 28: AiTriggerPool
 29: SnowLayer
 30: Configurable
@@ -880,7 +880,7 @@ PrivateNamespace IDs:
 106: EnemyBabyfish
 107: EnemyKitty
 108: EnemyWalleye
-109: Boss1Rush
+109: 
 110: Platform5
 111: Platform4
 112: EnemyBird
@@ -1044,7 +1044,7 @@ PrivateNamespace IDs:
 270: LuminosityMaskShader
 271: DescribeTypeCache
 272: PlayerBullet1
-273: PlayerBullet2
+273: 
 274: PlayerBullet3
 275: PlayerBullet6
 276: PlayerBullet5
@@ -1064,7 +1064,7 @@ PrivateNamespace IDs:
 290: GravityShock
 291: HiJump
 292: Gun3
-293: Gun2
+293: 
 294: Gun1
 295: HeartContainer
 296: EnemySpike
@@ -1084,7 +1084,7 @@ PrivateNamespace IDs:
 310: EnemyBulletDonut
 311: EnemyBulletLaser
 312: EnemyBulletFire
-313: Boss1Boomerang
+313: 
 314: EnemyBulletSpikeBall2
 315: EnemyBulletPea
 316: Zoom
@@ -1096,9 +1096,9 @@ PrivateNamespace IDs:
 322: EndingBg
 323: Boss3Shield
 324: Boss4ShadowBall
-325: Boss1Eyes
-326: Boss1Hand
-327: Boss1RushHand
+325: 
+326: 
+327: 
 328: Boss3RushShield
 329: HelixHud
 330: HeartHudSingle
@@ -1157,7 +1157,7 @@ PrivateNamespace IDs:
 383: FixBlocks/1
 384: FixBlocks/2
 385: MainMenu/1
-386: Player/1
+386: 
 387: AiTriggerPool/1
 388: SnowLayer/1
 389: UniqueBlocks/1
@@ -1224,7 +1224,7 @@ PrivateNamespace IDs:
 450: UniqueItem/1
 451: FlxTilemap/1
 452: EnemyKitty/1
-453: Boss1Rush/1
+453: 
 454: Boss4Rush/1
 455: Boss2Rush/1
 456: EnemyBird2Generator/1
