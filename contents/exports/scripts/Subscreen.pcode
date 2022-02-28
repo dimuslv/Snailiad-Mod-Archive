@@ -577,7 +577,7 @@ package
          getlex QName(PrivateNamespace(null,"#Subscreen"),"TEXT_GRAVITYSHOCK")
          getlex QName(PrivateNamespace(null,"#Subscreen"),"GROUP_ABILITY")
          pushbyte 4
-         pushstring "GRAVITY SHOCK"
+         pushstring "CORKSCREW JUMP"
          callpropvoid QName(PrivateNamespace(null,"#Subscreen"),"makeText"), 4
          ofs3:
          getlocal0

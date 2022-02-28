@@ -1,7 +1,7 @@
 
 {
    method
-   name null
+   name ""
    returns null
    
    body
@@ -198,14 +198,14 @@ package
       
       {
          method
-         name null
+         name ""
          returns null
          
          body
          maxstack 2
          localcount 1
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
@@ -300,14 +300,14 @@ package
       public function PlayState()
       {
          method
-         name null
+         name ":PlayState/PlayState"
          returns null
          
          body
          maxstack 1
          localcount 1
-         initscopedepth 10
-         maxscopedepth 11
+         initscopedepth 11
+         maxscopedepth 12
          
          code
          getlocal0
@@ -326,7 +326,7 @@ package
          flag FINAL
          dispid 3
          method
-         name null
+         name "PlayState:loadGame"
          flag HAS_OPTIONAL
          param QName(PackageNamespace(""),"Boolean")
          optional False()
@@ -335,12 +335,13 @@ package
          body
          maxstack 2
          localcount 2
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
          getlex QName(PackageNamespace(""),"player")
          iffalse ofs0
          findpropstrict QName(PackageNamespace("flash.utils"),"clearInterval")
@@ -370,25 +371,25 @@ package
          findpropstrict QName(PackageNamespace(""),"Array")
          constructprop QName(PackageNamespace(""),"Array"), 0
          setproperty QName(PackageNamespace(""),"members")
-         findproperty QName(PackageNamespace(""),"area")
+         findpropstrict QName(PackageNamespace(""),"area")
          pushbyte -1
          setproperty QName(PackageNamespace(""),"area")
-         findproperty QName(PackageNamespace(""),"hasJumped")
+         findpropstrict QName(PackageNamespace(""),"hasJumped")
          pushfalse
          setproperty QName(PackageNamespace(""),"hasJumped")
-         findproperty QName(PackageNamespace(""),"bossRush")
+         findpropstrict QName(PackageNamespace(""),"bossRush")
          pushfalse
          setproperty QName(PackageNamespace(""),"bossRush")
-         findproperty QName(PackageNamespace(""),"startedGame")
+         findpropstrict QName(PackageNamespace(""),"startedGame")
          pushtrue
          setproperty QName(PackageNamespace(""),"startedGame")
-         findproperty QName(PackageNamespace(""),"isBossRushComplete")
+         findpropstrict QName(PackageNamespace(""),"isBossRushComplete")
          pushfalse
          setproperty QName(PackageNamespace(""),"isBossRushComplete")
-         findproperty QName(PackageNamespace(""),"startFromTown")
+         findpropstrict QName(PackageNamespace(""),"startFromTown")
          getlocal1
          setproperty QName(PackageNamespace(""),"startFromTown")
-         findproperty QName(PackageNamespace(""),"realState")
+         findpropstrict QName(PackageNamespace(""),"realState")
          getlex QName(PackageNamespace(""),"STATE_GAME")
          setproperty QName(PackageNamespace(""),"realState")
          findpropstrict QName(PackageNamespace(""),"setup")
@@ -408,14 +409,14 @@ package
          flag FINAL
          dispid 4
          method
-         name null
+         name "PlayState:loadGameFromTown"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 2
          localcount 1
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
@@ -435,14 +436,14 @@ package
          flag FINAL
          dispid 5
          method
-         name null
+         name "PlayState:startBossRush"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 2
          localcount 1
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
@@ -461,19 +462,19 @@ package
          findpropstrict QName(PackageNamespace(""),"Array")
          constructprop QName(PackageNamespace(""),"Array"), 0
          setproperty QName(PackageNamespace(""),"members")
-         findproperty QName(PackageNamespace(""),"bossRush")
+         findpropstrict QName(PackageNamespace(""),"bossRush")
          pushtrue
          setproperty QName(PackageNamespace(""),"bossRush")
-         findproperty QName(PackageNamespace(""),"startedGame")
+         findpropstrict QName(PackageNamespace(""),"startedGame")
          pushtrue
          setproperty QName(PackageNamespace(""),"startedGame")
-         findproperty QName(PackageNamespace(""),"isBossRushComplete")
+         findpropstrict QName(PackageNamespace(""),"isBossRushComplete")
          pushfalse
          setproperty QName(PackageNamespace(""),"isBossRushComplete")
-         findproperty QName(PackageNamespace(""),"bossRushCompleteTimeout")
+         findpropstrict QName(PackageNamespace(""),"bossRushCompleteTimeout")
          getlex QName(PackageNamespace(""),"BOSS_RUSH_COMPLETE_TIMEOUT")
          setproperty QName(PackageNamespace(""),"bossRushCompleteTimeout")
-         findproperty QName(PackageNamespace(""),"realState")
+         findpropstrict QName(PackageNamespace(""),"realState")
          getlex QName(PackageNamespace(""),"STATE_GAME")
          setproperty QName(PackageNamespace(""),"realState")
          findpropstrict QName(PackageNamespace(""),"setup")
@@ -490,19 +491,19 @@ package
          flag FINAL
          dispid 6
          method
-         name null
+         name "PlayState:startHardNewGame"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 2
          localcount 1
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
-         findproperty QName(PackageNamespace(""),"saveData")
+         findpropstrict QName(PackageNamespace(""),"saveData")
          findpropstrict QName(PackageNamespace(""),"SaveData")
          constructprop QName(PackageNamespace(""),"SaveData"), 0
          setproperty QName(PackageNamespace(""),"saveData")
@@ -523,19 +524,19 @@ package
          flag FINAL
          dispid 7
          method
-         name null
+         name "PlayState:startInsaneNewGame"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 2
          localcount 1
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
-         findproperty QName(PackageNamespace(""),"saveData")
+         findpropstrict QName(PackageNamespace(""),"saveData")
          findpropstrict QName(PackageNamespace(""),"SaveData")
          constructprop QName(PackageNamespace(""),"SaveData"), 0
          setproperty QName(PackageNamespace(""),"saveData")
@@ -556,19 +557,19 @@ package
          flag FINAL
          dispid 8
          method
-         name null
+         name "PlayState:startEasyNewGame"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 2
          localcount 1
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
-         findproperty QName(PackageNamespace(""),"saveData")
+         findpropstrict QName(PackageNamespace(""),"saveData")
          findpropstrict QName(PackageNamespace(""),"SaveData")
          constructprop QName(PackageNamespace(""),"SaveData"), 0
          setproperty QName(PackageNamespace(""),"saveData")
@@ -589,19 +590,19 @@ package
          flag FINAL
          dispid 9
          method
-         name null
+         name "PlayState:startNewGame"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 2
          localcount 1
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
-         findproperty QName(PackageNamespace(""),"saveData")
+         findpropstrict QName(PackageNamespace(""),"saveData")
          findpropstrict QName(PackageNamespace(""),"SaveData")
          constructprop QName(PackageNamespace(""),"SaveData"), 0
          setproperty QName(PackageNamespace(""),"saveData")
@@ -622,7 +623,7 @@ package
          flag FINAL
          dispid 10
          method
-         name null
+         name "PlayState:startIntro"
          flag HAS_OPTIONAL
          param QName(PackageNamespace(""),"Boolean")
          optional False()
@@ -631,16 +632,17 @@ package
          body
          maxstack 2
          localcount 2
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
-         findproperty QName(PackageNamespace(""),"introSlugMode")
+         debug 1, "param1", 0, 0
+         findpropstrict QName(PackageNamespace(""),"introSlugMode")
          getlocal1
          setproperty QName(PackageNamespace(""),"introSlugMode")
-         findproperty QName(PackageNamespace(""),"realState")
+         findpropstrict QName(PackageNamespace(""),"realState")
          getlex QName(PackageNamespace(""),"STATE_INTRO")
          setproperty QName(PackageNamespace(""),"realState")
          returnvoid
@@ -655,31 +657,32 @@ package
          flag FINAL
          dispid 11
          method
-         name null
+         name "PlayState:startEnding"
          param QName(PackageNamespace(""),"int")
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 3
          localcount 2
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
-         findproperty QName(PackageNamespace(""),"endingFromMenu")
+         debug 1, "param1", 0, 0
+         findpropstrict QName(PackageNamespace(""),"endingFromMenu")
          getlex QName(PackageNamespace(""),"realState")
          getlex QName(PackageNamespace(""),"STATE_MENU")
          equals
          setproperty QName(PackageNamespace(""),"endingFromMenu")
-         findproperty QName(PackageNamespace(""),"endingNum")
+         findpropstrict QName(PackageNamespace(""),"endingNum")
          getlocal1
          setproperty QName(PackageNamespace(""),"endingNum")
-         findproperty QName(PackageNamespace(""),"isGameComplete")
+         findpropstrict QName(PackageNamespace(""),"isGameComplete")
          pushtrue
          setproperty QName(PackageNamespace(""),"isGameComplete")
-         findproperty QName(PackageNamespace(""),"gameCompleteTimeout")
+         findpropstrict QName(PackageNamespace(""),"gameCompleteTimeout")
          getlex QName(PackageNamespace(""),"GAME_COMPLETE_TIMEOUT")
          setproperty QName(PackageNamespace(""),"gameCompleteTimeout")
          returnvoid
@@ -694,32 +697,32 @@ package
          flag FINAL
          dispid 12
          method
-         name null
+         name "PlayState:endEnding"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 3
          localcount 1
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
          getlex QName(PackageNamespace(""),"endingFromMenu")
          iffalse ofs0
-         findproperty QName(PackageNamespace(""),"realState")
+         findpropstrict QName(PackageNamespace(""),"realState")
          getlex QName(PackageNamespace(""),"STATE_MENU")
          setproperty QName(PackageNamespace(""),"realState")
          jump ofs1
          ofs0:
-         findproperty QName(PackageNamespace(""),"realState")
+         findpropstrict QName(PackageNamespace(""),"realState")
          getlex QName(PackageNamespace(""),"STATE_GAME")
          setproperty QName(PackageNamespace(""),"realState")
          ofs1:
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"flash")
-         pushdouble 4.27819008E9
+         pushint -16777216
          pushdouble 0.34
          callpropvoid QName(PackageNamespace(""),"start"), 2
          returnvoid
@@ -734,22 +737,22 @@ package
          flag FINAL
          dispid 13
          method
-         name null
+         name "PlayState:goToMainMenu"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 2
          localcount 1
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
-         findproperty QName(PackageNamespace(""),"realState")
+         findpropstrict QName(PackageNamespace(""),"realState")
          getlex QName(PackageNamespace(""),"STATE_SPLASH")
          setproperty QName(PackageNamespace(""),"realState")
-         findproperty QName(PackageNamespace(""),"startedGame")
+         findpropstrict QName(PackageNamespace(""),"startedGame")
          pushfalse
          setproperty QName(PackageNamespace(""),"startedGame")
          returnvoid
@@ -764,14 +767,14 @@ package
          flag FINAL
          dispid 14
          method
-         name null
+         name "PlayState:returnToGame"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 3
          localcount 1
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
@@ -781,7 +784,7 @@ package
          pushint 2130706432
          pushdouble 0.34
          callpropvoid QName(PackageNamespace(""),"start"), 2
-         findproperty QName(PackageNamespace(""),"realState")
+         findpropstrict QName(PackageNamespace(""),"realState")
          getlex QName(PackageNamespace(""),"STATE_GAME")
          setproperty QName(PackageNamespace(""),"realState")
          returnvoid
@@ -796,14 +799,14 @@ package
          flag FINAL
          dispid 15
          method
-         name null
+         name "PlayState:addTitleScreen"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 1
          localcount 1
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
@@ -820,30 +823,32 @@ package
          flag FINAL
          dispid 16
          method
-         name null
+         name "PlayState:setup"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 3
          localcount 2
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
-         findproperty QName(PackageNamespace(""),"config")
+         debug 1, "_loc1_", 0, 282
+         findpropstrict QName(PackageNamespace(""),"config")
          findpropstrict QName(PackageNamespace(""),"Configurable")
          constructprop QName(PackageNamespace(""),"Configurable"), 0
          setproperty QName(PackageNamespace(""),"config")
          getlex QName(PackageNamespace(""),"saveData")
-         iftrue ofs0
-         findproperty QName(PackageNamespace(""),"saveData")
+         not
+         iffalse ofs0
+         findpropstrict QName(PackageNamespace(""),"saveData")
          findpropstrict QName(PackageNamespace(""),"SaveData")
          constructprop QName(PackageNamespace(""),"SaveData"), 0
          setproperty QName(PackageNamespace(""),"saveData")
          ofs0:
-         findproperty QName(PackageNamespace(""),"bossesKilled")
+         findpropstrict QName(PackageNamespace(""),"bossesKilled")
          findpropstrict QName(PackageNamespace(""),"Array")
          constructprop QName(PackageNamespace(""),"Array"), 0
          setproperty QName(PackageNamespace(""),"bossesKilled")
@@ -855,7 +860,7 @@ package
          getlex QName(PackageNamespace(""),"bossesKilled")
          getlocal1
          pushfalse
-         setproperty MultinameL([PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         setproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":PlayState"),ProtectedNamespace(":PlayState"),StaticProtectedNs(":PlayState"),PrivateNamespace("PlayState.as$15")])
          inclocal_i 1
          ofs1:
          getlocal1
@@ -865,139 +870,140 @@ package
          findpropstrict QName(PackageNamespace("org.flixel"),"FlxGroup")
          constructprop QName(PackageNamespace("org.flixel"),"FlxGroup"), 0
          setproperty QName(PackageNamespace(""),"defaultGroup")
-         getlex QName(PackageNamespace(""),"PlayState")
+         getglobalscope
+         getslot 1
          getproperty QName(PackageNamespace(""),"saveData")
          callpropvoid QName(PackageNamespace(""),"loadAll"), 0
-         findproperty QName(PackageNamespace(""),"worldMap")
+         findpropstrict QName(PackageNamespace(""),"worldMap")
          findpropstrict QName(PackageNamespace(""),"WorldMap")
          constructprop QName(PackageNamespace(""),"WorldMap"), 0
          setproperty QName(PackageNamespace(""),"worldMap")
-         findproperty QName(PackageNamespace(""),"dialogue")
+         findpropstrict QName(PackageNamespace(""),"dialogue")
          findpropstrict QName(PackageNamespace(""),"Dialogue")
          constructprop QName(PackageNamespace(""),"Dialogue"), 0
          setproperty QName(PackageNamespace(""),"dialogue")
-         findproperty QName(PackageNamespace(""),"hud")
+         findpropstrict QName(PackageNamespace(""),"hud")
          findpropstrict QName(PackageNamespace(""),"Hud")
          constructprop QName(PackageNamespace(""),"Hud"), 0
          setproperty QName(PackageNamespace(""),"hud")
-         findproperty QName(PackageNamespace(""),"items")
+         findpropstrict QName(PackageNamespace(""),"items")
          findpropstrict QName(PackageNamespace("org.flixel"),"FlxGroup")
          constructprop QName(PackageNamespace("org.flixel"),"FlxGroup"), 0
          setproperty QName(PackageNamespace(""),"items")
-         findproperty QName(PackageNamespace(""),"solidItems")
+         findpropstrict QName(PackageNamespace(""),"solidItems")
          findpropstrict QName(PackageNamespace("org.flixel"),"FlxGroup")
          constructprop QName(PackageNamespace("org.flixel"),"FlxGroup"), 0
          setproperty QName(PackageNamespace(""),"solidItems")
-         findproperty QName(PackageNamespace(""),"enemies")
+         findpropstrict QName(PackageNamespace(""),"enemies")
          findpropstrict QName(PackageNamespace("org.flixel"),"FlxGroup")
          constructprop QName(PackageNamespace("org.flixel"),"FlxGroup"), 0
          setproperty QName(PackageNamespace(""),"enemies")
-         findproperty QName(PackageNamespace(""),"bubbles")
+         findpropstrict QName(PackageNamespace(""),"bubbles")
          findpropstrict QName(PackageNamespace("org.flixel"),"FlxGroup")
          constructprop QName(PackageNamespace("org.flixel"),"FlxGroup"), 0
          setproperty QName(PackageNamespace(""),"bubbles")
-         findproperty QName(PackageNamespace(""),"enemiesNoCollide")
+         findpropstrict QName(PackageNamespace(""),"enemiesNoCollide")
          findpropstrict QName(PackageNamespace("org.flixel"),"FlxGroup")
          constructprop QName(PackageNamespace("org.flixel"),"FlxGroup"), 0
          setproperty QName(PackageNamespace(""),"enemiesNoCollide")
-         findproperty QName(PackageNamespace(""),"npcs")
+         findpropstrict QName(PackageNamespace(""),"npcs")
          findpropstrict QName(PackageNamespace("org.flixel"),"FlxGroup")
          constructprop QName(PackageNamespace("org.flixel"),"FlxGroup"), 0
          setproperty QName(PackageNamespace(""),"npcs")
-         findproperty QName(PackageNamespace(""),"sprites")
+         findpropstrict QName(PackageNamespace(""),"sprites")
          findpropstrict QName(PackageNamespace("org.flixel"),"FlxGroup")
          constructprop QName(PackageNamespace("org.flixel"),"FlxGroup"), 0
          setproperty QName(PackageNamespace(""),"sprites")
-         findproperty QName(PackageNamespace(""),"starLayer")
+         findpropstrict QName(PackageNamespace(""),"starLayer")
          findpropstrict QName(PackageNamespace(""),"StarLayer")
          constructprop QName(PackageNamespace(""),"StarLayer"), 0
          setproperty QName(PackageNamespace(""),"starLayer")
-         findproperty QName(PackageNamespace(""),"snowLayer")
+         findpropstrict QName(PackageNamespace(""),"snowLayer")
          findpropstrict QName(PackageNamespace(""),"SnowLayer")
          constructprop QName(PackageNamespace(""),"SnowLayer"), 0
          setproperty QName(PackageNamespace(""),"snowLayer")
-         findproperty QName(PackageNamespace(""),"emitters")
+         findpropstrict QName(PackageNamespace(""),"emitters")
          findpropstrict QName(PackageNamespace("org.flixel"),"FlxGroup")
          constructprop QName(PackageNamespace("org.flixel"),"FlxGroup"), 0
          setproperty QName(PackageNamespace(""),"emitters")
-         findproperty QName(PackageNamespace(""),"damageNumberPool")
+         findpropstrict QName(PackageNamespace(""),"damageNumberPool")
          findpropstrict QName(PackageNamespace(""),"DamageNumberPool")
          constructprop QName(PackageNamespace(""),"DamageNumberPool"), 0
          setproperty QName(PackageNamespace(""),"damageNumberPool")
-         findproperty QName(PackageNamespace(""),"playerBulletGroups")
+         findpropstrict QName(PackageNamespace(""),"playerBulletGroups")
          findpropstrict QName(PackageNamespace(""),"PlayerBulletGroups")
          constructprop QName(PackageNamespace(""),"PlayerBulletGroups"), 0
          setproperty QName(PackageNamespace(""),"playerBulletGroups")
-         findproperty QName(PackageNamespace(""),"boss4BulletGroups")
+         findpropstrict QName(PackageNamespace(""),"boss4BulletGroups")
          findpropstrict QName(PackageNamespace(""),"Boss4BulletGroups")
          constructprop QName(PackageNamespace(""),"Boss4BulletGroups"), 0
          setproperty QName(PackageNamespace(""),"boss4BulletGroups")
-         findproperty QName(PackageNamespace(""),"boss4SecondFormBulletGroups")
+         findpropstrict QName(PackageNamespace(""),"boss4SecondFormBulletGroups")
          findpropstrict QName(PackageNamespace(""),"Boss4SecondFormBulletGroups")
          constructprop QName(PackageNamespace(""),"Boss4SecondFormBulletGroups"), 0
          setproperty QName(PackageNamespace(""),"boss4SecondFormBulletGroups")
-         findproperty QName(PackageNamespace(""),"enemyBulletPool")
+         findpropstrict QName(PackageNamespace(""),"enemyBulletPool")
          findpropstrict QName(PackageNamespace(""),"EnemyBulletPool")
          constructprop QName(PackageNamespace(""),"EnemyBulletPool"), 0
          setproperty QName(PackageNamespace(""),"enemyBulletPool")
-         findproperty QName(PackageNamespace(""),"player")
+         findpropstrict QName(PackageNamespace(""),"player")
          findpropstrict QName(PackageNamespace(""),"Player")
          getlex QName(PackageNamespace(""),"playerBulletGroups")
          constructprop QName(PackageNamespace(""),"Player"), 1
          setproperty QName(PackageNamespace(""),"player")
-         findproperty QName(PackageNamespace(""),"itemRateHud")
+         findpropstrict QName(PackageNamespace(""),"itemRateHud")
          findpropstrict QName(PackageNamespace(""),"ItemRateHud")
          constructprop QName(PackageNamespace(""),"ItemRateHud"), 0
          setproperty QName(PackageNamespace(""),"itemRateHud")
-         findproperty QName(PackageNamespace(""),"controlHelp")
+         findpropstrict QName(PackageNamespace(""),"controlHelp")
          findpropstrict QName(PackageNamespace(""),"ControlHelp")
          constructprop QName(PackageNamespace(""),"ControlHelp"), 0
          setproperty QName(PackageNamespace(""),"controlHelp")
-         findproperty QName(PackageNamespace(""),"explosionPool")
+         findpropstrict QName(PackageNamespace(""),"explosionPool")
          findpropstrict QName(PackageNamespace(""),"ExplosionPool")
          constructprop QName(PackageNamespace(""),"ExplosionPool"), 0
          setproperty QName(PackageNamespace(""),"explosionPool")
-         findproperty QName(PackageNamespace(""),"miniMap")
+         findpropstrict QName(PackageNamespace(""),"miniMap")
          findpropstrict QName(PackageNamespace(""),"MiniMap")
          constructprop QName(PackageNamespace(""),"MiniMap"), 0
          setproperty QName(PackageNamespace(""),"miniMap")
-         findproperty QName(PackageNamespace(""),"fixBlocks")
+         findpropstrict QName(PackageNamespace(""),"fixBlocks")
          findpropstrict QName(PackageNamespace(""),"FixBlocks")
          constructprop QName(PackageNamespace(""),"FixBlocks"), 0
          setproperty QName(PackageNamespace(""),"fixBlocks")
-         findproperty QName(PackageNamespace(""),"uniqueBlocks")
+         findpropstrict QName(PackageNamespace(""),"uniqueBlocks")
          findpropstrict QName(PackageNamespace(""),"UniqueBlocks")
          constructprop QName(PackageNamespace(""),"UniqueBlocks"), 0
          setproperty QName(PackageNamespace(""),"uniqueBlocks")
-         findproperty QName(PackageNamespace(""),"aiTriggerPool")
+         findpropstrict QName(PackageNamespace(""),"aiTriggerPool")
          findpropstrict QName(PackageNamespace(""),"AiTriggerPool")
          constructprop QName(PackageNamespace(""),"AiTriggerPool"), 0
          setproperty QName(PackageNamespace(""),"aiTriggerPool")
-         findproperty QName(PackageNamespace(""),"bossRushTimer")
+         findpropstrict QName(PackageNamespace(""),"bossRushTimer")
          findpropstrict QName(PackageNamespace(""),"BossRushTimer")
          constructprop QName(PackageNamespace(""),"BossRushTimer"), 0
          setproperty QName(PackageNamespace(""),"bossRushTimer")
-         findproperty QName(PackageNamespace(""),"savingText")
+         findpropstrict QName(PackageNamespace(""),"savingText")
          findpropstrict QName(PackageNamespace(""),"SavingText")
          constructprop QName(PackageNamespace(""),"SavingText"), 0
          setproperty QName(PackageNamespace(""),"savingText")
-         findproperty QName(PackageNamespace(""),"gameTimeDisplay")
+         findpropstrict QName(PackageNamespace(""),"gameTimeDisplay")
          findpropstrict QName(PackageNamespace(""),"GameTimeDisplay")
          constructprop QName(PackageNamespace(""),"GameTimeDisplay"), 0
          setproperty QName(PackageNamespace(""),"gameTimeDisplay")
-         findproperty QName(PackageNamespace(""),"zzz")
+         findpropstrict QName(PackageNamespace(""),"zzz")
          findpropstrict QName(PackageNamespace(""),"Zzz")
          constructprop QName(PackageNamespace(""),"Zzz"), 0
          setproperty QName(PackageNamespace(""),"zzz")
-         findproperty QName(PackageNamespace(""),"bossBgLayer")
+         findpropstrict QName(PackageNamespace(""),"bossBgLayer")
          findpropstrict QName(PackageNamespace("org.flixel"),"FlxGroup")
          constructprop QName(PackageNamespace("org.flixel"),"FlxGroup"), 0
          setproperty QName(PackageNamespace(""),"bossBgLayer")
-         findproperty QName(PackageNamespace(""),"doors")
+         findpropstrict QName(PackageNamespace(""),"doors")
          findpropstrict QName(PackageNamespace(""),"Array")
          constructprop QName(PackageNamespace(""),"Array"), 0
          setproperty QName(PackageNamespace(""),"doors")
-         findproperty QName(PackageNamespace(""),"menuHideable")
+         findpropstrict QName(PackageNamespace(""),"menuHideable")
          findpropstrict QName(PackageNamespace("org.flixel"),"FlxGroup")
          constructprop QName(PackageNamespace("org.flixel"),"FlxGroup"), 0
          setproperty QName(PackageNamespace(""),"menuHideable")
@@ -1078,7 +1084,8 @@ package
          getlex QName(PackageNamespace(""),"menuHideable")
          callpropvoid QName(PackageNamespace(""),"add"), 1
          getlex QName(PackageNamespace(""),"bossRush")
-         iftrue ofs3
+         not
+         iffalse ofs3
          getlex QName(PackageNamespace(""),"menuHideable")
          getlex QName(PackageNamespace(""),"miniMap")
          callpropvoid QName(PackageNamespace(""),"add"), 1
@@ -1110,7 +1117,8 @@ package
          getlex QName(PackageNamespace(""),"savingText")
          callpropvoid QName(PackageNamespace(""),"add"), 1
          getlex QName(PackageNamespace(""),"bossRush")
-         iftrue ofs5
+         not
+         iffalse ofs5
          getlex QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"hasSeenHelp")
          not
@@ -1151,7 +1159,7 @@ package
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"mouse")
          callpropvoid QName(PackageNamespace(""),"hide"), 0
-         findproperty QName(PackageNamespace(""),"hasJumped")
+         findpropstrict QName(PackageNamespace(""),"hasJumped")
          pushfalse
          setproperty QName(PackageNamespace(""),"hasJumped")
          returnvoid
@@ -1166,22 +1174,23 @@ package
          flag FINAL
          dispid 17
          method
-         name null
+         name "PlayState:isBossDead"
          param QName(PackageNamespace(""),"int")
          returns QName(PackageNamespace(""),"Boolean")
          
          body
          maxstack 2
          localcount 2
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
          getlex QName(PackageNamespace(""),"bossesKilled")
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":PlayState"),ProtectedNamespace(":PlayState"),StaticProtectedNs(":PlayState"),PrivateNamespace("PlayState.as$15")])
          returnvalue
          end ; code
          end ; body
@@ -1194,23 +1203,24 @@ package
          flag FINAL
          dispid 18
          method
-         name null
+         name "PlayState:setBossDead"
          param QName(PackageNamespace(""),"int")
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 3
          localcount 2
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
          getlex QName(PackageNamespace(""),"bossesKilled")
          getlocal1
          pushtrue
-         setproperty MultinameL([PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         setproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":PlayState"),ProtectedNamespace(":PlayState"),StaticProtectedNs(":PlayState"),PrivateNamespace("PlayState.as$15")])
          returnvoid
          end ; code
          end ; body
@@ -1223,35 +1233,40 @@ package
          flag FINAL
          dispid 19
          method
-         name null
+         name "PlayState:triggerEnding"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 3
          localcount 2
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
-         getlex QName(PackageNamespace(""),"PlayState")
+         debug 1, "_loc1_", 0, 396
+         getglobalscope
+         getslot 1
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"clearTime")
-         getlex QName(PackageNamespace(""),"PlayState")
+         getglobalscope
+         getslot 1
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"gameTime")
          getproperty QName(PackageNamespace(""),"value")
          setproperty QName(PackageNamespace(""),"value")
          pushbyte 1
          setlocal1
-         getlex QName(PackageNamespace(""),"PlayState")
+         getglobalscope
+         getslot 1
          getproperty QName(PackageNamespace(""),"bossRush")
          iffalse ofs0
          pushbyte 2
          setlocal1
          ofs0:
-         getlex QName(PackageNamespace(""),"PlayState")
+         getglobalscope
+         getslot 1
          getproperty QName(PackageNamespace(""),"player")
          callproperty QName(PackageNamespace(""),"getPercentComplete"), 0
          pushbyte 100
@@ -1259,7 +1274,8 @@ package
          pushbyte 3
          setlocal1
          ofs1:
-         getlex QName(PackageNamespace(""),"PlayState")
+         getglobalscope
+         getslot 1
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"gameTime")
          getproperty QName(PackageNamespace(""),"value")
@@ -1272,21 +1288,24 @@ package
          pushbyte 4
          setlocal1
          ofs2:
-         getlex QName(PackageNamespace(""),"PlayState")
+         getglobalscope
+         getslot 1
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"_hardMode")
          iffalse ofs3
          pushbyte 5
          setlocal1
          ofs3:
-         getlex QName(PackageNamespace(""),"PlayState")
+         getglobalscope
+         getslot 1
          getproperty QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"_easyMode")
          iffalse ofs4
          pushbyte 1
          setlocal1
          ofs4:
-         getlex QName(PackageNamespace(""),"PlayState")
+         getglobalscope
+         getslot 1
          getlocal1
          callpropvoid QName(PackageNamespace(""),"startEnding"), 1
          returnvoid
@@ -1301,39 +1320,43 @@ package
          flag FINAL
          dispid 20
          method
-         name null
+         name "PlayState:totalItemsInArea"
          returns QName(PackageNamespace(""),"int")
          
          body
          maxstack 6
          localcount 4
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
+         debug 1, "_loc1_", 0, 423
+         debug 1, "_loc2_", 1, 428
+         debug 1, "_loc3_", 2, 429
          getlex QName(PackageNamespace(""),"area")
-         convert_i
+         coerce_a
          setlocal1
          getlocal1
          pushbyte 6
          ifnge ofs0
          pushbyte 5
+         coerce_a
          setlocal1
          ofs0:
-         pushbyte 9
+         pushbyte 8
          pushbyte 12
          pushbyte 10
          pushbyte 11
-         pushbyte 8
+         pushbyte 9
          pushbyte 1
          newarray 6
          coerce QName(PackageNamespace(""),"Array")
          setlocal2
          getlocal2
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":PlayState"),ProtectedNamespace(":PlayState"),StaticProtectedNs(":PlayState"),PrivateNamespace("PlayState.as$15")])
          convert_i
          setlocal3
          getlocal1
@@ -1344,12 +1367,9 @@ package
          pop
          getlex QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"_slugMode")
-         convert_b
          ofs1:
          iffalse ofs2
-         getlocal3
-         decrement_i
-         setlocal3
+         declocal_i 3
          ofs2:
          getlocal3
          returnvalue
@@ -1364,7 +1384,7 @@ package
          flag FINAL
          dispid 21
          method
-         name null
+         name "PlayState:numOfItemsAt"
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"int")
          returns QName(PackageNamespace(""),"int")
@@ -1372,12 +1392,14 @@ package
          body
          maxstack 3
          localcount 3
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
          getlocal1
          pushshort 476
          equals
@@ -1393,18 +1415,20 @@ package
          pop
          getlex QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"_slugMode")
-         convert_b
          ofs1:
          iffalse ofs2
          pushbyte 0
          returnvalue
          ofs2:
-         getlex QName(PackageNamespace(""),"PlayState")
+         getglobalscope
+         getslot 1
          getproperty QName(PackageNamespace(""),"worldMap")
          getproperty QName(PackageNamespace(""),"spmap")
          getlocal1
          getlocal2
          callproperty QName(PackageNamespace(""),"getTile"), 2
+         not
+         not
          iffalse ofs3
          pushbyte 1
          jump ofs4
@@ -1423,14 +1447,14 @@ package
          flag FINAL
          dispid 22
          method
-         name null
+         name "PlayState:gottenItemsInArea"
          returns QName(PackageNamespace(""),"int")
          
          body
          maxstack 2
          localcount 1
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
@@ -1452,25 +1476,28 @@ package
          flag FINAL
          dispid 23
          method
-         name null
+         name "PlayState:remainingItemsInArea"
          returns QName(PackageNamespace(""),"int")
          
          body
          maxstack 4
          localcount 4
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
+         debug 1, "_loc1_", 0, 453
+         debug 1, "_loc2_", 1, 458
          getlex QName(PackageNamespace(""),"area")
-         convert_i
+         coerce_a
          setlocal1
          getlocal1
          pushbyte 6
          ifnge ofs0
          pushbyte 5
+         coerce_a
          setlocal1
          ofs0:
          pushbyte 0
@@ -1490,14 +1517,6 @@ package
          findpropstrict QName(PackageNamespace(""),"numOfItemsAt")
          pushshort 332
          pushbyte 125
-         callproperty QName(PackageNamespace(""),"numOfItemsAt"), 2
-         add
-         convert_i
-         setlocal2
-         getlocal2
-         findpropstrict QName(PackageNamespace(""),"numOfItemsAt")
-         pushshort 237
-         pushshort 150
          callproperty QName(PackageNamespace(""),"numOfItemsAt"), 2
          add
          convert_i
@@ -1890,6 +1909,14 @@ package
          add
          convert_i
          setlocal2
+         getlocal2
+         findpropstrict QName(PackageNamespace(""),"numOfItemsAt")
+         pushshort 134
+         pushbyte 6
+         callproperty QName(PackageNamespace(""),"numOfItemsAt"), 2
+         add
+         convert_i
+         setlocal2
          jump ofs3
          ofs8:
          label
@@ -1901,7 +1928,6 @@ package
          add
          convert_i
          setlocal2
-         jump ofs3
          ofs9:
          label
          jump ofs3
@@ -1945,13 +1971,13 @@ package
          jump ofs11
          ofs16:
          jump ofs17
-         pushbyte 6
+         pushbyte -1
          jump ofs17
          ofs17:
-         pushbyte 6
+         pushbyte -1
          ofs11:
          kill 3
-         lookupswitch ofs9, [ofs2, ofs4, ofs5, ofs6, ofs7, ofs8, ofs9]
+         lookupswitch ofs9, [ofs2, ofs4, ofs5, ofs6, ofs7, ofs8]
          ofs3:
          getlocal2
          returnvalue
@@ -1966,19 +1992,21 @@ package
          flag FINAL
          dispid 24
          method
-         name null
+         name "PlayState:setArea"
          param QName(PackageNamespace(""),"int")
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 8
          localcount 4
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "_loc2_", 1, 574
          jump ofs0
          ofs1:
          label
@@ -2019,7 +2047,6 @@ package
          label
          getlex QName(PackageNamespace(""),"Music")
          callpropvoid QName(PackageNamespace(""),"playBoss1"), 0
-         jump ofs2
          ofs10:
          label
          jump ofs2
@@ -2075,13 +2102,13 @@ package
          jump ofs12
          ofs19:
          jump ofs20
-         pushbyte 8
+         pushbyte -1
          jump ofs20
          ofs20:
-         pushbyte 8
+         pushbyte -1
          ofs12:
          kill 3
-         lookupswitch ofs10, [ofs1, ofs3, ofs4, ofs5, ofs6, ofs7, ofs8, ofs9, ofs10]
+         lookupswitch ofs10, [ofs1, ofs3, ofs4, ofs5, ofs6, ofs7, ofs8, ofs9]
          ofs2:
          getlocal1
          pushbyte 6
@@ -2094,8 +2121,8 @@ package
          findpropstrict QName(PackageNamespace(""),"isBossDead")
          pushbyte 4
          callproperty QName(PackageNamespace(""),"isBossDead"), 1
-         convert_b
          dup
+         convert_b
          iffalse ofs22
          pop
          getlex QName(PackageNamespace(""),"hasGoodEnding")
@@ -2126,7 +2153,6 @@ package
          ofs24:
          getlex QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"hasSeenIsis")
-         convert_b
          dup
          iffalse ofs25
          pop
@@ -2137,7 +2163,7 @@ package
          iffalse ofs26
          returnvoid
          ofs26:
-         findproperty QName(PackageNamespace(""),"area")
+         findpropstrict QName(PackageNamespace(""),"area")
          getlocal1
          setproperty QName(PackageNamespace(""),"area")
          pushstring "SNAIL TOWN"
@@ -2155,7 +2181,7 @@ package
          getproperty QName(PackageNamespace(""),"areaName")
          getlocal2
          getlex QName(PackageNamespace(""),"area")
-         getproperty MultinameL([PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":PlayState"),ProtectedNamespace(":PlayState"),StaticProtectedNs(":PlayState"),PrivateNamespace("PlayState.as$15")])
          callpropvoid QName(PackageNamespace(""),"setArea"), 1
          getlex QName(PackageNamespace(""),"hud")
          getproperty QName(PackageNamespace(""),"radar")
@@ -2172,7 +2198,7 @@ package
          flag FINAL
          dispid 25
          method
-         name null
+         name "PlayState:showBossName"
          flag HAS_OPTIONAL
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"Boolean")
@@ -2182,12 +2208,16 @@ package
          body
          maxstack 5
          localcount 5
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "_loc3_", 2, 581
+         debug 1, "_loc4_", 3, 582
          pushstring "there is no boss #0"
          pushstring "SHELLBREAKER"
          pushstring "STOMPY"
@@ -2198,21 +2228,20 @@ package
          setlocal3
          getlocal3
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":PlayState"),ProtectedNamespace(":PlayState"),StaticProtectedNs(":PlayState"),PrivateNamespace("PlayState.as$15")])
          getlocal2
+         not
+         not
          iffalse ofs0
          pushstring " DEFEATED!"
-         coerce_a
          jump ofs1
          ofs0:
          pushstring ""
-         coerce_a
          ofs1:
          add
-         coerce_s
+         coerce_a
          setlocal 4
          getlocal2
-         convert_b
          dup
          iffalse ofs2
          pop
@@ -2256,7 +2285,7 @@ package
          callproperty QName(PackageNamespace(""),"formatExact"), 1
          add
          add
-         coerce_s
+         coerce_a
          setlocal 4
          getlex QName(PackageNamespace(""),"player")
          pushtrue
@@ -2291,7 +2320,7 @@ package
          getproperty QName(PackageNamespace(""),"value")
          setproperty QName(PackageNamespace(""),"value")
          getlocal 4
-         pushstring "\nNEW BEST TIME - SLUG MODE "
+         pushstring "\nNEW BEST TIME - PAPER MODE "
          getlex QName(PackageNamespace(""),"GameTimeDisplay")
          getlex QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"bestHardTime")
@@ -2299,7 +2328,7 @@ package
          callproperty QName(PackageNamespace(""),"formatExact"), 1
          add
          add
-         coerce_s
+         coerce_a
          setlocal 4
          ofs9:
          getlex QName(PackageNamespace(""),"player")
@@ -2342,7 +2371,7 @@ package
          callproperty QName(PackageNamespace(""),"formatExact"), 1
          add
          add
-         coerce_s
+         coerce_a
          setlocal 4
          ofs12:
          jump ofs3
@@ -2354,15 +2383,15 @@ package
          getproperty QName(PackageNamespace(""),"areaName")
          getlocal3
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":PlayState"),ProtectedNamespace(":PlayState"),StaticProtectedNs(":PlayState"),PrivateNamespace("PlayState.as$15")])
          getlocal2
+         not
+         not
          iffalse ofs14
          pushstring " DEFEATED!"
-         coerce_a
          jump ofs15
          ofs14:
          pushstring ""
-         coerce_a
          ofs15:
          add
          callpropvoid QName(PackageNamespace(""),"setArea"), 1
@@ -2400,7 +2429,7 @@ package
          callproperty QName(PackageNamespace(""),"formatExact"), 1
          add
          add
-         coerce_s
+         coerce_a
          setlocal 4
          ofs17:
          getlex QName(PackageNamespace(""),"player")
@@ -2443,15 +2472,17 @@ package
          callproperty QName(PackageNamespace(""),"formatExact"), 1
          add
          add
-         coerce_s
+         coerce_a
          setlocal 4
          ofs20:
          getlex QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"hasWonGame")
-         iftrue ofs3
+         not
+         iffalse ofs3
          getlocal 4
          pushstring "\nBOSS RUSH UNLOCKED!"
          add
+         coerce_a
          setlocal 4
          getlex QName(PackageNamespace(""),"player")
          pushtrue
@@ -2473,7 +2504,7 @@ package
          flag FINAL
          dispid 26
          method
-         name null
+         name "PlayState:showBossRushName"
          flag HAS_OPTIONAL
          param QName(PackageNamespace(""),"int")
          param QName(PackageNamespace(""),"Boolean")
@@ -2483,12 +2514,15 @@ package
          body
          maxstack 5
          localcount 4
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "_loc3_", 2, 635
          pushstring "there is no boss #0"
          pushstring "SUPER SHELLBREAKER"
          pushstring "VIS VIRES"
@@ -2501,15 +2535,15 @@ package
          getproperty QName(PackageNamespace(""),"areaName")
          getlocal3
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":PlayState"),ProtectedNamespace(":PlayState"),StaticProtectedNs(":PlayState"),PrivateNamespace("PlayState.as$15")])
          getlocal2
+         not
+         not
          iffalse ofs0
          pushstring " DEFEATED!"
-         coerce_a
          jump ofs1
          ofs0:
          pushstring ""
-         coerce_a
          ofs1:
          add
          callpropvoid QName(PackageNamespace(""),"setArea"), 1
@@ -2525,25 +2559,27 @@ package
          flag FINAL
          dispid 27
          method
-         name null
+         name "PlayState:bossRushComplete"
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 3
+         maxstack 4
          localcount 2
-         initscopedepth 9
-         maxscopedepth 10
+         initscopedepth 10
+         maxscopedepth 11
          
          code
          getlocal0
          pushscope
+         debug 1, "_loc1_", 0, 642
          getlex QName(PackageNamespace(""),"player")
          getlex QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"x")
          pushbyte 60
          subtract
          setproperty QName(PackageNamespace(""),"x")
-         getlex QName(PackageNamespace(""),"PlayState")
+         getglobalscope
+         getslot 1
          getproperty QName(PackageNamespace(""),"saveData")
          coerce QName(PackageNamespace(""),"SaveData")
          setlocal1
@@ -2552,26 +2588,29 @@ package
          getlocal1
          pushstring "hasWonBossRush"
          callproperty QName(PackageNamespace(""),"isVarTrue"), 1
-         iftrue ofs0
+         not
+         iffalse ofs0
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
-         deleteproperty Multiname("hasWonBossRush",[PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":PlayState"),ProtectedNamespace(":PlayState"),StaticProtectedNs(":PlayState"),PrivateNamespace("PlayState.as$15")])
+         deleteproperty Multiname("hasWonBossRush",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":PlayState"),ProtectedNamespace(":PlayState"),StaticProtectedNs(":PlayState"),PrivateNamespace("PlayState.as$15")])
          pop
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":PlayState"),ProtectedNamespace(":PlayState"),StaticProtectedNs(":PlayState"),PrivateNamespace("PlayState.as$15")])
          getlex QName(PackageNamespace(""),"XML")
-         pushstring "<hasWonBossRush>true</hasWonBossRush>"
+         pushstring "<hasWonBossRush"
+         pushstring ">true</hasWonBossRush>"
+         add
          construct 1
-         callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")]), 1
+         callpropvoid Multiname("appendChild",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":PlayState"),ProtectedNamespace(":PlayState"),StaticProtectedNs(":PlayState"),PrivateNamespace("PlayState.as$15")]), 1
          getlex QName(PackageNamespace(""),"hud")
          getproperty QName(PackageNamespace(""),"areaName")
          pushstring "BOSS RUSH COMPLETE - "
          getlex QName(PackageNamespace(""),"bossRushTimer")
          callproperty QName(PackageNamespace(""),"getTimeExact"), 0
          add
-         pushstring "\nSLUG MODE UNLOCKED!"
+         pushstring "\nPAPER SHELL MODE UNLOCKED!"
          add
          callpropvoid QName(PackageNamespace(""),"setArea"), 1
          getlex QName(PackageNamespace(""),"hud")
@@ -2590,8 +2629,8 @@ package
          ofs1:
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
-         getproperty Multiname("bestBossRushTime",[PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":PlayState"),ProtectedNamespace(":PlayState"),StaticProtectedNs(":PlayState"),PrivateNamespace("PlayState.as$15")])
+         getproperty Multiname("bestBossRushTime",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":PlayState"),ProtectedNamespace(":PlayState"),StaticProtectedNs(":PlayState"),PrivateNamespace("PlayState.as$15")])
          pushbyte 0
          equals
          dup
@@ -2599,9 +2638,10 @@ package
          pop
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
-         getproperty Multiname("bestBossRushTime",[PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
-         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty Multiname("vars",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":PlayState"),ProtectedNamespace(":PlayState"),StaticProtectedNs(":PlayState"),PrivateNamespace("PlayState.as$15")])
+         getproperty Multiname("bestBossRushTime",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":PlayState"),ProtectedNamespace(":PlayState"),StaticProtectedNs(":PlayState"),PrivateNamespace("PlayState.as$15")])
+         getglobalscope
+         getslot 1
          getproperty QName(PackageNamespace(""),"bossRushTimer")
          getproperty QName(PackageNamespace(""),"now")
          getproperty QName(PackageNamespace(""),"value")
@@ -2610,16 +2650,18 @@ package
          iffalse ofs3
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
-         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty Multiname("vars",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":PlayState"),ProtectedNamespace(":PlayState"),StaticProtectedNs(":PlayState"),PrivateNamespace("PlayState.as$15")])
+         getglobalscope
+         getslot 1
          getproperty QName(PackageNamespace(""),"bossRushTimer")
          getproperty QName(PackageNamespace(""),"now")
          getproperty QName(PackageNamespace(""),"value")
-         setproperty Multiname("bestBossRushTime",[PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         setproperty Multiname("bestBossRushTime",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":PlayState"),ProtectedNamespace(":PlayState"),StaticProtectedNs(":PlayState"),PrivateNamespace("PlayState.as$15")])
          ofs3:
          getlocal1
          callpropvoid QName(PackageNamespace(""),"saveAll"), 0
-         getlex QName(PackageNamespace(""),"PlayState")
+         getglobalscope
+         getslot 1
          pushtrue
          setproperty QName(PackageNamespace(""),"isBossRushComplete")
          returnvoid
@@ -2634,127 +2676,127 @@ package
          flag OVERRIDE
          dispid 0
          method
-         name null
+         name "PlayState:destroy"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 2
          localcount 1
-         initscopedepth 10
-         maxscopedepth 11
+         initscopedepth 11
+         maxscopedepth 12
          
          code
          getlocal0
          pushscope
-         findproperty QName(PackageNamespace(""),"aiTriggerPool")
+         findpropstrict QName(PackageNamespace(""),"aiTriggerPool")
          pushnull
          setproperty QName(PackageNamespace(""),"aiTriggerPool")
-         findproperty QName(PackageNamespace(""),"boss2")
+         findpropstrict QName(PackageNamespace(""),"boss2")
          pushnull
          setproperty QName(PackageNamespace(""),"boss2")
-         findproperty QName(PackageNamespace(""),"boss2rush")
+         findpropstrict QName(PackageNamespace(""),"boss2rush")
          pushnull
          setproperty QName(PackageNamespace(""),"boss2rush")
-         findproperty QName(PackageNamespace(""),"boss4BulletGroups")
+         findpropstrict QName(PackageNamespace(""),"boss4BulletGroups")
          pushnull
          setproperty QName(PackageNamespace(""),"boss4BulletGroups")
-         findproperty QName(PackageNamespace(""),"boss4SecondFormBulletGroups")
+         findpropstrict QName(PackageNamespace(""),"boss4SecondFormBulletGroups")
          pushnull
          setproperty QName(PackageNamespace(""),"boss4SecondFormBulletGroups")
-         findproperty QName(PackageNamespace(""),"bossBgLayer")
+         findpropstrict QName(PackageNamespace(""),"bossBgLayer")
          pushnull
          setproperty QName(PackageNamespace(""),"bossBgLayer")
-         findproperty QName(PackageNamespace(""),"bossRushTimer")
+         findpropstrict QName(PackageNamespace(""),"bossRushTimer")
          pushnull
          setproperty QName(PackageNamespace(""),"bossRushTimer")
-         findproperty QName(PackageNamespace(""),"bossesKilled")
+         findpropstrict QName(PackageNamespace(""),"bossesKilled")
          pushnull
          setproperty QName(PackageNamespace(""),"bossesKilled")
-         findproperty QName(PackageNamespace(""),"controlHelp")
+         findpropstrict QName(PackageNamespace(""),"controlHelp")
          pushnull
          setproperty QName(PackageNamespace(""),"controlHelp")
-         findproperty QName(PackageNamespace(""),"dialogue")
+         findpropstrict QName(PackageNamespace(""),"dialogue")
          pushnull
          setproperty QName(PackageNamespace(""),"dialogue")
-         findproperty QName(PackageNamespace(""),"doors")
+         findpropstrict QName(PackageNamespace(""),"doors")
          pushnull
          setproperty QName(PackageNamespace(""),"doors")
-         findproperty QName(PackageNamespace(""),"emitters")
+         findpropstrict QName(PackageNamespace(""),"emitters")
          pushnull
          setproperty QName(PackageNamespace(""),"emitters")
-         findproperty QName(PackageNamespace(""),"enemies")
+         findpropstrict QName(PackageNamespace(""),"enemies")
          pushnull
          setproperty QName(PackageNamespace(""),"enemies")
-         findproperty QName(PackageNamespace(""),"enemiesNoCollide")
+         findpropstrict QName(PackageNamespace(""),"enemiesNoCollide")
          pushnull
          setproperty QName(PackageNamespace(""),"enemiesNoCollide")
-         findproperty QName(PackageNamespace(""),"bubbles")
+         findpropstrict QName(PackageNamespace(""),"bubbles")
          pushnull
          setproperty QName(PackageNamespace(""),"bubbles")
-         findproperty QName(PackageNamespace(""),"damageNumberPool")
+         findpropstrict QName(PackageNamespace(""),"damageNumberPool")
          pushnull
          setproperty QName(PackageNamespace(""),"damageNumberPool")
-         findproperty QName(PackageNamespace(""),"enemyBulletPool")
+         findpropstrict QName(PackageNamespace(""),"enemyBulletPool")
          pushnull
          setproperty QName(PackageNamespace(""),"enemyBulletPool")
-         findproperty QName(PackageNamespace(""),"explosionPool")
+         findpropstrict QName(PackageNamespace(""),"explosionPool")
          pushnull
          setproperty QName(PackageNamespace(""),"explosionPool")
-         findproperty QName(PackageNamespace(""),"itemRateHud")
+         findpropstrict QName(PackageNamespace(""),"itemRateHud")
          pushnull
          setproperty QName(PackageNamespace(""),"itemRateHud")
-         findproperty QName(PackageNamespace(""),"hud")
+         findpropstrict QName(PackageNamespace(""),"hud")
          pushnull
          setproperty QName(PackageNamespace(""),"hud")
-         findproperty QName(PackageNamespace(""),"items")
+         findpropstrict QName(PackageNamespace(""),"items")
          pushnull
          setproperty QName(PackageNamespace(""),"items")
-         findproperty QName(PackageNamespace(""),"mainMenu")
+         findpropstrict QName(PackageNamespace(""),"mainMenu")
          pushnull
          setproperty QName(PackageNamespace(""),"mainMenu")
-         findproperty QName(PackageNamespace(""),"miniMap")
+         findpropstrict QName(PackageNamespace(""),"miniMap")
          pushnull
          setproperty QName(PackageNamespace(""),"miniMap")
-         findproperty QName(PackageNamespace(""),"npcs")
+         findpropstrict QName(PackageNamespace(""),"npcs")
          pushnull
          setproperty QName(PackageNamespace(""),"npcs")
-         findproperty QName(PackageNamespace(""),"player")
+         findpropstrict QName(PackageNamespace(""),"player")
          pushnull
          setproperty QName(PackageNamespace(""),"player")
-         findproperty QName(PackageNamespace(""),"playerBulletGroups")
+         findpropstrict QName(PackageNamespace(""),"playerBulletGroups")
          pushnull
          setproperty QName(PackageNamespace(""),"playerBulletGroups")
-         findproperty QName(PackageNamespace(""),"saveData")
+         findpropstrict QName(PackageNamespace(""),"saveData")
          pushnull
          setproperty QName(PackageNamespace(""),"saveData")
-         findproperty QName(PackageNamespace(""),"savingText")
+         findpropstrict QName(PackageNamespace(""),"savingText")
          pushnull
          setproperty QName(PackageNamespace(""),"savingText")
-         findproperty QName(PackageNamespace(""),"solidItems")
+         findpropstrict QName(PackageNamespace(""),"solidItems")
          pushnull
          setproperty QName(PackageNamespace(""),"solidItems")
-         findproperty QName(PackageNamespace(""),"sprites")
+         findpropstrict QName(PackageNamespace(""),"sprites")
          pushnull
          setproperty QName(PackageNamespace(""),"sprites")
-         findproperty QName(PackageNamespace(""),"starLayer")
+         findpropstrict QName(PackageNamespace(""),"starLayer")
          pushnull
          setproperty QName(PackageNamespace(""),"starLayer")
-         findproperty QName(PackageNamespace(""),"snowLayer")
+         findpropstrict QName(PackageNamespace(""),"snowLayer")
          pushnull
          setproperty QName(PackageNamespace(""),"snowLayer")
-         findproperty QName(PackageNamespace(""),"menuHideable")
+         findpropstrict QName(PackageNamespace(""),"menuHideable")
          pushnull
          setproperty QName(PackageNamespace(""),"menuHideable")
-         findproperty QName(PackageNamespace(""),"gameTimeDisplay")
+         findpropstrict QName(PackageNamespace(""),"gameTimeDisplay")
          pushnull
          setproperty QName(PackageNamespace(""),"gameTimeDisplay")
-         findproperty QName(PackageNamespace(""),"zzz")
+         findpropstrict QName(PackageNamespace(""),"zzz")
          pushnull
          setproperty QName(PackageNamespace(""),"zzz")
-         findproperty QName(PackageNamespace(""),"bossRush")
+         findpropstrict QName(PackageNamespace(""),"bossRush")
          pushfalse
          setproperty QName(PackageNamespace(""),"bossRush")
-         findproperty QName(PackageNamespace(""),"isBossRushComplete")
+         findpropstrict QName(PackageNamespace(""),"isBossRushComplete")
          pushfalse
          setproperty QName(PackageNamespace(""),"isBossRushComplete")
          getlex QName(PackageNamespace(""),"config")
@@ -2777,16 +2819,16 @@ package
          getlex QName(PackageNamespace(""),"fixBlocks")
          callpropvoid QName(PackageNamespace(""),"destroy"), 0
          ofs3:
-         findproperty QName(PackageNamespace(""),"config")
+         findpropstrict QName(PackageNamespace(""),"config")
          pushnull
          setproperty QName(PackageNamespace(""),"config")
-         findproperty QName(PackageNamespace(""),"uniqueBlocks")
+         findpropstrict QName(PackageNamespace(""),"uniqueBlocks")
          pushnull
          setproperty QName(PackageNamespace(""),"uniqueBlocks")
-         findproperty QName(PackageNamespace(""),"worldMap")
+         findpropstrict QName(PackageNamespace(""),"worldMap")
          pushnull
          setproperty QName(PackageNamespace(""),"worldMap")
-         findproperty QName(PackageNamespace(""),"fixBlocks")
+         findpropstrict QName(PackageNamespace(""),"fixBlocks")
          pushnull
          setproperty QName(PackageNamespace(""),"fixBlocks")
          getlocal0
@@ -2803,19 +2845,19 @@ package
          flag OVERRIDE
          dispid 0
          method
-         name null
+         name "PlayState:create"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 2
          localcount 1
-         initscopedepth 10
-         maxscopedepth 11
+         initscopedepth 11
+         maxscopedepth 12
          
          code
          getlocal0
          pushscope
-         findproperty QName(PackageNamespace(""),"This")
+         findpropstrict QName(PackageNamespace(""),"This")
          getlocal0
          setproperty QName(PackageNamespace(""),"This")
          findpropstrict QName(PackageNamespace(""),"goToMainMenu")
@@ -2832,14 +2874,14 @@ package
          flag OVERRIDE
          dispid 0
          method
-         name null
+         name "PlayState:update"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 4
          localcount 1
-         initscopedepth 10
-         maxscopedepth 11
+         initscopedepth 11
+         maxscopedepth 12
          
          code
          getlocal0
@@ -2850,8 +2892,9 @@ package
          getlex QName(PackageNamespace(""),"STATE_SPLASH")
          ifne ofs0
          getlex QName(PackageNamespace(""),"splashLayer")
-         iftrue ofs1
-         findproperty QName(PackageNamespace(""),"splashLayer")
+         not
+         iffalse ofs1
+         findpropstrict QName(PackageNamespace(""),"splashLayer")
          findpropstrict QName(PackageNamespace(""),"SplashLayer")
          constructprop QName(PackageNamespace(""),"SplashLayer"), 0
          setproperty QName(PackageNamespace(""),"splashLayer")
@@ -2863,16 +2906,16 @@ package
          getlex QName(PackageNamespace(""),"splashLayer")
          getproperty QName(PackageNamespace(""),"dead")
          iffalse ofs2
-         findproperty QName(PackageNamespace(""),"realState")
+         findpropstrict QName(PackageNamespace(""),"realState")
          getlex QName(PackageNamespace(""),"STATE_MENU")
          setproperty QName(PackageNamespace(""),"realState")
-         findproperty QName(PackageNamespace(""),"splashLayer")
+         findpropstrict QName(PackageNamespace(""),"splashLayer")
          pushnull
          setproperty QName(PackageNamespace(""),"splashLayer")
          getlex QName(PackageNamespace(""),"Preloader")
          getproperty QName(PackageNamespace(""),"bg")
          pushfalse
-         setproperty QName(PackageNamespace(""),"visible")
+         setproperty Multiname("visible",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":PlayState"),ProtectedNamespace(":PlayState"),StaticProtectedNs(":PlayState"),PrivateNamespace("PlayState.as$15")])
          ofs2:
          returnvoid
          ofs0:
@@ -2886,13 +2929,12 @@ package
          setproperty QName(PackageNamespace(""),"visible")
          ofs4:
          getlex QName(PackageNamespace(""),"mainMenu")
-         convert_b
          dup
+         convert_b
          iffalse ofs5
          pop
          getlex QName(PackageNamespace(""),"mainMenu")
          getproperty QName(PackageNamespace(""),"endingShow")
-         convert_b
          ofs5:
          iffalse ofs6
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
@@ -2905,7 +2947,8 @@ package
          callpropvoid QName(PackageNamespace(""),"show"), 0
          ofs7:
          getlex QName(PackageNamespace(""),"startedGame")
-         iftrue ofs8
+         not
+         iffalse ofs8
          findpropstrict QName(PackageNamespace(""),"addTitleScreen")
          callpropvoid QName(PackageNamespace(""),"addTitleScreen"), 0
          ofs8:
@@ -2919,7 +2962,7 @@ package
          not
          ofs9:
          iffalse ofs10
-         findproperty QName(PackageNamespace(""),"mainMenu")
+         findpropstrict QName(PackageNamespace(""),"mainMenu")
          findpropstrict QName(PackageNamespace(""),"MainMenu")
          constructprop QName(PackageNamespace(""),"MainMenu"), 0
          setproperty QName(PackageNamespace(""),"mainMenu")
@@ -2945,7 +2988,7 @@ package
          not
          ofs13:
          iffalse ofs14
-         findproperty QName(PackageNamespace(""),"ending")
+         findpropstrict QName(PackageNamespace(""),"ending")
          findpropstrict QName(PackageNamespace(""),"Ending")
          constructprop QName(PackageNamespace(""),"Ending"), 0
          setproperty QName(PackageNamespace(""),"ending")
@@ -2971,7 +3014,7 @@ package
          not
          ofs16:
          iffalse ofs17
-         findproperty QName(PackageNamespace(""),"intro")
+         findpropstrict QName(PackageNamespace(""),"intro")
          findpropstrict QName(PackageNamespace(""),"Intro")
          constructprop QName(PackageNamespace(""),"Intro"), 0
          setproperty QName(PackageNamespace(""),"intro")
@@ -3027,7 +3070,7 @@ package
          setproperty QName(PackageNamespace(""),"active")
          getlex QName(PackageNamespace(""),"mainMenu")
          callpropvoid QName(PackageNamespace(""),"kill"), 0
-         findproperty QName(PackageNamespace(""),"mainMenu")
+         findpropstrict QName(PackageNamespace(""),"mainMenu")
          pushnull
          setproperty QName(PackageNamespace(""),"mainMenu")
          ofs19:
@@ -3044,7 +3087,7 @@ package
          setproperty QName(PackageNamespace(""),"active")
          getlex QName(PackageNamespace(""),"ending")
          callpropvoid QName(PackageNamespace(""),"kill"), 0
-         findproperty QName(PackageNamespace(""),"ending")
+         findpropstrict QName(PackageNamespace(""),"ending")
          pushnull
          setproperty QName(PackageNamespace(""),"ending")
          ofs20:
@@ -3058,7 +3101,7 @@ package
          setproperty QName(PackageNamespace(""),"active")
          getlex QName(PackageNamespace(""),"intro")
          callpropvoid QName(PackageNamespace(""),"kill"), 0
-         findproperty QName(PackageNamespace(""),"intro")
+         findpropstrict QName(PackageNamespace(""),"intro")
          pushnull
          setproperty QName(PackageNamespace(""),"intro")
          ofs21:
@@ -3068,7 +3111,7 @@ package
          getlex QName(PackageNamespace(""),"playerBulletGroups")
          getproperty QName(PackageNamespace(""),"groups")
          pushbyte 0
-         getproperty MultinameL([PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":PlayState"),ProtectedNamespace(":PlayState"),StaticProtectedNs(":PlayState"),PrivateNamespace("PlayState.as$15")])
          callpropvoid QName(PackageNamespace(""),"collide"), 2
          getlex QName(PackageNamespace("org.flixel"),"FlxU")
          getlex QName(PackageNamespace(""),"worldMap")
@@ -3076,11 +3119,12 @@ package
          getlex QName(PackageNamespace(""),"enemyBulletPool")
          getproperty QName(PackageNamespace(""),"groups")
          pushbyte 1
-         getproperty MultinameL([PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(":PlayState"),ProtectedNamespace(":PlayState"),StaticProtectedNs(":PlayState"),PrivateNamespace("PlayState.as$15")])
          callpropvoid QName(PackageNamespace(""),"collide"), 2
          getlex QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"noCollide")
-         iftrue ofs22
+         not
+         iffalse ofs22
          getlex QName(PackageNamespace("org.flixel"),"FlxU")
          getlex QName(PackageNamespace(""),"worldMap")
          getproperty QName(PackageNamespace(""),"bgmap")
@@ -3099,7 +3143,8 @@ package
          callpropvoid QName(PackageNamespace(""),"collide"), 2
          getlex QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"noCollide")
-         iftrue ofs23
+         not
+         iffalse ofs23
          getlex QName(PackageNamespace("org.flixel"),"FlxU")
          getlex QName(PackageNamespace(""),"player")
          getlex QName(PackageNamespace(""),"items")
@@ -3188,7 +3233,8 @@ package
          callpropvoid QName(PackageNamespace(""),"collide"), 2
          getlex QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"dead")
-         iftrue ofs24
+         not
+         iffalse ofs24
          getlex QName(PackageNamespace(""),"worldMap")
          getlex QName(PackageNamespace(""),"player")
          callpropvoid QName(PackageNamespace(""),"checkRoomBounds"), 1
@@ -3196,20 +3242,18 @@ package
          getlex QName(PackageNamespace(""),"player")
          callproperty QName(PackageNamespace(""),"pressedJump"), 0
          iffalse ofs25
-         findproperty QName(PackageNamespace(""),"hasJumped")
+         findpropstrict QName(PackageNamespace(""),"hasJumped")
          pushtrue
          setproperty QName(PackageNamespace(""),"hasJumped")
          ofs25:
          getlex QName(PackageNamespace(""),"bossRush")
-         convert_b
          dup
          iffalse ofs26
          pop
          getlex QName(PackageNamespace(""),"isBossRushComplete")
-         convert_b
          ofs26:
          iffalse ofs27
-         findproperty QName(PackageNamespace(""),"bossRushCompleteTimeout")
+         findpropstrict QName(PackageNamespace(""),"bossRushCompleteTimeout")
          getlex QName(PackageNamespace(""),"bossRushCompleteTimeout")
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"elapsed")
@@ -3227,10 +3271,10 @@ package
          iffalse ofs29
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"fade")
-         pushdouble 4.27819008E9
+         pushint -16777216
          pushdouble 0.34
          callpropvoid QName(PackageNamespace(""),"start"), 2
-         findproperty QName(PackageNamespace(""),"bossRushFade")
+         findpropstrict QName(PackageNamespace(""),"bossRushFade")
          pushtrue
          setproperty QName(PackageNamespace(""),"bossRushFade")
          getlex QName(PackageNamespace(""),"NgMedal")
@@ -3239,16 +3283,16 @@ package
          getlex QName(PackageNamespace(""),"bossRushCompleteTimeout")
          pushbyte 0
          ifnle ofs27
-         findproperty QName(PackageNamespace(""),"startedGame")
+         findpropstrict QName(PackageNamespace(""),"startedGame")
          pushfalse
          setproperty QName(PackageNamespace(""),"startedGame")
-         findproperty QName(PackageNamespace(""),"realState")
+         findpropstrict QName(PackageNamespace(""),"realState")
          getlex QName(PackageNamespace(""),"STATE_MENU")
          setproperty QName(PackageNamespace(""),"realState")
-         findproperty QName(PackageNamespace(""),"bossRushFade")
+         findpropstrict QName(PackageNamespace(""),"bossRushFade")
          pushfalse
          setproperty QName(PackageNamespace(""),"bossRushFade")
-         findproperty QName(PackageNamespace(""),"isBossRushComplete")
+         findpropstrict QName(PackageNamespace(""),"isBossRushComplete")
          pushfalse
          setproperty QName(PackageNamespace(""),"isBossRushComplete")
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
@@ -3256,10 +3300,10 @@ package
          callpropvoid QName(PackageNamespace(""),"stop"), 0
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"flash")
-         pushdouble 4.27819008E9
+         pushint -16777216
          pushdouble 0.34
          callpropvoid QName(PackageNamespace(""),"start"), 2
-         findproperty QName(PackageNamespace(""),"bossRush")
+         findpropstrict QName(PackageNamespace(""),"bossRush")
          pushfalse
          setproperty QName(PackageNamespace(""),"bossRush")
          ofs27:
@@ -3269,10 +3313,9 @@ package
          iffalse ofs30
          pop
          getlex QName(PackageNamespace(""),"isGameComplete")
-         convert_b
          ofs30:
          iffalse ofs11
-         findproperty QName(PackageNamespace(""),"gameCompleteTimeout")
+         findpropstrict QName(PackageNamespace(""),"gameCompleteTimeout")
          getlex QName(PackageNamespace(""),"gameCompleteTimeout")
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"elapsed")
@@ -3296,23 +3339,23 @@ package
          callpropvoid QName(PackageNamespace(""),"fadeOut"), 1
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"fade")
-         pushdouble 4.27819008E9
+         pushint -16777216
          getlex QName(PackageNamespace(""),"gameCompleteTimeout")
          callpropvoid QName(PackageNamespace(""),"start"), 2
-         findproperty QName(PackageNamespace(""),"gameFade")
+         findpropstrict QName(PackageNamespace(""),"gameFade")
          pushtrue
          setproperty QName(PackageNamespace(""),"gameFade")
          ofs32:
          getlex QName(PackageNamespace(""),"gameCompleteTimeout")
          pushbyte 0
          ifnle ofs11
-         findproperty QName(PackageNamespace(""),"realState")
+         findpropstrict QName(PackageNamespace(""),"realState")
          getlex QName(PackageNamespace(""),"STATE_ENDING")
          setproperty QName(PackageNamespace(""),"realState")
-         findproperty QName(PackageNamespace(""),"gameFade")
+         findpropstrict QName(PackageNamespace(""),"gameFade")
          pushfalse
          setproperty QName(PackageNamespace(""),"gameFade")
-         findproperty QName(PackageNamespace(""),"isGameComplete")
+         findpropstrict QName(PackageNamespace(""),"isGameComplete")
          pushfalse
          setproperty QName(PackageNamespace(""),"isGameComplete")
          ofs11:
@@ -3327,7 +3370,7 @@ package
          trait method QName(PackageNamespace(""),"overlapPlayerNpc")
          dispid 0
          method
-         name null
+         name "PlayState:overlapPlayerNpc"
          param QName(PackageNamespace("org.flixel"),"FlxObject")
          param QName(PackageNamespace("org.flixel"),"FlxObject")
          returns QName(PackageNamespace(""),"void")
@@ -3335,12 +3378,16 @@ package
          body
          maxstack 2
          localcount 5
-         initscopedepth 10
-         maxscopedepth 11
+         initscopedepth 11
+         maxscopedepth 12
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "_loc3_", 2, 902
+         debug 1, "_loc4_", 3, 903
          pushnull
          coerce QName(PackageNamespace(""),"Player")
          setlocal3
@@ -3383,7 +3430,7 @@ package
          trait method QName(PackageNamespace(""),"overlapPlayerItem")
          dispid 0
          method
-         name null
+         name "PlayState:overlapPlayerItem"
          param QName(PackageNamespace("org.flixel"),"FlxObject")
          param QName(PackageNamespace("org.flixel"),"FlxObject")
          returns QName(PackageNamespace(""),"void")
@@ -3391,12 +3438,16 @@ package
          body
          maxstack 2
          localcount 5
-         initscopedepth 10
-         maxscopedepth 11
+         initscopedepth 11
+         maxscopedepth 12
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "_loc3_", 2, 913
+         debug 1, "_loc4_", 3, 914
          pushnull
          coerce QName(PackageNamespace(""),"Player")
          setlocal3
@@ -3439,7 +3490,7 @@ package
          trait method QName(PackageNamespace(""),"overlapBulletEnemies")
          dispid 0
          method
-         name null
+         name "PlayState:overlapBulletEnemies"
          param QName(PackageNamespace("org.flixel"),"FlxObject")
          param QName(PackageNamespace("org.flixel"),"FlxObject")
          returns QName(PackageNamespace(""),"void")
@@ -3447,12 +3498,16 @@ package
          body
          maxstack 2
          localcount 5
-         initscopedepth 10
-         maxscopedepth 11
+         initscopedepth 11
+         maxscopedepth 12
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "_loc3_", 2, 924
+         debug 1, "_loc4_", 3, 925
          pushnull
          coerce QName(PackageNamespace(""),"PlayerBullet")
          setlocal3
@@ -3495,7 +3550,7 @@ package
          trait method QName(PackageNamespace(""),"overlapEnemyBulletPlayer")
          dispid 0
          method
-         name null
+         name "PlayState:overlapEnemyBulletPlayer"
          param QName(PackageNamespace("org.flixel"),"FlxObject")
          param QName(PackageNamespace("org.flixel"),"FlxObject")
          returns QName(PackageNamespace(""),"void")
@@ -3503,12 +3558,16 @@ package
          body
          maxstack 2
          localcount 5
-         initscopedepth 10
-         maxscopedepth 11
+         initscopedepth 11
+         maxscopedepth 12
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "_loc3_", 2, 936
+         debug 1, "_loc4_", 3, 937
          pushnull
          coerce QName(PackageNamespace(""),"EnemyBullet")
          setlocal3
@@ -3551,7 +3610,7 @@ package
          trait method QName(PackageNamespace(""),"overlapPlayerEnemies")
          dispid 0
          method
-         name null
+         name "PlayState:overlapPlayerEnemies"
          param QName(PackageNamespace("org.flixel"),"FlxObject")
          param QName(PackageNamespace("org.flixel"),"FlxObject")
          returns QName(PackageNamespace(""),"void")
@@ -3559,12 +3618,16 @@ package
          body
          maxstack 2
          localcount 5
-         initscopedepth 10
-         maxscopedepth 11
+         initscopedepth 11
+         maxscopedepth 12
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "_loc3_", 2, 948
+         debug 1, "_loc4_", 3, 949
          pushnull
          coerce QName(PackageNamespace(""),"Player")
          setlocal3
@@ -3607,7 +3670,7 @@ package
          trait method QName(PackageNamespace(""),"overlapBulletItems")
          dispid 0
          method
-         name null
+         name "PlayState:overlapBulletItems"
          param QName(PackageNamespace("org.flixel"),"FlxObject")
          param QName(PackageNamespace("org.flixel"),"FlxObject")
          returns QName(PackageNamespace(""),"void")
@@ -3615,12 +3678,16 @@ package
          body
          maxstack 2
          localcount 5
-         initscopedepth 10
-         maxscopedepth 11
+         initscopedepth 11
+         maxscopedepth 12
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "_loc3_", 2, 959
+         debug 1, "_loc4_", 3, 960
          pushnull
          coerce QName(PackageNamespace(""),"PlayerBullet")
          setlocal3
@@ -3663,7 +3730,7 @@ package
          trait method QName(PackageNamespace(""),"overlapAiTriggersEnemies")
          dispid 0
          method
-         name null
+         name "PlayState:overlapAiTriggersEnemies"
          param QName(PackageNamespace("org.flixel"),"FlxObject")
          param QName(PackageNamespace("org.flixel"),"FlxObject")
          returns QName(PackageNamespace(""),"void")
@@ -3671,12 +3738,16 @@ package
          body
          maxstack 2
          localcount 5
-         initscopedepth 10
-         maxscopedepth 11
+         initscopedepth 11
+         maxscopedepth 12
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "_loc3_", 2, 971
+         debug 1, "_loc4_", 3, 972
          pushnull
          coerce QName(PackageNamespace(""),"AiTrigger")
          setlocal3
@@ -3720,7 +3791,7 @@ package
          trait method QName(PackageNamespace(""),"overlapAiTriggersSolidItems")
          dispid 0
          method
-         name null
+         name "PlayState:overlapAiTriggersSolidItems"
          param QName(PackageNamespace("org.flixel"),"FlxObject")
          param QName(PackageNamespace("org.flixel"),"FlxObject")
          returns QName(PackageNamespace(""),"void")
@@ -3728,12 +3799,16 @@ package
          body
          maxstack 2
          localcount 5
-         initscopedepth 10
-         maxscopedepth 11
+         initscopedepth 11
+         maxscopedepth 12
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
+         debug 1, "param2", 1, 0
+         debug 1, "_loc3_", 2, 982
+         debug 1, "_loc4_", 3, 983
          pushnull
          coerce QName(PackageNamespace(""),"AiTrigger")
          setlocal3

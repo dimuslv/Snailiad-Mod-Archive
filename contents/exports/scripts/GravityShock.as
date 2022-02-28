@@ -21,14 +21,14 @@ package
          loadGraphic(Art.ItemGravityShock,true,true,IMG_WIDTH,IMG_HEIGHT);
          width = IMG_WIDTH;
          height = IMG_HEIGHT;
-         addAnimation("normal",[0,1,2,3],30,true);
+         addAnimation("normal",[0,1,2,3],22,true);
          play("normal");
       }
       
       override public function touch(param1:Player) : void
       {
          PlayState.player.addGravityShock();
-         PlayState.hud.itemName.setItem("GRAVITY SHOCK");
+         PlayState.hud.itemName.setItem("CORKSCREW JUMP");
          super.touch(param1);
       }
       

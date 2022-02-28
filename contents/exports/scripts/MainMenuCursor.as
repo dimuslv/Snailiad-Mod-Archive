@@ -28,7 +28,7 @@ package
          height = IMG_HEIGHT;
          offset.x = IMG_OFS_X;
          offset.y = IMG_OFS_Y;
-         addAnimation("normal",[0,1],3,true);
+         addAnimation("normal",[0,1,0,2],3,true);
          play("normal");
          scrollFactor.x = scrollFactor.y = 0;
       }

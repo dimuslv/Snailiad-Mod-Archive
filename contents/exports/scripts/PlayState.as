@@ -253,7 +253,7 @@ package
          {
             realState = STATE_GAME;
          }
-         FlxG.flash.start(4278190080,0.34);
+         FlxG.flash.start(-16777216,0.34);
       }
       
       public static function goToMainMenu() : void
@@ -421,12 +421,12 @@ package
       
       public static function totalItemsInArea() : int
       {
-         var _loc1_:int = area;
+         var _loc1_:* = area;
          if(_loc1_ >= 6)
          {
             _loc1_ = 5;
          }
-         var _loc2_:Array = [9,12,10,11,8,1];
+         var _loc2_:Array = [8,12,10,11,9,1];
          var _loc3_:int = _loc2_[_loc1_];
          if(_loc1_ == 1 && player._slugMode)
          {
@@ -451,7 +451,7 @@ package
       
       public static function remainingItemsInArea() : int
       {
-         var _loc1_:int = area;
+         var _loc1_:* = area;
          if(_loc1_ >= 6)
          {
             _loc1_ = 5;
@@ -462,7 +462,6 @@ package
             case 0:
                _loc2_ += numOfItemsAt(305,120);
                _loc2_ += numOfItemsAt(332,125);
-               _loc2_ += numOfItemsAt(237,150);
                _loc2_ += numOfItemsAt(346,150);
                _loc2_ += numOfItemsAt(359,174);
                _loc2_ += numOfItemsAt(335,185);
@@ -518,6 +517,7 @@ package
                _loc2_ += numOfItemsAt(178,28);
                _loc2_ += numOfItemsAt(236,71);
                _loc2_ += numOfItemsAt(226,76);
+               _loc2_ += numOfItemsAt(134,6);
                break;
             case 5:
                _loc2_ += numOfItemsAt(159,173);
@@ -597,7 +597,7 @@ package
                if(player.bestHardTime.value == 0 || player.bestHardTime.value > player.gameTime.value)
                {
                   player.bestHardTime.value = player.gameTime.value;
-                  _loc4_ += "\nNEW BEST TIME - SLUG MODE " + GameTimeDisplay.formatExact(player.bestHardTime.value);
+                  _loc4_ += "\nNEW BEST TIME - PAPER MODE " + GameTimeDisplay.formatExact(player.bestHardTime.value);
                }
                if((player.bestInsaneTime.value == 0 || player.bestInsaneTime.value > player.gameTime.value) && player.getPercentComplete() == 100)
                {
@@ -646,7 +646,7 @@ package
          {
             delete _loc1_.xml.vars.hasWonBossRush;
             _loc1_.xml.vars.appendChild(<hasWonBossRush>true</hasWonBossRush>);
-            hud.areaName.setArea("BOSS RUSH COMPLETE - " + bossRushTimer.getTimeExact() + "\nSLUG MODE UNLOCKED!");
+            hud.areaName.setArea("BOSS RUSH COMPLETE - " + bossRushTimer.getTimeExact() + "\nPAPER SHELL MODE UNLOCKED!");
             hud.areaName.increaseTimer(5);
          }
          else
@@ -863,7 +863,7 @@ package
                bossRushCompleteTimeout -= FlxG.elapsed;
                if(bossRushCompleteTimeout <= 0.4 && !bossRushFade)
                {
-                  FlxG.fade.start(4278190080,0.34);
+                  FlxG.fade.start(-16777216,0.34);
                   bossRushFade = true;
                   NgMedal.unlockTheGauntlet();
                }
@@ -874,7 +874,7 @@ package
                   bossRushFade = false;
                   isBossRushComplete = false;
                   FlxG.fade.stop();
-                  FlxG.flash.start(4278190080,0.34);
+                  FlxG.flash.start(-16777216,0.34);
                   bossRush = false;
                }
             }
@@ -885,7 +885,7 @@ package
                {
                   NgMedal.unlockVictory();
                   FlxG.music.fadeOut(gameCompleteTimeout);
-                  FlxG.fade.start(4278190080,gameCompleteTimeout);
+                  FlxG.fade.start(-16777216,gameCompleteTimeout);
                   gameFade = true;
                }
                if(gameCompleteTimeout <= 0)

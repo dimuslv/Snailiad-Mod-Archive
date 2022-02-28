@@ -321,6 +321,8 @@ package
       
       private var _sleepTimeout:Number;
       
+      private var _hasFlipped:Boolean = false;
+      
       public function Player(param1:PlayerBulletGroups)
       {
          var _loc5_:int = 0;
@@ -688,13 +690,13 @@ package
             {
                _loc5_ += 4 * 20;
             }
-            addAnimation("snail" + (_loc4_ + 1).toString() + "_floor_right_move",[0 + _loc5_,1 + _loc5_],3,true);
+            addAnimation("snail" + (_loc4_ + 1).toString() + "_floor_right_move",[0 + _loc5_,1 + _loc5_,0 + _loc5_,2 + _loc5_],3,true);
             addAnimation("snail" + (_loc4_ + 1).toString() + "_floor_right_hide",[3 + _loc5_],9,false);
-            addAnimation("snail" + (_loc4_ + 1).toString() + "_rwall_up_move",[4 + _loc5_,5 + _loc5_],3,true);
+            addAnimation("snail" + (_loc4_ + 1).toString() + "_rwall_up_move",[4 + _loc5_,5 + _loc5_,4 + _loc5_,6 + _loc5_],3,true);
             addAnimation("snail" + (_loc4_ + 1).toString() + "_rwall_up_hide",[7 + _loc5_],9,false);
-            addAnimation("snail" + (_loc4_ + 1).toString() + "_rwall_down_move",[8 + _loc5_,9 + _loc5_],3,true);
+            addAnimation("snail" + (_loc4_ + 1).toString() + "_rwall_down_move",[8 + _loc5_,9 + _loc5_,8 + _loc5_,10 + _loc5_],3,true);
             addAnimation("snail" + (_loc4_ + 1).toString() + "_rwall_down_hide",[11 + _loc5_],9,false);
-            addAnimation("snail" + (_loc4_ + 1).toString() + "_ceil_right_move",[12 + _loc5_,13 + _loc5_],3,true);
+            addAnimation("snail" + (_loc4_ + 1).toString() + "_ceil_right_move",[12 + _loc5_,13 + _loc5_,12 + _loc5_,14 + _loc5_],3,true);
             addAnimation("snail" + (_loc4_ + 1).toString() + "_ceil_right_hide",[15 + _loc5_],9,false);
             addAnimation("snail" + (_loc4_ + 1).toString() + "_death",[16 + _loc5_,17 + _loc5_,18 + _loc5_,19 + _loc5_],30,true);
             _loc4_++;
@@ -817,29 +819,25 @@ package
                {
                   _loc2_ += 4 * 20;
                }
-               addAnimation("snail" + (_loc1_ + 1).toString() + "_floor_right_move",[0 + _loc2_,1 + _loc2_],3,true);
+               addAnimation("snail" + (_loc1_ + 1).toString() + "_floor_right_move",[0 + _loc2_,1 + _loc2_,0 + _loc2_,2 + _loc2_],3,true);
                addAnimation("snail" + (_loc1_ + 1).toString() + "_floor_right_hide",[3 + _loc2_],9,false);
-               addAnimation("snail" + (_loc1_ + 1).toString() + "_rwall_up_move",[4 + _loc2_,5 + _loc2_],3,true);
+               addAnimation("snail" + (_loc1_ + 1).toString() + "_rwall_up_move",[4 + _loc2_,5 + _loc2_,4 + _loc2_,6 + _loc2_],3,true);
                addAnimation("snail" + (_loc1_ + 1).toString() + "_rwall_up_hide",[7 + _loc2_],9,false);
-               addAnimation("snail" + (_loc1_ + 1).toString() + "_rwall_down_move",[8 + _loc2_,9 + _loc2_],3,true);
+               addAnimation("snail" + (_loc1_ + 1).toString() + "_rwall_down_move",[8 + _loc2_,9 + _loc2_,8 + _loc2_,10 + _loc2_],3,true);
                addAnimation("snail" + (_loc1_ + 1).toString() + "_rwall_down_hide",[11 + _loc2_],9,false);
-               addAnimation("snail" + (_loc1_ + 1).toString() + "_ceil_right_move",[12 + _loc2_,13 + _loc2_],3,true);
+               addAnimation("snail" + (_loc1_ + 1).toString() + "_ceil_right_move",[12 + _loc2_,13 + _loc2_,12 + _loc2_,14 + _loc2_],3,true);
                addAnimation("snail" + (_loc1_ + 1).toString() + "_ceil_right_hide",[15 + _loc2_],9,false);
                addAnimation("snail" + (_loc1_ + 1).toString() + "_death",[16 + _loc2_,17 + _loc2_,18 + _loc2_,19 + _loc2_],30,true);
                _loc1_++;
             }
             this.playAnim("death");
             this.setSnailType(this._snailType.value);
-            PlayState.hud.areaName.setArea("- OMEGA SLUG ENGAGE -");
+            PlayState.hud.areaName.setArea("- OMEGA LEGS ENGAGE -");
          }
       }
       
       public function checkInput_hideInShell() : void
       {
-         if(this._slugMode)
-         {
-            return;
-         }
          if(firingMode == FIRING_MODE_NORMAL && this.pressedShoot())
          {
             return;
@@ -918,7 +916,7 @@ package
       
       public function checkInput_performGravityJump() : void
       {
-         if(this._hasGravityJump.value && this.justPressedJump() && this._jumping)
+         if(this.justPressedJump() && this._jumping && !this._hasFlipped)
          {
             this.performGravityJump();
          }
@@ -1292,7 +1290,7 @@ package
       
       public function deathFade() : void
       {
-         FlxG.fade.start(4278206591,0.44);
+         FlxG.fade.start(-16760705,0.44);
          clearInterval(this.deathFadeInterval);
       }
       
@@ -1331,31 +1329,11 @@ package
          {
             return;
          }
-         if(this.pressedLeft() && (!flickering() || this._hasGravityJump.value))
-         {
-            switch(this._gravityDir)
-            {
-               case GRAV_UP:
-                  if(this.pressedDown())
-                  {
-                     this.setGravityDir(GRAV_LEFT);
-                     this.setFaceDir(FACE_LWALL_DOWN,true);
-                     this.moveSnailCheckBounds(0,2);
-                  }
-                  break;
-               case GRAV_DOWN:
-                  if(this.pressedUp() || this._jumping && this.pressedDown())
-                  {
-                     if(!this._hasGravityJump.value && this._jumping && this._fallFrames < 8)
-                     {
-                        return;
-                     }
-                     this.setGravityDir(GRAV_LEFT);
-                     this.setFaceDir(FACE_LWALL_UP,true);
-                  }
-            }
-         }
          super.hitLeft(param1,param2);
+         if(this._gravityDir == GRAV_LEFT)
+         {
+            this._hasFlipped = false;
+         }
       }
       
       override public function hitRight(param1:FlxObject, param2:Number) : void
@@ -1377,25 +1355,19 @@ package
                case GRAV_UP:
                   if(this.pressedDown())
                   {
-                     this.setGravityDir(GRAV_RIGHT);
-                     this.setFaceDir(FACE_RWALL_DOWN,true);
-                     this.moveSnailCheckBounds(11,2);
+                     this.setGravityDir(GRAV_UP);
                   }
                   break;
                case GRAV_DOWN:
                   if(this.pressedUp() || this._jumping && this.pressedDown())
                   {
-                     if(!this._hasGravityJump.value && this._jumping && this._fallFrames < 8)
-                     {
-                        return;
-                     }
-                     this.setGravityDir(GRAV_RIGHT);
-                     this.setFaceDir(FACE_RWALL_UP,true);
-                     y -= 11;
-                     x += 11;
-                     this.moveSnailCheckFullBounds(0,11);
+                     this.setGravityDir(GRAV_DOWN);
                   }
             }
+         }
+         if(this._gravityDir == GRAV_RIGHT)
+         {
+            this._hasFlipped = false;
          }
       }
       
@@ -1416,21 +1388,15 @@ package
             switch(this._gravityDir)
             {
                case GRAV_LEFT:
-                  if(this.pressedLeft() || this.pressedRight() || !this.hasGravityJump())
+                  if(this.pressedLeft() || this.pressedRight())
                   {
-                     this.setGravityDir(GRAV_DOWN);
-                     this.setFaceDir(FACE_FLOOR_RIGHT,true);
-                     facing = RIGHT;
-                     this.moveSnailCheckBounds(2,11);
+                     this.setGravityDir(GRAV_LEFT);
                   }
                   break;
                case GRAV_RIGHT:
-                  if(this.pressedLeft() || this.pressedRight() || !this.hasGravityJump())
+                  if(this.pressedLeft() || this.pressedRight())
                   {
-                     this.setGravityDir(GRAV_DOWN);
-                     this.setFaceDir(FACE_FLOOR_LEFT,true);
-                     this.moveSnailCheckBounds(0,11);
-                     facing = LEFT;
+                     this.setGravityDir(GRAV_RIGHT);
                   }
             }
          }
@@ -1438,9 +1404,12 @@ package
          {
             if(this.pressedDown())
             {
-               this.setGravityDir(GRAV_DOWN);
-               this.setFaceDir(facing == RIGHT ? int(FACE_FLOOR_RIGHT) : int(FACE_FLOOR_LEFT),true);
+               this.setGravityDir(this._gravityDir);
             }
+         }
+         if(this._gravityDir == GRAV_DOWN)
+         {
+            this._hasFlipped = false;
          }
       }
       
@@ -1465,18 +1434,13 @@ package
                   case GRAV_LEFT:
                      if(this.pressedRight())
                      {
-                        this.setGravityDir(GRAV_UP);
-                        this.setFaceDir(FACE_CEIL_RIGHT,true);
-                        facing = RIGHT;
+                        this.setGravityDir(GRAV_LEFT);
                      }
                      break;
                   case GRAV_RIGHT:
                      if(this.pressedLeft())
                      {
-                        this.setGravityDir(GRAV_UP);
-                        this.moveSnailCheckBounds(-11,0);
-                        this.setFaceDir(FACE_CEIL_LEFT,true);
-                        facing = LEFT;
+                        this.setGravityDir(GRAV_RIGHT);
                      }
                }
             }
@@ -1485,9 +1449,12 @@ package
          {
             if(this.pressedUp())
             {
-               this.setGravityDir(GRAV_UP);
-               this.setFaceDir(facing == RIGHT ? int(FACE_CEIL_RIGHT) : int(FACE_CEIL_LEFT),true);
+               this.setGravityDir(this._gravityDir);
             }
+         }
+         if(this._gravityDir == GRAV_UP)
+         {
+            this._hasFlipped = false;
          }
       }
       
@@ -1530,7 +1497,7 @@ package
          {
             return;
          }
-         var _loc1_:int = this._currentWeapon.value;
+         var _loc1_:* = this._currentWeapon.value;
          do
          {
             _loc1_++;
@@ -1547,7 +1514,7 @@ package
          {
             return;
          }
-         var _loc1_:int = this._currentWeapon.value;
+         var _loc1_:* = this._currentWeapon.value;
          do
          {
             _loc1_--;
@@ -1701,125 +1668,51 @@ package
          switch(this._gravityDir)
          {
             case GRAV_DOWN:
-               if((!this.pressedLeft() && !this.pressedRight() || this._mostRecentDir == DIR_UP) && this.pressedUp())
+               if(this.findNotSolidWidth() < 8)
                {
-                  if(this.findNotSolidWidth() < 8)
-                  {
-                     return;
-                  }
-                  this.setFaceDir(facing == RIGHT ? int(FACE_CEIL_RIGHT) : int(FACE_CEIL_LEFT));
-                  this._desiredGravity = GRAV_UP;
+                  return;
                }
-               else if((!this.pressedDown() && !this.pressedUp() || this._mostRecentDir == DIR_RIGHT) && this.pressedRight())
+               this.setFaceDir(facing == RIGHT ? int(FACE_CEIL_RIGHT) : int(FACE_CEIL_LEFT));
+               this._desiredGravity = GRAV_UP;
+               if(!this._hasGravityShock.value)
                {
-                  if(this.findNotSolidHeight() < 8)
-                  {
-                     return;
-                  }
-                  this.setFaceDir(FACE_RWALL_UP);
-                  this._desiredGravity = GRAV_RIGHT;
-               }
-               else if((!this.pressedDown() && !this.pressedUp() || this._mostRecentDir == DIR_LEFT) && this.pressedLeft())
-               {
-                  if(this.findNotSolidHeight() < 8)
-                  {
-                     return;
-                  }
-                  this.setFaceDir(FACE_LWALL_UP);
-                  this._desiredGravity = GRAV_LEFT;
+                  this._hasFlipped = true;
                }
                break;
             case GRAV_UP:
-               if((!this.pressedDown() && !this.pressedUp() || this._mostRecentDir == DIR_RIGHT) && this.pressedRight())
+               if(this.findNotSolidWidth() < 8)
                {
-                  if(this.findNotSolidHeight() < 8)
-                  {
-                     return;
-                  }
-                  this.setFaceDir(FACE_RWALL_DOWN);
-                  this._desiredGravity = GRAV_RIGHT;
+                  return;
                }
-               else if((!this.pressedDown() && !this.pressedUp() || this._mostRecentDir == DIR_LEFT) && this.pressedLeft())
+               this.setFaceDir(facing == RIGHT ? int(FACE_FLOOR_RIGHT) : int(FACE_FLOOR_LEFT));
+               this._desiredGravity = GRAV_DOWN;
+               if(!this._hasGravityShock.value)
                {
-                  if(this.findNotSolidHeight() < 8)
-                  {
-                     return;
-                  }
-                  this.setFaceDir(FACE_LWALL_DOWN);
-                  this._desiredGravity = GRAV_LEFT;
-               }
-               else if(this.pressedDown())
-               {
-                  if(this.findNotSolidWidth() < 8)
-                  {
-                     return;
-                  }
-                  this.setFaceDir(facing == RIGHT ? int(FACE_FLOOR_RIGHT) : int(FACE_FLOOR_LEFT));
-                  this._desiredGravity = GRAV_DOWN;
+                  this._hasFlipped = true;
                }
                break;
             case GRAV_RIGHT:
-               if((!this.pressedLeft() && !this.pressedRight() || this._mostRecentDir == DIR_UP) && this.pressedUp())
+               if(this.findNotSolidHeight() < 8)
                {
-                  if(this.findNotSolidWidth() < 8)
-                  {
-                     return;
-                  }
-                  this.setFaceDir(FACE_CEIL_RIGHT);
-                  this._desiredGravity = GRAV_UP;
+                  return;
                }
-               else if(!((!this.pressedDown() && !this.pressedUp() || this._mostRecentDir == DIR_RIGHT) && this.pressedRight()))
+               this.setFaceDir(this._faceDir == FACE_RWALL_UP ? int(FACE_LWALL_UP) : int(FACE_LWALL_DOWN));
+               this._desiredGravity = GRAV_LEFT;
+               if(!this._hasGravityShock.value)
                {
-                  if((!this.pressedDown() && !this.pressedUp() || this._mostRecentDir == DIR_LEFT) && this.pressedLeft())
-                  {
-                     if(this.findNotSolidHeight() < 8)
-                     {
-                        return;
-                     }
-                     this.setFaceDir(this._faceDir == FACE_RWALL_UP ? int(FACE_LWALL_UP) : int(FACE_LWALL_DOWN));
-                     this._desiredGravity = GRAV_LEFT;
-                  }
-                  else if((!this.pressedLeft() && !this.pressedRight() || this._mostRecentDir == DIR_DOWN) && this.pressedDown())
-                  {
-                     if(this.findNotSolidWidth() < 8)
-                     {
-                        return;
-                     }
-                     this.setFaceDir(FACE_FLOOR_RIGHT);
-                     this._desiredGravity = GRAV_DOWN;
-                  }
+                  this._hasFlipped = true;
                }
                break;
             case GRAV_LEFT:
-               if((!this.pressedLeft() && !this.pressedRight() || this._mostRecentDir == DIR_UP) && this.pressedUp())
+               if(this.findNotSolidHeight() < 8)
                {
-                  if(this.findNotSolidWidth() < 8)
-                  {
-                     return;
-                  }
-                  this.setFaceDir(FACE_CEIL_LEFT);
-                  this._desiredGravity = GRAV_UP;
+                  return;
                }
-               else if(!((!this.pressedDown() && !this.pressedUp() || this._mostRecentDir == DIR_LEFT) && this.pressedLeft()))
+               this.setFaceDir(this._faceDir == FACE_LWALL_UP ? int(FACE_RWALL_UP) : int(FACE_RWALL_DOWN));
+               this._desiredGravity = GRAV_RIGHT;
+               if(!this._hasGravityShock.value)
                {
-                  if((!this.pressedDown() && !this.pressedUp() || this._mostRecentDir == DIR_RIGHT) && this.pressedRight())
-                  {
-                     if(this.findNotSolidHeight() < 8)
-                     {
-                        return;
-                     }
-                     this.setFaceDir(this._faceDir == FACE_LWALL_UP ? int(FACE_RWALL_UP) : int(FACE_RWALL_DOWN));
-                     this._desiredGravity = GRAV_RIGHT;
-                  }
-                  else if((!this.pressedLeft() && !this.pressedRight() || this._mostRecentDir == DIR_DOWN) && this.pressedDown())
-                  {
-                     if(this.findNotSolidWidth() < 8)
-                     {
-                        return;
-                     }
-                     this.setFaceDir(FACE_FLOOR_LEFT);
-                     this._desiredGravity = GRAV_DOWN;
-                  }
+                  this._hasFlipped = true;
                }
          }
          this._desiredGravity = GRAV_DOWN;
@@ -1865,7 +1758,7 @@ package
       
       public function moveSnailCheckFullBounds(param1:int, param2:int) : void
       {
-         var _loc3_:int = param2;
+         var _loc3_:* = param2;
          if(param2 < 0)
          {
             param2 = PlayState.worldMap.findFirstFullNotSolidTop(x,y,width,height,param2);
@@ -1898,7 +1791,7 @@ package
       
       public function moveSnailCheckBounds(param1:int, param2:int) : void
       {
-         var _loc3_:int = param2;
+         var _loc3_:* = param2;
          if(param2 < 0)
          {
             param2 = PlayState.worldMap.findFirstNotSolidTop(x,y,width,height,param2);
@@ -1948,21 +1841,7 @@ package
                {
                   this._fallFrames = 0;
                }
-               if(!this._hasGravityJump.value && this._fallFrames >= 1 || flickering() && !this._hasGravityJump.value)
-               {
-                  this.setFaceDir(facing == RIGHT ? int(FACE_FLOOR_RIGHT) : int(FACE_FLOOR_LEFT));
-               }
-               else if(this._hasGravityJump.value && this._fallFrames == 1 && this.pressedUp() && this.pressedRight())
-               {
-                  this.setFaceDir(FACE_LWALL_UP);
-                  this.moveSnailCheckBounds(0,-1);
-               }
-               else if(this._hasGravityJump.value && this._fallFrames == 1 && this.pressedUp() && this.pressedLeft())
-               {
-                  this.setFaceDir(FACE_RWALL_UP);
-                  this.moveSnailCheckBounds(12,-1);
-               }
-               else if(this._hasGravityJump.value && !this.pressedJump() && this._fallFrames == 1 && !this.pressedUp())
+               if(!this.pressedJump() && this._fallFrames == 1 && !this.pressedUp())
                {
                   this._desiredGravity = GRAV_UP;
                   switch(this._desiredGravity)
@@ -1982,22 +1861,6 @@ package
                }
                break;
             case GRAV_DOWN:
-               if(this._fallFrames == 1 && this.pressedDown() && !this._justHitHeadOrWall && !flickering() && velocity.y > 0)
-               {
-                  if(facing == RIGHT && this.pressedRight())
-                  {
-                     this.setFaceDir(FACE_LWALL_DOWN,false,true);
-                     velocity.x = -this._runSpeed.value;
-                     this.moveSnailCheckBounds(0,-11);
-                  }
-                  else if(facing == LEFT && this.pressedLeft())
-                  {
-                     this.setFaceDir(FACE_RWALL_DOWN,false,true);
-                     velocity.x = this._runSpeed.value;
-                     this.moveSnailCheckBounds(15,-11);
-                  }
-                  break;
-               }
                this._jumping = velocity.y != 0;
                if(this._jumping)
                {
@@ -2029,22 +1892,7 @@ package
                {
                   this._fallFrames = 0;
                }
-               if(!this._hasGravityJump.value && this._fallFrames >= 1 || flickering() && !this._hasGravityJump.value)
-               {
-                  this.setFaceDir(FACE_FLOOR_LEFT);
-                  this.moveSnailCheckBounds(0,13);
-               }
-               else if(this._hasGravityJump.value && this._fallFrames == 1 && this.pressedUp() && this.pressedLeft())
-               {
-                  this.setFaceDir(FACE_FLOOR_LEFT);
-                  this.moveSnailCheckBounds(0,13);
-               }
-               else if(this._hasGravityJump.value && this._fallFrames == 1 && this.pressedDown() && this.pressedLeft())
-               {
-                  this.setFaceDir(FACE_CEIL_LEFT);
-                  this.moveSnailCheckBounds(0,1);
-               }
-               else if(this._hasGravityJump.value && !this.pressedJump() && this._fallFrames == 1 && !this.pressedLeft())
+               if(!this.pressedJump() && this._fallFrames == 1 && !this.pressedLeft())
                {
                   this._desiredGravity = GRAV_LEFT;
                   switch(this._desiredGravity)
@@ -2073,22 +1921,7 @@ package
                {
                   this._fallFrames = 0;
                }
-               if(!this._hasGravityJump.value && this._fallFrames >= 1 || flickering() && !this._hasGravityJump.value)
-               {
-                  this.setFaceDir(FACE_FLOOR_RIGHT);
-                  this.moveSnailCheckBounds(-6,13);
-               }
-               else if(this._hasGravityJump.value && this._fallFrames == 1 && this.pressedUp() && this.pressedRight())
-               {
-                  this.setFaceDir(FACE_FLOOR_RIGHT);
-                  this.moveSnailCheckBounds(-6,13);
-               }
-               else if(this._hasGravityJump.value && this._fallFrames == 1 && this.pressedDown() && this.pressedRight())
-               {
-                  this.setFaceDir(FACE_CEIL_RIGHT);
-                  this.moveSnailCheckBounds(-6,1);
-               }
-               else if(this._hasGravityJump.value && !this.pressedJump() && this._fallFrames == 1 && !this.pressedRight())
+               if(!this.pressedJump() && this._fallFrames == 1 && !this.pressedRight())
                {
                   this._desiredGravity = GRAV_RIGHT;
                   switch(this._desiredGravity)
@@ -2116,14 +1949,7 @@ package
             return;
          }
          this.hideInShell(false);
-         if(this._hasGravityJump.value)
-         {
-            if(this.doGravityJump())
-            {
-               Sfx.playJump1();
-            }
-         }
-         else if(this.doRegularJump())
+         if(this.doGravityJump())
          {
             Sfx.playJump1();
          }
@@ -2136,7 +1962,7 @@ package
             case GRAV_UP:
                if(this.findNotSolidHeight() >= 8)
                {
-                  y += 1;
+                  ++y;
                   velocity.y = this._jumpPower.value;
                   return true;
                }
@@ -2144,7 +1970,7 @@ package
             case GRAV_DOWN:
                if(this.findNotSolidHeight() >= 8)
                {
-                  y = y - 1;
+                  --y;
                   velocity.y = -this._jumpPower.value;
                   return true;
                }
@@ -2152,7 +1978,7 @@ package
             case GRAV_LEFT:
                if(this.findNotSolidWidth() >= 8)
                {
-                  x = x - 1;
+                  --x;
                   velocity.x = this._jumpPower.value;
                   return true;
                }
@@ -2160,7 +1986,7 @@ package
             case GRAV_RIGHT:
                if(this.findNotSolidWidth() >= 8)
                {
-                  x += 1;
+                  ++x;
                   velocity.x = -this._jumpPower.value;
                   return true;
                }
@@ -2176,7 +2002,7 @@ package
             case GRAV_UP:
                if(this.findNotSolidHeight() >= 8)
                {
-                  y += 1;
+                  ++y;
                   velocity.y = 0;
                   this.setFaceDir(facing == RIGHT ? int(FACE_FLOOR_RIGHT) : int(FACE_FLOOR_LEFT));
                   return true;
@@ -2185,7 +2011,7 @@ package
             case GRAV_DOWN:
                if(this.findNotSolidHeight() >= 8)
                {
-                  y = y - 1;
+                  --y;
                   velocity.y = -this._jumpPower.value;
                   return true;
                }
@@ -2683,6 +2509,7 @@ package
       
       public function setSaveCoords(param1:int, param2:int, param3:Boolean = false) : void
       {
+         var _loc4_:XML = null;
          if(dead || !active)
          {
             return;
@@ -2691,7 +2518,6 @@ package
          {
             PlayState.savingText.setSaving();
          }
-         var _loc4_:XML;
          (_loc4_ = new XML(<vars/>)).appendChild(<savex>{param1}</savex>);
          _loc4_.appendChild(<savey>{param2}</savey>);
          _loc4_.appendChild(<lastWeapon>{this._currentWeapon.value}</lastWeapon>);
@@ -2972,10 +2798,12 @@ package
       
       public function setHasGravityShock(param1:Boolean) : void
       {
+         this._hasGravityShock.value = param1;
       }
       
       public function addGravityShock() : void
       {
+         this._hasGravityShock.value = true;
       }
       
       public function addHelixFragment() : void

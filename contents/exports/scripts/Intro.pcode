@@ -750,10 +750,10 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"introSlugMode")
          iffalse ofs29
-         pushstring "SLUGGY SLUG"
+         pushstring "LEGGY SNAIL"
          jump ofs30
          ofs29:
-         pushstring "SNAILY SNAIL"
+         pushstring "LEGGY SNAIL"
          ofs30:
          coerce_s
          setlocal1
