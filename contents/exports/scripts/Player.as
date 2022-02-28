@@ -16,7 +16,7 @@ package
       
       public static const MAX_HELIX_FRAGMENTS:int = 30;
       
-      public static const MAX_HEART_CONTAINERS:int = 100;
+      public static const MAX_HEART_CONTAINERS:int = 20;
       
       public static const GRAV_DOWN:int = 0;
       
@@ -82,7 +82,7 @@ package
       
       public static const SNAILTYPE_METAL:int = 40;
       
-      public static const STARTING_MAX_HEARTS:int = 1000;
+      public static const STARTING_MAX_HEARTS:int = 1;
       
       public static var ALT_WEAPON_1_KEY:String = "";
       
@@ -360,8 +360,8 @@ package
          this._bulletGroups = param1;
          this._paralyzed = false;
          this.hasSetHpBar = false;
-         maxVelocity.x = Number(Number(Number(this._maxSpeed.value)));
-         maxVelocity.y = Number(Number(Number(this._maxSpeed.value)));
+         maxVelocity.x = Number(Number(Number(Number(this._maxSpeed.value))));
+         maxVelocity.y = Number(Number(Number(Number(this._maxSpeed.value))));
          this.setMaxHp(STARTING_MAX_HEARTS * this.hpPerHeart());
          this.setCurHp(STARTING_MAX_HEARTS * this.hpPerHeart());
          var _loc2_:SaveData = PlayState.saveData;
@@ -379,9 +379,9 @@ package
             this.switchToWeapon(-1);
             this.setHelixFragments(0);
             this.setSnailType(SNAILTYPE_NORMAL);
-            this.gameTime.value = Number(Number(Number(0)));
-            x = Number(Number(Number(BOSSRUSH_STARTX * 16)));
-            y = Number(Number(Number(BOSSRUSH_STARTY * 16)));
+            this.gameTime.value = Number(Number(Number(Number(0))));
+            x = Number(Number(Number(Number(BOSSRUSH_STARTX * 16))));
+            y = Number(Number(Number(Number(BOSSRUSH_STARTY * 16))));
          }
          else
          {
@@ -552,14 +552,14 @@ package
             {
                _loc3_.weapPrevKey = DEFAULT_WEAPON_PREV_KEY;
             }
-            this.hasWonGame = Boolean(Boolean(Boolean(_loc2_.isVarTrue("hasWonGame"))));
-            this.hasWonHardMode = Boolean(Boolean(Boolean(_loc2_.isVarTrue("hasWonHardMode"))));
-            this.hasWonInsaneMode = Boolean(Boolean(Boolean(_loc2_.isVarTrue("hasWonInsaneMode"))));
-            this.hasFullClear = Boolean(Boolean(Boolean(_loc2_.isVarTrue("hasFullClear"))));
-            this.hasWonBossRush = Boolean(Boolean(Boolean(_loc2_.isVarTrue("hasWonBossRush"))));
-            PlayState.hideTab = Boolean(Boolean(Boolean(_loc2_.isVarTrue("hideTab"))));
-            PlayState.hideMiniMap = Boolean(Boolean(Boolean(_loc2_.isVarTrue("hideMiniMap"))));
-            PlayState.hasGoodEnding = Boolean(Boolean(Boolean(_loc2_.isVarTrue("hasGoodEnding"))));
+            this.hasWonGame = Boolean(Boolean(Boolean(Boolean(_loc2_.isVarTrue("hasWonGame")))));
+            this.hasWonHardMode = Boolean(Boolean(Boolean(Boolean(_loc2_.isVarTrue("hasWonHardMode")))));
+            this.hasWonInsaneMode = Boolean(Boolean(Boolean(Boolean(_loc2_.isVarTrue("hasWonInsaneMode")))));
+            this.hasFullClear = Boolean(Boolean(Boolean(Boolean(_loc2_.isVarTrue("hasFullClear")))));
+            this.hasWonBossRush = Boolean(Boolean(Boolean(Boolean(_loc2_.isVarTrue("hasWonBossRush")))));
+            PlayState.hideTab = Boolean(Boolean(Boolean(Boolean(_loc2_.isVarTrue("hideTab")))));
+            PlayState.hideMiniMap = Boolean(Boolean(Boolean(Boolean(_loc2_.isVarTrue("hideMiniMap")))));
+            PlayState.hasGoodEnding = Boolean(Boolean(Boolean(Boolean(_loc2_.isVarTrue("hasGoodEnding")))));
             this.setEasyMode(_loc2_.isVarTrue("easyMode"));
             this.setHardMode(_loc2_.isVarTrue("hardMode"));
             this.setInsaneMode(_loc2_.isVarTrue("insaneMode"));
@@ -576,11 +576,11 @@ package
             }
             this.setMaxHp(_loc3_.maxHp);
             this.setCurHp(999999999);
-            this.bestMainTime.value = Number(Number(Number(_loc3_.bestMainTime)));
-            this.bestHardTime.value = Number(Number(Number(_loc3_.bestHardTime)));
-            this.bestBossRushTime.value = Number(Number(Number(_loc3_.bestBossRushTime)));
-            this.bestInsaneTime.value = Number(Number(Number(_loc3_.bestInsaneTime)));
-            this.gameTime.value = Number(Number(Number(_loc3_.gameTime)));
+            this.bestMainTime.value = Number(Number(Number(Number(_loc3_.bestMainTime))));
+            this.bestHardTime.value = Number(Number(Number(Number(_loc3_.bestHardTime))));
+            this.bestBossRushTime.value = Number(Number(Number(Number(_loc3_.bestBossRushTime))));
+            this.bestInsaneTime.value = Number(Number(Number(Number(_loc3_.bestInsaneTime))));
+            this.gameTime.value = Number(Number(Number(Number(_loc3_.gameTime))));
             this.setHasWeapon(0,_loc2_.isVarTrue("hasWeaponZero"));
             this.setHasWeapon(1,_loc2_.isVarTrue("hasWeaponOne"));
             this.setHasWeapon(2,_loc2_.isVarTrue("hasWeaponTwo"));
@@ -600,8 +600,8 @@ package
             this.switchToWeapon(_loc3_.lastWeapon);
             this.setHelixFragments(_loc3_.helixFragments);
             this.setSnailType(_loc3_.snailType);
-            this.hasSeenIsis = Boolean(Boolean(Boolean(_loc2_.isVarTrue("hasSeenIsis"))));
-            this.hasSeenHelp = Boolean(Boolean(Boolean(_loc2_.isVarTrue("hasSeenHelp"))));
+            this.hasSeenIsis = Boolean(Boolean(Boolean(Boolean(_loc2_.isVarTrue("hasSeenIsis")))));
+            this.hasSeenHelp = Boolean(Boolean(Boolean(Boolean(_loc2_.isVarTrue("hasSeenHelp")))));
             PlayState.bossesKilled[1] = _loc2_.isVarTrue("bossesKilledOne");
             PlayState.bossesKilled[2] = _loc2_.isVarTrue("bossesKilledTwo");
             PlayState.bossesKilled[3] = _loc2_.isVarTrue("bossesKilledThree");
@@ -665,12 +665,12 @@ package
             WEAPON_3_KEY = _loc3_.weap3Key;
             WEAPON_NEXT_KEY = _loc3_.weapNextKey;
             WEAPON_PREV_KEY = _loc3_.weapPrevKey;
-            x = Number(Number(Number(_loc3_.savex)));
-            y = Number(Number(Number(_loc3_.savey)));
+            x = Number(Number(Number(Number(_loc3_.savex))));
+            y = Number(Number(Number(Number(_loc3_.savey))));
             if(PlayState.startFromTown)
             {
-               x = Number(Number(Number(PlayState.config.getPlayerStartX() * 16)));
-               y = Number(Number(Number(PlayState.config.getPlayerStartY() * 16)));
+               x = Number(Number(Number(Number(PlayState.config.getPlayerStartX() * 16))));
+               y = Number(Number(Number(Number(PlayState.config.getPlayerStartY() * 16))));
             }
             if(!PlayState.startFromTown)
             {
@@ -799,10 +799,10 @@ package
          {
             Sfx.playSlugMode();
             this.hideInShell(false);
-            this._maxHp.value = int(int(int(this._maxHp.value / this.hpPerHeart())));
+            this._maxHp.value = int(int(int(int(this._maxHp.value / this.hpPerHeart()))));
             this._slugMode = true;
             this._hardMode = true;
-            this._maxHp.value = int(int(int(this._maxHp.value * this.hpPerHeart())));
+            this._maxHp.value = int(int(int(int(this._maxHp.value * this.hpPerHeart()))));
             this.setMaxHp(this.getMaxHp());
             this.setCurHp(999999999);
             this.WEAPON_TIMEOUTS[0] = 0.046;
@@ -879,7 +879,7 @@ package
          }
          else
          {
-            fireToggle = Boolean(Boolean(Boolean(this.pressedShoot())));
+            fireToggle = Boolean(Boolean(Boolean(Boolean(this.pressedShoot()))));
          }
          if(fireToggle && !this._hidingInShell)
          {
@@ -929,7 +929,7 @@ package
          if(this.noCollide)
          {
             this.noCollide = false;
-            acceleration.y = Number(Number(Number(1200)));
+            acceleration.y = Number(Number(Number(Number(1200))));
          }
          if(this.justPressedUp())
          {
@@ -955,7 +955,7 @@ package
          switch(this._gravityDir)
          {
             case GRAV_UP:
-               acceleration.x = Number(Number(Number(0)));
+               acceleration.x = Number(Number(Number(Number(0))));
                if(this.pressedLeft() && !this.pressedStrafe())
                {
                   if(_loc1_)
@@ -965,11 +965,11 @@ package
                   facing = LEFT;
                   if((PlayState.worldMap.solidAt(x - 1,y + 3) || PlayState.worldMap.solidAt(x - 1,y + height - 4)) && !(this.pressedUp() || this.pressedDown()))
                   {
-                     velocity.x = Number(Number(Number(0)));
+                     velocity.x = Number(Number(Number(Number(0))));
                   }
                   else
                   {
-                     velocity.x = Number(Number(Number(0 - this._runSpeed.value)));
+                     velocity.x = Number(Number(Number(Number(0 - this._runSpeed.value))));
                   }
                   this.setFaceDir(FACE_CEIL_LEFT);
                }
@@ -982,17 +982,17 @@ package
                   facing = RIGHT;
                   if((PlayState.worldMap.solidAt(x + width,y + 3) || PlayState.worldMap.solidAt(x + width,y + height - 4)) && !(this.pressedUp() || this.pressedDown()))
                   {
-                     velocity.x = Number(Number(Number(0)));
+                     velocity.x = Number(Number(Number(Number(0))));
                   }
                   else
                   {
-                     velocity.x = Number(Number(Number(this._runSpeed.value)));
+                     velocity.x = Number(Number(Number(Number(this._runSpeed.value))));
                   }
                   this.setFaceDir(FACE_CEIL_RIGHT);
                }
                break;
             case GRAV_DOWN:
-               acceleration.x = Number(Number(Number(0)));
+               acceleration.x = Number(Number(Number(Number(0))));
                if(this.pressedLeft() && !this.pressedStrafe())
                {
                   if(_loc1_)
@@ -1002,11 +1002,11 @@ package
                   facing = LEFT;
                   if((PlayState.worldMap.solidAt(x - 1,y + 3) || PlayState.worldMap.solidAt(x - 1,y + height - 4)) && !(this.pressedUp() || this.pressedDown()))
                   {
-                     velocity.x = Number(Number(Number(0)));
+                     velocity.x = Number(Number(Number(Number(0))));
                   }
                   else
                   {
-                     velocity.x = Number(Number(Number(0 - this._runSpeed.value)));
+                     velocity.x = Number(Number(Number(Number(0 - this._runSpeed.value))));
                   }
                   this.setFaceDir(FACE_FLOOR_LEFT);
                }
@@ -1019,24 +1019,24 @@ package
                   facing = RIGHT;
                   if((PlayState.worldMap.solidAt(x + width,y + 3) || PlayState.worldMap.solidAt(x + width,y + height - 4)) && !(this.pressedUp() || this.pressedDown()))
                   {
-                     velocity.x = Number(Number(Number(0)));
+                     velocity.x = Number(Number(Number(Number(0))));
                   }
                   else
                   {
-                     velocity.x = Number(Number(Number(this._runSpeed.value)));
+                     velocity.x = Number(Number(Number(Number(this._runSpeed.value))));
                   }
                   this.setFaceDir(FACE_FLOOR_RIGHT);
                }
                break;
             case GRAV_LEFT:
-               acceleration.y = Number(Number(Number(0)));
+               acceleration.y = Number(Number(Number(Number(0))));
                if(this.pressedUp() && !this.pressedStrafe())
                {
                   if(_loc1_)
                   {
                      this.hideInShell(false);
                   }
-                  velocity.y = Number(Number(Number(0 - this._runSpeed.value)));
+                  velocity.y = Number(Number(Number(Number(0 - this._runSpeed.value))));
                   facing = LEFT;
                   this.setFaceDir(FACE_LWALL_UP);
                }
@@ -1046,20 +1046,20 @@ package
                   {
                      this.hideInShell(false);
                   }
-                  velocity.y = Number(Number(Number(this._runSpeed.value)));
+                  velocity.y = Number(Number(Number(Number(this._runSpeed.value))));
                   facing = LEFT;
                   this.setFaceDir(FACE_LWALL_DOWN);
                }
                break;
             case GRAV_RIGHT:
-               acceleration.y = Number(Number(Number(0)));
+               acceleration.y = Number(Number(Number(Number(0))));
                if(this.pressedUp() && !this.pressedStrafe())
                {
                   if(_loc1_)
                   {
                      this.hideInShell(false);
                   }
-                  velocity.y = Number(Number(Number(0 - this._runSpeed.value)));
+                  velocity.y = Number(Number(Number(Number(0 - this._runSpeed.value))));
                   facing = RIGHT;
                   this.setFaceDir(FACE_RWALL_UP);
                }
@@ -1069,7 +1069,7 @@ package
                   {
                      this.hideInShell(false);
                   }
-                  velocity.y = Number(Number(Number(this._runSpeed.value)));
+                  velocity.y = Number(Number(Number(Number(this._runSpeed.value))));
                   facing = RIGHT;
                   this.setFaceDir(FACE_RWALL_DOWN);
                }
@@ -1104,25 +1104,25 @@ package
                case GRAV_UP:
                   if(velocity.y > 0)
                   {
-                     velocity.y = Number(Number(Number(Utility.integrate(velocity.y,0,4,FlxG.elapsed))));
+                     velocity.y = Number(Number(Number(Number(Utility.integrate(velocity.y,0,4,FlxG.elapsed)))));
                   }
                   break;
                case GRAV_DOWN:
                   if(velocity.y < 0)
                   {
-                     velocity.y = Number(Number(Number(Utility.integrate(velocity.y,0,4,FlxG.elapsed))));
+                     velocity.y = Number(Number(Number(Number(Utility.integrate(velocity.y,0,4,FlxG.elapsed)))));
                   }
                   break;
                case GRAV_LEFT:
                   if(velocity.x > 0)
                   {
-                     velocity.x = Number(Number(Number(Utility.integrate(velocity.x,0,4,FlxG.elapsed))));
+                     velocity.x = Number(Number(Number(Number(Utility.integrate(velocity.x,0,4,FlxG.elapsed)))));
                   }
                   break;
                case GRAV_RIGHT:
                   if(velocity.x < 0)
                   {
-                     velocity.x = Number(Number(Number(Utility.integrate(velocity.x,0,4,FlxG.elapsed))));
+                     velocity.x = Number(Number(Number(Number(Utility.integrate(velocity.x,0,4,FlxG.elapsed)))));
                   }
             }
          }
@@ -1158,8 +1158,8 @@ package
          {
             return;
          }
-         this.gameTime.value = Number(Number(Number(this.gameTime.value + FlxG.elapsed)));
-         this._weaponTimeout.value = Number(Number(Number(this._weaponTimeout.value - FlxG.elapsed)));
+         this.gameTime.value = Number(Number(Number(Number(this.gameTime.value + FlxG.elapsed))));
+         this._weaponTimeout.value = Number(Number(Number(Number(this._weaponTimeout.value - FlxG.elapsed))));
          if(this.justPressedLeft())
          {
             this.pressedLeftSinceJump = true;
@@ -1192,7 +1192,7 @@ package
          {
             this._sleepTimeout = SLEEP_TIMEOUT;
          }
-         this._sleepTimeout = Number(Number(Number(this._sleepTimeout - FlxG.elapsed)));
+         this._sleepTimeout = Number(Number(Number(Number(this._sleepTimeout - FlxG.elapsed))));
          if(this._sleepTimeout <= 0 && !PlayState.zzz.visible && !this._slugMode)
          {
             this.hideInShell(true);
@@ -1241,12 +1241,12 @@ package
          {
             Sfx.playDeath();
             this.playAnim("death");
-            velocity.x = Number(Number(Number(facing == LEFT ? Number(110) : Number(-110))));
-            velocity.y = Number(Number(Number(-300)));
-            acceleration.x = Number(Number(Number(0)));
-            acceleration.y = Number(Number(Number(this._gravity.value)));
-            drag.x = Number(Number(Number(0)));
-            drag.y = Number(Number(Number(0)));
+            velocity.x = Number(Number(Number(Number(facing == LEFT ? Number(110) : Number(-110)))));
+            velocity.y = Number(Number(Number(Number(-300))));
+            acceleration.x = Number(Number(Number(Number(0))));
+            acceleration.y = Number(Number(Number(Number(this._gravity.value))));
+            drag.x = Number(Number(Number(Number(0))));
+            drag.y = Number(Number(Number(Number(0))));
             dead = true;
             solid = false;
          }
@@ -1279,13 +1279,13 @@ package
             PlayState.bossesKilled[4] = false;
             PlayState.bossRushTimer.going = false;
             PlayState.bossRushTimer.started = false;
-            PlayState.bossRushTimer.now.value = Number(Number(Number(0)));
+            PlayState.bossRushTimer.now.value = Number(Number(Number(Number(0))));
          }
          if(!this._invincible)
          {
             Utility.stackTrace("setting timer for kill()");
-            this.deathFadeInterval = uint(uint(uint(setInterval(this.deathFade,DEATHFADE_DELAY))));
-            this.reviveInterval = uint(uint(uint(setInterval(this.revive,REVIVE_DELAY))));
+            this.deathFadeInterval = uint(uint(uint(uint(setInterval(this.deathFade,DEATHFADE_DELAY)))));
+            this.reviveInterval = uint(uint(uint(uint(setInterval(this.revive,REVIVE_DELAY)))));
             this.setFaceDir(FACE_FLOOR_RIGHT,true);
          }
       }
@@ -1300,13 +1300,13 @@ package
       {
          clearInterval(this.reviveInterval);
          this.setFaceDir(FACE_FLOOR_RIGHT,true);
-         facing = uint(uint(uint(right)));
+         facing = uint(uint(uint(uint(right))));
          this._faceDir = FACE_FLOOR_RIGHT;
          this._mostRecentDir = DIR_RIGHT;
          this._mostRecentUpDown = DIR_DOWN;
          this._mostRecentLeftRight = DIR_RIGHT;
          this.teleportTo(32,32);
-         this.teleportInterval = uint(uint(uint(setInterval(this.realTeleport,TELEPORT_DELAY))));
+         this.teleportInterval = uint(uint(uint(uint(setInterval(this.realTeleport,TELEPORT_DELAY)))));
          if(PlayState.bossRush)
          {
             Music.playBoss1();
@@ -1316,7 +1316,7 @@ package
             PlayState.bossesKilled[4] = false;
             PlayState.bossRushTimer.going = false;
             PlayState.bossRushTimer.started = false;
-            PlayState.bossRushTimer.now.value = Number(Number(Number(0)));
+            PlayState.bossRushTimer.now.value = Number(Number(Number(Number(0))));
          }
       }
       
@@ -1391,8 +1391,8 @@ package
                      }
                      this.setGravityDir(GRAV_RIGHT);
                      this.setFaceDir(FACE_RWALL_UP,true);
-                     y = Number(Number(Number(y - 11)));
-                     x = Number(Number(Number(x + 11)));
+                     y = Number(Number(Number(Number(y - 11))));
+                     x = Number(Number(Number(Number(x + 11))));
                      this.moveSnailCheckFullBounds(0,11);
                   }
             }
@@ -1567,7 +1567,7 @@ package
       private function setHasTurbo(param1:Boolean) : void
       {
          this._hasTurbo.value = param1;
-         this._turboMultiplier.value = Number(Number(Number(!!this._hasTurbo.value ? Number(0.5) : Number(1))));
+         this._turboMultiplier.value = Number(Number(Number(Number(!!this._hasTurbo.value ? Number(0.5) : Number(1)))));
       }
       
       public function shootCurrentWeapon() : void
@@ -1689,7 +1689,7 @@ package
             _loc8_ = Math.cos(_loc6_ * Math.PI / 180) * _loc7_;
             _loc9_ = (0 - Math.sin(_loc6_ * Math.PI / 180)) * _loc7_;
             _loc1_.shoot(x + width / 2,y + height / 2,_loc8_,_loc9_);
-            this._weaponTimeout.value = Number(Number(Number(this.WEAPON_TIMEOUTS[this._currentWeapon.value] * this._turboMultiplier.value)));
+            this._weaponTimeout.value = Number(Number(Number(Number(this.WEAPON_TIMEOUTS[this._currentWeapon.value] * this._turboMultiplier.value))));
          }
       }
       
@@ -1709,7 +1709,7 @@ package
                      return;
                   }
                   this.setFaceDir(facing == RIGHT ? int(FACE_CEIL_RIGHT) : int(FACE_CEIL_LEFT));
-                  this._desiredGravity = uint(uint(uint(GRAV_UP)));
+                  this._desiredGravity = uint(uint(uint(uint(GRAV_UP))));
                }
                else if((!this.pressedDown() && !this.pressedUp() || this._mostRecentDir == DIR_RIGHT) && this.pressedRight())
                {
@@ -1718,7 +1718,7 @@ package
                      return;
                   }
                   this.setFaceDir(FACE_RWALL_UP);
-                  this._desiredGravity = uint(uint(uint(GRAV_RIGHT)));
+                  this._desiredGravity = uint(uint(uint(uint(GRAV_RIGHT))));
                }
                else if((!this.pressedDown() && !this.pressedUp() || this._mostRecentDir == DIR_LEFT) && this.pressedLeft())
                {
@@ -1727,7 +1727,7 @@ package
                      return;
                   }
                   this.setFaceDir(FACE_LWALL_UP);
-                  this._desiredGravity = uint(uint(uint(GRAV_LEFT)));
+                  this._desiredGravity = uint(uint(uint(uint(GRAV_LEFT))));
                }
                break;
             case GRAV_UP:
@@ -1738,7 +1738,7 @@ package
                      return;
                   }
                   this.setFaceDir(FACE_RWALL_DOWN);
-                  this._desiredGravity = uint(uint(uint(GRAV_RIGHT)));
+                  this._desiredGravity = uint(uint(uint(uint(GRAV_RIGHT))));
                }
                else if((!this.pressedDown() && !this.pressedUp() || this._mostRecentDir == DIR_LEFT) && this.pressedLeft())
                {
@@ -1747,7 +1747,7 @@ package
                      return;
                   }
                   this.setFaceDir(FACE_LWALL_DOWN);
-                  this._desiredGravity = uint(uint(uint(GRAV_LEFT)));
+                  this._desiredGravity = uint(uint(uint(uint(GRAV_LEFT))));
                }
                else if(this.pressedDown())
                {
@@ -1756,7 +1756,7 @@ package
                      return;
                   }
                   this.setFaceDir(facing == RIGHT ? int(FACE_FLOOR_RIGHT) : int(FACE_FLOOR_LEFT));
-                  this._desiredGravity = uint(uint(uint(GRAV_DOWN)));
+                  this._desiredGravity = uint(uint(uint(uint(GRAV_DOWN))));
                }
                break;
             case GRAV_RIGHT:
@@ -1767,7 +1767,7 @@ package
                      return;
                   }
                   this.setFaceDir(FACE_CEIL_RIGHT);
-                  this._desiredGravity = uint(uint(uint(GRAV_UP)));
+                  this._desiredGravity = uint(uint(uint(uint(GRAV_UP))));
                }
                else if(!((!this.pressedDown() && !this.pressedUp() || this._mostRecentDir == DIR_RIGHT) && this.pressedRight()))
                {
@@ -1778,7 +1778,7 @@ package
                         return;
                      }
                      this.setFaceDir(this._faceDir == FACE_RWALL_UP ? int(FACE_LWALL_UP) : int(FACE_LWALL_DOWN));
-                     this._desiredGravity = uint(uint(uint(GRAV_LEFT)));
+                     this._desiredGravity = uint(uint(uint(uint(GRAV_LEFT))));
                   }
                   else if((!this.pressedLeft() && !this.pressedRight() || this._mostRecentDir == DIR_DOWN) && this.pressedDown())
                   {
@@ -1787,7 +1787,7 @@ package
                         return;
                      }
                      this.setFaceDir(FACE_FLOOR_RIGHT);
-                     this._desiredGravity = uint(uint(uint(GRAV_DOWN)));
+                     this._desiredGravity = uint(uint(uint(uint(GRAV_DOWN))));
                   }
                }
                break;
@@ -1799,7 +1799,7 @@ package
                      return;
                   }
                   this.setFaceDir(FACE_CEIL_LEFT);
-                  this._desiredGravity = uint(uint(uint(GRAV_UP)));
+                  this._desiredGravity = uint(uint(uint(uint(GRAV_UP))));
                }
                else if(!((!this.pressedDown() && !this.pressedUp() || this._mostRecentDir == DIR_LEFT) && this.pressedLeft()))
                {
@@ -1810,7 +1810,7 @@ package
                         return;
                      }
                      this.setFaceDir(this._faceDir == FACE_LWALL_UP ? int(FACE_RWALL_UP) : int(FACE_RWALL_DOWN));
-                     this._desiredGravity = uint(uint(uint(GRAV_RIGHT)));
+                     this._desiredGravity = uint(uint(uint(uint(GRAV_RIGHT))));
                   }
                   else if((!this.pressedLeft() && !this.pressedRight() || this._mostRecentDir == DIR_DOWN) && this.pressedDown())
                   {
@@ -1819,33 +1819,33 @@ package
                         return;
                      }
                      this.setFaceDir(FACE_FLOOR_LEFT);
-                     this._desiredGravity = uint(uint(uint(GRAV_DOWN)));
+                     this._desiredGravity = uint(uint(uint(uint(GRAV_DOWN))));
                   }
                }
          }
-         this._desiredGravity = uint(uint(uint(GRAV_DOWN)));
+         this._desiredGravity = uint(uint(uint(uint(GRAV_DOWN))));
       }
       
       public function changeSnailSizeCheckBounds(param1:int, param2:int, param3:int, param4:int) : void
       {
          var _loc5_:int = param1 - param3;
          var _loc6_:int = param2 - param4;
-         x = Number(Number(Number(int(x))));
-         y = Number(Number(Number(int(y))));
+         x = Number(Number(Number(Number(int(x)))));
+         y = Number(Number(Number(Number(int(y)))));
          if(_loc5_ > 0 && _loc6_ > 0)
          {
-            x = Number(Number(Number(x - _loc5_)));
-            y = Number(Number(Number(y - _loc6_)));
+            x = Number(Number(Number(Number(x - _loc5_))));
+            y = Number(Number(Number(Number(y - _loc6_))));
             this.moveSnailCheckBounds(_loc5_,_loc6_);
          }
          else if(_loc5_ > 0)
          {
-            x = Number(Number(Number(x - _loc5_)));
+            x = Number(Number(Number(Number(x - _loc5_))));
             this.moveSnailCheckBounds(_loc5_,0);
          }
          else if(_loc6_ > 0)
          {
-            y = Number(Number(Number(y - _loc6_)));
+            y = Number(Number(Number(Number(y - _loc6_))));
             this.moveSnailCheckBounds(0,_loc6_);
          }
       }
@@ -1875,7 +1875,7 @@ package
          {
             param2 = PlayState.worldMap.findFirstFullNotSolidBottom(x,y,width,height,param2);
          }
-         y = Number(Number(Number(y + param2)));
+         y = Number(Number(Number(Number(y + param2))));
          if(param1 < 0)
          {
             param1 = PlayState.worldMap.findFirstFullNotSolidLeft(x,y,width,height,param1);
@@ -1884,7 +1884,7 @@ package
          {
             param1 = PlayState.worldMap.findFirstFullNotSolidRight(x,y,width,height,param1);
          }
-         x = Number(Number(Number(x + param1)));
+         x = Number(Number(Number(Number(x + param1))));
          param2 = _loc3_ - param2;
          if(param2 < 0)
          {
@@ -1894,7 +1894,7 @@ package
          {
             param2 = PlayState.worldMap.findFirstFullNotSolidBottom(x,y,width,height,param2);
          }
-         y = Number(Number(Number(y + param2)));
+         y = Number(Number(Number(Number(y + param2))));
       }
       
       public function moveSnailCheckBounds(param1:int, param2:int) : void
@@ -1908,7 +1908,7 @@ package
          {
             param2 = PlayState.worldMap.findFirstNotSolidBottom(x,y,width,height,param2);
          }
-         y = Number(Number(Number(y + param2)));
+         y = Number(Number(Number(Number(y + param2))));
          if(param1 < 0)
          {
             param1 = PlayState.worldMap.findFirstNotSolidLeft(x,y,width,height,param1);
@@ -1917,7 +1917,7 @@ package
          {
             param1 = PlayState.worldMap.findFirstNotSolidRight(x,y,width,height,param1);
          }
-         x = Number(Number(Number(x + param1)));
+         x = Number(Number(Number(Number(x + param1))));
          param2 = _loc3_ - param2;
          if(param2 < 0)
          {
@@ -1927,7 +1927,7 @@ package
          {
             param2 = PlayState.worldMap.findFirstNotSolidBottom(x,y,width,height,param2);
          }
-         y = Number(Number(Number(y + param2)));
+         y = Number(Number(Number(Number(y + param2))));
       }
       
       private function fixGravity() : void
@@ -1965,7 +1965,7 @@ package
                }
                else if(this._hasGravityJump.value && !this.pressedJump() && this._fallFrames == 1 && !this.pressedUp())
                {
-                  this._desiredGravity = uint(uint(uint(GRAV_UP)));
+                  this._desiredGravity = uint(uint(uint(uint(GRAV_UP))));
                   switch(this._desiredGravity)
                   {
                      case GRAV_DOWN:
@@ -1988,13 +1988,13 @@ package
                   if(facing == RIGHT && this.pressedRight())
                   {
                      this.setFaceDir(FACE_LWALL_DOWN,false,true);
-                     velocity.x = Number(Number(Number(0 - this._runSpeed.value)));
+                     velocity.x = Number(Number(Number(Number(0 - this._runSpeed.value))));
                      this.moveSnailCheckBounds(0,-11);
                   }
                   else if(facing == LEFT && this.pressedLeft())
                   {
                      this.setFaceDir(FACE_RWALL_DOWN,false,true);
-                     velocity.x = Number(Number(Number(this._runSpeed.value)));
+                     velocity.x = Number(Number(Number(Number(this._runSpeed.value))));
                      this.moveSnailCheckBounds(15,-11);
                   }
                   break;
@@ -2047,7 +2047,7 @@ package
                }
                else if(this._hasGravityJump.value && !this.pressedJump() && this._fallFrames == 1 && !this.pressedLeft())
                {
-                  this._desiredGravity = uint(uint(uint(GRAV_LEFT)));
+                  this._desiredGravity = uint(uint(uint(uint(GRAV_LEFT))));
                   switch(this._desiredGravity)
                   {
                      case GRAV_DOWN:
@@ -2091,7 +2091,7 @@ package
                }
                else if(this._hasGravityJump.value && !this.pressedJump() && this._fallFrames == 1 && !this.pressedRight())
                {
-                  this._desiredGravity = uint(uint(uint(GRAV_RIGHT)));
+                  this._desiredGravity = uint(uint(uint(uint(GRAV_RIGHT))));
                   switch(this._desiredGravity)
                   {
                      case GRAV_DOWN:
@@ -2137,32 +2137,32 @@ package
             case GRAV_UP:
                if(this.findNotSolidHeight() >= 8)
                {
-                  y = Number(Number(Number(y + 1)));
-                  velocity.y = Number(Number(Number(this._jumpPower.value)));
+                  y = Number(Number(Number(Number(y + 1))));
+                  velocity.y = Number(Number(Number(Number(this._jumpPower.value))));
                   return true;
                }
                break;
             case GRAV_DOWN:
                if(this.findNotSolidHeight() >= 8)
                {
-                  y = Number(Number(Number(y - 1)));
-                  velocity.y = Number(Number(Number(0 - this._jumpPower.value)));
+                  y = Number(Number(Number(Number(y - 1))));
+                  velocity.y = Number(Number(Number(Number(0 - this._jumpPower.value))));
                   return true;
                }
                break;
             case GRAV_LEFT:
                if(this.findNotSolidWidth() >= 8)
                {
-                  x = Number(Number(Number(x - 1)));
-                  velocity.x = Number(Number(Number(this._jumpPower.value)));
+                  x = Number(Number(Number(Number(x - 1))));
+                  velocity.x = Number(Number(Number(Number(this._jumpPower.value))));
                   return true;
                }
                break;
             case GRAV_RIGHT:
                if(this.findNotSolidWidth() >= 8)
                {
-                  x = Number(Number(Number(x + 1)));
-                  velocity.x = Number(Number(Number(0 - this._jumpPower.value)));
+                  x = Number(Number(Number(Number(x + 1))));
+                  velocity.x = Number(Number(Number(Number(0 - this._jumpPower.value))));
                   return true;
                }
                break;
@@ -2177,8 +2177,8 @@ package
             case GRAV_UP:
                if(this.findNotSolidHeight() >= 8)
                {
-                  y = Number(Number(Number(y + 1)));
-                  velocity.y = Number(Number(Number(0)));
+                  y = Number(Number(Number(Number(y + 1))));
+                  velocity.y = Number(Number(Number(Number(0))));
                   this.setFaceDir(facing == RIGHT ? int(FACE_FLOOR_RIGHT) : int(FACE_FLOOR_LEFT));
                   return true;
                }
@@ -2186,16 +2186,16 @@ package
             case GRAV_DOWN:
                if(this.findNotSolidHeight() >= 8)
                {
-                  y = Number(Number(Number(y - 1)));
-                  velocity.y = Number(Number(Number(0 - this._jumpPower.value)));
+                  y = Number(Number(Number(Number(y - 1))));
+                  velocity.y = Number(Number(Number(Number(0 - this._jumpPower.value))));
                   return true;
                }
                break;
             case GRAV_LEFT:
                if(this.findNotSolidWidth() >= 8 && !(this.pressedLeft() && (this.pressedUp() || this.pressedDown())))
                {
-                  velocity.y = Number(Number(Number(0)));
-                  velocity.x = Number(Number(Number(100)));
+                  velocity.y = Number(Number(Number(Number(0))));
+                  velocity.x = Number(Number(Number(Number(100))));
                   this.setFaceDir(FACE_FLOOR_LEFT);
                   return true;
                }
@@ -2203,9 +2203,9 @@ package
             case GRAV_RIGHT:
                if(this.findNotSolidWidth() >= 8 && !(this.pressedRight() && (this.pressedUp() || this.pressedDown())))
                {
-                  velocity.y = Number(Number(Number(0)));
-                  velocity.x = Number(Number(Number(-100)));
-                  x = Number(Number(Number(x - 11)));
+                  velocity.y = Number(Number(Number(Number(0))));
+                  velocity.x = Number(Number(Number(Number(-100))));
+                  x = Number(Number(Number(Number(x - 11))));
                   this.setFaceDir(FACE_FLOOR_RIGHT);
                   return true;
                }
@@ -2217,7 +2217,7 @@ package
       public function setHighJump(param1:Boolean) : void
       {
          this._hasHighJump.value = param1;
-         this._jumpPower.value = int(int(int(!!this._hasHighJump.value ? int(HIGH_JUMP) : int(REGULAR_JUMP))));
+         this._jumpPower.value = int(int(int(int(!!this._hasHighJump.value ? int(HIGH_JUMP) : int(REGULAR_JUMP)))));
       }
       
       public function isIcy() : Boolean
@@ -2266,32 +2266,32 @@ package
       
       public function setGravityDir(param1:int) : void
       {
-         this._gravityDir = uint(uint(uint(param1)));
+         this._gravityDir = uint(uint(uint(uint(param1))));
          switch(this._gravityDir)
          {
             case GRAV_DOWN:
-               acceleration.x = Number(Number(Number(0)));
-               acceleration.y = Number(Number(Number(this._gravity.value)));
-               drag.x = Number(Number(Number(this._runSpeed.value * 1200)));
-               drag.y = Number(Number(Number(0)));
+               acceleration.x = Number(Number(Number(Number(0))));
+               acceleration.y = Number(Number(Number(Number(this._gravity.value))));
+               drag.x = Number(Number(Number(Number(this._runSpeed.value * 1200))));
+               drag.y = Number(Number(Number(Number(0))));
                break;
             case GRAV_RIGHT:
-               acceleration.x = Number(Number(Number(this._gravity.value)));
-               acceleration.y = Number(Number(Number(0)));
-               drag.y = Number(Number(Number(this._runSpeed.value * 200)));
-               drag.x = Number(Number(Number(0)));
+               acceleration.x = Number(Number(Number(Number(this._gravity.value))));
+               acceleration.y = Number(Number(Number(Number(0))));
+               drag.y = Number(Number(Number(Number(this._runSpeed.value * 200))));
+               drag.x = Number(Number(Number(Number(0))));
                break;
             case GRAV_UP:
-               acceleration.x = Number(Number(Number(0)));
-               acceleration.y = Number(Number(Number(0 - this._gravity.value)));
-               drag.x = Number(Number(Number(this._runSpeed.value * 200)));
-               drag.y = Number(Number(Number(0)));
+               acceleration.x = Number(Number(Number(Number(0))));
+               acceleration.y = Number(Number(Number(Number(0 - this._gravity.value))));
+               drag.x = Number(Number(Number(Number(this._runSpeed.value * 200))));
+               drag.y = Number(Number(Number(Number(0))));
                break;
             case GRAV_LEFT:
-               acceleration.x = Number(Number(Number(0 - this._gravity.value)));
-               acceleration.y = Number(Number(Number(0)));
-               drag.y = Number(Number(Number(this._runSpeed.value * 200)));
-               drag.x = Number(Number(Number(0)));
+               acceleration.x = Number(Number(Number(Number(0 - this._gravity.value))));
+               acceleration.y = Number(Number(Number(Number(0))));
+               drag.y = Number(Number(Number(Number(this._runSpeed.value * 200))));
+               drag.x = Number(Number(Number(Number(0))));
          }
       }
       
@@ -2315,8 +2315,8 @@ package
          if(PlayState.bossRush)
          {
             this.setCurHp(99999);
-            x = Number(Number(Number(BOSSRUSH_STARTX * 16)));
-            y = Number(Number(Number(BOSSRUSH_STARTY * 16)));
+            x = Number(Number(Number(Number(BOSSRUSH_STARTX * 16))));
+            y = Number(Number(Number(Number(BOSSRUSH_STARTY * 16))));
          }
          else
          {
@@ -2331,12 +2331,12 @@ package
       public function teleportTo(param1:int, param2:int) : void
       {
          this.setFaceDir(FACE_FLOOR_RIGHT,true);
-         x = Number(Number(Number(param1)));
-         y = Number(Number(Number(param2)));
-         velocity.x = Number(Number(Number(0)));
-         velocity.y = Number(Number(Number(0)));
-         drag.x = Number(Number(Number(this._runSpeed.value * 200)));
-         drag.y = Number(Number(Number(0)));
+         x = Number(Number(Number(Number(param1))));
+         y = Number(Number(Number(Number(param2))));
+         velocity.x = Number(Number(Number(Number(0))));
+         velocity.y = Number(Number(Number(Number(0))));
+         drag.x = Number(Number(Number(Number(this._runSpeed.value * 200))));
+         drag.y = Number(Number(Number(Number(0))));
          PlayState.worldMap.checkRoomBounds(this);
       }
       
@@ -2345,96 +2345,96 @@ package
          switch(this._faceDir)
          {
             case FACE_FLOOR_LEFT:
-               offset.x = Number(Number(Number(0 + 13)));
-               width = Number(Number(Number(32 - 13 - 7)));
-               offset.y = Number(Number(Number(16 + 3)));
-               height = Number(Number(Number(16 - 3)));
+               offset.x = Number(Number(Number(Number(0 + 13))));
+               width = Number(Number(Number(Number(32 - 13 - 7))));
+               offset.y = Number(Number(Number(Number(16 + 3))));
+               height = Number(Number(Number(Number(16 - 3))));
                this.setGravityDir(GRAV_DOWN);
                this.playAnim("floor_right_hide");
                this._hideOfsX = 9;
-               x = Number(Number(Number(x + this._hideOfsX)));
+               x = Number(Number(Number(Number(x + this._hideOfsX))));
                this._hideOfsY = 0;
-               y = Number(Number(Number(y + this._hideOfsY)));
+               y = Number(Number(Number(Number(y + this._hideOfsY))));
                break;
             case FACE_FLOOR_RIGHT:
-               offset.x = Number(Number(Number(0 + 7)));
-               width = Number(Number(Number(32 - 7 - 13)));
-               offset.y = Number(Number(Number(16 + 3)));
-               height = Number(Number(Number(16 - 3)));
+               offset.x = Number(Number(Number(Number(0 + 7))));
+               width = Number(Number(Number(Number(32 - 7 - 13))));
+               offset.y = Number(Number(Number(Number(16 + 3))));
+               height = Number(Number(Number(Number(16 - 3))));
                this.setGravityDir(GRAV_DOWN);
                this._hideOfsX = 3;
-               x = Number(Number(Number(x + this._hideOfsX)));
+               x = Number(Number(Number(Number(x + this._hideOfsX))));
                this._hideOfsY = 0;
-               y = Number(Number(Number(y + this._hideOfsY)));
+               y = Number(Number(Number(Number(y + this._hideOfsY))));
                this.playAnim("floor_right_hide");
                break;
             case FACE_CEIL_LEFT:
-               offset.x = Number(Number(Number(0 + 13)));
-               width = Number(Number(Number(32 - 13 - 7)));
-               offset.y = Number(Number(Number(0 + 0)));
-               height = Number(Number(Number(16 - 6)));
+               offset.x = Number(Number(Number(Number(0 + 13))));
+               width = Number(Number(Number(Number(32 - 13 - 7))));
+               offset.y = Number(Number(Number(Number(0 + 0))));
+               height = Number(Number(Number(Number(16 - 6))));
                this.setGravityDir(GRAV_UP);
                this.playAnim("ceil_right_hide");
                this._hideOfsX = 9;
-               x = Number(Number(Number(x + this._hideOfsX)));
+               x = Number(Number(Number(Number(x + this._hideOfsX))));
                break;
             case FACE_CEIL_RIGHT:
-               offset.x = Number(Number(Number(0 + 7)));
-               width = Number(Number(Number(32 - 7 - 13)));
-               offset.y = Number(Number(Number(0 + 0)));
-               height = Number(Number(Number(16 - 6)));
+               offset.x = Number(Number(Number(Number(0 + 7))));
+               width = Number(Number(Number(Number(32 - 7 - 13))));
+               offset.y = Number(Number(Number(Number(0 + 0))));
+               height = Number(Number(Number(Number(16 - 6))));
                this.setGravityDir(GRAV_UP);
                this.playAnim("ceil_right_hide");
                this._hideOfsX = 3;
-               x = Number(Number(Number(x + this._hideOfsX)));
+               x = Number(Number(Number(Number(x + this._hideOfsX))));
                break;
             case FACE_RWALL_UP:
-               offset.y = Number(Number(Number(0 + 13)));
-               height = Number(Number(Number(32 - 13 - 7)));
-               offset.x = Number(Number(Number(16 + 6)));
-               width = Number(Number(Number(16 - 6)));
+               offset.y = Number(Number(Number(Number(0 + 13))));
+               height = Number(Number(Number(Number(32 - 13 - 7))));
+               offset.x = Number(Number(Number(Number(16 + 6))));
+               width = Number(Number(Number(Number(16 - 6))));
                this.setGravityDir(GRAV_RIGHT);
                this.playAnim("rwall_up_hide");
                facing = RIGHT;
                this._hideOfsY = 9;
-               y = Number(Number(Number(y + this._hideOfsY)));
+               y = Number(Number(Number(Number(y + this._hideOfsY))));
                this._hideOfsX = 3;
-               x = Number(Number(Number(x + this._hideOfsX)));
+               x = Number(Number(Number(Number(x + this._hideOfsX))));
                break;
             case FACE_RWALL_DOWN:
-               offset.y = Number(Number(Number(0 + 7)));
-               height = Number(Number(Number(32 - 7 - 13)));
-               offset.x = Number(Number(Number(16 + 6)));
-               width = Number(Number(Number(16 - 6)));
+               offset.y = Number(Number(Number(Number(0 + 7))));
+               height = Number(Number(Number(Number(32 - 7 - 13))));
+               offset.x = Number(Number(Number(Number(16 + 6))));
+               width = Number(Number(Number(Number(16 - 6))));
                this.setGravityDir(GRAV_RIGHT);
                this.playAnim("rwall_down_hide");
                facing = RIGHT;
                this._hideOfsY = 3;
-               y = Number(Number(Number(y + this._hideOfsY)));
+               y = Number(Number(Number(Number(y + this._hideOfsY))));
                this._hideOfsX = 3;
-               x = Number(Number(Number(x + this._hideOfsX)));
+               x = Number(Number(Number(Number(x + this._hideOfsX))));
                break;
             case FACE_LWALL_UP:
-               offset.y = Number(Number(Number(0 + 13)));
-               height = Number(Number(Number(32 - 13 - 7)));
-               offset.x = Number(Number(Number(0 + 0)));
-               width = Number(Number(Number(16 - 6)));
+               offset.y = Number(Number(Number(Number(0 + 13))));
+               height = Number(Number(Number(Number(32 - 13 - 7))));
+               offset.x = Number(Number(Number(Number(0 + 0))));
+               width = Number(Number(Number(Number(16 - 6))));
                this.setGravityDir(GRAV_LEFT);
                this.playAnim("rwall_up_hide");
                facing = LEFT;
                this._hideOfsY = 9;
-               y = Number(Number(Number(y + this._hideOfsY)));
+               y = Number(Number(Number(Number(y + this._hideOfsY))));
                break;
             case FACE_LWALL_DOWN:
-               offset.y = Number(Number(Number(0 + 7)));
-               height = Number(Number(Number(32 - 7 - 13)));
-               offset.x = Number(Number(Number(0 + 0)));
-               width = Number(Number(Number(16 - 6)));
+               offset.y = Number(Number(Number(Number(0 + 7))));
+               height = Number(Number(Number(Number(32 - 7 - 13))));
+               offset.x = Number(Number(Number(Number(0 + 0))));
+               width = Number(Number(Number(Number(16 - 6))));
                this.setGravityDir(GRAV_LEFT);
                this.playAnim("rwall_down_hide");
                facing = LEFT;
                this._hideOfsY = 3;
-               y = Number(Number(Number(y + this._hideOfsY)));
+               y = Number(Number(Number(Number(y + this._hideOfsY))));
          }
       }
       
@@ -2448,29 +2448,29 @@ package
          {
             case FACE_FLOOR_LEFT:
             case FACE_FLOOR_RIGHT:
-               offset.x = Number(Number(Number(0 + 4)));
-               width = Number(Number(Number(32 - 4 - 4)));
-               offset.y = Number(Number(Number(16 + 3)));
-               height = Number(Number(Number(16 - 3)));
+               offset.x = Number(Number(Number(Number(0 + 4))));
+               width = Number(Number(Number(Number(32 - 4 - 4))));
+               offset.y = Number(Number(Number(Number(16 + 3))));
+               height = Number(Number(Number(Number(16 - 3))));
                this.changeSnailSizeCheckBounds(width,height,_loc5_,_loc6_);
                this.setGravityDir(GRAV_DOWN);
                this.playAnim("floor_right_move");
                break;
             case FACE_CEIL_LEFT:
             case FACE_CEIL_RIGHT:
-               offset.x = Number(Number(Number(0 + 4)));
-               width = Number(Number(Number(32 - 4 - 4)));
-               offset.y = Number(Number(Number(0 + 0)));
-               height = Number(Number(Number(16 - 3)));
+               offset.x = Number(Number(Number(Number(0 + 4))));
+               width = Number(Number(Number(Number(32 - 4 - 4))));
+               offset.y = Number(Number(Number(Number(0 + 0))));
+               height = Number(Number(Number(Number(16 - 3))));
                this.changeSnailSizeCheckBounds(width,height,_loc5_,_loc6_);
                this.setGravityDir(GRAV_UP);
                this.playAnim("ceil_right_move");
                break;
             case FACE_RWALL_UP:
-               offset.y = Number(Number(Number(0 + 4)));
-               height = Number(Number(Number(32 - 8)));
-               offset.x = Number(Number(Number(16 + 3)));
-               width = Number(Number(Number(16 - 3)));
+               offset.y = Number(Number(Number(Number(0 + 4))));
+               height = Number(Number(Number(Number(32 - 8))));
+               offset.x = Number(Number(Number(Number(16 + 3))));
+               width = Number(Number(Number(Number(16 - 3))));
                if(!param2)
                {
                   this.changeSnailSizeCheckBounds(width,height,_loc5_,_loc6_);
@@ -2480,10 +2480,10 @@ package
                facing = RIGHT;
                break;
             case FACE_RWALL_DOWN:
-               offset.y = Number(Number(Number(0 + 4)));
-               height = Number(Number(Number(32 - 8)));
-               offset.x = Number(Number(Number(16 + 3)));
-               width = Number(Number(Number(16 - 3)));
+               offset.y = Number(Number(Number(Number(0 + 4))));
+               height = Number(Number(Number(Number(32 - 8))));
+               offset.x = Number(Number(Number(Number(16 + 3))));
+               width = Number(Number(Number(Number(16 - 3))));
                if(!param2)
                {
                   this.changeSnailSizeCheckBounds(width,height,_loc5_,_loc6_);
@@ -2493,10 +2493,10 @@ package
                facing = RIGHT;
                break;
             case FACE_LWALL_UP:
-               offset.y = Number(Number(Number(0 + 4)));
-               height = Number(Number(Number(32 - 8)));
-               offset.x = Number(Number(Number(0 + 0)));
-               width = Number(Number(Number(16 - 3)));
+               offset.y = Number(Number(Number(Number(0 + 4))));
+               height = Number(Number(Number(Number(32 - 8))));
+               offset.x = Number(Number(Number(Number(0 + 0))));
+               width = Number(Number(Number(Number(16 - 3))));
                if(!param2)
                {
                   this.changeSnailSizeCheckBounds(width,height,_loc5_,_loc6_);
@@ -2506,10 +2506,10 @@ package
                facing = LEFT;
                break;
             case FACE_LWALL_DOWN:
-               offset.y = Number(Number(Number(0 + 4)));
-               height = Number(Number(Number(32 - 8)));
-               offset.x = Number(Number(Number(0 + 0)));
-               width = Number(Number(Number(16 - 3)));
+               offset.y = Number(Number(Number(Number(0 + 4))));
+               height = Number(Number(Number(Number(32 - 8))));
+               offset.x = Number(Number(Number(Number(0 + 0))));
+               width = Number(Number(Number(Number(16 - 3))));
                if(!param2)
                {
                   this.changeSnailSizeCheckBounds(width,height,_loc5_,_loc6_);
@@ -2569,7 +2569,7 @@ package
          this._maxHp.value = param1;
          if(this._maxHp.value > this.hpPerHeart() * MAX_HEART_CONTAINERS)
          {
-            this._maxHp.value = int(int(int(this.hpPerHeart() * MAX_HEART_CONTAINERS)));
+            this._maxHp.value = int(int(int(int(this.hpPerHeart() * MAX_HEART_CONTAINERS))));
          }
          this.setCurHp(this._maxHp.value);
          PlayState.hud.heartHud.setMaxHp(this._maxHp.value,this);

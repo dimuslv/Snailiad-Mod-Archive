@@ -55,7 +55,7 @@ package
       
       public static const MAX_HELIX_FRAGMENTS:int = 30;
       
-      public static const MAX_HEART_CONTAINERS:int = 100;
+      public static const MAX_HEART_CONTAINERS:int = 20;
       
       public static const GRAV_DOWN:int = 0;
       
@@ -121,7 +121,7 @@ package
       
       public static const SNAILTYPE_METAL:int = 40;
       
-      public static const STARTING_MAX_HEARTS:int = 1000;
+      public static const STARTING_MAX_HEARTS:int = 1;
       
       public static var ALT_WEAPON_1_KEY:String = "";
       
@@ -247,7 +247,7 @@ package
          pushbyte 30
          initproperty QName(PackageNamespace(""),"MAX_HELIX_FRAGMENTS")
          findproperty QName(PackageNamespace(""),"MAX_HEART_CONTAINERS")
-         pushbyte 100
+         pushbyte 20
          initproperty QName(PackageNamespace(""),"MAX_HEART_CONTAINERS")
          findproperty QName(PackageNamespace(""),"GRAV_DOWN")
          pushbyte 0
@@ -354,7 +354,7 @@ package
          pushbyte 40
          initproperty QName(PackageNamespace(""),"SNAILTYPE_METAL")
          findproperty QName(PackageNamespace(""),"STARTING_MAX_HEARTS")
-         pushshort 1000
+         pushbyte 1
          initproperty QName(PackageNamespace(""),"STARTING_MAX_HEARTS")
          findproperty QName(PackageNamespace(""),"ALT_WEAPON_1_KEY")
          pushstring ""
@@ -846,9 +846,11 @@ package
          getlex QName(PackageNamespace(""),"maxVelocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_maxSpeed")
          getproperty QName(PackageNamespace(""),"value")
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -856,9 +858,11 @@ package
          getlex QName(PackageNamespace(""),"maxVelocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_maxSpeed")
          getproperty QName(PackageNamespace(""),"value")
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -924,7 +928,9 @@ package
          getproperty QName(PackageNamespace(""),"gameTime")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -932,9 +938,11 @@ package
          findpropstrict QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"BOSSRUSH_STARTX")
          pushbyte 16
          multiply
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -942,9 +950,11 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"BOSSRUSH_STARTY")
          pushbyte 16
          multiply
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -1379,9 +1389,11 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"Boolean")
          findpropstrict QName(PackageNamespace(""),"Boolean")
+         findpropstrict QName(PackageNamespace(""),"Boolean")
          getlocal2
          pushstring "hasWonGame"
          callproperty QName(PackageNamespace(""),"isVarTrue"), 1
+         callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          convert_b
@@ -1389,9 +1401,11 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"Boolean")
          findpropstrict QName(PackageNamespace(""),"Boolean")
+         findpropstrict QName(PackageNamespace(""),"Boolean")
          getlocal2
          pushstring "hasWonHardMode"
          callproperty QName(PackageNamespace(""),"isVarTrue"), 1
+         callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          convert_b
@@ -1399,9 +1413,11 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"Boolean")
          findpropstrict QName(PackageNamespace(""),"Boolean")
+         findpropstrict QName(PackageNamespace(""),"Boolean")
          getlocal2
          pushstring "hasWonInsaneMode"
          callproperty QName(PackageNamespace(""),"isVarTrue"), 1
+         callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          convert_b
@@ -1409,9 +1425,11 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"Boolean")
          findpropstrict QName(PackageNamespace(""),"Boolean")
+         findpropstrict QName(PackageNamespace(""),"Boolean")
          getlocal2
          pushstring "hasFullClear"
          callproperty QName(PackageNamespace(""),"isVarTrue"), 1
+         callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          convert_b
@@ -1419,9 +1437,11 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"Boolean")
          findpropstrict QName(PackageNamespace(""),"Boolean")
+         findpropstrict QName(PackageNamespace(""),"Boolean")
          getlocal2
          pushstring "hasWonBossRush"
          callproperty QName(PackageNamespace(""),"isVarTrue"), 1
+         callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          convert_b
@@ -1429,9 +1449,11 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          findpropstrict QName(PackageNamespace(""),"Boolean")
          findpropstrict QName(PackageNamespace(""),"Boolean")
+         findpropstrict QName(PackageNamespace(""),"Boolean")
          getlocal2
          pushstring "hideTab"
          callproperty QName(PackageNamespace(""),"isVarTrue"), 1
+         callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          convert_b
@@ -1439,9 +1461,11 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          findpropstrict QName(PackageNamespace(""),"Boolean")
          findpropstrict QName(PackageNamespace(""),"Boolean")
+         findpropstrict QName(PackageNamespace(""),"Boolean")
          getlocal2
          pushstring "hideMiniMap"
          callproperty QName(PackageNamespace(""),"isVarTrue"), 1
+         callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          convert_b
@@ -1449,9 +1473,11 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          findpropstrict QName(PackageNamespace(""),"Boolean")
          findpropstrict QName(PackageNamespace(""),"Boolean")
+         findpropstrict QName(PackageNamespace(""),"Boolean")
          getlocal2
          pushstring "hasGoodEnding"
          callproperty QName(PackageNamespace(""),"isVarTrue"), 1
+         callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          convert_b
@@ -1524,8 +1550,10 @@ package
          getproperty QName(PackageNamespace(""),"bestMainTime")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal3
          getproperty Multiname("bestMainTime",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Player"),ProtectedNamespace(":Player"),StaticProtectedNs(":Player"),PrivateNamespace("Player.as$93")])
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -1534,8 +1562,10 @@ package
          getproperty QName(PackageNamespace(""),"bestHardTime")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal3
          getproperty Multiname("bestHardTime",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Player"),ProtectedNamespace(":Player"),StaticProtectedNs(":Player"),PrivateNamespace("Player.as$93")])
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -1544,8 +1574,10 @@ package
          getproperty QName(PackageNamespace(""),"bestBossRushTime")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal3
          getproperty Multiname("bestBossRushTime",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Player"),ProtectedNamespace(":Player"),StaticProtectedNs(":Player"),PrivateNamespace("Player.as$93")])
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -1554,8 +1586,10 @@ package
          getproperty QName(PackageNamespace(""),"bestInsaneTime")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal3
          getproperty Multiname("bestInsaneTime",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Player"),ProtectedNamespace(":Player"),StaticProtectedNs(":Player"),PrivateNamespace("Player.as$93")])
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -1564,8 +1598,10 @@ package
          getproperty QName(PackageNamespace(""),"gameTime")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal3
          getproperty Multiname("gameTime",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Player"),ProtectedNamespace(":Player"),StaticProtectedNs(":Player"),PrivateNamespace("Player.as$93")])
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -1641,9 +1677,11 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"Boolean")
          findpropstrict QName(PackageNamespace(""),"Boolean")
+         findpropstrict QName(PackageNamespace(""),"Boolean")
          getlocal2
          pushstring "hasSeenIsis"
          callproperty QName(PackageNamespace(""),"isVarTrue"), 1
+         callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          convert_b
@@ -1651,9 +1689,11 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"Boolean")
          findpropstrict QName(PackageNamespace(""),"Boolean")
+         findpropstrict QName(PackageNamespace(""),"Boolean")
          getlocal2
          pushstring "hasSeenHelp"
          callproperty QName(PackageNamespace(""),"isVarTrue"), 1
+         callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          convert_b
@@ -1907,8 +1947,10 @@ package
          findpropstrict QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal3
          getproperty Multiname("savex",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Player"),ProtectedNamespace(":Player"),StaticProtectedNs(":Player"),PrivateNamespace("Player.as$93")])
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -1916,8 +1958,10 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal3
          getproperty Multiname("savey",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxSprite"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":Player"),ProtectedNamespace(":Player"),StaticProtectedNs(":Player"),PrivateNamespace("Player.as$93")])
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -1928,6 +1972,7 @@ package
          findpropstrict QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"config")
          callproperty QName(PackageNamespace(""),"getPlayerStartX"), 0
@@ -1935,9 +1980,11 @@ package
          multiply
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"y")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"PlayState")
@@ -1945,6 +1992,7 @@ package
          callproperty QName(PackageNamespace(""),"getPlayerStartY"), 0
          pushbyte 16
          multiply
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -2623,12 +2671,14 @@ package
          getproperty QName(PackageNamespace(""),"_maxHp")
          findpropstrict QName(PackageNamespace(""),"int")
          findpropstrict QName(PackageNamespace(""),"int")
+         findpropstrict QName(PackageNamespace(""),"int")
          getlocal0
          getproperty QName(PackageNamespace(""),"_maxHp")
          getproperty QName(PackageNamespace(""),"value")
          getlocal0
          callproperty QName(PackageNamespace(""),"hpPerHeart"), 0
          divide
+         callproperty QName(PackageNamespace(""),"int"), 1
          callproperty QName(PackageNamespace(""),"int"), 1
          callproperty QName(PackageNamespace(""),"int"), 1
          convert_i
@@ -2643,12 +2693,14 @@ package
          getproperty QName(PackageNamespace(""),"_maxHp")
          findpropstrict QName(PackageNamespace(""),"int")
          findpropstrict QName(PackageNamespace(""),"int")
+         findpropstrict QName(PackageNamespace(""),"int")
          getlocal0
          getproperty QName(PackageNamespace(""),"_maxHp")
          getproperty QName(PackageNamespace(""),"value")
          getlocal0
          callproperty QName(PackageNamespace(""),"hpPerHeart"), 0
          multiply
+         callproperty QName(PackageNamespace(""),"int"), 1
          callproperty QName(PackageNamespace(""),"int"), 1
          callproperty QName(PackageNamespace(""),"int"), 1
          convert_i
@@ -3047,7 +3099,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 4
+         maxstack 5
          localcount 1
          initscopedepth 8
          maxscopedepth 9
@@ -3078,8 +3130,10 @@ package
          findpropstrict QName(PackageNamespace(""),"fireToggle")
          findpropstrict QName(PackageNamespace(""),"Boolean")
          findpropstrict QName(PackageNamespace(""),"Boolean")
+         findpropstrict QName(PackageNamespace(""),"Boolean")
          getlocal0
          callproperty QName(PackageNamespace(""),"pressedShoot"), 0
+         callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          callproperty QName(PackageNamespace(""),"Boolean"), 1
          convert_b
@@ -3242,7 +3296,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 5
+         maxstack 6
          localcount 3
          initscopedepth 8
          maxscopedepth 9
@@ -3260,7 +3314,9 @@ package
          getlex QName(PackageNamespace(""),"acceleration")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushshort 1200
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -3323,7 +3379,9 @@ package
          getlex QName(PackageNamespace(""),"acceleration")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -3389,7 +3447,9 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -3399,11 +3459,13 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          getlocal0
          getproperty QName(PackageNamespace(""),"_runSpeed")
          getproperty QName(PackageNamespace(""),"value")
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -3477,7 +3539,9 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -3487,9 +3551,11 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
          getproperty QName(PackageNamespace(""),"_runSpeed")
          getproperty QName(PackageNamespace(""),"value")
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -3505,7 +3571,9 @@ package
          getlex QName(PackageNamespace(""),"acceleration")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -3571,7 +3639,9 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -3581,11 +3651,13 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          getlocal0
          getproperty QName(PackageNamespace(""),"_runSpeed")
          getproperty QName(PackageNamespace(""),"value")
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -3659,7 +3731,9 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -3669,9 +3743,11 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
          getproperty QName(PackageNamespace(""),"_runSpeed")
          getproperty QName(PackageNamespace(""),"value")
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -3687,7 +3763,9 @@ package
          getlex QName(PackageNamespace(""),"acceleration")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -3712,11 +3790,13 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          getlocal0
          getproperty QName(PackageNamespace(""),"_runSpeed")
          getproperty QName(PackageNamespace(""),"value")
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -3749,9 +3829,11 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
          getproperty QName(PackageNamespace(""),"_runSpeed")
          getproperty QName(PackageNamespace(""),"value")
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -3769,7 +3851,9 @@ package
          getlex QName(PackageNamespace(""),"acceleration")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -3794,11 +3878,13 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          getlocal0
          getproperty QName(PackageNamespace(""),"_runSpeed")
          getproperty QName(PackageNamespace(""),"value")
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -3831,9 +3917,11 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
          getproperty QName(PackageNamespace(""),"_runSpeed")
          getproperty QName(PackageNamespace(""),"value")
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -3967,7 +4055,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 8
+         maxstack 9
          localcount 2
          initscopedepth 8
          maxscopedepth 9
@@ -4012,6 +4100,7 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"Utility")
          getlex QName(PackageNamespace(""),"velocity")
          getproperty QName(PackageNamespace(""),"y")
@@ -4020,6 +4109,7 @@ package
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"elapsed")
          callproperty QName(PackageNamespace(""),"integrate"), 4
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -4035,6 +4125,7 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"Utility")
          getlex QName(PackageNamespace(""),"velocity")
          getproperty QName(PackageNamespace(""),"y")
@@ -4043,6 +4134,7 @@ package
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"elapsed")
          callproperty QName(PackageNamespace(""),"integrate"), 4
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -4058,6 +4150,7 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"Utility")
          getlex QName(PackageNamespace(""),"velocity")
          getproperty QName(PackageNamespace(""),"x")
@@ -4066,6 +4159,7 @@ package
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"elapsed")
          callproperty QName(PackageNamespace(""),"integrate"), 4
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -4081,6 +4175,7 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"Utility")
          getlex QName(PackageNamespace(""),"velocity")
          getproperty QName(PackageNamespace(""),"x")
@@ -4089,6 +4184,7 @@ package
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"elapsed")
          callproperty QName(PackageNamespace(""),"integrate"), 4
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -4149,7 +4245,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 5
+         maxstack 6
          localcount 1
          initscopedepth 8
          maxscopedepth 9
@@ -4236,6 +4332,7 @@ package
          getproperty QName(PackageNamespace(""),"gameTime")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
          getproperty QName(PackageNamespace(""),"gameTime")
          getproperty QName(PackageNamespace(""),"value")
@@ -4244,10 +4341,12 @@ package
          add
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"value")
          getlocal0
          getproperty QName(PackageNamespace(""),"_weaponTimeout")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
@@ -4256,6 +4355,7 @@ package
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"elapsed")
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -4372,11 +4472,13 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_sleepTimeout")
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"elapsed")
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -4440,7 +4542,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 5
+         maxstack 6
          localcount 2
          initscopedepth 8
          maxscopedepth 9
@@ -4530,6 +4632,7 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"facing")
          getlex QName(PackageNamespace(""),"LEFT")
          ifne ofs8
@@ -4544,12 +4647,15 @@ package
          ofs9:
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushshort -300
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -4557,12 +4663,15 @@ package
          getlex QName(PackageNamespace(""),"acceleration")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"acceleration")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
@@ -4570,12 +4679,15 @@ package
          getproperty QName(PackageNamespace(""),"value")
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"y")
          getlex QName(PackageNamespace(""),"drag")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -4583,7 +4695,9 @@ package
          getlex QName(PackageNamespace(""),"drag")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -4650,7 +4764,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 6
+         maxstack 7
          localcount 1
          initscopedepth 8
          maxscopedepth 9
@@ -4707,7 +4821,9 @@ package
          getproperty QName(PackageNamespace(""),"now")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -4723,6 +4839,7 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
+         findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace("flash.utils"),"setInterval")
          getlocal0
          getproperty QName(PackageNamespace(""),"deathFade")
@@ -4730,9 +4847,11 @@ package
          callproperty QName(PackageNamespace("flash.utils"),"setInterval"), 2
          callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
+         callproperty QName(PackageNamespace(""),"uint"), 1
          convert_u
          setproperty QName(PackageNamespace(""),"deathFadeInterval")
          getlocal0
+         findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace("flash.utils"),"setInterval")
@@ -4740,6 +4859,7 @@ package
          getproperty QName(PackageNamespace(""),"revive")
          getlex QName(PrivateNamespace(":Player"),"REVIVE_DELAY")
          callproperty QName(PackageNamespace("flash.utils"),"setInterval"), 2
+         callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          convert_u
@@ -4796,7 +4916,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 6
+         maxstack 7
          localcount 1
          initscopedepth 8
          maxscopedepth 9
@@ -4815,7 +4935,9 @@ package
          findpropstrict QName(PackageNamespace(""),"facing")
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
+         findpropstrict QName(PackageNamespace(""),"uint")
          getlex QName(PackageNamespace(""),"right")
+         callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          convert_u
@@ -4839,11 +4961,13 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
+         findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace("flash.utils"),"setInterval")
          getlocal0
          getproperty QName(PackageNamespace(""),"realTeleport")
          getlex QName(PrivateNamespace(":Player"),"TELEPORT_DELAY")
          callproperty QName(PackageNamespace("flash.utils"),"setInterval"), 2
+         callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          convert_u
@@ -4886,7 +5010,9 @@ package
          getproperty QName(PackageNamespace(""),"now")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -5065,7 +5191,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 5
+         maxstack 6
          localcount 4
          initscopedepth 8
          maxscopedepth 9
@@ -5177,9 +5303,11 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"y")
          pushbyte 11
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -5187,9 +5315,11 @@ package
          findpropstrict QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"x")
          pushbyte 11
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -6013,7 +6143,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 5
+         maxstack 6
          localcount 2
          initscopedepth 8
          maxscopedepth 9
@@ -6028,6 +6158,7 @@ package
          setproperty QName(PackageNamespace(""),"value")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_turboMultiplier")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
@@ -6045,6 +6176,7 @@ package
          pushbyte 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          ofs1:
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -6630,6 +6762,7 @@ package
          getproperty QName(PackageNamespace(""),"_weaponTimeout")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"WEAPON_TIMEOUTS")
          getlocal0
@@ -6640,6 +6773,7 @@ package
          getproperty QName(PrivateNamespace(":Player"),"_turboMultiplier")
          getproperty QName(PackageNamespace(""),"value")
          multiply
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -6660,7 +6794,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 4
+         maxstack 5
          localcount 2
          initscopedepth 8
          maxscopedepth 9
@@ -6733,7 +6867,9 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
+         findpropstrict QName(PackageNamespace(""),"uint")
          getlex QName(PackageNamespace(""),"GRAV_UP")
+         callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          convert_u
@@ -6777,7 +6913,9 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
+         findpropstrict QName(PackageNamespace(""),"uint")
          getlex QName(PackageNamespace(""),"GRAV_RIGHT")
+         callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          convert_u
@@ -6821,7 +6959,9 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
+         findpropstrict QName(PackageNamespace(""),"uint")
          getlex QName(PackageNamespace(""),"GRAV_LEFT")
+         callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          convert_u
@@ -6867,7 +7007,9 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
+         findpropstrict QName(PackageNamespace(""),"uint")
          getlex QName(PackageNamespace(""),"GRAV_RIGHT")
+         callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          convert_u
@@ -6911,7 +7053,9 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
+         findpropstrict QName(PackageNamespace(""),"uint")
          getlex QName(PackageNamespace(""),"GRAV_LEFT")
+         callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          convert_u
@@ -6944,7 +7088,9 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
+         findpropstrict QName(PackageNamespace(""),"uint")
          getlex QName(PackageNamespace(""),"GRAV_DOWN")
+         callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          convert_u
@@ -6990,7 +7136,9 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
+         findpropstrict QName(PackageNamespace(""),"uint")
          getlex QName(PackageNamespace(""),"GRAV_UP")
+         callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          convert_u
@@ -7072,7 +7220,9 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
+         findpropstrict QName(PackageNamespace(""),"uint")
          getlex QName(PackageNamespace(""),"GRAV_LEFT")
+         callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          convert_u
@@ -7116,7 +7266,9 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
+         findpropstrict QName(PackageNamespace(""),"uint")
          getlex QName(PackageNamespace(""),"GRAV_DOWN")
+         callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          convert_u
@@ -7162,7 +7314,9 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
+         findpropstrict QName(PackageNamespace(""),"uint")
          getlex QName(PackageNamespace(""),"GRAV_UP")
+         callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          convert_u
@@ -7244,7 +7398,9 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
+         findpropstrict QName(PackageNamespace(""),"uint")
          getlex QName(PackageNamespace(""),"GRAV_RIGHT")
+         callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          convert_u
@@ -7288,7 +7444,9 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
+         findpropstrict QName(PackageNamespace(""),"uint")
          getlex QName(PackageNamespace(""),"GRAV_DOWN")
+         callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          convert_u
@@ -7336,7 +7494,9 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
+         findpropstrict QName(PackageNamespace(""),"uint")
          getlex QName(PackageNamespace(""),"GRAV_DOWN")
+         callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          convert_u
@@ -7360,7 +7520,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 5
+         maxstack 6
          localcount 7
          initscopedepth 8
          maxscopedepth 9
@@ -7387,9 +7547,11 @@ package
          findpropstrict QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"int")
          getlex QName(PackageNamespace(""),"x")
          callproperty QName(PackageNamespace(""),"int"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -7397,9 +7559,11 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"int")
          getlex QName(PackageNamespace(""),"y")
          callproperty QName(PackageNamespace(""),"int"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -7418,9 +7582,11 @@ package
          findpropstrict QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"x")
          getlocal 5
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -7428,9 +7594,11 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"y")
          getlocal 6
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -7447,9 +7615,11 @@ package
          findpropstrict QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"x")
          getlocal 5
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -7466,9 +7636,11 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"y")
          getlocal 6
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -7641,9 +7813,11 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"y")
          getlocal2
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -7680,9 +7854,11 @@ package
          findpropstrict QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"x")
          getlocal1
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -7724,9 +7900,11 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"y")
          getlocal2
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -7794,9 +7972,11 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"y")
          getlocal2
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -7833,9 +8013,11 @@ package
          findpropstrict QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"x")
          getlocal1
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -7877,9 +8059,11 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"y")
          getlocal2
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -7899,7 +8083,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 5
+         maxstack 6
          localcount 3
          initscopedepth 8
          maxscopedepth 9
@@ -8083,7 +8267,9 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
+         findpropstrict QName(PackageNamespace(""),"uint")
          getlex QName(PackageNamespace(""),"GRAV_UP")
+         callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          convert_u
@@ -8252,11 +8438,13 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          getlocal0
          getproperty QName(PackageNamespace(""),"_runSpeed")
          getproperty QName(PackageNamespace(""),"value")
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -8285,9 +8473,11 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
          getproperty QName(PackageNamespace(""),"_runSpeed")
          getproperty QName(PackageNamespace(""),"value")
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -8510,7 +8700,9 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
+         findpropstrict QName(PackageNamespace(""),"uint")
          getlex QName(PackageNamespace(""),"GRAV_LEFT")
+         callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          convert_u
@@ -8786,7 +8978,9 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
+         findpropstrict QName(PackageNamespace(""),"uint")
          getlex QName(PackageNamespace(""),"GRAV_RIGHT")
+         callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          convert_u
@@ -9004,7 +9198,7 @@ package
          returns QName(PackageNamespace(""),"Boolean")
          
          body
-         maxstack 5
+         maxstack 6
          localcount 2
          initscopedepth 8
          maxscopedepth 9
@@ -9022,8 +9216,10 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"y")
          increment
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9031,9 +9227,11 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_jumpPower")
          getproperty QName(PackageNamespace(""),"value")
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9051,8 +9249,10 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"y")
          decrement
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9060,11 +9260,13 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_jumpPower")
          getproperty QName(PackageNamespace(""),"value")
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9082,8 +9284,10 @@ package
          findpropstrict QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"x")
          decrement
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9091,9 +9295,11 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_jumpPower")
          getproperty QName(PackageNamespace(""),"value")
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9111,8 +9317,10 @@ package
          findpropstrict QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"x")
          increment
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9120,11 +9328,13 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_jumpPower")
          getproperty QName(PackageNamespace(""),"value")
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9189,7 +9399,7 @@ package
          returns QName(PackageNamespace(""),"Boolean")
          
          body
-         maxstack 5
+         maxstack 6
          localcount 2
          initscopedepth 8
          maxscopedepth 9
@@ -9207,8 +9417,10 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"y")
          increment
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9216,7 +9428,9 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9248,8 +9462,10 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"y")
          decrement
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9257,11 +9473,13 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_jumpPower")
          getproperty QName(PackageNamespace(""),"value")
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9300,7 +9518,9 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9308,7 +9528,9 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 100
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9350,7 +9572,9 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9358,7 +9582,9 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte -100
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9366,9 +9592,11 @@ package
          findpropstrict QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"x")
          pushbyte 11
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9437,7 +9665,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 5
+         maxstack 6
          localcount 2
          initscopedepth 8
          maxscopedepth 9
@@ -9452,6 +9680,7 @@ package
          setproperty QName(PackageNamespace(""),"value")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_jumpPower")
+         findpropstrict QName(PackageNamespace(""),"int")
          findpropstrict QName(PackageNamespace(""),"int")
          findpropstrict QName(PackageNamespace(""),"int")
          getlocal0
@@ -9469,6 +9698,7 @@ package
          getlex QName(PrivateNamespace(":Player"),"REGULAR_JUMP")
          callproperty QName(PackageNamespace(""),"int"), 1
          ofs1:
+         callproperty QName(PackageNamespace(""),"int"), 1
          callproperty QName(PackageNamespace(""),"int"), 1
          callproperty QName(PackageNamespace(""),"int"), 1
          convert_i
@@ -9746,7 +9976,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 5
+         maxstack 6
          localcount 3
          initscopedepth 8
          maxscopedepth 9
@@ -9758,7 +9988,9 @@ package
          getlocal0
          findpropstrict QName(PackageNamespace(""),"uint")
          findpropstrict QName(PackageNamespace(""),"uint")
+         findpropstrict QName(PackageNamespace(""),"uint")
          getlocal1
+         callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          callproperty QName(PackageNamespace(""),"uint"), 1
          convert_u
@@ -9769,7 +10001,9 @@ package
          getlex QName(PackageNamespace(""),"acceleration")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9777,14 +10011,17 @@ package
          getlex QName(PackageNamespace(""),"acceleration")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_gravity")
          getproperty QName(PackageNamespace(""),"value")
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"y")
          getlex QName(PackageNamespace(""),"drag")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
@@ -9794,12 +10031,15 @@ package
          multiply
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"drag")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9810,9 +10050,11 @@ package
          getlex QName(PackageNamespace(""),"acceleration")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_gravity")
          getproperty QName(PackageNamespace(""),"value")
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9820,12 +10062,15 @@ package
          getlex QName(PackageNamespace(""),"acceleration")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"y")
          getlex QName(PackageNamespace(""),"drag")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
@@ -9835,12 +10080,15 @@ package
          multiply
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"y")
          getlex QName(PackageNamespace(""),"drag")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9851,12 +10099,15 @@ package
          getlex QName(PackageNamespace(""),"acceleration")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"acceleration")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
@@ -9866,9 +10117,11 @@ package
          subtract
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"y")
          getlex QName(PackageNamespace(""),"drag")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
@@ -9878,12 +10131,15 @@ package
          multiply
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"drag")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -9894,6 +10150,7 @@ package
          getlex QName(PackageNamespace(""),"acceleration")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_gravity")
@@ -9901,17 +10158,21 @@ package
          subtract
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"acceleration")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"y")
          getlex QName(PackageNamespace(""),"drag")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
@@ -9921,12 +10182,15 @@ package
          multiply
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"y")
          getlex QName(PackageNamespace(""),"drag")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10035,7 +10299,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 5
+         maxstack 6
          localcount 2
          initscopedepth 8
          maxscopedepth 9
@@ -10068,9 +10332,11 @@ package
          findpropstrict QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"BOSSRUSH_STARTX")
          pushbyte 16
          multiply
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10078,9 +10344,11 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"BOSSRUSH_STARTY")
          pushbyte 16
          multiply
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10129,7 +10397,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 5
+         maxstack 6
          localcount 3
          initscopedepth 8
          maxscopedepth 9
@@ -10146,7 +10414,9 @@ package
          findpropstrict QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10154,7 +10424,9 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlocal2
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10162,7 +10434,9 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10170,12 +10444,15 @@ package
          getlex QName(PackageNamespace(""),"velocity")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"y")
          getlex QName(PackageNamespace(""),"drag")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          getlocal0
@@ -10185,12 +10462,15 @@ package
          multiply
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"drag")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10215,7 +10495,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 5
+         maxstack 6
          localcount 3
          initscopedepth 8
          maxscopedepth 9
@@ -10230,14 +10510,17 @@ package
          getlex QName(PackageNamespace(""),"offset")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          pushbyte 13
          add
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"width")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 32
@@ -10247,9 +10530,11 @@ package
          subtract
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"width")
          getlex QName(PackageNamespace(""),"offset")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 16
@@ -10257,14 +10542,17 @@ package
          add
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"height")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 16
          pushbyte 3
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10281,10 +10569,12 @@ package
          findpropstrict QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"x")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_hideOfsX")
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10295,10 +10585,12 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"y")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_hideOfsY")
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10309,14 +10601,17 @@ package
          getlex QName(PackageNamespace(""),"offset")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          pushbyte 7
          add
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"width")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 32
@@ -10326,9 +10621,11 @@ package
          subtract
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"width")
          getlex QName(PackageNamespace(""),"offset")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 16
@@ -10336,14 +10633,17 @@ package
          add
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"height")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 16
          pushbyte 3
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10357,10 +10657,12 @@ package
          findpropstrict QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"x")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_hideOfsX")
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10371,10 +10673,12 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"y")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_hideOfsY")
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10388,14 +10692,17 @@ package
          getlex QName(PackageNamespace(""),"offset")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          pushbyte 13
          add
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"width")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 32
@@ -10405,9 +10712,11 @@ package
          subtract
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"width")
          getlex QName(PackageNamespace(""),"offset")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
@@ -10415,14 +10724,17 @@ package
          add
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"height")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 16
          pushbyte 6
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10439,10 +10751,12 @@ package
          findpropstrict QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"x")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_hideOfsX")
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10453,14 +10767,17 @@ package
          getlex QName(PackageNamespace(""),"offset")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          pushbyte 7
          add
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"width")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 32
@@ -10470,9 +10787,11 @@ package
          subtract
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"width")
          getlex QName(PackageNamespace(""),"offset")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
@@ -10480,14 +10799,17 @@ package
          add
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"height")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 16
          pushbyte 6
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10504,10 +10826,12 @@ package
          findpropstrict QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"x")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_hideOfsX")
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10518,14 +10842,17 @@ package
          getlex QName(PackageNamespace(""),"offset")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          pushbyte 13
          add
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"height")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 32
@@ -10535,9 +10862,11 @@ package
          subtract
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"height")
          getlex QName(PackageNamespace(""),"offset")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 16
@@ -10545,14 +10874,17 @@ package
          add
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"width")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 16
          pushbyte 6
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10572,10 +10904,12 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"y")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_hideOfsY")
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10586,10 +10920,12 @@ package
          findpropstrict QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"x")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_hideOfsX")
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10600,14 +10936,17 @@ package
          getlex QName(PackageNamespace(""),"offset")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          pushbyte 7
          add
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"height")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 32
@@ -10617,9 +10956,11 @@ package
          subtract
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"height")
          getlex QName(PackageNamespace(""),"offset")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 16
@@ -10627,14 +10968,17 @@ package
          add
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"width")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 16
          pushbyte 6
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10654,10 +10998,12 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"y")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_hideOfsY")
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10668,10 +11014,12 @@ package
          findpropstrict QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"x")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_hideOfsX")
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10682,14 +11030,17 @@ package
          getlex QName(PackageNamespace(""),"offset")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          pushbyte 13
          add
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"height")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 32
@@ -10699,9 +11050,11 @@ package
          subtract
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"height")
          getlex QName(PackageNamespace(""),"offset")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
@@ -10709,14 +11062,17 @@ package
          add
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"width")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 16
          pushbyte 6
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10736,10 +11092,12 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"y")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_hideOfsY")
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10750,14 +11108,17 @@ package
          getlex QName(PackageNamespace(""),"offset")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          pushbyte 7
          add
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"height")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 32
@@ -10767,9 +11128,11 @@ package
          subtract
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"height")
          getlex QName(PackageNamespace(""),"offset")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
@@ -10777,14 +11140,17 @@ package
          add
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"width")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 16
          pushbyte 6
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10804,10 +11170,12 @@ package
          findpropstrict QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          getlex QName(PackageNamespace(""),"y")
          getlocal0
          getproperty QName(PrivateNamespace(":Player"),"_hideOfsY")
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10895,7 +11263,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 5
+         maxstack 6
          localcount 8
          initscopedepth 8
          maxscopedepth 9
@@ -10929,14 +11297,17 @@ package
          getlex QName(PackageNamespace(""),"offset")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          pushbyte 4
          add
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"width")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 32
@@ -10946,9 +11317,11 @@ package
          subtract
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"width")
          getlex QName(PackageNamespace(""),"offset")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 16
@@ -10956,14 +11329,17 @@ package
          add
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"height")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 16
          pushbyte 3
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -10986,14 +11362,17 @@ package
          getlex QName(PackageNamespace(""),"offset")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          pushbyte 4
          add
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"width")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 32
@@ -11003,9 +11382,11 @@ package
          subtract
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"width")
          getlex QName(PackageNamespace(""),"offset")
+         findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
@@ -11013,14 +11394,17 @@ package
          add
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
          setproperty QName(PackageNamespace(""),"y")
          findpropstrict QName(PackageNamespace(""),"height")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 16
          pushbyte 3
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -11043,9 +11427,11 @@ package
          getlex QName(PackageNamespace(""),"offset")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          pushbyte 4
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -11053,9 +11439,11 @@ package
          findpropstrict QName(PackageNamespace(""),"height")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 32
          pushbyte 8
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -11063,9 +11451,11 @@ package
          getlex QName(PackageNamespace(""),"offset")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 16
          pushbyte 3
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -11073,9 +11463,11 @@ package
          findpropstrict QName(PackageNamespace(""),"width")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 16
          pushbyte 3
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -11105,9 +11497,11 @@ package
          getlex QName(PackageNamespace(""),"offset")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          pushbyte 4
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -11115,9 +11509,11 @@ package
          findpropstrict QName(PackageNamespace(""),"height")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 32
          pushbyte 8
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -11125,9 +11521,11 @@ package
          getlex QName(PackageNamespace(""),"offset")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 16
          pushbyte 3
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -11135,9 +11533,11 @@ package
          findpropstrict QName(PackageNamespace(""),"width")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 16
          pushbyte 3
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -11167,9 +11567,11 @@ package
          getlex QName(PackageNamespace(""),"offset")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          pushbyte 4
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -11177,9 +11579,11 @@ package
          findpropstrict QName(PackageNamespace(""),"height")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 32
          pushbyte 8
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -11187,9 +11591,11 @@ package
          getlex QName(PackageNamespace(""),"offset")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          pushbyte 0
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -11197,9 +11603,11 @@ package
          findpropstrict QName(PackageNamespace(""),"width")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 16
          pushbyte 3
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -11229,9 +11637,11 @@ package
          getlex QName(PackageNamespace(""),"offset")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          pushbyte 4
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -11239,9 +11649,11 @@ package
          findpropstrict QName(PackageNamespace(""),"height")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 32
          pushbyte 8
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -11249,9 +11661,11 @@ package
          getlex QName(PackageNamespace(""),"offset")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
          pushbyte 0
          add
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -11259,9 +11673,11 @@ package
          findpropstrict QName(PackageNamespace(""),"width")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 16
          pushbyte 3
          subtract
+         callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          callproperty QName(PackageNamespace(""),"Number"), 1
          convert_d
@@ -11555,7 +11971,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 5
+         maxstack 6
          localcount 2
          initscopedepth 8
          maxscopedepth 9
@@ -11580,10 +11996,12 @@ package
          getproperty QName(PackageNamespace(""),"_maxHp")
          findpropstrict QName(PackageNamespace(""),"int")
          findpropstrict QName(PackageNamespace(""),"int")
+         findpropstrict QName(PackageNamespace(""),"int")
          getlocal0
          callproperty QName(PackageNamespace(""),"hpPerHeart"), 0
          getlex QName(PackageNamespace(""),"MAX_HEART_CONTAINERS")
          multiply
+         callproperty QName(PackageNamespace(""),"int"), 1
          callproperty QName(PackageNamespace(""),"int"), 1
          callproperty QName(PackageNamespace(""),"int"), 1
          convert_i
