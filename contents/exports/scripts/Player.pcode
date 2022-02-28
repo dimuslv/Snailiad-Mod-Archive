@@ -648,6 +648,12 @@ package
       
       private var _sleepTimeout:Number;
       
+      public var _hitsounds:Boolean = false;
+      
+      public var saveX:Number = -1;
+      
+      public var saveY:Number = -1;
+      
       public function Player(param1:PlayerBulletGroups)
       {
          method
@@ -3639,12 +3645,18 @@ package
          callproperty QName(PackageNamespace(""),"justPressedJump"), 0
          iffalse ofs0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Player"),"_hidingInShell")
+         getproperty QName(PackageNamespace(""),"_hitsounds")
          iffalse ofs1
+         getlex QName(PackageNamespace(""),"Sfx")
+         callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
+         ofs1:
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#Player"),"_hidingInShell")
+         iffalse ofs2
          getlocal0
          pushfalse
          callpropvoid QName(PackageNamespace(""),"hideInShell"), 1
-         ofs1:
+         ofs2:
          getlocal0
          getproperty QName(PackageNamespace(""),"_jumping")
          iftrue ofs0
@@ -3655,126 +3667,126 @@ package
          getproperty QName(PackageNamespace(""),"_jumping")
          convert_b
          dup
-         iffalse ofs2
+         iffalse ofs3
          pop
          getlocal0
          callproperty QName(PackageNamespace(""),"pressedJump"), 0
          not
-         ofs2:
-         iffalse ofs3
+         ofs3:
+         iffalse ofs4
+         jump ofs5
+         ofs6:
+         label
+         getlex QName(PackageNamespace(""),"velocity")
+         getproperty QName(PackageNamespace(""),"y")
+         pushbyte 0
+         ifngt ofs7
+         getlex QName(PackageNamespace(""),"velocity")
+         getlex QName(PackageNamespace(""),"Utility")
+         getlex QName(PackageNamespace(""),"velocity")
+         getproperty QName(PackageNamespace(""),"y")
+         pushbyte 0
+         pushbyte 4
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"elapsed")
+         callproperty QName(PackageNamespace(""),"integrate"), 4
+         setproperty QName(PackageNamespace(""),"y")
+         ofs7:
+         jump ofs4
+         ofs8:
+         label
+         getlex QName(PackageNamespace(""),"velocity")
+         getproperty QName(PackageNamespace(""),"y")
+         pushbyte 0
+         ifnlt ofs9
+         getlex QName(PackageNamespace(""),"velocity")
+         getlex QName(PackageNamespace(""),"Utility")
+         getlex QName(PackageNamespace(""),"velocity")
+         getproperty QName(PackageNamespace(""),"y")
+         pushbyte 0
+         pushbyte 4
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"elapsed")
+         callproperty QName(PackageNamespace(""),"integrate"), 4
+         setproperty QName(PackageNamespace(""),"y")
+         ofs9:
+         jump ofs4
+         ofs10:
+         label
+         getlex QName(PackageNamespace(""),"velocity")
+         getproperty QName(PackageNamespace(""),"x")
+         pushbyte 0
+         ifngt ofs11
+         getlex QName(PackageNamespace(""),"velocity")
+         getlex QName(PackageNamespace(""),"Utility")
+         getlex QName(PackageNamespace(""),"velocity")
+         getproperty QName(PackageNamespace(""),"x")
+         pushbyte 0
+         pushbyte 4
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"elapsed")
+         callproperty QName(PackageNamespace(""),"integrate"), 4
+         setproperty QName(PackageNamespace(""),"x")
+         ofs11:
+         jump ofs4
+         ofs12:
+         label
+         getlex QName(PackageNamespace(""),"velocity")
+         getproperty QName(PackageNamespace(""),"x")
+         pushbyte 0
+         ifnlt ofs13
+         getlex QName(PackageNamespace(""),"velocity")
+         getlex QName(PackageNamespace(""),"Utility")
+         getlex QName(PackageNamespace(""),"velocity")
+         getproperty QName(PackageNamespace(""),"x")
+         pushbyte 0
+         pushbyte 4
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"elapsed")
+         callproperty QName(PackageNamespace(""),"integrate"), 4
+         setproperty QName(PackageNamespace(""),"x")
+         ofs13:
+         jump ofs4
+         ofs14:
+         label
          jump ofs4
          ofs5:
-         label
-         getlex QName(PackageNamespace(""),"velocity")
-         getproperty QName(PackageNamespace(""),"y")
-         pushbyte 0
-         ifngt ofs6
-         getlex QName(PackageNamespace(""),"velocity")
-         getlex QName(PackageNamespace(""),"Utility")
-         getlex QName(PackageNamespace(""),"velocity")
-         getproperty QName(PackageNamespace(""),"y")
-         pushbyte 0
-         pushbyte 4
-         getlex QName(PackageNamespace("org.flixel"),"FlxG")
-         getproperty QName(PackageNamespace(""),"elapsed")
-         callproperty QName(PackageNamespace(""),"integrate"), 4
-         setproperty QName(PackageNamespace(""),"y")
-         ofs6:
-         jump ofs3
-         ofs7:
-         label
-         getlex QName(PackageNamespace(""),"velocity")
-         getproperty QName(PackageNamespace(""),"y")
-         pushbyte 0
-         ifnlt ofs8
-         getlex QName(PackageNamespace(""),"velocity")
-         getlex QName(PackageNamespace(""),"Utility")
-         getlex QName(PackageNamespace(""),"velocity")
-         getproperty QName(PackageNamespace(""),"y")
-         pushbyte 0
-         pushbyte 4
-         getlex QName(PackageNamespace("org.flixel"),"FlxG")
-         getproperty QName(PackageNamespace(""),"elapsed")
-         callproperty QName(PackageNamespace(""),"integrate"), 4
-         setproperty QName(PackageNamespace(""),"y")
-         ofs8:
-         jump ofs3
-         ofs9:
-         label
-         getlex QName(PackageNamespace(""),"velocity")
-         getproperty QName(PackageNamespace(""),"x")
-         pushbyte 0
-         ifngt ofs10
-         getlex QName(PackageNamespace(""),"velocity")
-         getlex QName(PackageNamespace(""),"Utility")
-         getlex QName(PackageNamespace(""),"velocity")
-         getproperty QName(PackageNamespace(""),"x")
-         pushbyte 0
-         pushbyte 4
-         getlex QName(PackageNamespace("org.flixel"),"FlxG")
-         getproperty QName(PackageNamespace(""),"elapsed")
-         callproperty QName(PackageNamespace(""),"integrate"), 4
-         setproperty QName(PackageNamespace(""),"x")
-         ofs10:
-         jump ofs3
-         ofs11:
-         label
-         getlex QName(PackageNamespace(""),"velocity")
-         getproperty QName(PackageNamespace(""),"x")
-         pushbyte 0
-         ifnlt ofs12
-         getlex QName(PackageNamespace(""),"velocity")
-         getlex QName(PackageNamespace(""),"Utility")
-         getlex QName(PackageNamespace(""),"velocity")
-         getproperty QName(PackageNamespace(""),"x")
-         pushbyte 0
-         pushbyte 4
-         getlex QName(PackageNamespace("org.flixel"),"FlxG")
-         getproperty QName(PackageNamespace(""),"elapsed")
-         callproperty QName(PackageNamespace(""),"integrate"), 4
-         setproperty QName(PackageNamespace(""),"x")
-         ofs12:
-         jump ofs3
-         ofs13:
-         label
-         jump ofs3
-         ofs4:
          getlocal0
          getproperty QName(PackageNamespace(""),"_gravityDir")
          setlocal1
          getlex QName(PackageNamespace(""),"GRAV_UP")
          getlocal1
-         ifstrictne ofs14
+         ifstrictne ofs15
          pushbyte 0
-         jump ofs15
-         ofs14:
+         jump ofs16
+         ofs15:
          getlex QName(PackageNamespace(""),"GRAV_DOWN")
          getlocal1
-         ifstrictne ofs16
+         ifstrictne ofs17
          pushbyte 1
-         jump ofs15
-         ofs16:
+         jump ofs16
+         ofs17:
          getlex QName(PackageNamespace(""),"GRAV_LEFT")
          getlocal1
-         ifstrictne ofs17
+         ifstrictne ofs18
          pushbyte 2
-         jump ofs15
-         ofs17:
+         jump ofs16
+         ofs18:
          getlex QName(PackageNamespace(""),"GRAV_RIGHT")
          getlocal1
-         ifstrictne ofs18
+         ifstrictne ofs19
          pushbyte 3
-         jump ofs15
-         ofs18:
-         jump ofs19
-         pushbyte 4
-         jump ofs19
+         jump ofs16
          ofs19:
+         jump ofs20
          pushbyte 4
-         ofs15:
+         jump ofs20
+         ofs20:
+         pushbyte 4
+         ofs16:
          kill 1
-         lookupswitch ofs13, [ofs5, ofs7, ofs9, ofs11, ofs13]
-         ofs3:
+         lookupswitch ofs14, [ofs6, ofs8, ofs10, ofs12, ofs14]
+         ofs4:
          returnvoid
          end ; code
          end ; body
@@ -3858,20 +3870,80 @@ package
          equals
          ofs3:
          iffalse ofs4
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"keys")
+         pushstring "F2"
+         callproperty QName(PackageNamespace(""),"justPressed"), 1
+         iffalse ofs5
+         getlocal0
+         getlocal0
+         getproperty QName(PackageNamespace(""),"_hitsounds")
+         not
+         setproperty QName(PackageNamespace(""),"_hitsounds")
+         ofs5:
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"keys")
+         pushstring "F3"
+         callproperty QName(PackageNamespace(""),"pressed"), 1
+         iffalse ofs6
+         getlocal0
+         pushfalse
+         setproperty QName(PrivateNamespace(null,"#Player"),"_paralyzed")
+         ofs6:
          getlocal0
          callpropvoid QName(PackageNamespace(""),"checkInput_map"), 0
          getlocal0
          callpropvoid QName(PackageNamespace(""),"checkInput_handleMenu"), 0
          getlocal0
          callpropvoid QName(PackageNamespace(""),"checkInput_switchWeapons"), 0
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"realState")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"STATE_SUBSCREEN")
+         ifne ofs4
+         getlocal0
+         callproperty QName(PackageNamespace(""),"justPressedLeft"), 0
+         iffalse ofs7
+         findproperty QName(PackageNamespace(""),"x")
+         getlex QName(PackageNamespace(""),"x")
+         pushshort -416
+         add
+         setproperty QName(PackageNamespace(""),"x")
+         ofs7:
+         getlocal0
+         callproperty QName(PackageNamespace(""),"justPressedUp"), 0
+         iffalse ofs8
+         findproperty QName(PackageNamespace(""),"y")
+         getlex QName(PackageNamespace(""),"y")
+         pushshort -256
+         add
+         setproperty QName(PackageNamespace(""),"y")
+         ofs8:
+         getlocal0
+         callproperty QName(PackageNamespace(""),"justPressedRight"), 0
+         iffalse ofs9
+         findproperty QName(PackageNamespace(""),"x")
+         getlex QName(PackageNamespace(""),"x")
+         pushshort 416
+         add
+         setproperty QName(PackageNamespace(""),"x")
+         ofs9:
+         getlocal0
+         callproperty QName(PackageNamespace(""),"justPressedDown"), 0
+         iffalse ofs4
+         findproperty QName(PackageNamespace(""),"y")
+         getlex QName(PackageNamespace(""),"y")
+         pushshort 256
+         add
+         setproperty QName(PackageNamespace(""),"y")
          ofs4:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"realState")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"STATE_GAME")
-         ifeq ofs5
+         ifeq ofs10
          returnvoid
-         ofs5:
+         ofs10:
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"gameTime")
@@ -3888,45 +3960,45 @@ package
          initproperty QName(PackageNamespace(""),"_weaponTimeout")
          getlocal0
          callproperty QName(PackageNamespace(""),"justPressedLeft"), 0
-         iffalse ofs6
+         iffalse ofs11
          getlocal0
          pushtrue
          initproperty QName(PackageNamespace(""),"pressedLeftSinceJump")
-         jump ofs7
-         ofs6:
+         jump ofs12
+         ofs11:
          getlocal0
          callproperty QName(PackageNamespace(""),"justPressedRight"), 0
-         iffalse ofs8
+         iffalse ofs13
          getlocal0
          pushtrue
          initproperty QName(PackageNamespace(""),"pressedRightSinceJump")
-         jump ofs7
-         ofs8:
+         jump ofs12
+         ofs13:
          getlocal0
          callproperty QName(PackageNamespace(""),"justPressedJump"), 0
-         iffalse ofs7
+         iffalse ofs12
          getlocal0
          pushfalse
          initproperty QName(PackageNamespace(""),"pressedLeftSinceJump")
          getlocal0
          pushfalse
          initproperty QName(PackageNamespace(""),"pressedRightSinceJump")
-         ofs7:
+         ofs12:
          getlex QName(PackageNamespace(""),"dead")
-         iftrue ofs9
+         iftrue ofs14
          getlocal0
          callpropvoid QName(PrivateNamespace(null,"#Player"),"fixGravity"), 0
-         ofs9:
+         ofs14:
          getlex QName(PackageNamespace(""),"dead")
          not
          dup
-         iffalse ofs10
+         iffalse ofs15
          pop
          getlocal0
          getproperty QName(PrivateNamespace(null,"#Player"),"_paralyzed")
          not
-         ofs10:
-         iffalse ofs11
+         ofs15:
+         iffalse ofs16
          getlocal0
          callpropvoid QName(PackageNamespace(""),"checkInput_handleHelp"), 0
          getlocal0
@@ -3943,64 +4015,95 @@ package
          callpropvoid QName(PrivateNamespace(null,"#Player"),"checkInput_move"), 0
          getlocal0
          callpropvoid QName(PackageNamespace(""),"checkInput_jump"), 0
-         ofs11:
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"keys")
+         pushstring "F4"
+         callproperty QName(PackageNamespace(""),"justPressed"), 1
+         iffalse ofs17
+         getlocal0
+         getlex QName(PackageNamespace(""),"x")
+         setproperty QName(PackageNamespace(""),"saveX")
+         getlocal0
+         getlex QName(PackageNamespace(""),"y")
+         setproperty QName(PackageNamespace(""),"saveY")
+         getlex QName(PackageNamespace(""),"Sfx")
+         callpropvoid QName(PackageNamespace(""),"playSave1"), 0
+         ofs17:
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"keys")
+         pushstring "F5"
+         callproperty QName(PackageNamespace(""),"justPressed"), 1
+         iffalse ofs16
+         getlocal0
+         getproperty QName(PackageNamespace(""),"saveX")
+         pushbyte -1
+         ifeq ofs16
+         findproperty QName(PackageNamespace(""),"x")
+         getlocal0
+         getproperty QName(PackageNamespace(""),"saveX")
+         setproperty QName(PackageNamespace(""),"x")
+         findproperty QName(PackageNamespace(""),"y")
+         getlocal0
+         getproperty QName(PackageNamespace(""),"saveY")
+         setproperty QName(PackageNamespace(""),"y")
+         ofs16:
          getlocal0
          callproperty QName(PackageNamespace(""),"pressedUp"), 0
          convert_b
          dup
-         iftrue ofs12
+         iftrue ofs18
          pop
          getlocal0
          callproperty QName(PackageNamespace(""),"pressedDown"), 0
          convert_b
-         ofs12:
+         ofs18:
          dup
-         iftrue ofs13
+         iftrue ofs19
          pop
          getlocal0
          callproperty QName(PackageNamespace(""),"pressedLeft"), 0
          convert_b
-         ofs13:
+         ofs19:
          dup
-         iftrue ofs14
+         iftrue ofs20
          pop
          getlocal0
          callproperty QName(PackageNamespace(""),"pressedRight"), 0
          convert_b
-         ofs14:
+         ofs20:
          dup
-         iftrue ofs15
+         iftrue ofs21
          pop
          getlocal0
          callproperty QName(PackageNamespace(""),"pressedShoot"), 0
          convert_b
-         ofs15:
+         ofs21:
          dup
-         iftrue ofs16
+         iftrue ofs22
          pop
          getlocal0
          callproperty QName(PackageNamespace(""),"pressedStrafe"), 0
          convert_b
-         ofs16:
+         ofs22:
          dup
-         iftrue ofs17
+         iftrue ofs23
          pop
          getlocal0
          callproperty QName(PackageNamespace(""),"pressedJump"), 0
          convert_b
-         ofs17:
+         ofs23:
          dup
-         iftrue ofs18
+         iftrue ofs24
          pop
          findpropstrict QName(PackageNamespace(""),"flickering")
          callproperty QName(PackageNamespace(""),"flickering"), 0
          convert_b
-         ofs18:
-         iffalse ofs19
+         ofs24:
+         iffalse ofs25
          getlocal0
          getlex QName(PrivateNamespace(null,"#Player"),"SLEEP_TIMEOUT")
          initproperty QName(PrivateNamespace(null,"#Player"),"_sleepTimeout")
-         ofs19:
+         ofs25:
          getlocal0
          getlocal0
          getproperty QName(PrivateNamespace(null,"#Player"),"_sleepTimeout")
@@ -4013,21 +4116,21 @@ package
          pushbyte 0
          lessequals
          dup
-         iffalse ofs20
+         iffalse ofs26
          pop
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"zzz")
          getproperty QName(PackageNamespace(""),"visible")
          not
-         ofs20:
+         ofs26:
          dup
-         iffalse ofs21
+         iffalse ofs27
          pop
          getlocal0
          getproperty QName(PackageNamespace(""),"_slugMode")
          not
-         ofs21:
-         iffalse ofs22
+         ofs27:
+         iffalse ofs28
          getlocal0
          pushtrue
          callpropvoid QName(PackageNamespace(""),"hideInShell"), 1
@@ -4038,15 +4141,15 @@ package
          getlocal0
          getlex QName(PrivateNamespace(null,"#Player"),"SLEEP_TIMEOUT")
          initproperty QName(PrivateNamespace(null,"#Player"),"_sleepTimeout")
-         ofs22:
+         ofs28:
          getlex QName(PackageNamespace(""),"dead")
-         iftrue ofs23
+         iftrue ofs29
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"worldMap")
          getlex QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"y")
          callpropvoid QName(PackageNamespace(""),"checkFakeBounds"), 2
-         ofs23:
+         ofs29:
          getlocal0
          callsupervoid QName(PackageNamespace(""),"update"), 0
          returnvoid
@@ -5113,7 +5216,7 @@ package
          iffalse ofs15
          getlocal0
          callproperty QName(PackageNamespace(""),"pressedUp"), 0
-         iffalse ofs15
+         iffalse ofs16
          getlocal0
          getlex QName(PackageNamespace(""),"GRAV_UP")
          callpropvoid QName(PackageNamespace(""),"setGravityDir"), 1
@@ -5121,16 +5224,23 @@ package
          getlex QName(PackageNamespace(""),"facing")
          getlex QName(PackageNamespace(""),"RIGHT")
          equals
-         iffalse ofs16
+         iffalse ofs17
          getlex QName(PackageNamespace(""),"FACE_CEIL_RIGHT")
          convert_i
-         jump ofs17
-         ofs16:
+         jump ofs18
+         ofs17:
          getlex QName(PackageNamespace(""),"FACE_CEIL_LEFT")
          convert_i
-         ofs17:
+         ofs18:
          pushtrue
          callpropvoid QName(PackageNamespace(""),"setFaceDir"), 2
+         jump ofs15
+         ofs16:
+         getlocal0
+         getproperty QName(PackageNamespace(""),"_hitsounds")
+         iffalse ofs15
+         getlex QName(PackageNamespace(""),"Sfx")
+         callpropvoid QName(PackageNamespace(""),"playMenuBeep2"), 0
          ofs15:
          returnvoid
          end ; code
@@ -10207,6 +10317,12 @@ package
          getproperty QName(PrivateNamespace(null,"#Player"),"_curHp")
          pushbyte 0
          ifnle ofs1
+         getlex QName(PackageNamespace(""),"Sfx")
+         callpropvoid QName(PackageNamespace(""),"playSplash1"), 0
+         getlocal0
+         pushshort 255
+         callpropvoid QName(PackageNamespace(""),"setCurHp"), 1
+         returnvoid
          getlocal0
          callpropvoid QName(PackageNamespace(""),"kill"), 0
          ofs1:
@@ -10569,6 +10685,14 @@ package
          getproperty QName(PackageNamespace(""),"keys")
          getlex QName(PackageNamespace(""),"ALT_JUMP_KEY")
          callproperty QName(PackageNamespace(""),"justPressed"), 1
+         convert_b
+         dup
+         iftrue ofs0
+         pop
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"keys")
+         pushstring "F6"
+         callproperty QName(PackageNamespace(""),"pressed"), 1
          convert_b
          ofs0:
          returnvalue
@@ -12703,36 +12827,13 @@ package
          code
          getlocal0
          pushscope
-         findpropstrict QName(PackageNamespace(""),"int")
+         getlex QName(PackageNamespace(""),"GameTimeDisplay")
          getlocal0
          getproperty QName(PackageNamespace(""),"gameTime")
-         pushbyte 60
-         divide
-         callproperty QName(PackageNamespace(""),"int"), 1
-         callproperty QName(Namespace("http://adobe.com/AS3/2006/builtin"),"toString"), 0
-         pushstring ":"
+         callproperty QName(PackageNamespace(""),"formatExact"), 1
+         pushstring " - "
          add
-         findpropstrict QName(PackageNamespace(""),"padZero")
-         findpropstrict QName(PackageNamespace(""),"int")
-         getlocal0
-         getproperty QName(PackageNamespace(""),"gameTime")
-         pushbyte 60
-         modulo
-         callproperty QName(PackageNamespace(""),"int"), 1
-         callproperty QName(PackageNamespace(""),"padZero"), 1
-         add
-         pushstring "."
-         add
-         findpropstrict QName(PackageNamespace(""),"padZero")
-         findpropstrict QName(PackageNamespace(""),"int")
-         getlocal0
-         getproperty QName(PackageNamespace(""),"gameTime")
-         pushbyte 100
-         multiply
-         pushbyte 100
-         modulo
-         callproperty QName(PackageNamespace(""),"int"), 1
-         callproperty QName(PackageNamespace(""),"padZero"), 1
+         getlex QName(PackageNamespace(""),"x")
          add
          returnvalue
          end ; code

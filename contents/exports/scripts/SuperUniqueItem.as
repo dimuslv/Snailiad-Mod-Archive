@@ -34,7 +34,7 @@ package
          super(param1,param2,false);
          this._superAnim = true;
          this._customFinish = param4;
-         if(true)
+         if(PlayState.bossRush)
          {
             this._superAnim = false;
          }
