@@ -199,6 +199,8 @@ package
       
       public var fadeInterval:uint = 0;
       
+      public var hasEastTown:Boolean = false;
+      
       public function MainMenu()
       {
          this.hasEnding = [false,false,false,false,false,false];
@@ -294,6 +296,10 @@ package
          if(_loc1_.xml.vars && _loc1_.isVarTrue("toggleFire"))
          {
             Player.firingMode = Player.FIRING_MODE_TOGGLE;
+         }
+         if(_loc1_.xml.vars && _loc1_.isVarTrue("bossesKilledOne"))
+         {
+            this.hasEastTown = true;
          }
          if(_loc1_.xml.vars && _loc1_.isVarTrue("hasWonBossRush"))
          {
@@ -1462,7 +1468,11 @@ package
          this.addOption("LIKE TO START FROM?",null,false);
          this.addOption("",null,false);
          this.addOption("START FROM SAVE POINT",PlayState.loadGame,true);
-         this.addOption("START FROM SNAIL TOWN",PlayState.loadGameFromTown,true);
+         this.addOption("START FROM WESTERN TOWN",PlayState.loadGameFromTown,true);
+         if(this.hasEastTown)
+         {
+            this.addOption("START FROM EASTERN TOWN",PlayState.loadGameFromTown2,true);
+         }
          this.curOption = 3;
          this.centerMenu();
       }
@@ -1778,68 +1788,68 @@ package
             {
                case 1:
                   Sfx.playMenuBeep1();
-                  this.changeOption(2,"J-----",null);
+                  this.changeOption(2,"E-----",null);
                   this.changeOption(3,"------",null);
                   break;
                case 2:
                   Sfx.playMenuBeep1();
-                  this.changeOption(2,"JU----",null);
+                  this.changeOption(2,"EN----",null);
                   this.changeOption(3,"------",null);
                   break;
                case 3:
                   Sfx.playMenuBeep1();
-                  this.changeOption(2,"JUS---",null);
+                  this.changeOption(2,"ENG---",null);
                   this.changeOption(3,"------",null);
                   break;
                case 4:
                   Sfx.playMenuBeep1();
-                  this.changeOption(2,"JUST--",null);
+                  this.changeOption(2,"ENGA--",null);
                   this.changeOption(3,"------",null);
                   break;
                case 5:
                   Sfx.playMenuBeep1();
-                  this.changeOption(2,"JUSTI-",null);
+                  this.changeOption(2,"ENGAG-",null);
                   this.changeOption(3,"------",null);
                   break;
                case 6:
                   Sfx.playMenuBeep1();
-                  this.changeOption(2,"JUSTIN",null);
+                  this.changeOption(2,"ENGAGE",null);
                   this.changeOption(3,"------",null);
                   break;
                case 7:
                   Sfx.playMenuBeep1();
-                  this.changeOption(2,"JUSTIN",null);
-                  this.changeOption(3,"S-----",null);
+                  this.changeOption(2,"ENGAGE",null);
+                  this.changeOption(3,"M-----",null);
                   break;
                case 8:
                   Sfx.playMenuBeep1();
-                  this.changeOption(2,"JUSTIN",null);
-                  this.changeOption(3,"SN----",null);
+                  this.changeOption(2,"ENGAGE",null);
+                  this.changeOption(3,"MS----",null);
                   break;
                case 9:
                   Sfx.playMenuBeep1();
-                  this.changeOption(2,"JUSTIN",null);
-                  this.changeOption(3,"SNA---",null);
+                  this.changeOption(2,"ENGAGE",null);
+                  this.changeOption(3,"MSN---",null);
                   break;
                case 10:
                   Sfx.playMenuBeep1();
-                  this.changeOption(2,"JUSTIN",null);
-                  this.changeOption(3,"SNAI--",null);
+                  this.changeOption(2,"ENGAGE",null);
+                  this.changeOption(3,"MSNA--",null);
                   break;
                case 11:
                   Sfx.playMenuBeep1();
-                  this.changeOption(2,"JUSTIN",null);
-                  this.changeOption(3,"SNAIL-",null);
+                  this.changeOption(2,"ENGAGE",null);
+                  this.changeOption(3,"MSNAI-",null);
                   break;
                case 12:
                   Sfx.playMenuBeep1();
-                  this.changeOption(2,"JUSTIN",null);
-                  this.changeOption(3,"SNAILY",null);
+                  this.changeOption(2,"ENGAGE",null);
+                  this.changeOption(3,"MSNAIL",null);
                   break;
                case 13:
                   Sfx.playMenuBeep2();
-                  this.changeOption(2,"JUSTIN",null);
-                  this.changeOption(3,"SNAILY",null);
+                  this.changeOption(2,"ENGAGE",null);
+                  this.changeOption(3,"MSNAIL",null);
                   PlayState.startHardNewGame();
             }
          }

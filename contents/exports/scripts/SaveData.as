@@ -14,7 +14,7 @@ package
       public function SaveData()
       {
          super();
-         bind("Snailiad");
+         bind("Snailtroid");
          if(this.xml == null)
          {
             this.loadAll();
@@ -267,9 +267,9 @@ package
          }
          catch(error:Error)
          {
-            xml = new XML(<SaveData/>);
-            xml.appendChild(<vars/>);
-            FlxG.log("Caught error \"" + error.message + "\", creating new empty XML " + xml.toString());
+            this.xml = new XML(<SaveData/>);
+            this.xml.appendChild(<vars/>);
+            FlxG.log("Caught error \"" + error.message + "\", creating new empty XML " + this.xml.toString());
          }
       }
    }

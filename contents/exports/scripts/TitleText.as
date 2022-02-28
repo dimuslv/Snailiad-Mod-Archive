@@ -9,15 +9,15 @@ package
       
       private static const Y_POS:int = 15;
       
-      private static const SPACING:int = 4;
+      private static const SPACING:int = 1;
       
-      private static const LETTER_DELAY:Number = Math.PI / 11;
+      private static const LETTER_DELAY:Number = Math.PI / 30;
       
       private static const LETTER_START:Number = -2.5;
       
       private static const TIME_SCALE:Number = 0.8;
       
-      private static const X_SCALE:Number = 80;
+      private static const X_SCALE:Number = 0;
        
       
       private var _letters:Array;
@@ -39,8 +39,10 @@ package
          this._letters.push(new TitleLetter("A"));
          this._letters.push(new TitleLetter("I"));
          this._letters.push(new TitleLetter("L"));
+         this._letters.push(new TitleLetter("T"));
+         this._letters.push(new TitleLetter("R"));
+         this._letters.push(new TitleLetter("O"));
          this._letters.push(new TitleLetter("I"));
-         this._letters.push(new TitleLetter("A"));
          this._letters.push(new TitleLetter("D"));
          var _loc2_:int = 0;
          while(_loc2_ < this._letters.length)
@@ -49,7 +51,7 @@ package
             this._totalWidth += this._letters[_loc2_].width;
             _loc2_++;
          }
-         this._totalWidth += SPACING * (this._letters.length - 1);
+         this._totalWidth += SPACING * -this._letters.length;
          this._targetX = (FlxG.width - this._totalWidth) / 2;
          var _loc3_:Number = this._targetX;
          _loc2_ = 0;
@@ -106,7 +108,7 @@ package
             else if(_loc2_ < 0)
             {
                this._letters[_loc1_].visible = true;
-               _loc3_ = -Math.sin(-_loc2_ * Math.PI) * _loc2_ * X_SCALE;
+               _loc3_ = (0 - Math.sin((0 - _loc2_) * Math.PI)) * _loc2_ * X_SCALE;
                this._letters[_loc1_].x = this._letters[_loc1_].targetX + _loc3_;
             }
             else

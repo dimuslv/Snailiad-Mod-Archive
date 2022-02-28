@@ -1,7 +1,7 @@
 
 {
    method
-   name null
+   name ""
    returns null
    
    body
@@ -57,30 +57,30 @@ package
       
       {
          method
-         name null
+         name ""
          returns null
          
          body
          maxstack 2
          localcount 1
-         initscopedepth 7
-         maxscopedepth 8
+         initscopedepth 8
+         maxscopedepth 9
          
          code
          getlocal0
          pushscope
-         findproperty QName(PrivateNamespace(null,"#Intro"),"MODE_NONE")
+         findproperty QName(PrivateNamespace(":Intro"),"MODE_NONE")
          pushbyte 0
-         initproperty QName(PrivateNamespace(null,"#Intro"),"MODE_NONE")
-         findproperty QName(PrivateNamespace(null,"#Intro"),"MODE_WAIT_START")
+         initproperty QName(PrivateNamespace(":Intro"),"MODE_NONE")
+         findproperty QName(PrivateNamespace(":Intro"),"MODE_WAIT_START")
          pushbyte 1
-         initproperty QName(PrivateNamespace(null,"#Intro"),"MODE_WAIT_START")
-         findproperty QName(PrivateNamespace(null,"#Intro"),"MODE_STORY")
+         initproperty QName(PrivateNamespace(":Intro"),"MODE_WAIT_START")
+         findproperty QName(PrivateNamespace(":Intro"),"MODE_STORY")
          pushbyte 2
-         initproperty QName(PrivateNamespace(null,"#Intro"),"MODE_STORY")
-         findproperty QName(PrivateNamespace(null,"#Intro"),"MODE_END")
+         initproperty QName(PrivateNamespace(":Intro"),"MODE_STORY")
+         findproperty QName(PrivateNamespace(":Intro"),"MODE_END")
          pushbyte 3
-         initproperty QName(PrivateNamespace(null,"#Intro"),"MODE_END")
+         initproperty QName(PrivateNamespace(":Intro"),"MODE_END")
          returnvoid
          end ; code
          end ; body
@@ -105,7 +105,7 @@ package
       
       private var _modeElapsed:Number = 0;
       
-      private var _modeInitialized:Boolean = false;
+      private var _modeInitialized:Boolean;
       
       private var _dialogueMode:Number = 0;
       
@@ -116,18 +116,19 @@ package
       public function Intro()
       {
          method
-         name null
-         returns QName(PackageNamespace(""),"void")
+         name ":Intro/Intro"
+         returns null
          
          body
          maxstack 5
          localcount 3
-         initscopedepth 8
-         maxscopedepth 9
+         initscopedepth 9
+         maxscopedepth 10
          
          code
          getlocal0
          pushscope
+         debug 1, "_loc1_", 0, 47
          pushnull
          coerce QName(PackageNamespace("org.flixel"),"FlxText")
          setlocal1
@@ -140,23 +141,23 @@ package
          getproperty QName(PackageNamespace(""),"mouse")
          callpropvoid QName(PackageNamespace(""),"hide"), 0
          getlocal0
-         getlex QName(PrivateNamespace(null,"#Intro"),"MODE_WAIT_START")
+         getlex QName(PrivateNamespace(":Intro"),"MODE_WAIT_START")
          callpropvoid QName(PackageNamespace(""),"setMode"), 1
          getlocal0
          findpropstrict QName(PackageNamespace(""),"IntroBg")
          constructprop QName(PackageNamespace(""),"IntroBg"), 0
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_bg")
+         setproperty QName(PrivateNamespace(":Intro"),"_bg")
          findpropstrict QName(PackageNamespace(""),"add")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_bg")
+         getproperty QName(PrivateNamespace(":Intro"),"_bg")
          callpropvoid QName(PackageNamespace(""),"add"), 1
          getlocal0
          findpropstrict QName(PackageNamespace(""),"IntroDialogue")
          constructprop QName(PackageNamespace(""),"IntroDialogue"), 0
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueLayer")
+         setproperty QName(PrivateNamespace(":Intro"),"_dialogueLayer")
          findpropstrict QName(PackageNamespace(""),"add")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueLayer")
+         getproperty QName(PrivateNamespace(":Intro"),"_dialogueLayer")
          callpropvoid QName(PackageNamespace(""),"add"), 1
          findpropstrict QName(PackageNamespace("org.flixel"),"FlxText")
          pushbyte 0
@@ -173,13 +174,19 @@ package
          getproperty QName(PackageNamespace(""),"normal")
          setproperty QName(PackageNamespace(""),"font")
          getlocal1
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 10
+         callproperty QName(PackageNamespace(""),"Number"), 1
          setproperty QName(PackageNamespace(""),"size")
          getlocal1
+         findpropstrict QName(PackageNamespace(""),"uint")
          pushint 16579836
+         callproperty QName(PackageNamespace(""),"uint"), 1
          setproperty QName(PackageNamespace(""),"color")
          getlocal1
+         findpropstrict QName(PackageNamespace(""),"uint")
          pushbyte 1
+         callproperty QName(PackageNamespace(""),"uint"), 1
          setproperty QName(PackageNamespace(""),"shadow")
          getlocal1
          pushstring "right"
@@ -188,7 +195,9 @@ package
          getproperty QName(PackageNamespace(""),"scrollFactor")
          getlocal1
          getproperty QName(PackageNamespace(""),"scrollFactor")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          dup
          setlocal2
          setproperty QName(PackageNamespace(""),"y")
@@ -199,14 +208,16 @@ package
          pushstring "ESC TO SKIP"
          setproperty QName(PackageNamespace(""),"text")
          getlocal1
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
+         callproperty QName(PackageNamespace(""),"Number"), 1
          setproperty QName(PackageNamespace(""),"alpha")
          getlocal0
          getlocal1
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_skipText")
+         setproperty QName(PrivateNamespace(":Intro"),"_skipText")
          findpropstrict QName(PackageNamespace(""),"add")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_skipText")
+         getproperty QName(PrivateNamespace(":Intro"),"_skipText")
          callpropvoid QName(PackageNamespace(""),"add"), 1
          getlex QName(PackageNamespace(""),"Music")
          callpropvoid QName(PackageNamespace(""),"playTitle"), 0
@@ -222,42 +233,42 @@ package
          flag OVERRIDE
          dispid 0
          method
-         name null
+         name "Intro:destroy"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 2
          localcount 1
-         initscopedepth 8
-         maxscopedepth 9
+         initscopedepth 9
+         maxscopedepth 10
          
          code
          getlocal0
          pushscope
          getlocal0
          pushnull
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_bg")
+         setproperty QName(PrivateNamespace(":Intro"),"_bg")
          getlocal0
          pushnull
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
+         setproperty QName(PrivateNamespace(":Intro"),"_picture")
          getlocal0
          pushnull
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_picture2")
+         setproperty QName(PrivateNamespace(":Intro"),"_picture2")
          getlocal0
          pushnull
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_picture3")
+         setproperty QName(PrivateNamespace(":Intro"),"_picture3")
          getlocal0
          pushnull
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_pictureLayer")
+         setproperty QName(PrivateNamespace(":Intro"),"_pictureLayer")
          getlocal0
          pushnull
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_targetAlpha")
+         setproperty QName(PrivateNamespace(":Intro"),"_targetAlpha")
          getlocal0
          pushnull
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueLayer")
+         setproperty QName(PrivateNamespace(":Intro"),"_dialogueLayer")
          getlocal0
          pushnull
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_skipText")
+         setproperty QName(PrivateNamespace(":Intro"),"_skipText")
          getlocal0
          callsupervoid QName(PackageNamespace(""),"destroy"), 0
          returnvoid
@@ -271,28 +282,31 @@ package
          trait method QName(PackageNamespace(""),"setMode")
          dispid 0
          method
-         name null
+         name "Intro:setMode"
          param QName(PackageNamespace(""),"int")
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 2
+         maxstack 3
          localcount 2
-         initscopedepth 8
-         maxscopedepth 9
+         initscopedepth 9
+         maxscopedepth 10
          
          code
          getlocal0
          pushscope
+         debug 1, "param1", 0, 0
          getlocal0
          getlocal1
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_mode")
+         setproperty QName(PrivateNamespace(":Intro"),"_mode")
          getlocal0
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_modeElapsed")
+         callproperty QName(PackageNamespace(""),"Number"), 1
+         setproperty QName(PrivateNamespace(":Intro"),"_modeElapsed")
          getlocal0
          pushfalse
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_modeInitialized")
+         setproperty QName(PrivateNamespace(":Intro"),"_modeInitialized")
          returnvoid
          end ; code
          end ; body
@@ -304,24 +318,25 @@ package
          trait method QName(PackageNamespace(""),"updateIntroWaitStart")
          dispid 0
          method
-         name null
+         name "Intro:updateIntroWaitStart"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 2
          localcount 1
-         initscopedepth 8
-         maxscopedepth 9
+         initscopedepth 9
+         maxscopedepth 10
          
          code
          getlocal0
          pushscope
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_bg")
+         getproperty QName(PrivateNamespace(":Intro"),"_bg")
          callproperty QName(PackageNamespace(""),"isFadingIn"), 0
-         iftrue ofs0
+         not
+         iffalse ofs0
          getlocal0
-         getlex QName(PrivateNamespace(null,"#Intro"),"MODE_STORY")
+         getlex QName(PrivateNamespace(":Intro"),"MODE_STORY")
          callpropvoid QName(PackageNamespace(""),"setMode"), 1
          ofs0:
          returnvoid
@@ -335,160 +350,170 @@ package
          trait method QName(PackageNamespace(""),"updateIntroStory")
          dispid 0
          method
-         name null
+         name "Intro:updateIntroStory"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 3
          localcount 4
-         initscopedepth 8
-         maxscopedepth 9
+         initscopedepth 9
+         maxscopedepth 10
          
          code
          getlocal0
          pushscope
+         debug 1, "_loc1_", 0, 100
          pushnull
          coerce_s
          setlocal1
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_modeInitialized")
-         iftrue ofs0
+         getproperty QName(PrivateNamespace(":Intro"),"_modeInitialized")
+         not
+         iffalse ofs0
          getlocal0
          pushtrue
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_modeInitialized")
+         setproperty QName(PrivateNamespace(":Intro"),"_modeInitialized")
          getlocal0
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         callproperty QName(PackageNamespace(""),"Number"), 1
+         setproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          getlocal0
          findpropstrict QName(PackageNamespace(""),"IntroPicture")
          pushbyte 1
          constructprop QName(PackageNamespace(""),"IntroPicture"), 1
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
+         setproperty QName(PrivateNamespace(":Intro"),"_picture")
          findpropstrict QName(PackageNamespace(""),"add")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
+         getproperty QName(PrivateNamespace(":Intro"),"_picture")
          callpropvoid QName(PackageNamespace(""),"add"), 1
          ofs0:
          jump ofs1
          ofs2:
          label
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_skipText")
+         getproperty QName(PrivateNamespace(":Intro"),"_skipText")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
+         getproperty QName(PrivateNamespace(":Intro"),"_picture")
          getproperty QName(PackageNamespace(""),"alpha")
          setproperty QName(PackageNamespace(""),"alpha")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
+         getproperty QName(PrivateNamespace(":Intro"),"_picture")
          getproperty QName(PackageNamespace(""),"alpha")
          pushdouble 0.7
          ifngt ofs3
          getlocal0
          dup
          setlocal2
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         getproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          increment
          setlocal3
          getlocal2
          getlocal3
-         setproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         setproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          kill 3
          kill 2
          getlocal0
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_modeElapsed")
+         callproperty QName(PackageNamespace(""),"Number"), 1
+         setproperty QName(PrivateNamespace(":Intro"),"_modeElapsed")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueLayer")
-         pushstring "  ALL WAS PEACEFUL IN SNAIL TOWN...\n"
+         getproperty QName(PrivateNamespace(":Intro"),"_dialogueLayer")
+         pushstring "ALL WAS PEACEFUL IN SNAIL COUNTRY...\n"
          callpropvoid QName(PackageNamespace(""),"start"), 1
          ofs3:
          jump ofs4
          ofs5:
          label
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_skipText")
+         getproperty QName(PrivateNamespace(":Intro"),"_skipText")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
+         getproperty QName(PrivateNamespace(":Intro"),"_picture")
          getproperty QName(PackageNamespace(""),"alpha")
          setproperty QName(PackageNamespace(""),"alpha")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_modeElapsed")
+         getproperty QName(PrivateNamespace(":Intro"),"_modeElapsed")
          pushdouble 5.4
          ifnge ofs6
          getlocal0
          dup
          setlocal2
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         getproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          increment
          setlocal3
          getlocal2
          getlocal3
-         setproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         setproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          kill 3
          kill 2
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
+         getproperty QName(PrivateNamespace(":Intro"),"_picture")
          callpropvoid QName(PackageNamespace(""),"fadeOut"), 0
          ofs6:
          jump ofs4
          ofs7:
          label
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
+         getproperty QName(PrivateNamespace(":Intro"),"_picture")
          getproperty QName(PackageNamespace(""),"alpha")
          pushbyte 0
          ifne ofs8
          getlocal0
          dup
          setlocal2
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         getproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          increment
          setlocal3
          getlocal2
          getlocal3
-         setproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         setproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          kill 3
          kill 2
          findpropstrict QName(PackageNamespace(""),"remove")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
+         getproperty QName(PrivateNamespace(":Intro"),"_picture")
          callpropvoid QName(PackageNamespace(""),"remove"), 1
          getlocal0
          findpropstrict QName(PackageNamespace(""),"IntroPicture")
          pushbyte 2
          constructprop QName(PackageNamespace(""),"IntroPicture"), 1
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
+         setproperty QName(PrivateNamespace(":Intro"),"_picture")
          findpropstrict QName(PackageNamespace(""),"add")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
+         getproperty QName(PrivateNamespace(":Intro"),"_picture")
          callpropvoid QName(PackageNamespace(""),"add"), 1
          ofs8:
          jump ofs4
          ofs9:
          label
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
+         getproperty QName(PrivateNamespace(":Intro"),"_picture")
          getproperty QName(PackageNamespace(""),"alpha")
          pushdouble 0.1
          ifnge ofs10
          getlocal0
          dup
          setlocal2
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         getproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          increment
          setlocal3
          getlocal2
          getlocal3
-         setproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         setproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          kill 3
          kill 2
          getlocal0
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_modeElapsed")
+         callproperty QName(PackageNamespace(""),"Number"), 1
+         setproperty QName(PrivateNamespace(":Intro"),"_modeElapsed")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueLayer")
+         getproperty QName(PrivateNamespace(":Intro"),"_dialogueLayer")
          pushstring " UNTIL ONE DAY...\n"
-         pushstring "     MOON SNAIL LEFT ON A JOURNEY"
+         pushstring "  IRIS CALLED FOR SUN SNAIL\'S\n"
+         add
+         pushstring "   PRESENCE...\n"
          add
          callpropvoid QName(PackageNamespace(""),"start"), 1
          ofs10:
@@ -496,85 +521,87 @@ package
          ofs11:
          label
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_modeElapsed")
+         getproperty QName(PrivateNamespace(":Intro"),"_modeElapsed")
          pushbyte 6
          ifnge ofs12
          getlocal0
          dup
          setlocal2
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         getproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          increment
          setlocal3
          getlocal2
          getlocal3
-         setproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         setproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          kill 3
          kill 2
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
+         getproperty QName(PrivateNamespace(":Intro"),"_picture")
          callpropvoid QName(PackageNamespace(""),"fadeOut"), 0
          ofs12:
          jump ofs4
          ofs13:
          label
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
+         getproperty QName(PrivateNamespace(":Intro"),"_picture")
          getproperty QName(PackageNamespace(""),"alpha")
          pushbyte 0
          ifne ofs14
          getlocal0
          dup
          setlocal2
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         getproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          increment
          setlocal3
          getlocal2
          getlocal3
-         setproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         setproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          kill 3
          kill 2
          findpropstrict QName(PackageNamespace(""),"remove")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
+         getproperty QName(PrivateNamespace(":Intro"),"_picture")
          callpropvoid QName(PackageNamespace(""),"remove"), 1
          getlocal0
          findpropstrict QName(PackageNamespace(""),"IntroPicture")
          pushbyte 1
          constructprop QName(PackageNamespace(""),"IntroPicture"), 1
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
+         setproperty QName(PrivateNamespace(":Intro"),"_picture")
          findpropstrict QName(PackageNamespace(""),"add")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
+         getproperty QName(PrivateNamespace(":Intro"),"_picture")
          callpropvoid QName(PackageNamespace(""),"add"), 1
          ofs14:
          jump ofs4
          ofs15:
          label
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
+         getproperty QName(PrivateNamespace(":Intro"),"_picture")
          getproperty QName(PackageNamespace(""),"alpha")
          pushdouble 0.1
          ifngt ofs16
          getlocal0
          dup
          setlocal2
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         getproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          increment
          setlocal3
          getlocal2
          getlocal3
-         setproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         setproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          kill 3
          kill 2
          getlocal0
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_modeElapsed")
+         callproperty QName(PackageNamespace(""),"Number"), 1
+         setproperty QName(PrivateNamespace(":Intro"),"_modeElapsed")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueLayer")
+         getproperty QName(PrivateNamespace(":Intro"),"_dialogueLayer")
          pushstring " SOON AFTER...\n"
-         pushstring "     THE SNAILS BEGAN TO DISAPPEAR\n"
+         pushstring "  A GREAT SENSE OF DANGER AND\n"
          add
-         pushstring "                   ONE BY ONE"
+         pushstring "   GLOOM BEFELL SNAIL COUNTRY\n"
          add
          callpropvoid QName(PackageNamespace(""),"start"), 1
          ofs16:
@@ -582,83 +609,87 @@ package
          ofs17:
          label
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_modeElapsed")
+         getproperty QName(PrivateNamespace(":Intro"),"_modeElapsed")
          pushbyte 3
          ifnge ofs18
          getlocal0
          dup
          setlocal2
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         getproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          increment
          setlocal3
          getlocal2
          getlocal3
-         setproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         setproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          kill 3
          kill 2
          getlocal0
          findpropstrict QName(PackageNamespace(""),"IntroPicture")
          pushbyte 3
          constructprop QName(PackageNamespace(""),"IntroPicture"), 1
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_picture2")
+         setproperty QName(PrivateNamespace(":Intro"),"_picture2")
          findpropstrict QName(PackageNamespace(""),"add")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture2")
+         getproperty QName(PrivateNamespace(":Intro"),"_picture2")
          callpropvoid QName(PackageNamespace(""),"add"), 1
          ofs18:
          jump ofs4
          ofs19:
          label
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_modeElapsed")
+         getproperty QName(PrivateNamespace(":Intro"),"_modeElapsed")
          pushdouble 5.5
          ifnge ofs20
          getlocal0
          dup
          setlocal2
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         getproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          increment
          setlocal3
          getlocal2
          getlocal3
-         setproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         setproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          kill 3
          kill 2
          getlocal0
          findpropstrict QName(PackageNamespace(""),"IntroPicture")
          pushbyte 4
          constructprop QName(PackageNamespace(""),"IntroPicture"), 1
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_picture3")
+         setproperty QName(PrivateNamespace(":Intro"),"_picture3")
          findpropstrict QName(PackageNamespace(""),"add")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture3")
+         getproperty QName(PrivateNamespace(":Intro"),"_picture3")
          callpropvoid QName(PackageNamespace(""),"add"), 1
          ofs20:
          jump ofs4
          ofs21:
          label
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_modeElapsed")
+         getproperty QName(PrivateNamespace(":Intro"),"_modeElapsed")
          pushdouble 8.5
          ifnge ofs22
          getlocal0
          dup
          setlocal2
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         getproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          increment
          setlocal3
          getlocal2
          getlocal3
-         setproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         setproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          kill 3
          kill 2
          getlocal0
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_modeElapsed")
+         callproperty QName(PackageNamespace(""),"Number"), 1
+         setproperty QName(PrivateNamespace(":Intro"),"_modeElapsed")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueLayer")
-         pushstring "WILL ANYONE HELP?  CAN ANYONE\n"
-         pushstring "        RESCUE THE MISSING SNAILS??\n"
+         getproperty QName(PrivateNamespace(":Intro"),"_dialogueLayer")
+         pushstring " PLUNGED INTO PERIL, THE LAND\n"
+         pushstring "  BECAME UNTAMED, FEW DARING TO\n"
+         add
+         pushstring "   PIERCE ITS INFESTED REACHES\n"
          add
          callpropvoid QName(PackageNamespace(""),"start"), 1
          ofs22:
@@ -666,229 +697,165 @@ package
          ofs23:
          label
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_modeElapsed")
-         pushdouble 6.5
+         getproperty QName(PrivateNamespace(":Intro"),"_modeElapsed")
+         pushdouble 8.5
          ifnge ofs24
          getlocal0
          dup
          setlocal2
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         getproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          increment
          setlocal3
          getlocal2
          getlocal3
-         setproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         setproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          kill 3
          kill 2
          findpropstrict QName(PackageNamespace(""),"remove")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
+         getproperty QName(PrivateNamespace(":Intro"),"_picture")
          callpropvoid QName(PackageNamespace(""),"remove"), 1
          findpropstrict QName(PackageNamespace(""),"remove")
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture2")
+         getproperty QName(PrivateNamespace(":Intro"),"_picture2")
          callpropvoid QName(PackageNamespace(""),"remove"), 1
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture3")
-         callpropvoid QName(PackageNamespace(""),"fadeOut"), 0
-         ofs24:
-         jump ofs4
-         ofs25:
-         label
-         getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture3")
-         getproperty QName(PackageNamespace(""),"alpha")
+         findpropstrict QName(PackageNamespace(""),"Number")
          pushbyte 0
-         ifne ofs26
-         getlocal0
-         dup
-         setlocal2
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
-         increment
-         setlocal3
-         getlocal2
-         getlocal3
-         setproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
-         kill 3
-         kill 2
-         findpropstrict QName(PackageNamespace(""),"remove")
-         getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture3")
-         callpropvoid QName(PackageNamespace(""),"remove"), 1
-         getlocal0
-         findpropstrict QName(PackageNamespace(""),"IntroPicture")
-         pushbyte 5
-         constructprop QName(PackageNamespace(""),"IntroPicture"), 1
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
-         findpropstrict QName(PackageNamespace(""),"add")
-         getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
-         callpropvoid QName(PackageNamespace(""),"add"), 1
+         callproperty QName(PackageNamespace(""),"Number"), 1
+         setproperty QName(PrivateNamespace(":Intro"),"_modeElapsed")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"introSlugMode")
+         not
+         not
+         iffalse ofs25
+         pushstring "SLUGGY SLUG"
+         jump ofs26
+         ofs25:
+         pushstring "SNAILY SNAIL"
          ofs26:
+         coerce_s
+         setlocal1
+         getlocal0
+         getproperty QName(PrivateNamespace(":Intro"),"_dialogueLayer")
+         pushstring " SENSING A CALLING AND A DISTINCT\n"
+         pushstring "  FEELING OF DEJA VU, "
+         add
+         getlocal1
+         add
+         pushstring "\n"
+         add
+         pushstring "   SET OFF IN SEARCH OF ANSWERS...\n"
+         add
+         callpropvoid QName(PackageNamespace(""),"start"), 1
+         ofs24:
          jump ofs4
          ofs27:
          label
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_picture")
-         getproperty QName(PackageNamespace(""),"alpha")
-         pushdouble 0.1
-         ifngt ofs28
+         getproperty QName(PrivateNamespace(":Intro"),"_modeElapsed")
+         pushdouble 8.5
+         ifnge ofs28
          getlocal0
-         dup
-         setlocal2
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
-         increment
-         setlocal3
-         getlocal2
-         getlocal3
-         setproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
-         kill 3
-         kill 2
-         getlocal0
-         pushbyte 0
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_modeElapsed")
-         getlex QName(PackageNamespace(""),"PlayState")
-         getproperty QName(PackageNamespace(""),"introSlugMode")
-         iffalse ofs29
-         pushstring "SLUGGY SLUG"
-         jump ofs30
-         ofs29:
-         pushstring "SNAILY SNAIL"
-         ofs30:
-         coerce_s
-         setlocal1
-         getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueLayer")
-         pushstring "YOU CAN DO IT, "
-         getlocal1
-         add
-         pushstring "!!\n"
-         add
-         pushstring "        IT\'S UP TO YOU!!  GOOD LUCK!!\n"
-         add
-         callpropvoid QName(PackageNamespace(""),"start"), 1
-         ofs28:
-         jump ofs4
-         ofs31:
-         label
-         getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_modeElapsed")
-         pushdouble 7.6
-         ifnge ofs32
-         getlocal0
-         getlex QName(PrivateNamespace(null,"#Intro"),"MODE_END")
+         getlex QName(PrivateNamespace(":Intro"),"MODE_END")
          callpropvoid QName(PackageNamespace(""),"setMode"), 1
-         ofs32:
-         jump ofs4
-         ofs33:
+         ofs28:
          label
          jump ofs4
          ofs1:
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueMode")
+         getproperty QName(PrivateNamespace(":Intro"),"_dialogueMode")
          setlocal2
          pushbyte 0
          getlocal2
-         ifstrictne ofs34
+         ifstrictne ofs29
          pushbyte 0
-         jump ofs35
-         ofs34:
+         jump ofs30
+         ofs29:
          pushbyte 1
+         getlocal2
+         ifstrictne ofs31
+         pushbyte 1
+         jump ofs30
+         ofs31:
+         pushbyte 2
+         getlocal2
+         ifstrictne ofs32
+         pushbyte 2
+         jump ofs30
+         ofs32:
+         pushbyte 3
+         getlocal2
+         ifstrictne ofs33
+         pushbyte 3
+         jump ofs30
+         ofs33:
+         pushbyte 4
+         getlocal2
+         ifstrictne ofs34
+         pushbyte 4
+         jump ofs30
+         ofs34:
+         pushbyte 5
+         getlocal2
+         ifstrictne ofs35
+         pushbyte 5
+         jump ofs30
+         ofs35:
+         pushbyte 6
          getlocal2
          ifstrictne ofs36
-         pushbyte 1
-         jump ofs35
+         pushbyte 6
+         jump ofs30
          ofs36:
-         pushbyte 2
+         pushbyte 7
          getlocal2
          ifstrictne ofs37
-         pushbyte 2
-         jump ofs35
+         pushbyte 7
+         jump ofs30
          ofs37:
-         pushbyte 3
+         pushbyte 8
          getlocal2
          ifstrictne ofs38
-         pushbyte 3
-         jump ofs35
+         pushbyte 8
+         jump ofs30
          ofs38:
-         pushbyte 4
+         pushbyte 9
          getlocal2
          ifstrictne ofs39
-         pushbyte 4
-         jump ofs35
+         pushbyte 9
+         jump ofs30
          ofs39:
-         pushbyte 5
+         pushbyte 10
          getlocal2
          ifstrictne ofs40
-         pushbyte 5
-         jump ofs35
+         pushbyte 10
+         jump ofs30
          ofs40:
-         pushbyte 6
+         pushbyte 11
          getlocal2
          ifstrictne ofs41
-         pushbyte 6
-         jump ofs35
+         pushbyte 11
+         jump ofs30
          ofs41:
-         pushbyte 7
-         getlocal2
-         ifstrictne ofs42
-         pushbyte 7
-         jump ofs35
+         jump ofs42
+         pushbyte -1
+         jump ofs42
          ofs42:
-         pushbyte 8
-         getlocal2
-         ifstrictne ofs43
-         pushbyte 8
-         jump ofs35
-         ofs43:
-         pushbyte 9
-         getlocal2
-         ifstrictne ofs44
-         pushbyte 9
-         jump ofs35
-         ofs44:
-         pushbyte 10
-         getlocal2
-         ifstrictne ofs45
-         pushbyte 10
-         jump ofs35
-         ofs45:
-         pushbyte 11
-         getlocal2
-         ifstrictne ofs46
-         pushbyte 11
-         jump ofs35
-         ofs46:
-         pushbyte 12
-         getlocal2
-         ifstrictne ofs47
-         pushbyte 12
-         jump ofs35
-         ofs47:
-         pushbyte 13
-         getlocal2
-         ifstrictne ofs48
-         pushbyte 13
-         jump ofs35
-         ofs48:
-         jump ofs49
-         pushbyte 14
-         jump ofs49
-         ofs49:
-         pushbyte 14
-         ofs35:
+         pushbyte -1
+         ofs30:
          kill 2
-         lookupswitch ofs33, [ofs2, ofs5, ofs7, ofs9, ofs11, ofs13, ofs15, ofs17, ofs19, ofs21, ofs23, ofs25, ofs27, ofs31, ofs33]
+         lookupswitch ofs28, [ofs2, ofs5, ofs7, ofs9, ofs11, ofs13, ofs15, ofs17, ofs19, ofs21, ofs23, ofs27]
          ofs4:
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
          pushstring "ESCAPE"
          callproperty QName(PackageNamespace(""),"pressed"), 1
-         iffalse ofs50
+         iffalse ofs43
          getlocal0
-         getlex QName(PrivateNamespace(null,"#Intro"),"MODE_END")
+         getlex QName(PrivateNamespace(":Intro"),"MODE_END")
          callpropvoid QName(PackageNamespace(""),"setMode"), 1
-         ofs50:
+         ofs43:
          returnvoid
          end ; code
          end ; body
@@ -900,30 +867,31 @@ package
          trait method QName(PackageNamespace(""),"updateIntroEnd")
          dispid 0
          method
-         name null
+         name "Intro:updateIntroEnd"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 4
          localcount 1
-         initscopedepth 8
-         maxscopedepth 9
+         initscopedepth 9
+         maxscopedepth 10
          
          code
          getlocal0
          pushscope
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_modeInitialized")
-         iftrue ofs0
+         getproperty QName(PrivateNamespace(":Intro"),"_modeInitialized")
+         not
+         iffalse ofs0
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          pushfalse
          setproperty QName(PackageNamespace(""),"noPause")
          getlocal0
          pushtrue
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_modeInitialized")
+         setproperty QName(PrivateNamespace(":Intro"),"_modeInitialized")
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"fade")
-         pushdouble 4.278206591E9
+         pushint -16760705
          pushbyte 1
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"loadGame")
@@ -945,30 +913,30 @@ package
          flag OVERRIDE
          dispid 0
          method
-         name null
+         name "Intro:update"
          returns QName(PackageNamespace(""),"void")
          
          body
          maxstack 3
          localcount 2
-         initscopedepth 8
-         maxscopedepth 9
+         initscopedepth 9
+         maxscopedepth 10
          
          code
          getlocal0
          pushscope
          getlocal0
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_modeElapsed")
+         getproperty QName(PrivateNamespace(":Intro"),"_modeElapsed")
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"elapsed")
          add
-         initproperty QName(PrivateNamespace(null,"#Intro"),"_modeElapsed")
+         setproperty QName(PrivateNamespace(":Intro"),"_modeElapsed")
          jump ofs0
          ofs1:
          label
          getlocal0
-         getlex QName(PrivateNamespace(null,"#Intro"),"MODE_WAIT_START")
+         getlex QName(PrivateNamespace(":Intro"),"MODE_WAIT_START")
          callpropvoid QName(PackageNamespace(""),"setMode"), 1
          jump ofs2
          ofs3:
@@ -985,46 +953,45 @@ package
          label
          getlocal0
          callpropvoid QName(PackageNamespace(""),"updateIntroEnd"), 0
-         jump ofs2
          ofs6:
          label
          jump ofs2
          ofs0:
          getlocal0
-         getproperty QName(PrivateNamespace(null,"#Intro"),"_mode")
+         getproperty QName(PrivateNamespace(":Intro"),"_mode")
          setlocal1
-         getlex QName(PrivateNamespace(null,"#Intro"),"MODE_NONE")
+         getlex QName(PrivateNamespace(":Intro"),"MODE_NONE")
          getlocal1
          ifstrictne ofs7
          pushbyte 0
          jump ofs8
          ofs7:
-         getlex QName(PrivateNamespace(null,"#Intro"),"MODE_WAIT_START")
+         getlex QName(PrivateNamespace(":Intro"),"MODE_WAIT_START")
          getlocal1
          ifstrictne ofs9
          pushbyte 1
          jump ofs8
          ofs9:
-         getlex QName(PrivateNamespace(null,"#Intro"),"MODE_STORY")
+         getlex QName(PrivateNamespace(":Intro"),"MODE_STORY")
          getlocal1
          ifstrictne ofs10
          pushbyte 2
          jump ofs8
          ofs10:
-         getlex QName(PrivateNamespace(null,"#Intro"),"MODE_END")
+         getlex QName(PrivateNamespace(":Intro"),"MODE_END")
          getlocal1
          ifstrictne ofs11
          pushbyte 3
          jump ofs8
          ofs11:
          jump ofs12
-         pushbyte 4
+         pushbyte -1
          jump ofs12
          ofs12:
-         pushbyte 4
+         pushbyte -1
          ofs8:
          kill 1
-         lookupswitch ofs6, [ofs1, ofs3, ofs4, ofs5, ofs6]
+         lookupswitch ofs6, [ofs1, ofs3, ofs4, ofs5]
          ofs2:
          getlocal0
          callsupervoid QName(PackageNamespace(""),"update"), 0

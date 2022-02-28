@@ -146,7 +146,7 @@ package
          pushbyte 24
          initproperty QName(PrivateNamespace(null,"#MiniMap"),"FULL_OFS_Y")
          findproperty QName(PackageNamespace(""),"MAX_KNOWN")
-         pushshort 324
+         pushshort 373
          initproperty QName(PackageNamespace(""),"MAX_KNOWN")
          returnvoid
          end ; code

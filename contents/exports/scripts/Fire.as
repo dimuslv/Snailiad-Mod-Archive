@@ -23,10 +23,10 @@ package
          loadGraphic(Art.Fire,true,true,IMG_WIDTH,IMG_HEIGHT);
          width = IMG_WIDTH;
          height = IMG_HEIGHT;
-         addAnimation("anim1",[0,1,2,3],9);
-         addAnimation("anim2",[3,2,0,1],10);
-         addAnimation("anim3",[1,0,3,2],11);
-         addAnimation("anim4",[2,3,1,0],13);
+         addAnimation("anim1",[0,1,2,3],3);
+         addAnimation("anim2",[3,2,0,1],5);
+         addAnimation("anim3",[1,0,3,2],4);
+         addAnimation("anim4",[2,3,1,0],6);
          switch(int(param1 / 16) % 4)
          {
             case 0:
@@ -54,14 +54,11 @@ package
          this._collidedThisFrame = true;
          if(!param1.hasArmor())
          {
-            if(param1.isIcy())
-            {
-               param1.hurt(1);
-            }
-            else
-            {
-               param1.hurt(4);
-            }
+            param1.hurt(4);
+         }
+         else
+         {
+            param1.hurt(8);
          }
       }
       

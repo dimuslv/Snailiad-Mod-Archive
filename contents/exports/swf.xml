@@ -13210,7 +13210,7 @@
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="4" bitmapWidth="4" characterID="126" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="128" characterID="127" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="128" characterID="128" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="344" bitmapWidth="168" characterID="129" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="344" bitmapWidth="252" characterID="129" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="64" bitmapWidth="96" characterID="130" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="32" bitmapWidth="160" characterID="131" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="122" bitmapWidth="194" characterID="132" type="DefineBitsLossless2Tag" zlibBitmapData="" />
@@ -15691,7 +15691,7 @@
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="11" bitmapWidth="10" characterID="135" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="16" characterID="136" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="64" characterID="137" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="32" bitmapWidth="72" characterID="138" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="32" bitmapWidth="108" characterID="138" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="200" bitmapWidth="200" characterID="139" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="48" bitmapWidth="128" characterID="140" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="32" characterID="141" type="DefineBitsLossless2Tag" zlibBitmapData="" />
@@ -15804,7 +15804,7 @@
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="48" bitmapWidth="384" characterID="248" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="144" bitmapWidth="96" characterID="249" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="128" bitmapWidth="640" characterID="250" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="256" bitmapWidth="640" characterID="251" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="256" bitmapWidth="1152" characterID="251" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="64" bitmapWidth="32" characterID="252" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="250" bitmapWidth="400" characterID="253" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="16" characterID="254" type="DefineBitsLossless2Tag" zlibBitmapData="" />
@@ -18876,7 +18876,7 @@
     <item binaryData="" reserved="0" tag="268" type="DefineBinaryDataTag" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="32" bitmapWidth="24" characterID="269" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="2960" bitmapWidth="256" characterID="270" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="16" characterID="271" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="64" bitmapWidth="64" characterID="271" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="16" characterID="272" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="256" bitmapWidth="640" characterID="273" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="13" bitmapWidth="13" characterID="274" type="DefineBitsLossless2Tag" zlibBitmapData="" />

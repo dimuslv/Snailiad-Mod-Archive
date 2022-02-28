@@ -71,6 +71,14 @@ package
       
       public function Boss1Rush(param1:int, param2:int)
       {
+         this.SHOT_DELAY = 0.3;
+         this._turboMultiplier = 1;
+         this._radiusMultTarget = 1;
+         this._radiusMultCur = 1;
+         this.SHOT_DELAY = 0.3;
+         this._turboMultiplier = 1;
+         this._radiusMultTarget = 1;
+         this._radiusMultCur = 1;
          if(PlayState.player && PlayState.player._hardMode)
          {
             this.HAND_NUM += 24;
@@ -136,7 +144,7 @@ package
       {
          var _loc1_:Number = NaN;
          var _loc2_:Number = NaN;
-         var _loc3_:Number = NaN;
+         var _loc3_:* = NaN;
          var _loc4_:Number = NaN;
          if(PlayState.realState != PlayState.STATE_GAME)
          {
@@ -192,10 +200,10 @@ package
       
       public function shoot(param1:Number) : void
       {
-         var _loc2_:Number = WEAPON_SPEED;
+         var _loc5_:EnemyBullet = null;
+         var _loc2_:* = WEAPON_SPEED;
          var _loc3_:Number = -Math.cos(param1) * _loc2_;
          var _loc4_:Number = -Math.sin(param1) * _loc2_;
-         var _loc5_:EnemyBullet;
          if(_loc5_ = PlayState.enemyBulletPool.getBullet(0))
          {
             _loc5_.shoot(x + width / 2,y + height / 2,_loc3_,_loc4_);
@@ -221,14 +229,26 @@ package
                {
                   case 0:
                      this.shoot(_loc2_);
+                     this.shoot(_loc2_ + Math.PI / 2);
+                     this.shoot(_loc2_ + Math.PI);
+                     this.shoot(_loc2_ - Math.PI / 2);
                      break;
                   case 1:
-                     this.shoot(_loc2_ + (Math.PI / this._shotMax - Math.PI / 2) * this._shotNum / 8);
+                     this.shoot(_loc2_);
+                     this.shoot(_loc2_ + Math.PI / 2);
+                     this.shoot(_loc2_ + Math.PI);
+                     this.shoot(_loc2_ - Math.PI / 2);
                      break;
                   case 2:
+                     this.shoot(_loc2_);
+                     this.shoot(_loc2_ + (Math.PI / this._shotMax - Math.PI / 2) * this._shotNum / 8);
                      this.shoot(_loc2_ + Math.PI);
+                     this.shoot(_loc2_ - (Math.PI / this._shotMax - Math.PI / 2) * this._shotNum / 8);
                      break;
                   case 3:
+                     this.shoot(_loc2_);
+                     this.shoot(_loc2_ + (Math.PI / this._shotMax - Math.PI / 2) * this._shotNum / 8);
+                     this.shoot(_loc2_ + Math.PI);
                      this.shoot(_loc2_ - (Math.PI / this._shotMax - Math.PI / 2) * this._shotNum / 8);
                }
                if(this._shotNum >= this._shotMax)

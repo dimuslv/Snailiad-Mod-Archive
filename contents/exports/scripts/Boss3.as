@@ -17,15 +17,15 @@ package
       
       private static const MAX_HP:int = 5100;
       
-      private static const DEFENSE:int = 9;
+      private static const DEFENSE:int = 12;
       
       private static const OFFENSE:int = 4;
       
       private static const MAX_SPAWN:int = 8;
       
-      private static const SHIELDS_MAX:int = 36;
+      private static const SHIELDS_MAX:int = 0;
       
-      private static const SHIELDS_REALMAX:int = 26;
+      private static const SHIELDS_REALMAX:int = 0;
       
       private static const SHIELDS_START:int = 0;
       
@@ -49,6 +49,14 @@ package
       
       private static const MODE_RIGHT:int = 5;
       
+      private static const MODE_UPLEFT:int = 6;
+      
+      private static const MODE_UPRIGHT:int = 7;
+      
+      private static const MODE_DOWNLEFT:int = 8;
+      
+      private static const MODE_DOWNRIGHT:int = 9;
+      
       private static const SPAWN_COUNTER:int = 8;
       
       private static const STARTING_BOSS_SPEED:Number = 1;
@@ -64,7 +72,7 @@ package
       
       private var _shieldNum:int = 0;
       
-      private var _createdChildren:Boolean = false;
+      private var _createdChildren:Boolean;
       
       private var _elapsed:Number = 0;
       
@@ -104,26 +112,46 @@ package
       
       private var _lastAnim:String = "";
       
+      private var _lastWallHit:int = 0;
+      
+      private var _diagonalCounter:int = 0;
+      
       public function Boss3(param1:int, param2:int)
       {
+         this._modeTimeout = 0.6;
+         this._bossSpeed = 1;
+         this.CLUSTER_TIMEOUT = 4.1;
+         this.SHOT_TIMEOUT = 0.6;
+         this._modeTimeout = 0.6;
+         this._bossSpeed = 1;
+         this.CLUSTER_TIMEOUT = 4.1;
+         this.SHOT_TIMEOUT = 0.6;
          this._shotNum = this.SHOT_NUM;
          super(param1,param2,MAX_HP,DEFENSE,OFFENSE);
          loadGraphic(Art.Boss3,true,true,IMG_WIDTH,IMG_HEIGHT);
-         width = IMG_WIDTH;
-         height = IMG_HEIGHT;
+         width = Number(IMG_WIDTH);
+         height = Number(IMG_HEIGHT);
          addAnimation("up0",[0]);
          addAnimation("left0",[1]);
          addAnimation("right0",[2]);
          addAnimation("down0",[3]);
          addAnimation("mid0",[4]);
-         addAnimation("up1",[5]);
-         addAnimation("left1",[6]);
-         addAnimation("right1",[7]);
-         addAnimation("down1",[8]);
-         addAnimation("mid1",[9]);
+         addAnimation("upleft0",[5]);
+         addAnimation("downleft0",[6]);
+         addAnimation("upright0",[7]);
+         addAnimation("downright0",[8]);
+         addAnimation("up1",[9]);
+         addAnimation("left1",[10]);
+         addAnimation("right1",[11]);
+         addAnimation("down1",[12]);
+         addAnimation("mid1",[13]);
+         addAnimation("upleft1",[14]);
+         addAnimation("downleft1",[15]);
+         addAnimation("upright1",[16]);
+         addAnimation("downright1",[17]);
          this.playAnim("mid");
          Music.playBoss1();
-         PlayState.player.x += 20;
+         PlayState.player.x -= 20;
          if(PlayState.player._slugMode)
          {
             this.SHOT_NUM += 2;
@@ -155,7 +183,7 @@ package
       public function getDecision() : Number
       {
          ++this._decisionTableIndex;
-         this._decisionTableIndex %= DECISION_TABLE.length;
+         this._decisionTableIndex = int(int(this._decisionTableIndex % DECISION_TABLE.length));
          return DECISION_TABLE[this._decisionTableIndex];
       }
       
@@ -178,16 +206,26 @@ package
       override public function hitSide(param1:FlxObject, param2:Number) : void
       {
          this.stomp();
+         if(this._lastMode == MODE_LEFT || this._lastMode == MODE_UPLEFT || this._lastMode == MODE_DOWNLEFT)
+         {
+            this._lastWallHit = 2;
+         }
+         else if(this._lastMode == MODE_RIGHT || this._lastMode == MODE_UPRIGHT || this._lastMode == MODE.DOWNRIGHT)
+         {
+            this._lastWallHit = 3;
+         }
       }
       
       override public function hitBottom(param1:FlxObject, param2:Number) : void
       {
          this.stomp();
+         this._lastWallHit = 4;
       }
       
       override public function hitTop(param1:FlxObject, param2:Number) : void
       {
          this.stomp();
+         this._lastWallHit = 1;
       }
       
       override public function touch(param1:Player) : void
@@ -221,7 +259,7 @@ package
          var _loc1_:int = 0;
          while(_loc1_ < SHIELDS_REALMAX)
          {
-            _loc2_ = (this._elapsed / SHIELDS_PERIOD % 1 * SHIELDS_MAX + 17 * (_loc1_ + 8) % SHIELDS_REALMAX) % SHIELDS_MAX;
+            _loc2_ = this._elapsed / SHIELDS_PERIOD % (1 * SHIELDS_MAX + 17 * (_loc1_ + 8)) % SHIELDS_REALMAX % SHIELDS_MAX;
             _loc3_ = _loc2_ % 9;
             if(_loc2_ < 9)
             {
@@ -249,7 +287,7 @@ package
       
       public function addNewShields() : void
       {
-         var _loc1_:int = (MAX_HP - _hp) / SHIELDS_DMG_PER_SHIELD;
+         var _loc1_:* = int((MAX_HP - _hp) / SHIELDS_DMG_PER_SHIELD);
          if(_loc1_ > SHIELDS_REALMAX)
          {
             _loc1_ = SHIELDS_REALMAX;
@@ -270,7 +308,7 @@ package
       {
          this._lastMode = this._mode;
          this._mode = MODE_UP;
-         acceleration.y = -this.ACCEL * this._bossSpeed;
+         acceleration.y = Number((0 - this.ACCEL) * this._bossSpeed);
          this.playAnim("up");
       }
       
@@ -278,7 +316,7 @@ package
       {
          this._lastMode = this._mode;
          this._mode = MODE_DOWN;
-         acceleration.y = this.ACCEL * this._bossSpeed;
+         acceleration.y = Number(this.ACCEL * this._bossSpeed);
          this.playAnim("down");
       }
       
@@ -286,7 +324,7 @@ package
       {
          this._lastMode = this._mode;
          this._mode = MODE_LEFT;
-         acceleration.x = -this.ACCEL * this._bossSpeed;
+         acceleration.x = Number((0 - this.ACCEL) * this._bossSpeed);
          this.playAnim("left");
       }
       
@@ -294,8 +332,44 @@ package
       {
          this._lastMode = this._mode;
          this._mode = MODE_RIGHT;
-         acceleration.x = this.ACCEL * this._bossSpeed;
+         acceleration.x = Number(this.ACCEL * this._bossSpeed);
          this.playAnim("right");
+      }
+      
+      public function attackUpLeft() : void
+      {
+         this._lastMode = this._mode;
+         this._mode = MODE_UPLEFT;
+         acceleration.x = Number((0 - this.ACCEL) * this._bossSpeed);
+         acceleration.y = Number((0 - this.ACCEL) * this._bossSpeed);
+         this.playAnim("upleft");
+      }
+      
+      public function attackUpRight() : void
+      {
+         this._lastMode = this._mode;
+         this._mode = MODE_UPRIGHT;
+         acceleration.x = Number(this.ACCEL * this._bossSpeed);
+         acceleration.y = Number((0 - this.ACCEL) * this._bossSpeed);
+         this.playAnim("upright");
+      }
+      
+      public function attackDownLeft() : void
+      {
+         this._lastMode = this._mode;
+         this._mode = MODE_DOWNLEFT;
+         acceleration.x = Number((0 - this.ACCEL) * this._bossSpeed);
+         acceleration.y = Number(this.ACCEL * this._bossSpeed);
+         this.playAnim("downleft");
+      }
+      
+      public function attackDownRight() : void
+      {
+         this._lastMode = this._mode;
+         this._mode = MODE_DOWNRIGHT;
+         acceleration.x = Number(this.ACCEL * this._bossSpeed);
+         acceleration.y = Number(this.ACCEL * this._bossSpeed);
+         this.playAnim("downright");
       }
       
       public function makeSpawn() : void
@@ -342,7 +416,8 @@ package
          switch(this._shootMode)
          {
             case SHOOTMODE_WAIT_CLUSTER:
-               this._clusterTimeout -= FlxG.elapsed * this._bossSpeed;
+               this._clusterTimeout;
+               this._clusterTimeout - FlxG.elapsed * this._bossSpeed;
                if(this._clusterTimeout <= 0)
                {
                   this._shootMode = SHOOTMODE_ATTACK;
@@ -370,11 +445,39 @@ package
       {
          if(PlayState.player.y < y + height / 2)
          {
-            this.attackUp();
+            switch(this._diagonalCounter)
+            {
+               case 0:
+                  this.attackUp();
+                  break;
+               case 1:
+                  if(this._lastWallHit == 2)
+                  {
+                     this.attackUpRight();
+                  }
+                  else
+                  {
+                     this.attackUpLeft();
+                  }
+            }
          }
          else
          {
-            this.attackDown();
+            switch(this._diagonalCounter)
+            {
+               case 0:
+                  this.attackDown();
+                  break;
+               case 1:
+                  if(this._lastWallHit == 2)
+                  {
+                     this.attackDownRight();
+                  }
+                  else
+                  {
+                     this.attackDownLeft();
+                  }
+            }
          }
       }
       
@@ -382,11 +485,39 @@ package
       {
          if(PlayState.player.x < x + width / 2)
          {
-            this.attackLeft();
+            switch(this._diagonalCounter)
+            {
+               case 0:
+                  this.attackLeft();
+                  break;
+               case 1:
+                  if(this._lastWallHit == 0)
+                  {
+                     this.attackDownLeft();
+                  }
+                  else
+                  {
+                     this.attackUpLeft();
+                  }
+            }
          }
          else
          {
-            this.attackRight();
+            switch(this._diagonalCounter)
+            {
+               case 0:
+                  this.attackRight();
+                  break;
+               case 1:
+                  if(this._lastWallHit == 0)
+                  {
+                     this.attackDownRight();
+                  }
+                  else
+                  {
+                     this.attackUpRight();
+                  }
+            }
          }
       }
       
@@ -429,6 +560,46 @@ package
                      {
                         this.attackVert();
                      }
+                     break;
+                  case MODE_UPLEFT:
+                     if(this.getDecision() < 0.75)
+                     {
+                        this.attackHoriz();
+                     }
+                     else
+                     {
+                        this.attackVert();
+                     }
+                     break;
+                  case MODE_UPRIGHT:
+                     if(this.getDecision() < 0.75)
+                     {
+                        this.attackVert();
+                     }
+                     else
+                     {
+                        this.attackHoriz();
+                     }
+                     break;
+                  case MODE_DOWNLEFT:
+                     if(this.getDecision() < 0.75)
+                     {
+                        this.attackVert();
+                     }
+                     else
+                     {
+                        this.attackHoriz();
+                     }
+                     break;
+                  case MODE_DOWNRIGHT:
+                     if(this.getDecision() < 0.75)
+                     {
+                        this.attackHoriz();
+                     }
+                     else
+                     {
+                        this.attackVert();
+                     }
                }
             }
          }
@@ -444,12 +615,12 @@ package
          {
             if(this._elapsed > 2.2 && this._elapsed < 2.9)
             {
-               PlayState.player.velocity.x = PlayState.player._runSpeed.value;
+               PlayState.player.velocity.x = Number(PlayState.player._runSpeed.value);
             }
          }
          else if(this._elapsed > 2.7 && this._elapsed < 3.4)
          {
-            PlayState.player.velocity.x = PlayState.player._runSpeed.value;
+            PlayState.player.velocity.x = Number(PlayState.player._runSpeed.value);
          }
          if(!this._createdChildren)
          {
@@ -460,6 +631,11 @@ package
          this.checkShoot();
          this.addNewShields();
          this.updateShieldPositions();
+         ++this._diagonalCounter;
+         if(this._diagonalCounter > 1)
+         {
+            this._diagonalCounter = 0;
+         }
          super.update();
       }
       

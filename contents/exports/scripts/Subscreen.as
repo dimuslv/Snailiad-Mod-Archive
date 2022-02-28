@@ -142,7 +142,7 @@ package
          {
             this.makeText(TEXT_NORMAL,GROUP_SHELL,0,"NORMAL SLUG");
             this.makeText(TEXT_ICE,GROUP_SHELL,1,"ICE SLUG");
-            this.makeText(TEXT_GRAVITY,GROUP_SHELL,2,"GRAVITY SLUG");
+            this.makeText(TEXT_GRAVITY,GROUP_SHELL,2,"GRAVITY JUMP");
             this.makeText(TEXT_ARMOR,GROUP_SHELL,3,"FULL POWER SLUG");
             this.makeText(TEXT_HIGHJUMP,GROUP_ABILITY,0,"HIGH JUMP");
             this.makeText(TEXT_RAPIDFIRE,GROUP_ABILITY,1,"RAPID FIRE");
@@ -154,7 +154,7 @@ package
          {
             this.makeText(TEXT_NORMAL,GROUP_SHELL,0,"NORMAL SHELL");
             this.makeText(TEXT_ICE,GROUP_SHELL,1,"ICE SHELL");
-            this.makeText(TEXT_GRAVITY,GROUP_SHELL,2,"GRAVITY SHELL");
+            this.makeText(TEXT_GRAVITY,GROUP_SHELL,2,"GRAVITY JUMP");
             this.makeText(TEXT_ARMOR,GROUP_SHELL,3,"FULL METAL SHELL");
             this.makeText(TEXT_SHELLSHIELD,GROUP_ABILITY,0,"SHELL SHIELD");
             this.makeText(TEXT_HIGHJUMP,GROUP_ABILITY,1,"HIGH JUMP");

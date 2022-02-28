@@ -134,9 +134,23 @@ package
       public static const TYPE_AURIPLANE:int = 61;
       
       public static const TYPE_THE_END:int = 62;
+      
+      public static const TYPE_EPSILON:int = 63;
+      
+      public static const TYPE_DYNAMITE:int = 64;
+      
+      public static const TYPE_DYNATITE:int = 65;
+      
+      public static const TYPE_DYNARITE:int = 66;
+      
+      public static const TYPE_DYNALEFT:int = 67;
+      
+      public static const TYPE_DIMUSLV:int = 68;
+      
+      public static const TYPE_GRAYKITTY:int = 69;
        
       
-      private var _hand:Boolean = false;
+      private var _hand:Boolean;
       
       private var _handTheta:Number = 0;
       
@@ -331,37 +345,37 @@ package
                loadGraphic(Art.Boss1Hand,true,true,24,24);
                addAnimation("normal",[5]);
                this._hand = true;
-               this._handTheta = 2 * Math.PI / 6 * 1;
+               this._handTheta = Number(2 * Math.PI / 6 * 1);
                break;
             case TYPE_SHELLBREAKER_HAND2:
                loadGraphic(Art.Boss1Hand,true,true,24,24);
                addAnimation("normal",[5]);
                this._hand = true;
-               this._handTheta = 2 * Math.PI / 6 * 2;
+               this._handTheta = Number(2 * Math.PI / 6 * 2);
                break;
             case TYPE_SHELLBREAKER_HAND3:
                loadGraphic(Art.Boss1Hand,true,true,24,24);
                addAnimation("normal",[5]);
                this._hand = true;
-               this._handTheta = 2 * Math.PI / 6 * 3;
+               this._handTheta = Number(2 * Math.PI / 6 * 3);
                break;
             case TYPE_SHELLBREAKER_HAND4:
                loadGraphic(Art.Boss1Hand,true,true,24,24);
                addAnimation("normal",[5]);
                this._hand = true;
-               this._handTheta = 2 * Math.PI / 6 * 4;
+               this._handTheta = Number(2 * Math.PI / 6 * 4);
                break;
             case TYPE_SHELLBREAKER_HAND5:
                loadGraphic(Art.Boss1Hand,true,true,24,24);
                addAnimation("normal",[5]);
                this._hand = true;
-               this._handTheta = 2 * Math.PI / 6 * 5;
+               this._handTheta = Number(2 * Math.PI / 6 * 5);
                break;
             case TYPE_SHELLBREAKER_HAND6:
                loadGraphic(Art.Boss1Hand,true,true,24,24);
                addAnimation("normal",[5]);
                this._hand = true;
-               this._handTheta = 2 * Math.PI / 6 * 6;
+               this._handTheta = Number(2 * Math.PI / 6 * 6);
                break;
             case TYPE_STOMPY_LFOOT:
                loadGraphic(Art.Boss2Foot,true,true,190,156);
@@ -427,9 +441,37 @@ package
             case TYPE_THE_END:
                loadGraphic(Art.TheEnd,true,true,194,122);
                addAnimation("normal",[0]);
+               break;
+            case TYPE_EPSILON:
+               loadGraphic(Art.PixelPeople,true,true,18,32);
+               addAnimation("normal",[4]);
+               break;
+            case TYPE_DYNAMITE:
+               loadGraphic(Art.EnemyMoth,true,true,16,16);
+               addAnimation("normal",[4,5],5,true);
+               break;
+            case TYPE_DYNATITE:
+               loadGraphic(Art.EnemyMoth,true,true,16,16);
+               addAnimation("normal",[12,13],5,true);
+               break;
+            case TYPE_DYNARITE:
+               loadGraphic(Art.EnemyMoth,true,true,16,16);
+               addAnimation("normal",[0,1],5,true);
+               break;
+            case TYPE_DYNALEFT:
+               loadGraphic(Art.EnemyMoth,true,true,16,16);
+               addAnimation("normal",[8,9],5,true);
+               break;
+            case TYPE_DIMUSLV:
+               loadGraphic(Art.PixelPeople,true,true,18,32);
+               addAnimation("normal",[5]);
+               break;
+            case TYPE_GRAYKITTY:
+               loadGraphic(Art.EnemyKitty,true,true,32,16);
+               addAnimation("normal",[0]);
          }
          play("normal");
-         x = FlxG.width / 2 - width / 2 + param1;
+         x = Number(FlxG.width / 2 - width / 2 + param1);
          if(this._hand)
          {
             y += 24 - height / 2;
@@ -438,7 +480,7 @@ package
       
       override public function update() : void
       {
-         if(y < -height - 60)
+         if(y < 0 - height - 60)
          {
             kill();
          }

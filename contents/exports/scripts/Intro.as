@@ -35,7 +35,7 @@ package
       
       private var _modeElapsed:Number = 0;
       
-      private var _modeInitialized:Boolean = false;
+      private var _modeInitialized:Boolean;
       
       private var _dialogueMode:Number = 0;
       
@@ -56,13 +56,13 @@ package
          add(this._dialogueLayer);
          _loc1_ = new FlxText(0,-1,FlxG.width - 2);
          _loc1_.font = Fonts.normal;
-         _loc1_.size = 10;
-         _loc1_.color = 16579836;
-         _loc1_.shadow = 1;
+         _loc1_.size = Number(10);
+         _loc1_.color = uint(16579836);
+         _loc1_.shadow = uint(1);
          _loc1_.alignment = "right";
-         _loc1_.scrollFactor.x = _loc1_.scrollFactor.y = 0;
+         _loc1_.scrollFactor.x = _loc1_.scrollFactor.y = Number(0);
          _loc1_.text = "ESC TO SKIP";
-         _loc1_.alpha = 0;
+         _loc1_.alpha = Number(0);
          this._skipText = _loc1_;
          add(this._skipText);
          Music.playTitle();
@@ -84,7 +84,7 @@ package
       public function setMode(param1:int) : void
       {
          this._mode = param1;
-         this._modeElapsed = 0;
+         this._modeElapsed = Number(0);
          this._modeInitialized = false;
       }
       
@@ -102,7 +102,7 @@ package
          if(!this._modeInitialized)
          {
             this._modeInitialized = true;
-            this._dialogueMode = 0;
+            this._dialogueMode = Number(0);
             this._picture = new IntroPicture(1);
             add(this._picture);
          }
@@ -113,8 +113,8 @@ package
                if(this._picture.alpha > 0.7)
                {
                   ++this._dialogueMode;
-                  this._modeElapsed = 0;
-                  this._dialogueLayer.start("  ALL WAS PEACEFUL IN SNAIL TOWN...\n");
+                  this._modeElapsed = Number(0);
+                  this._dialogueLayer.start("ALL WAS PEACEFUL IN SNAIL COUNTRY...\n");
                }
                break;
             case 1:
@@ -138,8 +138,8 @@ package
                if(this._picture.alpha >= 0.1)
                {
                   ++this._dialogueMode;
-                  this._modeElapsed = 0;
-                  this._dialogueLayer.start(" UNTIL ONE DAY...\n" + "     MOON SNAIL LEFT ON A JOURNEY");
+                  this._modeElapsed = Number(0);
+                  this._dialogueLayer.start(" UNTIL ONE DAY...\n" + "  IRIS CALLED FOR SUN SNAIL\'S\n" + "   PRESENCE...\n");
                }
                break;
             case 4:
@@ -162,8 +162,8 @@ package
                if(this._picture.alpha > 0.1)
                {
                   ++this._dialogueMode;
-                  this._modeElapsed = 0;
-                  this._dialogueLayer.start(" SOON AFTER...\n" + "     THE SNAILS BEGAN TO DISAPPEAR\n" + "                   ONE BY ONE");
+                  this._modeElapsed = Number(0);
+                  this._dialogueLayer.start(" SOON AFTER...\n" + "  A GREAT SENSE OF DANGER AND\n" + "   GLOOM BEFELL SNAIL COUNTRY\n");
                }
                break;
             case 7:
@@ -186,39 +186,23 @@ package
                if(this._modeElapsed >= 8.5)
                {
                   ++this._dialogueMode;
-                  this._modeElapsed = 0;
-                  this._dialogueLayer.start("WILL ANYONE HELP?  CAN ANYONE\n" + "        RESCUE THE MISSING SNAILS??\n");
+                  this._modeElapsed = Number(0);
+                  this._dialogueLayer.start(" PLUNGED INTO PERIL, THE LAND\n" + "  BECAME UNTAMED, FEW DARING TO\n" + "   PIERCE ITS INFESTED REACHES\n");
                }
                break;
             case 10:
-               if(this._modeElapsed >= 6.5)
+               if(this._modeElapsed >= 8.5)
                {
                   ++this._dialogueMode;
                   remove(this._picture);
                   remove(this._picture2);
-                  this._picture3.fadeOut();
+                  this._modeElapsed = Number(0);
+                  _loc1_ = !!PlayState.introSlugMode ? "SLUGGY SLUG" : "SNAILY SNAIL";
+                  this._dialogueLayer.start(" SENSING A CALLING AND A DISTINCT\n" + "  FEELING OF DEJA VU, " + _loc1_ + "\n" + "   SET OFF IN SEARCH OF ANSWERS...\n");
                }
                break;
             case 11:
-               if(this._picture3.alpha == 0)
-               {
-                  ++this._dialogueMode;
-                  remove(this._picture3);
-                  this._picture = new IntroPicture(5);
-                  add(this._picture);
-               }
-               break;
-            case 12:
-               if(this._picture.alpha > 0.1)
-               {
-                  ++this._dialogueMode;
-                  this._modeElapsed = 0;
-                  _loc1_ = !!PlayState.introSlugMode ? "SLUGGY SLUG" : "SNAILY SNAIL";
-                  this._dialogueLayer.start("YOU CAN DO IT, " + _loc1_ + "!!\n" + "        IT\'S UP TO YOU!!  GOOD LUCK!!\n");
-               }
-               break;
-            case 13:
-               if(this._modeElapsed >= 7.6)
+               if(this._modeElapsed >= 8.5)
                {
                   this.setMode(MODE_END);
                }
@@ -235,7 +219,7 @@ package
          {
             FlxG.noPause = false;
             this._modeInitialized = true;
-            FlxG.fade.start(4278206591,1,PlayState.loadGame);
+            FlxG.fade.start(-16760705,1,PlayState.loadGame);
             FlxG.music.fadeOut(1);
          }
       }

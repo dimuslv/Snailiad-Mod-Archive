@@ -27,7 +27,6 @@ package
       
       override public function touch(param1:Player) : void
       {
-         PlayState.player.addTurbo();
          PlayState.player.addDevastator();
          PlayState.hud.itemName.setItem("DEVASTATOR");
          super.touch(param1);

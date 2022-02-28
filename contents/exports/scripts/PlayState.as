@@ -31,7 +31,7 @@ package
       
       public static var endingNum:int = 0;
       
-      public static var startFromTown:Boolean = false;
+      public static var startFromTown:int = 0;
       
       public static var hasGoodEnding:Boolean = false;
       
@@ -150,6 +150,10 @@ package
       public static var boss2rush:Boss;
       
       public static var This:PlayState;
+      
+      public static var fxStompActive:Boolean = false;
+      
+      public static var fxStompTimeout:Number = 1.5;
        
       
       public function PlayState()
@@ -157,7 +161,7 @@ package
          super();
       }
       
-      public static function loadGame(param1:Boolean = false) : void
+      public static function loadGame(param1:int = 0) : void
       {
          if(player)
          {
@@ -182,7 +186,7 @@ package
       
       public static function loadGameFromTown() : void
       {
-         loadGame(true);
+         loadGame(1);
       }
       
       public static function startBossRush() : void
@@ -253,7 +257,7 @@ package
          {
             realState = STATE_GAME;
          }
-         FlxG.flash.start(4278190080,0.34);
+         FlxG.flash.start(-16777216,0.34);
       }
       
       public static function goToMainMenu() : void
@@ -421,12 +425,12 @@ package
       
       public static function totalItemsInArea() : int
       {
-         var _loc1_:int = area;
+         var _loc1_:* = area;
          if(_loc1_ >= 6)
          {
             _loc1_ = 5;
          }
-         var _loc2_:Array = [9,12,10,11,8,1];
+         var _loc2_:Array = [16,13,11,8,2,0];
          var _loc3_:int = _loc2_[_loc1_];
          if(_loc1_ == 1 && player._slugMode)
          {
@@ -437,7 +441,7 @@ package
       
       public static function numOfItemsAt(param1:int, param2:int) : int
       {
-         if(param1 == 476 && param2 == 56 && player._slugMode)
+         if(param1 == 220 && param2 == 72 && player._slugMode)
          {
             return 0;
          }
@@ -451,7 +455,7 @@ package
       
       public static function remainingItemsInArea() : int
       {
-         var _loc1_:int = area;
+         var _loc1_:* = area;
          if(_loc1_ >= 6)
          {
             _loc1_ = 5;
@@ -460,67 +464,68 @@ package
          switch(_loc1_)
          {
             case 0:
-               _loc2_ += numOfItemsAt(305,120);
-               _loc2_ += numOfItemsAt(332,125);
-               _loc2_ += numOfItemsAt(237,150);
-               _loc2_ += numOfItemsAt(346,150);
-               _loc2_ += numOfItemsAt(359,174);
-               _loc2_ += numOfItemsAt(335,185);
-               _loc2_ += numOfItemsAt(335,199);
-               _loc2_ += numOfItemsAt(246,205);
-               _loc2_ += numOfItemsAt(291,220);
+               _loc2_ += numOfItemsAt(11,167);
+               _loc2_ += numOfItemsAt(40,169);
+               _loc2_ += numOfItemsAt(143,151);
+               _loc2_ += numOfItemsAt(220,72);
+               _loc2_ += numOfItemsAt(273,153);
+               _loc2_ += numOfItemsAt(376,24);
+               _loc2_ += numOfItemsAt(412,68);
+               _loc2_ += numOfItemsAt(425,119);
+               _loc2_ += numOfItemsAt(434,105);
+               _loc2_ += numOfItemsAt(452,56);
+               _loc2_ += numOfItemsAt(454,104);
+               _loc2_ += numOfItemsAt(506,184);
+               _loc2_ += numOfItemsAt(537,54);
+               _loc2_ += numOfItemsAt(565,57);
+               _loc2_ += numOfItemsAt(566,107);
+               _loc2_ += numOfItemsAt(584,56);
+               _loc2_ += numOfItemsAt(670,39);
                break;
             case 1:
-               _loc2_ += numOfItemsAt(663,16);
-               _loc2_ += numOfItemsAt(315,36);
-               _loc2_ += numOfItemsAt(349,42);
-               _loc2_ += numOfItemsAt(473,44);
-               _loc2_ += numOfItemsAt(476,56);
-               _loc2_ += numOfItemsAt(529,102);
-               _loc2_ += numOfItemsAt(516,104);
-               _loc2_ += numOfItemsAt(422,109);
-               _loc2_ += numOfItemsAt(413,121);
-               _loc2_ += numOfItemsAt(400,173);
-               _loc2_ += numOfItemsAt(487,185);
-               _loc2_ += numOfItemsAt(462,187);
+               _loc2_ += numOfItemsAt(350,200);
+               _loc2_ += numOfItemsAt(408,184);
+               _loc2_ += numOfItemsAt(426,226);
+               _loc2_ += numOfItemsAt(428,168);
+               _loc2_ += numOfItemsAt(462,265);
+               _loc2_ += numOfItemsAt(474,265);
+               _loc2_ += numOfItemsAt(506,184);
+               _loc2_ += numOfItemsAt(584,136);
+               _loc2_ += numOfItemsAt(615,125);
+               _loc2_ += numOfItemsAt(615,234);
+               _loc2_ += numOfItemsAt(617,140);
+               _loc2_ += numOfItemsAt(636,248);
+               _loc2_ += numOfItemsAt(642,202);
                break;
             case 2:
-               _loc2_ += numOfItemsAt(99,219);
-               _loc2_ += numOfItemsAt(264,212);
-               _loc2_ += numOfItemsAt(125,220);
-               _loc2_ += numOfItemsAt(241,222);
-               _loc2_ += numOfItemsAt(305,258);
-               _loc2_ += numOfItemsAt(190,264);
-               _loc2_ += numOfItemsAt(406,277);
-               _loc2_ += numOfItemsAt(386,296);
-               _loc2_ += numOfItemsAt(409,315);
-               _loc2_ += numOfItemsAt(507,346);
+               _loc2_ += numOfItemsAt(39,328);
+               _loc2_ += numOfItemsAt(58,296);
+               _loc2_ += numOfItemsAt(75,346);
+               _loc2_ += numOfItemsAt(90,344);
+               _loc2_ += numOfItemsAt(96,235);
+               _loc2_ += numOfItemsAt(101,317);
+               _loc2_ += numOfItemsAt(114,278);
+               _loc2_ += numOfItemsAt(163,180);
+               _loc2_ += numOfItemsAt(193,284);
+               _loc2_ += numOfItemsAt(195,236);
+               _loc2_ += numOfItemsAt(221,248);
                break;
             case 3:
-               _loc2_ += numOfItemsAt(128,104);
-               _loc2_ += numOfItemsAt(108,117);
-               _loc2_ += numOfItemsAt(4,155);
-               _loc2_ += numOfItemsAt(146,204);
-               _loc2_ += numOfItemsAt(56,228);
-               _loc2_ += numOfItemsAt(48,284);
-               _loc2_ += numOfItemsAt(100,252);
-               _loc2_ += numOfItemsAt(120,262);
-               _loc2_ += numOfItemsAt(74,324);
-               _loc2_ += numOfItemsAt(143,346);
-               _loc2_ += numOfItemsAt(235,86);
+               _loc2_ += numOfItemsAt(408,343);
+               _loc2_ += numOfItemsAt(436,346);
+               _loc2_ += numOfItemsAt(450,296);
+               _loc2_ += numOfItemsAt(454,344);
+               _loc2_ += numOfItemsAt(455,281);
+               _loc2_ += numOfItemsAt(474,281);
+               _loc2_ += numOfItemsAt(556,310);
+               _loc2_ += numOfItemsAt(655,342);
                break;
             case 4:
-               _loc2_ += numOfItemsAt(34,7);
-               _loc2_ += numOfItemsAt(165,11);
-               _loc2_ += numOfItemsAt(294,11);
-               _loc2_ += numOfItemsAt(377,11);
-               _loc2_ += numOfItemsAt(264,12);
-               _loc2_ += numOfItemsAt(178,28);
-               _loc2_ += numOfItemsAt(236,71);
-               _loc2_ += numOfItemsAt(226,76);
+               _loc2_ += numOfItemsAt(143,103);
+               _loc2_ += numOfItemsAt(264,57);
                break;
             case 5:
-               _loc2_ += numOfItemsAt(159,173);
+               _loc2_ = 0;
          }
          return _loc2_;
       }
@@ -572,7 +577,7 @@ package
             return;
          }
          area = param1;
-         var _loc2_:Array = ["SNAIL TOWN","MARE CARELIA","SPIRALIS SILERE","AMASTRIDA ABYSSUS","LUX LIRATA","???","SHRINE OF IRIS","BOSS RUSH"];
+         var _loc2_:Array = ["SNAIL COUNTRY","MACULATA OCEAN","BEDLAM RIFT","MT. CONCHIOLIN","EPITONIUM FORTRESS","CROSSROAD CAVERN","SHRINE OF IRIS","BOSS RUSH"];
          hud.areaName.setArea(_loc2_[area]);
          hud.radar.setNumber();
       }
@@ -659,6 +664,11 @@ package
          }
          _loc1_.saveAll();
          PlayState.isBossRushComplete = true;
+      }
+      
+      public static function loadGameFromTown2() : void
+      {
+         PlayState.loadGame(2);
       }
       
       override public function destroy() : void
@@ -863,7 +873,7 @@ package
                bossRushCompleteTimeout -= FlxG.elapsed;
                if(bossRushCompleteTimeout <= 0.4 && !bossRushFade)
                {
-                  FlxG.fade.start(4278190080,0.34);
+                  FlxG.fade.start(-16777216,0.34);
                   bossRushFade = true;
                   NgMedal.unlockTheGauntlet();
                }
@@ -874,7 +884,7 @@ package
                   bossRushFade = false;
                   isBossRushComplete = false;
                   FlxG.fade.stop();
-                  FlxG.flash.start(4278190080,0.34);
+                  FlxG.flash.start(-16777216,0.34);
                   bossRush = false;
                }
             }
@@ -885,7 +895,7 @@ package
                {
                   NgMedal.unlockVictory();
                   FlxG.music.fadeOut(gameCompleteTimeout);
-                  FlxG.fade.start(4278190080,gameCompleteTimeout);
+                  FlxG.fade.start(-16777216,gameCompleteTimeout);
                   gameFade = true;
                }
                if(gameCompleteTimeout <= 0)
@@ -893,6 +903,16 @@ package
                   realState = STATE_ENDING;
                   gameFade = false;
                   isGameComplete = false;
+               }
+            }
+            if(fxStompActive)
+            {
+               fxStompTimeout -= FlxG.elapsed;
+               if(fxStompTimeout <= 0)
+               {
+                  fxStompTimeout += FlxU.random() * 6;
+                  FlxG.quake.start(0.005);
+                  Sfx.playStomp();
                }
             }
          }

@@ -46,16 +46,25 @@ package
                break;
             case "D":
                _loc2_ = 5;
+               break;
+            case "T":
+               _loc2_ = 6;
+               break;
+            case "R":
+               _loc2_ = 7;
+               break;
+            case "O":
+               _loc2_ = 8;
          }
          loadGraphic(Art.TitleLetter,true,true,IMG_WIDTH,IMG_HEIGHT);
          switch(_loc2_)
          {
             case 0:
-               width = 25;
+               width = 28;
                height = 43;
                break;
             case 1:
-               width = 24;
+               width = 28;
                height = 43;
                break;
             case 2:
@@ -63,21 +72,33 @@ package
                height = 43;
                break;
             case 3:
-               width = 6;
+               width = 10;
                height = 43;
                break;
             case 4:
-               width = 6;
+               width = 28;
                height = 43;
                break;
             case 5:
                width = 28;
                height = 43;
+               break;
+            case 6:
+               width = 28;
+               height = 43;
+               break;
+            case 7:
+               width = 28;
+               height = 43;
+               break;
+            case 8:
+               width = 28;
+               height = 43;
          }
-         addAnimation("normal",[6 * 0 + _loc2_,6 * 3 + _loc2_,6 * 4 + _loc2_,6 * 3 + _loc2_,6 * 0 + _loc2_],10,false);
-         addAnimation("flash1",[6 * 0 + _loc2_,6 * 1 + _loc2_,6 * 2 + _loc2_,6 * 3 + _loc2_,6 * 4 + _loc2_,6 * 5 + _loc2_,6 * 6 + _loc2_,6 * 7 + _loc2_],30,true);
-         addAnimation("flash2",[6 * 0 + _loc2_,6 * 1 + _loc2_,6 * 2 + _loc2_,6 * 3 + _loc2_,6 * 4 + _loc2_,6 * 5 + _loc2_,6 * 6 + _loc2_,6 * 7 + _loc2_],20,true);
-         addAnimation("flash3",[6 * 0 + _loc2_,6 * 1 + _loc2_,6 * 2 + _loc2_,6 * 3 + _loc2_,6 * 4 + _loc2_,6 * 5 + _loc2_,6 * 6 + _loc2_,6 * 7 + _loc2_],10,true);
+         addAnimation("normal",[9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 0 + _loc2_,9 * 4 + _loc2_],10,false);
+         addAnimation("flash1",[9 * 7 + _loc2_,9 * 6 + _loc2_,9 * 5 + _loc2_,9 * 2 + _loc2_,9 * 1 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_,9 * 3 + _loc2_],2,false);
+         addAnimation("flash2",[9 * 0 + _loc2_,9 * 1 + _loc2_,9 * 2 + _loc2_,9 * 3 + _loc2_,9 * 4 + _loc2_,9 * 5 + _loc2_,9 * 6 + _loc2_,9 * 7 + _loc2_],20,true);
+         addAnimation("flash3",[9 * 0 + _loc2_,9 * 1 + _loc2_,9 * 2 + _loc2_,9 * 3 + _loc2_,9 * 4 + _loc2_,9 * 5 + _loc2_,9 * 6 + _loc2_,9 * 7 + _loc2_],10,true);
          scrollFactor.x = scrollFactor.y = 0;
          active = true;
          visible = false;
