@@ -321,6 +321,12 @@ package
       
       private var _sleepTimeout:Number;
       
+      public var _hitsounds:Boolean = false;
+      
+      public var saveX:Number = -1;
+      
+      public var saveY:Number = -1;
+      
       public function Player(param1:PlayerBulletGroups)
       {
          var _loc5_:int = 0;
@@ -1097,6 +1103,10 @@ package
       {
          if(this.justPressedJump())
          {
+            if(this._hitsounds)
+            {
+               Sfx.playMenuBeep1();
+            }
             if(this._hidingInShell)
             {
                this.hideInShell(false);
@@ -1159,9 +1169,36 @@ package
          }
          if(PlayState.realState == PlayState.STATE_GAME || PlayState.realState == PlayState.STATE_SUBSCREEN)
          {
+            if(FlxG.keys.justPressed("F2"))
+            {
+               this._hitsounds = !this._hitsounds;
+            }
+            if(FlxG.keys.pressed("F3"))
+            {
+               this._paralyzed = false;
+            }
             this.checkInput_map();
             this.checkInput_handleMenu();
             this.checkInput_switchWeapons();
+            if(PlayState.realState == PlayState.STATE_SUBSCREEN)
+            {
+               if(this.justPressedLeft())
+               {
+                  x += -416;
+               }
+               if(this.justPressedUp())
+               {
+                  y += -256;
+               }
+               if(this.justPressedRight())
+               {
+                  x += 416;
+               }
+               if(this.justPressedDown())
+               {
+                  y += 256;
+               }
+            }
          }
          if(PlayState.realState != PlayState.STATE_GAME)
          {
@@ -1196,6 +1233,20 @@ package
             this.checkInput_performGravityJump();
             this.checkInput_move();
             this.checkInput_jump();
+            if(FlxG.keys.justPressed("F4"))
+            {
+               this.saveX = x;
+               this.saveY = y;
+               Sfx.playSave1();
+            }
+            if(FlxG.keys.justPressed("F5"))
+            {
+               if(this.saveX != -1)
+               {
+                  x = this.saveX;
+                  y = this.saveY;
+               }
+            }
          }
          if(this.pressedUp() || this.pressedDown() || this.pressedLeft() || this.pressedRight() || this.pressedShoot() || this.pressedStrafe() || this.pressedJump() || flickering())
          {
@@ -1496,6 +1547,10 @@ package
             {
                this.setGravityDir(GRAV_UP);
                this.setFaceDir(facing == RIGHT ? int(FACE_CEIL_RIGHT) : int(FACE_CEIL_LEFT),true);
+            }
+            else if(this._hitsounds)
+            {
+               Sfx.playMenuBeep2();
             }
          }
       }
@@ -2558,7 +2613,9 @@ package
          PlayState.hud.heartHud.setCurHp(this._curHp,this);
          if(this._curHp <= 0)
          {
-            this.kill();
+            Sfx.playSplash1();
+            this.setCurHp(255);
+            return;
          }
       }
       
@@ -2614,7 +2671,7 @@ package
       
       public function justPressedJump() : Boolean
       {
-         return FlxG.keys.justPressed(JUMP_KEY) || FlxG.keys.justPressed(ALT_JUMP_KEY);
+         return FlxG.keys.justPressed(JUMP_KEY) || (FlxG.keys.justPressed(ALT_JUMP_KEY) || FlxG.keys.pressed("F6"));
       }
       
       public function pressedJump() : Boolean
@@ -3016,7 +3073,7 @@ package
       
       public function getGameTimeExact() : String
       {
-         return int(this.gameTime / 60).toString() + ":" + padZero(int(this.gameTime % 60)) + "." + padZero(int(this.gameTime * 100 % 100));
+         return GameTimeDisplay.formatExact(this.gameTime) + " - " + x;
       }
    }
 }
