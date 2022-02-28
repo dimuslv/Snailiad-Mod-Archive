@@ -3064,7 +3064,7 @@ package
          ofs21:
          getlex QName(PackageNamespace("org.flixel"),"FlxU")
          getlex QName(PackageNamespace(""),"worldMap")
-         getproperty QName(PackageNamespace(""),"bgmap")
+         getproperty QName(PackageNamespace(""),"fgmap")
          getlex QName(PackageNamespace(""),"playerBulletGroups")
          getproperty QName(PackageNamespace(""),"groups")
          pushbyte 0
@@ -3083,7 +3083,7 @@ package
          iftrue ofs22
          getlex QName(PackageNamespace("org.flixel"),"FlxU")
          getlex QName(PackageNamespace(""),"worldMap")
-         getproperty QName(PackageNamespace(""),"bgmap")
+         getproperty QName(PackageNamespace(""),"fgmap")
          getlex QName(PackageNamespace(""),"player")
          callpropvoid QName(PackageNamespace(""),"collide"), 2
          ofs22:

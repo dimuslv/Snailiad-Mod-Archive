@@ -165,7 +165,7 @@ package
                _loc3_++;
             }
          }
-         return this.bgmap.getTile(int(param1 / 16),int(param2 / 16)) >= FG_OFFSET;
+         return this.fgmap.getTile(int(param1 / 16),int(param2 / 16)) >= FG_OFFSET;
       }
       
       public function findFirstFullNotSolidTop(param1:int, param2:int, param3:int, param4:int, param5:int) : int

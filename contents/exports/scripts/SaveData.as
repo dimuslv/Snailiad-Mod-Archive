@@ -14,7 +14,7 @@ package
       public function SaveData()
       {
          super();
-         bind("Snailiad");
+         bind("fSnailiad");
          if(this.xml == null)
          {
             this.loadAll();
