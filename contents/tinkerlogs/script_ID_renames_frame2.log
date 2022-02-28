@@ -86,7 +86,7 @@ Class IDs:
 84: Zzz -
 85: SnowLayer -
 86: EnemyBullet -
-87: Player -
+87: Player 0
 88: StarLayer -
 89: PlayerBullet -
 90: SaveData -
@@ -793,7 +793,7 @@ PrivateNamespace IDs:
 34: PlayerBulletGroups
 35: SnowLayer
 36: EnemyBullet
-37: Player
+37: 
 38: StarLayer
 39: PlayerBullet
 40: DamageNumberPool
@@ -1149,7 +1149,7 @@ PrivateNamespace IDs:
 390: FixBlocks/2
 391: PlayerBulletGroups/1
 392: SnowLayer/1
-393: Player/1
+393: 
 394: StarLayer/1
 395: SaveData/1
 396: SaveData/2
