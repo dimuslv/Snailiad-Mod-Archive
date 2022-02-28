@@ -74,15 +74,17 @@ package
       
       public static const WEAPON_PEA_RAINBOW_WAVE:int = 2;
       
-      public static const SNAILTYPE_NORMAL:int = 1;
+      public static const SNAILTYPE_NORMAL:int = 4;
       
-      public static const SNAILTYPE_ICE:int = 2;
+      public static const SNAILTYPE_ICE:int = 1;
       
-      public static const SNAILTYPE_GRAVITY:int = 3;
+      public static const SNAILTYPE_GRAVITY:int = 1;
       
-      public static const SNAILTYPE_METAL:int = 4;
+      public static const SNAILTYPE_METAL:int = 1;
       
-      public static const STARTING_MAX_HEARTS:int = 3;
+      public static const SNAILTYPE_GRAV_SHOCK:int = 6;
+      
+      public static const STARTING_MAX_HEARTS:int = 20;
       
       public static var ALT_WEAPON_1_KEY:String = "";
       
@@ -249,19 +251,19 @@ package
       
       private var _hasColdFoot:Boolean;
       
-      private var _hasGravityJump:Boolean;
+      private var _hasGravityJump:Boolean = true;
       
-      private var _hasDevastator:Boolean;
+      private var _hasDevastator:Boolean = true;
       
-      private var _hasHighJump:Boolean;
+      private var _hasHighJump:Boolean = true;
       
       private var _hasGravityShock:Boolean;
       
-      private var _hasShellShield:Boolean;
+      private var _hasShellShield:Boolean = true;
       
-      private var _hasArmor:Boolean;
+      private var _hasArmor:Boolean = true;
       
-      private var _hasTurbo:Boolean;
+      private var _hasTurbo:Boolean = true;
       
       private var _justHitHeadOrWall:Boolean = false;
       
@@ -326,24 +328,24 @@ package
          var _loc5_:int = 0;
          this.WEAPON_TIMEOUTS = [0.085,0.3,0.17];
          this.WEAPON_SPEED = [370,330,60];
-         this._hasWeapon = [false,false,false];
+         this._hasWeapon = [true,true,true];
          super();
          this._easyMode = false;
          this._hardMode = false;
          this._insaneMode = false;
          this._curHp = STARTING_MAX_HEARTS * this.hpPerHeart();
          this._maxHp = STARTING_MAX_HEARTS * this.hpPerHeart();
-         this._currentWeapon = WEAPON_NONE;
+         this._currentWeapon = WEAPON_PEA_RAINBOW_WAVE;
          this._gravity = 1200;
          this._hasArmor = false;
          this._hasColdFoot = false;
-         this._hasDevastator = false;
+         this._hasDevastator = true;
          this._hasGravityJump = false;
          this._hasGravityShock = false;
-         this._hasHighJump = false;
-         this._hasShellShield = false;
-         this._hasTurbo = false;
-         this._helixFragments = 0;
+         this._hasHighJump = true;
+         this._hasShellShield = true;
+         this._hasTurbo = true;
+         this._helixFragments = 30;
          this._jumpPower = REGULAR_JUMP;
          this._maxSpeed = 500;
          this._runSpeed = 260;
@@ -371,13 +373,13 @@ package
             this.setEasyMode(false);
             this.setHardMode(false);
             this.setInsaneMode(false);
-            this.setHasTurbo(false);
-            this.setHighJump(false);
-            this.setHasDevastator(false);
+            this.setHasTurbo(true);
+            this.setHighJump(true);
+            this.setHasDevastator(true);
             this.setHasGravityShock(false);
-            this.setHasShellShield(false);
-            this.switchToWeapon(-1);
-            this.setHelixFragments(0);
+            this.setHasShellShield(true);
+            this.switchToWeapon(2);
+            this.setHelixFragments(30);
             this.setSnailType(SNAILTYPE_NORMAL);
             this.gameTime = 0;
             x = BOSSRUSH_STARTX * 16;
@@ -414,7 +416,7 @@ package
             }
             if(!_loc2_.isVarSet("hasDevastator"))
             {
-               _loc3_.hasDevastator = false;
+               _loc3_.hasDevastator = true;
             }
             if(!_loc2_.isVarSet("hasGravityShock"))
             {
@@ -422,11 +424,11 @@ package
             }
             if(!_loc2_.isVarSet("hasShellShield"))
             {
-               _loc3_.hasShellShield = false;
+               _loc3_.hasShellShield = true;
             }
             if(!_loc2_.isVarSet("hasTurbo"))
             {
-               _loc3_.hasTurbo = false;
+               _loc3_.hasTurbo = true;
             }
             if(!_loc2_.isVarSet("toggleFire"))
             {
@@ -434,23 +436,23 @@ package
             }
             if(!_loc2_.isVarSet("hasHighJump"))
             {
-               _loc3_.hasHighJump = false;
+               _loc3_.hasHighJump = true;
             }
             if(!_loc2_.isVarSet("hasWeaponZero"))
             {
-               _loc3_.hasWeaponZero = false;
+               _loc3_.hasWeaponZero = true;
             }
             if(!_loc2_.isVarSet("hasWeaponOne"))
             {
-               _loc3_.hasWeaponOne = false;
+               _loc3_.hasWeaponOne = true;
             }
             if(!_loc2_.isVarSet("hasWeaponTwo"))
             {
-               _loc3_.hasWeaponTwo = false;
+               _loc3_.hasWeaponTwo = true;
             }
             if(!_loc2_.isVarSet("helixFragments"))
             {
-               _loc3_.helixFragments = 0;
+               _loc3_.helixFragments = 30;
             }
             if(!_loc2_.isVarSet("lastWeapon"))
             {
@@ -749,8 +751,8 @@ package
          this._hasGravityShock = false;
          this._hasHighJump = false;
          this._hasShellShield = false;
-         this._hasTurbo = false;
-         this._hasWeapon = [false,false,false];
+         this._hasTurbo = true;
+         this._hasWeapon = [true,true,true];
          this._helixFragments = 0;
          this._jumpPower = 0;
          this._maxHp = 0;
@@ -1311,7 +1313,7 @@ package
       
       public function deathFade() : void
       {
-         FlxG.fade.start(4278206591,0.44);
+         FlxG.fade.start(-16760705,0.44);
          clearInterval(this.deathFadeInterval);
       }
       
@@ -1549,7 +1551,7 @@ package
          {
             return;
          }
-         var _loc1_:int = this._currentWeapon;
+         var _loc1_:* = this._currentWeapon;
          do
          {
             _loc1_++;
@@ -1566,7 +1568,7 @@ package
          {
             return;
          }
-         var _loc1_:int = this._currentWeapon;
+         var _loc1_:* = this._currentWeapon;
          do
          {
             _loc1_--;
@@ -1884,7 +1886,7 @@ package
       
       public function moveSnailCheckFullBounds(param1:int, param2:int) : void
       {
-         var _loc3_:int = param2;
+         var _loc3_:* = param2;
          if(param2 < 0)
          {
             param2 = PlayState.worldMap.findFirstFullNotSolidTop(x,y,width,height,param2);
@@ -1917,7 +1919,7 @@ package
       
       public function moveSnailCheckBounds(param1:int, param2:int) : void
       {
-         var _loc3_:int = param2;
+         var _loc3_:* = param2;
          if(param2 < 0)
          {
             param2 = PlayState.worldMap.findFirstNotSolidTop(x,y,width,height,param2);
@@ -2155,7 +2157,7 @@ package
             case GRAV_UP:
                if(this.findNotSolidHeight() >= 8)
                {
-                  y += 1;
+                  ++y;
                   velocity.y = this._jumpPower;
                   return true;
                }
@@ -2163,7 +2165,7 @@ package
             case GRAV_DOWN:
                if(this.findNotSolidHeight() >= 8)
                {
-                  y = y - 1;
+                  --y;
                   velocity.y = -this._jumpPower;
                   return true;
                }
@@ -2171,7 +2173,7 @@ package
             case GRAV_LEFT:
                if(this.findNotSolidWidth() >= 8)
                {
-                  x = x - 1;
+                  --x;
                   velocity.x = this._jumpPower;
                   return true;
                }
@@ -2179,7 +2181,7 @@ package
             case GRAV_RIGHT:
                if(this.findNotSolidWidth() >= 8)
                {
-                  x += 1;
+                  ++x;
                   velocity.x = -this._jumpPower;
                   return true;
                }
@@ -2195,7 +2197,7 @@ package
             case GRAV_UP:
                if(this.findNotSolidHeight() >= 8)
                {
-                  y += 1;
+                  ++y;
                   velocity.y = 0;
                   this.setFaceDir(facing == RIGHT ? int(FACE_FLOOR_RIGHT) : int(FACE_FLOOR_LEFT));
                   return true;
@@ -2204,7 +2206,7 @@ package
             case GRAV_DOWN:
                if(this.findNotSolidHeight() >= 8)
                {
-                  y = y - 1;
+                  --y;
                   velocity.y = -this._jumpPower;
                   return true;
                }
@@ -2702,6 +2704,7 @@ package
       
       public function setSaveCoords(param1:int, param2:int, param3:Boolean = false) : void
       {
+         var _loc4_:XML = null;
          if(dead || !active)
          {
             return;
@@ -2710,7 +2713,6 @@ package
          {
             PlayState.savingText.setSaving();
          }
-         var _loc4_:XML;
          (_loc4_ = new XML(<vars/>)).appendChild(<savex>{param1}</savex>);
          _loc4_.appendChild(<savey>{param2}</savey>);
          _loc4_.appendChild(<lastWeapon>{this._currentWeapon}</lastWeapon>);
