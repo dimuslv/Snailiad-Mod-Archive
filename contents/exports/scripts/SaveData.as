@@ -190,7 +190,6 @@ package
       {
          this.loadAll();
          var _loc1_:XML = this.initVars();
-         _loc1_.appendChild(<hardMode>true</hardMode>);
          _loc1_.appendChild(<insaneMode>true</insaneMode>);
          this.xml = new XML(<SaveData/>);
          this.xml.appendChild(_loc1_);

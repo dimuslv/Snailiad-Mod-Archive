@@ -4504,6 +4504,12 @@ package
          getproperty QName(PackageNamespace(""),"startNewGame")
          pushfalse
          callpropvoid QName(PackageNamespace(""),"addOption"), 3
+         getlocal0
+         pushstring "INSANE"
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"startInsaneNewGame")
+         pushfalse
+         callpropvoid QName(PackageNamespace(""),"addOption"), 3
          getlex QName(PackageNamespace(""),"TESTING_ALL_MODES_AVAILABLE")
          convert_b
          dup

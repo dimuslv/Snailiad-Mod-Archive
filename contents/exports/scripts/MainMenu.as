@@ -1126,6 +1126,7 @@ package
          this.addOption("",null,false);
          this.addOption("EASY",PlayState.startEasyNewGame,false);
          this.addOption("NORMAL",PlayState.startNewGame,false);
+         this.addOption("INSANE",PlayState.startInsaneNewGame,false);
          if(TESTING_ALL_MODES_AVAILABLE || this.hasHardMode)
          {
             this.addOption("SLUG",this.justinSnailyAnim,false);
