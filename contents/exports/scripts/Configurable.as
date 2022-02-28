@@ -32,7 +32,7 @@ package
          {
             return 246;
          }
-         return 299;
+         return 318;
       }
       
       public function getPlayerStartY(param1:int = 0) : int
@@ -41,7 +41,7 @@ package
          {
             return 329;
          }
-         return 166;
+         return 138;
       }
    }
 }

@@ -213,7 +213,7 @@ package
                {
                   ++this._dialogueMode;
                   this._modeElapsed = 0;
-                  _loc1_ = !!PlayState.introSlugMode ? "SLUGGY SLUG" : "SNAILY SNAIL";
+                  _loc1_ = !!PlayState.introSlugMode ? "UPSLUG SLUG" : "UPSIDE SNAIL";
                   this._dialogueLayer.start("YOU CAN DO IT, " + _loc1_ + "!!\n" + "        IT\'S UP TO YOU!!  GOOD LUCK!!\n");
                }
                break;
