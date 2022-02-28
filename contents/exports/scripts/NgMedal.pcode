@@ -1,7 +1,7 @@
 
 {
    method
-   name null
+   name ""
    returns null
    
    body
@@ -28,14 +28,12 @@
 
 package
 {
-   import com.newgrounds.API;
-   
    public class NgMedal
    {
       
       {
          method
-         name null
+         name ""
          returns null
          
          body
@@ -56,7 +54,7 @@ package
       public function NgMedal()
       {
          method
-         name null
+         name ":NgMedal/NgMedal"
          returns null
          
          body
@@ -82,11 +80,11 @@ package
          flag FINAL
          dispid 3
          method
-         name null
+         name "NgMedal:unlockVictory"
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 2
+         maxstack 1
          localcount 1
          initscopedepth 3
          maxscopedepth 4
@@ -94,9 +92,6 @@ package
          code
          getlocal0
          pushscope
-         getlex QName(PackageNamespace("com.newgrounds"),"API")
-         pushstring "Victory"
-         callpropvoid QName(PackageNamespace(""),"unlockMedal"), 1
          returnvoid
          end ; code
          end ; body
@@ -109,11 +104,11 @@ package
          flag FINAL
          dispid 4
          method
-         name null
+         name "NgMedal:unlockExplorer"
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 2
+         maxstack 1
          localcount 1
          initscopedepth 3
          maxscopedepth 4
@@ -121,9 +116,6 @@ package
          code
          getlocal0
          pushscope
-         getlex QName(PackageNamespace("com.newgrounds"),"API")
-         pushstring "Explorer"
-         callpropvoid QName(PackageNamespace(""),"unlockMedal"), 1
          returnvoid
          end ; code
          end ; body
@@ -136,11 +128,11 @@ package
          flag FINAL
          dispid 5
          method
-         name null
+         name "NgMedal:unlockTreasureHunter"
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 2
+         maxstack 1
          localcount 1
          initscopedepth 3
          maxscopedepth 4
@@ -148,9 +140,6 @@ package
          code
          getlocal0
          pushscope
-         getlex QName(PackageNamespace("com.newgrounds"),"API")
-         pushstring "Treasure Hunter"
-         callpropvoid QName(PackageNamespace(""),"unlockMedal"), 1
          returnvoid
          end ; code
          end ; body
@@ -163,11 +152,11 @@ package
          flag FINAL
          dispid 6
          method
-         name null
+         name "NgMedal:unlockHappyEnding"
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 2
+         maxstack 1
          localcount 1
          initscopedepth 3
          maxscopedepth 4
@@ -175,9 +164,6 @@ package
          code
          getlocal0
          pushscope
-         getlex QName(PackageNamespace("com.newgrounds"),"API")
-         pushstring "Happy Ending"
-         callpropvoid QName(PackageNamespace(""),"unlockMedal"), 1
          returnvoid
          end ; code
          end ; body
@@ -190,11 +176,11 @@ package
          flag FINAL
          dispid 7
          method
-         name null
+         name "NgMedal:unlockHomeless"
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 2
+         maxstack 1
          localcount 1
          initscopedepth 3
          maxscopedepth 4
@@ -202,9 +188,6 @@ package
          code
          getlocal0
          pushscope
-         getlex QName(PackageNamespace("com.newgrounds"),"API")
-         pushstring "Homeless"
-         callpropvoid QName(PackageNamespace(""),"unlockMedal"), 1
          returnvoid
          end ; code
          end ; body
@@ -217,11 +200,11 @@ package
          flag FINAL
          dispid 8
          method
-         name null
+         name "NgMedal:unlockSpeedrunner"
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 2
+         maxstack 1
          localcount 1
          initscopedepth 3
          maxscopedepth 4
@@ -229,9 +212,6 @@ package
          code
          getlocal0
          pushscope
-         getlex QName(PackageNamespace("com.newgrounds"),"API")
-         pushstring "Speedrunner"
-         callpropvoid QName(PackageNamespace(""),"unlockMedal"), 1
          returnvoid
          end ; code
          end ; body
@@ -244,11 +224,11 @@ package
          flag FINAL
          dispid 9
          method
-         name null
+         name "NgMedal:unlockTheGauntlet"
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 2
+         maxstack 1
          localcount 1
          initscopedepth 3
          maxscopedepth 4
@@ -256,9 +236,6 @@ package
          code
          getlocal0
          pushscope
-         getlex QName(PackageNamespace("com.newgrounds"),"API")
-         pushstring "The Gauntlet"
-         callpropvoid QName(PackageNamespace(""),"unlockMedal"), 1
          returnvoid
          end ; code
          end ; body
@@ -271,11 +248,11 @@ package
          flag FINAL
          dispid 10
          method
-         name null
+         name "NgMedal:unlockSnelkHunterA"
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 2
+         maxstack 1
          localcount 1
          initscopedepth 3
          maxscopedepth 4
@@ -283,9 +260,6 @@ package
          code
          getlocal0
          pushscope
-         getlex QName(PackageNamespace("com.newgrounds"),"API")
-         pushstring "Snelk Hunter A"
-         callpropvoid QName(PackageNamespace(""),"unlockMedal"), 1
          returnvoid
          end ; code
          end ; body
@@ -298,11 +272,11 @@ package
          flag FINAL
          dispid 11
          method
-         name null
+         name "NgMedal:unlockSnelkHunterB"
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 2
+         maxstack 1
          localcount 1
          initscopedepth 3
          maxscopedepth 4
@@ -310,9 +284,6 @@ package
          code
          getlocal0
          pushscope
-         getlex QName(PackageNamespace("com.newgrounds"),"API")
-         pushstring "Snelk Hunter B"
-         callpropvoid QName(PackageNamespace(""),"unlockMedal"), 1
          returnvoid
          end ; code
          end ; body
@@ -325,11 +296,11 @@ package
          flag FINAL
          dispid 12
          method
-         name null
+         name "NgMedal:unlockSuperSecret"
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 2
+         maxstack 1
          localcount 1
          initscopedepth 3
          maxscopedepth 4
@@ -337,9 +308,6 @@ package
          code
          getlocal0
          pushscope
-         getlex QName(PackageNamespace("com.newgrounds"),"API")
-         pushstring "Super Secret"
-         callpropvoid QName(PackageNamespace(""),"unlockMedal"), 1
          returnvoid
          end ; code
          end ; body
@@ -352,11 +320,11 @@ package
          flag FINAL
          dispid 13
          method
-         name null
+         name "NgMedal:unlockFirstOfFour"
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 2
+         maxstack 1
          localcount 1
          initscopedepth 3
          maxscopedepth 4
@@ -364,9 +332,6 @@ package
          code
          getlocal0
          pushscope
-         getlex QName(PackageNamespace("com.newgrounds"),"API")
-         pushstring "First of Four"
-         callpropvoid QName(PackageNamespace(""),"unlockMedal"), 1
          returnvoid
          end ; code
          end ; body
@@ -379,11 +344,11 @@ package
          flag FINAL
          dispid 14
          method
-         name null
+         name "NgMedal:unlockStinkyToe"
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 2
+         maxstack 1
          localcount 1
          initscopedepth 3
          maxscopedepth 4
@@ -391,9 +356,6 @@ package
          code
          getlocal0
          pushscope
-         getlex QName(PackageNamespace("com.newgrounds"),"API")
-         pushstring "Stinky Toe"
-         callpropvoid QName(PackageNamespace(""),"unlockMedal"), 1
          returnvoid
          end ; code
          end ; body
@@ -406,11 +368,11 @@ package
          flag FINAL
          dispid 15
          method
-         name null
+         name "NgMedal:unlockGravityBattle"
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 2
+         maxstack 1
          localcount 1
          initscopedepth 3
          maxscopedepth 4
@@ -418,9 +380,6 @@ package
          code
          getlocal0
          pushscope
-         getlex QName(PackageNamespace("com.newgrounds"),"API")
-         pushstring "Gravity Battle"
-         callpropvoid QName(PackageNamespace(""),"unlockMedal"), 1
          returnvoid
          end ; code
          end ; body
@@ -433,11 +392,11 @@ package
          flag FINAL
          dispid 16
          method
-         name null
+         name "NgMedal:unlockPilgrim"
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 2
+         maxstack 1
          localcount 1
          initscopedepth 3
          maxscopedepth 4
@@ -445,9 +404,6 @@ package
          code
          getlocal0
          pushscope
-         getlex QName(PackageNamespace("com.newgrounds"),"API")
-         pushstring "Pilgrim"
-         callpropvoid QName(PackageNamespace(""),"unlockMedal"), 1
          returnvoid
          end ; code
          end ; body

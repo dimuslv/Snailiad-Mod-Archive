@@ -317,20 +317,20 @@ package
          modulo
          convert_i
          setlocal2
-         pushstring "Snaily"
+         pushstring "Upside"
          setlocal3
          getlocal1
          getproperty QName(PackageNamespace(""),"_slugMode")
          iffalse ofs0
-         pushstring "Sluggy"
+         pushstring "Upslug"
          setlocal3
          ofs0:
-         pushstring "Snaily Snail"
+         pushstring "Upside Snail"
          setlocal 4
          getlocal1
          getproperty QName(PackageNamespace(""),"_slugMode")
          iffalse ofs1
-         pushstring "Sluggy Slug"
+         pushstring "Upslug Slug"
          setlocal 4
          ofs1:
          pushstring "snail"

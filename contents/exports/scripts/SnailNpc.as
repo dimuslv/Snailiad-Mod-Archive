@@ -84,15 +84,15 @@ package
          var _loc8_:Boolean = false;
          var _loc9_:* = null;
          var _loc2_:int = this._snailNum % 4;
-         var _loc3_:String = "Snaily";
+         var _loc3_:String = "Upside";
          if(param1._slugMode)
          {
-            _loc3_ = "Sluggy";
+            _loc3_ = "Upslug";
          }
-         var _loc4_:String = "Snaily Snail";
+         var _loc4_:String = "Upside Snail";
          if(param1._slugMode)
          {
-            _loc4_ = "Sluggy Slug";
+            _loc4_ = "Upslug Slug";
          }
          var _loc5_:String = "snail";
          if(param1._slugMode)
