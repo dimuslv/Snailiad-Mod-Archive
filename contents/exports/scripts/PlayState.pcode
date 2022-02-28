@@ -196,6 +196,22 @@ package
       
       public static var This:PlayState;
       
+      public static var playerStartX:int = 299;
+      
+      public static var playerStartY:int = 166;
+      
+      public static var isStartOld:Boolean = true;
+      
+      public static var boundTo:String = "map";
+      
+      public static var textArray:Array;
+      
+      public static var playerBrStartX:int;
+      
+      public static var playerBrStartY:int;
+      
+      public static var isBrStartOld:Boolean = true;
+      
       {
          method
          name null
@@ -291,6 +307,24 @@ package
          findproperty QName(PackageNamespace(""),"GAME_COMPLETE_TIMEOUT")
          pushbyte 9
          initproperty QName(PackageNamespace(""),"GAME_COMPLETE_TIMEOUT")
+         findproperty QName(PackageNamespace(""),"playerStartX")
+         pushshort 299
+         initproperty QName(PackageNamespace(""),"playerStartX")
+         findproperty QName(PackageNamespace(""),"playerStartY")
+         pushshort 166
+         initproperty QName(PackageNamespace(""),"playerStartY")
+         findproperty QName(PackageNamespace(""),"isStartOld")
+         pushtrue
+         initproperty QName(PackageNamespace(""),"isStartOld")
+         findproperty QName(PackageNamespace(""),"boundTo")
+         pushstring "map"
+         initproperty QName(PackageNamespace(""),"boundTo")
+         findproperty QName(PackageNamespace(""),"textArray")
+         newarray 0
+         initproperty QName(PackageNamespace(""),"textArray")
+         findproperty QName(PackageNamespace(""),"isBrStartOld")
+         pushtrue
+         initproperty QName(PackageNamespace(""),"isBrStartOld")
          returnvoid
          end ; code
          end ; body
@@ -838,31 +872,28 @@ package
          findpropstrict QName(PackageNamespace(""),"Configurable")
          constructprop QName(PackageNamespace(""),"Configurable"), 0
          setproperty QName(PackageNamespace(""),"config")
-         getlex QName(PackageNamespace(""),"saveData")
-         iftrue ofs0
          findproperty QName(PackageNamespace(""),"saveData")
          findpropstrict QName(PackageNamespace(""),"SaveData")
          constructprop QName(PackageNamespace(""),"SaveData"), 0
          setproperty QName(PackageNamespace(""),"saveData")
-         ofs0:
          findproperty QName(PackageNamespace(""),"bossesKilled")
          findpropstrict QName(PackageNamespace(""),"Array")
          constructprop QName(PackageNamespace(""),"Array"), 0
          setproperty QName(PackageNamespace(""),"bossesKilled")
          pushbyte 0
          setlocal1
-         jump ofs1
-         ofs2:
+         jump ofs0
+         ofs1:
          label
          getlex QName(PackageNamespace(""),"bossesKilled")
          getlocal1
          pushfalse
          setproperty MultinameL([PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
          inclocal_i 1
-         ofs1:
+         ofs0:
          getlocal1
          pushbyte 5
-         iflt ofs2
+         iflt ofs1
          getlex QName(PackageNamespace(""),"This")
          findpropstrict QName(PackageNamespace("org.flixel"),"FlxGroup")
          constructprop QName(PackageNamespace("org.flixel"),"FlxGroup"), 0
@@ -1080,16 +1111,16 @@ package
          getlex QName(PackageNamespace(""),"menuHideable")
          callpropvoid QName(PackageNamespace(""),"add"), 1
          getlex QName(PackageNamespace(""),"bossRush")
-         iftrue ofs3
+         iftrue ofs2
          getlex QName(PackageNamespace(""),"menuHideable")
          getlex QName(PackageNamespace(""),"miniMap")
          callpropvoid QName(PackageNamespace(""),"add"), 1
-         jump ofs4
-         ofs3:
+         jump ofs3
+         ofs2:
          getlex QName(PackageNamespace(""),"menuHideable")
          getlex QName(PackageNamespace(""),"bossRushTimer")
          callpropvoid QName(PackageNamespace(""),"add"), 1
-         ofs4:
+         ofs3:
          getlex QName(PackageNamespace(""),"menuHideable")
          getlex QName(PackageNamespace(""),"damageNumberPool")
          callpropvoid QName(PackageNamespace(""),"add"), 1
@@ -1112,30 +1143,30 @@ package
          getlex QName(PackageNamespace(""),"savingText")
          callpropvoid QName(PackageNamespace(""),"add"), 1
          getlex QName(PackageNamespace(""),"bossRush")
-         iftrue ofs5
+         iftrue ofs4
          getlex QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"hasSeenHelp")
          not
          dup
-         iffalse ofs6
+         iffalse ofs5
          pop
          getlex QName(PackageNamespace(""),"player")
          getproperty QName(PackageNamespace(""),"_hardMode")
          not
-         ofs6:
-         iffalse ofs5
+         ofs5:
+         iffalse ofs4
          getlex QName(PackageNamespace(""),"controlHelp")
          callpropvoid QName(PackageNamespace(""),"show"), 0
          getlex QName(PackageNamespace(""),"player")
          pushtrue
          setproperty QName(PackageNamespace(""),"hasSeenHelp")
-         ofs5:
+         ofs4:
          getlex QName(PackageNamespace(""),"bossRush")
-         iffalse ofs7
+         iffalse ofs6
          findpropstrict QName(PackageNamespace(""),"setArea")
          pushbyte 7
          callpropvoid QName(PackageNamespace(""),"setArea"), 1
-         ofs7:
+         ofs6:
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getlex QName(PackageNamespace(""),"player")
          pushbyte 5

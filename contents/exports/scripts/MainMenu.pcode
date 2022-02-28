@@ -104,6 +104,10 @@ package
       
       private static const KEY_MAP:int = 19;
       
+      public static var hasHardMode2:Boolean = false;
+      
+      public static var hasBossRush2:Boolean = false;
+      
       {
          method
          name null
@@ -196,6 +200,12 @@ package
          findproperty QName(PrivateNamespace(null,"#MainMenu"),"KEY_MAP")
          pushbyte 19
          initproperty QName(PrivateNamespace(null,"#MainMenu"),"KEY_MAP")
+         findproperty QName(PackageNamespace(""),"hasHardMode2")
+         pushfalse
+         setproperty QName(PackageNamespace(""),"hasHardMode2")
+         findproperty QName(PackageNamespace(""),"hasBossRush2")
+         pushfalse
+         setproperty QName(PackageNamespace(""),"hasBossRush2")
          returnvoid
          end ; code
          end ; body
@@ -340,6 +350,10 @@ package
       
       public var fadeInterval:uint = 0;
       
+      public var isInputting:Boolean = false;
+      
+      public var input:String = "";
+      
       public function MainMenu()
       {
          method
@@ -461,7 +475,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 3
+         maxstack 4
          localcount 1
          initscopedepth 8
          maxscopedepth 9
@@ -476,7 +490,18 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"xmlLoader")
          findpropstrict QName(PackageNamespace("flash.net"),"URLRequest")
-         pushstring "map.tmx"
+         getlocal0
+         getproperty QName(PackageNamespace(""),"isInputting")
+         iffalse ofs0
+         getlocal0
+         getproperty QName(PackageNamespace(""),"input")
+         jump ofs1
+         ofs0:
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"boundTo")
+         ofs1:
+         pushstring ".tmx"
+         add
          constructprop QName(PackageNamespace("flash.net"),"URLRequest"), 1
          callpropvoid QName(PackageNamespace(""),"load"), 1
          getlocal0
@@ -502,8 +527,8 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 3
-         localcount 2
+         maxstack 6
+         localcount 4
          initscopedepth 8
          maxscopedepth 9
          
@@ -517,6 +542,103 @@ package
          getproperty QName(PackageNamespace(""),"data")
          constructprop QName(PackageNamespace(""),"XML"), 1
          initproperty QName(PackageNamespace(""),"worldXML")
+         pushbyte 0
+         setlocal 2
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldXML")
+         getproperty Multiname("objectgroup",[PrivateNamespace(null,"#MainMenu/1"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("UniqueBlocks"),StaticProtectedNs("UniqueBlocks"),StaticProtectedNs("Object")])
+         callproperty Multiname("children",[PrivateNamespace(null,"#WorldMap/1"),PackageNamespace(""),PackageNamespace("flash.events"),PackageNamespace("flash.net"),PrivateNamespace(null,"#WorldMap/2"),PackageNamespace("simple_fla"),PackageInternalNs("simple_fla"),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("adobe.utils"),PackageNamespace("flash.accessibility"),PackageNamespace("flash.desktop"),PackageNamespace("flash.display"),PackageNamespace("flash.errors"),PackageNamespace("flash.external"),PackageNamespace("flash.filters"),PackageNamespace("flash.geom"),PackageNamespace("flash.media"),PackageNamespace("flash.printing"),PackageNamespace("flash.profiler"),PackageNamespace("flash.sampler"),PackageNamespace("flash.system"),PackageNamespace("flash.text"),PackageNamespace("flash.text.engine"),PackageNamespace("flash.ui"),PackageNamespace("flash.utils"),PackageNamespace("flash.xml"),ProtectedNamespace("simple_fla:MainTimeline"),StaticProtectedNs("simple_fla:MainTimeline"),StaticProtectedNs("flash.display:MovieClip"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")]), 0
+         callproperty Multiname("length",[PrivateNamespace(null,"#WorldMap/1"),PackageNamespace(""),PackageNamespace("flash.events"),PackageNamespace("flash.net"),PrivateNamespace(null,"#WorldMap/2"),PackageNamespace("simple_fla"),PackageInternalNs("simple_fla"),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("adobe.utils"),PackageNamespace("flash.accessibility"),PackageNamespace("flash.desktop"),PackageNamespace("flash.display"),PackageNamespace("flash.errors"),PackageNamespace("flash.external"),PackageNamespace("flash.filters"),PackageNamespace("flash.geom"),PackageNamespace("flash.media"),PackageNamespace("flash.printing"),PackageNamespace("flash.profiler"),PackageNamespace("flash.sampler"),PackageNamespace("flash.system"),PackageNamespace("flash.text"),PackageNamespace("flash.text.engine"),PackageNamespace("flash.ui"),PackageNamespace("flash.utils"),PackageNamespace("flash.xml"),ProtectedNamespace("simple_fla:MainTimeline"),StaticProtectedNs("simple_fla:MainTimeline"),StaticProtectedNs("flash.display:MovieClip"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")]), 0
+         convert_i
+         setlocal 3
+         findproperty QName(PackageNamespace(""),"hasHardMode2")
+         pushfalse
+         setproperty QName(PackageNamespace(""),"hasHardMode2")
+         findproperty QName(PackageNamespace(""),"hasBossRush2")
+         pushfalse
+         setproperty QName(PackageNamespace(""),"hasBossRush2")
+         getlex QName(PackageNamespace(""),"PlayState")
+         findpropstrict QName(PackageNamespace(""),"Array")
+         constructprop QName(PackageNamespace(""),"Array"), 0
+         setproperty QName(PackageNamespace(""),"textArray")
+         ofs0:
+         label
+         getlocal 2
+         getlocal 3
+         ifge ofs1
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldXML")
+         getproperty Multiname("objectgroup",[PrivateNamespace(null,"#MainMenu/1"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("UniqueBlocks"),StaticProtectedNs("UniqueBlocks"),StaticProtectedNs("Object")])
+         getproperty Multiname("object",[PrivateNamespace(null,"#MainMenu/1"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("UniqueBlocks"),StaticProtectedNs("UniqueBlocks"),StaticProtectedNs("Object")])
+         getlocal 2
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu/1"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("UniqueBlocks"),StaticProtectedNs("UniqueBlocks"),StaticProtectedNs("Object")])
+         getproperty MultinameA("name",[PrivateNamespace(null,"#MainMenu/1"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("UniqueBlocks"),StaticProtectedNs("UniqueBlocks"),StaticProtectedNs("Object")])
+         pushstring "slug"
+         ifne ofs2
+         findproperty QName(PackageNamespace(""),"hasHardMode2")
+         pushtrue
+         setproperty QName(PackageNamespace(""),"hasHardMode2")
+         jump ofs3
+         ofs2:
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldXML")
+         getproperty Multiname("objectgroup",[PrivateNamespace(null,"#MainMenu/1"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("UniqueBlocks"),StaticProtectedNs("UniqueBlocks"),StaticProtectedNs("Object")])
+         getproperty Multiname("object",[PrivateNamespace(null,"#MainMenu/1"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("UniqueBlocks"),StaticProtectedNs("UniqueBlocks"),StaticProtectedNs("Object")])
+         getlocal 2
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu/1"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("UniqueBlocks"),StaticProtectedNs("UniqueBlocks"),StaticProtectedNs("Object")])
+         getproperty MultinameA("name",[PrivateNamespace(null,"#MainMenu/1"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("UniqueBlocks"),StaticProtectedNs("UniqueBlocks"),StaticProtectedNs("Object")])
+         pushstring "bossrush"
+         ifne ofs4
+         findproperty QName(PackageNamespace(""),"hasBossRush2")
+         pushtrue
+         setproperty QName(PackageNamespace(""),"hasBossRush2")
+         jump ofs3
+         ofs4:
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"textArray")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldXML")
+         getproperty Multiname("objectgroup",[PrivateNamespace(null,"#MainMenu/1"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("UniqueBlocks"),StaticProtectedNs("UniqueBlocks"),StaticProtectedNs("Object")])
+         getproperty Multiname("object",[PrivateNamespace(null,"#MainMenu/1"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("UniqueBlocks"),StaticProtectedNs("UniqueBlocks"),StaticProtectedNs("Object")])
+         getlocal 2
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu/1"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("UniqueBlocks"),StaticProtectedNs("UniqueBlocks"),StaticProtectedNs("Object")])
+         getproperty MultinameA("name",[PrivateNamespace(null,"#MainMenu/1"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("UniqueBlocks"),StaticProtectedNs("UniqueBlocks"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldXML")
+         getproperty Multiname("objectgroup",[PrivateNamespace(null,"#MainMenu/1"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("UniqueBlocks"),StaticProtectedNs("UniqueBlocks"),StaticProtectedNs("Object")])
+         getproperty Multiname("object",[PrivateNamespace(null,"#MainMenu/1"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("UniqueBlocks"),StaticProtectedNs("UniqueBlocks"),StaticProtectedNs("Object")])
+         getlocal 2
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu/1"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("UniqueBlocks"),StaticProtectedNs("UniqueBlocks"),StaticProtectedNs("Object")])
+         getproperty Multiname("text",[PrivateNamespace(null,"#MainMenu/1"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("UniqueBlocks"),StaticProtectedNs("UniqueBlocks"),StaticProtectedNs("Object")])
+         coerce_s
+         findpropstrict QName(PackageNamespace(""),"RegExp")
+         pushstring "\r\n"
+         pushstring "g"
+         constructprop QName(PackageNamespace(""),"RegExp"), 2
+         pushstring "\n"
+         callproperty QName(Namespace("http://adobe.com/AS3/2006/builtin"),"replace"), 2
+         setproperty MultinameL([PrivateNamespace(null,"#MainMenu/1"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("UniqueBlocks"),StaticProtectedNs("UniqueBlocks"),StaticProtectedNs("Object")])
+         ofs3:
+         inclocal_i 2
+         jump ofs0
+         ofs1:
+         getlex QName(PackageNamespace(""),"PlayState")
+         pushtrue
+         setproperty QName(PackageNamespace(""),"isStartOld")
+         getlex QName(PackageNamespace(""),"PlayState")
+         pushtrue
+         setproperty QName(PackageNamespace(""),"isBrStartOld")
+         getlocal0
+         getproperty QName(PackageNamespace(""),"isInputting")
+         iffalse ofs5
+         getlex QName(PackageNamespace(""),"PlayState")
+         getlocal0
+         getproperty QName(PackageNamespace(""),"input")
+         setproperty QName(PackageNamespace(""),"boundTo")
+         getlocal0
+         callpropvoid QName(PackageNamespace(""),"eraseSaveData"), 0
+         jump ofs6
+         ofs5:
          getlex QName(PackageNamespace(""),"PlayState")
          findpropstrict QName(PackageNamespace(""),"WorldMap")
          constructprop QName(PackageNamespace(""),"WorldMap"), 0
@@ -548,6 +670,9 @@ package
          getproperty QName(PackageNamespace(""),"worldMap")
          getproperty QName(PackageNamespace(""),"fgmap")
          setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PackageInternalNs("org.flixel"),PackageNamespace("org.flixel"),ProtectedNamespace("org.flixel:FlxGroup"),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#MiniMap"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlocal0
+         callpropvoid QName(PackageNamespace(""),"makeMainOptions"), 0
+         ofs6:
          getlex QName(PackageNamespace(""),"Sfx")
          callpropvoid QName(PackageNamespace(""),"playSave1"), 0
          returnvoid
@@ -658,7 +783,7 @@ package
          initproperty QName(PackageNamespace(""),"bgColor")
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          dup
          iffalse ofs0
@@ -675,15 +800,15 @@ package
          ofs1:
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          dup
          iffalse ofs2
          pop
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("bestMainTime",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("bestMainTime",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushbyte 0
          greaterthan
          ofs2:
@@ -694,21 +819,21 @@ package
          getlocal0
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("bestMainTime",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("bestMainTime",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          initproperty QName(PackageNamespace(""),"bestNormalTime")
          ofs3:
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          dup
          iffalse ofs4
          pop
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("bestHardTime",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("bestHardTime",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushbyte 0
          greaterthan
          ofs4:
@@ -716,21 +841,21 @@ package
          getlocal0
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("bestHardTime",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("bestHardTime",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          initproperty QName(PackageNamespace(""),"bestHardTime")
          ofs5:
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          dup
          iffalse ofs6
          pop
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("bestInsaneTime",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("bestInsaneTime",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushbyte 0
          greaterthan
          ofs6:
@@ -738,21 +863,21 @@ package
          getlocal0
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("bestInsaneTime",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("bestInsaneTime",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          initproperty QName(PackageNamespace(""),"bestInsaneTime")
          ofs7:
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          dup
          iffalse ofs8
          pop
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("bestBossRushTime",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("bestBossRushTime",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushbyte 0
          greaterthan
          ofs8:
@@ -760,13 +885,13 @@ package
          getlocal0
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("bestBossRushTime",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("bestBossRushTime",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          initproperty QName(PackageNamespace(""),"bestBossRushTime")
          ofs9:
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          dup
          iffalse ofs10
@@ -784,14 +909,14 @@ package
          getproperty QName(PackageNamespace(""),"hasEnding")
          pushbyte 0
          pushtrue
-         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          pushdouble 4.278202384E9
          initproperty QName(PackageNamespace(""),"bgColor")
          ofs11:
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          dup
          iffalse ofs12
@@ -809,7 +934,7 @@ package
          ofs13:
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          dup
          iffalse ofs14
@@ -825,15 +950,15 @@ package
          initproperty QName(PackageNamespace(""),"hasHardMode")
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("bestBossRushTime",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("bestBossRushTime",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushbyte 0
          ifngt ofs16
          getlocal0
          getproperty QName(PackageNamespace(""),"hasEnding")
          pushbyte 1
          pushtrue
-         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs16:
          getlocal0
          pushdouble 4.281335856E9
@@ -841,7 +966,7 @@ package
          ofs15:
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          dup
          iffalse ofs17
@@ -859,7 +984,7 @@ package
          getproperty QName(PackageNamespace(""),"hasEnding")
          pushbyte 2
          pushtrue
-         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          pushdouble 4.278202416E9
          initproperty QName(PackageNamespace(""),"bgColor")
@@ -911,11 +1036,11 @@ package
          getproperty QName(PackageNamespace(""),"hasEnding")
          pushbyte 3
          pushtrue
-         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs22:
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          dup
          iffalse ofs23
@@ -938,7 +1063,7 @@ package
          getproperty QName(PackageNamespace(""),"hasEnding")
          pushbyte 4
          pushtrue
-         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs25:
          returnvoid
          end ; code
@@ -1248,32 +1373,32 @@ package
          getproperty QName(PackageNamespace(""),"optionNum")
          getlocal 5
          getproperty QName(PackageNamespace(""),"realWidth")
-         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal0
          getproperty QName(PackageNamespace(""),"optionNum")
          getlocal 5
-         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal0
          getproperty QName(PackageNamespace(""),"optionNum")
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal 4
-         setproperty Multiname("x",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty Multiname("x",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getproperty QName(PackageNamespace(""),"actions")
          getlocal0
          getproperty QName(PackageNamespace(""),"optionNum")
          getlocal2
-         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getproperty QName(PackageNamespace(""),"doFade")
          getlocal0
          getproperty QName(PackageNamespace(""),"optionNum")
          getlocal3
-         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          dup
          setlocal 6
@@ -1318,29 +1443,29 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal2
-         setproperty Multiname("text",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty Multiname("text",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getproperty QName(PackageNamespace(""),"actions")
          getlocal1
          getlocal3
-         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal 4
-         setproperty Multiname("x",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty Multiname("x",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getproperty QName(PackageNamespace(""),"optionTextWidth")
          getlocal1
          getlocal0
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("realWidth",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("realWidth",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
@@ -1381,9 +1506,9 @@ package
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushint 16777215
-         setproperty Multiname("color",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty Multiname("color",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs0:
          getlocal0
          getlocal1
@@ -1436,7 +1561,7 @@ package
          getproperty QName(PackageNamespace(""),"actions")
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushnull
          ifeq ofs6
          getlocal0
@@ -1452,7 +1577,7 @@ package
          getproperty QName(PackageNamespace(""),"optionTextWidth")
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushbyte 2
          divide
          subtract
@@ -1466,15 +1591,15 @@ package
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("x",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("x",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          add
          getlocal0
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal2
          callpropvoid QName(PackageNamespace(""),"moveTo"), 3
          getlocal0
@@ -1487,7 +1612,7 @@ package
          getproperty QName(PackageNamespace(""),"optionTextWidth")
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushbyte 2
          divide
          add
@@ -1497,15 +1622,15 @@ package
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("x",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("x",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          add
          getlocal0
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal2
          callpropvoid QName(PackageNamespace(""),"moveTo"), 3
          returnvoid
@@ -1611,7 +1736,7 @@ package
          getproperty QName(PackageNamespace(""),"actions")
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushnull
          equals
          ofs7:
@@ -1657,7 +1782,7 @@ package
          getproperty QName(PackageNamespace(""),"actions")
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushnull
          equals
          ofs11:
@@ -2166,6 +2291,9 @@ package
          code
          getlocal0
          pushscope
+         getlocal0
+         getproperty QName(PackageNamespace(""),"isInputting")
+         iftrue ofs0
          pushnull
          coerce QName(PackageNamespace(""),"SaveData")
          setlocal1
@@ -2184,15 +2312,16 @@ package
          setlocal1
          getlocal1
          callpropvoid QName(PackageNamespace(""),"eraseAll"), 0
-         getlocal0
-         pushfalse
-         initproperty QName(PackageNamespace(""),"hasSave")
+         ofs0:
          getlocal0
          pushfalse
          initproperty QName(PackageNamespace(""),"hasBossRush")
          getlocal0
          pushfalse
          initproperty QName(PackageNamespace(""),"hasHardMode")
+         getlocal0
+         pushfalse
+         initproperty QName(PackageNamespace(""),"hasSave")
          getlocal0
          pushfalse
          initproperty QName(PackageNamespace(""),"hasInsaneMode")
@@ -2264,16 +2393,16 @@ package
          getlocal2
          multiply
          add
-         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal2
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getproperty QName(PackageNamespace(""),"optionTextY")
          getlocal2
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         setproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          inclocal_i 2
          ofs1:
          getlocal2
@@ -2359,11 +2488,11 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"optionTextY")
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getproperty QName(PackageNamespace(""),"optionTextY")
          pushbyte 0
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          subtract
          convert_i
          setlocal2
@@ -2456,15 +2585,15 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal 7
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getproperty QName(PackageNamespace(""),"optionTextY")
          getlocal 7
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getproperty QName(PackageNamespace(""),"menuScrollY")
          subtract
-         setproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          inclocal_i 7
          ofs9:
          getlocal 7
@@ -3090,24 +3219,24 @@ package
          iffalse ofs46
          getlocal 4
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal3
-         callproperty Multiname("child",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
+         callproperty Multiname("child",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
          coerce QName(PackageNamespace(""),"XMLList")
          dup
          setlocal 5
          iffalse ofs46
          getlocal 5
-         callproperty Multiname("parent",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
-         getproperty Multiname(null,[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         callproperty Multiname("parent",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
+         getproperty Multiname(null,[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal 5
-         callproperty Multiname("childIndex",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
-         deleteproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         callproperty Multiname("childIndex",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
+         deleteproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pop
          ofs46:
          getlocal 4
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<"
          getlocal3
@@ -3124,7 +3253,7 @@ package
          pushstring ">"
          add
          construct 1
-         callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
+         callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
          getlocal 4
          callpropvoid QName(PackageNamespace(""),"saveAll"), 0
          ofs45:
@@ -4613,7 +4742,7 @@ package
          getproperty QName(PackageNamespace(""),"startNewGame")
          pushfalse
          callpropvoid QName(PackageNamespace(""),"addOption"), 3
-         getlex QName(PackageNamespace(""),"TESTING_ALL_MODES_AVAILABLE")
+         getlex QName(PackageNamespace(""),"hasHardMode2")
          convert_b
          dup
          iftrue ofs0
@@ -4896,24 +5025,24 @@ package
          iffalse ofs1
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushstring "hideMiniMap"
-         callproperty Multiname("child",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
+         callproperty Multiname("child",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
          coerce QName(PackageNamespace(""),"XMLList")
          setlocal2
          getlocal2
          iffalse ofs1
          getlocal2
-         callproperty Multiname("parent",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
-         getproperty Multiname(null,[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         callproperty Multiname("parent",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
+         getproperty Multiname(null,[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal2
-         callproperty Multiname("childIndex",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
-         deleteproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         callproperty Multiname("childIndex",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
+         deleteproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pop
          ofs1:
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<hideMiniMap>"
          getlex QName(PackageNamespace(""),"PlayState")
@@ -4923,7 +5052,7 @@ package
          pushstring "</hideMiniMap>"
          add
          construct 1
-         callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
+         callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
          getlocal1
          callpropvoid QName(PackageNamespace(""),"saveAll"), 0
          getlocal0
@@ -5004,24 +5133,24 @@ package
          iffalse ofs2
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushstring "hideTab"
-         callproperty Multiname("child",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
+         callproperty Multiname("child",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
          coerce QName(PackageNamespace(""),"XMLList")
          setlocal2
          getlocal2
          iffalse ofs2
          getlocal2
-         callproperty Multiname("parent",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
-         getproperty Multiname(null,[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         callproperty Multiname("parent",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
+         getproperty Multiname(null,[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal2
-         callproperty Multiname("childIndex",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
-         deleteproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         callproperty Multiname("childIndex",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
+         deleteproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pop
          ofs2:
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<hideTab>"
          getlex QName(PackageNamespace(""),"PlayState")
@@ -5031,7 +5160,7 @@ package
          pushstring "</hideTab>"
          add
          construct 1
-         callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
+         callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
          getlocal1
          callpropvoid QName(PackageNamespace(""),"saveAll"), 0
          getlocal0
@@ -5731,12 +5860,12 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"hasEnding")
          pushbyte 0
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          iffalse ofs4
          getlocal0
          getlocal1
          pushbyte 0
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getproperty QName(PackageNamespace(""),"showEnding1")
          pushfalse
@@ -5745,12 +5874,12 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"hasEnding")
          pushbyte 1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          iffalse ofs5
          getlocal0
          getlocal1
          pushbyte 1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getproperty QName(PackageNamespace(""),"showEnding2")
          pushfalse
@@ -5759,12 +5888,12 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"hasEnding")
          pushbyte 4
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          iffalse ofs6
          getlocal0
          getlocal1
          pushbyte 4
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getproperty QName(PackageNamespace(""),"showEnding3")
          pushfalse
@@ -5773,12 +5902,12 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"hasEnding")
          pushbyte 3
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          iffalse ofs7
          getlocal0
          getlocal1
          pushbyte 3
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getproperty QName(PackageNamespace(""),"showEnding4")
          pushfalse
@@ -5787,12 +5916,12 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"hasEnding")
          pushbyte 2
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          iffalse ofs8
          getlocal0
          getlocal1
          pushbyte 2
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getproperty QName(PackageNamespace(""),"showEnding5")
          pushfalse
@@ -5897,19 +6026,19 @@ package
          iffalse ofs2
          getlocal2
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal1
-         callproperty Multiname("child",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
+         callproperty Multiname("child",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
          coerce QName(PackageNamespace(""),"XMLList")
          setlocal3
          getlocal3
          iffalse ofs2
          getlocal3
-         callproperty Multiname("parent",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
-         getproperty Multiname(null,[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         callproperty Multiname("parent",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
+         getproperty Multiname(null,[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal3
-         callproperty Multiname("childIndex",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
-         deleteproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         callproperty Multiname("childIndex",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 0
+         deleteproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pop
          ofs2:
          getlex QName(PackageNamespace(""),"Player")
@@ -5919,7 +6048,7 @@ package
          ifne ofs3
          getlocal2
          getproperty QName(PackageNamespace(""),"xml")
-         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlex QName(PackageNamespace(""),"XML")
          pushstring "<"
          getlocal1
@@ -5931,7 +6060,7 @@ package
          pushstring ">"
          add
          construct 1
-         callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
+         callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")]), 1
          ofs3:
          getlocal2
          callpropvoid QName(PackageNamespace(""),"saveAll"), 0
@@ -6135,6 +6264,9 @@ package
          getlocal0
          pushscope
          getlocal0
+         pushfalse
+         setproperty QName(PackageNamespace(""),"isInputting")
+         getlocal0
          pushbyte 0
          initproperty QName(PackageNamespace(""),"curOption")
          getlocal0
@@ -6234,7 +6366,7 @@ package
          pushfalse
          callpropvoid QName(PackageNamespace(""),"addOption"), 3
          ofs5:
-         getlex QName(PackageNamespace(""),"TESTING_ALL_MODES_AVAILABLE")
+         getlex QName(PackageNamespace(""),"hasBossRush2")
          convert_b
          dup
          iftrue ofs8
@@ -6263,7 +6395,12 @@ package
          callpropvoid QName(PackageNamespace(""),"addOption"), 3
          ofs9:
          getlocal0
-         pushstring "RELOAD MAP"
+         pushstring "RELOAD "
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"boundTo")
+         add
+         pushstring ".tmx"
+         add
          getlocal0
          getproperty QName(PackageNamespace(""),"loadXML")
          pushfalse
@@ -6301,7 +6438,7 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"hasEnding")
          pushbyte 0
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          dup
          iftrue ofs13
@@ -6309,7 +6446,7 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"hasEnding")
          pushbyte 1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          ofs13:
          dup
@@ -6318,7 +6455,7 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"hasEnding")
          pushbyte 2
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          ofs14:
          dup
@@ -6327,7 +6464,7 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"hasEnding")
          pushbyte 3
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          ofs15:
          dup
@@ -6336,7 +6473,7 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"hasEnding")
          pushbyte 4
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          ofs16:
          dup
@@ -6354,6 +6491,12 @@ package
          pushfalse
          callpropvoid QName(PackageNamespace(""),"addOption"), 3
          ofs18:
+         getlocal0
+         pushstring "SELECT A MAP"
+         getlocal0
+         getproperty QName(PackageNamespace(""),"insertName")
+         pushfalse
+         callpropvoid QName(PackageNamespace(""),"addOption"), 3
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"oldMenuOption")
@@ -6499,7 +6642,7 @@ package
          getproperty QName(PackageNamespace(""),"actions")
          getlocal0
          getproperty QName(PackageNamespace(""),"miniGame_targetNum")
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushnull
          equals
          dup
@@ -6525,7 +6668,7 @@ package
          getproperty QName(PackageNamespace(""),"optionTextWidth")
          getlocal0
          getproperty QName(PackageNamespace(""),"miniGame_targetNum")
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushbyte 2
          divide
          add
@@ -6545,7 +6688,7 @@ package
          getproperty QName(PackageNamespace(""),"optionTextWidth")
          getlocal0
          getproperty QName(PackageNamespace(""),"miniGame_targetNum")
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushbyte 2
          divide
          subtract
@@ -6560,14 +6703,14 @@ package
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal0
          getproperty QName(PackageNamespace(""),"miniGame_targetNum")
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal0
          getproperty QName(PackageNamespace(""),"miniGame_targetNum")
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("height",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("height",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushbyte 2
          divide
          add
@@ -7499,7 +7642,7 @@ package
          getproperty QName(PackageNamespace(""),"justinSnailyElapsed")
          getlocal1
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ifngt ofs2
          getlocal3
          convert_i
@@ -7845,6 +7988,9 @@ package
          setlocal1
          pushbyte 0
          setlocal2
+         getlocal0
+         getproperty QName(PackageNamespace(""),"isInputting")
+         iftrue ofs0
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
          pushstring "R"
@@ -7878,7 +8024,7 @@ package
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlex QName(PrivateNamespace(null,"#MainMenu"),"colors")
          findpropstrict QName(PackageNamespace(""),"int")
          getlocal0
@@ -7887,8 +8033,8 @@ package
          getlex QName(PrivateNamespace(null,"#MainMenu"),"colors")
          getproperty QName(PackageNamespace(""),"length")
          modulo
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         setproperty Multiname("color",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         setproperty Multiname("color",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          ofs2:
          getlocal0
          getproperty QName(PackageNamespace(""),"justinSnaily")
@@ -8770,6 +8916,9 @@ package
          ofs89:
          iffalse ofs90
          getlocal0
+         getproperty QName(PackageNamespace(""),"isInputting")
+         iftrue ofs90
+         getlocal0
          pushfalse
          initproperty QName(PackageNamespace(""),"lastWasMouse")
          getlex QName(PackageNamespace(""),"PlayState")
@@ -8841,7 +8990,7 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"actions")
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushnull
          ifne ofs98
          jump ofs99
@@ -8853,15 +9002,15 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"optionTextWidth")
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushbyte 2
          divide
          subtract
          getlocal0
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("x",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("x",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          add
          convert_i
          setlocal2
@@ -8880,7 +9029,7 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"optionTextWidth")
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          add
          lessthan
          ofs100:
@@ -8893,8 +9042,8 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          greaterthan
          ofs101:
          dup
@@ -8906,13 +9055,13 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("height",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("height",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          add
          pushbyte 2
          subtract
@@ -8962,7 +9111,7 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"actions")
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushnull
          ifne ofs108
          jump ofs109
@@ -8980,15 +9129,15 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"optionTextWidth")
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushbyte 2
          divide
          subtract
          getlocal0
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("x",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("x",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          add
          convert_i
          setlocal2
@@ -9007,7 +9156,7 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"optionTextWidth")
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          add
          lessthan
          ofs111:
@@ -9020,8 +9169,8 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          greaterthan
          ofs112:
          dup
@@ -9033,13 +9182,13 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("height",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("height",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          add
          pushbyte 2
          subtract
@@ -9060,26 +9209,20 @@ package
          getproperty QName(PackageNamespace(""),"optionNum")
          iflt ofs107
          ofs104:
+         getlocal0
+         getproperty QName(PackageNamespace(""),"isInputting")
+         iftrue ofs114
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
          pushstring "Z"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          dup
-         iftrue ofs114
-         pop
-         getlex QName(PackageNamespace("org.flixel"),"FlxG")
-         getproperty QName(PackageNamespace(""),"keys")
-         pushstring "X"
-         callproperty QName(PackageNamespace(""),"justPressed"), 1
-         convert_b
-         ofs114:
-         dup
          iftrue ofs115
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "J"
+         pushstring "X"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs115:
@@ -9088,7 +9231,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "K"
+         pushstring "J"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs116:
@@ -9097,7 +9240,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "SPACE"
+         pushstring "K"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs117:
@@ -9106,12 +9249,21 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "ENTER"
+         pushstring "SPACE"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs118:
          dup
          iftrue ofs119
+         pop
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"keys")
+         pushstring "ENTER"
+         callproperty QName(PackageNamespace(""),"justPressed"), 1
+         convert_b
+         ofs119:
+         dup
+         iftrue ofs120
          pop
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
@@ -9119,7 +9271,7 @@ package
          getproperty QName(PackageNamespace(""),"musicVolOption")
          equals
          dup
-         iffalse ofs119
+         iffalse ofs120
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
@@ -9127,20 +9279,119 @@ package
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          dup
-         iftrue ofs119
+         iftrue ofs120
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
          pushstring "RIGHT"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
-         ofs119:
-         iffalse ofs120
+         ofs120:
+         iffalse ofs121
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
          callpropvoid QName(PackageNamespace(""),"doOption"), 1
-         ofs120:
+         jump ofs121
+         ofs114:
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"keys")
+         pushstring "SPACE"
+         callproperty QName(PackageNamespace(""),"justPressed"), 1
+         convert_b
+         dup
+         iftrue ofs122
+         pop
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"keys")
+         pushstring "ENTER"
+         callproperty QName(PackageNamespace(""),"justPressed"), 1
+         convert_b
+         ofs122:
+         iftrue ofs123
+         jump ofs124
+         ofs123:
+         getlocal0
+         getlocal0
+         getproperty QName(PackageNamespace(""),"curOption")
+         callpropvoid QName(PackageNamespace(""),"doOption"), 1
+         ofs124:
+         getlex QName(PackageNamespace(""),"Utility")
+         callproperty QName(PackageNamespace(""),"justPressedAnyKey"), 0
+         iffalse ofs125
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"keys")
+         pushbyte 1
+         callproperty QName(PackageNamespace(""),"getLastKeys"), 1
+         getproperty QName(PackageNamespace(""),"length")
+         pushbyte 1
+         ifne ofs126
+         getlocal0
+         getlocal0
+         getproperty QName(PackageNamespace(""),"input")
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"keys")
+         pushbyte 1
+         callproperty QName(PackageNamespace(""),"getLastKeys"), 1
+         callproperty QName(Namespace("http://adobe.com/AS3/2006/builtin"),"toLowerCase"), 0
+         add
+         setproperty QName(PackageNamespace(""),"input")
+         getlocal0
+         pushbyte 2
+         getlocal0
+         getproperty QName(PackageNamespace(""),"input")
+         pushstring ".tmx"
+         add
+         pushnull
+         callpropvoid QName(PackageNamespace(""),"changeOption"), 3
+         getlex QName(PackageNamespace(""),"Sfx")
+         callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
+         ofs126:
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"keys")
+         pushstring "MINUS"
+         callproperty QName(PackageNamespace(""),"justPressed"), 1
+         iffalse ofs125
+         getlocal0
+         getlocal0
+         getproperty QName(PackageNamespace(""),"input")
+         pushstring "-"
+         add
+         setproperty QName(PackageNamespace(""),"input")
+         getlocal0
+         pushbyte 2
+         getlocal0
+         getproperty QName(PackageNamespace(""),"input")
+         pushstring ".tmx"
+         add
+         pushnull
+         callpropvoid QName(PackageNamespace(""),"changeOption"), 3
+         getlex QName(PackageNamespace(""),"Sfx")
+         callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
+         ofs125:
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"keys")
+         pushstring "BACKSPACE"
+         callproperty QName(PackageNamespace(""),"justPressed"), 1
+         iffalse ofs121
+         getlocal0
+         getlocal0
+         getproperty QName(PackageNamespace(""),"input")
+         pushbyte 0
+         pushbyte -1
+         callproperty QName(Namespace("http://adobe.com/AS3/2006/builtin"),"slice"), 2
+         setproperty QName(PackageNamespace(""),"input")
+         getlocal0
+         pushbyte 2
+         getlocal0
+         getproperty QName(PackageNamespace(""),"input")
+         pushstring ".tmx"
+         add
+         pushnull
+         callpropvoid QName(PackageNamespace(""),"changeOption"), 3
+         getlex QName(PackageNamespace(""),"Sfx")
+         callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
+         ofs121:
          getlocal0
          callsupervoid QName(PackageNamespace(""),"update"), 0
          returnvoid
@@ -9170,7 +9421,7 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"doFade")
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          iffalse ofs0
          getlex QName(PackageNamespace(""),"Sfx")
          callpropvoid QName(PackageNamespace(""),"playMenuBeep2"), 0
@@ -9193,7 +9444,7 @@ package
          dup
          setlocal2
          getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal2
          call 0
          pop
@@ -9231,7 +9482,7 @@ package
          setlocal1
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal1
          call 0
          pop
@@ -9244,6 +9495,87 @@ package
          pushint 2130706432
          pushdouble 0.34
          callpropvoid QName(PackageNamespace(""),"start"), 2
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function insertName() : void
+      {
+         trait method QName(PackageNamespace(""),"insertName")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 4
+         localcount 1
+         initscopedepth 8
+         maxscopedepth 9
+         
+         code
+         getlocal0
+         pushscope
+         getlocal0
+         callpropvoid QName(PackageNamespace(""),"clearMenu"), 0
+         getlocal0
+         pushtrue
+         initproperty QName(PackageNamespace(""),"escToMain")
+         getlocal0
+         getlocal0
+         getproperty QName(PackageNamespace(""),"curOption")
+         initproperty QName(PackageNamespace(""),"oldMenuOption")
+         getlocal0
+         getproperty QName(PackageNamespace(""),"sponsorMoreGames")
+         callpropvoid QName(PackageNamespace(""),"hide"), 0
+         getlocal0
+         getproperty QName(PackageNamespace(""),"jayIsGames")
+         callpropvoid QName(PackageNamespace(""),"hide"), 0
+         getlocal0
+         pushtrue
+         setproperty QName(PackageNamespace(""),"isInputting")
+         getlocal0
+         pushstring ""
+         setproperty QName(PackageNamespace(""),"input")
+         getlocal0
+         pushstring "Insert the name"
+         pushnull
+         pushfalse
+         callpropvoid QName(PackageNamespace(""),"addOption"), 3
+         getlocal0
+         pushstring "of the map file:"
+         pushnull
+         pushfalse
+         callpropvoid QName(PackageNamespace(""),"addOption"), 3
+         getlocal0
+         pushstring ".tmx"
+         pushnull
+         pushfalse
+         callpropvoid QName(PackageNamespace(""),"addOption"), 3
+         getlocal0
+         pushstring ""
+         pushnull
+         pushfalse
+         callpropvoid QName(PackageNamespace(""),"addOption"), 3
+         getlocal0
+         pushstring "LOAD THE MAP"
+         getlocal0
+         getproperty QName(PackageNamespace(""),"loadXML")
+         pushfalse
+         callpropvoid QName(PackageNamespace(""),"addOption"), 3
+         getlocal0
+         pushstring "Exit to Menu"
+         getlocal0
+         getproperty QName(PackageNamespace(""),"makeMainOptions")
+         pushfalse
+         callpropvoid QName(PackageNamespace(""),"addOption"), 3
+         getlocal0
+         pushbyte 4
+         initproperty QName(PackageNamespace(""),"curOption")
+         getlocal0
+         callpropvoid QName(PackageNamespace(""),"centerMenu"), 0
          returnvoid
          end ; code
          end ; body

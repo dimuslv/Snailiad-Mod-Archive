@@ -147,13 +147,17 @@ package
          code
          getlocal0
          pushscope
+         getlocal0
+         callpropvoid QName(PackageNamespace(""),"updateCoords"), 0
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"bossRush")
          iffalse ofs0
-         pushshort 246
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"playerBrStartX")
          returnvalue
          ofs0:
-         pushshort 299
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"playerStartX")
          returnvalue
          end ; code
          end ; body
@@ -180,14 +184,162 @@ package
          code
          getlocal0
          pushscope
+         getlocal0
+         callpropvoid QName(PackageNamespace(""),"updateCoords"), 0
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"bossRush")
          iffalse ofs0
-         pushshort 329
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"playerBrStartY")
          returnvalue
          ofs0:
-         pushshort 166
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"playerStartY")
          returnvalue
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public function updateCoords() : void
+      {
+         trait method QName(PackageNamespace(""),"updateCoords")
+         dispid 0
+         method
+         name null
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 3
+         localcount 5
+         initscopedepth 4
+         maxscopedepth 5
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"bossRush")
+         iftrue ofs0
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"isStartOld")
+         iffalse ofs1
+         pushbyte 0
+         setlocal1
+         pushbyte 0
+         setlocal2
+         getlex QName(PackageNamespace(""),"PlayState")
+         pushfalse
+         setproperty QName(PackageNamespace(""),"isStartOld")
+         jump ofs2
+         ofs3:
+         label
+         pushbyte 0
+         setlocal2
+         jump ofs4
+         ofs5:
+         label
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldMap")
+         getproperty QName(PackageNamespace(""),"spmap")
+         getlocal1
+         getlocal2
+         callproperty QName(PackageNamespace(""),"getTile"), 2
+         pushbyte 2
+         ifne ofs6
+         getlex QName(PackageNamespace(""),"PlayState")
+         getlocal1
+         setproperty QName(PackageNamespace(""),"playerStartX")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getlocal2
+         setproperty QName(PackageNamespace(""),"playerStartY")
+         returnvoid
+         ofs6:
+         inclocal_i 2
+         ofs4:
+         getlocal2
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldMap")
+         getproperty QName(PackageNamespace(""),"spmap")
+         getproperty QName(PackageNamespace(""),"heightInTiles")
+         iflt ofs5
+         inclocal_i 1
+         ofs2:
+         getlocal1
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldMap")
+         getproperty QName(PackageNamespace(""),"spmap")
+         getproperty QName(PackageNamespace(""),"widthInTiles")
+         iflt ofs3
+         getlex QName(PackageNamespace(""),"PlayState")
+         pushshort 299
+         setproperty QName(PackageNamespace(""),"playerStartX")
+         getlex QName(PackageNamespace(""),"PlayState")
+         pushshort 166
+         setproperty QName(PackageNamespace(""),"playerStartY")
+         ofs1:
+         returnvoid
+         ofs0:
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"isBrStartOld")
+         iffalse ofs7
+         pushbyte 0
+         setlocal 3
+         pushbyte 0
+         setlocal 4
+         getlex QName(PackageNamespace(""),"PlayState")
+         pushfalse
+         setproperty QName(PackageNamespace(""),"isBrStartOld")
+         jump ofs8
+         ofs9:
+         label
+         pushbyte 0
+         setlocal 4
+         jump ofs10
+         ofs11:
+         label
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldMap")
+         getproperty QName(PackageNamespace(""),"spmap")
+         getlocal 3
+         getlocal 4
+         callproperty QName(PackageNamespace(""),"getTile"), 2
+         pushshort 337
+         ifne ofs12
+         getlex QName(PackageNamespace(""),"PlayState")
+         getlocal 3
+         setproperty QName(PackageNamespace(""),"playerBrStartX")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getlocal 4
+         setproperty QName(PackageNamespace(""),"playerBrStartY")
+         returnvoid
+         ofs12:
+         inclocal_i 4
+         ofs10:
+         getlocal 4
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldMap")
+         getproperty QName(PackageNamespace(""),"spmap")
+         getproperty QName(PackageNamespace(""),"heightInTiles")
+         iflt ofs11
+         inclocal_i 3
+         ofs8:
+         getlocal 3
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldMap")
+         getproperty QName(PackageNamespace(""),"spmap")
+         getproperty QName(PackageNamespace(""),"widthInTiles")
+         iflt ofs9
+         getlex QName(PackageNamespace(""),"PlayState")
+         getlex QName(PackageNamespace(""),"Player")
+         getproperty QName(PackageNamespace(""),"BOSSRUSH_STARTX")
+         setproperty QName(PackageNamespace(""),"playerBrStartX")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getlex QName(PackageNamespace(""),"Player")
+         getproperty QName(PackageNamespace(""),"BOSSRUSH_STARTY")
+         setproperty QName(PackageNamespace(""),"playerBrStartY")
+         ofs7:
+         returnvoid
          end ; code
          end ; body
          end ; method

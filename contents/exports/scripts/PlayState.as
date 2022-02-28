@@ -150,6 +150,22 @@ package
       public static var boss2rush:Boss;
       
       public static var This:PlayState;
+      
+      public static var playerStartX:int = 299;
+      
+      public static var playerStartY:int = 166;
+      
+      public static var isStartOld:Boolean = true;
+      
+      public static var boundTo:String = "map";
+      
+      public static var textArray:Array = [];
+      
+      public static var playerBrStartX:int;
+      
+      public static var playerBrStartY:int;
+      
+      public static var isBrStartOld:Boolean = true;
        
       
       public var worldXML:XML;
@@ -277,10 +293,7 @@ package
       public static function setup() : void
       {
          config = new Configurable();
-         if(!saveData)
-         {
-            saveData = new SaveData();
-         }
+         saveData = new SaveData();
          bossesKilled = new Array();
          var _loc1_:int = 0;
          while(_loc1_ < 5)

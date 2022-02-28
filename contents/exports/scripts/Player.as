@@ -380,8 +380,8 @@ package
             this.setHelixFragments(0);
             this.setSnailType(SNAILTYPE_NORMAL);
             this.gameTime = 0;
-            x = BOSSRUSH_STARTX * 16;
-            y = BOSSRUSH_STARTY * 16;
+            x = PlayState.config.getPlayerStartX() * 16;
+            y = PlayState.config.getPlayerStartY() * 16;
          }
          else
          {
@@ -2323,8 +2323,8 @@ package
          if(PlayState.bossRush)
          {
             this.setCurHp(99999);
-            x = BOSSRUSH_STARTX * 16;
-            y = BOSSRUSH_STARTY * 16;
+            x = PlayState.config.getPlayerStartX() * 16;
+            y = PlayState.config.getPlayerStartY() * 16;
          }
          else
          {

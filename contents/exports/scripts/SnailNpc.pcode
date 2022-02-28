@@ -364,14 +364,38 @@ package
          pushstring "]"
          add
          setlocal 9
-         jump ofs4
-         ofs5:
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"textArray")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_snailNum")
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu/1"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("UniqueBlocks"),StaticProtectedNs("UniqueBlocks"),StaticProtectedNs("Object")])
+         iffalse ofs4
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"textArray")
+         getlocal0
+         getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_snailNum")
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu/1"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("UniqueBlocks"),StaticProtectedNs("UniqueBlocks"),StaticProtectedNs("Object")])
+         findpropstrict QName(PackageNamespace(""),"RegExp")
+         pushstring "\\|\\|"
+         pushstring "g"
+         constructprop QName(PackageNamespace(""),"RegExp"), 2
+         getlocal 4
+         callproperty QName(Namespace("http://adobe.com/AS3/2006/builtin"),"replace"), 2
+         findpropstrict QName(PackageNamespace(""),"RegExp")
+         pushstring "\\|"
+         pushstring "g"
+         constructprop QName(PackageNamespace(""),"RegExp"), 2
+         getlocal3
+         callproperty QName(Namespace("http://adobe.com/AS3/2006/builtin"),"replace"), 2
+         setlocal 9
+         jump ofs5
+         ofs6:
          label
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          pushbyte 0
          callproperty QName(PackageNamespace(""),"hasWeapon"), 1
-         iftrue ofs6
+         iftrue ofs7
          pushstring "Hi, "
          getlocal3
          add
@@ -379,68 +403,68 @@ package
          add
          pushstring "climbing up the walls?\n"
          add
-         pushstring "    Just hold \"UP\" and \"RIGHT\".\n"
+         pushstring "Just hold \"UP\" and \"RIGHT\".\n"
          add
          setlocal 9
-         jump ofs7
-         ofs6:
+         jump ofs8
+         ofs7:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          pushbyte 1
          callproperty QName(PackageNamespace(""),"hasWeapon"), 1
-         iftrue ofs8
+         iftrue ofs9
          pushstring "Oh, nice pea shooter!  I heard\n"
          pushstring "you can shoot a blue door open\n"
          add
          pushstring "with one of those!\n"
          add
          setlocal 9
-         jump ofs7
-         ofs8:
+         jump ofs8
+         ofs9:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          pushbyte 2
          callproperty QName(PackageNamespace(""),"hasWeapon"), 1
-         iftrue ofs9
+         iftrue ofs10
          pushstring "Wow, a boomerang!  You could\n"
          pushstring "break a pink door open with\n"
          add
          pushstring "just one of those!\n"
          add
          setlocal 9
-         jump ofs7
-         ofs9:
+         jump ofs8
+         ofs10:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"player")
          callproperty QName(PackageNamespace(""),"getHasDevastator"), 0
-         iftrue ofs10
+         iftrue ofs11
          pushstring "Is that a rainbow wave!?  Well,\n"
          pushstring "then!  You can open a red door\n"
          add
          pushstring "with one of those!\n"
          add
          setlocal 9
-         jump ofs7
-         ofs10:
+         jump ofs8
+         ofs11:
          getlocal 6
          pushbyte 100
-         ifnlt ofs11
+         ifnlt ofs12
          pushstring "A devastator!?  That opens up\n"
          pushstring "green doors!  It also upgrades\n"
          add
          pushstring "all three weapons!  Wow!!\n"
          add
          setlocal 9
-         jump ofs7
-         ofs11:
+         jump ofs8
+         ofs12:
          pushstring "I hope the next game has more\n"
          pushstring "weapons.  This game could have\n"
          add
          pushstring "used a flame whip!\n"
          add
          setlocal 9
-         ofs7:
-         jump ofs12
+         ofs8:
+         jump ofs5
          ofs13:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -523,7 +547,7 @@ package
          add
          setlocal 9
          ofs17:
-         jump ofs12
+         jump ofs5
          ofs20:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -739,7 +763,7 @@ package
          add
          setlocal 9
          ofs23:
-         jump ofs12
+         jump ofs5
          ofs35:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -783,7 +807,7 @@ package
          add
          setlocal 9
          ofs37:
-         jump ofs12
+         jump ofs5
          ofs39:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -812,7 +836,7 @@ package
          add
          setlocal 9
          ofs41:
-         jump ofs12
+         jump ofs5
          ofs42:
          label
          getlocal 6
@@ -833,7 +857,7 @@ package
          add
          setlocal 9
          ofs44:
-         jump ofs12
+         jump ofs5
          ofs45:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -864,7 +888,7 @@ package
          add
          setlocal 9
          ofs48:
-         jump ofs12
+         jump ofs5
          ofs49:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -951,7 +975,7 @@ package
          add
          setlocal 9
          ofs51:
-         jump ofs12
+         jump ofs5
          ofs56:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -972,7 +996,7 @@ package
          add
          setlocal 9
          ofs58:
-         jump ofs12
+         jump ofs5
          ofs59:
          label
          getlocal 6
@@ -993,7 +1017,7 @@ package
          add
          setlocal 9
          ofs61:
-         jump ofs12
+         jump ofs5
          ofs62:
          label
          pushstring "Oh, "
@@ -1006,7 +1030,7 @@ package
          pushstring "             <3\n"
          add
          setlocal 9
-         jump ofs12
+         jump ofs5
          ofs63:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -1043,7 +1067,7 @@ package
          add
          setlocal 9
          ofs65:
-         jump ofs12
+         jump ofs5
          ofs66:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -1068,7 +1092,7 @@ package
          pushstring "Isn\'t breaking blocks fun!?\n"
          setlocal 9
          ofs68:
-         jump ofs12
+         jump ofs5
          ofs69:
          label
          pushstring "Wow!  It looks like you\'ve\n"
@@ -1086,7 +1110,7 @@ package
          pushstring "!\n"
          add
          setlocal 9
-         jump ofs12
+         jump ofs5
          ofs70:
          label
          getlocal 7
@@ -1133,7 +1157,7 @@ package
          add
          setlocal 9
          ofs72:
-         jump ofs12
+         jump ofs5
          ofs75:
          label
          getlocal 6
@@ -1253,7 +1277,7 @@ package
          add
          setlocal 9
          ofs77:
-         jump ofs12
+         jump ofs5
          ofs85:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -1295,7 +1319,7 @@ package
          add
          setlocal 9
          ofs88:
-         jump ofs12
+         jump ofs5
          ofs90:
          label
          getlocal 6
@@ -1316,7 +1340,7 @@ package
          add
          setlocal 9
          ofs92:
-         jump ofs12
+         jump ofs5
          ofs93:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -1351,7 +1375,7 @@ package
          add
          setlocal 9
          ofs95:
-         jump ofs12
+         jump ofs5
          ofs96:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -1378,7 +1402,7 @@ package
          add
          setlocal 9
          ofs98:
-         jump ofs12
+         jump ofs5
          ofs99:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -1412,7 +1436,7 @@ package
          add
          setlocal 9
          ofs101:
-         jump ofs12
+         jump ofs5
          ofs103:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -1439,7 +1463,7 @@ package
          add
          setlocal 9
          ofs105:
-         jump ofs12
+         jump ofs5
          ofs106:
          label
          getlocal 6
@@ -1457,7 +1481,7 @@ package
          findproperty QName(PrivateNamespace(null,"#SnailNpc"),"talkedToCaveSnail")
          pushtrue
          setproperty QName(PrivateNamespace(null,"#SnailNpc"),"talkedToCaveSnail")
-         jump ofs12
+         jump ofs5
          ofs109:
          label
          getlocal 6
@@ -1492,7 +1516,7 @@ package
          add
          setlocal 9
          ofs112:
-         jump ofs12
+         jump ofs5
          ofs114:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -1521,7 +1545,7 @@ package
          add
          setlocal 9
          ofs116:
-         jump ofs12
+         jump ofs5
          ofs117:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -1571,7 +1595,7 @@ package
          add
          setlocal 9
          ofs119:
-         jump ofs12
+         jump ofs5
          ofs121:
          label
          pushstring "With this \"Shell Shield\", you\n"
@@ -1580,7 +1604,7 @@ package
          pushstring "hide in your shell!\n"
          add
          setlocal 9
-         jump ofs12
+         jump ofs5
          ofs122:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -1641,7 +1665,7 @@ package
          add
          setlocal 9
          ofs125:
-         jump ofs12
+         jump ofs5
          ofs127:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -1675,7 +1699,7 @@ package
          add
          setlocal 9
          ofs129:
-         jump ofs12
+         jump ofs5
          ofs130:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -1715,7 +1739,7 @@ package
          ofs133:
          pushtrue
          setlocal 8
-         jump ofs12
+         jump ofs5
          ofs134:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -1796,7 +1820,7 @@ package
          ofs137:
          pushtrue
          setlocal 8
-         jump ofs12
+         jump ofs5
          ofs141:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -1848,7 +1872,7 @@ package
          ofs143:
          pushtrue
          setlocal 8
-         jump ofs12
+         jump ofs5
          ofs147:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -1961,7 +1985,7 @@ package
          ofs150:
          pushtrue
          setlocal 8
-         jump ofs12
+         jump ofs5
          ofs157:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -2012,7 +2036,7 @@ package
          ofs159:
          pushtrue
          setlocal 8
-         jump ofs12
+         jump ofs5
          ofs161:
          label
          getlocal 7
@@ -2052,7 +2076,7 @@ package
          ofs164:
          pushtrue
          setlocal 8
-         jump ofs12
+         jump ofs5
          ofs165:
          label
          pushstring "Wow! You found the secret room\n"
@@ -2061,7 +2085,7 @@ package
          setlocal 9
          pushtrue
          setlocal 8
-         jump ofs12
+         jump ofs5
          ofs166:
          label
          pushstring "Heya, "
@@ -2076,7 +2100,7 @@ package
          setlocal 9
          pushtrue
          setlocal 8
-         jump ofs12
+         jump ofs5
          ofs167:
          label
          pushstring "Where are we, "
@@ -2091,7 +2115,7 @@ package
          setlocal 9
          pushtrue
          setlocal 8
-         jump ofs12
+         jump ofs5
          ofs168:
          label
          pushstring ""
@@ -2104,7 +2128,7 @@ package
          pushstring "hobby: collecting prime numbers!\n"
          add
          setlocal 9
-         jump ofs12
+         jump ofs5
          ofs169:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -2258,7 +2282,7 @@ package
          add
          setlocal 9
          ofs178:
-         jump ofs12
+         jump ofs5
          ofs182:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -2286,7 +2310,7 @@ package
          add
          setlocal 9
          ofs184:
-         jump ofs12
+         jump ofs5
          ofs185:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -2352,7 +2376,7 @@ package
          add
          setlocal 9
          ofs187:
-         jump ofs12
+         jump ofs5
          ofs191:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -2394,7 +2418,7 @@ package
          add
          setlocal 9
          ofs193:
-         jump ofs12
+         jump ofs5
          ofs195:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -2420,7 +2444,7 @@ package
          add
          setlocal 9
          ofs197:
-         jump ofs12
+         jump ofs5
          ofs198:
          label
          getlocal1
@@ -2428,7 +2452,7 @@ package
          iffalse ofs199
          returnvoid
          ofs199:
-         jump ofs12
+         jump ofs5
          ofs200:
          label
          getlex QName(PackageNamespace(""),"PlayState")
@@ -2466,7 +2490,7 @@ package
          ofs202:
          pushtrue
          setlocal 8
-         jump ofs12
+         jump ofs5
          ofs204:
          label
          pushstring "Walleyes can\'t hurt you, "
@@ -2479,7 +2503,7 @@ package
          pushstring "them, right on the same wall!\n"
          add
          setlocal 9
-         jump ofs12
+         jump ofs5
          ofs205:
          label
          pushstring "So many secret snelks!  Have\n"
@@ -2490,7 +2514,7 @@ package
          setlocal 9
          pushtrue
          setlocal 8
-         jump ofs12
+         jump ofs5
          ofs206:
          label
          getlocal0
@@ -2526,7 +2550,7 @@ package
          pushstring "Whew!!  That was scary!!\n"
          setlocal 9
          ofs208:
-         jump ofs12
+         jump ofs5
          ofs210:
          label
          pushstring "zzzzz...  4,978,213...  zzzzz...\n"
@@ -2535,7 +2559,7 @@ package
          pushstring "zzzzz...  2,425,991...  zzzzz...\n"
          add
          setlocal 9
-         jump ofs12
+         jump ofs5
          ofs211:
          label
          pushstring "Have you tried hitting the\n"
@@ -2547,10 +2571,10 @@ package
          pushstring "shoot while holding still!\n"
          add
          setlocal 9
-         jump ofs12
+         jump ofs5
          ofs212:
          label
-         jump ofs12
+         jump ofs5
          ofs4:
          getlocal0
          getproperty QName(PrivateNamespace(null,"#SnailNpc"),"_snailNum")
@@ -2868,8 +2892,8 @@ package
          pushbyte 51
          ofs214:
          kill 10
-         lookupswitch ofs212, [ofs5, ofs13, ofs20, ofs35, ofs39, ofs42, ofs45, ofs49, ofs56, ofs59, ofs62, ofs63, ofs66, ofs69, ofs70, ofs75, ofs85, ofs90, ofs93, ofs96, ofs99, ofs103, ofs106, ofs109, ofs114, ofs117, ofs121, ofs122, ofs127, ofs130, ofs134, ofs141, ofs147, ofs157, ofs161, ofs165, ofs166, ofs167, ofs168, ofs169, ofs182, ofs185, ofs191, ofs195, ofs198, ofs200, ofs204, ofs205, ofs206, ofs210, ofs211, ofs212]
-         ofs12:
+         lookupswitch ofs212, [ofs6, ofs13, ofs20, ofs35, ofs39, ofs42, ofs45, ofs49, ofs56, ofs59, ofs62, ofs63, ofs66, ofs69, ofs70, ofs75, ofs85, ofs90, ofs93, ofs96, ofs99, ofs103, ofs106, ofs109, ofs114, ofs117, ofs121, ofs122, ofs127, ofs130, ofs134, ofs141, ofs147, ofs157, ofs161, ofs165, ofs166, ofs167, ofs168, ofs169, ofs182, ofs185, ofs191, ofs195, ofs198, ofs200, ofs204, ofs205, ofs206, ofs210, ofs211, ofs212]
+         ofs5:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"dialogue")
          getlocal 9

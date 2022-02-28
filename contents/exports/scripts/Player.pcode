@@ -657,7 +657,7 @@ package
          
          body
          maxstack 7
-         localcount 6
+         localcount 10
          initscopedepth 8
          maxscopedepth 9
          
@@ -857,12 +857,16 @@ package
          pushbyte 0
          initproperty QName(PackageNamespace(""),"gameTime")
          findproperty QName(PackageNamespace(""),"x")
-         getlex QName(PackageNamespace(""),"BOSSRUSH_STARTX")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"config")
+         callproperty QName(PackageNamespace(""),"getPlayerStartX"), 0
          pushbyte 16
          multiply
          initproperty QName(PackageNamespace(""),"x")
          findproperty QName(PackageNamespace(""),"y")
-         getlex QName(PackageNamespace(""),"BOSSRUSH_STARTY")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"config")
+         callproperty QName(PackageNamespace(""),"getPlayerStartY"), 0
          pushbyte 16
          multiply
          initproperty QName(PackageNamespace(""),"y")
@@ -9186,12 +9190,16 @@ package
          pushint 99999
          callpropvoid QName(PackageNamespace(""),"setCurHp"), 1
          findproperty QName(PackageNamespace(""),"x")
-         getlex QName(PackageNamespace(""),"BOSSRUSH_STARTX")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"config")
+         callproperty QName(PackageNamespace(""),"getPlayerStartX"), 0
          pushbyte 16
          multiply
          initproperty QName(PackageNamespace(""),"x")
          findproperty QName(PackageNamespace(""),"y")
-         getlex QName(PackageNamespace(""),"BOSSRUSH_STARTY")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"config")
+         callproperty QName(PackageNamespace(""),"getPlayerStartY"), 0
          pushbyte 16
          multiply
          initproperty QName(PackageNamespace(""),"y")

@@ -1138,11 +1138,11 @@ PrivateNamespace IDs:
 379: GameTimeDisplay/2
 380: WorldMap/3
 381: ExplosionPool/1
-382: MainMenu/1
+382: MainMenu/3
 383: MiniMap/1
 384: Boss4BulletGroups/1
-385: UniqueBlocks/1
-386: UniqueBlocks/2
+385: MainMenu/1
+386: MainMenu/2
 387: Boss4SecondFormBulletGroups/1
 388: EnemyBulletPool/1
 389: FixBlocks/1
