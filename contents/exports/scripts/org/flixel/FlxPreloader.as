@@ -68,7 +68,7 @@ package org.flixel
          stop();
          stage.scaleMode = StageScaleMode.NO_SCALE;
          stage.align = StageAlign.TOP_LEFT;
-         if(!FlxG.debug && this.myURL != null && root.loaderInfo.url.indexOf(this.myURL) < 0)
+         if(false && this.myURL != null && root.loaderInfo.url.indexOf(this.myURL) < 0)
          {
             _loc1_ = new Bitmap(new BitmapData(stage.stageWidth,stage.stageHeight,true,4294967295));
             addChild(_loc1_);
