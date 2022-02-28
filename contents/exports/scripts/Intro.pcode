@@ -759,12 +759,12 @@ package
          setlocal1
          getlocal0
          getproperty QName(PrivateNamespace(null,"#Intro"),"_dialogueLayer")
-         pushstring "YOU CAN DO IT, "
+         pushstring "NO ONE CAN, "
          getlocal1
          add
-         pushstring "!!\n"
+         pushstring "...\n"
          add
-         pushstring "        IT\'S UP TO YOU!!  GOOD LUCK!!\n"
+         pushstring "        IT\'S FAR TOO LATE...\n"
          add
          callpropvoid QName(PackageNamespace(""),"start"), 1
          ofs28:

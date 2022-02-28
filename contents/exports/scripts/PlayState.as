@@ -530,10 +530,10 @@ package
          switch(param1)
          {
             case 0:
-               Music.playTown();
+               Music.playNone();
                break;
             case 1:
-               Music.playArea1();
+               Music.playBoss2();
                break;
             case 2:
                Music.playArea2();
@@ -573,7 +573,6 @@ package
          }
          area = param1;
          var _loc2_:Array = ["SNAIL TOWN","MARE CARELIA","SPIRALIS SILERE","AMASTRIDA ABYSSUS","LUX LIRATA","???","SHRINE OF IRIS","BOSS RUSH"];
-         hud.areaName.setArea(_loc2_[area]);
          hud.radar.setNumber();
       }
       

@@ -1983,12 +1983,12 @@ package
          ofs1:
          label
          getlex QName(PackageNamespace(""),"Music")
-         callpropvoid QName(PackageNamespace(""),"playTown"), 0
+         callpropvoid QName(PackageNamespace(""),"playNone"), 0
          jump ofs2
          ofs3:
          label
          getlex QName(PackageNamespace(""),"Music")
-         callpropvoid QName(PackageNamespace(""),"playArea1"), 0
+         callpropvoid QName(PackageNamespace(""),"playBoss2"), 0
          jump ofs2
          ofs4:
          label
@@ -2151,12 +2151,6 @@ package
          newarray 8
          coerce QName(PackageNamespace(""),"Array")
          setlocal2
-         getlex QName(PackageNamespace(""),"hud")
-         getproperty QName(PackageNamespace(""),"areaName")
-         getlocal2
-         getlex QName(PackageNamespace(""),"area")
-         getproperty MultinameL([PrivateNamespace(null,"#PlayState/1"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#PlayState/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("PlayState"),StaticProtectedNs("PlayState"),StaticProtectedNs("org.flixel:FlxState"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
-         callpropvoid QName(PackageNamespace(""),"setArea"), 1
          getlex QName(PackageNamespace(""),"hud")
          getproperty QName(PackageNamespace(""),"radar")
          callpropvoid QName(PackageNamespace(""),"setNumber"), 0

@@ -46,6 +46,9 @@ package
                break;
             case "D":
                _loc2_ = 5;
+               break;
+            case " ":
+               _loc2_ = 6;
          }
          loadGraphic(Art.TitleLetter,true,true,IMG_WIDTH,IMG_HEIGHT);
          switch(_loc2_)
@@ -73,11 +76,14 @@ package
             case 5:
                width = 28;
                height = 43;
+            case 6:
+               width = 18;
+               height = 43;
          }
-         addAnimation("normal",[6 * 0 + _loc2_,6 * 3 + _loc2_,6 * 4 + _loc2_,6 * 3 + _loc2_,6 * 0 + _loc2_],10,false);
-         addAnimation("flash1",[6 * 0 + _loc2_,6 * 1 + _loc2_,6 * 2 + _loc2_,6 * 3 + _loc2_,6 * 4 + _loc2_,6 * 5 + _loc2_,6 * 6 + _loc2_,6 * 7 + _loc2_],30,true);
-         addAnimation("flash2",[6 * 0 + _loc2_,6 * 1 + _loc2_,6 * 2 + _loc2_,6 * 3 + _loc2_,6 * 4 + _loc2_,6 * 5 + _loc2_,6 * 6 + _loc2_,6 * 7 + _loc2_],20,true);
-         addAnimation("flash3",[6 * 0 + _loc2_,6 * 1 + _loc2_,6 * 2 + _loc2_,6 * 3 + _loc2_,6 * 4 + _loc2_,6 * 5 + _loc2_,6 * 6 + _loc2_,6 * 7 + _loc2_],10,true);
+         addAnimation("normal",[7 * 0 + _loc2_,7 * 3 + _loc2_,7 * 4 + _loc2_,7 * 3 + _loc2_,7 * 0 + _loc2_],10,false);
+         addAnimation("flash1",[7 * 0 + _loc2_,7 * 1 + _loc2_,7 * 2 + _loc2_,7 * 3 + _loc2_,7 * 4 + _loc2_,7 * 5 + _loc2_,7 * 6 + _loc2_,7 * 7 + _loc2_],30,true);
+         addAnimation("flash2",[7 * 0 + _loc2_,7 * 1 + _loc2_,7 * 2 + _loc2_,7 * 3 + _loc2_,7 * 4 + _loc2_,7 * 5 + _loc2_,7 * 6 + _loc2_,7 * 7 + _loc2_],20,true);
+         addAnimation("flash3",[7 * 0 + _loc2_,7 * 1 + _loc2_,7 * 2 + _loc2_,7 * 3 + _loc2_,7 * 4 + _loc2_,7 * 5 + _loc2_,7 * 6 + _loc2_,7 * 7 + _loc2_],10,true);
          scrollFactor.x = scrollFactor.y = 0;
          active = true;
          visible = false;
