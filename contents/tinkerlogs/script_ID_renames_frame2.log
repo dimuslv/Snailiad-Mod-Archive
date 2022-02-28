@@ -694,81 +694,80 @@ Class IDs:
 692: Base64Decoder -
 693: Base64Encoder -
 694: DustRing -
-695: Boss3Spawn -
-696: Boss3Shield -
-697: QueuedExplosion -
-698: Boss4RingCenter -
-699: Boss4SecondForm -
-700: Boss4ShadowBall -
-701: Boss1Eyes -
-702: Boss1Hand -
-703: Boss2Eye -
-704: Boss2Foot -
-705: Nom -
-706: EnemyBalloon -
-707: EnemyCannon2 -
-708: FlxTilemap_ImgAutoAlt -
-709: FlxTilemap_ImgAuto -
-710: Boss1RushHand -
-711: Boss4RushSecondForm -
-712: EnemyCannonTopBossRush -
-713: Boss2RushFoot -
-714: Boss2RushEye -
-715: EnemyBird2 -
-716: Boss3RushSpawn -
-717: Boss3RushShield -
-718: EnemyCannon -
-719: PowerNom -
-720: HelixHud -
-721: HeartHudSingle -
-722: EndingEnemy -
-723: StarOutwardLayer -
-724: IntroSpiral -
-725: CSSMergedStyleDeclaration -
-726: IStyleModule -
-727: en_US$styles_properties 0
-728: FlexChangeEvent -
-729: ModuleEvent -
-730: StyleEvent -
-731: ItemPendingError -
-732: IResponder -
-733: EvalBindingResponder -
-734: LayoutManager -
-735: HideShowEffectTargetFilter -
-736: AddRemoveEffectTargetFilter -
-737: TweenEvent -
-738: TweenEffectInstance -
-739: ZoomInstance -
-740: ToolTip -
-741: LocaleSorter -
-742: LocaleID 
-743: LocaleRegistry 
-744: IResourceModule -
-745: ResourceEvent -
-746: EmbeddedFontRegistry -
-747: ModuleManagerGlobals -
-748: ResourceModuleRSLItem -
-749: IPreloaderDisplay -
-750: RSLListLoader -
-751: ISystemCursorClient -
-752: CursorManagerPriority -
-753: XMLNotifier -
-754: XMLNotifierSingleton 
-755: en_US$utils_properties 0
-756: Dust -
-757: Boss4SecondFormBg -
-758: BossZzz -
-759: Boss2Pupil -
-760: Boss2Eyelid -
-761: EnemyCannonBossRush -
-762: Boss2RushEyelid -
-763: Boss2RushPupil -
-764: StarOutward -
-765: PriorityQueue -
-766: Tween -
-767: IXMLNotifiable -
-768: StarInwardLayer -
-769: StarInward -
+695: Boss3Shield -
+696: QueuedExplosion -
+697: Boss4RingCenter -
+698: Boss4SecondForm -
+699: Boss4ShadowBall -
+700: Boss1Eyes -
+701: Boss1Hand -
+702: Boss2Eye -
+703: Boss2Foot -
+704: Nom -
+705: EnemyBalloon -
+706: EnemyCannon2 -
+707: FlxTilemap_ImgAutoAlt -
+708: FlxTilemap_ImgAuto -
+709: Boss1RushHand -
+710: Boss4RushSecondForm -
+711: EnemyCannonTopBossRush -
+712: Boss2RushFoot -
+713: Boss2RushEye -
+714: EnemyBird2 -
+715: Boss3RushSpawn -
+716: Boss3RushShield -
+717: EnemyCannon -
+718: PowerNom -
+719: HelixHud -
+720: HeartHudSingle -
+721: EndingEnemy -
+722: StarOutwardLayer -
+723: IntroSpiral -
+724: CSSMergedStyleDeclaration -
+725: IStyleModule -
+726: en_US$styles_properties 0
+727: FlexChangeEvent -
+728: ModuleEvent -
+729: StyleEvent -
+730: ItemPendingError -
+731: IResponder -
+732: EvalBindingResponder -
+733: LayoutManager -
+734: HideShowEffectTargetFilter -
+735: AddRemoveEffectTargetFilter -
+736: TweenEvent -
+737: TweenEffectInstance -
+738: ZoomInstance -
+739: ToolTip -
+740: LocaleSorter -
+741: LocaleID 
+742: LocaleRegistry 
+743: IResourceModule -
+744: ResourceEvent -
+745: EmbeddedFontRegistry -
+746: ModuleManagerGlobals -
+747: ResourceModuleRSLItem -
+748: IPreloaderDisplay -
+749: RSLListLoader -
+750: ISystemCursorClient -
+751: CursorManagerPriority -
+752: XMLNotifier -
+753: XMLNotifierSingleton 
+754: en_US$utils_properties 0
+755: Dust -
+756: Boss4SecondFormBg -
+757: BossZzz -
+758: Boss2Pupil -
+759: Boss2Eyelid -
+760: EnemyCannonBossRush -
+761: Boss2RushEyelid -
+762: Boss2RushPupil -
+763: StarOutward -
+764: PriorityQueue -
+765: Tween -
+766: IXMLNotifiable -
+767: StarInwardLayer -
+768: StarInward -
 
 PrivateNamespace IDs:
 0: ModuleManager/1
@@ -864,7 +863,7 @@ PrivateNamespace IDs:
 90: Fire
 91: EnemySpikey2
 92: EnemySpider2
-93: SnailNpc
+93: 
 94: EnemyDandelion
 95: Grass
 96: EnemyFireball
@@ -972,7 +971,7 @@ PrivateNamespace IDs:
 198: Base64Decoder
 199: Base64Encoder
 200: DustRing
-201: Boss3Spawn
+201: 
 202: QueuedExplosion
 203: Boss4RingCenter
 204: Boss4SecondForm
@@ -1126,8 +1125,8 @@ PrivateNamespace IDs:
 352: FlxSave/2
 353: FlxConsole/1
 354: FlxConsole/2
-355: PlayState/1
-356: PlayState/2
+355: 
+356: 
 357: CSSStyleDeclaration/1
 358: SpriteAsset/1
 359: GroupBase/1
@@ -1218,7 +1217,7 @@ PrivateNamespace IDs:
 444: Boss1/1
 445: Boss2/1
 446: EnemySpider2/1
-447: SnailNpc/1
+447: 
 448: EnemyBalloonGenerator/1
 449: EnemyDandelionGenerator/1
 450: UniqueItem/1
@@ -1294,3 +1293,14 @@ PrivateNamespace IDs:
 520: PriorityQueue/1
 521: Tween/1
 522: StarInwardLayer/1
+523: 
+524: 
+525: 
+526: 
+527: PlayState/1
+528: 
+529: 
+530: 
+531: 
+532: 
+533: SnailNpc

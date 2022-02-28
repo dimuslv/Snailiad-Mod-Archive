@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<swf compression="ZLIB" frameCount="2" frameRate="24.0" gfx="false" hasEndTag="true" type="SWF" version="10">
+<swf compression="ZLIB" frameCount="2" frameRate="24.0" gfx="false" hasEndTag="false" type="SWF" version="10">
   <!--WARNING: The structure of this XML is not final. In later versions of FFDec it can be changed.-->
   <!--JPEXS Free Flash Decompiler v.15.0.0-->
   <displayRect Xmax="16000" Xmin="0" Ymax="9600" Ymin="0" nbits="15" type="RECT" />
@@ -13120,7 +13120,7 @@
         <item type="ShowFrameTag" />
       </subTags>
     </item>
-    <item soundData="" soundFormat="2" soundId="39" soundRate="3" soundSampleCount="2557995" soundSize="true" soundType="false" type="DefineSoundTag" />
+    <item soundData="" soundFormat="2" soundId="39" soundRate="3" soundSampleCount="3954816" soundSize="true" soundType="false" type="DefineSoundTag" />
     <item soundData="" soundFormat="2" soundId="40" soundRate="3" soundSampleCount="1786346" soundSize="true" soundType="false" type="DefineSoundTag" />
     <item soundData="" soundFormat="2" soundId="41" soundRate="3" soundSampleCount="3628827" soundSize="true" soundType="false" type="DefineSoundTag" />
     <item soundData="" soundFormat="2" soundId="42" soundRate="3" soundSampleCount="2322670" soundSize="true" soundType="false" type="DefineSoundTag" />
@@ -13128,7 +13128,7 @@
     <item soundData="" soundFormat="2" soundId="44" soundRate="3" soundSampleCount="3951796" soundSize="true" soundType="false" type="DefineSoundTag" />
     <item soundData="" soundFormat="2" soundId="45" soundRate="3" soundSampleCount="2289022" soundSize="true" soundType="false" type="DefineSoundTag" />
     <item soundData="" soundFormat="2" soundId="46" soundRate="3" soundSampleCount="3726105" soundSize="true" soundType="false" type="DefineSoundTag" />
-    <item soundData="" soundFormat="2" soundId="47" soundRate="3" soundSampleCount="4516288" soundSize="true" soundType="false" type="DefineSoundTag" />
+    <item soundData="" soundFormat="2" soundId="47" soundRate="3" soundSampleCount="450432" soundSize="true" soundType="true" type="DefineSoundTag" />
     <item soundData="" soundFormat="2" soundId="48" soundRate="3" soundSampleCount="1814896" soundSize="true" soundType="false" type="DefineSoundTag" />
     <item binaryData="" reserved="0" tag="49" type="DefineBinaryDataTag" />
     <item binaryData="" reserved="0" tag="50" type="DefineBinaryDataTag" />
