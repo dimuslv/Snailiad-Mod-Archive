@@ -223,7 +223,13 @@ package
          pushstring "SECRET SNELK"
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
-         pushbyte 0
+         pushbyte -24
+         getlex QName(PackageNamespace(""),"EndingEnemy")
+         getproperty QName(PackageNamespace(""),"TYPE_GRAYKITTY")
+         pushstring ""
+         callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
+         getlocal0
+         pushbyte 24
          getlex QName(PackageNamespace(""),"EndingEnemy")
          getproperty QName(PackageNamespace(""),"TYPE_KITTY")
          pushstring "KITTY!!"
@@ -235,16 +241,28 @@ package
          pushstring "GHOST DANDELION"
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
-         pushbyte -12
+         pushbyte -18
          getlex QName(PackageNamespace(""),"EndingEnemy")
-         getproperty Multiname("TYPE_DYNAMITE",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":EndingCredits"),ProtectedNamespace(":EndingCredits"),StaticProtectedNs(":EndingCredits"),PrivateNamespace("EndingCredits.as$398")])
+         getproperty QName(PackageNamespace(""),"TYPE_DYNAMITE")
          pushstring ""
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
-         pushbyte 12
+         pushbyte 0
          getlex QName(PackageNamespace(""),"EndingEnemy")
-         getproperty Multiname("TYPE_DYNATITE",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":EndingCredits"),ProtectedNamespace(":EndingCredits"),StaticProtectedNs(":EndingCredits"),PrivateNamespace("EndingCredits.as$398")])
-         pushstring "DYNAMITE AND DYNATITE"
+         getproperty QName(PackageNamespace(""),"TYPE_DYNATITE")
+         pushstring ""
+         callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
+         getlocal0
+         pushbyte 18
+         getlex QName(PackageNamespace(""),"EndingEnemy")
+         getproperty QName(PackageNamespace(""),"TYPE_DYNARITE")
+         pushstring "DYNAMITE, DYNATITE, AND DYNARITE"
+         callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
+         getlocal0
+         pushbyte 0
+         getlex QName(PackageNamespace(""),"EndingEnemy")
+         getproperty QName(PackageNamespace(""),"TYPE_DYNALEFT")
+         pushstring "DYNALEFT"
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
          pushbyte -30
@@ -299,18 +317,6 @@ package
          getlex QName(PackageNamespace(""),"EndingEnemy")
          getproperty QName(PackageNamespace(""),"TYPE_SKY_SNAKE")
          pushstring "SKY VIPER"
-         callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
-         getlocal0
-         pushbyte 0
-         getlex QName(PackageNamespace(""),"EndingEnemy")
-         getproperty QName(PackageNamespace(""),"TYPE_SPIDER")
-         pushstring "SPIDER"
-         callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
-         getlocal0
-         pushbyte 0
-         getlex QName(PackageNamespace(""),"EndingEnemy")
-         getproperty QName(PackageNamespace(""),"TYPE_SPIDER_MAMA")
-         pushstring "SPIDER MAMA"
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
          pushbyte 0
@@ -645,7 +651,7 @@ package
          getlocal0
          pushbyte 0
          getlex QName(PackageNamespace(""),"EndingEnemy")
-         getproperty Multiname("TYPE_EPSILON",[PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageInternalNs(""),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),PrivateNamespace(":EndingCredits"),ProtectedNamespace(":EndingCredits"),StaticProtectedNs(":EndingCredits"),PrivateNamespace("EndingCredits.as$398")])
+         getproperty QName(PackageNamespace(""),"TYPE_EPSILON")
          pushstring "EPSILON\n(MAPPER AND MODDER)"
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
@@ -657,8 +663,20 @@ package
          getlocal0
          pushbyte 0
          getlex QName(PackageNamespace(""),"EndingEnemy")
+         getproperty QName(PackageNamespace(""),"TYPE_DIMUSLV")
+         pushstring "DIMUSLV\n(HELPED MASSIVELY WITH GETTING THE\nEASTERN TOWN WARP WORKING!)"
+         callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
+         getlocal0
+         getlocal0
+         getproperty QName(PrivateNamespace(":EndingCredits"),"createY")
+         pushbyte 10
+         add
+         setproperty QName(PrivateNamespace(":EndingCredits"),"createY")
+         getlocal0
+         pushbyte 0
+         getlex QName(PackageNamespace(""),"EndingEnemy")
          getproperty QName(PackageNamespace(""),"TYPE_NONE")
-         pushstring "THOSE ON THE SNAILIAD\nDISCORD WHO HELPED ME\nWHEN I NEEDED IT"
+         pushstring "EVERYONE ELSE ON THE SNAILIAD\nDISCORD WHO HELPED ME\nWHEN I NEEDED IT"
          callpropvoid QName(PackageNamespace(""),"addEnemy"), 3
          getlocal0
          getlocal0
@@ -756,8 +774,8 @@ package
          debug 1, "param1", 0, 0
          debug 1, "param2", 1, 0
          debug 1, "param3", 2, 0
-         debug 1, "_loc4_", 3, 133
-         debug 1, "_loc5_", 4, 134
+         debug 1, "_loc4_", 3, 136
+         debug 1, "_loc5_", 4, 137
          pushnull
          coerce QName(PackageNamespace(""),"EndingEnemy")
          setlocal 4

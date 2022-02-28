@@ -464,7 +464,7 @@ package
          
          body
          maxstack 4
-         localcount 1
+         localcount 3
          initscopedepth 10
          maxscopedepth 11
          
@@ -476,10 +476,16 @@ package
          getlex QName(PrivateNamespace(":EnemyMoth"),"MAX_SPEED")
          ifnlt ofs0
          getlocal0
-         getlocal0
+         dup
+         setlocal1
          getproperty QName(PrivateNamespace(":EnemyMoth"),"_speed")
-         increment
+         increment_i
+         setlocal2
+         getlocal1
+         getlocal2
          setproperty QName(PrivateNamespace(":EnemyMoth"),"_speed")
+         kill 2
+         kill 1
          ofs0:
          findpropstrict QName(PackageNamespace(""),"x")
          getlex QName(PackageNamespace(""),"x")
@@ -660,7 +666,6 @@ package
          getlocal1
          getlex QName(PackageNamespace(""),"y")
          ifgt ofs19
-         jump ofs8
          ofs21:
          label
          jump ofs8
@@ -859,8 +864,6 @@ package
          getlocal0
          callpropvoid QName(PackageNamespace(""),"findWalls"), 0
          ofs16:
-         jump ofs7
-         ofs17:
          label
          jump ofs7
          ofs3:
@@ -869,46 +872,46 @@ package
          setlocal1
          pushbyte 1
          getlocal1
-         ifstrictne ofs18
+         ifstrictne ofs17
          pushbyte 0
-         jump ofs19
-         ofs18:
+         jump ofs18
+         ofs17:
          pushbyte 2
+         getlocal1
+         ifstrictne ofs19
+         pushbyte 1
+         jump ofs18
+         ofs19:
+         pushbyte 3
          getlocal1
          ifstrictne ofs20
-         pushbyte 1
-         jump ofs19
-         ofs20:
-         pushbyte 3
-         getlocal1
-         ifstrictne ofs21
          pushbyte 2
-         jump ofs19
-         ofs21:
+         jump ofs18
+         ofs20:
          pushbyte 4
          getlocal1
-         ifstrictne ofs22
+         ifstrictne ofs21
          pushbyte 3
-         jump ofs19
+         jump ofs18
+         ofs21:
+         jump ofs22
+         pushbyte -1
+         jump ofs22
          ofs22:
-         jump ofs23
          pushbyte -1
-         jump ofs23
-         ofs23:
-         pushbyte -1
-         ofs19:
+         ofs18:
          kill 1
-         lookupswitch ofs17, [ofs4, ofs8, ofs11, ofs14]
+         lookupswitch ofs16, [ofs4, ofs8, ofs11, ofs14]
          ofs7:
          getlocal0
          getproperty QName(PrivateNamespace(":EnemyMoth"),"_seesPlayer")
          dup
-         iffalse ofs24
+         iffalse ofs23
          pop
          getlocal0
          getproperty QName(PrivateNamespace(":EnemyMoth"),"_isAttacking")
          not
-         ofs24:
+         ofs23:
          iffalse ofs2
          findpropstrict QName(PackageNamespace(""),"play")
          pushstring "attack"
@@ -924,10 +927,10 @@ package
          ofs2:
          getlocal0
          getproperty QName(PrivateNamespace(":EnemyMoth"),"_isAttacking")
-         iffalse ofs25
+         iffalse ofs24
          getlocal0
          callpropvoid QName(PackageNamespace(""),"updatePosition"), 0
-         ofs25:
+         ofs24:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"worldMap")
          getlex QName(PackageNamespace(""),"x")
@@ -937,7 +940,7 @@ package
          pushbyte 8
          add
          callproperty QName(PackageNamespace(""),"enemySolidAt"), 2
-         iffalse ofs26
+         iffalse ofs25
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"explosionPool")
          getlex QName(PackageNamespace(""),"x")
@@ -952,7 +955,7 @@ package
          callpropvoid QName(PackageNamespace(""),"playEnemyKilled"), 0
          findpropstrict QName(PackageNamespace(""),"kill")
          callpropvoid QName(PackageNamespace(""),"kill"), 0
-         ofs26:
+         ofs25:
          getlocal0
          callsupervoid QName(PackageNamespace(""),"update"), 0
          returnvoid

@@ -199,6 +199,8 @@ package
       
       public var fadeInterval:uint = 0;
       
+      public var hasEastTown:Boolean = false;
+      
       public function MainMenu()
       {
          this.hasEnding = [false,false,false,false,false,false];
@@ -294,6 +296,10 @@ package
          if(_loc1_.xml.vars && _loc1_.isVarTrue("toggleFire"))
          {
             Player.firingMode = Player.FIRING_MODE_TOGGLE;
+         }
+         if(_loc1_.xml.vars && _loc1_.isVarTrue("bossesKilledOne"))
+         {
+            this.hasEastTown = true;
          }
          if(_loc1_.xml.vars && _loc1_.isVarTrue("hasWonBossRush"))
          {
@@ -1463,6 +1469,10 @@ package
          this.addOption("",null,false);
          this.addOption("START FROM SAVE POINT",PlayState.loadGame,true);
          this.addOption("START FROM WESTERN TOWN",PlayState.loadGameFromTown,true);
+         if(this.hasEastTown)
+         {
+            this.addOption("START FROM EASTERN TOWN",PlayState.loadGameFromTown2,true);
+         }
          this.curOption = 3;
          this.centerMenu();
       }

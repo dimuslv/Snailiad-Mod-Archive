@@ -44,10 +44,13 @@ package
          this.addEnemy(-12,EndingEnemy.TYPE_FIREBALL,"");
          this.addEnemy(12,EndingEnemy.TYPE_ICEBALL,"FIREBALL AND ICEBALL");
          this.addEnemy(0,EndingEnemy.TYPE_SECRET_SNELK,"SECRET SNELK");
-         this.addEnemy(0,EndingEnemy.TYPE_KITTY,"KITTY!!");
+         this.addEnemy(-24,EndingEnemy.TYPE_GRAYKITTY,"");
+         this.addEnemy(24,EndingEnemy.TYPE_KITTY,"KITTY!!");
          this.addEnemy(0,EndingEnemy.TYPE_DANDELION,"GHOST DANDELION");
-         this.addEnemy(-12,EndingEnemy.TYPE_DYNAMITE,"");
-         this.addEnemy(12,EndingEnemy.TYPE_DYNATITE,"DYNAMITE AND DYNATITE");
+         this.addEnemy(-18,EndingEnemy.TYPE_DYNAMITE,"");
+         this.addEnemy(0,EndingEnemy.TYPE_DYNATITE,"");
+         this.addEnemy(18,EndingEnemy.TYPE_DYNARITE,"DYNAMITE, DYNATITE, AND DYNARITE");
+         this.addEnemy(0,EndingEnemy.TYPE_DYNALEFT,"DYNALEFT");
          this.addEnemy(-30,EndingEnemy.TYPE_CANNON,"");
          this.addEnemy(-30,EndingEnemy.TYPE_CANNON_HUB,"");
          this.addEnemy(30,EndingEnemy.TYPE_CANNON2,"");
@@ -57,8 +60,6 @@ package
          this.addEnemy(-20,EndingEnemy.TYPE_SNAKEY,"");
          this.addEnemy(20,EndingEnemy.TYPE_BLUE_SNAKEY,"SNAKEY");
          this.addEnemy(0,EndingEnemy.TYPE_SKY_SNAKE,"SKY VIPER");
-         this.addEnemy(0,EndingEnemy.TYPE_SPIDER,"SPIDER");
-         this.addEnemy(0,EndingEnemy.TYPE_SPIDER_MAMA,"SPIDER MAMA");
          this.addEnemy(0,EndingEnemy.TYPE_GRAVITY_TURTLE,"GRAVITY TURTLE");
          this.addEnemy(0,EndingEnemy.TYPE_CHERRY_TURTLE,"GRAVITY TURTLE (CHERRY RED FINISH)");
          this.addEnemy(0,EndingEnemy.TYPE_JELLYFISH,"JELLYFISH");
@@ -116,7 +117,9 @@ package
          this.createY += 10;
          this.addEnemy(0,EndingEnemy.TYPE_EPSILON,"EPSILON\n(MAPPER AND MODDER)");
          this.createY += 10;
-         this.addEnemy(0,EndingEnemy.TYPE_NONE,"THOSE ON THE SNAILIAD\nDISCORD WHO HELPED ME\nWHEN I NEEDED IT");
+         this.addEnemy(0,EndingEnemy.TYPE_DIMUSLV,"DIMUSLV\n(HELPED MASSIVELY WITH GETTING THE\nEASTERN TOWN WARP WORKING!)");
+         this.createY += 10;
+         this.addEnemy(0,EndingEnemy.TYPE_NONE,"EVERYONE ELSE ON THE SNAILIAD\nDISCORD WHO HELPED ME\nWHEN I NEEDED IT");
          this.createY += 70;
          this.addEnemy(0,EndingEnemy.TYPE_NONE,"AND YOU\n\n\n" + "BECAUSE SERIOUSLY, WHY NOT\n\n\n" + "ALL THE OTHER GAMES\n" + "PUT \"AND YOU\" IN THE CREDITS\n" + "SO I FIGURE, \"AND YOU\" MUST BE\n" + "SOMEONE PRETTY COOL\n\n\n" + "THANKS, AND YOU!!");
          this.createY += 40;

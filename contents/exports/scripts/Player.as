@@ -675,12 +675,17 @@ package
             WEAPON_PREV_KEY = _loc3_.weapPrevKey;
             x = Number(Number(Number(Number(Number(_loc3_.savex)))));
             y = Number(Number(Number(Number(Number(_loc3_.savey)))));
-            if(PlayState.startFromTown)
+            if(PlayState.startFromTown == 1)
             {
                x = Number(Number(Number(Number(Number(PlayState.config.getPlayerStartX() * 16)))));
                y = Number(Number(Number(Number(Number(PlayState.config.getPlayerStartY() * 16)))));
             }
-            if(!PlayState.startFromTown)
+            if(PlayState.startFromTown == 2)
+            {
+               x = 481 * 16;
+               y = 90 * 16;
+            }
+            if(PlayState.startFromTown == 0)
             {
                this.saveOnNextFrame = true;
             }

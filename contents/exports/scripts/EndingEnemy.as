@@ -140,6 +140,14 @@ package
       public static const TYPE_DYNAMITE:int = 64;
       
       public static const TYPE_DYNATITE:int = 65;
+      
+      public static const TYPE_DYNARITE:int = 66;
+      
+      public static const TYPE_DYNALEFT:int = 67;
+      
+      public static const TYPE_DIMUSLV:int = 68;
+      
+      public static const TYPE_GRAYKITTY:int = 69;
        
       
       private var _hand:Boolean;
@@ -445,6 +453,22 @@ package
             case TYPE_DYNATITE:
                loadGraphic(Art.EnemyMoth,true,true,16,16);
                addAnimation("normal",[12,13],5,true);
+               break;
+            case TYPE_DYNARITE:
+               loadGraphic(Art.EnemyMoth,true,true,16,16);
+               addAnimation("normal",[0,1],5,true);
+               break;
+            case TYPE_DYNALEFT:
+               loadGraphic(Art.EnemyMoth,true,true,16,16);
+               addAnimation("normal",[8,9],5,true);
+               break;
+            case TYPE_DIMUSLV:
+               loadGraphic(Art.PixelPeople,true,true,18,32);
+               addAnimation("normal",[5]);
+               break;
+            case TYPE_GRAYKITTY:
+               loadGraphic(Art.EnemyKitty,true,true,32,16);
+               addAnimation("normal",[0]);
          }
          play("normal");
          x = Number(FlxG.width / 2 - width / 2 + param1);

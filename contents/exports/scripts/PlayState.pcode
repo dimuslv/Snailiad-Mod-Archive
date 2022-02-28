@@ -76,7 +76,7 @@ package
       
       public static var endingNum:int = 0;
       
-      public static var startFromTown:Boolean = false;
+      public static var startFromTown:int = 0;
       
       public static var hasGoodEnding:Boolean = false;
       
@@ -245,7 +245,7 @@ package
          pushbyte 0
          setproperty QName(PackageNamespace(""),"endingNum")
          findproperty QName(PackageNamespace(""),"startFromTown")
-         pushfalse
+         pushbyte 0
          setproperty QName(PackageNamespace(""),"startFromTown")
          findproperty QName(PackageNamespace(""),"hasGoodEnding")
          pushfalse
@@ -330,7 +330,7 @@ package
          end ; method
       }
       
-      public static function loadGame(param1:Boolean = false) : void
+      public static function loadGame(param1:int = 0) : void
       {
          trait method QName(PackageNamespace(""),"loadGame")
          flag FINAL
@@ -338,8 +338,8 @@ package
          method
          name "PlayState:loadGame"
          flag HAS_OPTIONAL
-         param QName(PackageNamespace(""),"Boolean")
-         optional False()
+         param QName(PackageNamespace(""),"int")
+         optional Integer(0)
          returns QName(PackageNamespace(""),"void")
          
          body
@@ -432,7 +432,7 @@ package
          getlocal0
          pushscope
          findpropstrict QName(PackageNamespace(""),"loadGame")
-         pushtrue
+         pushbyte 1
          callpropvoid QName(PackageNamespace(""),"loadGame"), 1
          returnvoid
          end ; code
@@ -2676,6 +2676,33 @@ package
          getslot 1
          pushtrue
          setproperty QName(PackageNamespace(""),"isBossRushComplete")
+         returnvoid
+         end ; code
+         end ; body
+         end ; method
+      }
+      
+      public static function loadGameFromTown2() : void
+      {
+         trait method QName(PackageNamespace(""),"loadGameFromTown2")
+         flag FINAL
+         dispid 28
+         method
+         name "PlayState:loadGameFromTown2"
+         returns QName(PackageNamespace(""),"void")
+         
+         body
+         maxstack 2
+         localcount 1
+         initscopedepth 10
+         maxscopedepth 11
+         
+         code
+         getlocal0
+         pushscope
+         getlex QName(PackageNamespace(""),"PlayState")
+         pushbyte 2
+         callpropvoid QName(PackageNamespace(""),"loadGame"), 1
          returnvoid
          end ; code
          end ; body

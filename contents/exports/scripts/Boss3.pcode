@@ -142,7 +142,7 @@ package
          pushshort 5100
          initproperty QName(PrivateNamespace(":Boss3"),"MAX_HP")
          findproperty QName(PrivateNamespace(":Boss3"),"DEFENSE")
-         pushbyte 18
+         pushbyte 12
          initproperty QName(PrivateNamespace(":Boss3"),"DEFENSE")
          findproperty QName(PrivateNamespace(":Boss3"),"OFFENSE")
          pushbyte 4

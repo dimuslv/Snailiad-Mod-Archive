@@ -335,6 +335,8 @@ package
       
       public var fadeInterval:uint = 0;
       
+      public var hasEastTown:Boolean = false;
+      
       public function MainMenu()
       {
          method
@@ -706,11 +708,28 @@ package
          iffalse ofs14
          pop
          getlocal1
-         pushstring "hasWonBossRush"
+         pushstring "bossesKilledOne"
          callproperty QName(PackageNamespace(""),"isVarTrue"), 1
          convert_b
          ofs14:
          iffalse ofs15
+         getlocal0
+         pushtrue
+         setproperty QName(PackageNamespace(""),"hasEastTown")
+         ofs15:
+         getlocal1
+         getproperty QName(PackageNamespace(""),"xml")
+         getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         convert_b
+         dup
+         iffalse ofs16
+         pop
+         getlocal1
+         pushstring "hasWonBossRush"
+         callproperty QName(PackageNamespace(""),"isVarTrue"), 1
+         convert_b
+         ofs16:
+         iffalse ofs17
          getlocal0
          pushtrue
          initproperty QName(PackageNamespace(""),"hasHardMode")
@@ -719,30 +738,30 @@ package
          getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getproperty Multiname("bestBossRushTime",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushbyte 0
-         ifngt ofs16
+         ifngt ofs18
          getlocal0
          getproperty QName(PackageNamespace(""),"hasEnding")
          pushbyte 1
          pushtrue
          setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         ofs16:
+         ofs18:
          getlocal0
          pushdouble 4.281335856E9
          initproperty QName(PackageNamespace(""),"bgColor")
-         ofs15:
+         ofs17:
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          dup
-         iffalse ofs17
+         iffalse ofs19
          pop
          getlocal1
          pushstring "hasWonHardMode"
          callproperty QName(PackageNamespace(""),"isVarTrue"), 1
          convert_b
-         ofs17:
-         iffalse ofs18
+         ofs19:
+         iffalse ofs20
          getlocal0
          pushfalse
          initproperty QName(PackageNamespace(""),"hasInsaneMode")
@@ -754,83 +773,83 @@ package
          getlocal0
          pushdouble 4.278202416E9
          initproperty QName(PackageNamespace(""),"bgColor")
-         ofs18:
-         getlocal0
-         getproperty QName(PackageNamespace(""),"bestNormalTime")
-         pushbyte 0
-         greaterthan
-         dup
-         iffalse ofs19
-         pop
-         getlocal0
-         getproperty QName(PackageNamespace(""),"bestNormalTime")
-         getlex QName(PackageNamespace(""),"FAST_ENDING_CUTOFF")
-         lessthan
-         ofs19:
-         dup
-         iftrue ofs20
-         pop
-         getlocal0
-         getproperty QName(PackageNamespace(""),"bestHardTime")
-         pushbyte 0
-         greaterthan
-         dup
-         iffalse ofs20
-         pop
-         getlocal0
-         getproperty QName(PackageNamespace(""),"bestHardTime")
-         getlex QName(PackageNamespace(""),"FAST_ENDING_CUTOFF")
-         lessthan
          ofs20:
-         dup
-         iftrue ofs21
-         pop
          getlocal0
-         getproperty QName(PackageNamespace(""),"bestInsaneTime")
+         getproperty QName(PackageNamespace(""),"bestNormalTime")
          pushbyte 0
          greaterthan
          dup
          iffalse ofs21
          pop
          getlocal0
-         getproperty QName(PackageNamespace(""),"bestInsaneTime")
+         getproperty QName(PackageNamespace(""),"bestNormalTime")
          getlex QName(PackageNamespace(""),"FAST_ENDING_CUTOFF")
          lessthan
          ofs21:
+         dup
+         iftrue ofs22
+         pop
+         getlocal0
+         getproperty QName(PackageNamespace(""),"bestHardTime")
+         pushbyte 0
+         greaterthan
+         dup
          iffalse ofs22
+         pop
+         getlocal0
+         getproperty QName(PackageNamespace(""),"bestHardTime")
+         getlex QName(PackageNamespace(""),"FAST_ENDING_CUTOFF")
+         lessthan
+         ofs22:
+         dup
+         iftrue ofs23
+         pop
+         getlocal0
+         getproperty QName(PackageNamespace(""),"bestInsaneTime")
+         pushbyte 0
+         greaterthan
+         dup
+         iffalse ofs23
+         pop
+         getlocal0
+         getproperty QName(PackageNamespace(""),"bestInsaneTime")
+         getlex QName(PackageNamespace(""),"FAST_ENDING_CUTOFF")
+         lessthan
+         ofs23:
+         iffalse ofs24
          getlocal0
          getproperty QName(PackageNamespace(""),"hasEnding")
          pushbyte 3
          pushtrue
          setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         ofs22:
+         ofs24:
          getlocal1
          getproperty QName(PackageNamespace(""),"xml")
          getproperty Multiname("vars",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          convert_b
          dup
-         iffalse ofs23
+         iffalse ofs25
          pop
          getlocal1
          pushstring "hasWonInsaneMode"
          callproperty QName(PackageNamespace(""),"isVarTrue"), 1
          convert_b
-         ofs23:
-         iffalse ofs24
+         ofs25:
+         iffalse ofs26
          getlocal0
          pushdouble 4.278202416E9
          initproperty QName(PackageNamespace(""),"bgColor")
-         ofs24:
+         ofs26:
          getlocal0
          getproperty QName(PackageNamespace(""),"bestInsaneTime")
          pushbyte 0
-         ifngt ofs25
+         ifngt ofs27
          getlocal0
          getproperty QName(PackageNamespace(""),"hasEnding")
          pushbyte 4
          pushtrue
          setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         ofs25:
+         ofs27:
          returnvoid
          end ; code
          end ; body
@@ -5997,6 +6016,16 @@ package
          getproperty QName(PackageNamespace(""),"loadGameFromTown")
          pushtrue
          callpropvoid QName(PackageNamespace(""),"addOption"), 3
+         getlocal0
+         getproperty QName(PackageNamespace(""),"hasEastTown")
+         iffalse ofs0
+         getlocal0
+         pushstring "START FROM EASTERN TOWN"
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"loadGameFromTown2")
+         pushtrue
+         callpropvoid QName(PackageNamespace(""),"addOption"), 3
+         ofs0:
          getlocal0
          pushbyte 3
          initproperty QName(PackageNamespace(""),"curOption")

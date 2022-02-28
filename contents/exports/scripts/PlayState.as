@@ -31,7 +31,7 @@ package
       
       public static var endingNum:int = 0;
       
-      public static var startFromTown:Boolean = false;
+      public static var startFromTown:int = 0;
       
       public static var hasGoodEnding:Boolean = false;
       
@@ -161,7 +161,7 @@ package
          super();
       }
       
-      public static function loadGame(param1:Boolean = false) : void
+      public static function loadGame(param1:int = 0) : void
       {
          if(player)
          {
@@ -186,7 +186,7 @@ package
       
       public static function loadGameFromTown() : void
       {
-         loadGame(true);
+         loadGame(1);
       }
       
       public static function startBossRush() : void
@@ -664,6 +664,11 @@ package
          }
          _loc1_.saveAll();
          PlayState.isBossRushComplete = true;
+      }
+      
+      public static function loadGameFromTown2() : void
+      {
+         PlayState.loadGame(2);
       }
       
       override public function destroy() : void

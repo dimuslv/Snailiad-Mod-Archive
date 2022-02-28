@@ -42,7 +42,7 @@ package
       
       private static const FULL_OFS_Y:int = 24;
       
-      public static const MAX_KNOWN:int = 324;
+      public static const MAX_KNOWN:int = 373;
        
       
       private var totalKnownText:FlxText;

@@ -332,7 +332,7 @@ Class IDs:
 330: Boss2Rush -
 331: GiantBlock1 -
 332: IceSpikeTop -
-333: Devastator -
+333: Devastator 0
 334: EnemyFireball2 -
 335: EnemyBird2Generator -
 336: EnemyMoth 0
@@ -1059,7 +1059,7 @@ PrivateNamespace IDs:
 285: Smoke
 286: HelixFragment
 287: ShellShield
-288: Devastator
+288: 
 289: 
 290: GravityShock
 291: HiJump

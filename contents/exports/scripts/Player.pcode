@@ -1995,7 +1995,8 @@ package
          setproperty QName(PackageNamespace(""),"y")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"startFromTown")
-         iffalse ofs62
+         pushbyte 1
+         ifne ofs62
          findpropstrict QName(PackageNamespace(""),"x")
          findpropstrict QName(PackageNamespace(""),"Number")
          findpropstrict QName(PackageNamespace(""),"Number")
@@ -2033,8 +2034,23 @@ package
          ofs62:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"startFromTown")
-         not
-         iffalse ofs1
+         pushbyte 2
+         ifne ofs63
+         findpropstrict QName(PackageNamespace(""),"x")
+         pushshort 481
+         pushbyte 16
+         multiply
+         setproperty QName(PackageNamespace(""),"x")
+         findpropstrict QName(PackageNamespace(""),"y")
+         pushshort 90
+         pushbyte 16
+         multiply
+         setproperty QName(PackageNamespace(""),"y")
+         ofs63:
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"startFromTown")
+         pushbyte 0
+         ifne ofs1
          getlocal0
          pushtrue
          setproperty QName(PackageNamespace(""),"saveOnNextFrame")
@@ -2056,8 +2072,8 @@ package
          callpropvoid QName(PackageNamespace(""),"loadGraphic"), 5
          pushbyte 0
          setlocal 4
-         jump ofs63
-         ofs64:
+         jump ofs64
+         ofs65:
          label
          getlocal 4
          pushbyte 20
@@ -2066,7 +2082,7 @@ package
          setlocal 5
          getlocal0
          getproperty QName(PackageNamespace(""),"_slugMode")
-         iffalse ofs65
+         iffalse ofs66
          getlocal 5
          pushbyte 4
          pushbyte 20
@@ -2074,7 +2090,7 @@ package
          add
          convert_i
          setlocal 5
-         ofs65:
+         ofs66:
          findpropstrict QName(PackageNamespace(""),"addAnimation")
          pushstring "snail"
          getlocal 4
@@ -2232,10 +2248,10 @@ package
          pushtrue
          callpropvoid QName(PackageNamespace(""),"addAnimation"), 4
          inclocal_i 4
-         ofs63:
+         ofs64:
          getlocal 4
          pushbyte 4
-         iflt ofs64
+         iflt ofs65
          getlocal0
          getlex QName(PackageNamespace(""),"FACE_FLOOR_RIGHT")
          pushtrue

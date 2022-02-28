@@ -17,7 +17,7 @@ package
       
       private static const MAX_HP:int = 5100;
       
-      private static const DEFENSE:int = 18;
+      private static const DEFENSE:int = 12;
       
       private static const OFFENSE:int = 4;
       
