@@ -747,11 +747,6 @@ package
          setlocal1
          getlocal1
          getlex QName(PackageNamespace(""),"XML")
-         pushstring "<hardMode>true</hardMode>"
-         construct 1
-         callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
-         getlocal1
-         getlex QName(PackageNamespace(""),"XML")
          pushstring "<insaneMode>true</insaneMode>"
          construct 1
          callpropvoid Multiname("appendChild",[PrivateNamespace(null,"#SaveData/1"),PackageNamespace(""),PrivateNamespace(null,"#SaveData/2"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("SaveData"),StaticProtectedNs("SaveData"),StaticProtectedNs("org.flixel:FlxSave"),StaticProtectedNs("Object")]), 1
