@@ -4791,13 +4791,8 @@ package
          pushbyte 11
          subtract
          initproperty QName(PackageNamespace(""),"y")
-         findproperty QName(PackageNamespace(""),"x")
-         getlex QName(PackageNamespace(""),"x")
-         pushbyte 11
-         add
-         initproperty QName(PackageNamespace(""),"x")
          getlocal0
-         pushbyte 0
+         pushbyte 11
          pushbyte 11
          callpropvoid QName(PackageNamespace(""),"moveSnailCheckFullBounds"), 2
          ofs9:
