@@ -756,8 +756,8 @@ Class IDs:
 754: JSONParseError -
 
 PrivateNamespace IDs:
-0: CursorManagerImpl/1
-1: ModuleManager/1
+0: WorldMap/1
+1: WorldMap/2
 2: XMLNotifier/1
 3: LocaleSorter/1
 4: UIComponent/1
@@ -1136,7 +1136,7 @@ PrivateNamespace IDs:
 377: RectangularBorder/1
 378: GameTimeDisplay/1
 379: GameTimeDisplay/2
-380: WorldMap/1
+380: WorldMap/3
 381: ExplosionPool/1
 382: MainMenu/1
 383: MiniMap/1

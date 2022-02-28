@@ -152,6 +152,8 @@ package
       public static var This:PlayState;
        
       
+      public var worldXML:XML;
+      
       public function PlayState()
       {
          super();

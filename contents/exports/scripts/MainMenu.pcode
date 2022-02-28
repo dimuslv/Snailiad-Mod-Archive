@@ -476,7 +476,7 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"xmlLoader")
          findpropstrict QName(PackageNamespace("flash.net"),"URLRequest")
-         pushstring "test.xml"
+         pushstring "map.tmx"
          constructprop QName(PackageNamespace("flash.net"),"URLRequest"), 1
          callpropvoid QName(PackageNamespace(""),"load"), 1
          getlocal0
@@ -502,7 +502,7 @@ package
          returns QName(PackageNamespace(""),"void")
          
          body
-         maxstack 1
+         maxstack 3
          localcount 2
          initscopedepth 8
          maxscopedepth 9
@@ -510,6 +510,46 @@ package
          code
          getlocal0
          pushscope
+         getlex QName(PackageNamespace(""),"PlayState")
+         findpropstrict QName(PackageNamespace(""),"XML")
+         getlocal0
+         getproperty QName(PackageNamespace(""),"xmlLoader")
+         getproperty QName(PackageNamespace(""),"data")
+         constructprop QName(PackageNamespace(""),"XML"), 1
+         initproperty QName(PackageNamespace(""),"worldXML")
+         getlex QName(PackageNamespace(""),"PlayState")
+         findpropstrict QName(PackageNamespace(""),"WorldMap")
+         constructprop QName(PackageNamespace(""),"WorldMap"), 0
+         setproperty QName(PackageNamespace(""),"worldMap")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"This")
+         getproperty QName(PackageNamespace(""),"defaultGroup")
+         getproperty QName(PackageNamespace(""),"members")
+         pushbyte 0
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldMap")
+         getproperty QName(PackageNamespace(""),"skymap")
+         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PackageInternalNs("org.flixel"),PackageNamespace("org.flixel"),ProtectedNamespace("org.flixel:FlxGroup"),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#MiniMap"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"This")
+         getproperty QName(PackageNamespace(""),"defaultGroup")
+         getproperty QName(PackageNamespace(""),"members")
+         pushbyte 2
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldMap")
+         getproperty QName(PackageNamespace(""),"bgmap")
+         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PackageInternalNs("org.flixel"),PackageNamespace("org.flixel"),ProtectedNamespace("org.flixel:FlxGroup"),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#MiniMap"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"This")
+         getproperty QName(PackageNamespace(""),"defaultGroup")
+         getproperty QName(PackageNamespace(""),"members")
+         pushbyte 7
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldMap")
+         getproperty QName(PackageNamespace(""),"fgmap")
+         setproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PackageInternalNs("org.flixel"),PackageNamespace("org.flixel"),ProtectedNamespace("org.flixel:FlxGroup"),Namespace("http://adobe.com/AS3/2006/builtin"),PrivateNamespace(null,"#MiniMap"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getlex QName(PackageNamespace(""),"Sfx")
+         callpropvoid QName(PackageNamespace(""),"playSave1"), 0
          returnvoid
          end ; code
          end ; body
@@ -6223,9 +6263,11 @@ package
          callpropvoid QName(PackageNamespace(""),"addOption"), 3
          ofs9:
          getlocal0
-         pushstring ""
-         pushnull
-         callpropvoid QName(PackageNamespace(""),"addOption"), 2
+         pushstring "RELOAD MAP"
+         getlocal0
+         getproperty QName(PackageNamespace(""),"loadXML")
+         pushfalse
+         callpropvoid QName(PackageNamespace(""),"addOption"), 3
          getlocal0
          pushstring "OPTIONS"
          getlocal0
@@ -7803,15 +7845,23 @@ package
          setlocal1
          pushbyte 0
          setlocal2
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"keys")
+         pushstring "R"
+         callproperty QName(PackageNamespace(""),"justPressed"), 1
+         iffalse ofs0
+         getlocal0
+         callpropvoid QName(PackageNamespace(""),"loadXML"), 0
+         ofs0:
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"realState")
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"STATE_MENU")
-         ifeq ofs0
+         ifeq ofs1
          getlocal0
          callsupervoid QName(PackageNamespace(""),"update"), 0
          returnvoid
-         ofs0:
+         ofs1:
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"colorNum")
@@ -7823,7 +7873,7 @@ package
          add
          initproperty QName(PackageNamespace(""),"colorNum")
          getlex QName(PackageNamespace(""),"clickedToPlay")
-         iffalse ofs1
+         iffalse ofs2
          getlocal0
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal0
@@ -7839,19 +7889,19 @@ package
          modulo
          getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          setproperty Multiname("color",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         ofs1:
+         ofs2:
          getlocal0
          getproperty QName(PackageNamespace(""),"justinSnaily")
-         iffalse ofs2
+         iffalse ofs3
          getlocal0
          callpropvoid QName(PackageNamespace(""),"updateJustinSnaily"), 0
          getlocal0
          callsupervoid QName(PackageNamespace(""),"update"), 0
          returnvoid
-         ofs2:
+         ofs3:
          getlocal0
          getproperty QName(PackageNamespace(""),"bg")
-         iffalse ofs3
+         iffalse ofs4
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"elapsed")
@@ -7872,14 +7922,14 @@ package
          getproperty QName(PackageNamespace(""),"elapsed")
          callproperty QName(PackageNamespace(""),"integrate"), 4
          setproperty QName(PackageNamespace(""),"alpha")
-         ofs3:
+         ofs4:
          getlocal0
          getproperty QName(PackageNamespace(""),"fading")
-         iffalse ofs4
+         iffalse ofs5
          returnvoid
-         ofs4:
+         ofs5:
          getlex QName(PackageNamespace(""),"clickedToPlay")
-         iftrue ofs5
+         iftrue ofs6
          getlocal0
          getproperty QName(PackageNamespace(""),"cursorL")
          pushfalse
@@ -7892,14 +7942,14 @@ package
          callproperty QName(PackageNamespace(""),"justPressedAnyKey"), 0
          convert_b
          dup
-         iftrue ofs6
+         iftrue ofs7
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"mouse")
          callproperty QName(PackageNamespace(""),"justPressed"), 0
          convert_b
-         ofs6:
-         iffalse ofs7
+         ofs7:
+         iffalse ofs8
          findpropstrict QName(PackageNamespace(""),"remove")
          getlocal0
          getproperty QName(PackageNamespace(""),"clickToPlayText")
@@ -7909,23 +7959,23 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"loadGameOption")
          pushbyte 0
-         ifnge ofs8
+         ifnge ofs9
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"loadGameOption")
          pushtrue
          callpropvoid QName(PackageNamespace(""),"setOption"), 2
-         ofs8:
+         ofs9:
          getlocal0
          getproperty QName(PackageNamespace(""),"returnToGameOption")
          pushbyte 0
-         ifnge ofs9
+         ifnge ofs10
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"returnToGameOption")
          pushtrue
          callpropvoid QName(PackageNamespace(""),"setOption"), 2
-         ofs9:
+         ofs10:
          findproperty QName(PackageNamespace(""),"clickedToPlay")
          pushtrue
          setproperty QName(PackageNamespace(""),"clickedToPlay")
@@ -7941,34 +7991,25 @@ package
          getproperty QName(PackageNamespace(""),"titleText")
          pushbyte 0
          callpropvoid QName(PackageNamespace(""),"setYOffset"), 1
-         ofs7:
+         ofs8:
          getlocal0
          callsupervoid QName(PackageNamespace(""),"update"), 0
          returnvoid
-         ofs5:
+         ofs6:
          getlocal0
          getproperty QName(PackageNamespace(""),"endingShow")
-         iffalse ofs10
+         iffalse ofs11
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
          pushstring "Z"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          dup
-         iftrue ofs11
-         pop
-         getlex QName(PackageNamespace("org.flixel"),"FlxG")
-         getproperty QName(PackageNamespace(""),"keys")
-         pushstring "X"
-         callproperty QName(PackageNamespace(""),"justPressed"), 1
-         convert_b
-         ofs11:
-         dup
          iftrue ofs12
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "J"
+         pushstring "X"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs12:
@@ -7977,7 +8018,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "K"
+         pushstring "J"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs13:
@@ -7986,7 +8027,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "SPACE"
+         pushstring "K"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs14:
@@ -7995,7 +8036,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "ENTER"
+         pushstring "SPACE"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs15:
@@ -8004,11 +8045,20 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "ESCAPE"
+         pushstring "ENTER"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs16:
-         iffalse ofs17
+         dup
+         iftrue ofs17
+         pop
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"keys")
+         pushstring "ESCAPE"
+         callproperty QName(PackageNamespace(""),"justPressed"), 1
+         convert_b
+         ofs17:
+         iffalse ofs18
          getlocal0
          pushfalse
          initproperty QName(PackageNamespace(""),"lastWasMouse")
@@ -8016,12 +8066,12 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
          callpropvoid QName(PackageNamespace(""),"doOption"), 1
-         jump ofs18
-         ofs17:
+         jump ofs19
+         ofs18:
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"mouse")
          callproperty QName(PackageNamespace(""),"justPressed"), 0
-         iffalse ofs18
+         iffalse ofs19
          getlocal0
          pushtrue
          initproperty QName(PackageNamespace(""),"lastWasMouse")
@@ -8029,14 +8079,14 @@ package
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
          callpropvoid QName(PackageNamespace(""),"doOption"), 1
-         ofs18:
+         ofs19:
          getlocal0
          callsupervoid QName(PackageNamespace(""),"update"), 0
          returnvoid
-         ofs10:
+         ofs11:
          getlocal0
          getproperty QName(PackageNamespace(""),"isWaitingForControls")
-         iffalse ofs19
+         iffalse ofs20
          getlocal0
          getproperty QName(PackageNamespace(""),"enterKeyLayer")
          pushtrue
@@ -8045,32 +8095,23 @@ package
          getproperty QName(PackageNamespace(""),"keys")
          pushstring "ESCAPE"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
-         iffalse ofs20
+         iffalse ofs21
          getlocal0
          pushfalse
          initproperty QName(PackageNamespace(""),"isWaitingForControls")
-         jump ofs21
-         ofs20:
+         jump ofs22
+         ofs21:
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
          pushstring "A"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          dup
-         iftrue ofs22
-         pop
-         getlex QName(PackageNamespace("org.flixel"),"FlxG")
-         getproperty QName(PackageNamespace(""),"keys")
-         pushstring "B"
-         callproperty QName(PackageNamespace(""),"justPressed"), 1
-         convert_b
-         ofs22:
-         dup
          iftrue ofs23
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "C"
+         pushstring "B"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs23:
@@ -8079,7 +8120,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "D"
+         pushstring "C"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs24:
@@ -8088,7 +8129,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "E"
+         pushstring "D"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs25:
@@ -8097,7 +8138,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "F"
+         pushstring "E"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs26:
@@ -8106,7 +8147,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "G"
+         pushstring "F"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs27:
@@ -8115,7 +8156,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "H"
+         pushstring "G"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs28:
@@ -8124,7 +8165,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "I"
+         pushstring "H"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs29:
@@ -8133,7 +8174,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "J"
+         pushstring "I"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs30:
@@ -8142,7 +8183,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "K"
+         pushstring "J"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs31:
@@ -8151,7 +8192,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "L"
+         pushstring "K"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs32:
@@ -8160,7 +8201,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "M"
+         pushstring "L"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs33:
@@ -8169,7 +8210,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "N"
+         pushstring "M"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs34:
@@ -8178,7 +8219,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "O"
+         pushstring "N"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs35:
@@ -8187,7 +8228,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "P"
+         pushstring "O"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs36:
@@ -8196,7 +8237,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "Q"
+         pushstring "P"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs37:
@@ -8205,7 +8246,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "R"
+         pushstring "Q"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs38:
@@ -8214,7 +8255,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "S"
+         pushstring "R"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs39:
@@ -8223,7 +8264,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "T"
+         pushstring "S"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs40:
@@ -8232,7 +8273,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "U"
+         pushstring "T"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs41:
@@ -8241,7 +8282,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "V"
+         pushstring "U"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs42:
@@ -8250,7 +8291,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "W"
+         pushstring "V"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs43:
@@ -8259,7 +8300,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "X"
+         pushstring "W"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs44:
@@ -8268,7 +8309,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "Y"
+         pushstring "X"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs45:
@@ -8277,7 +8318,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "Z"
+         pushstring "Y"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs46:
@@ -8286,7 +8327,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "QUOTE"
+         pushstring "Z"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs47:
@@ -8295,7 +8336,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "ONE"
+         pushstring "QUOTE"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs48:
@@ -8304,7 +8345,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "TWO"
+         pushstring "ONE"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs49:
@@ -8313,7 +8354,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "THREE"
+         pushstring "TWO"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs50:
@@ -8322,7 +8363,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "FOUR"
+         pushstring "THREE"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs51:
@@ -8331,7 +8372,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "FIVE"
+         pushstring "FOUR"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs52:
@@ -8340,7 +8381,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "SIX"
+         pushstring "FIVE"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs53:
@@ -8349,7 +8390,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "SEVEN"
+         pushstring "SIX"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs54:
@@ -8358,7 +8399,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "EIGHT"
+         pushstring "SEVEN"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs55:
@@ -8367,7 +8408,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "NINE"
+         pushstring "EIGHT"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs56:
@@ -8376,7 +8417,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "ZERO"
+         pushstring "NINE"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs57:
@@ -8385,7 +8426,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "MINUS"
+         pushstring "ZERO"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs58:
@@ -8394,7 +8435,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "PLUS"
+         pushstring "MINUS"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs59:
@@ -8403,7 +8444,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "TAB"
+         pushstring "PLUS"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs60:
@@ -8412,7 +8453,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "LBRACKET"
+         pushstring "TAB"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs61:
@@ -8421,7 +8462,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "RBRACKET"
+         pushstring "LBRACKET"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs62:
@@ -8430,7 +8471,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "SEMICOLON"
+         pushstring "RBRACKET"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs63:
@@ -8439,7 +8480,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "BACKSLASH"
+         pushstring "SEMICOLON"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs64:
@@ -8448,7 +8489,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "SLASH"
+         pushstring "BACKSLASH"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs65:
@@ -8457,7 +8498,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "COMMA"
+         pushstring "SLASH"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs66:
@@ -8466,7 +8507,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "PERIOD"
+         pushstring "COMMA"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs67:
@@ -8475,7 +8516,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "ALT"
+         pushstring "PERIOD"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs68:
@@ -8484,7 +8525,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "CONTROL"
+         pushstring "ALT"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs69:
@@ -8493,7 +8534,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "SHIFT"
+         pushstring "CONTROL"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs70:
@@ -8502,7 +8543,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "ENTER"
+         pushstring "SHIFT"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs71:
@@ -8511,7 +8552,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "SPACE"
+         pushstring "ENTER"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs72:
@@ -8520,7 +8561,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "UP"
+         pushstring "SPACE"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs73:
@@ -8529,7 +8570,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "LEFT"
+         pushstring "UP"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs74:
@@ -8538,7 +8579,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "DOWN"
+         pushstring "LEFT"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs75:
@@ -8547,11 +8588,20 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "RIGHT"
+         pushstring "DOWN"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs76:
-         iffalse ofs21
+         dup
+         iftrue ofs77
+         pop
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"keys")
+         pushstring "RIGHT"
+         callproperty QName(PackageNamespace(""),"justPressed"), 1
+         convert_b
+         ofs77:
+         iffalse ofs22
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"keyToSet")
@@ -8560,12 +8610,12 @@ package
          pushbyte 1
          callproperty QName(PackageNamespace(""),"getLastKeys"), 1
          callpropvoid QName(PackageNamespace(""),"reallySetKey"), 2
-         ofs21:
+         ofs22:
          getlocal0
          callsupervoid QName(PackageNamespace(""),"update"), 0
          returnvoid
-         jump ofs19
-         ofs19:
+         jump ofs20
+         ofs20:
          getlocal0
          getproperty QName(PackageNamespace(""),"enterKeyLayer")
          pushfalse
@@ -8576,25 +8626,25 @@ package
          callpropvoid QName(PackageNamespace(""),"miniGame_checkStartStop"), 0
          getlocal0
          getproperty QName(PackageNamespace(""),"miniGame")
-         iffalse ofs77
+         iffalse ofs78
          getlocal0
          callpropvoid QName(PackageNamespace(""),"miniGame_update"), 0
-         ofs77:
+         ofs78:
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
          pushstring "LEFT"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          dup
-         iffalse ofs78
+         iffalse ofs79
          pop
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
          getlocal0
          getproperty QName(PackageNamespace(""),"soundVolOption")
          equals
-         ofs78:
-         iffalse ofs79
+         ofs79:
+         iffalse ofs80
          getlocal0
          pushfalse
          initproperty QName(PackageNamespace(""),"lastWasMouse")
@@ -8603,22 +8653,22 @@ package
          callpropvoid QName(PackageNamespace(""),"setVol"), 1
          getlex QName(PackageNamespace(""),"Sfx")
          callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
-         ofs79:
+         ofs80:
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
          pushstring "RIGHT"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          dup
-         iffalse ofs80
+         iffalse ofs81
          pop
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
          getlocal0
          getproperty QName(PackageNamespace(""),"soundVolOption")
          equals
-         ofs80:
-         iffalse ofs81
+         ofs81:
+         iffalse ofs82
          getlocal0
          pushfalse
          initproperty QName(PackageNamespace(""),"lastWasMouse")
@@ -8627,45 +8677,31 @@ package
          callpropvoid QName(PackageNamespace(""),"setVol"), 1
          getlex QName(PackageNamespace(""),"Sfx")
          callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
-         ofs81:
-         getlex QName(PackageNamespace("org.flixel"),"FlxG")
-         getproperty QName(PackageNamespace(""),"keys")
-         pushstring "UP"
-         callproperty QName(PackageNamespace(""),"justPressed"), 1
-         iffalse ofs82
-         getlocal0
-         pushfalse
-         initproperty QName(PackageNamespace(""),"lastWasMouse")
-         getlocal0
-         pushbyte -1
-         callpropvoid QName(PackageNamespace(""),"moveOption"), 1
-         getlex QName(PackageNamespace(""),"Sfx")
-         callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
          ofs82:
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "DOWN"
+         pushstring "UP"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          iffalse ofs83
          getlocal0
          pushfalse
          initproperty QName(PackageNamespace(""),"lastWasMouse")
          getlocal0
-         pushbyte 1
+         pushbyte -1
          callpropvoid QName(PackageNamespace(""),"moveOption"), 1
          getlex QName(PackageNamespace(""),"Sfx")
          callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
          ofs83:
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
-         getproperty QName(PackageNamespace(""),"mouse")
-         getproperty QName(PackageNamespace(""),"wheel")
-         pushbyte 0
-         ifngt ofs84
+         getproperty QName(PackageNamespace(""),"keys")
+         pushstring "DOWN"
+         callproperty QName(PackageNamespace(""),"justPressed"), 1
+         iffalse ofs84
          getlocal0
          pushfalse
          initproperty QName(PackageNamespace(""),"lastWasMouse")
          getlocal0
-         pushbyte -1
+         pushbyte 1
          callpropvoid QName(PackageNamespace(""),"moveOption"), 1
          getlex QName(PackageNamespace(""),"Sfx")
          callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
@@ -8674,7 +8710,21 @@ package
          getproperty QName(PackageNamespace(""),"mouse")
          getproperty QName(PackageNamespace(""),"wheel")
          pushbyte 0
-         ifnlt ofs85
+         ifngt ofs85
+         getlocal0
+         pushfalse
+         initproperty QName(PackageNamespace(""),"lastWasMouse")
+         getlocal0
+         pushbyte -1
+         callpropvoid QName(PackageNamespace(""),"moveOption"), 1
+         getlex QName(PackageNamespace(""),"Sfx")
+         callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
+         ofs85:
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"mouse")
+         getproperty QName(PackageNamespace(""),"wheel")
+         pushbyte 0
+         ifnlt ofs86
          getlocal0
          pushfalse
          initproperty QName(PackageNamespace(""),"lastWasMouse")
@@ -8683,14 +8733,14 @@ package
          callpropvoid QName(PackageNamespace(""),"moveOption"), 1
          getlex QName(PackageNamespace(""),"Sfx")
          callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
-         ofs85:
+         ofs86:
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
          pushstring "P"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          dup
-         iftrue ofs86
+         iftrue ofs87
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
@@ -8698,27 +8748,27 @@ package
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          dup
-         iffalse ofs87
+         iffalse ofs88
          pop
          getlocal0
          getproperty QName(PackageNamespace(""),"escToMain")
          not
-         ofs87:
+         ofs88:
          dup
-         iffalse ofs86
+         iffalse ofs87
          pop
          getlocal0
          getproperty QName(PackageNamespace(""),"escToOptions")
          not
-         ofs86:
+         ofs87:
          dup
-         iffalse ofs88
+         iffalse ofs89
          pop
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"startedGame")
          convert_b
-         ofs88:
-         iffalse ofs89
+         ofs89:
+         iffalse ofs90
          getlocal0
          pushfalse
          initproperty QName(PackageNamespace(""),"lastWasMouse")
@@ -8732,20 +8782,20 @@ package
          pushdouble 0.34
          callpropvoid QName(PackageNamespace(""),"start"), 2
          returnvoid
-         ofs89:
+         ofs90:
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
          pushstring "ESCAPE"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          dup
-         iffalse ofs90
+         iffalse ofs91
          pop
          getlocal0
          getproperty QName(PackageNamespace(""),"escToMain")
          convert_b
-         ofs90:
-         iffalse ofs91
+         ofs91:
+         iffalse ofs92
          getlocal0
          pushfalse
          initproperty QName(PackageNamespace(""),"lastWasMouse")
@@ -8753,21 +8803,21 @@ package
          callpropvoid QName(PackageNamespace(""),"makeMainOptions"), 0
          getlex QName(PackageNamespace(""),"Sfx")
          callpropvoid QName(PackageNamespace(""),"playMenuBeep2"), 0
-         jump ofs92
-         ofs91:
+         jump ofs93
+         ofs92:
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
          pushstring "ESCAPE"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          dup
-         iffalse ofs93
+         iffalse ofs94
          pop
          getlocal0
          getproperty QName(PackageNamespace(""),"escToOptions")
          convert_b
-         ofs93:
-         iffalse ofs92
+         ofs94:
+         iffalse ofs93
          getlocal0
          pushfalse
          initproperty QName(PackageNamespace(""),"lastWasMouse")
@@ -8775,27 +8825,27 @@ package
          callpropvoid QName(PackageNamespace(""),"makeOptionsMenu"), 0
          getlex QName(PackageNamespace(""),"Sfx")
          callpropvoid QName(PackageNamespace(""),"playMenuBeep2"), 0
-         ofs92:
+         ofs93:
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"mouse")
          callproperty QName(PackageNamespace(""),"justPressed"), 0
-         iffalse ofs94
+         iffalse ofs95
          getlocal0
          pushtrue
          initproperty QName(PackageNamespace(""),"lastWasMouse")
          pushbyte 0
          setlocal1
-         jump ofs95
-         ofs96:
+         jump ofs96
+         ofs97:
          label
          getlocal0
          getproperty QName(PackageNamespace(""),"actions")
          getlocal1
          getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushnull
-         ifne ofs97
-         jump ofs98
-         ofs97:
+         ifne ofs98
+         jump ofs99
+         ofs98:
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"width")
          pushbyte 2
@@ -8821,7 +8871,7 @@ package
          getlocal2
          greaterthan
          dup
-         iffalse ofs99
+         iffalse ofs100
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"mouse")
@@ -8833,19 +8883,6 @@ package
          getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          add
          lessthan
-         ofs99:
-         dup
-         iffalse ofs100
-         pop
-         getlex QName(PackageNamespace("org.flixel"),"FlxG")
-         getproperty QName(PackageNamespace(""),"mouse")
-         getproperty QName(PackageNamespace(""),"screenY")
-         getlocal0
-         getproperty QName(PackageNamespace(""),"optionText")
-         getlocal1
-         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         getproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
-         greaterthan
          ofs100:
          dup
          iffalse ofs101
@@ -8858,6 +8895,19 @@ package
          getlocal1
          getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         greaterthan
+         ofs101:
+         dup
+         iffalse ofs102
+         pop
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"mouse")
+         getproperty QName(PackageNamespace(""),"screenY")
+         getlocal0
+         getproperty QName(PackageNamespace(""),"optionText")
+         getlocal1
+         getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
+         getproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getlocal0
          getproperty QName(PackageNamespace(""),"optionText")
          getlocal1
@@ -8867,62 +8917,62 @@ package
          pushbyte 2
          subtract
          lessthan
-         ofs101:
-         iffalse ofs98
+         ofs102:
+         iffalse ofs99
          getlocal0
          getlocal1
          callpropvoid QName(PackageNamespace(""),"doOption"), 1
-         jump ofs102
-         ofs98:
+         jump ofs103
+         ofs99:
          inclocal_i 1
-         ofs95:
+         ofs96:
          getlocal1
          getlocal0
          getproperty QName(PackageNamespace(""),"optionNum")
-         iflt ofs96
-         ofs102:
-         jump ofs103
-         ofs94:
+         iflt ofs97
+         ofs103:
+         jump ofs104
+         ofs95:
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"mouse")
          getproperty QName(PackageNamespace(""),"justMoved")
          convert_b
          dup
-         iftrue ofs104
+         iftrue ofs105
          pop
          getlocal0
          getproperty QName(PackageNamespace(""),"lastWasMouse")
          convert_b
          dup
-         iffalse ofs104
+         iffalse ofs105
          pop
          getlocal0
          getproperty QName(PackageNamespace(""),"justScrolled")
          convert_b
-         ofs104:
-         iffalse ofs103
+         ofs105:
+         iffalse ofs104
          getlocal0
          pushtrue
          initproperty QName(PackageNamespace(""),"lastWasMouse")
          pushbyte 0
          setlocal1
-         jump ofs105
-         ofs106:
+         jump ofs106
+         ofs107:
          label
          getlocal0
          getproperty QName(PackageNamespace(""),"actions")
          getlocal1
          getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          pushnull
-         ifne ofs107
-         jump ofs108
-         ofs107:
+         ifne ofs108
+         jump ofs109
+         ofs108:
          getlocal1
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
-         ifne ofs109
-         jump ofs108
-         ofs109:
+         ifne ofs110
+         jump ofs109
+         ofs110:
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"width")
          pushbyte 2
@@ -8948,7 +8998,7 @@ package
          getlocal2
          greaterthan
          dup
-         iffalse ofs110
+         iffalse ofs111
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"mouse")
@@ -8960,9 +9010,9 @@ package
          getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          add
          lessthan
-         ofs110:
+         ofs111:
          dup
-         iffalse ofs111
+         iffalse ofs112
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"mouse")
@@ -8973,9 +9023,9 @@ package
          getproperty MultinameL([PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          getproperty Multiname("y",[PrivateNamespace(null,"#MainMenu"),PackageNamespace(""),PrivateNamespace(null,"#MainMenu/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("org.flixel"),ProtectedNamespace("MainMenu"),StaticProtectedNs("MainMenu"),StaticProtectedNs("org.flixel:FlxGroup"),StaticProtectedNs("org.flixel:FlxObject"),StaticProtectedNs("org.flixel:FlxRect"),StaticProtectedNs("org.flixel:FlxPoint"),StaticProtectedNs("Object")])
          greaterthan
-         ofs111:
+         ofs112:
          dup
-         iffalse ofs112
+         iffalse ofs113
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"mouse")
@@ -8994,42 +9044,33 @@ package
          pushbyte 2
          subtract
          lessthan
-         ofs112:
-         iffalse ofs108
+         ofs113:
+         iffalse ofs109
          getlocal0
          getlocal1
          callpropvoid QName(PackageNamespace(""),"setOption"), 1
          getlex QName(PackageNamespace(""),"Sfx")
          callpropvoid QName(PackageNamespace(""),"playMenuBeep1"), 0
-         jump ofs103
-         ofs108:
+         jump ofs104
+         ofs109:
          inclocal_i 1
-         ofs105:
+         ofs106:
          getlocal1
          getlocal0
          getproperty QName(PackageNamespace(""),"optionNum")
-         iflt ofs106
-         ofs103:
+         iflt ofs107
+         ofs104:
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
          pushstring "Z"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          dup
-         iftrue ofs113
-         pop
-         getlex QName(PackageNamespace("org.flixel"),"FlxG")
-         getproperty QName(PackageNamespace(""),"keys")
-         pushstring "X"
-         callproperty QName(PackageNamespace(""),"justPressed"), 1
-         convert_b
-         ofs113:
-         dup
          iftrue ofs114
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "J"
+         pushstring "X"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs114:
@@ -9038,7 +9079,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "K"
+         pushstring "J"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs115:
@@ -9047,7 +9088,7 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "SPACE"
+         pushstring "K"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs116:
@@ -9056,12 +9097,21 @@ package
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
-         pushstring "ENTER"
+         pushstring "SPACE"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          ofs117:
          dup
          iftrue ofs118
+         pop
+         getlex QName(PackageNamespace("org.flixel"),"FlxG")
+         getproperty QName(PackageNamespace(""),"keys")
+         pushstring "ENTER"
+         callproperty QName(PackageNamespace(""),"justPressed"), 1
+         convert_b
+         ofs118:
+         dup
+         iftrue ofs119
          pop
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
@@ -9069,7 +9119,7 @@ package
          getproperty QName(PackageNamespace(""),"musicVolOption")
          equals
          dup
-         iffalse ofs118
+         iffalse ofs119
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
@@ -9077,20 +9127,20 @@ package
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
          dup
-         iftrue ofs118
+         iftrue ofs119
          pop
          getlex QName(PackageNamespace("org.flixel"),"FlxG")
          getproperty QName(PackageNamespace(""),"keys")
          pushstring "RIGHT"
          callproperty QName(PackageNamespace(""),"justPressed"), 1
          convert_b
-         ofs118:
-         iffalse ofs119
+         ofs119:
+         iffalse ofs120
          getlocal0
          getlocal0
          getproperty QName(PackageNamespace(""),"curOption")
          callpropvoid QName(PackageNamespace(""),"doOption"), 1
-         ofs119:
+         ofs120:
          getlocal0
          callsupervoid QName(PackageNamespace(""),"update"), 0
          returnvoid

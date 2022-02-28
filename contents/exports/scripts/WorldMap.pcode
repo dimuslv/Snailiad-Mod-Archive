@@ -169,8 +169,20 @@ package
          setproperty QName(PackageNamespace(""),"startingIndex")
          getlocal0
          getproperty QName(PackageNamespace(""),"skymap")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldXML")
+         iffalse ofs0
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldXML")
+         getproperty Multiname("layer",[PrivateNamespace(null,"#WorldMap/1"),PackageNamespace(""),PackageNamespace("flash.events"),PackageNamespace("flash.net"),PrivateNamespace(null,"#WorldMap/2"),PackageNamespace("simple_fla"),PackageInternalNs("simple_fla"),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("adobe.utils"),PackageNamespace("flash.accessibility"),PackageNamespace("flash.desktop"),PackageNamespace("flash.display"),PackageNamespace("flash.errors"),PackageNamespace("flash.external"),PackageNamespace("flash.filters"),PackageNamespace("flash.geom"),PackageNamespace("flash.media"),PackageNamespace("flash.printing"),PackageNamespace("flash.profiler"),PackageNamespace("flash.sampler"),PackageNamespace("flash.system"),PackageNamespace("flash.text"),PackageNamespace("flash.text.engine"),PackageNamespace("flash.ui"),PackageNamespace("flash.utils"),PackageNamespace("flash.xml"),ProtectedNamespace("simple_fla:MainTimeline"),StaticProtectedNs("simple_fla:MainTimeline"),StaticProtectedNs("flash.display:MovieClip"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         pushbyte 0
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap/1"),PackageNamespace(""),PackageNamespace("flash.events"),PackageNamespace("flash.net"),PrivateNamespace(null,"#WorldMap/2"),PackageNamespace("simple_fla"),PackageInternalNs("simple_fla"),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("adobe.utils"),PackageNamespace("flash.accessibility"),PackageNamespace("flash.desktop"),PackageNamespace("flash.display"),PackageNamespace("flash.errors"),PackageNamespace("flash.external"),PackageNamespace("flash.filters"),PackageNamespace("flash.geom"),PackageNamespace("flash.media"),PackageNamespace("flash.printing"),PackageNamespace("flash.profiler"),PackageNamespace("flash.sampler"),PackageNamespace("flash.system"),PackageNamespace("flash.text"),PackageNamespace("flash.text.engine"),PackageNamespace("flash.ui"),PackageNamespace("flash.utils"),PackageNamespace("flash.xml"),ProtectedNamespace("simple_fla:MainTimeline"),StaticProtectedNs("simple_fla:MainTimeline"),StaticProtectedNs("flash.display:MovieClip"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getproperty Multiname("data",[PrivateNamespace(null,"#WorldMap/1"),PackageNamespace(""),PackageNamespace("flash.events"),PackageNamespace("flash.net"),PrivateNamespace(null,"#WorldMap/2"),PackageNamespace("simple_fla"),PackageInternalNs("simple_fla"),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("adobe.utils"),PackageNamespace("flash.accessibility"),PackageNamespace("flash.desktop"),PackageNamespace("flash.display"),PackageNamespace("flash.errors"),PackageNamespace("flash.external"),PackageNamespace("flash.filters"),PackageNamespace("flash.geom"),PackageNamespace("flash.media"),PackageNamespace("flash.printing"),PackageNamespace("flash.profiler"),PackageNamespace("flash.sampler"),PackageNamespace("flash.system"),PackageNamespace("flash.text"),PackageNamespace("flash.text.engine"),PackageNamespace("flash.ui"),PackageNamespace("flash.utils"),PackageNamespace("flash.xml"),ProtectedNamespace("simple_fla:MainTimeline"),StaticProtectedNs("simple_fla:MainTimeline"),StaticProtectedNs("flash.display:MovieClip"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         jump ofs1
+         ofs0:
          getlocal0
          constructprop QName(PrivateNamespace(null,"#WorldMap"),"WorldMapSkyTxt"), 0
+         ofs1:
          getlex QName(PackageNamespace(""),"Art")
          getproperty QName(PackageNamespace(""),"TileSheet")
          getlex QName(PrivateNamespace(null,"#WorldMap"),"TILE_SIZE")
@@ -193,8 +205,20 @@ package
          setproperty QName(PackageNamespace(""),"startingIndex")
          getlocal0
          getproperty QName(PackageNamespace(""),"bgmap")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldXML")
+         iffalse ofs2
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldXML")
+         getproperty Multiname("layer",[PrivateNamespace(null,"#WorldMap/1"),PackageNamespace(""),PackageNamespace("flash.events"),PackageNamespace("flash.net"),PrivateNamespace(null,"#WorldMap/2"),PackageNamespace("simple_fla"),PackageInternalNs("simple_fla"),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("adobe.utils"),PackageNamespace("flash.accessibility"),PackageNamespace("flash.desktop"),PackageNamespace("flash.display"),PackageNamespace("flash.errors"),PackageNamespace("flash.external"),PackageNamespace("flash.filters"),PackageNamespace("flash.geom"),PackageNamespace("flash.media"),PackageNamespace("flash.printing"),PackageNamespace("flash.profiler"),PackageNamespace("flash.sampler"),PackageNamespace("flash.system"),PackageNamespace("flash.text"),PackageNamespace("flash.text.engine"),PackageNamespace("flash.ui"),PackageNamespace("flash.utils"),PackageNamespace("flash.xml"),ProtectedNamespace("simple_fla:MainTimeline"),StaticProtectedNs("simple_fla:MainTimeline"),StaticProtectedNs("flash.display:MovieClip"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         pushbyte 1
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap/1"),PackageNamespace(""),PackageNamespace("flash.events"),PackageNamespace("flash.net"),PrivateNamespace(null,"#WorldMap/2"),PackageNamespace("simple_fla"),PackageInternalNs("simple_fla"),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("adobe.utils"),PackageNamespace("flash.accessibility"),PackageNamespace("flash.desktop"),PackageNamespace("flash.display"),PackageNamespace("flash.errors"),PackageNamespace("flash.external"),PackageNamespace("flash.filters"),PackageNamespace("flash.geom"),PackageNamespace("flash.media"),PackageNamespace("flash.printing"),PackageNamespace("flash.profiler"),PackageNamespace("flash.sampler"),PackageNamespace("flash.system"),PackageNamespace("flash.text"),PackageNamespace("flash.text.engine"),PackageNamespace("flash.ui"),PackageNamespace("flash.utils"),PackageNamespace("flash.xml"),ProtectedNamespace("simple_fla:MainTimeline"),StaticProtectedNs("simple_fla:MainTimeline"),StaticProtectedNs("flash.display:MovieClip"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getproperty Multiname("data",[PrivateNamespace(null,"#WorldMap/1"),PackageNamespace(""),PackageNamespace("flash.events"),PackageNamespace("flash.net"),PrivateNamespace(null,"#WorldMap/2"),PackageNamespace("simple_fla"),PackageInternalNs("simple_fla"),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("adobe.utils"),PackageNamespace("flash.accessibility"),PackageNamespace("flash.desktop"),PackageNamespace("flash.display"),PackageNamespace("flash.errors"),PackageNamespace("flash.external"),PackageNamespace("flash.filters"),PackageNamespace("flash.geom"),PackageNamespace("flash.media"),PackageNamespace("flash.printing"),PackageNamespace("flash.profiler"),PackageNamespace("flash.sampler"),PackageNamespace("flash.system"),PackageNamespace("flash.text"),PackageNamespace("flash.text.engine"),PackageNamespace("flash.ui"),PackageNamespace("flash.utils"),PackageNamespace("flash.xml"),ProtectedNamespace("simple_fla:MainTimeline"),StaticProtectedNs("simple_fla:MainTimeline"),StaticProtectedNs("flash.display:MovieClip"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         jump ofs3
+         ofs2:
          getlocal0
          constructprop QName(PrivateNamespace(null,"#WorldMap"),"WorldMapBgTxt"), 0
+         ofs3:
          getlex QName(PackageNamespace(""),"Art")
          getproperty QName(PackageNamespace(""),"TileSheet")
          getlex QName(PrivateNamespace(null,"#WorldMap"),"TILE_SIZE")
@@ -217,8 +241,20 @@ package
          setproperty QName(PackageNamespace(""),"startingIndex")
          getlocal0
          getproperty QName(PackageNamespace(""),"fgmap")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldXML")
+         iffalse ofs4
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldXML")
+         getproperty Multiname("layer",[PrivateNamespace(null,"#WorldMap/1"),PackageNamespace(""),PackageNamespace("flash.events"),PackageNamespace("flash.net"),PrivateNamespace(null,"#WorldMap/2"),PackageNamespace("simple_fla"),PackageInternalNs("simple_fla"),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("adobe.utils"),PackageNamespace("flash.accessibility"),PackageNamespace("flash.desktop"),PackageNamespace("flash.display"),PackageNamespace("flash.errors"),PackageNamespace("flash.external"),PackageNamespace("flash.filters"),PackageNamespace("flash.geom"),PackageNamespace("flash.media"),PackageNamespace("flash.printing"),PackageNamespace("flash.profiler"),PackageNamespace("flash.sampler"),PackageNamespace("flash.system"),PackageNamespace("flash.text"),PackageNamespace("flash.text.engine"),PackageNamespace("flash.ui"),PackageNamespace("flash.utils"),PackageNamespace("flash.xml"),ProtectedNamespace("simple_fla:MainTimeline"),StaticProtectedNs("simple_fla:MainTimeline"),StaticProtectedNs("flash.display:MovieClip"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         pushbyte 2
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap/1"),PackageNamespace(""),PackageNamespace("flash.events"),PackageNamespace("flash.net"),PrivateNamespace(null,"#WorldMap/2"),PackageNamespace("simple_fla"),PackageInternalNs("simple_fla"),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("adobe.utils"),PackageNamespace("flash.accessibility"),PackageNamespace("flash.desktop"),PackageNamespace("flash.display"),PackageNamespace("flash.errors"),PackageNamespace("flash.external"),PackageNamespace("flash.filters"),PackageNamespace("flash.geom"),PackageNamespace("flash.media"),PackageNamespace("flash.printing"),PackageNamespace("flash.profiler"),PackageNamespace("flash.sampler"),PackageNamespace("flash.system"),PackageNamespace("flash.text"),PackageNamespace("flash.text.engine"),PackageNamespace("flash.ui"),PackageNamespace("flash.utils"),PackageNamespace("flash.xml"),ProtectedNamespace("simple_fla:MainTimeline"),StaticProtectedNs("simple_fla:MainTimeline"),StaticProtectedNs("flash.display:MovieClip"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getproperty Multiname("data",[PrivateNamespace(null,"#WorldMap/1"),PackageNamespace(""),PackageNamespace("flash.events"),PackageNamespace("flash.net"),PrivateNamespace(null,"#WorldMap/2"),PackageNamespace("simple_fla"),PackageInternalNs("simple_fla"),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("adobe.utils"),PackageNamespace("flash.accessibility"),PackageNamespace("flash.desktop"),PackageNamespace("flash.display"),PackageNamespace("flash.errors"),PackageNamespace("flash.external"),PackageNamespace("flash.filters"),PackageNamespace("flash.geom"),PackageNamespace("flash.media"),PackageNamespace("flash.printing"),PackageNamespace("flash.profiler"),PackageNamespace("flash.sampler"),PackageNamespace("flash.system"),PackageNamespace("flash.text"),PackageNamespace("flash.text.engine"),PackageNamespace("flash.ui"),PackageNamespace("flash.utils"),PackageNamespace("flash.xml"),ProtectedNamespace("simple_fla:MainTimeline"),StaticProtectedNs("simple_fla:MainTimeline"),StaticProtectedNs("flash.display:MovieClip"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         jump ofs5
+         ofs4:
          getlocal0
          constructprop QName(PrivateNamespace(null,"#WorldMap"),"WorldMapFgTxt"), 0
+         ofs5:
          getlex QName(PackageNamespace(""),"Art")
          getproperty QName(PackageNamespace(""),"TileSheet")
          getlex QName(PrivateNamespace(null,"#WorldMap"),"TILE_SIZE")
@@ -241,8 +277,20 @@ package
          setproperty QName(PackageNamespace(""),"startingIndex")
          getlocal0
          getproperty QName(PackageNamespace(""),"spmap")
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldXML")
+         iffalse ofs6
+         getlex QName(PackageNamespace(""),"PlayState")
+         getproperty QName(PackageNamespace(""),"worldXML")
+         getproperty Multiname("layer",[PrivateNamespace(null,"#WorldMap/1"),PackageNamespace(""),PackageNamespace("flash.events"),PackageNamespace("flash.net"),PrivateNamespace(null,"#WorldMap/2"),PackageNamespace("simple_fla"),PackageInternalNs("simple_fla"),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("adobe.utils"),PackageNamespace("flash.accessibility"),PackageNamespace("flash.desktop"),PackageNamespace("flash.display"),PackageNamespace("flash.errors"),PackageNamespace("flash.external"),PackageNamespace("flash.filters"),PackageNamespace("flash.geom"),PackageNamespace("flash.media"),PackageNamespace("flash.printing"),PackageNamespace("flash.profiler"),PackageNamespace("flash.sampler"),PackageNamespace("flash.system"),PackageNamespace("flash.text"),PackageNamespace("flash.text.engine"),PackageNamespace("flash.ui"),PackageNamespace("flash.utils"),PackageNamespace("flash.xml"),ProtectedNamespace("simple_fla:MainTimeline"),StaticProtectedNs("simple_fla:MainTimeline"),StaticProtectedNs("flash.display:MovieClip"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         pushbyte 3
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap/1"),PackageNamespace(""),PackageNamespace("flash.events"),PackageNamespace("flash.net"),PrivateNamespace(null,"#WorldMap/2"),PackageNamespace("simple_fla"),PackageInternalNs("simple_fla"),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("adobe.utils"),PackageNamespace("flash.accessibility"),PackageNamespace("flash.desktop"),PackageNamespace("flash.display"),PackageNamespace("flash.errors"),PackageNamespace("flash.external"),PackageNamespace("flash.filters"),PackageNamespace("flash.geom"),PackageNamespace("flash.media"),PackageNamespace("flash.printing"),PackageNamespace("flash.profiler"),PackageNamespace("flash.sampler"),PackageNamespace("flash.system"),PackageNamespace("flash.text"),PackageNamespace("flash.text.engine"),PackageNamespace("flash.ui"),PackageNamespace("flash.utils"),PackageNamespace("flash.xml"),ProtectedNamespace("simple_fla:MainTimeline"),StaticProtectedNs("simple_fla:MainTimeline"),StaticProtectedNs("flash.display:MovieClip"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         getproperty Multiname("data",[PrivateNamespace(null,"#WorldMap/1"),PackageNamespace(""),PackageNamespace("flash.events"),PackageNamespace("flash.net"),PrivateNamespace(null,"#WorldMap/2"),PackageNamespace("simple_fla"),PackageInternalNs("simple_fla"),Namespace("http://adobe.com/AS3/2006/builtin"),PackageNamespace("adobe.utils"),PackageNamespace("flash.accessibility"),PackageNamespace("flash.desktop"),PackageNamespace("flash.display"),PackageNamespace("flash.errors"),PackageNamespace("flash.external"),PackageNamespace("flash.filters"),PackageNamespace("flash.geom"),PackageNamespace("flash.media"),PackageNamespace("flash.printing"),PackageNamespace("flash.profiler"),PackageNamespace("flash.sampler"),PackageNamespace("flash.system"),PackageNamespace("flash.text"),PackageNamespace("flash.text.engine"),PackageNamespace("flash.ui"),PackageNamespace("flash.utils"),PackageNamespace("flash.xml"),ProtectedNamespace("simple_fla:MainTimeline"),StaticProtectedNs("simple_fla:MainTimeline"),StaticProtectedNs("flash.display:MovieClip"),StaticProtectedNs("flash.display:Sprite"),StaticProtectedNs("flash.display:DisplayObjectContainer"),StaticProtectedNs("flash.display:InteractiveObject"),StaticProtectedNs("flash.display:DisplayObject"),StaticProtectedNs("flash.events:EventDispatcher"),StaticProtectedNs("Object")])
+         jump ofs7
+         ofs6:
          getlocal0
          constructprop QName(PrivateNamespace(null,"#WorldMap"),"WorldMapSpTxt"), 0
+         ofs7:
          getlex QName(PackageNamespace(""),"Art")
          getproperty QName(PackageNamespace(""),"TileSheet")
          getlex QName(PrivateNamespace(null,"#WorldMap"),"TILE_SIZE")
@@ -477,8 +525,8 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("solid",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty Multiname("solid",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
          coerce_a
          dup
          iffalse ofs3
@@ -487,8 +535,8 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("x",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty Multiname("x",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
          greaterthan
          coerce_a
          ofs3:
@@ -500,13 +548,13 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("x",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty Multiname("x",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("width",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty Multiname("width",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
          add
          lessthan
          coerce_a
@@ -520,8 +568,8 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("y",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty Multiname("y",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
          greaterthan
          coerce_a
          convert_b
@@ -533,13 +581,13 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("y",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty Multiname("y",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("height",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty Multiname("height",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
          add
          lessthan
          ofs6:
@@ -684,8 +732,8 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("solid",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty Multiname("solid",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
          coerce_a
          dup
          iffalse ofs3
@@ -694,8 +742,8 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("x",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty Multiname("x",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
          greaterthan
          coerce_a
          ofs3:
@@ -707,13 +755,13 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("x",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty Multiname("x",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("width",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty Multiname("width",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
          add
          lessthan
          coerce_a
@@ -727,8 +775,8 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("y",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty Multiname("y",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
          greaterthan
          coerce_a
          convert_b
@@ -740,13 +788,13 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("y",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty Multiname("y",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("height",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty Multiname("height",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
          add
          lessthan
          ofs6:
@@ -1959,7 +2007,7 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
          convert_b
          dup
          iffalse ofs3
@@ -1967,17 +2015,17 @@ package
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("fixBlocks",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty Multiname("fixBlocks",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
          convert_b
          ofs3:
          iffalse ofs4
          getlex QName(PackageNamespace(""),"PlayState")
          getproperty QName(PackageNamespace(""),"doors")
          getlocal3
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         getproperty Multiname("fixBlocks",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
-         callpropvoid Multiname("repairAll",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")]), 0
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty Multiname("fixBlocks",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         callpropvoid Multiname("repairAll",[PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")]), 0
          ofs4:
          inclocal_i 3
          ofs1:
@@ -2660,7 +2708,7 @@ package
          getlocal 5
          pushbyte 16
          divide
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
          not
          dup
          iftrue ofs57
@@ -2670,7 +2718,7 @@ package
          getlocal 5
          pushbyte 16
          divide
-         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         getproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
          getlocal 6
          lessthan
          ofs57:
@@ -2681,7 +2729,7 @@ package
          pushbyte 16
          divide
          getlocal 6
-         setproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/1"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
+         setproperty MultinameL([PrivateNamespace(null,"#WorldMap"),PackageNamespace(""),PackageNamespace("org.flixel"),PrivateNamespace(null,"#WorldMap/3"),PackageInternalNs(""),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("WorldMap"),StaticProtectedNs("WorldMap"),StaticProtectedNs("Object")])
          ofs58:
          jump ofs16
          ofs59:

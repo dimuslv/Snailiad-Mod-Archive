@@ -246,12 +246,18 @@ package
       public function loadXML() : void
       {
          this.xmlLoader = new URLLoader();
-         this.xmlLoader.load(new URLRequest("test.xml"));
+         this.xmlLoader.load(new URLRequest("map.tmx"));
          this.xmlLoader.addEventListener(Event.COMPLETE,this.handleMyData);
       }
       
       public function handleMyData(param1:Event) : void
       {
+         PlayState.worldXML = new XML(this.xmlLoader.data);
+         PlayState.worldMap = new WorldMap();
+         PlayState.This.defaultGroup.members[0] = PlayState.worldMap.skymap;
+         PlayState.This.defaultGroup.members[2] = PlayState.worldMap.bgmap;
+         PlayState.This.defaultGroup.members[7] = PlayState.worldMap.fgmap;
+         Sfx.playSave1();
       }
       
       override public function destroy() : void
@@ -1531,7 +1537,7 @@ package
                this.addOption("BOSS RUSH",this.confirmBossRush,false);
             }
          }
-         this.addOption("",null);
+         this.addOption("RELOAD MAP",this.loadXML,false);
          this.addOption("OPTIONS",this.makeOptionsMenuPreserveOption,false);
          this.addOption("CREDITS",this.showCredits,false);
          if(this.hasScores && !this.erasedSave)
@@ -1865,6 +1871,10 @@ package
       {
          var _loc1_:int = 0;
          var _loc2_:int = 0;
+         if(FlxG.keys.justPressed("R"))
+         {
+            this.loadXML();
+         }
          if(PlayState.realState != PlayState.STATE_MENU)
          {
             super.update();

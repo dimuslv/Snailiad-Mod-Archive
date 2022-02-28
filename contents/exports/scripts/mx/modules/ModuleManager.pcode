@@ -20,7 +20,7 @@
    newclass #ModuleManager
    popscope
    initproperty QName(PackageNamespace("mx.modules"),"ModuleManager")
-   findpropstrict Multiname("ModuleManagerImpl",[PrivateNamespace(null,"#ModuleManager/1")])
+   findpropstrict Multiname("ModuleManagerImpl",[PrivateNamespace(null,"#WorldMap/2")])
    getlex QName(PackageNamespace(""),"Object")
    pushscope
    getlex QName(PackageNamespace("flash.events"),"EventDispatcher")
@@ -29,8 +29,8 @@
    newclass #ModuleManagerImpl
    popscope
    popscope
-   initproperty QName(PrivateNamespace(null,"#ModuleManager/1"),"ModuleManagerImpl")
-   findpropstrict Multiname("ModuleInfo",[PrivateNamespace(null,"#ModuleManager/1")])
+   initproperty QName(PrivateNamespace(null,"#WorldMap/2"),"ModuleManagerImpl")
+   findpropstrict Multiname("ModuleInfo",[PrivateNamespace(null,"#WorldMap/2")])
    getlex QName(PackageNamespace(""),"Object")
    pushscope
    getlex QName(PackageNamespace("flash.events"),"EventDispatcher")
@@ -39,15 +39,15 @@
    newclass #ModuleInfo
    popscope
    popscope
-   initproperty QName(PrivateNamespace(null,"#ModuleManager/1"),"ModuleInfo")
-   findpropstrict Multiname("FactoryInfo",[PrivateNamespace(null,"#ModuleManager/1")])
+   initproperty QName(PrivateNamespace(null,"#WorldMap/2"),"ModuleInfo")
+   findpropstrict Multiname("FactoryInfo",[PrivateNamespace(null,"#WorldMap/2")])
    getlex QName(PackageNamespace(""),"Object")
    pushscope
    getlex QName(PackageNamespace(""),"Object")
    newclass #FactoryInfo
    popscope
-   initproperty QName(PrivateNamespace(null,"#ModuleManager/1"),"FactoryInfo")
-   findpropstrict Multiname("ModuleInfoProxy",[PrivateNamespace(null,"#ModuleManager/1")])
+   initproperty QName(PrivateNamespace(null,"#WorldMap/2"),"FactoryInfo")
+   findpropstrict Multiname("ModuleInfoProxy",[PrivateNamespace(null,"#WorldMap/2")])
    getlex QName(PackageNamespace(""),"Object")
    pushscope
    getlex QName(PackageNamespace("flash.events"),"EventDispatcher")
@@ -56,7 +56,7 @@
    newclass #ModuleInfoProxy
    popscope
    popscope
-   initproperty QName(PrivateNamespace(null,"#ModuleManager/1"),"ModuleInfoProxy")
+   initproperty QName(PrivateNamespace(null,"#WorldMap/2"),"ModuleInfoProxy")
    returnvoid
    end ; code
    end ; body
@@ -143,7 +143,7 @@ package mx.modules
          findpropstrict QName(PrivateNamespace(null,"#ModuleManager"),"getSingleton")
          callproperty QName(PrivateNamespace(null,"#ModuleManager"),"getSingleton"), 0
          getlocal1
-         callproperty Multiname("getModule",[PrivateNamespace(null,"#ModuleManager"),PrivateNamespace(null,"#ModuleManager/1"),PackageNamespace(""),PackageNamespace("mx.modules"),PackageInternalNs("mx.modules"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.modules:ModuleManager"),StaticProtectedNs("mx.modules:ModuleManager"),StaticProtectedNs("Object")]), 1
+         callproperty Multiname("getModule",[PrivateNamespace(null,"#ModuleManager"),PrivateNamespace(null,"#WorldMap/2"),PackageNamespace(""),PackageNamespace("mx.modules"),PackageInternalNs("mx.modules"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.modules:ModuleManager"),StaticProtectedNs("mx.modules:ModuleManager"),StaticProtectedNs("Object")]), 1
          returnvalue
          end ; code
          end ; body
@@ -172,7 +172,7 @@ package mx.modules
          findpropstrict QName(PrivateNamespace(null,"#ModuleManager"),"getSingleton")
          callproperty QName(PrivateNamespace(null,"#ModuleManager"),"getSingleton"), 0
          getlocal1
-         callproperty Multiname("getAssociatedFactory",[PrivateNamespace(null,"#ModuleManager"),PrivateNamespace(null,"#ModuleManager/1"),PackageNamespace(""),PackageNamespace("mx.modules"),PackageInternalNs("mx.modules"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.modules:ModuleManager"),StaticProtectedNs("mx.modules:ModuleManager"),StaticProtectedNs("Object")]), 1
+         callproperty Multiname("getAssociatedFactory",[PrivateNamespace(null,"#ModuleManager"),PrivateNamespace(null,"#WorldMap/2"),PackageNamespace(""),PackageNamespace("mx.modules"),PackageInternalNs("mx.modules"),Namespace("http://adobe.com/AS3/2006/builtin"),ProtectedNamespace("mx.modules:ModuleManager"),StaticProtectedNs("mx.modules:ModuleManager"),StaticProtectedNs("Object")]), 1
          returnvalue
          end ; code
          end ; body
@@ -201,8 +201,8 @@ package mx.modules
          getproperty QName(PackageNamespace(""),"managerSingleton")
          iftrue ofs0
          getlex QName(PackageNamespace("mx.modules"),"ModuleManagerGlobals")
-         findpropstrict QName(PrivateNamespace(null,"#ModuleManager/1"),"ModuleManagerImpl")
-         constructprop QName(PrivateNamespace(null,"#ModuleManager/1"),"ModuleManagerImpl"), 0
+         findpropstrict QName(PrivateNamespace(null,"#WorldMap/2"),"ModuleManagerImpl")
+         constructprop QName(PrivateNamespace(null,"#WorldMap/2"),"ModuleManagerImpl"), 0
          setproperty QName(PackageNamespace(""),"managerSingleton")
          ofs0:
          getlex QName(PackageNamespace("mx.modules"),"ModuleManagerGlobals")
@@ -287,27 +287,27 @@ class ModuleManagerImpl extends EventDispatcher
       localcount 6
       initscopedepth 6
       maxscopedepth 11
-      trait slot QName(PrivateNamespace(null,"#ModuleManager/1"),"object")
+      trait slot QName(PrivateNamespace(null,"#WorldMap/2"),"object")
       slotid 1
       type QName(PackageNamespace(""),"Object")
       end ; trait
-      trait slot QName(PrivateNamespace(null,"#ModuleManager/1"),"className")
+      trait slot QName(PrivateNamespace(null,"#WorldMap/2"),"className")
       slotid 2
       type QName(PackageNamespace(""),"String")
       end ; trait
-      trait slot QName(PrivateNamespace(null,"#ModuleManager/1"),"m")
+      trait slot QName(PrivateNamespace(null,"#WorldMap/2"),"m")
       slotid 3
       type QName(PackageNamespace(""),"Object")
       end ; trait
-      trait slot QName(PrivateNamespace(null,"#ModuleManager/1"),"info")
+      trait slot QName(PrivateNamespace(null,"#WorldMap/2"),"info")
       slotid 4
-      type QName(PrivateNamespace(null,"#ModuleManager/1"),"ModuleInfo")
+      type QName(PrivateNamespace(null,"#WorldMap/2"),"ModuleInfo")
       end ; trait
-      trait slot QName(PrivateNamespace(null,"#ModuleManager/1"),"domain")
+      trait slot QName(PrivateNamespace(null,"#WorldMap/2"),"domain")
       slotid 5
       type QName(PackageNamespace("flash.system"),"ApplicationDomain")
       end ; trait
-      trait slot QName(PrivateNamespace(null,"#ModuleManager/1"),"cls")
+      trait slot QName(PrivateNamespace(null,"#WorldMap/2"),"cls")
       slotid 6
       type QName(PackageNamespace(""),"Class")
       end ; trait
@@ -325,7 +325,7 @@ class ModuleManagerImpl extends EventDispatcher
       setslot 3
       getscopeobject 1
       pushnull
-      coerce QName(PrivateNamespace(null,"#ModuleManager/1"),"ModuleInfo")
+      coerce QName(PrivateNamespace(null,"#WorldMap/2"),"ModuleInfo")
       setslot 4
       getscopeobject 1
       pushnull
@@ -363,9 +363,9 @@ class ModuleManagerImpl extends EventDispatcher
       getscopeobject 1
       getscopeobject 1
       getslot 3
-      getlex QName(PrivateNamespace(null,"#ModuleManager/1"),"ModuleInfo")
+      getlex QName(PrivateNamespace(null,"#WorldMap/2"),"ModuleInfo")
       astypelate
-      coerce QName(PrivateNamespace(null,"#ModuleManager/1"),"ModuleInfo")
+      coerce QName(PrivateNamespace(null,"#WorldMap/2"),"ModuleInfo")
       setslot 4
       getscopeobject 1
       getslot 4
@@ -450,27 +450,27 @@ class ModuleManagerImpl extends EventDispatcher
       getlocal0
       getproperty QName(PrivateNamespace(null,"#ModuleManagerImpl"),"moduleList")
       getlocal1
-      getproperty MultinameL([PrivateNamespace(null,"#ModuleManager/1"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),StaticProtectedNs("Object"),PrivateNamespace(null,"#ModuleManagerImpl"),ProtectedNamespace("ModuleManager.as$143:ModuleManagerImpl"),StaticProtectedNs("ModuleManager.as$143:ModuleManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher")])
-      getlex QName(PrivateNamespace(null,"#ModuleManager/1"),"ModuleInfo")
+      getproperty MultinameL([PrivateNamespace(null,"#WorldMap/2"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),StaticProtectedNs("Object"),PrivateNamespace(null,"#ModuleManagerImpl"),ProtectedNamespace("ModuleManager.as$143:ModuleManagerImpl"),StaticProtectedNs("ModuleManager.as$143:ModuleManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher")])
+      getlex QName(PrivateNamespace(null,"#WorldMap/2"),"ModuleInfo")
       astypelate
-      coerce QName(PrivateNamespace(null,"#ModuleManager/1"),"ModuleInfo")
+      coerce QName(PrivateNamespace(null,"#WorldMap/2"),"ModuleInfo")
       setlocal2
       getlocal2
       iftrue ofs0
-      findpropstrict QName(PrivateNamespace(null,"#ModuleManager/1"),"ModuleInfo")
+      findpropstrict QName(PrivateNamespace(null,"#WorldMap/2"),"ModuleInfo")
       getlocal1
-      constructprop QName(PrivateNamespace(null,"#ModuleManager/1"),"ModuleInfo"), 1
-      coerce QName(PrivateNamespace(null,"#ModuleManager/1"),"ModuleInfo")
+      constructprop QName(PrivateNamespace(null,"#WorldMap/2"),"ModuleInfo"), 1
+      coerce QName(PrivateNamespace(null,"#WorldMap/2"),"ModuleInfo")
       setlocal2
       getlocal0
       getproperty QName(PrivateNamespace(null,"#ModuleManagerImpl"),"moduleList")
       getlocal1
       getlocal2
-      setproperty MultinameL([PrivateNamespace(null,"#ModuleManager/1"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),StaticProtectedNs("Object"),PrivateNamespace(null,"#ModuleManagerImpl"),ProtectedNamespace("ModuleManager.as$143:ModuleManagerImpl"),StaticProtectedNs("ModuleManager.as$143:ModuleManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher")])
+      setproperty MultinameL([PrivateNamespace(null,"#WorldMap/2"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),StaticProtectedNs("Object"),PrivateNamespace(null,"#ModuleManagerImpl"),ProtectedNamespace("ModuleManager.as$143:ModuleManagerImpl"),StaticProtectedNs("ModuleManager.as$143:ModuleManagerImpl"),StaticProtectedNs("flash.events:EventDispatcher")])
       ofs0:
-      findpropstrict QName(PrivateNamespace(null,"#ModuleManager/1"),"ModuleInfoProxy")
+      findpropstrict QName(PrivateNamespace(null,"#WorldMap/2"),"ModuleInfoProxy")
       getlocal2
-      constructprop QName(PrivateNamespace(null,"#ModuleManager/1"),"ModuleInfoProxy"), 1
+      constructprop QName(PrivateNamespace(null,"#WorldMap/2"),"ModuleInfoProxy"), 1
       returnvalue
       end ; code
       end ; body
@@ -1051,7 +1051,7 @@ class ModuleInfo extends EventDispatcher
       getlocal3
       pushstring "allowLoadBytesCodeExecution"
       pushtrue
-      setproperty MultinameL([PrivateNamespace(null,"#ModuleManager/1"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),StaticProtectedNs("Object"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(null,"#ModuleInfo"),ProtectedNamespace("ModuleManager.as$143:ModuleInfo"),StaticProtectedNs("ModuleManager.as$143:ModuleInfo")])
+      setproperty MultinameL([PrivateNamespace(null,"#WorldMap/2"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),StaticProtectedNs("Object"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(null,"#ModuleInfo"),ProtectedNamespace("ModuleManager.as$143:ModuleInfo"),StaticProtectedNs("ModuleManager.as$143:ModuleInfo")])
       ofs2:
       getlocal0
       findpropstrict QName(PackageNamespace("flash.display"),"Loader")
@@ -1152,7 +1152,7 @@ class ModuleInfo extends EventDispatcher
       setlocal1
       getlocal0
       getlocal1
-      getlex QName(PrivateNamespace(null,"#ModuleManager/1"),"FactoryInfo")
+      getlex QName(PrivateNamespace(null,"#WorldMap/2"),"FactoryInfo")
       astypelate
       initproperty QName(PrivateNamespace(null,"#ModuleInfo"),"factoryInfo")
       jump ofs5
@@ -1239,7 +1239,7 @@ class ModuleInfo extends EventDispatcher
       getlocal0
       getproperty QName(PrivateNamespace(null,"#ModuleInfo"),"factoryInfo")
       pushbyte 1
-      setproperty MultinameL([PrivateNamespace(null,"#ModuleManager/1"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),StaticProtectedNs("Object"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(null,"#ModuleInfo"),ProtectedNamespace("ModuleManager.as$143:ModuleInfo"),StaticProtectedNs("ModuleManager.as$143:ModuleInfo")])
+      setproperty MultinameL([PrivateNamespace(null,"#WorldMap/2"),PackageNamespace(""),Namespace("http://adobe.com/AS3/2006/builtin"),StaticProtectedNs("Object"),StaticProtectedNs("flash.events:EventDispatcher"),PrivateNamespace(null,"#ModuleInfo"),ProtectedNamespace("ModuleManager.as$143:ModuleInfo"),StaticProtectedNs("ModuleManager.as$143:ModuleInfo")])
       getlocal0
       pushnull
       initproperty QName(PrivateNamespace(null,"#ModuleInfo"),"factoryInfo")
@@ -1512,8 +1512,8 @@ class ModuleInfo extends EventDispatcher
       returnvoid
       ofs1:
       getlocal0
-      findpropstrict QName(PrivateNamespace(null,"#ModuleManager/1"),"FactoryInfo")
-      constructprop QName(PrivateNamespace(null,"#ModuleManager/1"),"FactoryInfo"), 0
+      findpropstrict QName(PrivateNamespace(null,"#WorldMap/2"),"FactoryInfo")
+      constructprop QName(PrivateNamespace(null,"#WorldMap/2"),"FactoryInfo"), 0
       initproperty QName(PrivateNamespace(null,"#ModuleInfo"),"factoryInfo")
       getlocal0
       getproperty QName(PrivateNamespace(null,"#ModuleInfo"),"factoryInfo")
@@ -1645,11 +1645,11 @@ class ModuleInfo extends EventDispatcher
       localcount 4
       initscopedepth 6
       maxscopedepth 13
-      trait slot QName(PrivateNamespace(null,"#ModuleManager/1"),"event")
+      trait slot QName(PrivateNamespace(null,"#WorldMap/2"),"event")
       slotid 1
       type QName(PackageNamespace("flash.events"),"Event")
       end ; trait
-      trait slot QName(PrivateNamespace(null,"#ModuleManager/1"),"moduleEvent")
+      trait slot QName(PrivateNamespace(null,"#WorldMap/2"),"moduleEvent")
       slotid 2
       type QName(PackageNamespace("mx.events"),"ModuleEvent")
       end ; trait
@@ -1669,8 +1669,8 @@ class ModuleInfo extends EventDispatcher
       getlocal1
       setslot 1
       getlocal0
-      findpropstrict QName(PrivateNamespace(null,"#ModuleManager/1"),"FactoryInfo")
-      constructprop QName(PrivateNamespace(null,"#ModuleManager/1"),"FactoryInfo"), 0
+      findpropstrict QName(PrivateNamespace(null,"#WorldMap/2"),"FactoryInfo")
+      constructprop QName(PrivateNamespace(null,"#WorldMap/2"),"FactoryInfo"), 0
       initproperty QName(PrivateNamespace(null,"#ModuleInfo"),"factoryInfo")
       ofs0:
       getlocal0
@@ -2184,7 +2184,7 @@ class ModuleInfoProxy extends EventDispatcher implements IModuleInfo
    {
       method
       name null
-      param QName(PrivateNamespace(null,"#ModuleManager/1"),"ModuleInfo")
+      param QName(PrivateNamespace(null,"#WorldMap/2"),"ModuleInfo")
       returns null
       
       body
