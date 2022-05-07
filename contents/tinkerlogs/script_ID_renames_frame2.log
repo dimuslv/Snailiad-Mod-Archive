@@ -257,7 +257,7 @@ Class IDs:
 255: MenuBall -
 256: EnterKeyLayer -
 257: Utility -
-258: TitleText -
+258: TitleText 0
 259: JayIsGames -
 260: MainMenuCursor -
 261: EndingGroup -
@@ -319,7 +319,7 @@ Class IDs:
 317: EnemyCannonBottom2 -
 318: FlxTilemap -
 319: EnemyBabyfish -
-320: EnemyKitty -
+320: EnemyKitty 0
 321: EnemyWalleye -
 322: Boss1Rush -
 323: Platform5 -
@@ -335,7 +335,7 @@ Class IDs:
 333: Devastator -
 334: EnemyFireball2 -
 335: EnemyBird2Generator -
-336: EnemyMoth -
+336: EnemyMoth 0
 337: EnemyFloatSpike2 -
 338: EnemyTallfish2 -
 339: Boss3Rush -
@@ -398,7 +398,7 @@ Class IDs:
 396: AreaName -
 397: BossBarHud -
 398: HeartHud -
-399: EndingCredits -
+399: EndingCredits 0
 400: EndingZzz -
 401: EndingSunSnail -
 402: EndingDialogue -
@@ -487,7 +487,7 @@ Class IDs:
 485: CollectionEvent -
 486: FlxList -
 487: Bubble -
-488: TitleLetter -
+488: TitleLetter 0
 489: EndingPicture -
 490: EndingBg -
 491: Sfx_Ending1Song -
@@ -721,7 +721,7 @@ Class IDs:
 719: PowerNom -
 720: HelixHud -
 721: HeartHudSingle -
-722: EndingEnemy -
+722: EndingEnemy 0
 723: StarOutwardLayer -
 724: IntroSpiral -
 725: CSSMergedStyleDeclaration -
@@ -843,7 +843,7 @@ PrivateNamespace IDs:
 69: SolidColorStroke
 70: ObjectProxy
 71: PlayerBullet4
-72: TitleText
+72: 
 73: JayIsGames
 74: MainMenuCursor
 75: SponsorMoreGames
@@ -878,7 +878,7 @@ PrivateNamespace IDs:
 104: EnemyCannonBottom2
 105: FlxTilemap
 106: EnemyBabyfish
-107: EnemyKitty
+107: 
 108: EnemyWalleye
 109: Boss1Rush
 110: Platform5
@@ -931,7 +931,7 @@ PrivateNamespace IDs:
 157: Subscreen
 158: BossBarHud
 159: HeartHud
-160: EndingCredits
+160: 
 161: EndingZzz
 162: EndingSunSnail
 163: EndingDialogue
@@ -968,7 +968,7 @@ PrivateNamespace IDs:
 194: DescribeTypeCacheRecord
 195: BindabilityInfo
 196: Bubble
-197: TitleLetter
+197: 
 198: Base64Decoder
 199: Base64Encoder
 200: DustRing
@@ -989,7 +989,7 @@ PrivateNamespace IDs:
 215: Boss3RushSpawn
 216: EnemyCannon
 217: PowerNom
-218: EndingEnemy
+218: 
 219: StarOutwardLayer
 220: CSSMergedStyleDeclaration
 221: ModuleEvent
@@ -1060,7 +1060,7 @@ PrivateNamespace IDs:
 286: HelixFragment
 287: ShellShield
 288: Devastator
-289: EnemyMoth
+289: 
 290: GravityShock
 291: HiJump
 292: Gun3
@@ -1206,7 +1206,7 @@ PrivateNamespace IDs:
 432: PlayerBullet6/1
 433: BrokenBlock/1
 434: BrokenBlock/2
-435: TitleText/1
+435: 
 436: ShadowNumber/1
 437: CipherInt/1
 438: CheckBool/1
@@ -1223,7 +1223,7 @@ PrivateNamespace IDs:
 449: EnemyDandelionGenerator/1
 450: UniqueItem/1
 451: FlxTilemap/1
-452: EnemyKitty/1
+452: 
 453: Boss1Rush/1
 454: Boss4Rush/1
 455: Boss2Rush/1

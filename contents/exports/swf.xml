@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <swf compression="ZLIB" frameCount="2" frameRate="24.0" gfx="false" hasEndTag="true" type="SWF" version="10">
   <!--WARNING: The structure of this XML is not final. In later versions of FFDec it can be changed.-->
-  <!--JPEXS Free Flash Decompiler v.15.0.0-->
+  <!--JPEXS Free Flash Decompiler v.15.1.0-->
   <displayRect Xmax="16000" Xmin="0" Ymax="9600" Ymin="0" nbits="15" type="RECT" />
   <tags>
     <item actionScript3="true" hasMetadata="true" noCrossDomainCache="false" reserved1="false" reserved2="false" reserved3="0" type="FileAttributesTag" useDirectBlit="false" useGPU="false" useNetwork="true" />
@@ -13183,7 +13183,7 @@
     <item soundData="" soundFormat="2" soundId="99" soundRate="3" soundSampleCount="1979" soundSize="true" soundType="false" type="DefineSoundTag" />
     <item soundData="" soundFormat="2" soundId="100" soundRate="3" soundSampleCount="1979" soundSize="true" soundType="false" type="DefineSoundTag" />
     <item soundData="" soundFormat="2" soundId="101" soundRate="3" soundSampleCount="1979" soundSize="true" soundType="false" type="DefineSoundTag" />
-    <item soundData="" soundFormat="2" soundId="102" soundRate="3" soundSampleCount="20706" soundSize="true" soundType="false" type="DefineSoundTag" />
+    <item soundData="" soundFormat="2" soundId="102" soundRate="3" soundSampleCount="41472" soundSize="true" soundType="true" type="DefineSoundTag" />
     <item soundData="" soundFormat="2" soundId="103" soundRate="3" soundSampleCount="3097" soundSize="true" soundType="false" type="DefineSoundTag" />
     <item soundData="" soundFormat="2" soundId="104" soundRate="3" soundSampleCount="21498" soundSize="true" soundType="false" type="DefineSoundTag" />
     <item soundData="" soundFormat="2" soundId="105" soundRate="3" soundSampleCount="10045" soundSize="true" soundType="false" type="DefineSoundTag" />
@@ -13210,7 +13210,7 @@
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="4" bitmapWidth="4" characterID="126" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="128" characterID="127" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="128" characterID="128" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="344" bitmapWidth="168" characterID="129" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="440" bitmapWidth="352" characterID="129" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="64" bitmapWidth="96" characterID="130" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="32" bitmapWidth="160" characterID="131" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="122" bitmapWidth="194" characterID="132" type="DefineBitsLossless2Tag" zlibBitmapData="" />
@@ -15691,7 +15691,7 @@
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="11" bitmapWidth="10" characterID="135" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="16" characterID="136" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="64" characterID="137" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="32" bitmapWidth="72" characterID="138" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="32" bitmapWidth="108" characterID="138" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="200" bitmapWidth="200" characterID="139" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="48" bitmapWidth="128" characterID="140" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="32" characterID="141" type="DefineBitsLossless2Tag" zlibBitmapData="" />
@@ -18876,7 +18876,7 @@
     <item binaryData="" reserved="0" tag="268" type="DefineBinaryDataTag" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="32" bitmapWidth="24" characterID="269" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="2960" bitmapWidth="256" characterID="270" type="DefineBitsLossless2Tag" zlibBitmapData="" />
-    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="16" characterID="271" type="DefineBitsLossless2Tag" zlibBitmapData="" />
+    <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="80" bitmapWidth="384" characterID="271" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="16" bitmapWidth="16" characterID="272" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="256" bitmapWidth="640" characterID="273" type="DefineBitsLossless2Tag" zlibBitmapData="" />
     <item bitmapColorTableSize="0" bitmapFormat="5" bitmapHeight="13" bitmapWidth="13" characterID="274" type="DefineBitsLossless2Tag" zlibBitmapData="" />
