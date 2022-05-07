@@ -134,6 +134,12 @@ package
       public static const TYPE_AURIPLANE:int = 61;
       
       public static const TYPE_THE_END:int = 62;
+      
+      public static const TYPE_EPSILON:int = 63;
+      
+      public static const TYPE_FUNNY:int = 64;
+      
+      public static const TYPE_JONAS:int = 65;
        
       
       private var _hand:Boolean = false;
@@ -427,6 +433,18 @@ package
             case TYPE_THE_END:
                loadGraphic(Art.TheEnd,true,true,194,122);
                addAnimation("normal",[0]);
+               break;
+            case TYPE_EPSILON:
+               loadGraphic(Art.PixelPeople,true,true,18,32);
+               addAnimation("normal",[4]);
+               break;
+            case TYPE_FUNNY:
+               loadGraphic(Art.EnemyMoth,true,true,16,16);
+               addAnimation("normal",[114,115],16,true);
+               break;
+            case TYPE_JONAS:
+               loadGraphic(Art.PixelPeople,true,true,18,32);
+               addAnimation("normal",[5]);
          }
          play("normal");
          x = FlxG.width / 2 - width / 2 + param1;

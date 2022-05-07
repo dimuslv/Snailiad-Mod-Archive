@@ -11,7 +11,7 @@ package
       
       private static const SPACING:int = 4;
       
-      private static const LETTER_DELAY:Number = Math.PI / 11;
+      private static const LETTER_DELAY:Number = Math.PI / 22;
       
       private static const LETTER_START:Number = -2.5;
       
@@ -34,6 +34,15 @@ package
       {
          super();
          this._letters = new Array();
+         this._letters.push(new TitleLetter("W"));
+         this._letters.push(new TitleLetter("I"));
+         this._letters.push(new TitleLetter("L"));
+         this._letters.push(new TitleLetter("L"));
+         this._letters.push(new TitleLetter(" "));
+         this._letters.push(new TitleLetter("Y"));
+         this._letters.push(new TitleLetter("O"));
+         this._letters.push(new TitleLetter("U"));
+         this._letters.push(new TitleLetter(" "));
          this._letters.push(new TitleLetter("S"));
          this._letters.push(new TitleLetter("N"));
          this._letters.push(new TitleLetter("A"));

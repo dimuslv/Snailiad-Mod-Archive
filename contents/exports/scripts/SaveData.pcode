@@ -78,7 +78,7 @@ package
          getlocal0
          constructsuper 0
          findpropstrict QName(PackageNamespace(""),"bind")
-         pushstring "Snailiad"
+         pushstring "WillYouSnailiad"
          callpropvoid QName(PackageNamespace(""),"bind"), 1
          getlocal0
          getproperty QName(PackageNamespace(""),"xml")
